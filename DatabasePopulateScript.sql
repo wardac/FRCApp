@@ -3,6 +3,7 @@ CREATE TABLE [dbo].[Barriers] (
 	[BarrierType] NVARCHAR(100) NOT NULL
 )
 GO
+
 CREATE TABLE [dbo].[BarrierSubtypes] (
 	[BarrierSubtypeID] INT IDENTITY(1,1) PRIMARY KEY,
 	[BarrierSubtype] NVARCHAR(100) NOT NULL
