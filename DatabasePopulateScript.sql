@@ -1,18 +1,12 @@
-CREATE TABLE [dbo].[Barriers] (
-	[BarrierID] INT IDENTITY (1,1) PRIMARY KEY,
-	[BarrierType] NVARCHAR(100) NOT NULL
+CREATE TABLE [dbo].[GoalTypes] (
+	[GoalTypeID] INT IDENTITY (1,1) PRIMARY KEY,
+	[GoalType] NVARCHAR(100) NOT NULL
 )
 GO
-CREATE TABLE [dbo].[BarrierSubtypes] (
-	[BarrierSubtypeID] INT IDENTITY(1,1) PRIMARY KEY,
-	[BarrierSubtype] NVARCHAR(100) NOT NULL
-)
-GO
-
-CREATE TABLE [dbo].[BarriersToSubtypes] (
-	[BarrierID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[Barriers]([BarrierID]),
-	[BarrierSubtypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[BarrierSubtypes]([BarrierSubtypeID]),
-	PRIMARY KEY ([BarrierID],[BarrierSubtypeID])
+CREATE TABLE [dbo].[GoalSubtypes] (
+	[GoalSubtypeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[GoalTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[GoalTypes]([GoalTypeID]),
+	[GoalSubtype] NVARCHAR(100) NOT NULL
 )
 GO
 
@@ -248,3 +242,86 @@ CREATE TABLE [dbo].[Relationships] (
 )
 GO
 
+CREATE TABLE [dbo].[OWActionCategories] (
+	[OWActionCategoryID] INT IDENTITY(1,1) PRIMARY KEY,
+	[OWActionCategory] NVARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[OWBarrierTypes] (
+	[OWBarrierTypeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[OWBarrierType] NVARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[OWBarrierSubtypes] (
+	[OWBarrierSubtypeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[OWBarrierTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWBarrierTypes]([OWBarrierTypeID]),
+	[OWBarrierSubtype] NVARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[OWGoalTypes] (
+	[OWGoalTypeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[OWGoalType] NVARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[OWGoalSubtypes] (
+	[OWGoalSubtypeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[OWGoalTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWGoalTypes]([OWGoalTypeID]),
+	[OWGoalType] NVARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[OWStatuses] (
+	[OWStatusID] INT IDENTITY(1,1) PRIMARY KEY,
+	[OWStatus] NVARCHAR(100) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[OWClients] (
+	[OWID] INT IDENTITY(1,1) PRIMARY KEY,
+	[ClientID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[Clients]([ClientID]),
+	[OWStatusID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWStatuses]([OWStatusID])
+)
+GO
+
+CREATE TABLE [dbo].[OWBarrierTracking] (
+	[OWBarrierTrackingID] INT IDENTITY(1,1) PRIMARY KEY,
+	[OWID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWClients]([OWID]),
+	[DateIdentified] DATE NOT NULL,
+	[OWBarrierTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWBarrierTypes]([OWBarrierTypeID]),
+	[OWBarrierSubtypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWBarrierSubtypes]([OWBarrierSubtypesID]),
+	[Comments] NVARCHAR(MAX),
+	[BarrierRemoved] BIT NOT NULL,
+	[DateBarrierRemoved] DATE
+)
+GO
+
+CREATE TABLE [dbo].[OWGoalTracking] (
+	[OWGoalTrackingID] INT IDENTITY(1,1) PRIMARY KEY,
+	[OWID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWClients]([OWID]),
+	[DateSet] DATE NOT NULL,
+	[OWGoalTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWGoalTypes]([OWGoalTypeID]),
+	[OWGoalSubtypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWGoalSubtypes]([OWGoalSubtypeID]),
+	[Comments] NVARCHAR(MAX),
+	[GoalAchieved] BIT NOT NULL,
+	[DateGoalAchieved] DATE
+)
+GO
+
+CREATE TABLE [OWIntake] (
+	[OWIntakeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[OWID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWClients]([OWID]),
+	[DateLastWorked] DATE,
+	[DateStartedJobSearch] DATE,
+	[MonthsUnemployed] INT,
+	[JobsInLast15Years] INT,
+	[LongestForOneEmployer] NVARCHAR(100),
+	[EverDoubledFPG] BIT NOT NULL,
+	[EverReceivedEmpHealthIns] BIT NOT NULL,
+	[EverReceivedVacTime] BIT NOT NULL,
+	[EverReceivedRetirment] BIT NOT NULL
+)
+GO
