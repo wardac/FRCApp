@@ -3,7 +3,6 @@ CREATE TABLE [dbo].[Barriers] (
 	[BarrierType] NVARCHAR(100) NOT NULL
 )
 GO
-
 CREATE TABLE [dbo].[BarrierSubtypes] (
 	[BarrierSubtypeID] INT IDENTITY(1,1) PRIMARY KEY,
 	[BarrierSubtype] NVARCHAR(100) NOT NULL
@@ -35,6 +34,16 @@ CREATE TABLE [dbo].[Salutations] (
 )
 GO
 
+CREATE TABLE [dbo].[MaritalStatus] (
+	[MaritalStatusID] INT IDENTITY(1,1) PRIMARY KEY,
+	[MaritalStatus] NVARCHAR(50) NOT NULL
+)
+
+CREATE TABLE [dbo].[Race] (
+	[RaceID] INT IDENTITY (1,1) PRIMARY KEY,
+	[Race] NVARCHAR(50) NOT NULL
+)
+
 CREATE TABLE [dbo].[Clients] (
 	[ClientID] INT IDENTITY(1,1) PRIMARY KEY,
 	[SalutationID] INT FOREIGN KEY REFERENCES [dbo].[Salutations]([SalutationID]),
@@ -45,6 +54,10 @@ CREATE TABLE [dbo].[Clients] (
 	[PreferredName] NVARCHAR(20),
 	[DOB] DATE,
 	[SSN] NVARCHAR(10),
+	[GenderID] INT FOREIGN KEY REFERENCES [dbo].[Gender]([GenderID]),
+	[RaceID] INT FOREIGN KEY REFERENCES [dbo].[Race]([RaceID]),
+	[MaritalStatusID] INT FOREIGN KEY REFERENCES [dbo].[MaritalStatus]([MaritalStatusID]),
+	[Hispanic] BIT NOT NULL,
 	[Disability] BIT,
 	[Veteran] BIT,
 	[InitialServiceDate] DATE NOT NULL
@@ -147,7 +160,7 @@ CREATE TABLE [dbo].[ResidencyCodes] (
 )
 GO
 
-CREATE TABLE [dbo].[HouseHold] (
+CREATE TABLE [dbo].[HouseHolds] (
 	[HouseHoldID] INT IDENTITY(1,1) PRIMARY KEY,
 	[StreetName] NVARCHAR(50) NOT NULL,
 	[StreetNumber] NVARCHAR(10) NOT NULL,
@@ -158,3 +171,80 @@ CREATE TABLE [dbo].[HouseHold] (
 	[ResidencyCodeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[ResidencyCodes]([ResidencyCodeID])
 )
 GO
+
+CREATE TABLE [dbo].[IncomeTypes] (
+	[IncomeTypeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[IncomeCode] NVARCHAR(20) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[IncomeSubtypes] (
+	[IncomeSubTypeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[IncomeSubtype] NVARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[IncomeIntervals] (
+	[IncomeIntervalID] INT IDENTITY(1,1) PRIMARY KEY,
+	[Interval] NVARCHAR(50) NOT NULl
+)
+GO
+
+CREATE TABLE [dbo].[IncomeData] (
+	[IncomeDataID] ID IDENTITY(1,1) PRIMARY KEY,
+	[ClientID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[Clients]([ClientID]),
+	[IncomeTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[IncomeTypes]([IncomeTypeID]),
+	[IncomeSubtypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[IncomeSubtypes]([IncomeSubtypeID]),
+	[EmployerName] NVARCHAR(100),
+	[IncomeAmount] DECIMAL(10,2),
+	[IncomeIntervalID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[IncomeIntervals]([IncomeIntervalID]),
+	[EmploymentStart] DATE NOT NULL,
+	[EmploymentEnd] DATE
+	[DateRecorded] DATE
+)
+GO
+
+CREATE TABLE [dbo].[MonthlyExpenseTypes] (
+	[MonthlyExpenseTypeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[MonthlyExpenseType] NVARCHAR(50)
+)
+GO
+
+CREATE TABLE [dbo].[MonthlyExpenses] (
+	[MonthlyExpenseID] INT IDENTITY(1,1) PRIMARY KEY
+	[HouseHoldID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[HouseHold]([HouseHoldID]),
+	[MonthlyExpenseTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[MonthlyExpenseTypes]([MonthlyExpenseTypeID]),
+	[Amount] DECIMAL(10,2) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[TSVoucherTypes] (
+	[TSVoucherTypeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[VoucherType] NVARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[TSVouchers] (
+	[TSVoucherID] INT IDENTITY(1,1) PRIMARY KEY,
+	[ClientID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[Client]([ClientID]),
+	[TSVoucherTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[TSVoucherTypes]([TSVoucherTypeID])
+	[VoucherAmount] DECIMAL(10,2),
+	[VoucherIssueDate] DATE NOT NULL,
+	[VoucherExpirationDate] DATE,
+	[VoucherRedeemedDate] DATE
+)
+GO
+
+CREATE TABLE [dbo].[RelationshipTypes] (
+	[RelationshipTypeID] INT IDENTITY(1,1) PRIMARY KEY,
+	[RelationshipName] NVARCHAR(50) NOT NULL
+)
+GO
+
+CREATE TABLE [dbo].[Relationships] (
+	[RelationshipTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[RelationshipTypes]([RelationshipTypeID]),
+	[ClientIDFrom] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[Client]([ClientID]),
+	[ClientIDTo] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[Client]([ClientID])
+)
+GO
+
