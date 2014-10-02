@@ -1,4 +1,3 @@
-C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\bin\Debug\FRCApp.exe.config
 M:\frc\FRCApp\FRCApp\bin\Debug\FRCApp.exe.config
 M:\frc\FRCApp\FRCApp\bin\Debug\FRCApp.exe
 M:\frc\FRCApp\FRCApp\bin\Debug\FRCApp.pdb
@@ -19,3 +18,14 @@ C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.Form1.resources
 C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.ow_tab.resources
 C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.Properties.Resources.resources
 C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.csproj.GenerateResource.Cache
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\bin\Debug\FRCApp.exe.config
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\bin\Debug\FRCApp.exe
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\bin\Debug\FRCApp.pdb
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.fc_tab.resources
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.Form1.resources
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.ow_tab.resources
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.Properties.Resources.resources
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.csproj.GenerateResource.Cache
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.exe
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.pdb
+C:\Users\daughtrc\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.csprojResolveAssemblyReference.cache

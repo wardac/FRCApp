@@ -21,5 +21,23 @@ namespace FRCApp
         {
 
         }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            clear(this.owpanel);
+        }
+        private void clear(Control cont)
+        { 
+            foreach (Control c in cont.Controls)
+            {
+                if (c is TextBox)
+                { c.Text="";}
+            }
+        }
     }
 }

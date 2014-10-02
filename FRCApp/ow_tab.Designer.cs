@@ -78,6 +78,7 @@
             this.cancel.TabIndex = 20;
             this.cancel.Text = "cancel";
             this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // save
             // 
@@ -87,6 +88,7 @@
             this.save.TabIndex = 19;
             this.save.Text = "save";
             this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // lstcontact
             // 
@@ -151,7 +153,7 @@
             this.owpanel.Controls.Add(this.lblAddress);
             this.owpanel.Controls.Add(this.lblLastname);
             this.owpanel.Controls.Add(this.lblname);
-            this.owpanel.Location = new System.Drawing.Point(52, 52);
+            this.owpanel.Location = new System.Drawing.Point(3, 3);
             this.owpanel.Name = "owpanel";
             this.owpanel.Size = new System.Drawing.Size(549, 379);
             this.owpanel.TabIndex = 1;
