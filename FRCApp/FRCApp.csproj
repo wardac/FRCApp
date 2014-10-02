@@ -51,7 +51,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ow_tab.cs">
-      <SubType>Component</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ow_tab.Designer.cs">
       <DependentUpon>ow_tab.cs</DependentUpon>

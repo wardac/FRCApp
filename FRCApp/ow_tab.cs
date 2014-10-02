@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace FRCApp
 {
-    public partial class ow_tab : TabPage
+    public partial class ow_tab : UserControl
     {
         public ow_tab()
         {
             InitializeComponent();
+        }
+
+        private void txtname_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

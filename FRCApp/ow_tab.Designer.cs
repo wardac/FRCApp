@@ -235,6 +235,7 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(174, 20);
             this.txtname.TabIndex = 1;
+            this.txtname.TextChanged += new System.EventHandler(this.txtname_TextChanged);
             // 
             // lblAddress
             // 
@@ -265,8 +266,6 @@
             // 
             // ow_tab
             // 
-          //  this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-          //  this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.owpanel);
             this.Name = "ow_tab";
             this.Size = new System.Drawing.Size(847, 569);
