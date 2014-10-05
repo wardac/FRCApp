@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.ow_dob_label = new System.Windows.Forms.Label();
             this.bdate = new System.Windows.Forms.DateTimePicker();
             this.cancel = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
@@ -39,29 +39,29 @@
             this.telnum = new System.Windows.Forms.TextBox();
             this.owpanel = new System.Windows.Forms.Panel();
             this.lblnumber = new System.Windows.Forms.Label();
-            this.cmbState = new System.Windows.Forms.ComboBox();
-            this.lblstate = new System.Windows.Forms.Label();
+            this.ow_state_combobox = new System.Windows.Forms.ComboBox();
+            this.ow_state_label = new System.Windows.Forms.Label();
             this.city = new System.Windows.Forms.TextBox();
-            this.lblcity = new System.Windows.Forms.Label();
+            this.ow_city_label = new System.Windows.Forms.Label();
             this.zip = new System.Windows.Forms.TextBox();
-            this.lblzip = new System.Windows.Forms.Label();
+            this.ow_zip_label = new System.Windows.Forms.Label();
             this.address = new System.Windows.Forms.TextBox();
             this.txtlname = new System.Windows.Forms.TextBox();
             this.txtname = new System.Windows.Forms.TextBox();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblLastname = new System.Windows.Forms.Label();
-            this.lblname = new System.Windows.Forms.Label();
+            this.ow_address_label = new System.Windows.Forms.Label();
+            this.ow_last_name_label = new System.Windows.Forms.Label();
+            this.ow_first_name_label = new System.Windows.Forms.Label();
             this.owpanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // ow_dob_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "date of birth";
+            this.ow_dob_label.AutoSize = true;
+            this.ow_dob_label.Location = new System.Drawing.Point(21, 84);
+            this.ow_dob_label.Name = "ow_dob_label";
+            this.ow_dob_label.Size = new System.Drawing.Size(63, 13);
+            this.ow_dob_label.TabIndex = 22;
+            this.ow_dob_label.Text = "date of birth";
             // 
             // bdate
             // 
@@ -131,7 +131,7 @@
             // 
             // owpanel
             // 
-            this.owpanel.Controls.Add(this.label1);
+            this.owpanel.Controls.Add(this.ow_dob_label);
             this.owpanel.Controls.Add(this.bdate);
             this.owpanel.Controls.Add(this.cancel);
             this.owpanel.Controls.Add(this.save);
@@ -141,18 +141,18 @@
             this.owpanel.Controls.Add(this.lblmail);
             this.owpanel.Controls.Add(this.telnum);
             this.owpanel.Controls.Add(this.lblnumber);
-            this.owpanel.Controls.Add(this.cmbState);
-            this.owpanel.Controls.Add(this.lblstate);
+            this.owpanel.Controls.Add(this.ow_state_combobox);
+            this.owpanel.Controls.Add(this.ow_state_label);
             this.owpanel.Controls.Add(this.city);
-            this.owpanel.Controls.Add(this.lblcity);
+            this.owpanel.Controls.Add(this.ow_city_label);
             this.owpanel.Controls.Add(this.zip);
-            this.owpanel.Controls.Add(this.lblzip);
+            this.owpanel.Controls.Add(this.ow_zip_label);
             this.owpanel.Controls.Add(this.address);
             this.owpanel.Controls.Add(this.txtlname);
             this.owpanel.Controls.Add(this.txtname);
-            this.owpanel.Controls.Add(this.lblAddress);
-            this.owpanel.Controls.Add(this.lblLastname);
-            this.owpanel.Controls.Add(this.lblname);
+            this.owpanel.Controls.Add(this.ow_address_label);
+            this.owpanel.Controls.Add(this.ow_last_name_label);
+            this.owpanel.Controls.Add(this.ow_first_name_label);
             this.owpanel.Location = new System.Drawing.Point(3, 3);
             this.owpanel.Name = "owpanel";
             this.owpanel.Size = new System.Drawing.Size(549, 379);
@@ -167,22 +167,22 @@
             this.lblnumber.TabIndex = 13;
             this.lblnumber.Text = "tel num";
             // 
-            // cmbState
+            // ow_state_combobox
             // 
-            this.cmbState.FormattingEnabled = true;
-            this.cmbState.Location = new System.Drawing.Point(106, 220);
-            this.cmbState.Name = "cmbState";
-            this.cmbState.Size = new System.Drawing.Size(46, 21);
-            this.cmbState.TabIndex = 12;
+            this.ow_state_combobox.FormattingEnabled = true;
+            this.ow_state_combobox.Location = new System.Drawing.Point(106, 220);
+            this.ow_state_combobox.Name = "ow_state_combobox";
+            this.ow_state_combobox.Size = new System.Drawing.Size(46, 21);
+            this.ow_state_combobox.TabIndex = 12;
             // 
-            // lblstate
+            // ow_state_label
             // 
-            this.lblstate.AutoSize = true;
-            this.lblstate.Location = new System.Drawing.Point(21, 228);
-            this.lblstate.Name = "lblstate";
-            this.lblstate.Size = new System.Drawing.Size(30, 13);
-            this.lblstate.TabIndex = 9;
-            this.lblstate.Text = "state";
+            this.ow_state_label.AutoSize = true;
+            this.ow_state_label.Location = new System.Drawing.Point(21, 228);
+            this.ow_state_label.Name = "ow_state_label";
+            this.ow_state_label.Size = new System.Drawing.Size(30, 13);
+            this.ow_state_label.TabIndex = 9;
+            this.ow_state_label.Text = "state";
             // 
             // city
             // 
@@ -191,14 +191,14 @@
             this.city.Size = new System.Drawing.Size(174, 20);
             this.city.TabIndex = 8;
             // 
-            // lblcity
+            // ow_city_label
             // 
-            this.lblcity.AutoSize = true;
-            this.lblcity.Location = new System.Drawing.Point(21, 147);
-            this.lblcity.Name = "lblcity";
-            this.lblcity.Size = new System.Drawing.Size(23, 13);
-            this.lblcity.TabIndex = 7;
-            this.lblcity.Text = "city";
+            this.ow_city_label.AutoSize = true;
+            this.ow_city_label.Location = new System.Drawing.Point(21, 147);
+            this.ow_city_label.Name = "ow_city_label";
+            this.ow_city_label.Size = new System.Drawing.Size(23, 13);
+            this.ow_city_label.TabIndex = 7;
+            this.ow_city_label.Text = "city";
             // 
             // zip
             // 
@@ -207,14 +207,14 @@
             this.zip.Size = new System.Drawing.Size(65, 20);
             this.zip.TabIndex = 6;
             // 
-            // lblzip
+            // ow_zip_label
             // 
-            this.lblzip.AutoSize = true;
-            this.lblzip.Location = new System.Drawing.Point(21, 192);
-            this.lblzip.Name = "lblzip";
-            this.lblzip.Size = new System.Drawing.Size(20, 13);
-            this.lblzip.TabIndex = 5;
-            this.lblzip.Text = "zip";
+            this.ow_zip_label.AutoSize = true;
+            this.ow_zip_label.Location = new System.Drawing.Point(21, 192);
+            this.ow_zip_label.Name = "ow_zip_label";
+            this.ow_zip_label.Size = new System.Drawing.Size(20, 13);
+            this.ow_zip_label.TabIndex = 5;
+            this.ow_zip_label.Text = "zip";
             // 
             // address
             // 
@@ -239,32 +239,32 @@
             this.txtname.TabIndex = 1;
             this.txtname.TextChanged += new System.EventHandler(this.txtname_TextChanged);
             // 
-            // lblAddress
+            // ow_address_label
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(21, 120);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(47, 13);
-            this.lblAddress.TabIndex = 2;
-            this.lblAddress.Text = "address:";
+            this.ow_address_label.AutoSize = true;
+            this.ow_address_label.Location = new System.Drawing.Point(21, 120);
+            this.ow_address_label.Name = "ow_address_label";
+            this.ow_address_label.Size = new System.Drawing.Size(47, 13);
+            this.ow_address_label.TabIndex = 2;
+            this.ow_address_label.Text = "address:";
             // 
-            // lblLastname
+            // ow_last_name_label
             // 
-            this.lblLastname.AutoSize = true;
-            this.lblLastname.Location = new System.Drawing.Point(21, 59);
-            this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(52, 13);
-            this.lblLastname.TabIndex = 1;
-            this.lblLastname.Text = "last name";
+            this.ow_last_name_label.AutoSize = true;
+            this.ow_last_name_label.Location = new System.Drawing.Point(21, 59);
+            this.ow_last_name_label.Name = "ow_last_name_label";
+            this.ow_last_name_label.Size = new System.Drawing.Size(52, 13);
+            this.ow_last_name_label.TabIndex = 1;
+            this.ow_last_name_label.Text = "last name";
             // 
-            // lblname
+            // ow_first_name_label
             // 
-            this.lblname.AutoSize = true;
-            this.lblname.Location = new System.Drawing.Point(21, 25);
-            this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(52, 13);
-            this.lblname.TabIndex = 0;
-            this.lblname.Text = "first name";
+            this.ow_first_name_label.AutoSize = true;
+            this.ow_first_name_label.Location = new System.Drawing.Point(21, 25);
+            this.ow_first_name_label.Name = "ow_first_name_label";
+            this.ow_first_name_label.Size = new System.Drawing.Size(52, 13);
+            this.ow_first_name_label.TabIndex = 0;
+            this.ow_first_name_label.Text = "first name";
             // 
             // ow_tab
             // 
@@ -279,7 +279,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ow_dob_label;
         private System.Windows.Forms.DateTimePicker bdate;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Button save;
@@ -290,17 +290,17 @@
         private System.Windows.Forms.TextBox telnum;
         private System.Windows.Forms.Panel owpanel;
         private System.Windows.Forms.Label lblnumber;
-        private System.Windows.Forms.ComboBox cmbState;
-        private System.Windows.Forms.Label lblstate;
+        private System.Windows.Forms.ComboBox ow_state_combobox;
+        private System.Windows.Forms.Label ow_state_label;
         private System.Windows.Forms.TextBox city;
-        private System.Windows.Forms.Label lblcity;
+        private System.Windows.Forms.Label ow_city_label;
         private System.Windows.Forms.TextBox zip;
-        private System.Windows.Forms.Label lblzip;
+        private System.Windows.Forms.Label ow_zip_label;
         private System.Windows.Forms.TextBox address;
         private System.Windows.Forms.TextBox txtlname;
         private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblLastname;
-        private System.Windows.Forms.Label lblname;
+        private System.Windows.Forms.Label ow_address_label;
+        private System.Windows.Forms.Label ow_last_name_label;
+        private System.Windows.Forms.Label ow_first_name_label;
     }
 }

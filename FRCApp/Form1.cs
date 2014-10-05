@@ -16,5 +16,10 @@ namespace FRCApp
         {
             InitializeComponent();
         }
+
+        private void fc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
