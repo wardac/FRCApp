@@ -28,12 +28,12 @@ CREATE TABLE [dbo].[Salutations] (
 )
 GO
 
-CREATE TABLE [dbo].[MaritalStatuses] (
+CREATE TABLE [dbo].[MaritalStatus] (
 	[MaritalStatusID] INT IDENTITY(1,1) PRIMARY KEY,
 	[MaritalStatus] NVARCHAR(50) NOT NULL
 )
 
-CREATE TABLE [dbo].[Races] (
+CREATE TABLE [dbo].[Race] (
 	[RaceID] INT IDENTITY (1,1) PRIMARY KEY,
 	[Race] NVARCHAR(50) NOT NULL
 )
@@ -48,9 +48,9 @@ CREATE TABLE [dbo].[Clients] (
 	[PreferredName] NVARCHAR(20),
 	[DOB] DATE,
 	[SSN] NVARCHAR(10),
-	[GenderID] INT FOREIGN KEY REFERENCES [dbo].[Genders]([GenderID]),
-	[RaceID] INT FOREIGN KEY REFERENCES [dbo].[Races]([RaceID]),
-	[MaritalStatusID] INT FOREIGN KEY REFERENCES [dbo].[MaritalStatuses]([MaritalStatusID]),
+	[GenderID] INT FOREIGN KEY REFERENCES [dbo].[Gender]([GenderID]),
+	[RaceID] INT FOREIGN KEY REFERENCES [dbo].[Race]([RaceID]),
+	[MaritalStatusID] INT FOREIGN KEY REFERENCES [dbo].[MaritalStatus]([MaritalStatusID]),
 	[Hispanic] BIT NOT NULL,
 	[Disability] BIT,
 	[Veteran] BIT,
@@ -185,7 +185,7 @@ CREATE TABLE [dbo].[IncomeIntervals] (
 GO
 
 CREATE TABLE [dbo].[IncomeData] (
-	[IncomeDataID] INT IDENTITY(1,1) PRIMARY KEY,
+	[IncomeDataID] ID IDENTITY(1,1) PRIMARY KEY,
 	[ClientID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[Clients]([ClientID]),
 	[IncomeTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[IncomeTypes]([IncomeTypeID]),
 	[IncomeSubtypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[IncomeSubtypes]([IncomeSubtypeID]),
@@ -292,7 +292,7 @@ CREATE TABLE [dbo].[OWBarrierTracking] (
 	[OWID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWClients]([OWID]),
 	[DateIdentified] DATE NOT NULL,
 	[OWBarrierTypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWBarrierTypes]([OWBarrierTypeID]),
-	[OWBarrierSubtypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWBarrierSubtypes]([OWBarrierSubtypeID]),
+	[OWBarrierSubtypeID] INT NOT NULL FOREIGN KEY REFERENCES [dbo].[OWBarrierSubtypes]([OWBarrierSubtypesID]),
 	[Comments] NVARCHAR(MAX),
 	[BarrierRemoved] BIT NOT NULL,
 	[DateBarrierRemoved] DATE

@@ -30,15 +30,15 @@
         {
             System.Windows.Forms.TabControl TabControl;
             this.Main = new System.Windows.Forms.TabPage();
-            this.TS = new System.Windows.Forms.TabPage();
-            this.fc_tab = new System.Windows.Forms.TabPage();
-            this.ow = new FRCApp.ow_tab();
-            this.fc = new FRCApp.fc_tab();
             this.EFA = new System.Windows.Forms.TabPage();
+            this.fc_tab = new System.Windows.Forms.TabPage();
+            this.fc = new FRCApp.fc_tab();
+            this.TS = new System.Windows.Forms.TabPage();
+            this.ow = new FRCApp.ow_tab();
             TabControl = new System.Windows.Forms.TabControl();
             TabControl.SuspendLayout();
-            this.TS.SuspendLayout();
             this.fc_tab.SuspendLayout();
+            this.TS.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -63,16 +63,14 @@
             this.Main.Text = "Main";
             this.Main.UseVisualStyleBackColor = true;
             // 
-            // TS
+            // EFA
             // 
-            this.TS.Controls.Add(this.ow);
-            this.TS.Location = new System.Drawing.Point(4, 22);
-            this.TS.Name = "TS";
-            this.TS.Padding = new System.Windows.Forms.Padding(3);
-            this.TS.Size = new System.Drawing.Size(864, 429);
-            this.TS.TabIndex = 1;
-            this.TS.Text = "OW";
-            this.TS.UseVisualStyleBackColor = true;
+            this.EFA.Location = new System.Drawing.Point(4, 22);
+            this.EFA.Name = "EFA";
+            this.EFA.Size = new System.Drawing.Size(864, 429);
+            this.EFA.TabIndex = 3;
+            this.EFA.Text = "EFA";
+            this.EFA.UseVisualStyleBackColor = true;
             // 
             // fc_tab
             // 
@@ -85,13 +83,6 @@
             this.fc_tab.Text = "FC";
             this.fc_tab.UseVisualStyleBackColor = true;
             // 
-            // ow
-            // 
-            this.ow.Location = new System.Drawing.Point(0, 0);
-            this.ow.Name = "ow";
-            this.ow.Size = new System.Drawing.Size(847, 569);
-            this.ow.TabIndex = 0;
-            // 
             // fc
             // 
             this.fc.Location = new System.Drawing.Point(0, 0);
@@ -100,14 +91,23 @@
             this.fc.TabIndex = 0;
             this.fc.Load += new System.EventHandler(this.fc_Load);
             // 
-            // EFA
+            // TS
             // 
-            this.EFA.Location = new System.Drawing.Point(4, 22);
-            this.EFA.Name = "EFA";
-            this.EFA.Size = new System.Drawing.Size(864, 429);
-            this.EFA.TabIndex = 3;
-            this.EFA.Text = "EFA";
-            this.EFA.UseVisualStyleBackColor = true;
+            this.TS.Controls.Add(this.ow);
+            this.TS.Location = new System.Drawing.Point(4, 22);
+            this.TS.Name = "TS";
+            this.TS.Padding = new System.Windows.Forms.Padding(3);
+            this.TS.Size = new System.Drawing.Size(864, 429);
+            this.TS.TabIndex = 1;
+            this.TS.Text = "OW";
+            this.TS.UseVisualStyleBackColor = true;
+            // 
+            // ow
+            // 
+            this.ow.Location = new System.Drawing.Point(0, 0);
+            this.ow.Name = "ow";
+            this.ow.Size = new System.Drawing.Size(847, 569);
+            this.ow.TabIndex = 0;
             // 
             // Form1
             // 
@@ -118,8 +118,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             TabControl.ResumeLayout(false);
-            this.TS.ResumeLayout(false);
             this.fc_tab.ResumeLayout(false);
+            this.TS.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
