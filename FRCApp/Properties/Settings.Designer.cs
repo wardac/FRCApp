@@ -33,5 +33,26 @@ namespace FRCApp.Properties {
                 return ((string)(this["FRCDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;Initial Catalog=C:\\USERS\\WARDAC\\DOCUMENTS\\GITHUB\\FRCA" +
+            "PP\\FRCAPP\\FRCDB.MDF;Integrated Security=True")]
+        public string C__USERS_WARDAC_DOCUMENTS_GITHUB_FRCAPP_FRCAPP_FRCDB_MDFConnectionString {
+            get {
+                return ((string)(this["C__USERS_WARDAC_DOCUMENTS_GITHUB_FRCAPP_FRCAPP_FRCDB_MDFConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\FRCDB.sdf")]
+        public string FRCDBConnectionString1 {
+            get {
+                return ((string)(this["FRCDBConnectionString1"]));
+            }
+        }
     }
 }

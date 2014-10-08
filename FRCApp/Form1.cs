@@ -21,5 +21,10 @@ namespace FRCApp
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e) {
+            NewClient nc = new NewClient();
+            nc.ShowDialog();
+        }
     }
 }
