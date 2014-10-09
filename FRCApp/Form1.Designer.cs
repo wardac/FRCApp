@@ -42,8 +42,13 @@
             this.efa = new FRCApp.efa_tab();
             this.fc_tab = new System.Windows.Forms.TabPage();
             this.fc = new FRCApp.fc_tab();
+
             this.ow_tab = new System.Windows.Forms.TabPage();
+
+            this.TS = new System.Windows.Forms.TabPage();
+
             this.ow = new FRCApp.ow_tab();
+            this.lstClients = new System.Windows.Forms.ListBox();
             TabControl = new System.Windows.Forms.TabControl();
             TabControl.SuspendLayout();
             this.Main.SuspendLayout();
@@ -66,6 +71,7 @@
             // 
             // Main
             // 
+            this.Main.Controls.Add(this.lstClients);
             this.Main.Controls.Add(this.label3);
             this.Main.Controls.Add(this.panel2);
             this.Main.Controls.Add(this.label2);
@@ -98,6 +104,9 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(503, 209);
             this.panel2.TabIndex = 5;
+
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+
             // 
             // label2
             // 
@@ -134,6 +143,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -180,6 +190,7 @@
             this.fc.TabIndex = 0;
             this.fc.Load += new System.EventHandler(this.fc_Load);
             // 
+
             // ow_tab
             // 
             this.ow_tab.Controls.Add(this.ow);
@@ -190,6 +201,18 @@
             this.ow_tab.TabIndex = 1;
             this.ow_tab.Text = "OW";
             this.ow_tab.UseVisualStyleBackColor = true;
+
+            // TS
+            // 
+            this.TS.Controls.Add(this.ow);
+            this.TS.Location = new System.Drawing.Point(4, 22);
+            this.TS.Name = "TS";
+            this.TS.Padding = new System.Windows.Forms.Padding(3);
+            this.TS.Size = new System.Drawing.Size(864, 429);
+            this.TS.TabIndex = 1;
+            this.TS.Text = "OW";
+            this.TS.UseVisualStyleBackColor = true;
+
             // 
             // ow
             // 
@@ -197,6 +220,14 @@
             this.ow.Name = "ow";
             this.ow.Size = new System.Drawing.Size(847, 569);
             this.ow.TabIndex = 0;
+            // 
+            // lstClients
+            // 
+            this.lstClients.FormattingEnabled = true;
+            this.lstClients.Location = new System.Drawing.Point(9, 40);
+            this.lstClients.Name = "lstClients";
+            this.lstClients.Size = new System.Drawing.Size(339, 173);
+            this.lstClients.TabIndex = 7;
             // 
             // Form1
             // 
@@ -232,6 +263,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox lstClients;
 
     }
 }
