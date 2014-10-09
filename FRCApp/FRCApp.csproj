@@ -60,13 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
-    <Compile Include="efa_tab.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="efa_tab.Designer.cs">
-      <DependentUpon>efa_tab.cs</DependentUpon>
-    </Compile>
     <Compile Include="dBDataSet.cs">
       <DependentUpon>dBDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -75,7 +68,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dBDataSet.xsd</DependentUpon>
-
     </Compile>
     <Compile Include="fc_tab.cs">
       <SubType>UserControl</SubType>
@@ -103,9 +95,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="efa_tab.resx">
-      <DependentUpon>efa_tab.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fc_tab.resx">
       <DependentUpon>fc_tab.cs</DependentUpon>
     </EmbeddedResource>

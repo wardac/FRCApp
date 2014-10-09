@@ -38,29 +38,25 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.efa_tab = new System.Windows.Forms.TabPage();
-            this.efa = new FRCApp.efa_tab();
+            this.EFA = new System.Windows.Forms.TabPage();
             this.fc_tab = new System.Windows.Forms.TabPage();
             this.fc = new FRCApp.fc_tab();
-
-            this.ow_tab = new System.Windows.Forms.TabPage();
-
+            this.TS = new System.Windows.Forms.TabPage();
             this.ow = new FRCApp.ow_tab();
             this.lstClients = new System.Windows.Forms.ListBox();
             TabControl = new System.Windows.Forms.TabControl();
             TabControl.SuspendLayout();
             this.Main.SuspendLayout();
             this.fc_tab.SuspendLayout();
-            this.ow_tab.SuspendLayout();
-            this.efa_tab.SuspendLayout();
+            this.TS.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
             // 
             TabControl.Controls.Add(this.Main);
-            TabControl.Controls.Add(this.efa_tab);
+            TabControl.Controls.Add(this.EFA);
             TabControl.Controls.Add(this.fc_tab);
-            TabControl.Controls.Add(this.ow_tab);
+            TabControl.Controls.Add(this.TS);
             TabControl.Location = new System.Drawing.Point(12, 12);
             TabControl.Name = "TabControl";
             TabControl.SelectedIndex = 0;
@@ -102,9 +98,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(503, 209);
             this.panel2.TabIndex = 5;
-
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-
             // 
             // label2
             // 
@@ -159,15 +153,14 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // efa_tab
+            // EFA
             // 
-            this.efa_tab.Controls.Add(this.efa);
-            this.efa_tab.Location = new System.Drawing.Point(4, 22);
-            this.efa_tab.Name = "efa_tab";
-            this.efa_tab.Size = new System.Drawing.Size(864, 429);
-            this.efa_tab.TabIndex = 3;
-            this.efa_tab.Text = "EFA";
-            this.efa_tab.UseVisualStyleBackColor = true;
+            this.EFA.Location = new System.Drawing.Point(4, 22);
+            this.EFA.Name = "EFA";
+            this.EFA.Size = new System.Drawing.Size(864, 429);
+            this.EFA.TabIndex = 3;
+            this.EFA.Text = "EFA";
+            this.EFA.UseVisualStyleBackColor = true;
             // 
             // fc_tab
             // 
@@ -188,18 +181,16 @@
             this.fc.TabIndex = 0;
             this.fc.Load += new System.EventHandler(this.fc_Load);
             // 
-
-            // ow_tab
+            // TS
             // 
-            this.ow_tab.Controls.Add(this.ow);
-            this.ow_tab.Location = new System.Drawing.Point(4, 22);
-            this.ow_tab.Name = "ow_tab";
-            this.ow_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.ow_tab.Size = new System.Drawing.Size(864, 429);
-            this.ow_tab.TabIndex = 1;
-            this.ow_tab.Text = "OW";
-            this.ow_tab.UseVisualStyleBackColor = true;
-
+            this.TS.Controls.Add(this.ow);
+            this.TS.Location = new System.Drawing.Point(4, 22);
+            this.TS.Name = "TS";
+            this.TS.Padding = new System.Windows.Forms.Padding(3);
+            this.TS.Size = new System.Drawing.Size(864, 429);
+            this.TS.TabIndex = 1;
+            this.TS.Text = "OW";
+            this.TS.UseVisualStyleBackColor = true;
             // 
             // ow
             // 
@@ -228,7 +219,7 @@
             this.Main.ResumeLayout(false);
             this.Main.PerformLayout();
             this.fc_tab.ResumeLayout(false);
-            this.ow_tab.ResumeLayout(false);
+            this.TS.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -237,11 +228,10 @@
 
         private System.Windows.Forms.TabPage fc_tab;
         private fc_tab fc;
-        private System.Windows.Forms.TabPage ow_tab;
+        private System.Windows.Forms.TabPage TS;
         private ow_tab ow;
         private System.Windows.Forms.TabPage Main;
-        private System.Windows.Forms.TabPage efa_tab;
-        private efa_tab efa;
+        private System.Windows.Forms.TabPage EFA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;

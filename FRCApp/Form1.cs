@@ -27,10 +27,6 @@ namespace FRCApp
             nc.ShowDialog();
         }
 
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             
@@ -44,7 +40,6 @@ namespace FRCApp
 
             foreach (dBDataSet.ClientsRow r in tbl.GetClientsByLastName(textBox1.Text.Trim()))
                 lstClients.Items.Add(r.LastName + ", " + r.FirstName);
-
 
         }
     }
