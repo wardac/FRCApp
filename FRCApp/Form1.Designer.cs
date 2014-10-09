@@ -45,8 +45,6 @@
 
             this.ow_tab = new System.Windows.Forms.TabPage();
 
-            this.TS = new System.Windows.Forms.TabPage();
-
             this.ow = new FRCApp.ow_tab();
             this.lstClients = new System.Windows.Forms.ListBox();
             TabControl = new System.Windows.Forms.TabControl();
@@ -201,17 +199,6 @@
             this.ow_tab.TabIndex = 1;
             this.ow_tab.Text = "OW";
             this.ow_tab.UseVisualStyleBackColor = true;
-
-            // TS
-            // 
-            this.TS.Controls.Add(this.ow);
-            this.TS.Location = new System.Drawing.Point(4, 22);
-            this.TS.Name = "TS";
-            this.TS.Padding = new System.Windows.Forms.Padding(3);
-            this.TS.Size = new System.Drawing.Size(864, 429);
-            this.TS.TabIndex = 1;
-            this.TS.Text = "OW";
-            this.TS.UseVisualStyleBackColor = true;
 
             // 
             // ow
