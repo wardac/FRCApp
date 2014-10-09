@@ -30,19 +30,20 @@
         {
             System.Windows.Forms.TabControl TabControl;
             this.Main = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.EFA = new System.Windows.Forms.TabPage();
             this.fc_tab = new System.Windows.Forms.TabPage();
-            this.TS = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.fc = new FRCApp.fc_tab();
+            this.TS = new System.Windows.Forms.TabPage();
             this.ow = new FRCApp.ow_tab();
+            this.lstClients = new System.Windows.Forms.ListBox();
             TabControl = new System.Windows.Forms.TabControl();
             TabControl.SuspendLayout();
             this.Main.SuspendLayout();
@@ -64,6 +65,7 @@
             // 
             // Main
             // 
+            this.Main.Controls.Add(this.lstClients);
             this.Main.Controls.Add(this.label3);
             this.Main.Controls.Add(this.panel2);
             this.Main.Controls.Add(this.label2);
@@ -79,6 +81,41 @@
             this.Main.TabIndex = 0;
             this.Main.Text = "Main";
             this.Main.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(354, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Client Details";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(355, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(503, 209);
+            this.panel2.TabIndex = 5;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 225);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Case History";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(7, 241);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(851, 182);
+            this.panel1.TabIndex = 4;
             // 
             // button2
             // 
@@ -98,6 +135,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -135,6 +173,14 @@
             this.fc_tab.Text = "FC";
             this.fc_tab.UseVisualStyleBackColor = true;
             // 
+            // fc
+            // 
+            this.fc.Location = new System.Drawing.Point(0, 0);
+            this.fc.Name = "fc";
+            this.fc.Size = new System.Drawing.Size(745, 529);
+            this.fc.TabIndex = 0;
+            this.fc.Load += new System.EventHandler(this.fc_Load);
+            // 
             // TS
             // 
             this.TS.Controls.Add(this.ow);
@@ -146,54 +192,20 @@
             this.TS.Text = "OW";
             this.TS.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(7, 241);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(851, 182);
-            this.panel1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 225);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Case History";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(355, 26);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(503, 209);
-            this.panel2.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(354, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Client Details";
-            // 
-            // fc
-            // 
-            this.fc.Location = new System.Drawing.Point(0, 0);
-            this.fc.Name = "fc";
-            this.fc.Size = new System.Drawing.Size(745, 529);
-            this.fc.TabIndex = 0;
-            this.fc.Load += new System.EventHandler(this.fc_Load);
-            // 
             // ow
             // 
             this.ow.Location = new System.Drawing.Point(0, 0);
             this.ow.Name = "ow";
             this.ow.Size = new System.Drawing.Size(847, 569);
             this.ow.TabIndex = 0;
+            // 
+            // lstClients
+            // 
+            this.lstClients.FormattingEnabled = true;
+            this.lstClients.Location = new System.Drawing.Point(9, 40);
+            this.lstClients.Name = "lstClients";
+            this.lstClients.Size = new System.Drawing.Size(339, 173);
+            this.lstClients.TabIndex = 7;
             // 
             // Form1
             // 
@@ -228,6 +240,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox lstClients;
 
     }
 }

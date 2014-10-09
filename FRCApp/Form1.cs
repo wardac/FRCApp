@@ -26,5 +26,21 @@ namespace FRCApp
             NewClient nc = new NewClient();
             nc.ShowDialog();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            lstClients.Items.Clear();
+            dBDataSetTableAdapters.ClientsTableAdapter tbl = new dBDataSetTableAdapters.ClientsTableAdapter();
+
+            foreach (dBDataSet.ClientsRow r in tbl.GetClientsByLastName(textBox1.Text.Trim()))
+                lstClients.Items.Add(r.LastName + ", " + r.FirstName);
+
+        }
     }
 }
