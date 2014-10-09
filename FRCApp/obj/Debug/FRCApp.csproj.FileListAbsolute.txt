@@ -53,3 +53,16 @@ C:\Users\Mark\kuczmama Drive\senior year\Capstone\FRCApp\FRCApp\obj\Debug\FRCApp
 C:\Users\Mark\kuczmama Drive\senior year\Capstone\FRCApp\FRCApp\obj\Debug\FRCApp.csproj.GenerateResource.Cache
 C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.fc_tab.resources
 C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.NewClient.resources
+M:\capstone\FRCApp\FRCApp\bin\Debug\FRCApp.exe.config
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.exe
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.pdb
+M:\capstone\FRCApp\FRCApp\bin\Debug\FRCApp.exe
+M:\capstone\FRCApp\FRCApp\bin\Debug\FRCApp.pdb
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.csprojResolveAssemblyReference.cache
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.fc_tab.resources
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.Form1.resources
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.NewClient.resources
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.ow_tab.resources
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.Properties.Resources.resources
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.csproj.GenerateResource.Cache
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.efa_tab.resources

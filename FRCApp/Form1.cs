@@ -26,5 +26,10 @@ namespace FRCApp
             NewClient nc = new NewClient();
             nc.ShowDialog();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
