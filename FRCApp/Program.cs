@@ -16,7 +16,9 @@ namespace FRCApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            loginForm login = new loginForm();
+            login.Show();
+            Application.Run();
         }
     }
 }

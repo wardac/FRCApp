@@ -28,279 +28,254 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ow_dob_label = new System.Windows.Forms.Label();
-            this.bdate = new System.Windows.Forms.DateTimePicker();
-            this.cancel = new System.Windows.Forms.Button();
-            this.save = new System.Windows.Forms.Button();
-            this.lstcontact = new System.Windows.Forms.Label();
-            this.lastcontact = new System.Windows.Forms.DateTimePicker();
-            this.email = new System.Windows.Forms.TextBox();
-            this.lblmail = new System.Windows.Forms.Label();
-            this.telnum = new System.Windows.Forms.TextBox();
-            this.owpanel = new System.Windows.Forms.Panel();
-            this.lblnumber = new System.Windows.Forms.Label();
-            this.ow_state_combobox = new System.Windows.Forms.ComboBox();
-            this.ow_state_label = new System.Windows.Forms.Label();
-            this.city = new System.Windows.Forms.TextBox();
-            this.ow_city_label = new System.Windows.Forms.Label();
-            this.zip = new System.Windows.Forms.TextBox();
-            this.ow_zip_label = new System.Windows.Forms.Label();
-            this.address = new System.Windows.Forms.TextBox();
-            this.txtlname = new System.Windows.Forms.TextBox();
-            this.txtname = new System.Windows.Forms.TextBox();
-            this.ow_address_label = new System.Windows.Forms.Label();
-            this.ow_last_name_label = new System.Windows.Forms.Label();
-            this.ow_first_name_label = new System.Windows.Forms.Label();
-            this.owpanel.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ow_tab));
+            this.Contactpanel = new System.Windows.Forms.Panel();
+            this.lstdateContact = new System.Windows.Forms.DateTimePicker();
+            this.lblLastContact = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtemail = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtphone2 = new System.Windows.Forms.TextBox();
+            this.txtphone1 = new System.Windows.Forms.TextBox();
+            this.txtzip = new System.Windows.Forms.TextBox();
+            this.txtstate = new System.Windows.Forms.TextBox();
+            this.txtcity = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.phone = new System.Windows.Forms.PictureBox();
+            this.lblzip = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
+            this.lblcity = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblname = new System.Windows.Forms.Label();
+            this.Contactpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phone)).BeginInit();
             this.SuspendLayout();
             // 
-            // ow_dob_label
+            // Contactpanel
             // 
-            this.ow_dob_label.AutoSize = true;
-            this.ow_dob_label.Location = new System.Drawing.Point(21, 84);
-            this.ow_dob_label.Name = "ow_dob_label";
-            this.ow_dob_label.Size = new System.Drawing.Size(63, 13);
-            this.ow_dob_label.TabIndex = 22;
-            this.ow_dob_label.Text = "date of birth";
+            this.Contactpanel.Controls.Add(this.lstdateContact);
+            this.Contactpanel.Controls.Add(this.lblLastContact);
+            this.Contactpanel.Controls.Add(this.textBox2);
+            this.Contactpanel.Controls.Add(this.textBox1);
+            this.Contactpanel.Controls.Add(this.txtemail);
+            this.Contactpanel.Controls.Add(this.pictureBox2);
+            this.Contactpanel.Controls.Add(this.txtphone2);
+            this.Contactpanel.Controls.Add(this.txtphone1);
+            this.Contactpanel.Controls.Add(this.txtzip);
+            this.Contactpanel.Controls.Add(this.txtstate);
+            this.Contactpanel.Controls.Add(this.txtcity);
+            this.Contactpanel.Controls.Add(this.pictureBox1);
+            this.Contactpanel.Controls.Add(this.phone);
+            this.Contactpanel.Controls.Add(this.lblzip);
+            this.Contactpanel.Controls.Add(this.lblState);
+            this.Contactpanel.Controls.Add(this.lblcity);
+            this.Contactpanel.Controls.Add(this.lblAddress);
+            this.Contactpanel.Controls.Add(this.lblname);
+            this.Contactpanel.Location = new System.Drawing.Point(15, 26);
+            this.Contactpanel.Name = "Contactpanel";
+            this.Contactpanel.Size = new System.Drawing.Size(397, 225);
+            this.Contactpanel.TabIndex = 1;
             // 
-            // bdate
+            // lstdateContact
             // 
-            this.bdate.Location = new System.Drawing.Point(106, 78);
-            this.bdate.Name = "bdate";
-            this.bdate.Size = new System.Drawing.Size(174, 20);
-            this.bdate.TabIndex = 21;
+            this.lstdateContact.Location = new System.Drawing.Point(265, 34);
+            this.lstdateContact.Name = "lstdateContact";
+            this.lstdateContact.Size = new System.Drawing.Size(122, 20);
+            this.lstdateContact.TabIndex = 17;
             // 
-            // cancel
+            // lblLastContact
             // 
-            this.cancel.Location = new System.Drawing.Point(229, 313);
-            this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(75, 23);
-            this.cancel.TabIndex = 20;
-            this.cancel.Text = "cancel";
-            this.cancel.UseVisualStyleBackColor = true;
-            this.cancel.Click += new System.EventHandler(this.cancel_Click);
+            this.lblLastContact.AutoSize = true;
+            this.lblLastContact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastContact.Location = new System.Drawing.Point(267, 10);
+            this.lblLastContact.Name = "lblLastContact";
+            this.lblLastContact.Size = new System.Drawing.Size(105, 12);
+            this.lblLastContact.TabIndex = 16;
+            this.lblLastContact.Text = "Last Contact Date";
             // 
-            // save
+            // textBox2
             // 
-            this.save.Location = new System.Drawing.Point(137, 313);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(75, 23);
-            this.save.TabIndex = 19;
-            this.save.Text = "save";
-            this.save.UseVisualStyleBackColor = true;
-            this.save.Click += new System.EventHandler(this.save_Click);
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(55, 34);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(203, 36);
+            this.textBox2.TabIndex = 15;
             // 
-            // lstcontact
+            // textBox1
             // 
-            this.lstcontact.AutoSize = true;
-            this.lstcontact.Location = new System.Drawing.Point(310, 59);
-            this.lstcontact.Name = "lstcontact";
-            this.lstcontact.Size = new System.Drawing.Size(92, 13);
-            this.lstcontact.TabIndex = 18;
-            this.lstcontact.Text = "last contacted on:";
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(55, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(203, 20);
+            this.textBox1.TabIndex = 14;
             // 
-            // lastcontact
+            // txtemail
             // 
-            this.lastcontact.Location = new System.Drawing.Point(313, 75);
-            this.lastcontact.Name = "lastcontact";
-            this.lastcontact.Size = new System.Drawing.Size(193, 20);
-            this.lastcontact.TabIndex = 17;
+            this.txtemail.Enabled = false;
+            this.txtemail.Location = new System.Drawing.Point(57, 185);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(129, 20);
+            this.txtemail.TabIndex = 13;
             // 
-            // email
+            // pictureBox2
             // 
-            this.email.Location = new System.Drawing.Point(106, 287);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(124, 20);
-            this.email.TabIndex = 16;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 185);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(44, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
             // 
-            // lblmail
+            // txtphone2
             // 
-            this.lblmail.AutoSize = true;
-            this.lblmail.Location = new System.Drawing.Point(21, 287);
-            this.lblmail.Name = "lblmail";
-            this.lblmail.Size = new System.Drawing.Size(25, 13);
-            this.lblmail.TabIndex = 15;
-            this.lblmail.Text = "mail";
+            this.txtphone2.Enabled = false;
+            this.txtphone2.Location = new System.Drawing.Point(57, 150);
+            this.txtphone2.Name = "txtphone2";
+            this.txtphone2.Size = new System.Drawing.Size(129, 20);
+            this.txtphone2.TabIndex = 11;
             // 
-            // telnum
+            // txtphone1
             // 
-            this.telnum.Location = new System.Drawing.Point(106, 261);
-            this.telnum.Name = "telnum";
-            this.telnum.Size = new System.Drawing.Size(124, 20);
-            this.telnum.TabIndex = 14;
+            this.txtphone1.Enabled = false;
+            this.txtphone1.Location = new System.Drawing.Point(55, 115);
+            this.txtphone1.Name = "txtphone1";
+            this.txtphone1.Size = new System.Drawing.Size(129, 20);
+            this.txtphone1.TabIndex = 10;
             // 
-            // owpanel
+            // txtzip
             // 
-            this.owpanel.Controls.Add(this.ow_dob_label);
-            this.owpanel.Controls.Add(this.bdate);
-            this.owpanel.Controls.Add(this.cancel);
-            this.owpanel.Controls.Add(this.save);
-            this.owpanel.Controls.Add(this.lstcontact);
-            this.owpanel.Controls.Add(this.lastcontact);
-            this.owpanel.Controls.Add(this.email);
-            this.owpanel.Controls.Add(this.lblmail);
-            this.owpanel.Controls.Add(this.telnum);
-            this.owpanel.Controls.Add(this.lblnumber);
-            this.owpanel.Controls.Add(this.ow_state_combobox);
-            this.owpanel.Controls.Add(this.ow_state_label);
-            this.owpanel.Controls.Add(this.city);
-            this.owpanel.Controls.Add(this.ow_city_label);
-            this.owpanel.Controls.Add(this.zip);
-            this.owpanel.Controls.Add(this.ow_zip_label);
-            this.owpanel.Controls.Add(this.address);
-            this.owpanel.Controls.Add(this.txtlname);
-            this.owpanel.Controls.Add(this.txtname);
-            this.owpanel.Controls.Add(this.ow_address_label);
-            this.owpanel.Controls.Add(this.ow_last_name_label);
-            this.owpanel.Controls.Add(this.ow_first_name_label);
-            this.owpanel.Location = new System.Drawing.Point(3, 3);
-            this.owpanel.Name = "owpanel";
-            this.owpanel.Size = new System.Drawing.Size(549, 379);
-            this.owpanel.TabIndex = 1;
+            this.txtzip.Enabled = false;
+            this.txtzip.Location = new System.Drawing.Point(200, 89);
+            this.txtzip.Name = "txtzip";
+            this.txtzip.Size = new System.Drawing.Size(48, 20);
+            this.txtzip.TabIndex = 9;
             // 
-            // lblnumber
+            // txtstate
             // 
-            this.lblnumber.AutoSize = true;
-            this.lblnumber.Location = new System.Drawing.Point(21, 261);
-            this.lblnumber.Name = "lblnumber";
-            this.lblnumber.Size = new System.Drawing.Size(41, 13);
-            this.lblnumber.TabIndex = 13;
-            this.lblnumber.Text = "tel num";
+            this.txtstate.Enabled = false;
+            this.txtstate.Location = new System.Drawing.Point(154, 87);
+            this.txtstate.Name = "txtstate";
+            this.txtstate.Size = new System.Drawing.Size(32, 20);
+            this.txtstate.TabIndex = 8;
             // 
-            // ow_state_combobox
+            // txtcity
             // 
-            this.ow_state_combobox.FormattingEnabled = true;
-            this.ow_state_combobox.Location = new System.Drawing.Point(106, 220);
-            this.ow_state_combobox.Name = "ow_state_combobox";
-            this.ow_state_combobox.Size = new System.Drawing.Size(46, 21);
-            this.ow_state_combobox.TabIndex = 12;
+            this.txtcity.Enabled = false;
+            this.txtcity.Location = new System.Drawing.Point(5, 87);
+            this.txtcity.Name = "txtcity";
+            this.txtcity.Size = new System.Drawing.Size(129, 20);
+            this.txtcity.TabIndex = 7;
             // 
-            // ow_state_label
+            // pictureBox1
             // 
-            this.ow_state_label.AutoSize = true;
-            this.ow_state_label.Location = new System.Drawing.Point(21, 228);
-            this.ow_state_label.Name = "ow_state_label";
-            this.ow_state_label.Size = new System.Drawing.Size(30, 13);
-            this.ow_state_label.TabIndex = 9;
-            this.ow_state_label.Text = "state";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(5, 150);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(44, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
-            // city
+            // phone
             // 
-            this.city.Location = new System.Drawing.Point(106, 147);
-            this.city.Name = "city";
-            this.city.Size = new System.Drawing.Size(174, 20);
-            this.city.TabIndex = 8;
+            this.phone.Image = ((System.Drawing.Image)(resources.GetObject("phone.Image")));
+            this.phone.Location = new System.Drawing.Point(5, 113);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(44, 31);
+            this.phone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.phone.TabIndex = 5;
+            this.phone.TabStop = false;
             // 
-            // ow_city_label
+            // lblzip
             // 
-            this.ow_city_label.AutoSize = true;
-            this.ow_city_label.Location = new System.Drawing.Point(21, 147);
-            this.ow_city_label.Name = "ow_city_label";
-            this.ow_city_label.Size = new System.Drawing.Size(23, 13);
-            this.ow_city_label.TabIndex = 7;
-            this.ow_city_label.Text = "city";
+            this.lblzip.AutoSize = true;
+            this.lblzip.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblzip.Location = new System.Drawing.Point(212, 73);
+            this.lblzip.Name = "lblzip";
+            this.lblzip.Size = new System.Drawing.Size(21, 12);
+            this.lblzip.TabIndex = 4;
+            this.lblzip.Text = "zip";
             // 
-            // zip
+            // lblState
             // 
-            this.zip.Location = new System.Drawing.Point(106, 192);
-            this.zip.Name = "zip";
-            this.zip.Size = new System.Drawing.Size(65, 20);
-            this.zip.TabIndex = 6;
+            this.lblState.AutoSize = true;
+            this.lblState.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblState.Location = new System.Drawing.Point(156, 73);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(33, 12);
+            this.lblState.TabIndex = 3;
+            this.lblState.Text = "state";
             // 
-            // ow_zip_label
+            // lblcity
             // 
-            this.ow_zip_label.AutoSize = true;
-            this.ow_zip_label.Location = new System.Drawing.Point(21, 192);
-            this.ow_zip_label.Name = "ow_zip_label";
-            this.ow_zip_label.Size = new System.Drawing.Size(20, 13);
-            this.ow_zip_label.TabIndex = 5;
-            this.ow_zip_label.Text = "zip";
+            this.lblcity.AutoSize = true;
+            this.lblcity.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcity.Location = new System.Drawing.Point(4, 73);
+            this.lblcity.Name = "lblcity";
+            this.lblcity.Size = new System.Drawing.Size(25, 12);
+            this.lblcity.TabIndex = 2;
+            this.lblcity.Text = "city";
             // 
-            // address
+            // lblAddress
             // 
-            this.address.Location = new System.Drawing.Point(106, 120);
-            this.address.Multiline = true;
-            this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(174, 21);
-            this.address.TabIndex = 4;
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(4, 34);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(51, 12);
+            this.lblAddress.TabIndex = 1;
+            this.lblAddress.Text = "Address";
             // 
-            // txtlname
+            // lblname
             // 
-            this.txtlname.Location = new System.Drawing.Point(106, 52);
-            this.txtlname.Name = "txtlname";
-            this.txtlname.Size = new System.Drawing.Size(174, 20);
-            this.txtlname.TabIndex = 3;
-            // 
-            // txtname
-            // 
-            this.txtname.Location = new System.Drawing.Point(106, 25);
-            this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(174, 20);
-            this.txtname.TabIndex = 1;
-            this.txtname.TextChanged += new System.EventHandler(this.txtname_TextChanged);
-            // 
-            // ow_address_label
-            // 
-            this.ow_address_label.AutoSize = true;
-            this.ow_address_label.Location = new System.Drawing.Point(21, 120);
-            this.ow_address_label.Name = "ow_address_label";
-            this.ow_address_label.Size = new System.Drawing.Size(47, 13);
-            this.ow_address_label.TabIndex = 2;
-            this.ow_address_label.Text = "address:";
-            // 
-            // ow_last_name_label
-            // 
-            this.ow_last_name_label.AutoSize = true;
-            this.ow_last_name_label.Location = new System.Drawing.Point(21, 59);
-            this.ow_last_name_label.Name = "ow_last_name_label";
-            this.ow_last_name_label.Size = new System.Drawing.Size(52, 13);
-            this.ow_last_name_label.TabIndex = 1;
-            this.ow_last_name_label.Text = "last name";
-            // 
-            // ow_first_name_label
-            // 
-            this.ow_first_name_label.AutoSize = true;
-            this.ow_first_name_label.Location = new System.Drawing.Point(21, 25);
-            this.ow_first_name_label.Name = "ow_first_name_label";
-            this.ow_first_name_label.Size = new System.Drawing.Size(52, 13);
-            this.ow_first_name_label.TabIndex = 0;
-            this.ow_first_name_label.Text = "first name";
+            this.lblname.AutoSize = true;
+            this.lblname.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblname.Location = new System.Drawing.Point(4, 6);
+            this.lblname.Name = "lblname";
+            this.lblname.Size = new System.Drawing.Size(37, 12);
+            this.lblname.TabIndex = 0;
+            this.lblname.Text = "Name";
             // 
             // ow_tab
             // 
-            this.Controls.Add(this.owpanel);
+            this.Controls.Add(this.Contactpanel);
             this.Name = "ow_tab";
-            this.Size = new System.Drawing.Size(847, 569);
-            this.owpanel.ResumeLayout(false);
-            this.owpanel.PerformLayout();
+            this.Size = new System.Drawing.Size(985, 595);
+            this.Contactpanel.ResumeLayout(false);
+            this.Contactpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phone)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label ow_dob_label;
-        private System.Windows.Forms.DateTimePicker bdate;
-        private System.Windows.Forms.Button cancel;
-        private System.Windows.Forms.Button save;
-        private System.Windows.Forms.Label lstcontact;
-        private System.Windows.Forms.DateTimePicker lastcontact;
-        private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.Label lblmail;
-        private System.Windows.Forms.TextBox telnum;
-        private System.Windows.Forms.Panel owpanel;
-        private System.Windows.Forms.Label lblnumber;
-        private System.Windows.Forms.ComboBox ow_state_combobox;
-        private System.Windows.Forms.Label ow_state_label;
-        private System.Windows.Forms.TextBox city;
-        private System.Windows.Forms.Label ow_city_label;
-        private System.Windows.Forms.TextBox zip;
-        private System.Windows.Forms.Label ow_zip_label;
-        private System.Windows.Forms.TextBox address;
-        private System.Windows.Forms.TextBox txtlname;
-        private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.Label ow_address_label;
-        private System.Windows.Forms.Label ow_last_name_label;
-        private System.Windows.Forms.Label ow_first_name_label;
+        private System.Windows.Forms.Panel Contactpanel;
+        private System.Windows.Forms.DateTimePicker lstdateContact;
+        private System.Windows.Forms.Label lblLastContact;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtemail;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txtphone2;
+        private System.Windows.Forms.TextBox txtphone1;
+        private System.Windows.Forms.TextBox txtzip;
+        private System.Windows.Forms.TextBox txtstate;
+        private System.Windows.Forms.TextBox txtcity;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox phone;
+        private System.Windows.Forms.Label lblzip;
+        private System.Windows.Forms.Label lblState;
+        private System.Windows.Forms.Label lblcity;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblname;
+
     }
 }

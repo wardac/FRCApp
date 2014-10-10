@@ -46,7 +46,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
@@ -69,6 +75,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="efaRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="efaRequestForm.Designer.cs">
+      <DependentUpon>efaRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="efa_tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="efa_tab.Designer.cs">
+      <DependentUpon>efa_tab.cs</DependentUpon>
+    </Compile>
     <Compile Include="fc_tab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -80,6 +98,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginForm.Designer.cs">
+      <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NewClient.cs">
       <SubType>Form</SubType>
@@ -95,11 +119,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="efaRequestForm.resx">
+      <DependentUpon>efaRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="efa_tab.resx">
+      <DependentUpon>efa_tab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fc_tab.resx">
       <DependentUpon>fc_tab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginForm.resx">
+      <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewClient.resx">
       <DependentUpon>NewClient.cs</DependentUpon>

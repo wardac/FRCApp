@@ -29,7 +29,7 @@ namespace FRCApp
 
         private void cancel_Click(object sender, EventArgs e)
         {
-            clear(this.owpanel);
+            clear(this.Contactpanel);
         }
         private void clear(Control cont)
         { 
