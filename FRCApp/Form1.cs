@@ -36,10 +36,6 @@ namespace FRCApp
         {
 
             lstClients.Items.Clear();
-            dBDataSetTableAdapters.ClientsTableAdapter tbl = new dBDataSetTableAdapters.ClientsTableAdapter();
-
-            foreach (dBDataSet.ClientsRow r in tbl.GetClientsByLastName(textBox1.Text.Trim()))
-                lstClients.Items.Add(r.LastName + ", " + r.FirstName);
 
         }
 
