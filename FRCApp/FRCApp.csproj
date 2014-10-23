@@ -66,15 +66,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dBDataSet.cs">
-      <DependentUpon>dBDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="dBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="efaRequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +90,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HouseHoldForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HouseHoldForm.Designer.cs">
+      <DependentUpon>HouseHoldForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,14 +114,9 @@
     <Compile Include="ow_tab.Designer.cs">
       <DependentUpon>ow_tab.cs</DependentUpon>
     </Compile>
+    <Compile Include="PinkSheetHouseHoldInformation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="requestStatusform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="requestStatusform.Designer.cs">
-      <DependentUpon>requestStatusform.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="efaRequestForm.resx">
       <DependentUpon>efaRequestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HouseHoldForm.resx">
+      <DependentUpon>HouseHoldForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
@@ -155,20 +150,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="requestStatusform.resx">
-      <DependentUpon>requestStatusform.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="dBDataSet.xsc">
-      <DependentUpon>dBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="dBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dBDataSet.xss">
-      <DependentUpon>dBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
