@@ -64,3 +64,6 @@ M:\frc\FRCApp\FRCApp\obj\Debug\FRCApp.pdb
 C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.efaRequestForm.resources
 C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.efa_tab.resources
 C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.loginForm.resources
+C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\bin\Debug\FRCApp.exe.config
+C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\obj\Debug\FRCApp.exe
+C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\obj\Debug\FRCApp.pdb

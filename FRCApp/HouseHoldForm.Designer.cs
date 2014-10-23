@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.title = new System.Windows.Forms.Panel();
-            this.barriersToSubtypesTableAdapter1 = new FRCApp.dBDataSetTableAdapters.BarriersToSubtypesTableAdapter();
             this.HouseHoldFormTitle = new System.Windows.Forms.Label();
             this.HouseHoldSubmitAdd = new System.Windows.Forms.Button();
             this.HouseHoldFormBirthDate = new System.Windows.Forms.Label();
@@ -79,7 +78,7 @@
             // 
             // barriersToSubtypesTableAdapter1
             // 
-            this.barriersToSubtypesTableAdapter1.ClearBeforeFill = true;
+           // this.barriersToSubtypesTableAdapter1.ClearBeforeFill = true;
             // 
             // HouseHoldFormTitle
             // 
@@ -278,7 +277,7 @@
         #endregion
 
         private System.Windows.Forms.Panel title;
-        private dBDataSetTableAdapters.BarriersToSubtypesTableAdapter barriersToSubtypesTableAdapter1;
+        //private dBDataSetTableAdapters.BarriersToSubtypesTableAdapter barriersToSubtypesTableAdapter1;
         private System.Windows.Forms.Button HouseHoldSubmitAdd;
         private System.Windows.Forms.Label HouseHoldFormTitle;
         private System.Windows.Forms.Label HouseHoldFormBirthDate;
