@@ -99,6 +99,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HouseHoldForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HouseHoldForm.Designer.cs">
+      <DependentUpon>HouseHoldForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,7 @@
     <Compile Include="ow_tab.Designer.cs">
       <DependentUpon>ow_tab.cs</DependentUpon>
     </Compile>
+    <Compile Include="PinkSheetHouseHoldInformation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="efaRequestForm.resx">
@@ -130,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HouseHoldForm.resx">
+      <DependentUpon>HouseHoldForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
