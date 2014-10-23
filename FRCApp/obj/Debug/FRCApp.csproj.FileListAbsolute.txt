@@ -61,6 +61,7 @@ M:\frc\FRCApp\FRCApp\obj\Debug\FRCApp.Properties.Resources.resources
 M:\frc\FRCApp\FRCApp\obj\Debug\FRCApp.csproj.GenerateResource.Cache
 M:\frc\FRCApp\FRCApp\obj\Debug\FRCApp.exe
 M:\frc\FRCApp\FRCApp\obj\Debug\FRCApp.pdb
+<<<<<<< HEAD
 C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\bin\Debug\FRCApp.exe.config
 C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\obj\Debug\FRCApp.exe
 C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\obj\Debug\FRCApp.pdb
@@ -79,3 +80,8 @@ C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\obj\Debug\FRCApp.NewClient.resources
 C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\obj\Debug\FRCApp.ow_tab.resources
 C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\obj\Debug\FRCApp.Properties.Resources.resources
 C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\obj\Debug\FRCApp.csproj.GenerateResource.Cache
+=======
+C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.efaRequestForm.resources
+C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.efa_tab.resources
+C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.loginForm.resources
+>>>>>>> 6466c33ea6f5e58e5b306bffa5aa78cfe2c22c4b
