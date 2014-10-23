@@ -119,6 +119,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="requestStatusform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="requestStatusform.Designer.cs">
+      <DependentUpon>requestStatusform.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="efaRequestForm.resx">
       <DependentUpon>efaRequestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +155,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="requestStatusform.resx">
+      <DependentUpon>requestStatusform.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="dBDataSet.xsc">
       <DependentUpon>dBDataSet.xsd</DependentUpon>
     </None>

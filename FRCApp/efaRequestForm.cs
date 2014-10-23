@@ -49,5 +49,10 @@ namespace FRCApp
             assistancedate.Visible = true;
             assistancedate.Value = DateTime.Today.Date;
         }
+
+        private void chkother_CheckedChanged(object sender, EventArgs e)
+        {
+            txtother.Visible = true;
+        }
     }
 }
