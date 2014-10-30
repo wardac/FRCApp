@@ -58,6 +58,38 @@
             this.fullTime_checkBox = new System.Windows.Forms.CheckBox();
             this.partTime_checkBox = new System.Windows.Forms.CheckBox();
             this.unemployed_checkBox = new System.Windows.Forms.CheckBox();
+            this.referral_label = new System.Windows.Forms.Label();
+            this.foodStamps_checkBox = new System.Windows.Forms.CheckBox();
+            this.gcpolp_checkBox = new System.Windows.Forms.CheckBox();
+            this.lifelineInternet_checkBox = new System.Windows.Forms.CheckBox();
+            this.medicaid_checkBox = new System.Windows.Forms.CheckBox();
+            this.cashAssistance_checkBox = new System.Windows.Forms.CheckBox();
+            this.freeTaxPreparation_checkBox = new System.Windows.Forms.CheckBox();
+            this.eyeExam_checkBox = new System.Windows.Forms.CheckBox();
+            this.homeRepairs_checkBox = new System.Windows.Forms.CheckBox();
+            this.FederalUtilityAssistance_checkBox = new System.Windows.Forms.CheckBox();
+            this.freeHealthCareClinic_checkBox = new System.Windows.Forms.CheckBox();
+            this.seniorCitizen_checkBox = new System.Windows.Forms.CheckBox();
+            this.habitatForHumanity_checkBox = new System.Windows.Forms.CheckBox();
+            this.immunizations_checkBox = new System.Windows.Forms.CheckBox();
+            this.futureGoals_label = new System.Windows.Forms.Label();
+            this.gedClasses_checkBox = new System.Windows.Forms.CheckBox();
+            this.employmentAssistance_checkBox = new System.Windows.Forms.CheckBox();
+            this.gardening_checkBox = new System.Windows.Forms.CheckBox();
+            this.financialCoaching_checkBox = new System.Windows.Forms.CheckBox();
+            this.breakingPoverty_checkBox = new System.Windows.Forms.CheckBox();
+            this.esol_checkBox = new System.Windows.Forms.CheckBox();
+            this.smokingCessation_checkBox = new System.Windows.Forms.CheckBox();
+            this.nutritionalPlanning_checkBox = new System.Windows.Forms.CheckBox();
+            this.selfConfidence_checkBox = new System.Windows.Forms.CheckBox();
+            this.summerCamp_checkBox = new System.Windows.Forms.CheckBox();
+            this.other_checkBox = new System.Windows.Forms.CheckBox();
+            this.other_textBox = new System.Windows.Forms.TextBox();
+            this.householdInfo_button = new System.Windows.Forms.Button();
+            this.monthlyExpenses_button = new System.Windows.Forms.Button();
+            this.emergencyFunds_button = new System.Windows.Forms.Button();
+            this.householdIncome_button = new System.Windows.Forms.Button();
+            this.submit_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lastName_label
@@ -370,11 +402,353 @@
             this.unemployed_checkBox.Text = "Unemployed";
             this.unemployed_checkBox.UseVisualStyleBackColor = true;
             // 
+            // referral_label
+            // 
+            this.referral_label.AutoSize = true;
+            this.referral_label.Location = new System.Drawing.Point(18, 406);
+            this.referral_label.Name = "referral_label";
+            this.referral_label.Size = new System.Drawing.Size(93, 13);
+            this.referral_label.TabIndex = 43;
+            this.referral_label.Text = "Referrals Needed:";
+            // 
+            // foodStamps_checkBox
+            // 
+            this.foodStamps_checkBox.AutoSize = true;
+            this.foodStamps_checkBox.Location = new System.Drawing.Point(30, 436);
+            this.foodStamps_checkBox.Name = "foodStamps_checkBox";
+            this.foodStamps_checkBox.Size = new System.Drawing.Size(88, 17);
+            this.foodStamps_checkBox.TabIndex = 44;
+            this.foodStamps_checkBox.Text = "Food Stamps";
+            this.foodStamps_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // gcpolp_checkBox
+            // 
+            this.gcpolp_checkBox.AutoSize = true;
+            this.gcpolp_checkBox.Location = new System.Drawing.Point(125, 436);
+            this.gcpolp_checkBox.Name = "gcpolp_checkBox";
+            this.gcpolp_checkBox.Size = new System.Drawing.Size(220, 17);
+            this.gcpolp_checkBox.TabIndex = 45;
+            this.gcpolp_checkBox.Text = "Government Cell Phone or Lifeline Phone";
+            this.gcpolp_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // lifelineInternet_checkBox
+            // 
+            this.lifelineInternet_checkBox.AutoSize = true;
+            this.lifelineInternet_checkBox.Location = new System.Drawing.Point(352, 436);
+            this.lifelineInternet_checkBox.Name = "lifelineInternet_checkBox";
+            this.lifelineInternet_checkBox.Size = new System.Drawing.Size(98, 17);
+            this.lifelineInternet_checkBox.TabIndex = 46;
+            this.lifelineInternet_checkBox.Text = "Lifeline Internet";
+            this.lifelineInternet_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // medicaid_checkBox
+            // 
+            this.medicaid_checkBox.AutoSize = true;
+            this.medicaid_checkBox.Location = new System.Drawing.Point(457, 436);
+            this.medicaid_checkBox.Name = "medicaid_checkBox";
+            this.medicaid_checkBox.Size = new System.Drawing.Size(69, 17);
+            this.medicaid_checkBox.TabIndex = 47;
+            this.medicaid_checkBox.Text = "Medicaid";
+            this.medicaid_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // cashAssistance_checkBox
+            // 
+            this.cashAssistance_checkBox.AutoSize = true;
+            this.cashAssistance_checkBox.Location = new System.Drawing.Point(30, 466);
+            this.cashAssistance_checkBox.Name = "cashAssistance_checkBox";
+            this.cashAssistance_checkBox.Size = new System.Drawing.Size(104, 17);
+            this.cashAssistance_checkBox.TabIndex = 48;
+            this.cashAssistance_checkBox.Text = "Cash Assistance";
+            this.cashAssistance_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // freeTaxPreparation_checkBox
+            // 
+            this.freeTaxPreparation_checkBox.AutoSize = true;
+            this.freeTaxPreparation_checkBox.Location = new System.Drawing.Point(141, 466);
+            this.freeTaxPreparation_checkBox.Name = "freeTaxPreparation_checkBox";
+            this.freeTaxPreparation_checkBox.Size = new System.Drawing.Size(125, 17);
+            this.freeTaxPreparation_checkBox.TabIndex = 49;
+            this.freeTaxPreparation_checkBox.Text = "Free Tax Preparation";
+            this.freeTaxPreparation_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // eyeExam_checkBox
+            // 
+            this.eyeExam_checkBox.AutoSize = true;
+            this.eyeExam_checkBox.Location = new System.Drawing.Point(273, 466);
+            this.eyeExam_checkBox.Name = "eyeExam_checkBox";
+            this.eyeExam_checkBox.Size = new System.Drawing.Size(112, 17);
+            this.eyeExam_checkBox.TabIndex = 50;
+            this.eyeExam_checkBox.Text = "Eye exam/glasses";
+            this.eyeExam_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // homeRepairs_checkBox
+            // 
+            this.homeRepairs_checkBox.AutoSize = true;
+            this.homeRepairs_checkBox.Location = new System.Drawing.Point(392, 466);
+            this.homeRepairs_checkBox.Name = "homeRepairs_checkBox";
+            this.homeRepairs_checkBox.Size = new System.Drawing.Size(93, 17);
+            this.homeRepairs_checkBox.TabIndex = 51;
+            this.homeRepairs_checkBox.Text = "Home Repairs";
+            this.homeRepairs_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // FederalUtilityAssistance_checkBox
+            // 
+            this.FederalUtilityAssistance_checkBox.AutoSize = true;
+            this.FederalUtilityAssistance_checkBox.Location = new System.Drawing.Point(30, 496);
+            this.FederalUtilityAssistance_checkBox.Name = "FederalUtilityAssistance_checkBox";
+            this.FederalUtilityAssistance_checkBox.Size = new System.Drawing.Size(143, 17);
+            this.FederalUtilityAssistance_checkBox.TabIndex = 52;
+            this.FederalUtilityAssistance_checkBox.Text = "Federal Utility Assistance";
+            this.FederalUtilityAssistance_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // freeHealthCareClinic_checkBox
+            // 
+            this.freeHealthCareClinic_checkBox.AutoSize = true;
+            this.freeHealthCareClinic_checkBox.Location = new System.Drawing.Point(180, 496);
+            this.freeHealthCareClinic_checkBox.Name = "freeHealthCareClinic_checkBox";
+            this.freeHealthCareClinic_checkBox.Size = new System.Drawing.Size(134, 17);
+            this.freeHealthCareClinic_checkBox.TabIndex = 53;
+            this.freeHealthCareClinic_checkBox.Text = "Free Health Care Clinic";
+            this.freeHealthCareClinic_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // seniorCitizen_checkBox
+            // 
+            this.seniorCitizen_checkBox.AutoSize = true;
+            this.seniorCitizen_checkBox.Location = new System.Drawing.Point(321, 496);
+            this.seniorCitizen_checkBox.Name = "seniorCitizen_checkBox";
+            this.seniorCitizen_checkBox.Size = new System.Drawing.Size(138, 17);
+            this.seniorCitizen_checkBox.TabIndex = 54;
+            this.seniorCitizen_checkBox.Text = "Senior Citizen Food Box";
+            this.seniorCitizen_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // habitatForHumanity_checkBox
+            // 
+            this.habitatForHumanity_checkBox.AutoSize = true;
+            this.habitatForHumanity_checkBox.Location = new System.Drawing.Point(30, 526);
+            this.habitatForHumanity_checkBox.Name = "habitatForHumanity_checkBox";
+            this.habitatForHumanity_checkBox.Size = new System.Drawing.Size(125, 17);
+            this.habitatForHumanity_checkBox.TabIndex = 55;
+            this.habitatForHumanity_checkBox.Text = "Habitat For Humanity";
+            this.habitatForHumanity_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // immunizations_checkBox
+            // 
+            this.immunizations_checkBox.AutoSize = true;
+            this.immunizations_checkBox.Location = new System.Drawing.Point(162, 526);
+            this.immunizations_checkBox.Name = "immunizations_checkBox";
+            this.immunizations_checkBox.Size = new System.Drawing.Size(92, 17);
+            this.immunizations_checkBox.TabIndex = 56;
+            this.immunizations_checkBox.Text = "Immunizations";
+            this.immunizations_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // futureGoals_label
+            // 
+            this.futureGoals_label.AutoSize = true;
+            this.futureGoals_label.Location = new System.Drawing.Point(21, 560);
+            this.futureGoals_label.Name = "futureGoals_label";
+            this.futureGoals_label.Size = new System.Drawing.Size(145, 13);
+            this.futureGoals_label.TabIndex = 57;
+            this.futureGoals_label.Text = "Future Goals and Aspirations:";
+            // 
+            // gedClasses_checkBox
+            // 
+            this.gedClasses_checkBox.AutoSize = true;
+            this.gedClasses_checkBox.Location = new System.Drawing.Point(30, 590);
+            this.gedClasses_checkBox.Name = "gedClasses_checkBox";
+            this.gedClasses_checkBox.Size = new System.Drawing.Size(88, 17);
+            this.gedClasses_checkBox.TabIndex = 58;
+            this.gedClasses_checkBox.Text = "GED Classes";
+            this.gedClasses_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // employmentAssistance_checkBox
+            // 
+            this.employmentAssistance_checkBox.AutoSize = true;
+            this.employmentAssistance_checkBox.Location = new System.Drawing.Point(125, 590);
+            this.employmentAssistance_checkBox.Name = "employmentAssistance_checkBox";
+            this.employmentAssistance_checkBox.Size = new System.Drawing.Size(137, 17);
+            this.employmentAssistance_checkBox.TabIndex = 59;
+            this.employmentAssistance_checkBox.Text = "Employment Assistance";
+            this.employmentAssistance_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // gardening_checkBox
+            // 
+            this.gardening_checkBox.AutoSize = true;
+            this.gardening_checkBox.Location = new System.Drawing.Point(269, 590);
+            this.gardening_checkBox.Name = "gardening_checkBox";
+            this.gardening_checkBox.Size = new System.Drawing.Size(75, 17);
+            this.gardening_checkBox.TabIndex = 60;
+            this.gardening_checkBox.Text = "Gardening";
+            this.gardening_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // financialCoaching_checkBox
+            // 
+            this.financialCoaching_checkBox.AutoSize = true;
+            this.financialCoaching_checkBox.Location = new System.Drawing.Point(350, 590);
+            this.financialCoaching_checkBox.Name = "financialCoaching_checkBox";
+            this.financialCoaching_checkBox.Size = new System.Drawing.Size(116, 17);
+            this.financialCoaching_checkBox.TabIndex = 61;
+            this.financialCoaching_checkBox.Text = "Financial Coaching";
+            this.financialCoaching_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // breakingPoverty_checkBox
+            // 
+            this.breakingPoverty_checkBox.AutoSize = true;
+            this.breakingPoverty_checkBox.Location = new System.Drawing.Point(30, 620);
+            this.breakingPoverty_checkBox.Name = "breakingPoverty_checkBox";
+            this.breakingPoverty_checkBox.Size = new System.Drawing.Size(174, 17);
+            this.breakingPoverty_checkBox.TabIndex = 62;
+            this.breakingPoverty_checkBox.Text = "\"Breaking the cycle of poverty\"";
+            this.breakingPoverty_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // esol_checkBox
+            // 
+            this.esol_checkBox.AutoSize = true;
+            this.esol_checkBox.Location = new System.Drawing.Point(211, 620);
+            this.esol_checkBox.Name = "esol_checkBox";
+            this.esol_checkBox.Size = new System.Drawing.Size(257, 17);
+            this.esol_checkBox.TabIndex = 63;
+            this.esol_checkBox.Text = "English for Speakers of Other Languages (ESOL)";
+            this.esol_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // smokingCessation_checkBox
+            // 
+            this.smokingCessation_checkBox.AutoSize = true;
+            this.smokingCessation_checkBox.Location = new System.Drawing.Point(30, 650);
+            this.smokingCessation_checkBox.Name = "smokingCessation_checkBox";
+            this.smokingCessation_checkBox.Size = new System.Drawing.Size(116, 17);
+            this.smokingCessation_checkBox.TabIndex = 64;
+            this.smokingCessation_checkBox.Text = "Smoking Cessation";
+            this.smokingCessation_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // nutritionalPlanning_checkBox
+            // 
+            this.nutritionalPlanning_checkBox.AutoSize = true;
+            this.nutritionalPlanning_checkBox.Location = new System.Drawing.Point(153, 650);
+            this.nutritionalPlanning_checkBox.Name = "nutritionalPlanning_checkBox";
+            this.nutritionalPlanning_checkBox.Size = new System.Drawing.Size(143, 17);
+            this.nutritionalPlanning_checkBox.TabIndex = 65;
+            this.nutritionalPlanning_checkBox.Text = "Nutritional Meal Planning";
+            this.nutritionalPlanning_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // selfConfidence_checkBox
+            // 
+            this.selfConfidence_checkBox.AutoSize = true;
+            this.selfConfidence_checkBox.Location = new System.Drawing.Point(302, 650);
+            this.selfConfidence_checkBox.Name = "selfConfidence_checkBox";
+            this.selfConfidence_checkBox.Size = new System.Drawing.Size(225, 17);
+            this.selfConfidence_checkBox.TabIndex = 66;
+            this.selfConfidence_checkBox.Text = "Self-Confidence Building for Girls Age 8-14";
+            this.selfConfidence_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // summerCamp_checkBox
+            // 
+            this.summerCamp_checkBox.AutoSize = true;
+            this.summerCamp_checkBox.Location = new System.Drawing.Point(30, 680);
+            this.summerCamp_checkBox.Name = "summerCamp_checkBox";
+            this.summerCamp_checkBox.Size = new System.Drawing.Size(159, 17);
+            this.summerCamp_checkBox.TabIndex = 67;
+            this.summerCamp_checkBox.Text = "Summer Camp for ages 6-12";
+            this.summerCamp_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // other_checkBox
+            // 
+            this.other_checkBox.AutoSize = true;
+            this.other_checkBox.Location = new System.Drawing.Point(196, 680);
+            this.other_checkBox.Name = "other_checkBox";
+            this.other_checkBox.Size = new System.Drawing.Size(52, 17);
+            this.other_checkBox.TabIndex = 68;
+            this.other_checkBox.Text = "Other";
+            this.other_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // other_textBox
+            // 
+            this.other_textBox.Location = new System.Drawing.Point(245, 677);
+            this.other_textBox.Name = "other_textBox";
+            this.other_textBox.Size = new System.Drawing.Size(100, 20);
+            this.other_textBox.TabIndex = 69;
+            // 
+            // householdInfo_button
+            // 
+            this.householdInfo_button.Location = new System.Drawing.Point(24, 714);
+            this.householdInfo_button.Name = "householdInfo_button";
+            this.householdInfo_button.Size = new System.Drawing.Size(149, 23);
+            this.householdInfo_button.TabIndex = 70;
+            this.householdInfo_button.Text = "Enter Household Information";
+            this.householdInfo_button.UseVisualStyleBackColor = true;
+            // 
+            // monthlyExpenses_button
+            // 
+            this.monthlyExpenses_button.Location = new System.Drawing.Point(180, 713);
+            this.monthlyExpenses_button.Name = "monthlyExpenses_button";
+            this.monthlyExpenses_button.Size = new System.Drawing.Size(134, 23);
+            this.monthlyExpenses_button.TabIndex = 71;
+            this.monthlyExpenses_button.Text = "Enter Monthly Expenses";
+            this.monthlyExpenses_button.UseVisualStyleBackColor = true;
+            // 
+            // emergencyFunds_button
+            // 
+            this.emergencyFunds_button.Location = new System.Drawing.Point(321, 712);
+            this.emergencyFunds_button.Name = "emergencyFunds_button";
+            this.emergencyFunds_button.Size = new System.Drawing.Size(172, 23);
+            this.emergencyFunds_button.TabIndex = 72;
+            this.emergencyFunds_button.Text = "New Emergency Funds Request";
+            this.emergencyFunds_button.UseVisualStyleBackColor = true;
+            // 
+            // householdIncome_button
+            // 
+            this.householdIncome_button.Location = new System.Drawing.Point(500, 711);
+            this.householdIncome_button.Name = "householdIncome_button";
+            this.householdIncome_button.Size = new System.Drawing.Size(216, 23);
+            this.householdIncome_button.TabIndex = 73;
+            this.householdIncome_button.Text = "Enter Household Income and Finances";
+            this.householdIncome_button.UseVisualStyleBackColor = true;
+            // 
+            // submit_button
+            // 
+            this.submit_button.Location = new System.Drawing.Point(326, 756);
+            this.submit_button.Name = "submit_button";
+            this.submit_button.Size = new System.Drawing.Size(75, 23);
+            this.submit_button.TabIndex = 74;
+            this.submit_button.Text = "Add Client";
+            this.submit_button.UseVisualStyleBackColor = true;
+            // 
             // NewClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 530);
+            this.ClientSize = new System.Drawing.Size(728, 791);
+            this.Controls.Add(this.submit_button);
+            this.Controls.Add(this.householdIncome_button);
+            this.Controls.Add(this.emergencyFunds_button);
+            this.Controls.Add(this.monthlyExpenses_button);
+            this.Controls.Add(this.householdInfo_button);
+            this.Controls.Add(this.other_textBox);
+            this.Controls.Add(this.other_checkBox);
+            this.Controls.Add(this.summerCamp_checkBox);
+            this.Controls.Add(this.selfConfidence_checkBox);
+            this.Controls.Add(this.nutritionalPlanning_checkBox);
+            this.Controls.Add(this.smokingCessation_checkBox);
+            this.Controls.Add(this.esol_checkBox);
+            this.Controls.Add(this.breakingPoverty_checkBox);
+            this.Controls.Add(this.financialCoaching_checkBox);
+            this.Controls.Add(this.gardening_checkBox);
+            this.Controls.Add(this.employmentAssistance_checkBox);
+            this.Controls.Add(this.gedClasses_checkBox);
+            this.Controls.Add(this.futureGoals_label);
+            this.Controls.Add(this.immunizations_checkBox);
+            this.Controls.Add(this.habitatForHumanity_checkBox);
+            this.Controls.Add(this.seniorCitizen_checkBox);
+            this.Controls.Add(this.freeHealthCareClinic_checkBox);
+            this.Controls.Add(this.FederalUtilityAssistance_checkBox);
+            this.Controls.Add(this.homeRepairs_checkBox);
+            this.Controls.Add(this.eyeExam_checkBox);
+            this.Controls.Add(this.freeTaxPreparation_checkBox);
+            this.Controls.Add(this.cashAssistance_checkBox);
+            this.Controls.Add(this.medicaid_checkBox);
+            this.Controls.Add(this.lifelineInternet_checkBox);
+            this.Controls.Add(this.gcpolp_checkBox);
+            this.Controls.Add(this.foodStamps_checkBox);
+            this.Controls.Add(this.referral_label);
             this.Controls.Add(this.unemployed_checkBox);
             this.Controls.Add(this.partTime_checkBox);
             this.Controls.Add(this.fullTime_checkBox);
@@ -454,5 +828,37 @@
         private System.Windows.Forms.CheckBox fullTime_checkBox;
         private System.Windows.Forms.CheckBox partTime_checkBox;
         private System.Windows.Forms.CheckBox unemployed_checkBox;
+        private System.Windows.Forms.Label referral_label;
+        private System.Windows.Forms.CheckBox foodStamps_checkBox;
+        private System.Windows.Forms.CheckBox gcpolp_checkBox;
+        private System.Windows.Forms.CheckBox lifelineInternet_checkBox;
+        private System.Windows.Forms.CheckBox medicaid_checkBox;
+        private System.Windows.Forms.CheckBox cashAssistance_checkBox;
+        private System.Windows.Forms.CheckBox freeTaxPreparation_checkBox;
+        private System.Windows.Forms.CheckBox eyeExam_checkBox;
+        private System.Windows.Forms.CheckBox homeRepairs_checkBox;
+        private System.Windows.Forms.CheckBox FederalUtilityAssistance_checkBox;
+        private System.Windows.Forms.CheckBox freeHealthCareClinic_checkBox;
+        private System.Windows.Forms.CheckBox seniorCitizen_checkBox;
+        private System.Windows.Forms.CheckBox habitatForHumanity_checkBox;
+        private System.Windows.Forms.CheckBox immunizations_checkBox;
+        private System.Windows.Forms.Label futureGoals_label;
+        private System.Windows.Forms.CheckBox gedClasses_checkBox;
+        private System.Windows.Forms.CheckBox employmentAssistance_checkBox;
+        private System.Windows.Forms.CheckBox gardening_checkBox;
+        private System.Windows.Forms.CheckBox financialCoaching_checkBox;
+        private System.Windows.Forms.CheckBox breakingPoverty_checkBox;
+        private System.Windows.Forms.CheckBox esol_checkBox;
+        private System.Windows.Forms.CheckBox smokingCessation_checkBox;
+        private System.Windows.Forms.CheckBox nutritionalPlanning_checkBox;
+        private System.Windows.Forms.CheckBox selfConfidence_checkBox;
+        private System.Windows.Forms.CheckBox summerCamp_checkBox;
+        private System.Windows.Forms.CheckBox other_checkBox;
+        private System.Windows.Forms.TextBox other_textBox;
+        private System.Windows.Forms.Button householdInfo_button;
+        private System.Windows.Forms.Button monthlyExpenses_button;
+        private System.Windows.Forms.Button emergencyFunds_button;
+        private System.Windows.Forms.Button householdIncome_button;
+        private System.Windows.Forms.Button submit_button;
     }
 }
