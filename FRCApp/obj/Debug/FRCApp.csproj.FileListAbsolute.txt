@@ -67,3 +67,6 @@ C:\Users\wardac\Documents\GitHub\FRCApp\FRCApp\obj\Debug\FRCApp.loginForm.resour
 C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\bin\Debug\FRCApp.exe.config
 C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\obj\Debug\FRCApp.exe
 C:\Users\kuczmama\Desktop\FRC\FRCApp\FRCApp\obj\Debug\FRCApp.pdb
+C:\Users\noameskd\Desktop\FRCApp\FRCApp\bin\Debug\FRCApp.exe.config
+C:\Users\noameskd\Desktop\FRCApp\FRCApp\obj\Debug\FRCApp.exe
+C:\Users\noameskd\Desktop\FRCApp\FRCApp\obj\Debug\FRCApp.pdb
