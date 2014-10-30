@@ -22,5 +22,19 @@ namespace FRCApp
             NewClient nc = new NewClient();
             nc.Show();
         }
+
+        private void search_button_Click(object sender, EventArgs e)
+        {
+            DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
+            DataSet1.ClientsDataTable data = adapter.GetData();
+            foreach (DataSet1.ClientsRow row in data)
+            {
+                ListViewItem item = new ListViewItem(row.LastName + ", " + row.FirstName);
+                item.SubItems.Add(row.Birthdate.ToString());
+                item.SubItems.Add(row.Address);
+                item.SubItems.Add(row.Phone1);
+                client_listView.Items.Add(item);
+            }
+        }
     }
 }

@@ -713,6 +713,7 @@
             this.submit_button.TabIndex = 74;
             this.submit_button.Text = "Add Client";
             this.submit_button.UseVisualStyleBackColor = true;
+            this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
             // 
             // NewClient
             // 

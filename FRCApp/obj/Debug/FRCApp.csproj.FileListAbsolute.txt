@@ -97,3 +97,4 @@ M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.Properties.Resources.resources
 M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.requestStatusform.resources
 M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.StartPage.resources
 M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.csproj.GenerateResource.Cache
+M:\capstone\FRCApp\FRCApp\obj\Debug\FRCApp.FinanceForm.resources

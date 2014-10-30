@@ -46,5 +46,12 @@ namespace FRCApp {
             expenseForm.Show();
         }
 
+        private void submit_button_Click(object sender, EventArgs e)
+        {
+            DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
+            adapter.AddClient(firstName_textBox.Text, lastName_textBox.Text, middleInitial_textBox.Text, DateTime.Parse(dataOfBirth_dateTimePicker.Text), homeAddress_textBox.Text, apartmentNumber_textBox.Text, city_textBox.Text, "Ohio", zipCode_textBox.Text, telephone1_textBox.Text, telephone2_textBox.Text, "", "", "", true, true, true);
+            this.Close();
+        }
+
     }
 }
