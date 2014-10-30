@@ -81,5 +81,15 @@ namespace FRCApp
         {
 
         }
+
+        private void ExpenseFormGroceriesLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox22_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -51,6 +51,28 @@
             this.ExpenseFormHygieneLabel = new System.Windows.Forms.Label();
             this.ExpenseFormGroceriesLabel = new System.Windows.Forms.Label();
             this.ExpenseOtherLabel = new System.Windows.Forms.Label();
+            this.ExpenseRentTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseElectricTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseHeatingTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseWaterTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseTrashTextBox = new System.Windows.Forms.TextBox();
+            this.ExpensePhoneTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseLaundryTextBox = new System.Windows.Forms.TextBox();
+            this.ExpensePrescriptionsTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseLoansTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseCreditCardTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseInternetTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseCableTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseHealthInsuranceTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseGasolineTransportTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseCarInsuranceTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseCarPaymentTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseOtherTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseChildSupportTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseChildCareTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseHouseholdTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseHygieneTextBox = new System.Windows.Forms.TextBox();
+            this.ExpenseGroceriesTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ExpenseFormTitle
@@ -283,6 +305,7 @@
             this.ExpenseFormGroceriesLabel.Size = new System.Drawing.Size(69, 15);
             this.ExpenseFormGroceriesLabel.TabIndex = 17;
             this.ExpenseFormGroceriesLabel.Text = "Groceries";
+            this.ExpenseFormGroceriesLabel.Click += new System.EventHandler(this.ExpenseFormGroceriesLabel_Click);
             // 
             // ExpenseOtherLabel
             // 
@@ -295,10 +318,187 @@
             this.ExpenseOtherLabel.Text = "Other";
             this.ExpenseOtherLabel.Click += new System.EventHandler(this.Other_Click);
             // 
+            // ExpenseRentTextBox
+            // 
+            this.ExpenseRentTextBox.Location = new System.Drawing.Point(124, 41);
+            this.ExpenseRentTextBox.Name = "ExpenseRentTextBox";
+            this.ExpenseRentTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseRentTextBox.TabIndex = 23;
+            // 
+            // ExpenseElectricTextBox
+            // 
+            this.ExpenseElectricTextBox.Location = new System.Drawing.Point(124, 64);
+            this.ExpenseElectricTextBox.Name = "ExpenseElectricTextBox";
+            this.ExpenseElectricTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseElectricTextBox.TabIndex = 24;
+            // 
+            // ExpenseHeatingTextBox
+            // 
+            this.ExpenseHeatingTextBox.Location = new System.Drawing.Point(124, 87);
+            this.ExpenseHeatingTextBox.Name = "ExpenseHeatingTextBox";
+            this.ExpenseHeatingTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseHeatingTextBox.TabIndex = 25;
+            // 
+            // ExpenseWaterTextBox
+            // 
+            this.ExpenseWaterTextBox.Location = new System.Drawing.Point(124, 159);
+            this.ExpenseWaterTextBox.Name = "ExpenseWaterTextBox";
+            this.ExpenseWaterTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseWaterTextBox.TabIndex = 28;
+            // 
+            // ExpenseTrashTextBox
+            // 
+            this.ExpenseTrashTextBox.Location = new System.Drawing.Point(124, 136);
+            this.ExpenseTrashTextBox.Name = "ExpenseTrashTextBox";
+            this.ExpenseTrashTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseTrashTextBox.TabIndex = 27;
+            // 
+            // ExpensePhoneTextBox
+            // 
+            this.ExpensePhoneTextBox.Location = new System.Drawing.Point(124, 113);
+            this.ExpensePhoneTextBox.Name = "ExpensePhoneTextBox";
+            this.ExpensePhoneTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpensePhoneTextBox.TabIndex = 26;
+            // 
+            // ExpenseLaundryTextBox
+            // 
+            this.ExpenseLaundryTextBox.Location = new System.Drawing.Point(124, 208);
+            this.ExpenseLaundryTextBox.Name = "ExpenseLaundryTextBox";
+            this.ExpenseLaundryTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseLaundryTextBox.TabIndex = 30;
+            // 
+            // ExpensePrescriptionsTextBox
+            // 
+            this.ExpensePrescriptionsTextBox.Location = new System.Drawing.Point(124, 185);
+            this.ExpensePrescriptionsTextBox.Name = "ExpensePrescriptionsTextBox";
+            this.ExpensePrescriptionsTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpensePrescriptionsTextBox.TabIndex = 29;
+            // 
+            // ExpenseLoansTextBox
+            // 
+            this.ExpenseLoansTextBox.Location = new System.Drawing.Point(419, 209);
+            this.ExpenseLoansTextBox.Name = "ExpenseLoansTextBox";
+            this.ExpenseLoansTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseLoansTextBox.TabIndex = 38;
+            // 
+            // ExpenseCreditCardTextBox
+            // 
+            this.ExpenseCreditCardTextBox.Location = new System.Drawing.Point(419, 186);
+            this.ExpenseCreditCardTextBox.Name = "ExpenseCreditCardTextBox";
+            this.ExpenseCreditCardTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseCreditCardTextBox.TabIndex = 37;
+            // 
+            // ExpenseInternetTextBox
+            // 
+            this.ExpenseInternetTextBox.Location = new System.Drawing.Point(419, 160);
+            this.ExpenseInternetTextBox.Name = "ExpenseInternetTextBox";
+            this.ExpenseInternetTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseInternetTextBox.TabIndex = 36;
+            // 
+            // ExpenseCableTextBox
+            // 
+            this.ExpenseCableTextBox.Location = new System.Drawing.Point(419, 137);
+            this.ExpenseCableTextBox.Name = "ExpenseCableTextBox";
+            this.ExpenseCableTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseCableTextBox.TabIndex = 35;
+            // 
+            // ExpenseHealthInsuranceTextBox
+            // 
+            this.ExpenseHealthInsuranceTextBox.Location = new System.Drawing.Point(419, 114);
+            this.ExpenseHealthInsuranceTextBox.Name = "ExpenseHealthInsuranceTextBox";
+            this.ExpenseHealthInsuranceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseHealthInsuranceTextBox.TabIndex = 34;
+            // 
+            // ExpenseGasolineTransportTextBox
+            // 
+            this.ExpenseGasolineTransportTextBox.Location = new System.Drawing.Point(419, 88);
+            this.ExpenseGasolineTransportTextBox.Name = "ExpenseGasolineTransportTextBox";
+            this.ExpenseGasolineTransportTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseGasolineTransportTextBox.TabIndex = 33;
+            // 
+            // ExpenseCarInsuranceTextBox
+            // 
+            this.ExpenseCarInsuranceTextBox.Location = new System.Drawing.Point(419, 65);
+            this.ExpenseCarInsuranceTextBox.Name = "ExpenseCarInsuranceTextBox";
+            this.ExpenseCarInsuranceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseCarInsuranceTextBox.TabIndex = 32;
+            // 
+            // ExpenseCarPaymentTextBox
+            // 
+            this.ExpenseCarPaymentTextBox.Location = new System.Drawing.Point(419, 42);
+            this.ExpenseCarPaymentTextBox.Name = "ExpenseCarPaymentTextBox";
+            this.ExpenseCarPaymentTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseCarPaymentTextBox.TabIndex = 31;
+            // 
+            // ExpenseOtherTextBox
+            // 
+            this.ExpenseOtherTextBox.Location = new System.Drawing.Point(649, 160);
+            this.ExpenseOtherTextBox.Name = "ExpenseOtherTextBox";
+            this.ExpenseOtherTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseOtherTextBox.TabIndex = 44;
+            // 
+            // ExpenseChildSupportTextBox
+            // 
+            this.ExpenseChildSupportTextBox.Location = new System.Drawing.Point(649, 137);
+            this.ExpenseChildSupportTextBox.Name = "ExpenseChildSupportTextBox";
+            this.ExpenseChildSupportTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseChildSupportTextBox.TabIndex = 43;
+            // 
+            // ExpenseChildCareTextBox
+            // 
+            this.ExpenseChildCareTextBox.Location = new System.Drawing.Point(649, 114);
+            this.ExpenseChildCareTextBox.Name = "ExpenseChildCareTextBox";
+            this.ExpenseChildCareTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseChildCareTextBox.TabIndex = 42;
+            // 
+            // ExpenseHouseholdTextBox
+            // 
+            this.ExpenseHouseholdTextBox.Location = new System.Drawing.Point(649, 88);
+            this.ExpenseHouseholdTextBox.Name = "ExpenseHouseholdTextBox";
+            this.ExpenseHouseholdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseHouseholdTextBox.TabIndex = 41;
+            // 
+            // ExpenseHygieneTextBox
+            // 
+            this.ExpenseHygieneTextBox.Location = new System.Drawing.Point(649, 65);
+            this.ExpenseHygieneTextBox.Name = "ExpenseHygieneTextBox";
+            this.ExpenseHygieneTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseHygieneTextBox.TabIndex = 40;
+            // 
+            // ExpenseGroceriesTextBox
+            // 
+            this.ExpenseGroceriesTextBox.Location = new System.Drawing.Point(649, 42);
+            this.ExpenseGroceriesTextBox.Name = "ExpenseGroceriesTextBox";
+            this.ExpenseGroceriesTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ExpenseGroceriesTextBox.TabIndex = 39;
+            this.ExpenseGroceriesTextBox.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
+            // 
             // ExpenseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ExpenseOtherTextBox);
+            this.Controls.Add(this.ExpenseChildSupportTextBox);
+            this.Controls.Add(this.ExpenseChildCareTextBox);
+            this.Controls.Add(this.ExpenseHouseholdTextBox);
+            this.Controls.Add(this.ExpenseHygieneTextBox);
+            this.Controls.Add(this.ExpenseGroceriesTextBox);
+            this.Controls.Add(this.ExpenseLoansTextBox);
+            this.Controls.Add(this.ExpenseCreditCardTextBox);
+            this.Controls.Add(this.ExpenseInternetTextBox);
+            this.Controls.Add(this.ExpenseCableTextBox);
+            this.Controls.Add(this.ExpenseHealthInsuranceTextBox);
+            this.Controls.Add(this.ExpenseGasolineTransportTextBox);
+            this.Controls.Add(this.ExpenseCarInsuranceTextBox);
+            this.Controls.Add(this.ExpenseCarPaymentTextBox);
+            this.Controls.Add(this.ExpenseLaundryTextBox);
+            this.Controls.Add(this.ExpensePrescriptionsTextBox);
+            this.Controls.Add(this.ExpenseWaterTextBox);
+            this.Controls.Add(this.ExpenseTrashTextBox);
+            this.Controls.Add(this.ExpensePhoneTextBox);
+            this.Controls.Add(this.ExpenseHeatingTextBox);
+            this.Controls.Add(this.ExpenseElectricTextBox);
+            this.Controls.Add(this.ExpenseRentTextBox);
             this.Controls.Add(this.ExpenseOtherLabel);
             this.Controls.Add(this.ExpenseChildSupportLabel);
             this.Controls.Add(this.ExpenseFormChildCareLabel);
@@ -355,5 +555,27 @@
         private System.Windows.Forms.Label ExpenseFormHygieneLabel;
         private System.Windows.Forms.Label ExpenseFormGroceriesLabel;
         private System.Windows.Forms.Label ExpenseOtherLabel;
+        private System.Windows.Forms.TextBox ExpenseRentTextBox;
+        private System.Windows.Forms.TextBox ExpenseElectricTextBox;
+        private System.Windows.Forms.TextBox ExpenseHeatingTextBox;
+        private System.Windows.Forms.TextBox ExpenseWaterTextBox;
+        private System.Windows.Forms.TextBox ExpenseTrashTextBox;
+        private System.Windows.Forms.TextBox ExpensePhoneTextBox;
+        private System.Windows.Forms.TextBox ExpenseLaundryTextBox;
+        private System.Windows.Forms.TextBox ExpensePrescriptionsTextBox;
+        private System.Windows.Forms.TextBox ExpenseLoansTextBox;
+        private System.Windows.Forms.TextBox ExpenseCreditCardTextBox;
+        private System.Windows.Forms.TextBox ExpenseInternetTextBox;
+        private System.Windows.Forms.TextBox ExpenseCableTextBox;
+        private System.Windows.Forms.TextBox ExpenseHealthInsuranceTextBox;
+        private System.Windows.Forms.TextBox ExpenseGasolineTransportTextBox;
+        private System.Windows.Forms.TextBox ExpenseCarInsuranceTextBox;
+        private System.Windows.Forms.TextBox ExpenseCarPaymentTextBox;
+        private System.Windows.Forms.TextBox ExpenseOtherTextBox;
+        private System.Windows.Forms.TextBox ExpenseChildSupportTextBox;
+        private System.Windows.Forms.TextBox ExpenseChildCareTextBox;
+        private System.Windows.Forms.TextBox ExpenseHouseholdTextBox;
+        private System.Windows.Forms.TextBox ExpenseHygieneTextBox;
+        private System.Windows.Forms.TextBox ExpenseGroceriesTextBox;
     }
 }
