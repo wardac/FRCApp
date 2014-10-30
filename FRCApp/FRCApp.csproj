@@ -95,6 +95,12 @@
     <Compile Include="fc_tab.Designer.cs">
       <DependentUpon>fc_tab.cs</DependentUpon>
     </Compile>
+    <Compile Include="FinanceForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceForm.Designer.cs">
+      <DependentUpon>FinanceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fc_tab.resx">
       <DependentUpon>fc_tab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceForm.resx">
+      <DependentUpon>FinanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
