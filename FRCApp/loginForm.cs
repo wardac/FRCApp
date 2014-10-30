@@ -20,11 +20,10 @@ namespace FRCApp
         private void login_submit_Click(object sender, EventArgs e)
         {
             
-            Form1 main = new Form1();
+            StartPage startPage = new StartPage();
             this.Close();
             this.Dispose();
-            main.Show();
-            
+            startPage.Show();
         }
 
         private void login_cancel_Click(object sender, EventArgs e)

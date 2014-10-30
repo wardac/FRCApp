@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FRCApp
 {
-    public partial class ExpenseForm : UserControl
+    public partial class ExpenseForm : Form
     {
         public ExpenseForm()
         {
@@ -88,6 +88,11 @@ namespace FRCApp
         }
 
         private void textBox22_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void doneButtonYo_Click(object sender, EventArgs e)
         {
 
         }

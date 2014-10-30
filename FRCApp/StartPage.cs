@@ -16,5 +16,11 @@ namespace FRCApp
         {
             InitializeComponent();
         }
+
+        private void addNewClient_button_Click(object sender, EventArgs e)
+        {
+            NewClient nc = new NewClient();
+            nc.Show();
+        }
     }
 }

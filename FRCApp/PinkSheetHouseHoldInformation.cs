@@ -62,7 +62,7 @@ namespace FRCApp
         }
 
 
-        public String ToString()
+        public override String ToString()
         {
             return firstName + " "
                 + lastName + " " 

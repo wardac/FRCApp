@@ -675,6 +675,7 @@
             this.householdInfo_button.TabIndex = 70;
             this.householdInfo_button.Text = "Enter Household Information";
             this.householdInfo_button.UseVisualStyleBackColor = true;
+            this.householdInfo_button.Click += new System.EventHandler(this.householdInfo_button_Click);
             // 
             // monthlyExpenses_button
             // 
@@ -684,6 +685,7 @@
             this.monthlyExpenses_button.TabIndex = 71;
             this.monthlyExpenses_button.Text = "Enter Monthly Expenses";
             this.monthlyExpenses_button.UseVisualStyleBackColor = true;
+            this.monthlyExpenses_button.Click += new System.EventHandler(this.monthlyExpenses_button_Click);
             // 
             // emergencyFunds_button
             // 

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.startPage_panel = new System.Windows.Forms.Panel();
-            this.search_label = new System.Windows.Forms.Label();
-            this.search_textBox = new System.Windows.Forms.TextBox();
-            this.search_button = new System.Windows.Forms.Button();
+            this.clientPage_button = new System.Windows.Forms.Button();
+            this.addNewClient_button = new System.Windows.Forms.Button();
             this.client_listView = new System.Windows.Forms.ListView();
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateOfBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.addNewClient_button = new System.Windows.Forms.Button();
-            this.clientPage_button = new System.Windows.Forms.Button();
+            this.search_button = new System.Windows.Forms.Button();
+            this.search_textBox = new System.Windows.Forms.TextBox();
+            this.search_label = new System.Windows.Forms.Label();
             this.startPage_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,30 +55,24 @@
             this.startPage_panel.Size = new System.Drawing.Size(574, 350);
             this.startPage_panel.TabIndex = 0;
             // 
-            // search_label
+            // clientPage_button
             // 
-            this.search_label.AutoSize = true;
-            this.search_label.Location = new System.Drawing.Point(11, 11);
-            this.search_label.Name = "search_label";
-            this.search_label.Size = new System.Drawing.Size(75, 13);
-            this.search_label.TabIndex = 0;
-            this.search_label.Text = "Client Lookup:";
+            this.clientPage_button.Location = new System.Drawing.Point(465, 314);
+            this.clientPage_button.Name = "clientPage_button";
+            this.clientPage_button.Size = new System.Drawing.Size(98, 23);
+            this.clientPage_button.TabIndex = 5;
+            this.clientPage_button.Text = "Go to Client Page";
+            this.clientPage_button.UseVisualStyleBackColor = true;
             // 
-            // search_textBox
+            // addNewClient_button
             // 
-            this.search_textBox.Location = new System.Drawing.Point(92, 8);
-            this.search_textBox.Name = "search_textBox";
-            this.search_textBox.Size = new System.Drawing.Size(142, 20);
-            this.search_textBox.TabIndex = 1;
-            // 
-            // search_button
-            // 
-            this.search_button.Location = new System.Drawing.Point(240, 6);
-            this.search_button.Name = "search_button";
-            this.search_button.Size = new System.Drawing.Size(75, 23);
-            this.search_button.TabIndex = 2;
-            this.search_button.Text = "Search";
-            this.search_button.UseVisualStyleBackColor = true;
+            this.addNewClient_button.Location = new System.Drawing.Point(14, 314);
+            this.addNewClient_button.Name = "addNewClient_button";
+            this.addNewClient_button.Size = new System.Drawing.Size(91, 23);
+            this.addNewClient_button.TabIndex = 4;
+            this.addNewClient_button.Text = "Add New Client";
+            this.addNewClient_button.UseVisualStyleBackColor = true;
+            this.addNewClient_button.Click += new System.EventHandler(this.addNewClient_button_Click);
             // 
             // client_listView
             // 
@@ -114,23 +108,30 @@
             this.number.Text = "Phone Number";
             this.number.Width = 94;
             // 
-            // addNewClient_button
+            // search_button
             // 
-            this.addNewClient_button.Location = new System.Drawing.Point(14, 314);
-            this.addNewClient_button.Name = "addNewClient_button";
-            this.addNewClient_button.Size = new System.Drawing.Size(91, 23);
-            this.addNewClient_button.TabIndex = 4;
-            this.addNewClient_button.Text = "Add New Client";
-            this.addNewClient_button.UseVisualStyleBackColor = true;
+            this.search_button.Location = new System.Drawing.Point(240, 6);
+            this.search_button.Name = "search_button";
+            this.search_button.Size = new System.Drawing.Size(75, 23);
+            this.search_button.TabIndex = 2;
+            this.search_button.Text = "Search";
+            this.search_button.UseVisualStyleBackColor = true;
             // 
-            // clientPage_button
+            // search_textBox
             // 
-            this.clientPage_button.Location = new System.Drawing.Point(465, 314);
-            this.clientPage_button.Name = "clientPage_button";
-            this.clientPage_button.Size = new System.Drawing.Size(98, 23);
-            this.clientPage_button.TabIndex = 5;
-            this.clientPage_button.Text = "Go to Client Page";
-            this.clientPage_button.UseVisualStyleBackColor = true;
+            this.search_textBox.Location = new System.Drawing.Point(92, 8);
+            this.search_textBox.Name = "search_textBox";
+            this.search_textBox.Size = new System.Drawing.Size(142, 20);
+            this.search_textBox.TabIndex = 1;
+            // 
+            // search_label
+            // 
+            this.search_label.AutoSize = true;
+            this.search_label.Location = new System.Drawing.Point(11, 11);
+            this.search_label.Name = "search_label";
+            this.search_label.Size = new System.Drawing.Size(75, 13);
+            this.search_label.TabIndex = 0;
+            this.search_label.Text = "Client Lookup:";
             // 
             // StartPage
             // 

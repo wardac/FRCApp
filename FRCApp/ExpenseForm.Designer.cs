@@ -73,6 +73,7 @@
             this.ExpenseHouseholdTextBox = new System.Windows.Forms.TextBox();
             this.ExpenseHygieneTextBox = new System.Windows.Forms.TextBox();
             this.ExpenseGroceriesTextBox = new System.Windows.Forms.TextBox();
+            this.doneButtonYo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExpenseFormTitle
@@ -473,10 +474,22 @@
             this.ExpenseGroceriesTextBox.TabIndex = 39;
             this.ExpenseGroceriesTextBox.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
             // 
+            // doneButtonYo
+            // 
+            this.doneButtonYo.Location = new System.Drawing.Point(649, 205);
+            this.doneButtonYo.Name = "doneButtonYo";
+            this.doneButtonYo.Size = new System.Drawing.Size(75, 23);
+            this.doneButtonYo.TabIndex = 45;
+            this.doneButtonYo.Text = "Done";
+            this.doneButtonYo.UseVisualStyleBackColor = true;
+            this.doneButtonYo.Click += new System.EventHandler(this.doneButtonYo_Click);
+            // 
             // ExpenseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(795, 244);
+            this.Controls.Add(this.doneButtonYo);
             this.Controls.Add(this.ExpenseOtherTextBox);
             this.Controls.Add(this.ExpenseChildSupportTextBox);
             this.Controls.Add(this.ExpenseChildCareTextBox);
@@ -523,7 +536,6 @@
             this.Controls.Add(this.ExpenseFormRentLabel);
             this.Controls.Add(this.ExpenseFormTitle);
             this.Name = "ExpenseForm";
-            this.Size = new System.Drawing.Size(811, 268);
             this.Load += new System.EventHandler(this.ExpenseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -577,5 +589,6 @@
         private System.Windows.Forms.TextBox ExpenseHouseholdTextBox;
         private System.Windows.Forms.TextBox ExpenseHygieneTextBox;
         private System.Windows.Forms.TextBox ExpenseGroceriesTextBox;
+        private System.Windows.Forms.Button doneButtonYo;
     }
 }
