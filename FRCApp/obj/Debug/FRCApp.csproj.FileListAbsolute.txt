@@ -73,3 +73,6 @@ C:\Users\noameskd\Desktop\FRCApp\FRCApp\obj\Debug\FRCApp.pdb
 C:\Users\kuczmama\Desktop\FRCApp\FRCApp\bin\Debug\FRCApp.exe.config
 C:\Users\kuczmama\Desktop\FRCApp\FRCApp\obj\Debug\FRCApp.exe
 C:\Users\kuczmama\Desktop\FRCApp\FRCApp\obj\Debug\FRCApp.pdb
+C:\Users\wardac\Desktop\FRCApp\FRCApp\bin\Debug\FRCApp.exe.config
+C:\Users\wardac\Desktop\FRCApp\FRCApp\obj\Debug\FRCApp.exe
+C:\Users\wardac\Desktop\FRCApp\FRCApp\obj\Debug\FRCApp.pdb
