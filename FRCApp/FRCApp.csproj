@@ -135,6 +135,12 @@
     <Compile Include="requestStatusform.Designer.cs">
       <DependentUpon>requestStatusform.cs</DependentUpon>
     </Compile>
+    <Compile Include="StartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartPage.Designer.cs">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="efaRequestForm.resx">
       <DependentUpon>efaRequestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +182,9 @@
     </Compile>
     <EmbeddedResource Include="requestStatusform.resx">
       <DependentUpon>requestStatusform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartPage.resx">
+      <DependentUpon>StartPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
