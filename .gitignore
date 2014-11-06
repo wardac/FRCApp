@@ -3,5 +3,3 @@
 *.swp
 *.cache
 *.suo
-bin/
-obj/
