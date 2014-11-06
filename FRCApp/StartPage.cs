@@ -12,6 +12,8 @@ namespace FRCApp
 {
     public partial class StartPage : Form
     {
+        private int selectedClientId = -1;
+
         public StartPage()
         {
             InitializeComponent();
@@ -33,13 +35,24 @@ namespace FRCApp
                 item.SubItems.Add(row.Birthdate.ToShortDateString());
                 item.SubItems.Add(row.Address);
                 item.SubItems.Add(row.Phone1);
+                item.SubItems.Add(row.ClientID.ToString());
                 client_listView.Items.Add(item);
             }
         }
 
         private void clientPage_button_Click(object sender, EventArgs e)
         {
-            new ClientDetails(0).Show();
+            new ClientDetails(selectedClientId).Show();
+        }
+
+        private void client_listView_Click(object sender, EventArgs e)
+        {
+            if (client_listView.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = client_listView.SelectedItems[0];
+                selectedClientId = Int16.Parse(selectedItem.SubItems[4].Text);
+            }
+
         }
     }
 }
