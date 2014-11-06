@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.title = new System.Windows.Forms.Panel();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.HouseHoldFormSummaryListBox = new System.Windows.Forms.ListBox();
             this.HouseHoldFormRadioButtonNo = new System.Windows.Forms.RadioButton();
             this.HouseHoldFormRadioButtonYes = new System.Windows.Forms.RadioButton();
@@ -44,11 +46,17 @@
             this.HouseHoldFormBirthDate = new System.Windows.Forms.Label();
             this.HouseHoldFormSSN = new System.Windows.Forms.Label();
             this.HouseHoldFormLastName = new System.Windows.Forms.Label();
-            this.HouseHoldSubmitAdd = new System.Windows.Forms.Button();
+            this.btnHouseholdMemberAdd = new System.Windows.Forms.Button();
             this.HouseHoldFormTitle = new System.Windows.Forms.Label();
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.dataSet1 = new FRCApp.DataSet1();
+            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
             this.title.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -69,7 +77,7 @@
             this.title.Controls.Add(this.HouseHoldFormBirthDate);
             this.title.Controls.Add(this.HouseHoldFormSSN);
             this.title.Controls.Add(this.HouseHoldFormLastName);
-            this.title.Controls.Add(this.HouseHoldSubmitAdd);
+            this.title.Controls.Add(this.btnHouseholdMemberAdd);
             this.title.Controls.Add(this.HouseHoldFormTitle);
             this.title.Controls.Add(this.HouseHoldFormFirstName);
             this.title.Location = new System.Drawing.Point(0, 4);
@@ -77,6 +85,16 @@
             this.title.Size = new System.Drawing.Size(830, 417);
             this.title.TabIndex = 0;
             this.title.Paint += new System.Windows.Forms.PaintEventHandler(this.title_Paint);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(742, 382);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 16;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // HouseHoldFormSummaryListBox
             // 
@@ -128,6 +146,7 @@
             // 
             // HouseHoldFormBirthDateDateTimePicker
             // 
+            this.HouseHoldFormBirthDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.HouseHoldFormBirthDateDateTimePicker.Location = new System.Drawing.Point(184, 126);
             this.HouseHoldFormBirthDateDateTimePicker.Name = "HouseHoldFormBirthDateDateTimePicker";
             this.HouseHoldFormBirthDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
@@ -156,24 +175,14 @@
             // 
             // HouseHoldFormEthnicityListBox
             // 
+            this.HouseHoldFormEthnicityListBox.DataSource = this.racesBindingSource;
+            this.HouseHoldFormEthnicityListBox.DisplayMember = "Race";
             this.HouseHoldFormEthnicityListBox.FormattingEnabled = true;
-            this.HouseHoldFormEthnicityListBox.Items.AddRange(new object[] {
-            "White",
-            "Black, African Am, ",
-            "Asian Indian",
-            "Chinese",
-            "Filipino",
-            "Japanese",
-            "Korean",
-            "Vietnamese",
-            "Native Hawaiian",
-            "Guamanian",
-            "Samoan",
-            "Other"});
             this.HouseHoldFormEthnicityListBox.Location = new System.Drawing.Point(184, 182);
             this.HouseHoldFormEthnicityListBox.Name = "HouseHoldFormEthnicityListBox";
             this.HouseHoldFormEthnicityListBox.Size = new System.Drawing.Size(120, 95);
             this.HouseHoldFormEthnicityListBox.TabIndex = 6;
+            this.HouseHoldFormEthnicityListBox.ValueMember = "Race";
             this.HouseHoldFormEthnicityListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // HouseHoldFormEthnicity
@@ -227,15 +236,15 @@
             this.HouseHoldFormLastName.Text = "Last Name";
             this.HouseHoldFormLastName.Click += new System.EventHandler(this.HouseHoldFormLastName_Click);
             // 
-            // HouseHoldSubmitAdd
+            // btnHouseholdMemberAdd
             // 
-            this.HouseHoldSubmitAdd.Location = new System.Drawing.Point(152, 331);
-            this.HouseHoldSubmitAdd.Name = "HouseHoldSubmitAdd";
-            this.HouseHoldSubmitAdd.Size = new System.Drawing.Size(75, 23);
-            this.HouseHoldSubmitAdd.TabIndex = 1;
-            this.HouseHoldSubmitAdd.Text = "Add";
-            this.HouseHoldSubmitAdd.UseVisualStyleBackColor = true;
-            this.HouseHoldSubmitAdd.Click += new System.EventHandler(this.HouseHoldSubmitButton_Click);
+            this.btnHouseholdMemberAdd.Location = new System.Drawing.Point(309, 353);
+            this.btnHouseholdMemberAdd.Name = "btnHouseholdMemberAdd";
+            this.btnHouseholdMemberAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnHouseholdMemberAdd.TabIndex = 1;
+            this.btnHouseholdMemberAdd.Text = "Add";
+            this.btnHouseholdMemberAdd.UseVisualStyleBackColor = true;
+            this.btnHouseholdMemberAdd.Click += new System.EventHandler(this.HouseHoldSubmitButton_Click);
             // 
             // HouseHoldFormTitle
             // 
@@ -259,15 +268,24 @@
             this.HouseHoldFormFirstName.Text = "First Name";
             this.HouseHoldFormFirstName.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // btnSubmit
+            // dataSet1
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(742, 382);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 16;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
+            // 
+            // racesBindingSource
+            // 
+            this.racesBindingSource.DataMember = "Races";
+            this.racesBindingSource.DataSource = this.dataSet1;
+            // 
+            // racesTableAdapter
+            // 
+            this.racesTableAdapter.ClearBeforeFill = true;
             // 
             // HouseHoldForm
             // 
@@ -276,8 +294,12 @@
             this.ClientSize = new System.Drawing.Size(829, 421);
             this.Controls.Add(this.title);
             this.Name = "HouseHoldForm";
+            this.Load += new System.EventHandler(this.HouseHoldForm_Load);
             this.title.ResumeLayout(false);
             this.title.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,7 +308,7 @@
 
         private System.Windows.Forms.Panel title;
         //private dBDataSetTableAdapters.BarriersToSubtypesTableAdapter barriersToSubtypesTableAdapter1;
-        private System.Windows.Forms.Button HouseHoldSubmitAdd;
+        private System.Windows.Forms.Button btnHouseholdMemberAdd;
         private System.Windows.Forms.Label HouseHoldFormTitle;
         private System.Windows.Forms.Label HouseHoldFormBirthDate;
         private System.Windows.Forms.Label HouseHoldFormSSN;
@@ -305,5 +327,9 @@
         private System.Windows.Forms.RadioButton HouseHoldFormRadioButtonYes;
         private System.Windows.Forms.Label HouseHoldFormHealthCoverageRadioButton;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.BindingSource dataSet1BindingSource;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource racesBindingSource;
+        private DataSet1TableAdapters.RacesTableAdapter racesTableAdapter;
     }
 }

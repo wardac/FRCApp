@@ -28,12 +28,15 @@ namespace FRCApp
         private void HouseHoldSubmitButton_Click(object sender, EventArgs e)
         {
             //DataSet1.HouseholdMembersRow row = new DataSet1.HouseholdMembersRow();
-            
+            if (!validateForm()) {
+                MessageBox.Show("You must enter all of the information.");
+                return;
+            }
             DataSet1.HouseholdMembersRow row = table.NewHouseholdMembersRow();
             row.FirstName = HouseHoldFormFirstNameTextBox.Text;
             row.LastName = HouseHoldFormlastNameTextBox.Text;
             row.Birthdate = DateTime.Parse(HouseHoldFormBirthDateDateTimePicker.Text);
-            row.Race = HouseHoldFormEthnicityListBox.SelectedItem.ToString();
+            row.Race = (string) HouseHoldFormEthnicityListBox.SelectedValue;
             row.HealthCoverage = !HouseHoldFormRadioButtonNo.Checked;
             row.LastFourSSN = HouseHoldFormlast4DigitsOfSsnTextBox.Text;
             row.Relationship = HouseHoldFormRelationshipToApplicant.Text;
@@ -74,6 +77,27 @@ namespace FRCApp
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void HouseHoldForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSet1.Races' table. You can move, or remove it, as needed.
+            this.racesTableAdapter.Fill(this.dataSet1.Races);
+
+        }
+
+        private bool validateForm() {
+            return textExists(HouseHoldFormFirstNameTextBox.Text)
+                && textExists(HouseHoldFormlastNameTextBox.Text)
+                && textExists(HouseHoldFormlast4DigitsOfSsnTextBox.Text)
+                && textExists(HouseHoldFormBirthDateDateTimePicker.Text)
+                && textExists(HouseHoldFormRelationshipToApplicant.Text)
+                && textExists((string)HouseHoldFormEthnicityListBox.SelectedValue)
+                && (HouseHoldFormRadioButtonYes.Checked || HouseHoldFormRadioButtonNo.Checked);
+        }
+
+        private bool textExists(string str) {
+            return str != null && str != "";
         }
     }
 }
