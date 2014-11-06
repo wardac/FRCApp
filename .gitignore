@@ -3,5 +3,5 @@
 *.swp
 *.cache
 *.suo
-/bin
-/obj
+bin/
+obj/
