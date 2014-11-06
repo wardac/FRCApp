@@ -19,10 +19,10 @@ namespace FRCApp
 
         private void efa_lblproofaddress_CheckedChanged(object sender, EventArgs e)
         {
-            if(efa_proofaddress.Checked)
+            if (efa_proofaddress.Checked)
             {
                 addressdate.Visible = true;
-                addressdate.Value=DateTime.Today.Date;
+                addressdate.Value = DateTime.Today.Date;
             }
         }
 
@@ -53,6 +53,19 @@ namespace FRCApp
         private void chkother_CheckedChanged(object sender, EventArgs e)
         {
             txtother.Visible = true;
+        }
+
+        private void submitEfa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void efaRequestForm_Load(object sender, EventArgs e)
+        {
+            DataSet1TableAdapters.ClientsTableAdapter client = new DataSet1TableAdapters.ClientsTableAdapter();
+            var clients = client.GetDataByid(1);
+            efa_clientName.Text = clients[0].FirstName;
+
         }
     }
 }

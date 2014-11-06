@@ -29,6 +29,19 @@
         private void InitializeComponent()
         {
             this.requestPanel = new System.Windows.Forms.Panel();
+            this.statusPanel = new System.Windows.Forms.Panel();
+            this.lblReferals = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.follow_up = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Responsibleparty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.completionDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.approvedlabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.chkApprovedReason = new System.Windows.Forms.CheckedListBox();
+            this.ChkDeniedReason = new System.Windows.Forms.CheckedListBox();
+            this.chkDenied = new System.Windows.Forms.CheckBox();
+            this.chkApproved = new System.Windows.Forms.CheckBox();
             this.lblComment = new System.Windows.Forms.Label();
             this.grpcauseshardship = new System.Windows.Forms.GroupBox();
             this.txtother = new System.Windows.Forms.TextBox();
@@ -75,16 +88,11 @@
             this.update_efa = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.statusPanel = new System.Windows.Forms.Panel();
-            this.chkApproved = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.ChkDeniedReason = new System.Windows.Forms.CheckedListBox();
-            this.chkApprovedReason = new System.Windows.Forms.CheckedListBox();
             this.requestPanel.SuspendLayout();
+            this.statusPanel.SuspendLayout();
             this.grpcauseshardship.SuspendLayout();
             this.efa_financegroup.SuspendLayout();
             this.efa_proofGroup.SuspendLayout();
-            this.statusPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // requestPanel
@@ -111,8 +119,176 @@
             this.requestPanel.Controls.Add(this.shapeContainer1);
             this.requestPanel.Location = new System.Drawing.Point(24, 12);
             this.requestPanel.Name = "requestPanel";
-            this.requestPanel.Size = new System.Drawing.Size(867, 567);
+            this.requestPanel.Size = new System.Drawing.Size(867, 597);
             this.requestPanel.TabIndex = 1;
+            // 
+            // statusPanel
+            // 
+            this.statusPanel.AutoScroll = true;
+            this.statusPanel.Controls.Add(this.lblReferals);
+            this.statusPanel.Controls.Add(this.checkedListBox1);
+            this.statusPanel.Controls.Add(this.listView1);
+            this.statusPanel.Controls.Add(this.approvedlabel);
+            this.statusPanel.Controls.Add(this.label2);
+            this.statusPanel.Controls.Add(this.chkApprovedReason);
+            this.statusPanel.Controls.Add(this.ChkDeniedReason);
+            this.statusPanel.Controls.Add(this.chkDenied);
+            this.statusPanel.Controls.Add(this.chkApproved);
+            this.statusPanel.Location = new System.Drawing.Point(446, 261);
+            this.statusPanel.Name = "statusPanel";
+            this.statusPanel.Size = new System.Drawing.Size(408, 289);
+            this.statusPanel.TabIndex = 21;
+            // 
+            // lblReferals
+            // 
+            this.lblReferals.AutoSize = true;
+            this.lblReferals.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReferals.Location = new System.Drawing.Point(11, 283);
+            this.lblReferals.Name = "lblReferals";
+            this.lblReferals.Size = new System.Drawing.Size(163, 13);
+            this.lblReferals.TabIndex = 8;
+            this.lblReferals.Text = "Referals and other services";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Benefit Bank: food stamp",
+            "Oxford works",
+            "Habitat for humanity",
+            "OCCP",
+            "Oxford free Clinic",
+            "FONIN",
+            "Heap/pipp",
+            "Oxford Free Clinic",
+            "Thrift Store voucher",
+            "GED",
+            "Lions Club",
+            "PUSH",
+            "Getting Ahead",
+            "OAAC",
+            "Senior Commodities",
+            "Other"});
+            this.checkedListBox1.Location = new System.Drawing.Point(7, 299);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.ScrollAlwaysVisible = true;
+            this.checkedListBox1.Size = new System.Drawing.Size(268, 109);
+            this.checkedListBox1.TabIndex = 7;
+            this.checkedListBox1.Visible = false;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.follow_up,
+            this.Responsibleparty,
+            this.completionDate});
+            this.listView1.Location = new System.Drawing.Point(7, 174);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(390, 97);
+            this.listView1.TabIndex = 6;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // follow_up
+            // 
+            this.follow_up.Text = "Follow up ";
+            this.follow_up.Width = 131;
+            // 
+            // Responsibleparty
+            // 
+            this.Responsibleparty.Text = "Responsible Party";
+            this.Responsibleparty.Width = 103;
+            // 
+            // completionDate
+            // 
+            this.completionDate.Text = "Completion date";
+            this.completionDate.Width = 127;
+            // 
+            // approvedlabel
+            // 
+            this.approvedlabel.AutoSize = true;
+            this.approvedlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.approvedlabel.Location = new System.Drawing.Point(189, 4);
+            this.approvedlabel.Name = "approvedlabel";
+            this.approvedlabel.Size = new System.Drawing.Size(94, 13);
+            this.approvedlabel.TabIndex = 5;
+            this.approvedlabel.Text = "Very long name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(87, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "approved by:";
+            // 
+            // chkApprovedReason
+            // 
+            this.chkApprovedReason.FormattingEnabled = true;
+            this.chkApprovedReason.Items.AddRange(new object[] {
+            "HH Member recently unemployed",
+            "Household temporary loss income",
+            "HH member recently employed",
+            "HH member participating in programming",
+            "HH has major life event",
+            "HH has emergency medical need",
+            "HH is homeless",
+            "Assistance promotes self-sufficency",
+            "Household unexpected expenses",
+            "other"});
+            this.chkApprovedReason.Location = new System.Drawing.Point(7, 52);
+            this.chkApprovedReason.Name = "chkApprovedReason";
+            this.chkApprovedReason.ScrollAlwaysVisible = true;
+            this.chkApprovedReason.Size = new System.Drawing.Size(194, 109);
+            this.chkApprovedReason.TabIndex = 3;
+            this.chkApprovedReason.Visible = false;
+            // 
+            // ChkDeniedReason
+            // 
+            this.ChkDeniedReason.FormattingEnabled = true;
+            this.ChkDeniedReason.Items.AddRange(new object[] {
+            "HH income > 125% of FPG",
+            "HH has  not experienced qualifying hardship",
+            "HH expenses unsustainable",
+            "Poor Payment History",
+            "HH exceeded financial assistance limit",
+            "HH withdrew request",
+            "HH did not follow up",
+            "HH not compliance with action/program",
+            "HH request on NON approved Rx",
+            "other"});
+            this.ChkDeniedReason.Location = new System.Drawing.Point(207, 52);
+            this.ChkDeniedReason.Name = "ChkDeniedReason";
+            this.ChkDeniedReason.ScrollAlwaysVisible = true;
+            this.ChkDeniedReason.Size = new System.Drawing.Size(190, 109);
+            this.ChkDeniedReason.TabIndex = 2;
+            this.ChkDeniedReason.Visible = false;
+            // 
+            // chkDenied
+            // 
+            this.chkDenied.AutoSize = true;
+            this.chkDenied.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDenied.Location = new System.Drawing.Point(196, 31);
+            this.chkDenied.Name = "chkDenied";
+            this.chkDenied.Size = new System.Drawing.Size(73, 17);
+            this.chkDenied.TabIndex = 1;
+            this.chkDenied.Text = "DENIED";
+            this.chkDenied.UseVisualStyleBackColor = true;
+            this.chkDenied.CheckedChanged += new System.EventHandler(this.chkDenied_CheckedChanged);
+            // 
+            // chkApproved
+            // 
+            this.chkApproved.AutoSize = true;
+            this.chkApproved.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkApproved.Location = new System.Drawing.Point(7, 31);
+            this.chkApproved.Name = "chkApproved";
+            this.chkApproved.Size = new System.Drawing.Size(93, 17);
+            this.chkApproved.TabIndex = 0;
+            this.chkApproved.Text = "APPROVED";
+            this.chkApproved.UseVisualStyleBackColor = true;
+            this.chkApproved.CheckedChanged += new System.EventHandler(this.chkApproved_CheckedChanged);
             // 
             // lblComment
             // 
@@ -135,7 +311,7 @@
             this.grpcauseshardship.Controls.Add(this.chkjobloss);
             this.grpcauseshardship.Location = new System.Drawing.Point(446, 32);
             this.grpcauseshardship.Name = "grpcauseshardship";
-            this.grpcauseshardship.Size = new System.Drawing.Size(345, 115);
+            this.grpcauseshardship.Size = new System.Drawing.Size(397, 115);
             this.grpcauseshardship.TabIndex = 19;
             this.grpcauseshardship.TabStop = false;
             this.grpcauseshardship.Text = "Causes of hardship";
@@ -144,7 +320,7 @@
             // 
             this.txtother.Location = new System.Drawing.Point(7, 85);
             this.txtother.Name = "txtother";
-            this.txtother.Size = new System.Drawing.Size(298, 20);
+            this.txtother.Size = new System.Drawing.Size(384, 20);
             this.txtother.TabIndex = 7;
             this.txtother.Visible = false;
             // 
@@ -228,7 +404,7 @@
             this.efa_financegroup.Controls.Add(this.label3);
             this.efa_financegroup.Controls.Add(this.lblQInfo);
             this.efa_financegroup.Controls.Add(this.lblCQinfo);
-            this.efa_financegroup.Location = new System.Drawing.Point(45, 378);
+            this.efa_financegroup.Location = new System.Drawing.Point(45, 383);
             this.efa_financegroup.Name = "efa_financegroup";
             this.efa_financegroup.Size = new System.Drawing.Size(386, 130);
             this.efa_financegroup.TabIndex = 18;
@@ -356,6 +532,7 @@
             this.efa_proofHousehold.TabIndex = 8;
             this.efa_proofHousehold.Text = "id household members";
             this.efa_proofHousehold.UseVisualStyleBackColor = true;
+            this.efa_proofHousehold.CheckedChanged += new System.EventHandler(this.efa_proofHousehold_CheckedChanged);
             // 
             // assistancedate
             // 
@@ -398,6 +575,7 @@
             this.efa_proofAssistance.TabIndex = 3;
             this.efa_proofAssistance.Text = "proof of assistance type";
             this.efa_proofAssistance.UseVisualStyleBackColor = true;
+            this.efa_proofAssistance.CheckedChanged += new System.EventHandler(this.efa_proofAssistance_CheckedChanged);
             // 
             // efa_proofharship
             // 
@@ -408,6 +586,7 @@
             this.efa_proofharship.TabIndex = 2;
             this.efa_proofharship.Text = "proof of hardship";
             this.efa_proofharship.UseVisualStyleBackColor = true;
+            this.efa_proofharship.CheckedChanged += new System.EventHandler(this.efa_proofharship_CheckedChanged);
             // 
             // efa_proofIncome
             // 
@@ -418,6 +597,7 @@
             this.efa_proofIncome.TabIndex = 1;
             this.efa_proofIncome.Text = "proof of income";
             this.efa_proofIncome.UseVisualStyleBackColor = true;
+            this.efa_proofIncome.CheckedChanged += new System.EventHandler(this.efa_proofIncome_CheckedChanged);
             // 
             // efa_proofaddress
             // 
@@ -428,6 +608,7 @@
             this.efa_proofaddress.TabIndex = 0;
             this.efa_proofaddress.Text = "proof of address";
             this.efa_proofaddress.UseVisualStyleBackColor = true;
+            this.efa_proofaddress.CheckedChanged += new System.EventHandler(this.efa_proofaddress_CheckedChanged);
             // 
             // efa_reqamount
             // 
@@ -516,7 +697,7 @@
             // 
             // cancelEfa
             // 
-            this.cancelEfa.Location = new System.Drawing.Point(412, 523);
+            this.cancelEfa.Location = new System.Drawing.Point(411, 556);
             this.cancelEfa.Name = "cancelEfa";
             this.cancelEfa.Size = new System.Drawing.Size(76, 29);
             this.cancelEfa.TabIndex = 1;
@@ -526,7 +707,7 @@
             // 
             // update_efa
             // 
-            this.update_efa.Location = new System.Drawing.Point(308, 523);
+            this.update_efa.Location = new System.Drawing.Point(307, 556);
             this.update_efa.Name = "update_efa";
             this.update_efa.Size = new System.Drawing.Size(76, 29);
             this.update_efa.TabIndex = 0;
@@ -540,7 +721,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(867, 567);
+            this.shapeContainer1.Size = new System.Drawing.Size(867, 597);
             this.shapeContainer1.TabIndex = 16;
             this.shapeContainer1.TabStop = false;
             // 
@@ -552,99 +733,24 @@
             this.lineShape1.Y1 = 100;
             this.lineShape1.Y2 = 378;
             // 
-            // statusPanel
-            // 
-            this.statusPanel.Controls.Add(this.chkApprovedReason);
-            this.statusPanel.Controls.Add(this.ChkDeniedReason);
-            this.statusPanel.Controls.Add(this.checkBox2);
-            this.statusPanel.Controls.Add(this.chkApproved);
-            this.statusPanel.Location = new System.Drawing.Point(446, 261);
-            this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Size = new System.Drawing.Size(408, 232);
-            this.statusPanel.TabIndex = 21;
-            // 
-            // chkApproved
-            // 
-            this.chkApproved.AutoSize = true;
-            this.chkApproved.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkApproved.Location = new System.Drawing.Point(7, 13);
-            this.chkApproved.Name = "chkApproved";
-            this.chkApproved.Size = new System.Drawing.Size(93, 17);
-            this.chkApproved.TabIndex = 0;
-            this.chkApproved.Text = "APPROVED";
-            this.chkApproved.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(196, 13);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(73, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "DENIED";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // ChkDeniedReason
-            // 
-            this.ChkDeniedReason.FormattingEnabled = true;
-            this.ChkDeniedReason.Items.AddRange(new object[] {
-            "HH income > 125% of FPG",
-            "HH has  not experienced qualifying hardship",
-            "HH expenses unsustainable",
-            "Poor Payment History",
-            "HH exceeded financial assistance limit",
-            "HH withdrew request",
-            "HH did not follow up",
-            "HH not compliance with action/program",
-            "HH request on NON approved Rx",
-            "other"});
-            this.ChkDeniedReason.Location = new System.Drawing.Point(207, 34);
-            this.ChkDeniedReason.Name = "ChkDeniedReason";
-            this.ChkDeniedReason.ScrollAlwaysVisible = true;
-            this.ChkDeniedReason.Size = new System.Drawing.Size(190, 94);
-            this.ChkDeniedReason.TabIndex = 2;
-            this.ChkDeniedReason.Visible = false;
-            // 
-            // chkApprovedReason
-            // 
-            this.chkApprovedReason.FormattingEnabled = true;
-            this.chkApprovedReason.Items.AddRange(new object[] {
-            "HH Member recently unemployed",
-            "Household temporary loss income",
-            "HH member recently employed",
-            "HH member participating in programming",
-            "HH has major life event",
-            "HH has emergency medical need",
-            "HH is homeless",
-            "Assistance promotes self-sufficency",
-            "Household unexpected expenses",
-            "other"});
-            this.chkApprovedReason.Location = new System.Drawing.Point(7, 34);
-            this.chkApprovedReason.Name = "chkApprovedReason";
-            this.chkApprovedReason.ScrollAlwaysVisible = true;
-            this.chkApprovedReason.Size = new System.Drawing.Size(194, 94);
-            this.chkApprovedReason.TabIndex = 3;
-            this.chkApprovedReason.Visible = false;
-            // 
             // requestStatusform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 609);
+            this.ClientSize = new System.Drawing.Size(903, 621);
             this.Controls.Add(this.requestPanel);
             this.Name = "requestStatusform";
             this.Text = "Request Status";
             this.requestPanel.ResumeLayout(false);
             this.requestPanel.PerformLayout();
+            this.statusPanel.ResumeLayout(false);
+            this.statusPanel.PerformLayout();
             this.grpcauseshardship.ResumeLayout(false);
             this.grpcauseshardship.PerformLayout();
             this.efa_financegroup.ResumeLayout(false);
             this.efa_financegroup.PerformLayout();
             this.efa_proofGroup.ResumeLayout(false);
             this.efa_proofGroup.PerformLayout();
-            this.statusPanel.ResumeLayout(false);
-            this.statusPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -701,7 +807,15 @@
         private System.Windows.Forms.Panel statusPanel;
         private System.Windows.Forms.CheckedListBox chkApprovedReason;
         private System.Windows.Forms.CheckedListBox ChkDeniedReason;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox chkDenied;
         private System.Windows.Forms.CheckBox chkApproved;
+        private System.Windows.Forms.Label approvedlabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader follow_up;
+        private System.Windows.Forms.ColumnHeader Responsibleparty;
+        private System.Windows.Forms.ColumnHeader completionDate;
+        private System.Windows.Forms.Label lblReferals;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
