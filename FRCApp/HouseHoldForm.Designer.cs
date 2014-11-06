@@ -47,11 +47,13 @@
             this.HouseHoldSubmitAdd = new System.Windows.Forms.Button();
             this.HouseHoldFormTitle = new System.Windows.Forms.Label();
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.title.SuspendLayout();
             this.SuspendLayout();
             // 
             // title
             // 
+            this.title.Controls.Add(this.btnSubmit);
             this.title.Controls.Add(this.HouseHoldFormSummaryListBox);
             this.title.Controls.Add(this.HouseHoldFormRadioButtonNo);
             this.title.Controls.Add(this.HouseHoldFormRadioButtonYes);
@@ -70,9 +72,9 @@
             this.title.Controls.Add(this.HouseHoldSubmitAdd);
             this.title.Controls.Add(this.HouseHoldFormTitle);
             this.title.Controls.Add(this.HouseHoldFormFirstName);
-            this.title.Location = new System.Drawing.Point(0, 3);
+            this.title.Location = new System.Drawing.Point(0, 4);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(822, 385);
+            this.title.Size = new System.Drawing.Size(830, 417);
             this.title.TabIndex = 0;
             this.title.Paint += new System.Windows.Forms.PaintEventHandler(this.title_Paint);
             // 
@@ -84,7 +86,6 @@
             this.HouseHoldFormSummaryListBox.Size = new System.Drawing.Size(399, 355);
             this.HouseHoldFormSummaryListBox.TabIndex = 15;
             this.HouseHoldFormSummaryListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
-            
             // 
             // HouseHoldFormRadioButtonNo
             // 
@@ -258,11 +259,21 @@
             this.HouseHoldFormFirstName.Text = "First Name";
             this.HouseHoldFormFirstName.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(742, 382);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 16;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
             // HouseHoldForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 394);
+            this.ClientSize = new System.Drawing.Size(829, 421);
             this.Controls.Add(this.title);
             this.Name = "HouseHoldForm";
             this.title.ResumeLayout(false);
@@ -293,5 +304,6 @@
         private System.Windows.Forms.RadioButton HouseHoldFormRadioButtonNo;
         private System.Windows.Forms.RadioButton HouseHoldFormRadioButtonYes;
         private System.Windows.Forms.Label HouseHoldFormHealthCoverageRadioButton;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }

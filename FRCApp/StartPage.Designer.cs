@@ -63,6 +63,7 @@
             this.clientPage_button.TabIndex = 5;
             this.clientPage_button.Text = "Go to Client Page";
             this.clientPage_button.UseVisualStyleBackColor = true;
+            this.clientPage_button.Click += new System.EventHandler(this.clientPage_button_Click);
             // 
             // addNewClient_button
             // 

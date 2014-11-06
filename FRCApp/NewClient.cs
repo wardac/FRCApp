@@ -59,7 +59,7 @@ namespace FRCApp {
 
         private void NewClient_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet11.GoalTypes' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'dataSet1.GoalTypes' table. You can move, or remove it, as needed.
             this.goalTypesTableAdapter.Fill(this.dataSet1.GoalTypes);
             // TODO: This line of code loads data into the 'dataSet1.ReferralTypes' table. You can move, or remove it, as needed.
             this.referralTypesTableAdapter.Fill(this.dataSet1.ReferralTypes);
@@ -69,6 +69,7 @@ namespace FRCApp {
             this.educationLevelsTableAdapter.Fill(this.dataSet1.EducationLevels);
             // TODO: This line of code loads data into the 'dataSet1.HouseholdTypes' table. You can move, or remove it, as needed.
             this.householdTypesTableAdapter.Fill(this.dataSet1.HouseholdTypes);
+           
             ReferralsBox.DataSource = this.referralTypesTableAdapter.GetData();
             ReferralsBox.DisplayMember = "ReferralType";
             ReferralsBox.ValueMember = "ReferralTypeID";
@@ -76,6 +77,10 @@ namespace FRCApp {
             GoalsBox.DataSource = this.goalTypesTableAdapter.GetData();
             GoalsBox.DisplayMember = "GoalType";
             GoalsBox.ValueMember = "GoalTypeID";
+
+            HouseholdTypeBox.SelectedIndex = -1;
+            EducationLevelBox.SelectedIndex = -1;
+            EmploymentStatusBox.SelectedIndex = -1;
         }
 
 

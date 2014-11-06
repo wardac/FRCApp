@@ -30,11 +30,16 @@ namespace FRCApp
             foreach (DataSet1.ClientsRow row in data)
             {
                 ListViewItem item = new ListViewItem(row.LastName + ", " + row.FirstName);
-                item.SubItems.Add(row.Birthdate.ToString());
+                item.SubItems.Add(row.Birthdate.ToShortDateString());
                 item.SubItems.Add(row.Address);
                 item.SubItems.Add(row.Phone1);
                 client_listView.Items.Add(item);
             }
+        }
+
+        private void clientPage_button_Click(object sender, EventArgs e)
+        {
+            new ClientDetails(0).Show();
         }
     }
 }

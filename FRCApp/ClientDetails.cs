@@ -10,10 +10,12 @@ using System.Windows.Forms;
 
 namespace FRCApp
 {
-    public partial class efa_tab : UserControl
+    public partial class ClientDetails : Form
     {
-        public efa_tab()
+        private int ClientID;
+        public ClientDetails(int clientID)
         {
+            this.ClientID = clientID;
             InitializeComponent();
         }
 

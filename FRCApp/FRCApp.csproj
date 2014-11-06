@@ -81,11 +81,11 @@
     <Compile Include="efaRequestForm.Designer.cs">
       <DependentUpon>efaRequestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="efa_tab.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="ClientDetails.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="efa_tab.Designer.cs">
-      <DependentUpon>efa_tab.cs</DependentUpon>
+    <Compile Include="ClientDetails.Designer.cs">
+      <DependentUpon>ClientDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="ExpenseForm.cs">
       <SubType>Form</SubType>
@@ -153,8 +153,8 @@
     <EmbeddedResource Include="efaRequestForm.resx">
       <DependentUpon>efaRequestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="efa_tab.resx">
-      <DependentUpon>efa_tab.cs</DependentUpon>
+    <EmbeddedResource Include="ClientDetails.resx">
+      <DependentUpon>ClientDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExpenseForm.resx">
       <DependentUpon>ExpenseForm.cs</DependentUpon>

@@ -44,7 +44,7 @@
             this.TS = new System.Windows.Forms.TabPage();
             this.fc = new FRCApp.fc_tab();
             this.ow = new FRCApp.ow_tab();
-            this.efatab = new FRCApp.efa_tab();
+            this.efatab = new FRCApp.ClientDetails(0);
             TabControl = new System.Windows.Forms.TabControl();
             TabControl.SuspendLayout();
             this.Main.SuspendLayout();
@@ -245,7 +245,7 @@
       //  private System.Windows.Forms.TabPage EFA;
         //added this
         private System.Windows.Forms.TabPage efa_tab;
-        private efa_tab efatab;
+        private ClientDetails efatab;
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;

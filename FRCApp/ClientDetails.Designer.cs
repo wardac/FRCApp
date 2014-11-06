@@ -1,6 +1,6 @@
 ﻿namespace FRCApp
 {
-    partial class efa_tab
+    partial class ClientDetails
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(efa_tab));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientDetails));
             this.Contactpanel = new System.Windows.Forms.Panel();
             this.lstdateContact = new System.Windows.Forms.DateTimePicker();
             this.lblLastContact = new System.Windows.Forms.Label();
