@@ -32,15 +32,15 @@
             this.Contactpanel = new System.Windows.Forms.Panel();
             this.lstdateContact = new System.Windows.Forms.DateTimePicker();
             this.lblLastContact = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtemail = new System.Windows.Forms.TextBox();
+            this.ClientDetailsAddressTextBox = new System.Windows.Forms.TextBox();
+            this.ClientDetailsNameTextBox = new System.Windows.Forms.TextBox();
+            this.ClientDetailsEmailTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtphone2 = new System.Windows.Forms.TextBox();
-            this.txtphone1 = new System.Windows.Forms.TextBox();
-            this.txtzip = new System.Windows.Forms.TextBox();
-            this.txtstate = new System.Windows.Forms.TextBox();
-            this.txtcity = new System.Windows.Forms.TextBox();
+            this.ClientDetailsPhone2TextBox = new System.Windows.Forms.TextBox();
+            this.ClientDetailsPhone1TextBox = new System.Windows.Forms.TextBox();
+            this.ClientDetailsZipTextBox = new System.Windows.Forms.TextBox();
+            this.ClientDetailsStateTextBox = new System.Windows.Forms.TextBox();
+            this.ClientDetailsCityTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.phone = new System.Windows.Forms.PictureBox();
             this.lblzip = new System.Windows.Forms.Label();
@@ -93,15 +93,15 @@
             this.Contactpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.Contactpanel.Controls.Add(this.lstdateContact);
             this.Contactpanel.Controls.Add(this.lblLastContact);
-            this.Contactpanel.Controls.Add(this.textBox2);
-            this.Contactpanel.Controls.Add(this.textBox1);
-            this.Contactpanel.Controls.Add(this.txtemail);
+            this.Contactpanel.Controls.Add(this.ClientDetailsAddressTextBox);
+            this.Contactpanel.Controls.Add(this.ClientDetailsNameTextBox);
+            this.Contactpanel.Controls.Add(this.ClientDetailsEmailTextBox);
             this.Contactpanel.Controls.Add(this.pictureBox2);
-            this.Contactpanel.Controls.Add(this.txtphone2);
-            this.Contactpanel.Controls.Add(this.txtphone1);
-            this.Contactpanel.Controls.Add(this.txtzip);
-            this.Contactpanel.Controls.Add(this.txtstate);
-            this.Contactpanel.Controls.Add(this.txtcity);
+            this.Contactpanel.Controls.Add(this.ClientDetailsPhone2TextBox);
+            this.Contactpanel.Controls.Add(this.ClientDetailsPhone1TextBox);
+            this.Contactpanel.Controls.Add(this.ClientDetailsZipTextBox);
+            this.Contactpanel.Controls.Add(this.ClientDetailsStateTextBox);
+            this.Contactpanel.Controls.Add(this.ClientDetailsCityTextBox);
             this.Contactpanel.Controls.Add(this.pictureBox1);
             this.Contactpanel.Controls.Add(this.phone);
             this.Contactpanel.Controls.Add(this.lblzip);
@@ -131,30 +131,30 @@
             this.lblLastContact.TabIndex = 16;
             this.lblLastContact.Text = "Last Contact Date";
             // 
-            // textBox2
+            // ClientDetailsAddressTextBox
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(55, 34);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 36);
-            this.textBox2.TabIndex = 15;
+            this.ClientDetailsAddressTextBox.Enabled = false;
+            this.ClientDetailsAddressTextBox.Location = new System.Drawing.Point(55, 34);
+            this.ClientDetailsAddressTextBox.Multiline = true;
+            this.ClientDetailsAddressTextBox.Name = "ClientDetailsAddressTextBox";
+            this.ClientDetailsAddressTextBox.Size = new System.Drawing.Size(203, 36);
+            this.ClientDetailsAddressTextBox.TabIndex = 15;
             // 
-            // textBox1
+            // ClientDetailsNameTextBox
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(55, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 20);
-            this.textBox1.TabIndex = 14;
+            this.ClientDetailsNameTextBox.Enabled = false;
+            this.ClientDetailsNameTextBox.Location = new System.Drawing.Point(55, 6);
+            this.ClientDetailsNameTextBox.Name = "ClientDetailsNameTextBox";
+            this.ClientDetailsNameTextBox.Size = new System.Drawing.Size(203, 20);
+            this.ClientDetailsNameTextBox.TabIndex = 14;
             // 
-            // txtemail
+            // ClientDetailsEmailTextBox
             // 
-            this.txtemail.Enabled = false;
-            this.txtemail.Location = new System.Drawing.Point(57, 185);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(129, 20);
-            this.txtemail.TabIndex = 13;
+            this.ClientDetailsEmailTextBox.Enabled = false;
+            this.ClientDetailsEmailTextBox.Location = new System.Drawing.Point(57, 185);
+            this.ClientDetailsEmailTextBox.Name = "ClientDetailsEmailTextBox";
+            this.ClientDetailsEmailTextBox.Size = new System.Drawing.Size(129, 20);
+            this.ClientDetailsEmailTextBox.TabIndex = 13;
             // 
             // pictureBox2
             // 
@@ -166,45 +166,45 @@
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
             // 
-            // txtphone2
+            // ClientDetailsPhone2TextBox
             // 
-            this.txtphone2.Enabled = false;
-            this.txtphone2.Location = new System.Drawing.Point(57, 150);
-            this.txtphone2.Name = "txtphone2";
-            this.txtphone2.Size = new System.Drawing.Size(129, 20);
-            this.txtphone2.TabIndex = 11;
+            this.ClientDetailsPhone2TextBox.Enabled = false;
+            this.ClientDetailsPhone2TextBox.Location = new System.Drawing.Point(57, 150);
+            this.ClientDetailsPhone2TextBox.Name = "ClientDetailsPhone2TextBox";
+            this.ClientDetailsPhone2TextBox.Size = new System.Drawing.Size(129, 20);
+            this.ClientDetailsPhone2TextBox.TabIndex = 11;
             // 
-            // txtphone1
+            // ClientDetailsPhone1TextBox
             // 
-            this.txtphone1.Enabled = false;
-            this.txtphone1.Location = new System.Drawing.Point(55, 115);
-            this.txtphone1.Name = "txtphone1";
-            this.txtphone1.Size = new System.Drawing.Size(129, 20);
-            this.txtphone1.TabIndex = 10;
+            this.ClientDetailsPhone1TextBox.Enabled = false;
+            this.ClientDetailsPhone1TextBox.Location = new System.Drawing.Point(55, 115);
+            this.ClientDetailsPhone1TextBox.Name = "ClientDetailsPhone1TextBox";
+            this.ClientDetailsPhone1TextBox.Size = new System.Drawing.Size(129, 20);
+            this.ClientDetailsPhone1TextBox.TabIndex = 10;
             // 
-            // txtzip
+            // ClientDetailsZipTextBox
             // 
-            this.txtzip.Enabled = false;
-            this.txtzip.Location = new System.Drawing.Point(200, 89);
-            this.txtzip.Name = "txtzip";
-            this.txtzip.Size = new System.Drawing.Size(48, 20);
-            this.txtzip.TabIndex = 9;
+            this.ClientDetailsZipTextBox.Enabled = false;
+            this.ClientDetailsZipTextBox.Location = new System.Drawing.Point(200, 89);
+            this.ClientDetailsZipTextBox.Name = "ClientDetailsZipTextBox";
+            this.ClientDetailsZipTextBox.Size = new System.Drawing.Size(48, 20);
+            this.ClientDetailsZipTextBox.TabIndex = 9;
             // 
-            // txtstate
+            // ClientDetailsStateTextBox
             // 
-            this.txtstate.Enabled = false;
-            this.txtstate.Location = new System.Drawing.Point(154, 87);
-            this.txtstate.Name = "txtstate";
-            this.txtstate.Size = new System.Drawing.Size(32, 20);
-            this.txtstate.TabIndex = 8;
+            this.ClientDetailsStateTextBox.Enabled = false;
+            this.ClientDetailsStateTextBox.Location = new System.Drawing.Point(154, 87);
+            this.ClientDetailsStateTextBox.Name = "ClientDetailsStateTextBox";
+            this.ClientDetailsStateTextBox.Size = new System.Drawing.Size(32, 20);
+            this.ClientDetailsStateTextBox.TabIndex = 8;
             // 
-            // txtcity
+            // ClientDetailsCityTextBox
             // 
-            this.txtcity.Enabled = false;
-            this.txtcity.Location = new System.Drawing.Point(5, 87);
-            this.txtcity.Name = "txtcity";
-            this.txtcity.Size = new System.Drawing.Size(129, 20);
-            this.txtcity.TabIndex = 7;
+            this.ClientDetailsCityTextBox.Enabled = false;
+            this.ClientDetailsCityTextBox.Location = new System.Drawing.Point(5, 87);
+            this.ClientDetailsCityTextBox.Name = "ClientDetailsCityTextBox";
+            this.ClientDetailsCityTextBox.Size = new System.Drawing.Size(129, 20);
+            this.ClientDetailsCityTextBox.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -518,17 +518,17 @@
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
             // 
-            // efa_tab
+            // ClientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1079, 507);
             this.Controls.Add(this.caseNotePanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.efaHistPanel);
             this.Controls.Add(this.reqpanel);
             this.Controls.Add(this.Contactpanel);
-            this.Name = "efa_tab";
-            this.Size = new System.Drawing.Size(1095, 546);
+            this.Name = "ClientDetails";
             this.Contactpanel.ResumeLayout(false);
             this.Contactpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -556,15 +556,15 @@
         private System.Windows.Forms.Label lblcity;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblname;
-        private System.Windows.Forms.TextBox txtzip;
-        private System.Windows.Forms.TextBox txtstate;
-        private System.Windows.Forms.TextBox txtcity;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtemail;
+        private System.Windows.Forms.TextBox ClientDetailsZipTextBox;
+        private System.Windows.Forms.TextBox ClientDetailsStateTextBox;
+        private System.Windows.Forms.TextBox ClientDetailsCityTextBox;
+        private System.Windows.Forms.TextBox ClientDetailsAddressTextBox;
+        private System.Windows.Forms.TextBox ClientDetailsNameTextBox;
+        private System.Windows.Forms.TextBox ClientDetailsEmailTextBox;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox txtphone2;
-        private System.Windows.Forms.TextBox txtphone1;
+        private System.Windows.Forms.TextBox ClientDetailsPhone2TextBox;
+        private System.Windows.Forms.TextBox ClientDetailsPhone1TextBox;
         private System.Windows.Forms.Panel reqpanel;
         private System.Windows.Forms.Label lblefa_request;
         private System.Windows.Forms.Panel efaHistPanel;
