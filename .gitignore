@@ -3,4 +3,5 @@
 *.swp
 *.cache
 *.suo
-FRCApp/bin/*
+FRCApp\bin\Debug\FRCApp.exe
+FRCApp/bin/Debug/FRCApp.pdb
