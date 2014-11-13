@@ -321,6 +321,7 @@
             this.householdIncome_button.TabIndex = 19;
             this.householdIncome_button.Text = "Enter Household Income and Finances";
             this.householdIncome_button.UseVisualStyleBackColor = true;
+            this.householdIncome_button.Click += new System.EventHandler(this.householdIncome_button_Click);
             // 
             // submit_button
             // 
