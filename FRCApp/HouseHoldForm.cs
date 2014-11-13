@@ -14,10 +14,11 @@ namespace FRCApp
     public partial class HouseHoldForm : Form
     {
         private DataSet1.HouseholdMembersDataTable table;
-        public HouseHoldForm()
+        public HouseHoldForm(DataSet1.HouseholdMembersDataTable table)
         {
             InitializeComponent();
-            table = new DataSet1.HouseholdMembersDataTable();
+            this.table = table;
+            //table = new DataSet1.HouseholdMembersDataTable();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,6 +33,8 @@ namespace FRCApp
                 MessageBox.Show("You must enter all of the information.");
                 return;
             }
+
+            
             DataSet1.HouseholdMembersRow row = table.NewHouseholdMembersRow();
             row.FirstName = HouseHoldFormFirstNameTextBox.Text;
             row.LastName = HouseHoldFormlastNameTextBox.Text;
@@ -41,6 +44,7 @@ namespace FRCApp
             row.LastFourSSN = HouseHoldFormlast4DigitsOfSsnTextBox.Text;
             row.Relationship = HouseHoldFormRelationshipToApplicant.Text;
             table.AddHouseholdMembersRow(row);
+             
 
             //Add the items to the listView
             ListViewItem item = new ListViewItem(HouseHoldFormFirstNameTextBox.Text);

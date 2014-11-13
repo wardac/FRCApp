@@ -12,9 +12,11 @@ namespace FRCApp {
     public partial class NewClient : Form {
         private HouseHoldForm householdForm;
         private ExpenseForm expenseForm;
+        private DataSet1.HouseholdMembersDataTable household_table;
+
         public NewClient() {
             InitializeComponent();
-            householdForm = new HouseHoldForm();
+            householdForm = new HouseHoldForm(household_table);
             expenseForm = new ExpenseForm();
         }
 
@@ -92,7 +94,10 @@ namespace FRCApp {
                     Console.WriteLine(((System.Data.DataRowView)item).Row.Field<string>(1));
                 }
                 DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
-                adapter.AddClient(firstName_textBox.Text, lastName_textBox.Text, middleInitial_textBox.Text, DateTime.Parse(dataOfBirth_dateTimePicker.Text), homeAddress_textBox.Text, apartmentNumber_textBox.Text, city_textBox.Text, "Ohio", zipCode_textBox.Text, telephone1_textBox.Text, telephone2_textBox.Text, "", "", "", true, true, true);
+                System.Decimal clientID = (System.Decimal)adapter.AddClient(firstName_textBox.Text, lastName_textBox.Text, middleInitial_textBox.Text, DateTime.Parse(dataOfBirth_dateTimePicker.Text), homeAddress_textBox.Text, apartmentNumber_textBox.Text, city_textBox.Text, "Ohio", zipCode_textBox.Text, telephone1_textBox.Text, telephone2_textBox.Text, "", "", "", true, true, true);
+
+                DataSet1TableAdapters.HouseholdsTableAdapter householdAdapter = new DataSet1TableAdapters.HouseholdsTableAdapter();
+                
                 this.Close();
             }
         }

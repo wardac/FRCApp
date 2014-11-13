@@ -7,3 +7,10 @@
         }
     }
 }
+
+namespace FRCApp.DataSet1TableAdapters {
+    
+    
+    public partial class ClientsTableAdapter {
+    }
+}
