@@ -65,7 +65,8 @@ namespace FRCApp
             DataSet1TableAdapters.ClientsTableAdapter client = new DataSet1TableAdapters.ClientsTableAdapter();
             var clients = client.GetDataByid(1);
             efa_clientName.Text = clients[0].FirstName;
-            DataSet1TableAdapters.QueriesTableAdapter incomeadapter = new DataSet1TableAdapters.QueriesTableAdapter();
+            DataSet1TableAdapters.IncomeInfoTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeInfoTableAdapter();
+            var incomeinfo = incomeAdapter.GetIncomeInfo(1);
             
 
         }
