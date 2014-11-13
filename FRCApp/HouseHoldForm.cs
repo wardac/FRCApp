@@ -41,7 +41,19 @@ namespace FRCApp
             row.LastFourSSN = HouseHoldFormlast4DigitsOfSsnTextBox.Text;
             row.Relationship = HouseHoldFormRelationshipToApplicant.Text;
             table.AddHouseholdMembersRow(row);
-            HouseHoldFormSummaryListBox.Items.Add(row);
+
+            //Add the items to the listView
+            ListViewItem item = new ListViewItem(HouseHoldFormFirstNameTextBox.Text);
+            //item.SubItems.Add();
+            item.SubItems.Add(HouseHoldFormlastNameTextBox.Text);
+            item.SubItems.Add(HouseHoldFormlast4DigitsOfSsnTextBox.Text);
+            item.SubItems.Add(HouseHoldFormBirthDateDateTimePicker.Text);
+            item.SubItems.Add(HouseHoldFormEthnicityListBox.SelectedValue.ToString());
+            item.SubItems.Add(HouseHoldFormRelationshipToApplicant.Text);
+            item.SubItems.Add((!HouseHoldFormRadioButtonNo.Checked).ToString());
+
+            HouseHoldForm_ListView_Summary.Items.Add(item);
+         
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -98,6 +110,11 @@ namespace FRCApp
 
         private bool textExists(string str) {
             return str != null && str != "";
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
