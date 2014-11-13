@@ -46,15 +46,55 @@ namespace FRCApp {
             expenseForm.Show();
         }
 
+
+        /**
+         * Validates the form data
+         * returns true if the form is valid
+         * returns false otherwise
+         */
+        private bool formHasValidData()
+        {
+            if (string.IsNullOrEmpty(firstName_textBox.Text))
+            {
+                MessageBox.Show("Please enter in a first name");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(lastName_textBox.Text))
+            {
+                MessageBox.Show("Please enter in a last name");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(homeAddress_textBox.Text))
+            {
+                MessageBox.Show("Please enter in an address");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(city_textBox.Text))
+            {
+                MessageBox.Show("Please enter in a City");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(zipCode_textBox.Text))
+            {
+                MessageBox.Show("Please enter in a zip code");
+                return false;
+            }
+            return true;
+        }
+
         private void submit_button_Click(object sender, EventArgs e)
         {
-            foreach (object item in ReferralsBox.CheckedItems)
+            if (formHasValidData())
             {
-                Console.WriteLine(((System.Data.DataRowView)item).Row.Field<string>(1));
+
+                foreach (object item in ReferralsBox.CheckedItems)
+                {
+                    Console.WriteLine(((System.Data.DataRowView)item).Row.Field<string>(1));
+                }
+                DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
+                adapter.AddClient(firstName_textBox.Text, lastName_textBox.Text, middleInitial_textBox.Text, DateTime.Parse(dataOfBirth_dateTimePicker.Text), homeAddress_textBox.Text, apartmentNumber_textBox.Text, city_textBox.Text, "Ohio", zipCode_textBox.Text, telephone1_textBox.Text, telephone2_textBox.Text, "", "", "", true, true, true);
+                this.Close();
             }
-            DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
-            adapter.AddClient(firstName_textBox.Text, lastName_textBox.Text, middleInitial_textBox.Text, DateTime.Parse(dataOfBirth_dateTimePicker.Text), homeAddress_textBox.Text, apartmentNumber_textBox.Text, city_textBox.Text, "Ohio", zipCode_textBox.Text, telephone1_textBox.Text, telephone2_textBox.Text, "", "", "", true, true, true);
-            this.Close();
         }
 
         private void NewClient_Load(object sender, EventArgs e)
