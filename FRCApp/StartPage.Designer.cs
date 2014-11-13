@@ -36,10 +36,10 @@
             this.dateOfBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clientId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.search_button = new System.Windows.Forms.Button();
             this.search_textBox = new System.Windows.Forms.TextBox();
             this.search_label = new System.Windows.Forms.Label();
-            this.clientId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.startPage_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,11 +79,11 @@
             // client_listView
             // 
             this.client_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clientId,
             this.name,
             this.dateOfBirth,
             this.Address,
-            this.number,
-            this.clientId});
+            this.number});
             this.client_listView.FullRowSelect = true;
             this.client_listView.Location = new System.Drawing.Point(14, 46);
             this.client_listView.MultiSelect = false;
@@ -92,7 +92,6 @@
             this.client_listView.TabIndex = 3;
             this.client_listView.UseCompatibleStateImageBehavior = false;
             this.client_listView.View = System.Windows.Forms.View.Details;
-            //this.client_listView.Click += new System.EventHandler(this.client_listView_Click);
             this.client_listView.SelectedIndexChanged += new System.EventHandler(this.client_listView_Click);
             // 
             // name
@@ -114,6 +113,11 @@
             // 
             this.number.Text = "Phone Number";
             this.number.Width = 92;
+            // 
+            // clientId
+            // 
+            this.clientId.Text = "Id";
+            this.clientId.Width = 27;
             // 
             // search_button
             // 
@@ -140,10 +144,6 @@
             this.search_label.Size = new System.Drawing.Size(75, 13);
             this.search_label.TabIndex = 0;
             this.search_label.Text = "Client Lookup:";
-            // 
-            // clientId
-            // 
-            this.clientId.Text = "Id";
             // 
             // StartPage
             // 
