@@ -42,7 +42,15 @@ namespace FRCApp
 
         private void clientPage_button_Click(object sender, EventArgs e)
         {
-            new ClientDetails(selectedClientId).Show();
+            if (selectedClientId >= 0)
+            {
+                new ClientDetails(selectedClientId).Show();
+                selectedClientId = -1;
+            }
+            else
+            {
+                MessageBox.Show("Please select a client");
+            }
         }
 
         private void client_listView_Click(object sender, EventArgs e)
@@ -52,7 +60,11 @@ namespace FRCApp
                 ListViewItem selectedItem = client_listView.SelectedItems[0];
                 selectedClientId = Int16.Parse(selectedItem.SubItems[4].Text);
             }
-
+            else
+            {
+                selectedClientId = -1;
+            }
         }
+
     }
 }
