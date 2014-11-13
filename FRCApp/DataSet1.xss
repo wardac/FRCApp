@@ -22,7 +22,7 @@
     <Shape ID="DesignTable:MonthlyExpenses" ZOrder="12" X="850" Y="265" Height="153" Width="246" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:RelationTypes" ZOrder="11" X="3586" Y="265" Height="115" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:HouseholdMembers" ZOrder="10" X="467" Y="-31" Height="248" Width="262" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
-    <Shape ID="DesignTable:Clients" ZOrder="7" X="903" Y="128" Height="343" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:Clients" ZOrder="7" X="1019" Y="86" Height="362" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:ReferralTypes" ZOrder="3" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:GoalTypes" ZOrder="2" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:Races" ZOrder="1" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
@@ -175,11 +175,11 @@
     <Connector ID="DesignRelation:FK__EFAReques__Clien__4D2A7347" ZOrder="6" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>1044</X>
-          <Y>471</Y>
+          <X>1160</X>
+          <Y>448</Y>
         </Point>
         <Point>
-          <X>1044</X>
+          <X>1160</X>
           <Y>479</Y>
         </Point>
         <Point>
@@ -191,12 +191,12 @@
     <Connector ID="DesignRelation:FK__MonthlyEx__Clien__55BFB948" ZOrder="5" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>903</X>
-          <Y>248</Y>
+          <X>1019</X>
+          <Y>206</Y>
         </Point>
         <Point>
           <X>886</X>
-          <Y>248</Y>
+          <Y>206</Y>
         </Point>
         <Point>
           <X>886</X>
@@ -208,11 +208,11 @@
       <RoutePoints>
         <Point>
           <X>2446</X>
-          <Y>310</Y>
+          <Y>268</Y>
         </Point>
         <Point>
-          <X>1203</X>
-          <Y>310</Y>
+          <X>1319</X>
+          <Y>268</Y>
         </Point>
       </RoutePoints>
     </Connector>
