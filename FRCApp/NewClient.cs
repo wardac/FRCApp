@@ -10,14 +10,20 @@ using System.Windows.Forms;
 
 namespace FRCApp {
     public partial class NewClient : Form {
+        // form members
         private HouseHoldForm householdForm;
         private ExpenseForm expenseForm;
+        private FinanceForm financeForm;
         private DataSet1.HouseholdMembersDataTable household_table;
+
+        // form data
+        private ListView financeFormData;
 
         public NewClient() {
             InitializeComponent();
             householdForm = new HouseHoldForm(household_table);
             expenseForm = new ExpenseForm();
+            financeForm = new FinanceForm(financeFormData);
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) {
@@ -46,6 +52,11 @@ namespace FRCApp {
         private void monthlyExpenses_button_Click(object sender, EventArgs e)
         {
             expenseForm.Show();
+        }
+
+        private void householdIncome_button_Click(object sender, EventArgs e)
+        {
+            financeForm.Show();
         }
 
 

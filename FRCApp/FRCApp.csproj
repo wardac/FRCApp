@@ -100,7 +100,7 @@
       <DependentUpon>fc_tab.cs</DependentUpon>
     </Compile>
     <Compile Include="FinanceForm.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FinanceForm.Designer.cs">
       <DependentUpon>FinanceForm.cs</DependentUpon>
@@ -195,6 +195,7 @@
     <EmbeddedResource Include="StartPage.resx">
       <DependentUpon>StartPage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

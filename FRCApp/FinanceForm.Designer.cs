@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FinanceFormSummaryListBox = new System.Windows.Forms.ListBox();
             this.FinanceFormlastNameTextBox = new System.Windows.Forms.TextBox();
             this.FinanceFormFirstNameTextBox = new System.Windows.Forms.TextBox();
             this.FinanceFormLastName = new System.Windows.Forms.Label();
@@ -42,16 +41,13 @@
             this.FinanceFormSourceOfIncomelabel = new System.Windows.Forms.Label();
             this.FinanceFormNumTimesIncomeReceievedTextBox = new System.Windows.Forms.TextBox();
             this.FinanceFormNumTimesRecievedlabel = new System.Windows.Forms.Label();
+            this.FinancelistView = new System.Windows.Forms.ListView();
+            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.incomeSource = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.incomeAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.incomeFrequency = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FinanceRemoveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // FinanceFormSummaryListBox
-            // 
-            this.FinanceFormSummaryListBox.FormattingEnabled = true;
-            this.FinanceFormSummaryListBox.Location = new System.Drawing.Point(430, 28);
-            this.FinanceFormSummaryListBox.Name = "FinanceFormSummaryListBox";
-            this.FinanceFormSummaryListBox.Size = new System.Drawing.Size(368, 290);
-            this.FinanceFormSummaryListBox.TabIndex = 33;
-            this.FinanceFormSummaryListBox.SelectedIndexChanged += new System.EventHandler(this.HouseHoldFormSummaryListBox_SelectedIndexChanged);
             // 
             // FinanceFormlastNameTextBox
             // 
@@ -59,7 +55,7 @@
             this.FinanceFormlastNameTextBox.Name = "FinanceFormlastNameTextBox";
             this.FinanceFormlastNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.FinanceFormlastNameTextBox.TabIndex = 26;
-            this.FinanceFormlastNameTextBox.TextChanged += new System.EventHandler(this.HouseHoldFormlastNameTextBox_TextChanged);
+            this.FinanceFormlastNameTextBox.TextChanged += new System.EventHandler(this.FinanceFormlastNameTextBox_TextChanged);
             // 
             // FinanceFormFirstNameTextBox
             // 
@@ -67,7 +63,7 @@
             this.FinanceFormFirstNameTextBox.Name = "FinanceFormFirstNameTextBox";
             this.FinanceFormFirstNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.FinanceFormFirstNameTextBox.TabIndex = 25;
-            this.FinanceFormFirstNameTextBox.TextChanged += new System.EventHandler(this.HouseHoldFormFirstNameTextBox_TextChanged);
+            this.FinanceFormFirstNameTextBox.TextChanged += new System.EventHandler(this.FinanceFormFirstNameTextBox_TextChanged);
             // 
             // FinanceFormLastName
             // 
@@ -78,17 +74,17 @@
             this.FinanceFormLastName.Size = new System.Drawing.Size(67, 13);
             this.FinanceFormLastName.TabIndex = 19;
             this.FinanceFormLastName.Text = "Last Name";
-            this.FinanceFormLastName.Click += new System.EventHandler(this.HouseHoldFormLastName_Click);
+            this.FinanceFormLastName.Click += new System.EventHandler(this.FinanceFormLastName_Click);
             // 
             // FinanceSubmitAdd
             // 
-            this.FinanceSubmitAdd.Location = new System.Drawing.Point(160, 295);
+            this.FinanceSubmitAdd.Location = new System.Drawing.Point(321, 228);
             this.FinanceSubmitAdd.Name = "FinanceSubmitAdd";
             this.FinanceSubmitAdd.Size = new System.Drawing.Size(75, 23);
             this.FinanceSubmitAdd.TabIndex = 18;
             this.FinanceSubmitAdd.Text = "Add";
             this.FinanceSubmitAdd.UseVisualStyleBackColor = true;
-            this.FinanceSubmitAdd.Click += new System.EventHandler(this.HouseHoldSubmitAdd_Click);
+            this.FinanceSubmitAdd.Click += new System.EventHandler(this.FinanceSubmitAdd_Click);
             // 
             // FinanceFormTitle
             // 
@@ -99,7 +95,7 @@
             this.FinanceFormTitle.Size = new System.Drawing.Size(376, 25);
             this.FinanceFormTitle.TabIndex = 17;
             this.FinanceFormTitle.Text = "HOUSEHOLD INCOME AND FINANCES";
-            this.FinanceFormTitle.Click += new System.EventHandler(this.HouseHoldFormTitle_Click);
+            this.FinanceFormTitle.Click += new System.EventHandler(this.FinanceFormTitle_Click);
             // 
             // FinanceFormFirstName
             // 
@@ -110,7 +106,7 @@
             this.FinanceFormFirstName.Size = new System.Drawing.Size(67, 13);
             this.FinanceFormFirstName.TabIndex = 16;
             this.FinanceFormFirstName.Text = "First Name";
-            this.FinanceFormFirstName.Click += new System.EventHandler(this.HouseHoldFormFirstName_Click);
+            this.FinanceFormFirstName.Click += new System.EventHandler(this.FinanceFormFirstName_Click);
             // 
             // FinancePersonWithIncomeLabel
             // 
@@ -173,10 +169,58 @@
             this.FinanceFormNumTimesRecievedlabel.TabIndex = 41;
             this.FinanceFormNumTimesRecievedlabel.Text = "How often income is received";
             // 
+            // FinancelistView
+            // 
+            this.FinancelistView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.name,
+            this.incomeSource,
+            this.incomeAmount,
+            this.incomeFrequency});
+            this.FinancelistView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.FinancelistView.Location = new System.Drawing.Point(414, 51);
+            this.FinancelistView.MultiSelect = false;
+            this.FinancelistView.Name = "FinancelistView";
+            this.FinancelistView.Size = new System.Drawing.Size(405, 171);
+            this.FinancelistView.TabIndex = 43;
+            this.FinancelistView.UseCompatibleStateImageBehavior = false;
+            this.FinancelistView.View = System.Windows.Forms.View.Details;
+            // 
+            // name
+            // 
+            this.name.Text = "First, Last Name";
+            this.name.Width = 88;
+            // 
+            // incomeSource
+            // 
+            this.incomeSource.Text = "Source of Income";
+            this.incomeSource.Width = 97;
+            // 
+            // incomeAmount
+            // 
+            this.incomeAmount.Text = "Amount of Income";
+            this.incomeAmount.Width = 98;
+            // 
+            // incomeFrequency
+            // 
+            this.incomeFrequency.Text = "Frequency of Income";
+            this.incomeFrequency.Width = 114;
+            // 
+            // FinanceRemoveButton
+            // 
+            this.FinanceRemoveButton.Location = new System.Drawing.Point(744, 228);
+            this.FinanceRemoveButton.Name = "FinanceRemoveButton";
+            this.FinanceRemoveButton.Size = new System.Drawing.Size(75, 23);
+            this.FinanceRemoveButton.TabIndex = 44;
+            this.FinanceRemoveButton.Text = "Remove";
+            this.FinanceRemoveButton.UseVisualStyleBackColor = true;
+            // 
             // FinanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(841, 270);
+            this.Controls.Add(this.FinanceRemoveButton);
+            this.Controls.Add(this.FinancelistView);
             this.Controls.Add(this.FinanceFormNumTimesIncomeReceievedTextBox);
             this.Controls.Add(this.FinanceFormNumTimesRecievedlabel);
             this.Controls.Add(this.FinanceFormSourceOfIncomeTextBox);
@@ -184,7 +228,6 @@
             this.Controls.Add(this.FinanceFormAmountOfIncomeTextBox);
             this.Controls.Add(this.FinanceFormAmountOfIncomelabel);
             this.Controls.Add(this.FinancePersonWithIncomeLabel);
-            this.Controls.Add(this.FinanceFormSummaryListBox);
             this.Controls.Add(this.FinanceFormlastNameTextBox);
             this.Controls.Add(this.FinanceFormFirstNameTextBox);
             this.Controls.Add(this.FinanceFormLastName);
@@ -192,7 +235,6 @@
             this.Controls.Add(this.FinanceFormTitle);
             this.Controls.Add(this.FinanceFormFirstName);
             this.Name = "FinanceForm";
-            this.Size = new System.Drawing.Size(835, 346);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,7 +242,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox FinanceFormSummaryListBox;
         private System.Windows.Forms.TextBox FinanceFormlastNameTextBox;
         private System.Windows.Forms.TextBox FinanceFormFirstNameTextBox;
         private System.Windows.Forms.Label FinanceFormLastName;
@@ -214,5 +255,11 @@
         private System.Windows.Forms.Label FinanceFormSourceOfIncomelabel;
         private System.Windows.Forms.TextBox FinanceFormNumTimesIncomeReceievedTextBox;
         private System.Windows.Forms.Label FinanceFormNumTimesRecievedlabel;
+        private System.Windows.Forms.ListView FinancelistView;
+        private System.Windows.Forms.ColumnHeader name;
+        private System.Windows.Forms.ColumnHeader incomeSource;
+        private System.Windows.Forms.ColumnHeader incomeAmount;
+        private System.Windows.Forms.ColumnHeader incomeFrequency;
+        private System.Windows.Forms.Button FinanceRemoveButton;
     }
 }
