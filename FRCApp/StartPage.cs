@@ -27,15 +27,24 @@ namespace FRCApp
 
         private void search_button_Click(object sender, EventArgs e)
         {
-            DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
-            DataSet1.ClientsDataTable data = adapter.GetData();
-            foreach (DataSet1.ClientsRow row in data)
+            // earse any previous search results
+            foreach (ListViewItem item in client_listView.Items)
             {
-                ListViewItem item = new ListViewItem(row.LastName + ", " + row.FirstName);
+                item.Remove();
+            }
+
+            // query database
+            DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
+            var clients = adapter.ClientLookUp(search_textBox.Text);
+
+            // for each row in our query result, add a listViewItem to our listview
+            foreach (DataSet1.ClientsRow row in clients)
+            {
+                ListViewItem item = new ListViewItem(row.ClientID.ToString());
+                item.SubItems.Add(row.LastName + ", " + row.FirstName);
                 item.SubItems.Add(row.Birthdate.ToShortDateString());
                 item.SubItems.Add(row.Address);
                 item.SubItems.Add(row.Phone1);
-                item.SubItems.Add(row.ClientID.ToString());
                 client_listView.Items.Add(item);
             }
         }
@@ -58,7 +67,7 @@ namespace FRCApp
             if (client_listView.SelectedItems.Count > 0)
             {
                 ListViewItem selectedItem = client_listView.SelectedItems[0];
-                selectedClientId = Int16.Parse(selectedItem.SubItems[4].Text);
+                selectedClientId = Int16.Parse(selectedItem.SubItems[0].Text);
             }
             else
             {
