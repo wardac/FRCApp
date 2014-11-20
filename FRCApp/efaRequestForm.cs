@@ -62,6 +62,8 @@ namespace FRCApp
 
         private void efaRequestForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.EFARequestTypes' table. You can move, or remove it, as needed.
+            this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
             DataSet1TableAdapters.ClientsTableAdapter client = new DataSet1TableAdapters.ClientsTableAdapter();
             var clients = client.GetDataByid(1);
             efa_clientName.Text = clients[0].FirstName;

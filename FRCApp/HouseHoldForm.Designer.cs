@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.title = new System.Windows.Forms.Panel();
+            this.HouseHoldForm_ListView_Summary = new System.Windows.Forms.ListView();
+            this.First = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Last = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BirthDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Relationship = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Ethnicity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Coverage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSubmit = new System.Windows.Forms.Button();
             this.HouseHoldFormRadioButtonNo = new System.Windows.Forms.RadioButton();
             this.HouseHoldFormRadioButtonYes = new System.Windows.Forms.RadioButton();
@@ -52,14 +60,6 @@
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
-            this.HouseHoldForm_ListView_Summary = new System.Windows.Forms.ListView();
-            this.First = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Last = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SSN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.BirthDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Relationship = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Ethnicity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Coverage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -92,6 +92,54 @@
             this.title.Size = new System.Drawing.Size(966, 420);
             this.title.TabIndex = 0;
             this.title.Paint += new System.Windows.Forms.PaintEventHandler(this.title_Paint);
+            // 
+            // HouseHoldForm_ListView_Summary
+            // 
+            this.HouseHoldForm_ListView_Summary.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.First,
+            this.Last,
+            this.SSN,
+            this.BirthDate,
+            this.Relationship,
+            this.Ethnicity,
+            this.Coverage});
+            this.HouseHoldForm_ListView_Summary.Location = new System.Drawing.Point(417, 4);
+            this.HouseHoldForm_ListView_Summary.Name = "HouseHoldForm_ListView_Summary";
+            this.HouseHoldForm_ListView_Summary.Size = new System.Drawing.Size(538, 372);
+            this.HouseHoldForm_ListView_Summary.TabIndex = 17;
+            this.HouseHoldForm_ListView_Summary.UseCompatibleStateImageBehavior = false;
+            this.HouseHoldForm_ListView_Summary.View = System.Windows.Forms.View.Details;
+            this.HouseHoldForm_ListView_Summary.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // First
+            // 
+            this.First.Text = "First";
+            this.First.Width = 77;
+            // 
+            // Last
+            // 
+            this.Last.Text = "Last";
+            // 
+            // SSN
+            // 
+            this.SSN.Text = "SSN";
+            // 
+            // BirthDate
+            // 
+            this.BirthDate.Text = "Birth Date";
+            // 
+            // Relationship
+            // 
+            this.Relationship.Text = "Relationship";
+            this.Relationship.Width = 73;
+            // 
+            // Ethnicity
+            // 
+            this.Ethnicity.Text = "Ethnicity";
+            // 
+            // Coverage
+            // 
+            this.Coverage.Text = "Coverage";
             // 
             // btnSubmit
             // 
@@ -284,53 +332,6 @@
             // racesTableAdapter
             // 
             this.racesTableAdapter.ClearBeforeFill = true;
-            // 
-            // HouseHoldForm_ListView_Summary
-            // 
-            this.HouseHoldForm_ListView_Summary.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.First,
-            this.Last,
-            this.SSN,
-            this.BirthDate,
-            this.Relationship,
-            this.Ethnicity,
-            this.Coverage});
-            this.HouseHoldForm_ListView_Summary.Location = new System.Drawing.Point(417, 4);
-            this.HouseHoldForm_ListView_Summary.Name = "HouseHoldForm_ListView_Summary";
-            this.HouseHoldForm_ListView_Summary.Size = new System.Drawing.Size(538, 372);
-            this.HouseHoldForm_ListView_Summary.TabIndex = 17;
-            this.HouseHoldForm_ListView_Summary.UseCompatibleStateImageBehavior = false;
-            this.HouseHoldForm_ListView_Summary.View = System.Windows.Forms.View.Details;
-            this.HouseHoldForm_ListView_Summary.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // First
-            // 
-            this.First.Text = "First";
-            this.First.Width = 77;
-            // 
-            // Last
-            // 
-            this.Last.Text = "Last";
-            // 
-            // SSN
-            // 
-            this.SSN.Text = "SSN";
-            // 
-            // BirthDate
-            // 
-            this.BirthDate.Text = "Birth Date";
-            // 
-            // Relationship
-            // 
-            this.Relationship.Text = "Relationship";
-            // 
-            // Ethnicity
-            // 
-            this.Ethnicity.Text = "Ethnicity";
-            // 
-            // Coverage
-            // 
-            this.Coverage.Text = "Coverage";
             // 
             // HouseHoldForm
             // 

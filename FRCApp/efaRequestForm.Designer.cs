@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.requestPanel = new System.Windows.Forms.Panel();
             this.lblComment = new System.Windows.Forms.Label();
             this.grpcauseshardship = new System.Windows.Forms.GroupBox();
@@ -66,6 +67,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.requestdate = new System.Windows.Forms.Label();
             this.cmbEfaCategory = new System.Windows.Forms.ComboBox();
+            this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new FRCApp.DataSet1();
             this.lblefacategory = new System.Windows.Forms.Label();
             this.efa_ID = new System.Windows.Forms.TextBox();
             this.lblreqId = new System.Windows.Forms.Label();
@@ -75,10 +78,13 @@
             this.submitEfa = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
             this.requestPanel.SuspendLayout();
             this.grpcauseshardship.SuspendLayout();
             this.efa_financegroup.SuspendLayout();
             this.efa_proofGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eFARequestTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // requestPanel
@@ -462,11 +468,24 @@
             // 
             // cmbEfaCategory
             // 
+            this.cmbEfaCategory.DataSource = this.eFARequestTypesBindingSource;
+            this.cmbEfaCategory.DisplayMember = "Type";
             this.cmbEfaCategory.FormattingEnabled = true;
             this.cmbEfaCategory.Location = new System.Drawing.Point(161, 73);
             this.cmbEfaCategory.Name = "cmbEfaCategory";
             this.cmbEfaCategory.Size = new System.Drawing.Size(259, 21);
             this.cmbEfaCategory.TabIndex = 7;
+            this.cmbEfaCategory.ValueMember = "EFARequestTypeID";
+            // 
+            // eFARequestTypesBindingSource
+            // 
+            this.eFARequestTypesBindingSource.DataMember = "EFARequestTypes";
+            this.eFARequestTypesBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblefacategory
             // 
@@ -550,6 +569,10 @@
             this.lineShape1.Y1 = 100;
             this.lineShape1.Y2 = 378;
             // 
+            // eFARequestTypesTableAdapter
+            // 
+            this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
+            // 
             // efaRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,6 +590,8 @@
             this.efa_financegroup.PerformLayout();
             this.efa_proofGroup.ResumeLayout(false);
             this.efa_proofGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eFARequestTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -620,5 +645,8 @@
         private System.Windows.Forms.Label lblQInfo;
         private System.Windows.Forms.Label lblCQinfo;
         private System.Windows.Forms.Label lblComment;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource eFARequestTypesBindingSource;
+        private DataSet1TableAdapters.EFARequestTypesTableAdapter eFARequestTypesTableAdapter;
     }
 }

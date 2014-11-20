@@ -21,6 +21,7 @@ namespace FRCApp {
 
         public NewClient() {
             InitializeComponent();
+            household_table = new DataSet1.HouseholdMembersDataTable();
             householdForm = new HouseHoldForm(household_table);
             expenseForm = new ExpenseForm();
             financeForm = new FinanceForm(financeFormData);
