@@ -93,23 +93,11 @@
     <Compile Include="ExpenseForm.Designer.cs">
       <DependentUpon>ExpenseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="fc_tab.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="fc_tab.Designer.cs">
-      <DependentUpon>fc_tab.cs</DependentUpon>
-    </Compile>
     <Compile Include="FinanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FinanceForm.Designer.cs">
       <DependentUpon>FinanceForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="HouseHoldForm.cs">
       <SubType>Form</SubType>
@@ -159,14 +147,8 @@
     <EmbeddedResource Include="ExpenseForm.resx">
       <DependentUpon>ExpenseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fc_tab.resx">
-      <DependentUpon>fc_tab.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FinanceForm.resx">
       <DependentUpon>FinanceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HouseHoldForm.resx">
       <DependentUpon>HouseHoldForm.cs</DependentUpon>

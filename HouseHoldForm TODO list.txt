@@ -1,0 +1,19 @@
+cancel button
+	- add the button
+	- properly closes form
+
+Remove button
+	- ability to select rows
+	- remove selected row from HouseHoldForm_ListView_Summary
+
+Add button
+	- Add current data in fields to HouseHoldForm_ListView_Summary
+	- remove code adding to DataSet1 table
+
+Submit button
+	- change name to "Submit to Database"
+	- add ListView items to DataSet1 table
+	- add data from table to database using stored procedure
+	
+HouseHoldForm_ListView_Summary
+	- switch Relationship and Ethnicity column
