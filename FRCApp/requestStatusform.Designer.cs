@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.requestPanel = new System.Windows.Forms.Panel();
             this.statusPanel = new System.Windows.Forms.Panel();
             this.lblReferals = new System.Windows.Forms.Label();
@@ -88,11 +89,16 @@
             this.update_efa = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.dataSet1 = new FRCApp.DataSet1();
+            this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
             this.requestPanel.SuspendLayout();
             this.statusPanel.SuspendLayout();
             this.grpcauseshardship.SuspendLayout();
             this.efa_financegroup.SuspendLayout();
             this.efa_proofGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eFARequestTypesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // requestPanel
@@ -703,7 +709,6 @@
             this.cancelEfa.TabIndex = 1;
             this.cancelEfa.Text = "cancel";
             this.cancelEfa.UseVisualStyleBackColor = true;
-            this.cancelEfa.Click += new System.EventHandler(this.cancelEfa_Click);
             // 
             // update_efa
             // 
@@ -733,6 +738,20 @@
             this.lineShape1.Y1 = 100;
             this.lineShape1.Y2 = 378;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // eFARequestTypesBindingSource
+            // 
+            this.eFARequestTypesBindingSource.DataMember = "EFARequestTypes";
+            this.eFARequestTypesBindingSource.DataSource = this.dataSet1;
+            // 
+            // eFARequestTypesTableAdapter
+            // 
+            this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
+            // 
             // requestStatusform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,6 +760,7 @@
             this.Controls.Add(this.requestPanel);
             this.Name = "requestStatusform";
             this.Text = "Request Status";
+            this.Load += new System.EventHandler(this.requestStatusform_Load);
             this.requestPanel.ResumeLayout(false);
             this.requestPanel.PerformLayout();
             this.statusPanel.ResumeLayout(false);
@@ -751,6 +771,8 @@
             this.efa_financegroup.PerformLayout();
             this.efa_proofGroup.ResumeLayout(false);
             this.efa_proofGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eFARequestTypesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -817,5 +839,8 @@
         private System.Windows.Forms.ColumnHeader completionDate;
         private System.Windows.Forms.Label lblReferals;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource eFARequestTypesBindingSource;
+        private DataSet1TableAdapters.EFARequestTypesTableAdapter eFARequestTypesTableAdapter;
     }
 }

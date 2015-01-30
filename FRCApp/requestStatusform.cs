@@ -12,15 +12,14 @@ namespace FRCApp
 {
     public partial class requestStatusform : Form
     {
-        public requestStatusform()
+        Boolean newrequest;
+        public requestStatusform(Boolean request)
         {
+            newrequest =request;
             InitializeComponent();
         }
 
-        private void cancelEfa_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void efa_proofaddress_CheckedChanged(object sender, EventArgs e)
         {
@@ -84,6 +83,32 @@ namespace FRCApp
                 chkApprovedReason.Enabled = false;
 
             }
+        }
+
+        private void requestStatusform_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSet1.EFARequestTypes' table. You can move, or remove it, as needed.
+            this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
+            if (newrequest)
+            {
+                this.Text = "efa request form";
+                statusPanel.Visible = false;
+                efa_reqamount.Enabled = true;
+            }
+           
+           
+            // TODO: This line of code loads data into the 'dataSet1.EFARequestTypes' table. You can move, or remove it, as needed.
+            this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
+
+            cmbEfaCategory.DataSource = this.eFARequestTypesTableAdapter.GetData();
+            cmbEfaCategory.ValueMember = "EFARequestTypeID";
+            cmbEfaCategory.DisplayMember = "Type";
+
+            DataSet1TableAdapters.ClientsTableAdapter client = new DataSet1TableAdapters.ClientsTableAdapter();
+            var clients = client.GetDataByid(1);
+            efa_clientName.Text = clients[0].FirstName;
+            DataSet1TableAdapters.IncomeInfoTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeInfoTableAdapter();
+            var incomeinfo = incomeAdapter.GetIncomeInfo(1);
         }
     }
 }
