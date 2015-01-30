@@ -306,16 +306,16 @@
             // 
             // emergencyFunds_button
             // 
-            this.emergencyFunds_button.Location = new System.Drawing.Point(317, 618);
+            this.emergencyFunds_button.Location = new System.Drawing.Point(535, 618);
             this.emergencyFunds_button.Name = "emergencyFunds_button";
-            this.emergencyFunds_button.Size = new System.Drawing.Size(172, 23);
+            this.emergencyFunds_button.Size = new System.Drawing.Size(180, 23);
             this.emergencyFunds_button.TabIndex = 18;
             this.emergencyFunds_button.Text = "New Emergency Funds Request";
             this.emergencyFunds_button.UseVisualStyleBackColor = true;
             // 
             // householdIncome_button
             // 
-            this.householdIncome_button.Location = new System.Drawing.Point(499, 618);
+            this.householdIncome_button.Location = new System.Drawing.Point(313, 618);
             this.householdIncome_button.Name = "householdIncome_button";
             this.householdIncome_button.Size = new System.Drawing.Size(216, 23);
             this.householdIncome_button.TabIndex = 19;

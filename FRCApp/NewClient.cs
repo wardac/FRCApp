@@ -15,6 +15,8 @@ namespace FRCApp {
         private ExpenseForm expenseForm;
         private FinanceForm financeForm;
         private DataSet1.HouseholdMembersDataTable household_table;
+        private Guid clientID;
+        private Guid householdID;
 
         // form data
         private ListView financeFormData;
@@ -25,6 +27,8 @@ namespace FRCApp {
             householdForm = new HouseHoldForm(household_table);
             expenseForm = new ExpenseForm();
             financeForm = new FinanceForm(financeFormData);
+            clientID = Guid.NewGuid();
+            householdID = Guid.NewGuid();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) {
