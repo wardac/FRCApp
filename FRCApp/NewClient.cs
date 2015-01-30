@@ -14,7 +14,6 @@ namespace FRCApp {
         private HouseHoldForm householdForm;
         private ExpenseForm expenseForm;
         private FinanceForm financeForm;
-        private DataSet1.HouseholdMembersDataTable household_table;
         private Guid clientID;
         private Guid householdID;
 
@@ -23,8 +22,6 @@ namespace FRCApp {
 
         public NewClient() {
             InitializeComponent();
-            household_table = new DataSet1.HouseholdMembersDataTable();
-            householdForm = new HouseHoldForm(household_table);
             expenseForm = new ExpenseForm();
             financeForm = new FinanceForm(financeFormData);
             clientID = Guid.NewGuid();
@@ -51,6 +48,7 @@ namespace FRCApp {
 
         private void householdInfo_button_Click(object sender, EventArgs e)
         {
+            householdForm = new HouseHoldForm();
             householdForm.Show();
         }
 

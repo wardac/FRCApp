@@ -60,6 +60,7 @@
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
+            this.HouseHoldFormCancelButton = new System.Windows.Forms.Button();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -68,6 +69,7 @@
             // 
             // title
             // 
+            this.title.Controls.Add(this.HouseHoldFormCancelButton);
             this.title.Controls.Add(this.HouseHoldForm_ListView_Summary);
             this.title.Controls.Add(this.btnSubmit);
             this.title.Controls.Add(this.HouseHoldFormRadioButtonNo);
@@ -103,6 +105,7 @@
             this.Relationship,
             this.Ethnicity,
             this.Coverage});
+            this.HouseHoldForm_ListView_Summary.FullRowSelect = true;
             this.HouseHoldForm_ListView_Summary.Location = new System.Drawing.Point(417, 4);
             this.HouseHoldForm_ListView_Summary.Name = "HouseHoldForm_ListView_Summary";
             this.HouseHoldForm_ListView_Summary.Size = new System.Drawing.Size(538, 372);
@@ -333,6 +336,16 @@
             // 
             this.racesTableAdapter.ClearBeforeFill = true;
             // 
+            // HouseHoldFormCancelButton
+            // 
+            this.HouseHoldFormCancelButton.Location = new System.Drawing.Point(857, 381);
+            this.HouseHoldFormCancelButton.Name = "HouseHoldFormCancelButton";
+            this.HouseHoldFormCancelButton.Size = new System.Drawing.Size(75, 23);
+            this.HouseHoldFormCancelButton.TabIndex = 18;
+            this.HouseHoldFormCancelButton.Text = "Cancel";
+            this.HouseHoldFormCancelButton.UseVisualStyleBackColor = true;
+            this.HouseHoldFormCancelButton.Click += new System.EventHandler(this.HouseHoldFormCancelButton_Click);
+            // 
             // HouseHoldForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,5 +397,6 @@
         private System.Windows.Forms.ColumnHeader Relationship;
         private System.Windows.Forms.ColumnHeader Ethnicity;
         private System.Windows.Forms.ColumnHeader Coverage;
+        private System.Windows.Forms.Button HouseHoldFormCancelButton;
     }
 }

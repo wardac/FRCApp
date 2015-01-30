@@ -1,19 +1,25 @@
-cancel button
+cancel button (Ryan)
 	- add the button
 	- properly closes form
 
-Remove button
+Remove button (Mark)
 	- ability to select rows
 	- remove selected row from HouseHoldForm_ListView_Summary
 
-Add button
+Add button (Ryan)
 	- Add current data in fields to HouseHoldForm_ListView_Summary
 	- remove code adding to DataSet1 table
 
-Submit button
+Submit button (Ryan)
 	- change name to "Submit to Database"
 	- add ListView items to DataSet1 table
 	- add data from table to database using stored procedure
 	
-HouseHoldForm_ListView_Summary
+HouseHoldForm_ListView_Summary (Mark)
 	- switch Relationship and Ethnicity column
+	
+Error Checking
+	- SSN validation (make sure they're numbers, 4 numbers exactly)
+	- Check for duplicates
+	- submit button needs to check for at least one row
+	- remove button needs to check for one highlighted row

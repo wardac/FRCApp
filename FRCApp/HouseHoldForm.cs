@@ -14,11 +14,11 @@ namespace FRCApp
     public partial class HouseHoldForm : Form
     {
         private DataSet1.HouseholdMembersDataTable table;
-        public HouseHoldForm(DataSet1.HouseholdMembersDataTable table)
+
+        public HouseHoldForm()
         {
             InitializeComponent();
-            this.table = table;
-            //table = new DataSet1.HouseholdMembersDataTable();
+            table = new DataSet1.HouseholdMembersDataTable();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -119,6 +119,15 @@ namespace FRCApp
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void HouseHoldFormCancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult messageBox = MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.YesNo);
+            if (messageBox == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
