@@ -54,13 +54,11 @@
             this.chkrecentlyemp = new System.Windows.Forms.CheckBox();
             this.chkjobloss = new System.Windows.Forms.CheckBox();
             this.efa_financegroup = new System.Windows.Forms.GroupBox();
-            this.txtMexpenses = new System.Windows.Forms.TextBox();
-            this.txtMicome = new System.Windows.Forms.TextBox();
-            this.txtQCincome = new System.Windows.Forms.TextBox();
+            this.txt_Mexpenses = new System.Windows.Forms.TextBox();
+            this.txt_Mincome = new System.Windows.Forms.TextBox();
             this.txt_QHincome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblQInfo = new System.Windows.Forms.Label();
             this.lblCQinfo = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.efa_comment = new System.Windows.Forms.TextBox();
@@ -402,57 +400,47 @@
             // 
             // efa_financegroup
             // 
-            this.efa_financegroup.Controls.Add(this.txtMexpenses);
-            this.efa_financegroup.Controls.Add(this.txtMicome);
-            this.efa_financegroup.Controls.Add(this.txtQCincome);
+            this.efa_financegroup.Controls.Add(this.txt_Mexpenses);
+            this.efa_financegroup.Controls.Add(this.txt_Mincome);
             this.efa_financegroup.Controls.Add(this.txt_QHincome);
             this.efa_financegroup.Controls.Add(this.label1);
             this.efa_financegroup.Controls.Add(this.label3);
-            this.efa_financegroup.Controls.Add(this.lblQInfo);
             this.efa_financegroup.Controls.Add(this.lblCQinfo);
             this.efa_financegroup.Location = new System.Drawing.Point(45, 383);
             this.efa_financegroup.Name = "efa_financegroup";
             this.efa_financegroup.Size = new System.Drawing.Size(386, 130);
             this.efa_financegroup.TabIndex = 18;
             this.efa_financegroup.TabStop = false;
-            this.efa_financegroup.Text = "Financial Summary";
+            this.efa_financegroup.Text = "Household Financial Summary";
             // 
-            // txtMexpenses
+            // txt_Mexpenses
             // 
-            this.txtMexpenses.Enabled = false;
-            this.txtMexpenses.Location = new System.Drawing.Point(290, 95);
-            this.txtMexpenses.Name = "txtMexpenses";
-            this.txtMexpenses.Size = new System.Drawing.Size(90, 20);
-            this.txtMexpenses.TabIndex = 7;
+            this.txt_Mexpenses.Enabled = false;
+            this.txt_Mexpenses.Location = new System.Drawing.Point(279, 26);
+            this.txt_Mexpenses.Name = "txt_Mexpenses";
+            this.txt_Mexpenses.Size = new System.Drawing.Size(90, 20);
+            this.txt_Mexpenses.TabIndex = 7;
             // 
-            // txtMicome
+            // txt_Mincome
             // 
-            this.txtMicome.Enabled = false;
-            this.txtMicome.Location = new System.Drawing.Point(142, 94);
-            this.txtMicome.Name = "txtMicome";
-            this.txtMicome.Size = new System.Drawing.Size(100, 20);
-            this.txtMicome.TabIndex = 6;
-            // 
-            // txtQCincome
-            // 
-            this.txtQCincome.Enabled = false;
-            this.txtQCincome.Location = new System.Drawing.Point(142, 73);
-            this.txtQCincome.Name = "txtQCincome";
-            this.txtQCincome.Size = new System.Drawing.Size(100, 20);
-            this.txtQCincome.TabIndex = 5;
+            this.txt_Mincome.Enabled = false;
+            this.txt_Mincome.Location = new System.Drawing.Point(100, 49);
+            this.txt_Mincome.Name = "txt_Mincome";
+            this.txt_Mincome.Size = new System.Drawing.Size(75, 20);
+            this.txt_Mincome.TabIndex = 6;
             // 
             // txt_QHincome
             // 
             this.txt_QHincome.Enabled = false;
-            this.txt_QHincome.Location = new System.Drawing.Point(142, 45);
+            this.txt_QHincome.Location = new System.Drawing.Point(100, 23);
             this.txt_QHincome.Name = "txt_QHincome";
-            this.txt_QHincome.Size = new System.Drawing.Size(100, 20);
+            this.txt_QHincome.Size = new System.Drawing.Size(75, 20);
             this.txt_QHincome.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 97);
+            this.label1.Location = new System.Drawing.Point(12, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 3;
@@ -461,29 +449,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(286, 73);
+            this.label3.Location = new System.Drawing.Point(181, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Monthly expenses";
             // 
-            // lblQInfo
-            // 
-            this.lblQInfo.AutoSize = true;
-            this.lblQInfo.Location = new System.Drawing.Point(10, 73);
-            this.lblQInfo.Name = "lblQInfo";
-            this.lblQInfo.Size = new System.Drawing.Size(110, 13);
-            this.lblQInfo.TabIndex = 1;
-            this.lblQInfo.Text = "Client quaterly income";
-            // 
             // lblCQinfo
             // 
             this.lblCQinfo.AutoSize = true;
-            this.lblCQinfo.Location = new System.Drawing.Point(7, 45);
+            this.lblCQinfo.Location = new System.Drawing.Point(7, 26);
             this.lblCQinfo.Name = "lblCQinfo";
-            this.lblCQinfo.Size = new System.Drawing.Size(135, 13);
+            this.lblCQinfo.Size = new System.Drawing.Size(87, 13);
             this.lblCQinfo.TabIndex = 0;
-            this.lblCQinfo.Text = "Household quaterly income";
+            this.lblCQinfo.Text = "Quarterly Income";
             // 
             // textBox1
             // 
@@ -791,13 +770,11 @@
         private System.Windows.Forms.CheckBox chkrecentlyemp;
         private System.Windows.Forms.CheckBox chkjobloss;
         private System.Windows.Forms.GroupBox efa_financegroup;
-        private System.Windows.Forms.TextBox txtMexpenses;
-        private System.Windows.Forms.TextBox txtMicome;
-        private System.Windows.Forms.TextBox txtQCincome;
+        private System.Windows.Forms.TextBox txt_Mexpenses;
+        private System.Windows.Forms.TextBox txt_Mincome;
         private System.Windows.Forms.TextBox txt_QHincome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblQInfo;
         private System.Windows.Forms.Label lblCQinfo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox efa_comment;

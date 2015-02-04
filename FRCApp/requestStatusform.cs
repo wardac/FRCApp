@@ -91,7 +91,7 @@ namespace FRCApp
             this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
             if (newrequest)
             {
-                this.Text = "efa request form";
+                this.Text = "New EFA Request";
                 statusPanel.Visible = false;
                 efa_reqamount.Enabled = true;
             }
@@ -109,6 +109,11 @@ namespace FRCApp
             efa_clientName.Text = clients[0].FirstName;
             DataSet1TableAdapters.IncomeInfoTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeInfoTableAdapter();
             var incomeinfo = incomeAdapter.GetIncomeInfo("80E28AD9-D5D6-431D-B198-A12DC2478DE8");
+            txt_QHincome.Text = incomeinfo[0].QuarterlyIncome.ToString();
+            txt_Mincome.Text = incomeinfo[0].MonthlyIncome.ToString();
+            DataSet1TableAdapters.MonthlyExpensesTableAdapter expenseAdapter = new DataSet1TableAdapters.MonthlyExpensesTableAdapter();
+            var expenseInfo = expenseAdapter.MonthlyExpensesByHouseholdID("9C437FC1-9301-47D0-BFBA-FE48294F4C65");
+            txt_Mexpenses.Text = expenseInfo.ToString();
         }
     }
 }
