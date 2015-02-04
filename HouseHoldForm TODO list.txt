@@ -1,9 +1,9 @@
 cancel button (Ryan)
-	- add the button
-	- properly closes form
+	- add the button (DONE)
+	- properly closes form (DONE)
 
 Remove button (Mark)
-	- ability to select rows
+	- ability to select rows (DONE)
 	- remove selected row from HouseHoldForm_ListView_Summary
 
 Add button (Ryan)
