@@ -108,7 +108,7 @@ namespace FRCApp {
                     Console.WriteLine(((System.Data.DataRowView)item).Row.Field<string>(1));
                 }
                 DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
-                System.Decimal clientID = (System.Decimal)adapter.AddClient(firstName_textBox.Text, lastName_textBox.Text, middleInitial_textBox.Text, DateTime.Parse(dataOfBirth_dateTimePicker.Text), homeAddress_textBox.Text, apartmentNumber_textBox.Text, city_textBox.Text, "Ohio", zipCode_textBox.Text, telephone1_textBox.Text, telephone2_textBox.Text, "", "", "", true, true, true);
+                adapter.AddClient(clientID.ToString(), householdID.ToString(), firstName_textBox.Text, lastName_textBox.Text, middleInitial_textBox.Text, DateTime.Parse(dataOfBirth_dateTimePicker.Text), homeAddress_textBox.Text, apartmentNumber_textBox.Text, city_textBox.Text, "Ohio", zipCode_textBox.Text, telephone1_textBox.Text, telephone2_textBox.Text, "", "", "", true, true, true);
 
                 DataSet1TableAdapters.HouseholdsTableAdapter householdAdapter = new DataSet1TableAdapters.HouseholdsTableAdapter();
                 

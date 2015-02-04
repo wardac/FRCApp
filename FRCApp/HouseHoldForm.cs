@@ -40,8 +40,8 @@ namespace FRCApp
             item.SubItems.Add(HouseHoldFormlastNameTextBox.Text);
             item.SubItems.Add(HouseHoldFormlast4DigitsOfSsnTextBox.Text);
             item.SubItems.Add(HouseHoldFormBirthDateDateTimePicker.Text);
-            item.SubItems.Add(HouseHoldFormEthnicityListBox.SelectedValue.ToString());
             item.SubItems.Add(HouseHoldFormRelationshipToApplicant.Text);
+            item.SubItems.Add(HouseHoldFormEthnicityListBox.SelectedValue.ToString());
             item.SubItems.Add((!HouseHoldFormRadioButtonNo.Checked).ToString());
 
             HouseHoldForm_ListView_Summary.Items.Add(item);
@@ -135,6 +135,17 @@ namespace FRCApp
             {
                 this.Close();
             }
+        }
+
+        /**
+         * Remove all of the selected items form the HouseHoldForm_ListView_Summary
+         **/
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in HouseHoldForm_ListView_Summary.SelectedItems)
+            {
+                item.Remove();
+            }     
         }
     }
 }

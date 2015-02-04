@@ -61,6 +61,7 @@
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
+            this.removeButton = new System.Windows.Forms.Button();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -69,6 +70,7 @@
             // 
             // title
             // 
+            this.title.Controls.Add(this.removeButton);
             this.title.Controls.Add(this.HouseHoldFormCancelButton);
             this.title.Controls.Add(this.HouseHoldForm_ListView_Summary);
             this.title.Controls.Add(this.btnSubmit);
@@ -307,7 +309,7 @@
             // 
             // btnHouseholdMemberAdd
             // 
-            this.btnHouseholdMemberAdd.Location = new System.Drawing.Point(309, 353);
+            this.btnHouseholdMemberAdd.Location = new System.Drawing.Point(234, 353);
             this.btnHouseholdMemberAdd.Name = "btnHouseholdMemberAdd";
             this.btnHouseholdMemberAdd.Size = new System.Drawing.Size(75, 23);
             this.btnHouseholdMemberAdd.TabIndex = 1;
@@ -345,6 +347,16 @@
             // racesTableAdapter
             // 
             this.racesTableAdapter.ClearBeforeFill = true;
+            // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(315, 353);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeButton.TabIndex = 19;
+            this.removeButton.Text = "Remove";
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // HouseHoldForm
             // 
@@ -398,5 +410,6 @@
         private System.Windows.Forms.ColumnHeader Ethnicity;
         private System.Windows.Forms.ColumnHeader Coverage;
         private System.Windows.Forms.Button HouseHoldFormCancelButton;
+        private System.Windows.Forms.Button removeButton;
     }
 }
