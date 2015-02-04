@@ -83,22 +83,18 @@ namespace FRCApp
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             // add ListView items to DataSet1 table
-            DataSet1.HouseholdMembersRow row = table.NewHouseholdMembersRow();
+           DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
             foreach (ListViewItem item in HouseHoldForm_ListView_Summary.Items) {
-                foreach (var subItem in item.SubItems)
-                {
-                    Console.WriteLine(subItem.ToString());
-                }
-                row.FirstName = item.SubItems[0].Text;
-                row.LastName = item.SubItems[1].Text;
-                row.LastFourSSN = item.SubItems[2].Text;
-                row.Birthdate = System.DateTime.Parse(item.SubItems[3].Text);
-                row.Race = item.SubItems[4].Text;
-                row.HealthCoverage = Convert.ToBoolean(item.SubItems[4].Text);
-                
-                row.Relationship = item.SubItems[6].Text;
-                MessageBox.Show(row.ToString());
-                table.AddHouseholdMembersRow(row);
+               
+                adapter.addHouseHoldMember(houseHoldId.ToString(),
+                        item.SubItems[0].Text,
+                        item.SubItems[1].Text,
+                        System.DateTime.Parse(item.SubItems[3].Text),
+                        item.SubItems[4].Text,
+                        item.SubItems[5].Text,
+                        Convert.ToBoolean(item.SubItems[6].Text),
+                        item.SubItems[2].Text
+                 );
             }
 
             this.Close();
