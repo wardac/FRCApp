@@ -85,23 +85,22 @@ namespace FRCApp
             // add ListView items to DataSet1 table
             DataSet1.HouseholdMembersRow row = table.NewHouseholdMembersRow();
             foreach (ListViewItem item in HouseHoldForm_ListView_Summary.Items) {
-                row.HouseholdID = houseHoldId.ToString();
+                foreach (var subItem in item.SubItems)
+                {
+                    Console.WriteLine(subItem.ToString());
+                }
                 row.FirstName = item.SubItems[0].Text;
                 row.LastName = item.SubItems[1].Text;
                 row.LastFourSSN = item.SubItems[2].Text;
                 row.Birthdate = System.DateTime.Parse(item.SubItems[3].Text);
-                row.Relationship = item.SubItems[4].Text;
-                row.Race = item.SubItems[5].Text;
-                row.HealthCoverage = Convert.ToBoolean(item.SubItems[6].Text);
+                row.Race = item.SubItems[4].Text;
+                row.HealthCoverage = Convert.ToBoolean(item.SubItems[4].Text);
+                
+                row.Relationship = item.SubItems[6].Text;
                 MessageBox.Show(row.ToString());
                 table.AddHouseholdMembersRow(row);
-
-                var adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
-                 // adapter.addHouseHoldMember(houseHoldId.ToString(),item.SubItems[0].Text
             }
-            
-          
-            
+
             this.Close();
         }
 
