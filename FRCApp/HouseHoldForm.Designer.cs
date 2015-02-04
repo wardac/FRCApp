@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.title = new System.Windows.Forms.Panel();
+            this.HouseHoldFormCancelButton = new System.Windows.Forms.Button();
             this.HouseHoldForm_ListView_Summary = new System.Windows.Forms.ListView();
             this.First = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Last = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,7 +61,6 @@
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
-            this.HouseHoldFormCancelButton = new System.Windows.Forms.Button();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -94,6 +94,16 @@
             this.title.Size = new System.Drawing.Size(966, 420);
             this.title.TabIndex = 0;
             this.title.Paint += new System.Windows.Forms.PaintEventHandler(this.title_Paint);
+            // 
+            // HouseHoldFormCancelButton
+            // 
+            this.HouseHoldFormCancelButton.Location = new System.Drawing.Point(857, 381);
+            this.HouseHoldFormCancelButton.Name = "HouseHoldFormCancelButton";
+            this.HouseHoldFormCancelButton.Size = new System.Drawing.Size(75, 23);
+            this.HouseHoldFormCancelButton.TabIndex = 18;
+            this.HouseHoldFormCancelButton.Text = "Cancel";
+            this.HouseHoldFormCancelButton.UseVisualStyleBackColor = true;
+            this.HouseHoldFormCancelButton.Click += new System.EventHandler(this.HouseHoldFormCancelButton_Click);
             // 
             // HouseHoldForm_ListView_Summary
             // 
@@ -146,11 +156,11 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(742, 382);
+            this.btnSubmit.Location = new System.Drawing.Point(708, 382);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(109, 23);
             this.btnSubmit.TabIndex = 16;
-            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Text = "Submit to Database";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -303,7 +313,7 @@
             this.btnHouseholdMemberAdd.TabIndex = 1;
             this.btnHouseholdMemberAdd.Text = "Add";
             this.btnHouseholdMemberAdd.UseVisualStyleBackColor = true;
-            this.btnHouseholdMemberAdd.Click += new System.EventHandler(this.HouseHoldSubmitButton_Click);
+            this.btnHouseholdMemberAdd.Click += new System.EventHandler(this.HouseHoldAddButton_Click);
             // 
             // HouseHoldFormTitle
             // 
@@ -335,16 +345,6 @@
             // racesTableAdapter
             // 
             this.racesTableAdapter.ClearBeforeFill = true;
-            // 
-            // HouseHoldFormCancelButton
-            // 
-            this.HouseHoldFormCancelButton.Location = new System.Drawing.Point(857, 381);
-            this.HouseHoldFormCancelButton.Name = "HouseHoldFormCancelButton";
-            this.HouseHoldFormCancelButton.Size = new System.Drawing.Size(75, 23);
-            this.HouseHoldFormCancelButton.TabIndex = 18;
-            this.HouseHoldFormCancelButton.Text = "Cancel";
-            this.HouseHoldFormCancelButton.UseVisualStyleBackColor = true;
-            this.HouseHoldFormCancelButton.Click += new System.EventHandler(this.HouseHoldFormCancelButton_Click);
             // 
             // HouseHoldForm
             // 

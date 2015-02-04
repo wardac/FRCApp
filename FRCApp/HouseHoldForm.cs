@@ -26,26 +26,14 @@ namespace FRCApp
 
         }
 
-        private void HouseHoldSubmitButton_Click(object sender, EventArgs e)
+        private void HouseHoldAddButton_Click(object sender, EventArgs e)
         {
-            //DataSet1.HouseholdMembersRow row = new DataSet1.HouseholdMembersRow();
-            if (!validateForm()) {
+            if (!validateForm())
+            {
                 MessageBox.Show("You must enter all of the information.");
                 return;
-            }
-
+            } 
             
-            DataSet1.HouseholdMembersRow row = table.NewHouseholdMembersRow();
-            row.FirstName = HouseHoldFormFirstNameTextBox.Text;
-            row.LastName = HouseHoldFormlastNameTextBox.Text;
-            row.Birthdate = DateTime.Parse(HouseHoldFormBirthDateDateTimePicker.Text);
-            row.Race = (string) HouseHoldFormEthnicityListBox.SelectedValue;
-            row.HealthCoverage = !HouseHoldFormRadioButtonNo.Checked;
-            row.LastFourSSN = HouseHoldFormlast4DigitsOfSsnTextBox.Text;
-            row.Relationship = HouseHoldFormRelationshipToApplicant.Text;
-            table.AddHouseholdMembersRow(row);
-             
-
             //Add the items to the listView
             ListViewItem item = new ListViewItem(HouseHoldFormFirstNameTextBox.Text);
             //item.SubItems.Add();
@@ -92,6 +80,25 @@ namespace FRCApp
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            // add ListView items to DataSet1 table
+            DataSet1.HouseholdMembersRow row = table.NewHouseholdMembersRow();
+            foreach (ListViewItem item in HouseHoldForm_ListView_Summary.Items) {
+                foreach (var subItem in item.SubItems)
+                {
+                    Console.WriteLine(subItem.ToString());
+                }
+                row.FirstName = item.SubItems[0].Text;
+                row.LastName = item.SubItems[1].Text;
+                row.LastFourSSN = item.SubItems[2].Text;
+                row.Birthdate = System.DateTime.Parse(item.SubItems[3].Text);
+                row.Race = item.SubItems[4].Text;
+                row.HealthCoverage = Convert.ToBoolean(item.SubItems[4].Text);
+                
+                row.Relationship = item.SubItems[6].Text;
+                MessageBox.Show(row.ToString());
+                table.AddHouseholdMembersRow(row);
+            }
+
             this.Close();
         }
 
