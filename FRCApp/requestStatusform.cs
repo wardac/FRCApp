@@ -105,10 +105,10 @@ namespace FRCApp
             cmbEfaCategory.DisplayMember = "Type";
 
             DataSet1TableAdapters.ClientsTableAdapter client = new DataSet1TableAdapters.ClientsTableAdapter();
-            var clients = client.GetDataByid(1);
+            var clients = client.GetDataByid("80E28AD9-D5D6-431D-B198-A12DC2478DE8");
             efa_clientName.Text = clients[0].FirstName;
             DataSet1TableAdapters.IncomeInfoTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeInfoTableAdapter();
-            var incomeinfo = incomeAdapter.GetIncomeInfo(1);
+            var incomeinfo = incomeAdapter.GetIncomeInfo("80E28AD9-D5D6-431D-B198-A12DC2478DE8");
         }
     }
 }

@@ -65,10 +65,10 @@ namespace FRCApp
             // TODO: This line of code loads data into the 'dataSet1.EFARequestTypes' table. You can move, or remove it, as needed.
             this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
             DataSet1TableAdapters.ClientsTableAdapter client = new DataSet1TableAdapters.ClientsTableAdapter();
-            var clients = client.GetDataByid(1);
+            var clients = client.GetDataByid("80E28AD9-D5D6-431D-B198-A12DC2478DE8");
             efa_clientName.Text = clients[0].FirstName;
             DataSet1TableAdapters.IncomeInfoTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeInfoTableAdapter();
-            var incomeinfo = incomeAdapter.GetIncomeInfo(1);
+            var incomeinfo = incomeAdapter.GetIncomeInfo("80E28AD9-D5D6-431D-B198-A12DC2478DE8");
             
 
         }

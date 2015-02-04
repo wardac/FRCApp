@@ -5859,11 +5859,11 @@ namespace FRCApp {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class IncomeInfoDataTable : global::System.Data.TypedTableBase<IncomeInfoRow> {
             
-            private global::System.Data.DataColumn columnClientID;
-            
             private global::System.Data.DataColumn columnQuarterlyIncome;
             
             private global::System.Data.DataColumn columnMonthlyIncome;
+            
+            private global::System.Data.DataColumn columnClientID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -5900,14 +5900,6 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ClientIDColumn {
-                get {
-                    return this.columnClientID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn QuarterlyIncomeColumn {
                 get {
                     return this.columnQuarterlyIncome;
@@ -5919,6 +5911,14 @@ namespace FRCApp {
             public global::System.Data.DataColumn MonthlyIncomeColumn {
                 get {
                     return this.columnMonthlyIncome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ClientIDColumn {
+                get {
+                    return this.columnClientID;
                 }
             }
             
@@ -5959,22 +5959,15 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public IncomeInfoRow AddIncomeInfoRow(int ClientID, decimal QuarterlyIncome, decimal MonthlyIncome) {
+            public IncomeInfoRow AddIncomeInfoRow(decimal QuarterlyIncome, decimal MonthlyIncome, string ClientID) {
                 IncomeInfoRow rowIncomeInfoRow = ((IncomeInfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ClientID,
                         QuarterlyIncome,
-                        MonthlyIncome};
+                        MonthlyIncome,
+                        ClientID};
                 rowIncomeInfoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowIncomeInfoRow);
                 return rowIncomeInfoRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public IncomeInfoRow FindByClientID(int ClientID) {
-                return ((IncomeInfoRow)(this.Rows.Find(new object[] {
-                            ClientID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5994,24 +5987,25 @@ namespace FRCApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnClientID = base.Columns["ClientID"];
                 this.columnQuarterlyIncome = base.Columns["QuarterlyIncome"];
                 this.columnMonthlyIncome = base.Columns["MonthlyIncome"];
+                this.columnClientID = base.Columns["ClientID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnClientID = new global::System.Data.DataColumn("ClientID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClientID);
                 this.columnQuarterlyIncome = new global::System.Data.DataColumn("QuarterlyIncome", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuarterlyIncome);
                 this.columnMonthlyIncome = new global::System.Data.DataColumn("MonthlyIncome", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMonthlyIncome);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnClientID}, true));
+                this.columnClientID = new global::System.Data.DataColumn("ClientID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClientID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnClientID}, false));
                 this.columnClientID.AllowDBNull = false;
                 this.columnClientID.Unique = true;
+                this.columnClientID.MaxLength = 36;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9163,17 +9157,6 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ClientID {
-                get {
-                    return ((int)(this[this.tableIncomeInfo.ClientIDColumn]));
-                }
-                set {
-                    this[this.tableIncomeInfo.ClientIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal QuarterlyIncome {
                 get {
                     try {
@@ -9201,6 +9184,17 @@ namespace FRCApp {
                 }
                 set {
                     this[this.tableIncomeInfo.MonthlyIncomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ClientID {
+                get {
+                    return ((string)(this[this.tableIncomeInfo.ClientIDColumn]));
+                }
+                set {
+                    this[this.tableIncomeInfo.ClientIDColumn] = value;
                 }
             }
             
@@ -15534,13 +15528,13 @@ SELECT ClientID, HouseholdID, FirstName, LastName, MiddleInitial, Birthdate, Add
             this._commandCollection[3].CommandText = "dbo.getClientByid";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param1", global::System.Data.SqlDbType.NVarChar, 36, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "dbo.getIncomeInfo";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param1", global::System.Data.SqlDbType.NVarChar, 36, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15588,13 +15582,13 @@ SELECT ClientID, HouseholdID, FirstName, LastName, MiddleInitial, Birthdate, Add
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.ClientsDataTable GetDataByid(global::System.Nullable<int> param1) {
+        public virtual DataSet1.ClientsDataTable GetDataByid(string param1) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((param1.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(param1.Value));
+            if ((param1 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(param1));
             }
             DataSet1.ClientsDataTable dataTable = new DataSet1.ClientsDataTable();
             this.Adapter.Fill(dataTable);
@@ -15605,13 +15599,13 @@ SELECT ClientID, HouseholdID, FirstName, LastName, MiddleInitial, Birthdate, Add
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.ClientsDataTable getIncomeInfo(global::System.Nullable<int> param1) {
+        public virtual DataSet1.ClientsDataTable getIncomeInfo(string param1) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
-            if ((param1.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(param1.Value));
+            if ((param1 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(param1));
             }
             DataSet1.ClientsDataTable dataTable = new DataSet1.ClientsDataTable();
             this.Adapter.Fill(dataTable);
@@ -17545,9 +17539,9 @@ SELECT ReferralTypeID, ReferralType FROM ReferralTypes WHERE (ReferralTypeID = @
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "IncomeInfo";
-            tableMapping.ColumnMappings.Add("ClientID", "ClientID");
             tableMapping.ColumnMappings.Add("QuarterlyIncome", "QuarterlyIncome");
             tableMapping.ColumnMappings.Add("MonthlyIncome", "MonthlyIncome");
+            tableMapping.ColumnMappings.Add("ClientID", "ClientID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -17564,14 +17558,14 @@ SELECT ReferralTypeID, ReferralType FROM ReferralTypes WHERE (ReferralTypeID = @
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ClientID, QuarterlyIncome, MonthlyIncome FROM dbo.IncomeInfo";
+            this._commandCollection[0].CommandText = "SELECT QuarterlyIncome, MonthlyIncome FROM IncomeInfo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "dbo.getIncomeInfo";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param1", global::System.Data.SqlDbType.NVarChar, 36, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17602,13 +17596,13 @@ SELECT ReferralTypeID, ReferralType FROM ReferralTypes WHERE (ReferralTypeID = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.IncomeInfoDataTable GetIncomeInfo(global::System.Nullable<int> param1) {
+        public virtual DataSet1.IncomeInfoDataTable GetIncomeInfo(string param1) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((param1.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(param1.Value));
+            if ((param1 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(param1));
             }
             DataSet1.IncomeInfoDataTable dataTable = new DataSet1.IncomeInfoDataTable();
             this.Adapter.Fill(dataTable);
