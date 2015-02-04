@@ -12,8 +12,8 @@ namespace FRCApp
 {
     public partial class ClientDetails : Form
     {
-        private int ClientID;
-        public ClientDetails(int clientID)
+        private string ClientID;
+        public ClientDetails(string clientID)
         {
             this.ClientID = clientID;
             InitializeComponent();

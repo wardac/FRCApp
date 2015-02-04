@@ -12,7 +12,7 @@ namespace FRCApp
 {
     public partial class StartPage : Form
     {
-        private int selectedClientId = -1;
+        private string selectedClientId = "";
 
         public StartPage()
         {
@@ -51,7 +51,7 @@ namespace FRCApp
 
         private void clientPage_button_Click(object sender, EventArgs e)
         {
-            if (client_listView.SelectedItems.Count == 0 || (selectedClientId = Int16.Parse(client_listView.SelectedItems[0].SubItems[0].Text)) < 0)
+            if (client_listView.SelectedItems.Count == 0 || (selectedClientId = client_listView.SelectedItems[0].SubItems[0].Text) == "")
             {
                 MessageBox.Show("Please select a client");
                 return;
