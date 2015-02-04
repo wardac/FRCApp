@@ -48,7 +48,7 @@ namespace FRCApp {
 
         private void householdInfo_button_Click(object sender, EventArgs e)
         {
-            householdForm = new HouseHoldForm();
+            householdForm = new HouseHoldForm(householdID);
             householdForm.Show();
         }
 

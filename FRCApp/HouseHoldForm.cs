@@ -14,11 +14,13 @@ namespace FRCApp
     public partial class HouseHoldForm : Form
     {
         private DataSet1.HouseholdMembersDataTable table;
+        private Guid houseHoldId;
 
-        public HouseHoldForm()
+        public HouseHoldForm(Guid houseHoldId)
         {
             InitializeComponent();
             table = new DataSet1.HouseholdMembersDataTable();
+            this.houseHoldId = houseHoldId;
         }
 
         private void label1_Click(object sender, EventArgs e)
