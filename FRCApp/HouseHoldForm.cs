@@ -129,5 +129,16 @@ namespace FRCApp
                 this.Close();
             }
         }
+
+        /**
+         * Remove all of the selected items form the HouseHoldForm_ListView_Summary
+         **/
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in HouseHoldForm_ListView_Summary.SelectedItems)
+            {
+                item.Remove();
+            }     
+        }
     }
 }
