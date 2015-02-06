@@ -95,7 +95,6 @@
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(966, 420);
             this.title.TabIndex = 0;
-            this.title.Paint += new System.Windows.Forms.PaintEventHandler(this.title_Paint);
             // 
             // removeButton
             // 
@@ -213,7 +212,6 @@
             this.HouseHoldFormRelationshipToApplicant.Name = "HouseHoldFormRelationshipToApplicant";
             this.HouseHoldFormRelationshipToApplicant.Size = new System.Drawing.Size(100, 20);
             this.HouseHoldFormRelationshipToApplicant.TabIndex = 4;
-            this.HouseHoldFormRelationshipToApplicant.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // HouseHoldFormBirthDateDateTimePicker
             // 
@@ -255,7 +253,6 @@
             this.HouseHoldFormEthnicityListBox.Size = new System.Drawing.Size(120, 95);
             this.HouseHoldFormEthnicityListBox.TabIndex = 5;
             this.HouseHoldFormEthnicityListBox.ValueMember = "Race";
-            this.HouseHoldFormEthnicityListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // racesBindingSource
             // 
@@ -316,7 +313,6 @@
             this.HouseHoldFormLastName.Size = new System.Drawing.Size(67, 13);
             this.HouseHoldFormLastName.TabIndex = 1;
             this.HouseHoldFormLastName.Text = "Last Name";
-            this.HouseHoldFormLastName.Click += new System.EventHandler(this.HouseHoldFormLastName_Click);
             // 
             // btnHouseholdMemberAdd
             // 
@@ -337,7 +333,6 @@
             this.HouseHoldFormTitle.Size = new System.Drawing.Size(282, 25);
             this.HouseHoldFormTitle.TabIndex = 0;
             this.HouseHoldFormTitle.Text = "HOUSEHOLD INFORMATION";
-            this.HouseHoldFormTitle.Click += new System.EventHandler(this.label1_Click);
             // 
             // HouseHoldFormFirstName
             // 
@@ -348,7 +343,6 @@
             this.HouseHoldFormFirstName.Size = new System.Drawing.Size(67, 13);
             this.HouseHoldFormFirstName.TabIndex = 0;
             this.HouseHoldFormFirstName.Text = "First Name";
-            this.HouseHoldFormFirstName.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // dataSet1BindingSource
             // 
