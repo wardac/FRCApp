@@ -13,10 +13,12 @@ namespace FRCApp
     public partial class requestStatusform : Form
     {
         Boolean newrequest;
-        public requestStatusform(Boolean request)
+        String ClientID;
+        public requestStatusform(String ClientID, Boolean request)
         {
             newrequest =request;
             InitializeComponent();
+            this.ClientID = ClientID;
         }
 
 
@@ -105,10 +107,16 @@ namespace FRCApp
             cmbEfaCategory.DisplayMember = "Type";
 
             DataSet1TableAdapters.ClientsTableAdapter client = new DataSet1TableAdapters.ClientsTableAdapter();
-            var clients = client.GetDataByid("80E28AD9-D5D6-431D-B198-A12DC2478DE8");
+            var clients = client.GetDataByid(ClientID);
             efa_clientName.Text = clients[0].FirstName;
             DataSet1TableAdapters.IncomeInfoTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeInfoTableAdapter();
-            var incomeinfo = incomeAdapter.GetIncomeInfo("80E28AD9-D5D6-431D-B198-A12DC2478DE8");
+            var incomeinfo = incomeAdapter.GetIncomeInfo(clients[0].HouseholdID);
+            txt_QHincome.Text = incomeinfo[0].QuarterlyIncome.ToString();
+            txt_Mincome.Text = incomeinfo[0].MonthlyIncome.ToString();
+            
+            var expensesAdapter = new DataSet1TableAdapters.MonthlyExpensesTableAdapter();
+            var monthlyExpenses = expensesAdapter.getExpenseInfoByHouseholdID(clients[0].HouseholdID);
+            txt_Mexpenses.Text = monthlyExpenses.ToString();
         }
     }
 }

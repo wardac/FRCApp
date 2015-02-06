@@ -54,7 +54,7 @@ namespace FRCApp
 
         private void addEFAButton_Click(object sender, EventArgs e)
         {
-            requestStatusform efareq = new requestStatusform(true);
+            requestStatusform efareq = new requestStatusform(ClientID, true);
             efareq.Show();
         }
 

@@ -75,12 +75,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="efaRequestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="efaRequestForm.Designer.cs">
-      <DependentUpon>efaRequestForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ClientDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,9 +132,6 @@
     <Compile Include="StartPage.Designer.cs">
       <DependentUpon>StartPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="efaRequestForm.resx">
-      <DependentUpon>efaRequestForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClientDetails.resx">
       <DependentUpon>ClientDetails.cs</DependentUpon>
     </EmbeddedResource>
