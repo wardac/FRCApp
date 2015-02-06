@@ -4,22 +4,24 @@ cancel button (Ryan)
 
 Remove button (Mark)
 	- ability to select rows (DONE)
-	- remove selected row from HouseHoldForm_ListView_Summary
+	- remove selected row from HouseHoldForm_ListView_Summary (DONE)
 
 Add button (Ryan)
-	- Add current data in fields to HouseHoldForm_ListView_Summary
-	- remove code adding to DataSet1 table
+	- Add current data in fields to HouseHoldForm_ListView_Summary (DONE)
+	- remove code adding to DataSet1 table (DONE)
 
 Submit button (Ryan)
-	- change name to "Submit to Database"
-	- add ListView items to DataSet1 table
-	- add data from table to database using stored procedure
+	- change name to "Submit to Database" (DONE)
+	- add ListView items to DataSet1 table (DONE)
+	- add data from table to database using stored procedure (DONE)
 	
 HouseHoldForm_ListView_Summary (Mark)
-	- switch Relationship and Ethnicity column
+	- switch Relationship and Ethnicity column (DONE)
 	
 Error Checking
 	- SSN validation (make sure they're numbers, 4 numbers exactly)
-	- Check for duplicates
-	- submit button needs to check for at least one row
-	- remove button needs to check for one highlighted row
+	- Check for duplicates when adding
+	- make validateForm return a string message containing what needs to be filled in
+	- fix tab indexing to be the correct order
+
+- get rid of unsued methods (Ryan)

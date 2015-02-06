@@ -15,6 +15,8 @@ namespace FRCApp
     {
         private DataSet1.HouseholdMembersDataTable table;
         private Guid houseHoldId;
+        private const int BACKSPACE = 8;
+        private const int DELETE = 46;
 
         public HouseHoldForm(Guid houseHoldId)
         {
@@ -107,6 +109,10 @@ namespace FRCApp
 
         }
 
+        /**
+         * Check to ensure each form field has been given a value and household member does not already exist
+         * returns a message containing information about which field needs to be filled in
+         **/
         private bool validateForm() {
             return textExists(HouseHoldFormFirstNameTextBox.Text)
                 && textExists(HouseHoldFormlastNameTextBox.Text)
@@ -117,15 +123,16 @@ namespace FRCApp
                 && (HouseHoldFormRadioButtonYes.Checked || HouseHoldFormRadioButtonNo.Checked);
         }
 
+        /**
+         * Check if text exists inside a textbox. Used for validating our form
+         **/
         private bool textExists(string str) {
             return str != null && str != "";
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /**
+         * Handle clicking the cancel button
+         **/
         private void HouseHoldFormCancelButton_Click(object sender, EventArgs e)
         {
             DialogResult messageBox = MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.YesNo);
@@ -144,6 +151,19 @@ namespace FRCApp
             {
                 item.Remove();
             }     
+        }
+
+        /**
+         * Restrict the ssn text box to only accept numbers
+         **/
+        private void HouseHoldFormlast4DigitsOfSsnTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != BACKSPACE && ch != DELETE)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
