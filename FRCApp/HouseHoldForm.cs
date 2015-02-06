@@ -25,11 +25,10 @@ namespace FRCApp
             this.houseHoldId = houseHoldId;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /**
+         * Event handler for when the user clicks the "Add" button.
+         * Add data from form fields to ListView
+         **/
         private void HouseHoldAddButton_Click(object sender, EventArgs e)
         {
             String message = validateForm();
@@ -62,42 +61,15 @@ namespace FRCApp
             HouseHoldFormRadioButtonYes.Checked = false;
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HouseHoldFormLastName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void title_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        /**
+         * Event handler for user clicking "Submit to Database" button
+         * Submit the data in ListView to the database
+         **/
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // add ListView items to DataSet1 table
+           // add ListView items to DataSet1 table
            DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
             foreach (ListViewItem item in HouseHoldForm_ListView_Summary.Items) {
-               
                 adapter.addHouseHoldMember(houseHoldId.ToString(),
                         item.SubItems[0].Text,
                         item.SubItems[1].Text,
@@ -105,18 +77,16 @@ namespace FRCApp
                         item.SubItems[4].Text,
                         item.SubItems[5].Text,
                         Convert.ToBoolean(item.SubItems[6].Text),
-                        item.SubItems[2].Text
-                 );
+                        item.SubItems[2].Text);
             }
-
-            this.Close();
         }
 
+        /**
+         * Upon start up, load data from DB into Races table
+         **/
         private void HouseHoldForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.Races' table. You can move, or remove it, as needed.
             this.racesTableAdapter.Fill(this.dataSet1.Races);
-
         }
 
         /**
