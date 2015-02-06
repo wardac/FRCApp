@@ -12,89 +12,38 @@ namespace FRCApp
 {
     public partial class ExpenseForm : Form
     {
+        private const int BACKSPACE = 8;
+        private const int DELETE = 46;
+        private const int DECIMAL = 81;
+
         public ExpenseForm()
         {
             InitializeComponent();
         }
 
-        private void ExpenseForm_Load(object sender, EventArgs e)
+        /**
+         * Allow for numbers to only be entered
+         **/
+        private void validateKeyPress(object sender, KeyPressEventArgs e)
         {
+            char ch = e.KeyChar;
 
+            if (!Char.IsDigit(ch) && ch != BACKSPACE && ch != DELETE && ch != DECIMAL)
+            {
+                e.Handled = true;
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        /**
+         * Handle user clicking on the cancel button
+         **/
+        private void cancelButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Other_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExpenseFormGroceriesLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox22_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void doneButtonYo_Click(object sender, EventArgs e)
-        {
-
+            DialogResult messageBox = MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.YesNo);
+            if (messageBox == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

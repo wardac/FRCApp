@@ -22,7 +22,6 @@ namespace FRCApp {
 
         public NewClient() {
             InitializeComponent();
-            expenseForm = new ExpenseForm();
             financeForm = new FinanceForm(financeFormData);
             clientID = Guid.NewGuid();
             householdID = Guid.NewGuid();
@@ -54,6 +53,7 @@ namespace FRCApp {
 
         private void monthlyExpenses_button_Click(object sender, EventArgs e)
         {
+            expenseForm = new ExpenseForm();
             expenseForm.Show();
         }
 

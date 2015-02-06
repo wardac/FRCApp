@@ -73,7 +73,8 @@
             this.ExpenseHouseholdTextBox = new System.Windows.Forms.TextBox();
             this.ExpenseHygieneTextBox = new System.Windows.Forms.TextBox();
             this.ExpenseGroceriesTextBox = new System.Windows.Forms.TextBox();
-            this.doneButtonYo = new System.Windows.Forms.Button();
+            this.submitButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExpenseFormTitle
@@ -85,7 +86,6 @@
             this.ExpenseFormTitle.Size = new System.Drawing.Size(220, 15);
             this.ExpenseFormTitle.TabIndex = 0;
             this.ExpenseFormTitle.Text = "CURRENT MONTHLY EXPENSES";
-            this.ExpenseFormTitle.Click += new System.EventHandler(this.label1_Click);
             // 
             // ExpenseFormRentLabel
             // 
@@ -96,7 +96,6 @@
             this.ExpenseFormRentLabel.Size = new System.Drawing.Size(37, 15);
             this.ExpenseFormRentLabel.TabIndex = 1;
             this.ExpenseFormRentLabel.Text = "Rent";
-            this.ExpenseFormRentLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // ExpenseFormElectricLabel
             // 
@@ -127,7 +126,6 @@
             this.ExpenseFormHeatingLabel.Size = new System.Drawing.Size(57, 15);
             this.ExpenseFormHeatingLabel.TabIndex = 3;
             this.ExpenseFormHeatingLabel.Text = "Heating";
-            this.ExpenseFormHeatingLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // ExpenseFormLaundryLabel
             // 
@@ -178,7 +176,6 @@
             this.ExpenseFormLoansLabel.Size = new System.Drawing.Size(46, 15);
             this.ExpenseFormLoansLabel.TabIndex = 16;
             this.ExpenseFormLoansLabel.Text = "Loans";
-            this.ExpenseFormLoansLabel.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // ExpenseFormCreditCardBillLabel
             // 
@@ -189,7 +186,6 @@
             this.ExpenseFormCreditCardBillLabel.Size = new System.Drawing.Size(104, 15);
             this.ExpenseFormCreditCardBillLabel.TabIndex = 15;
             this.ExpenseFormCreditCardBillLabel.Text = "Credit Card Bill";
-            this.ExpenseFormCreditCardBillLabel.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // ExpenseFormInternetLabel
             // 
@@ -200,7 +196,6 @@
             this.ExpenseFormInternetLabel.Size = new System.Drawing.Size(56, 15);
             this.ExpenseFormInternetLabel.TabIndex = 14;
             this.ExpenseFormInternetLabel.Text = "Internet";
-            this.ExpenseFormInternetLabel.Click += new System.EventHandler(this.label3_Click);
             // 
             // ExpenseFormCableLabel
             // 
@@ -211,7 +206,6 @@
             this.ExpenseFormCableLabel.Size = new System.Drawing.Size(101, 15);
             this.ExpenseFormCableLabel.TabIndex = 13;
             this.ExpenseFormCableLabel.Text = "Cable/Satellite";
-            this.ExpenseFormCableLabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // ExpenseFormHealthInsuranceLabel
             // 
@@ -222,7 +216,6 @@
             this.ExpenseFormHealthInsuranceLabel.Size = new System.Drawing.Size(116, 15);
             this.ExpenseFormHealthInsuranceLabel.TabIndex = 12;
             this.ExpenseFormHealthInsuranceLabel.Text = "Health Insurance";
-            this.ExpenseFormHealthInsuranceLabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // ExpenseFormGasolineTransportLabel
             // 
@@ -233,7 +226,6 @@
             this.ExpenseFormGasolineTransportLabel.Size = new System.Drawing.Size(129, 15);
             this.ExpenseFormGasolineTransportLabel.TabIndex = 11;
             this.ExpenseFormGasolineTransportLabel.Text = "Gasoline/Transport";
-            this.ExpenseFormGasolineTransportLabel.Click += new System.EventHandler(this.label6_Click);
             // 
             // ExpenseFormCarInsuranceLabel
             // 
@@ -244,7 +236,6 @@
             this.ExpenseFormCarInsuranceLabel.Size = new System.Drawing.Size(96, 15);
             this.ExpenseFormCarInsuranceLabel.TabIndex = 10;
             this.ExpenseFormCarInsuranceLabel.Text = "Car Insurance";
-            this.ExpenseFormCarInsuranceLabel.Click += new System.EventHandler(this.label7_Click);
             // 
             // ExpenseFormCarPaymentLabel
             // 
@@ -255,13 +246,12 @@
             this.ExpenseFormCarPaymentLabel.Size = new System.Drawing.Size(88, 15);
             this.ExpenseFormCarPaymentLabel.TabIndex = 9;
             this.ExpenseFormCarPaymentLabel.Text = "Car Payment";
-            this.ExpenseFormCarPaymentLabel.Click += new System.EventHandler(this.label8_Click);
             // 
             // ExpenseChildSupportLabel
             // 
             this.ExpenseChildSupportLabel.AutoSize = true;
             this.ExpenseChildSupportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseChildSupportLabel.Location = new System.Drawing.Point(547, 135);
+            this.ExpenseChildSupportLabel.Location = new System.Drawing.Point(543, 141);
             this.ExpenseChildSupportLabel.Name = "ExpenseChildSupportLabel";
             this.ExpenseChildSupportLabel.Size = new System.Drawing.Size(94, 15);
             this.ExpenseChildSupportLabel.TabIndex = 21;
@@ -271,7 +261,7 @@
             // 
             this.ExpenseFormChildCareLabel.AutoSize = true;
             this.ExpenseFormChildCareLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormChildCareLabel.Location = new System.Drawing.Point(547, 112);
+            this.ExpenseFormChildCareLabel.Location = new System.Drawing.Point(543, 116);
             this.ExpenseFormChildCareLabel.Name = "ExpenseFormChildCareLabel";
             this.ExpenseFormChildCareLabel.Size = new System.Drawing.Size(74, 15);
             this.ExpenseFormChildCareLabel.TabIndex = 20;
@@ -281,7 +271,7 @@
             // 
             this.ExpenseFormHouseholdLabel.AutoSize = true;
             this.ExpenseFormHouseholdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormHouseholdLabel.Location = new System.Drawing.Point(547, 90);
+            this.ExpenseFormHouseholdLabel.Location = new System.Drawing.Point(543, 91);
             this.ExpenseFormHouseholdLabel.Name = "ExpenseFormHouseholdLabel";
             this.ExpenseFormHouseholdLabel.Size = new System.Drawing.Size(76, 15);
             this.ExpenseFormHouseholdLabel.TabIndex = 19;
@@ -291,7 +281,7 @@
             // 
             this.ExpenseFormHygieneLabel.AutoSize = true;
             this.ExpenseFormHygieneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormHygieneLabel.Location = new System.Drawing.Point(547, 67);
+            this.ExpenseFormHygieneLabel.Location = new System.Drawing.Point(543, 67);
             this.ExpenseFormHygieneLabel.Name = "ExpenseFormHygieneLabel";
             this.ExpenseFormHygieneLabel.Size = new System.Drawing.Size(59, 15);
             this.ExpenseFormHygieneLabel.TabIndex = 18;
@@ -306,190 +296,241 @@
             this.ExpenseFormGroceriesLabel.Size = new System.Drawing.Size(69, 15);
             this.ExpenseFormGroceriesLabel.TabIndex = 17;
             this.ExpenseFormGroceriesLabel.Text = "Groceries";
-            this.ExpenseFormGroceriesLabel.Click += new System.EventHandler(this.ExpenseFormGroceriesLabel_Click);
             // 
             // ExpenseOtherLabel
             // 
             this.ExpenseOtherLabel.AutoSize = true;
             this.ExpenseOtherLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseOtherLabel.Location = new System.Drawing.Point(547, 157);
+            this.ExpenseOtherLabel.Location = new System.Drawing.Point(543, 166);
             this.ExpenseOtherLabel.Name = "ExpenseOtherLabel";
             this.ExpenseOtherLabel.Size = new System.Drawing.Size(42, 15);
             this.ExpenseOtherLabel.TabIndex = 22;
             this.ExpenseOtherLabel.Text = "Other";
-            this.ExpenseOtherLabel.Click += new System.EventHandler(this.Other_Click);
             // 
             // ExpenseRentTextBox
             // 
             this.ExpenseRentTextBox.Location = new System.Drawing.Point(124, 40);
             this.ExpenseRentTextBox.Name = "ExpenseRentTextBox";
             this.ExpenseRentTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseRentTextBox.TabIndex = 23;
+            this.ExpenseRentTextBox.TabIndex = 0;
+            this.ExpenseRentTextBox.Text = "0.00";
+            this.ExpenseRentTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseElectricTextBox
             // 
             this.ExpenseElectricTextBox.Location = new System.Drawing.Point(124, 65);
             this.ExpenseElectricTextBox.Name = "ExpenseElectricTextBox";
             this.ExpenseElectricTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseElectricTextBox.TabIndex = 24;
+            this.ExpenseElectricTextBox.TabIndex = 1;
+            this.ExpenseElectricTextBox.Text = "0.00";
+            this.ExpenseElectricTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseHeatingTextBox
             // 
             this.ExpenseHeatingTextBox.Location = new System.Drawing.Point(124, 90);
             this.ExpenseHeatingTextBox.Name = "ExpenseHeatingTextBox";
             this.ExpenseHeatingTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseHeatingTextBox.TabIndex = 25;
+            this.ExpenseHeatingTextBox.TabIndex = 2;
+            this.ExpenseHeatingTextBox.Text = "0.00";
+            this.ExpenseHeatingTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseWaterTextBox
             // 
             this.ExpenseWaterTextBox.Location = new System.Drawing.Point(124, 165);
             this.ExpenseWaterTextBox.Name = "ExpenseWaterTextBox";
             this.ExpenseWaterTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseWaterTextBox.TabIndex = 28;
+            this.ExpenseWaterTextBox.TabIndex = 5;
+            this.ExpenseWaterTextBox.Text = "0.00";
+            this.ExpenseWaterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseTrashTextBox
             // 
             this.ExpenseTrashTextBox.Location = new System.Drawing.Point(124, 140);
             this.ExpenseTrashTextBox.Name = "ExpenseTrashTextBox";
             this.ExpenseTrashTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseTrashTextBox.TabIndex = 27;
+            this.ExpenseTrashTextBox.TabIndex = 4;
+            this.ExpenseTrashTextBox.Text = "0.00";
+            this.ExpenseTrashTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpensePhoneTextBox
             // 
             this.ExpensePhoneTextBox.Location = new System.Drawing.Point(124, 115);
             this.ExpensePhoneTextBox.Name = "ExpensePhoneTextBox";
             this.ExpensePhoneTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpensePhoneTextBox.TabIndex = 26;
+            this.ExpensePhoneTextBox.TabIndex = 3;
+            this.ExpensePhoneTextBox.Text = "0.00";
+            this.ExpensePhoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseLaundryTextBox
             // 
             this.ExpenseLaundryTextBox.Location = new System.Drawing.Point(124, 215);
             this.ExpenseLaundryTextBox.Name = "ExpenseLaundryTextBox";
             this.ExpenseLaundryTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseLaundryTextBox.TabIndex = 30;
+            this.ExpenseLaundryTextBox.TabIndex = 7;
+            this.ExpenseLaundryTextBox.Text = "0.00";
+            this.ExpenseLaundryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpensePrescriptionsTextBox
             // 
             this.ExpensePrescriptionsTextBox.Location = new System.Drawing.Point(124, 190);
             this.ExpensePrescriptionsTextBox.Name = "ExpensePrescriptionsTextBox";
             this.ExpensePrescriptionsTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpensePrescriptionsTextBox.TabIndex = 29;
+            this.ExpensePrescriptionsTextBox.TabIndex = 6;
+            this.ExpensePrescriptionsTextBox.Text = "0.00";
+            this.ExpensePrescriptionsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseLoansTextBox
             // 
             this.ExpenseLoansTextBox.Location = new System.Drawing.Point(419, 215);
             this.ExpenseLoansTextBox.Name = "ExpenseLoansTextBox";
             this.ExpenseLoansTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseLoansTextBox.TabIndex = 38;
+            this.ExpenseLoansTextBox.TabIndex = 15;
+            this.ExpenseLoansTextBox.Text = "0.00";
+            this.ExpenseLoansTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseCreditCardTextBox
             // 
             this.ExpenseCreditCardTextBox.Location = new System.Drawing.Point(419, 190);
             this.ExpenseCreditCardTextBox.Name = "ExpenseCreditCardTextBox";
             this.ExpenseCreditCardTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseCreditCardTextBox.TabIndex = 37;
+            this.ExpenseCreditCardTextBox.TabIndex = 14;
+            this.ExpenseCreditCardTextBox.Text = "0.00";
+            this.ExpenseCreditCardTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseInternetTextBox
             // 
             this.ExpenseInternetTextBox.Location = new System.Drawing.Point(419, 165);
             this.ExpenseInternetTextBox.Name = "ExpenseInternetTextBox";
             this.ExpenseInternetTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseInternetTextBox.TabIndex = 36;
+            this.ExpenseInternetTextBox.TabIndex = 13;
+            this.ExpenseInternetTextBox.Text = "0.00";
+            this.ExpenseInternetTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseCableTextBox
             // 
             this.ExpenseCableTextBox.Location = new System.Drawing.Point(419, 140);
             this.ExpenseCableTextBox.Name = "ExpenseCableTextBox";
             this.ExpenseCableTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseCableTextBox.TabIndex = 35;
+            this.ExpenseCableTextBox.TabIndex = 12;
+            this.ExpenseCableTextBox.Text = "0.00";
+            this.ExpenseCableTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseHealthInsuranceTextBox
             // 
             this.ExpenseHealthInsuranceTextBox.Location = new System.Drawing.Point(419, 115);
             this.ExpenseHealthInsuranceTextBox.Name = "ExpenseHealthInsuranceTextBox";
             this.ExpenseHealthInsuranceTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseHealthInsuranceTextBox.TabIndex = 34;
+            this.ExpenseHealthInsuranceTextBox.TabIndex = 11;
+            this.ExpenseHealthInsuranceTextBox.Text = "0.00";
+            this.ExpenseHealthInsuranceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseGasolineTransportTextBox
             // 
             this.ExpenseGasolineTransportTextBox.Location = new System.Drawing.Point(419, 90);
             this.ExpenseGasolineTransportTextBox.Name = "ExpenseGasolineTransportTextBox";
             this.ExpenseGasolineTransportTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseGasolineTransportTextBox.TabIndex = 33;
+            this.ExpenseGasolineTransportTextBox.TabIndex = 10;
+            this.ExpenseGasolineTransportTextBox.Text = "0.00";
+            this.ExpenseGasolineTransportTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseCarInsuranceTextBox
             // 
             this.ExpenseCarInsuranceTextBox.Location = new System.Drawing.Point(419, 65);
             this.ExpenseCarInsuranceTextBox.Name = "ExpenseCarInsuranceTextBox";
             this.ExpenseCarInsuranceTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseCarInsuranceTextBox.TabIndex = 32;
+            this.ExpenseCarInsuranceTextBox.TabIndex = 9;
+            this.ExpenseCarInsuranceTextBox.Text = "0.00";
+            this.ExpenseCarInsuranceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseCarPaymentTextBox
             // 
             this.ExpenseCarPaymentTextBox.Location = new System.Drawing.Point(419, 40);
             this.ExpenseCarPaymentTextBox.Name = "ExpenseCarPaymentTextBox";
             this.ExpenseCarPaymentTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseCarPaymentTextBox.TabIndex = 31;
+            this.ExpenseCarPaymentTextBox.TabIndex = 8;
+            this.ExpenseCarPaymentTextBox.Text = "0.00";
+            this.ExpenseCarPaymentTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseOtherTextBox
             // 
             this.ExpenseOtherTextBox.Location = new System.Drawing.Point(671, 165);
             this.ExpenseOtherTextBox.Name = "ExpenseOtherTextBox";
             this.ExpenseOtherTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseOtherTextBox.TabIndex = 44;
+            this.ExpenseOtherTextBox.TabIndex = 21;
+            this.ExpenseOtherTextBox.Text = "0.00";
+            this.ExpenseOtherTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseChildSupportTextBox
             // 
             this.ExpenseChildSupportTextBox.Location = new System.Drawing.Point(671, 140);
             this.ExpenseChildSupportTextBox.Name = "ExpenseChildSupportTextBox";
             this.ExpenseChildSupportTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseChildSupportTextBox.TabIndex = 43;
+            this.ExpenseChildSupportTextBox.TabIndex = 20;
+            this.ExpenseChildSupportTextBox.Text = "0.00";
+            this.ExpenseChildSupportTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseChildCareTextBox
             // 
             this.ExpenseChildCareTextBox.Location = new System.Drawing.Point(671, 115);
             this.ExpenseChildCareTextBox.Name = "ExpenseChildCareTextBox";
             this.ExpenseChildCareTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseChildCareTextBox.TabIndex = 42;
+            this.ExpenseChildCareTextBox.TabIndex = 19;
+            this.ExpenseChildCareTextBox.Text = "0.00";
+            this.ExpenseChildCareTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseHouseholdTextBox
             // 
             this.ExpenseHouseholdTextBox.Location = new System.Drawing.Point(671, 90);
             this.ExpenseHouseholdTextBox.Name = "ExpenseHouseholdTextBox";
             this.ExpenseHouseholdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseHouseholdTextBox.TabIndex = 41;
+            this.ExpenseHouseholdTextBox.TabIndex = 18;
+            this.ExpenseHouseholdTextBox.Text = "0.00";
+            this.ExpenseHouseholdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseHygieneTextBox
             // 
             this.ExpenseHygieneTextBox.Location = new System.Drawing.Point(671, 65);
             this.ExpenseHygieneTextBox.Name = "ExpenseHygieneTextBox";
             this.ExpenseHygieneTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseHygieneTextBox.TabIndex = 40;
+            this.ExpenseHygieneTextBox.TabIndex = 17;
+            this.ExpenseHygieneTextBox.Text = "0.00";
+            this.ExpenseHygieneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
             // ExpenseGroceriesTextBox
             // 
             this.ExpenseGroceriesTextBox.Location = new System.Drawing.Point(671, 40);
             this.ExpenseGroceriesTextBox.Name = "ExpenseGroceriesTextBox";
             this.ExpenseGroceriesTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ExpenseGroceriesTextBox.TabIndex = 39;
-            this.ExpenseGroceriesTextBox.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
+            this.ExpenseGroceriesTextBox.TabIndex = 16;
+            this.ExpenseGroceriesTextBox.Text = "0.00";
+            this.ExpenseGroceriesTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validateKeyPress);
             // 
-            // doneButtonYo
+            // submitButton
             // 
-            this.doneButtonYo.Location = new System.Drawing.Point(649, 205);
-            this.doneButtonYo.Name = "doneButtonYo";
-            this.doneButtonYo.Size = new System.Drawing.Size(75, 23);
-            this.doneButtonYo.TabIndex = 45;
-            this.doneButtonYo.Text = "Done";
-            this.doneButtonYo.UseVisualStyleBackColor = true;
-            this.doneButtonYo.Click += new System.EventHandler(this.doneButtonYo_Click);
+            this.submitButton.Location = new System.Drawing.Point(601, 212);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(75, 23);
+            this.submitButton.TabIndex = 22;
+            this.submitButton.Text = "Submit";
+            this.submitButton.UseVisualStyleBackColor = true;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(696, 212);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 23;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // ExpenseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 244);
-            this.Controls.Add(this.doneButtonYo);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.submitButton);
             this.Controls.Add(this.ExpenseOtherTextBox);
             this.Controls.Add(this.ExpenseChildSupportTextBox);
             this.Controls.Add(this.ExpenseChildCareTextBox);
@@ -536,7 +577,6 @@
             this.Controls.Add(this.ExpenseFormRentLabel);
             this.Controls.Add(this.ExpenseFormTitle);
             this.Name = "ExpenseForm";
-            this.Load += new System.EventHandler(this.ExpenseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -589,6 +629,7 @@
         private System.Windows.Forms.TextBox ExpenseHouseholdTextBox;
         private System.Windows.Forms.TextBox ExpenseHygieneTextBox;
         private System.Windows.Forms.TextBox ExpenseGroceriesTextBox;
-        private System.Windows.Forms.Button doneButtonYo;
+        private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
