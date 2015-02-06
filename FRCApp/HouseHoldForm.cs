@@ -32,9 +32,10 @@ namespace FRCApp
 
         private void HouseHoldAddButton_Click(object sender, EventArgs e)
         {
-            if (!validateForm())
+            String message = validateForm();
+            if (message != "OK")
             {
-                MessageBox.Show("You must enter all of the information.");
+                MessageBox.Show(message);
                 return;
             } 
             
@@ -49,7 +50,16 @@ namespace FRCApp
             item.SubItems.Add((!HouseHoldFormRadioButtonNo.Checked).ToString());
 
             HouseHoldForm_ListView_Summary.Items.Add(item);
-         
+
+            //clear the form fields
+            HouseHoldFormFirstNameTextBox.Clear();
+            HouseHoldFormlastNameTextBox.Clear();
+            HouseHoldFormlast4DigitsOfSsnTextBox.Clear();
+            HouseHoldFormRelationshipToApplicant.Clear();
+            HouseHoldFormRelationshipToApplicant.Clear();
+            HouseHoldFormEthnicityListBox.ClearSelected();
+            HouseHoldFormRadioButtonNo.Checked = false;
+            HouseHoldFormRadioButtonYes.Checked = false;
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -113,14 +123,26 @@ namespace FRCApp
          * Check to ensure each form field has been given a value and household member does not already exist
          * returns a message containing information about which field needs to be filled in
          **/
-        private bool validateForm() {
-            return textExists(HouseHoldFormFirstNameTextBox.Text)
-                && textExists(HouseHoldFormlastNameTextBox.Text)
-                && textExists(HouseHoldFormlast4DigitsOfSsnTextBox.Text)
-                && textExists(HouseHoldFormBirthDateDateTimePicker.Text)
-                && textExists(HouseHoldFormRelationshipToApplicant.Text)
-                && textExists((string)HouseHoldFormEthnicityListBox.SelectedValue)
-                && (HouseHoldFormRadioButtonYes.Checked || HouseHoldFormRadioButtonNo.Checked);
+        private string validateForm() {
+                if(!textExists(HouseHoldFormFirstNameTextBox.Text)){
+                    return "Enter a first name";
+                } else if(!textExists(HouseHoldFormlastNameTextBox.Text)) {
+                    return "Enter a last name";
+                }
+                else if (!textExists(HouseHoldFormlast4DigitsOfSsnTextBox.Text) || HouseHoldFormlast4DigitsOfSsnTextBox.Text.Length != 4)
+                {
+                    return "Enter a valid SSN";
+                } else if(!textExists(HouseHoldFormBirthDateDateTimePicker.Text)){
+                    return "Enter a birth date";
+                } else if(!textExists(HouseHoldFormRelationshipToApplicant.Text)){
+                    return "Enter a relationship to the applicant";
+                } else if(!textExists((string)HouseHoldFormEthnicityListBox.SelectedValue)){
+                    return "Enter a Ethnicity";
+                }else if (!HouseHoldFormRadioButtonYes.Checked && !HouseHoldFormRadioButtonNo.Checked){
+                    return "Enter health insurance info";
+                }
+
+                return "OK";
         }
 
         /**
