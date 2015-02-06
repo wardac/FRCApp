@@ -91,7 +91,7 @@
             // 
             this.ExpenseFormRentLabel.AutoSize = true;
             this.ExpenseFormRentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormRentLabel.Location = new System.Drawing.Point(8, 42);
+            this.ExpenseFormRentLabel.Location = new System.Drawing.Point(12, 41);
             this.ExpenseFormRentLabel.Name = "ExpenseFormRentLabel";
             this.ExpenseFormRentLabel.Size = new System.Drawing.Size(37, 15);
             this.ExpenseFormRentLabel.TabIndex = 1;
@@ -102,7 +102,7 @@
             // 
             this.ExpenseFormElectricLabel.AutoSize = true;
             this.ExpenseFormElectricLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormElectricLabel.Location = new System.Drawing.Point(8, 64);
+            this.ExpenseFormElectricLabel.Location = new System.Drawing.Point(12, 67);
             this.ExpenseFormElectricLabel.Name = "ExpenseFormElectricLabel";
             this.ExpenseFormElectricLabel.Size = new System.Drawing.Size(55, 15);
             this.ExpenseFormElectricLabel.TabIndex = 2;
@@ -112,7 +112,7 @@
             // 
             this.ExpenseForPhoneLabel.AutoSize = true;
             this.ExpenseForPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseForPhoneLabel.Location = new System.Drawing.Point(8, 109);
+            this.ExpenseForPhoneLabel.Location = new System.Drawing.Point(12, 116);
             this.ExpenseForPhoneLabel.Name = "ExpenseForPhoneLabel";
             this.ExpenseForPhoneLabel.Size = new System.Drawing.Size(48, 15);
             this.ExpenseForPhoneLabel.TabIndex = 4;
@@ -122,7 +122,7 @@
             // 
             this.ExpenseFormHeatingLabel.AutoSize = true;
             this.ExpenseFormHeatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormHeatingLabel.Location = new System.Drawing.Point(8, 87);
+            this.ExpenseFormHeatingLabel.Location = new System.Drawing.Point(12, 91);
             this.ExpenseFormHeatingLabel.Name = "ExpenseFormHeatingLabel";
             this.ExpenseFormHeatingLabel.Size = new System.Drawing.Size(57, 15);
             this.ExpenseFormHeatingLabel.TabIndex = 3;
@@ -133,7 +133,7 @@
             // 
             this.ExpenseFormLaundryLabel.AutoSize = true;
             this.ExpenseFormLaundryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormLaundryLabel.Location = new System.Drawing.Point(8, 199);
+            this.ExpenseFormLaundryLabel.Location = new System.Drawing.Point(12, 216);
             this.ExpenseFormLaundryLabel.Name = "ExpenseFormLaundryLabel";
             this.ExpenseFormLaundryLabel.Size = new System.Drawing.Size(58, 15);
             this.ExpenseFormLaundryLabel.TabIndex = 8;
@@ -143,7 +143,7 @@
             // 
             this.ExpensePrescriptionsLabel.AutoSize = true;
             this.ExpensePrescriptionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpensePrescriptionsLabel.Location = new System.Drawing.Point(8, 177);
+            this.ExpensePrescriptionsLabel.Location = new System.Drawing.Point(12, 191);
             this.ExpensePrescriptionsLabel.Name = "ExpensePrescriptionsLabel";
             this.ExpensePrescriptionsLabel.Size = new System.Drawing.Size(91, 15);
             this.ExpensePrescriptionsLabel.TabIndex = 7;
@@ -153,7 +153,7 @@
             // 
             this.ExpenseFormWaterLabel.AutoSize = true;
             this.ExpenseFormWaterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormWaterLabel.Location = new System.Drawing.Point(8, 154);
+            this.ExpenseFormWaterLabel.Location = new System.Drawing.Point(12, 166);
             this.ExpenseFormWaterLabel.Name = "ExpenseFormWaterLabel";
             this.ExpenseFormWaterLabel.Size = new System.Drawing.Size(44, 15);
             this.ExpenseFormWaterLabel.TabIndex = 6;
@@ -163,7 +163,7 @@
             // 
             this.ExpenseFormTrashLabel.AutoSize = true;
             this.ExpenseFormTrashLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormTrashLabel.Location = new System.Drawing.Point(8, 132);
+            this.ExpenseFormTrashLabel.Location = new System.Drawing.Point(12, 141);
             this.ExpenseFormTrashLabel.Name = "ExpenseFormTrashLabel";
             this.ExpenseFormTrashLabel.Size = new System.Drawing.Size(43, 15);
             this.ExpenseFormTrashLabel.TabIndex = 5;
@@ -173,7 +173,7 @@
             // 
             this.ExpenseFormLoansLabel.AutoSize = true;
             this.ExpenseFormLoansLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormLoansLabel.Location = new System.Drawing.Point(253, 199);
+            this.ExpenseFormLoansLabel.Location = new System.Drawing.Point(253, 216);
             this.ExpenseFormLoansLabel.Name = "ExpenseFormLoansLabel";
             this.ExpenseFormLoansLabel.Size = new System.Drawing.Size(46, 15);
             this.ExpenseFormLoansLabel.TabIndex = 16;
@@ -184,7 +184,7 @@
             // 
             this.ExpenseFormCreditCardBillLabel.AutoSize = true;
             this.ExpenseFormCreditCardBillLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormCreditCardBillLabel.Location = new System.Drawing.Point(253, 177);
+            this.ExpenseFormCreditCardBillLabel.Location = new System.Drawing.Point(253, 191);
             this.ExpenseFormCreditCardBillLabel.Name = "ExpenseFormCreditCardBillLabel";
             this.ExpenseFormCreditCardBillLabel.Size = new System.Drawing.Size(104, 15);
             this.ExpenseFormCreditCardBillLabel.TabIndex = 15;
@@ -195,7 +195,7 @@
             // 
             this.ExpenseFormInternetLabel.AutoSize = true;
             this.ExpenseFormInternetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormInternetLabel.Location = new System.Drawing.Point(253, 154);
+            this.ExpenseFormInternetLabel.Location = new System.Drawing.Point(253, 166);
             this.ExpenseFormInternetLabel.Name = "ExpenseFormInternetLabel";
             this.ExpenseFormInternetLabel.Size = new System.Drawing.Size(56, 15);
             this.ExpenseFormInternetLabel.TabIndex = 14;
@@ -206,7 +206,7 @@
             // 
             this.ExpenseFormCableLabel.AutoSize = true;
             this.ExpenseFormCableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormCableLabel.Location = new System.Drawing.Point(253, 132);
+            this.ExpenseFormCableLabel.Location = new System.Drawing.Point(253, 141);
             this.ExpenseFormCableLabel.Name = "ExpenseFormCableLabel";
             this.ExpenseFormCableLabel.Size = new System.Drawing.Size(101, 15);
             this.ExpenseFormCableLabel.TabIndex = 13;
@@ -217,7 +217,7 @@
             // 
             this.ExpenseFormHealthInsuranceLabel.AutoSize = true;
             this.ExpenseFormHealthInsuranceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormHealthInsuranceLabel.Location = new System.Drawing.Point(253, 109);
+            this.ExpenseFormHealthInsuranceLabel.Location = new System.Drawing.Point(253, 116);
             this.ExpenseFormHealthInsuranceLabel.Name = "ExpenseFormHealthInsuranceLabel";
             this.ExpenseFormHealthInsuranceLabel.Size = new System.Drawing.Size(116, 15);
             this.ExpenseFormHealthInsuranceLabel.TabIndex = 12;
@@ -228,7 +228,7 @@
             // 
             this.ExpenseFormGasolineTransportLabel.AutoSize = true;
             this.ExpenseFormGasolineTransportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormGasolineTransportLabel.Location = new System.Drawing.Point(253, 87);
+            this.ExpenseFormGasolineTransportLabel.Location = new System.Drawing.Point(253, 91);
             this.ExpenseFormGasolineTransportLabel.Name = "ExpenseFormGasolineTransportLabel";
             this.ExpenseFormGasolineTransportLabel.Size = new System.Drawing.Size(129, 15);
             this.ExpenseFormGasolineTransportLabel.TabIndex = 11;
@@ -239,7 +239,7 @@
             // 
             this.ExpenseFormCarInsuranceLabel.AutoSize = true;
             this.ExpenseFormCarInsuranceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormCarInsuranceLabel.Location = new System.Drawing.Point(253, 64);
+            this.ExpenseFormCarInsuranceLabel.Location = new System.Drawing.Point(253, 67);
             this.ExpenseFormCarInsuranceLabel.Name = "ExpenseFormCarInsuranceLabel";
             this.ExpenseFormCarInsuranceLabel.Size = new System.Drawing.Size(96, 15);
             this.ExpenseFormCarInsuranceLabel.TabIndex = 10;
@@ -250,7 +250,7 @@
             // 
             this.ExpenseFormCarPaymentLabel.AutoSize = true;
             this.ExpenseFormCarPaymentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormCarPaymentLabel.Location = new System.Drawing.Point(253, 42);
+            this.ExpenseFormCarPaymentLabel.Location = new System.Drawing.Point(253, 41);
             this.ExpenseFormCarPaymentLabel.Name = "ExpenseFormCarPaymentLabel";
             this.ExpenseFormCarPaymentLabel.Size = new System.Drawing.Size(88, 15);
             this.ExpenseFormCarPaymentLabel.TabIndex = 9;
@@ -261,7 +261,7 @@
             // 
             this.ExpenseChildSupportLabel.AutoSize = true;
             this.ExpenseChildSupportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseChildSupportLabel.Location = new System.Drawing.Point(525, 132);
+            this.ExpenseChildSupportLabel.Location = new System.Drawing.Point(547, 135);
             this.ExpenseChildSupportLabel.Name = "ExpenseChildSupportLabel";
             this.ExpenseChildSupportLabel.Size = new System.Drawing.Size(94, 15);
             this.ExpenseChildSupportLabel.TabIndex = 21;
@@ -271,7 +271,7 @@
             // 
             this.ExpenseFormChildCareLabel.AutoSize = true;
             this.ExpenseFormChildCareLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormChildCareLabel.Location = new System.Drawing.Point(525, 109);
+            this.ExpenseFormChildCareLabel.Location = new System.Drawing.Point(547, 112);
             this.ExpenseFormChildCareLabel.Name = "ExpenseFormChildCareLabel";
             this.ExpenseFormChildCareLabel.Size = new System.Drawing.Size(74, 15);
             this.ExpenseFormChildCareLabel.TabIndex = 20;
@@ -281,7 +281,7 @@
             // 
             this.ExpenseFormHouseholdLabel.AutoSize = true;
             this.ExpenseFormHouseholdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormHouseholdLabel.Location = new System.Drawing.Point(525, 87);
+            this.ExpenseFormHouseholdLabel.Location = new System.Drawing.Point(547, 90);
             this.ExpenseFormHouseholdLabel.Name = "ExpenseFormHouseholdLabel";
             this.ExpenseFormHouseholdLabel.Size = new System.Drawing.Size(76, 15);
             this.ExpenseFormHouseholdLabel.TabIndex = 19;
@@ -291,7 +291,7 @@
             // 
             this.ExpenseFormHygieneLabel.AutoSize = true;
             this.ExpenseFormHygieneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormHygieneLabel.Location = new System.Drawing.Point(525, 64);
+            this.ExpenseFormHygieneLabel.Location = new System.Drawing.Point(547, 67);
             this.ExpenseFormHygieneLabel.Name = "ExpenseFormHygieneLabel";
             this.ExpenseFormHygieneLabel.Size = new System.Drawing.Size(59, 15);
             this.ExpenseFormHygieneLabel.TabIndex = 18;
@@ -301,7 +301,7 @@
             // 
             this.ExpenseFormGroceriesLabel.AutoSize = true;
             this.ExpenseFormGroceriesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseFormGroceriesLabel.Location = new System.Drawing.Point(525, 42);
+            this.ExpenseFormGroceriesLabel.Location = new System.Drawing.Point(543, 41);
             this.ExpenseFormGroceriesLabel.Name = "ExpenseFormGroceriesLabel";
             this.ExpenseFormGroceriesLabel.Size = new System.Drawing.Size(69, 15);
             this.ExpenseFormGroceriesLabel.TabIndex = 17;
@@ -312,7 +312,7 @@
             // 
             this.ExpenseOtherLabel.AutoSize = true;
             this.ExpenseOtherLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpenseOtherLabel.Location = new System.Drawing.Point(525, 154);
+            this.ExpenseOtherLabel.Location = new System.Drawing.Point(547, 157);
             this.ExpenseOtherLabel.Name = "ExpenseOtherLabel";
             this.ExpenseOtherLabel.Size = new System.Drawing.Size(42, 15);
             this.ExpenseOtherLabel.TabIndex = 22;
@@ -321,98 +321,98 @@
             // 
             // ExpenseRentTextBox
             // 
-            this.ExpenseRentTextBox.Location = new System.Drawing.Point(124, 41);
+            this.ExpenseRentTextBox.Location = new System.Drawing.Point(124, 40);
             this.ExpenseRentTextBox.Name = "ExpenseRentTextBox";
             this.ExpenseRentTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseRentTextBox.TabIndex = 23;
             // 
             // ExpenseElectricTextBox
             // 
-            this.ExpenseElectricTextBox.Location = new System.Drawing.Point(124, 64);
+            this.ExpenseElectricTextBox.Location = new System.Drawing.Point(124, 65);
             this.ExpenseElectricTextBox.Name = "ExpenseElectricTextBox";
             this.ExpenseElectricTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseElectricTextBox.TabIndex = 24;
             // 
             // ExpenseHeatingTextBox
             // 
-            this.ExpenseHeatingTextBox.Location = new System.Drawing.Point(124, 87);
+            this.ExpenseHeatingTextBox.Location = new System.Drawing.Point(124, 90);
             this.ExpenseHeatingTextBox.Name = "ExpenseHeatingTextBox";
             this.ExpenseHeatingTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseHeatingTextBox.TabIndex = 25;
             // 
             // ExpenseWaterTextBox
             // 
-            this.ExpenseWaterTextBox.Location = new System.Drawing.Point(124, 159);
+            this.ExpenseWaterTextBox.Location = new System.Drawing.Point(124, 165);
             this.ExpenseWaterTextBox.Name = "ExpenseWaterTextBox";
             this.ExpenseWaterTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseWaterTextBox.TabIndex = 28;
             // 
             // ExpenseTrashTextBox
             // 
-            this.ExpenseTrashTextBox.Location = new System.Drawing.Point(124, 136);
+            this.ExpenseTrashTextBox.Location = new System.Drawing.Point(124, 140);
             this.ExpenseTrashTextBox.Name = "ExpenseTrashTextBox";
             this.ExpenseTrashTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseTrashTextBox.TabIndex = 27;
             // 
             // ExpensePhoneTextBox
             // 
-            this.ExpensePhoneTextBox.Location = new System.Drawing.Point(124, 113);
+            this.ExpensePhoneTextBox.Location = new System.Drawing.Point(124, 115);
             this.ExpensePhoneTextBox.Name = "ExpensePhoneTextBox";
             this.ExpensePhoneTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpensePhoneTextBox.TabIndex = 26;
             // 
             // ExpenseLaundryTextBox
             // 
-            this.ExpenseLaundryTextBox.Location = new System.Drawing.Point(124, 208);
+            this.ExpenseLaundryTextBox.Location = new System.Drawing.Point(124, 215);
             this.ExpenseLaundryTextBox.Name = "ExpenseLaundryTextBox";
             this.ExpenseLaundryTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseLaundryTextBox.TabIndex = 30;
             // 
             // ExpensePrescriptionsTextBox
             // 
-            this.ExpensePrescriptionsTextBox.Location = new System.Drawing.Point(124, 185);
+            this.ExpensePrescriptionsTextBox.Location = new System.Drawing.Point(124, 190);
             this.ExpensePrescriptionsTextBox.Name = "ExpensePrescriptionsTextBox";
             this.ExpensePrescriptionsTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpensePrescriptionsTextBox.TabIndex = 29;
             // 
             // ExpenseLoansTextBox
             // 
-            this.ExpenseLoansTextBox.Location = new System.Drawing.Point(419, 209);
+            this.ExpenseLoansTextBox.Location = new System.Drawing.Point(419, 215);
             this.ExpenseLoansTextBox.Name = "ExpenseLoansTextBox";
             this.ExpenseLoansTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseLoansTextBox.TabIndex = 38;
             // 
             // ExpenseCreditCardTextBox
             // 
-            this.ExpenseCreditCardTextBox.Location = new System.Drawing.Point(419, 186);
+            this.ExpenseCreditCardTextBox.Location = new System.Drawing.Point(419, 190);
             this.ExpenseCreditCardTextBox.Name = "ExpenseCreditCardTextBox";
             this.ExpenseCreditCardTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseCreditCardTextBox.TabIndex = 37;
             // 
             // ExpenseInternetTextBox
             // 
-            this.ExpenseInternetTextBox.Location = new System.Drawing.Point(419, 160);
+            this.ExpenseInternetTextBox.Location = new System.Drawing.Point(419, 165);
             this.ExpenseInternetTextBox.Name = "ExpenseInternetTextBox";
             this.ExpenseInternetTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseInternetTextBox.TabIndex = 36;
             // 
             // ExpenseCableTextBox
             // 
-            this.ExpenseCableTextBox.Location = new System.Drawing.Point(419, 137);
+            this.ExpenseCableTextBox.Location = new System.Drawing.Point(419, 140);
             this.ExpenseCableTextBox.Name = "ExpenseCableTextBox";
             this.ExpenseCableTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseCableTextBox.TabIndex = 35;
             // 
             // ExpenseHealthInsuranceTextBox
             // 
-            this.ExpenseHealthInsuranceTextBox.Location = new System.Drawing.Point(419, 114);
+            this.ExpenseHealthInsuranceTextBox.Location = new System.Drawing.Point(419, 115);
             this.ExpenseHealthInsuranceTextBox.Name = "ExpenseHealthInsuranceTextBox";
             this.ExpenseHealthInsuranceTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseHealthInsuranceTextBox.TabIndex = 34;
             // 
             // ExpenseGasolineTransportTextBox
             // 
-            this.ExpenseGasolineTransportTextBox.Location = new System.Drawing.Point(419, 88);
+            this.ExpenseGasolineTransportTextBox.Location = new System.Drawing.Point(419, 90);
             this.ExpenseGasolineTransportTextBox.Name = "ExpenseGasolineTransportTextBox";
             this.ExpenseGasolineTransportTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseGasolineTransportTextBox.TabIndex = 33;
@@ -426,49 +426,49 @@
             // 
             // ExpenseCarPaymentTextBox
             // 
-            this.ExpenseCarPaymentTextBox.Location = new System.Drawing.Point(419, 42);
+            this.ExpenseCarPaymentTextBox.Location = new System.Drawing.Point(419, 40);
             this.ExpenseCarPaymentTextBox.Name = "ExpenseCarPaymentTextBox";
             this.ExpenseCarPaymentTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseCarPaymentTextBox.TabIndex = 31;
             // 
             // ExpenseOtherTextBox
             // 
-            this.ExpenseOtherTextBox.Location = new System.Drawing.Point(649, 160);
+            this.ExpenseOtherTextBox.Location = new System.Drawing.Point(671, 165);
             this.ExpenseOtherTextBox.Name = "ExpenseOtherTextBox";
             this.ExpenseOtherTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseOtherTextBox.TabIndex = 44;
             // 
             // ExpenseChildSupportTextBox
             // 
-            this.ExpenseChildSupportTextBox.Location = new System.Drawing.Point(649, 137);
+            this.ExpenseChildSupportTextBox.Location = new System.Drawing.Point(671, 140);
             this.ExpenseChildSupportTextBox.Name = "ExpenseChildSupportTextBox";
             this.ExpenseChildSupportTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseChildSupportTextBox.TabIndex = 43;
             // 
             // ExpenseChildCareTextBox
             // 
-            this.ExpenseChildCareTextBox.Location = new System.Drawing.Point(649, 114);
+            this.ExpenseChildCareTextBox.Location = new System.Drawing.Point(671, 115);
             this.ExpenseChildCareTextBox.Name = "ExpenseChildCareTextBox";
             this.ExpenseChildCareTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseChildCareTextBox.TabIndex = 42;
             // 
             // ExpenseHouseholdTextBox
             // 
-            this.ExpenseHouseholdTextBox.Location = new System.Drawing.Point(649, 88);
+            this.ExpenseHouseholdTextBox.Location = new System.Drawing.Point(671, 90);
             this.ExpenseHouseholdTextBox.Name = "ExpenseHouseholdTextBox";
             this.ExpenseHouseholdTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseHouseholdTextBox.TabIndex = 41;
             // 
             // ExpenseHygieneTextBox
             // 
-            this.ExpenseHygieneTextBox.Location = new System.Drawing.Point(649, 65);
+            this.ExpenseHygieneTextBox.Location = new System.Drawing.Point(671, 65);
             this.ExpenseHygieneTextBox.Name = "ExpenseHygieneTextBox";
             this.ExpenseHygieneTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseHygieneTextBox.TabIndex = 40;
             // 
             // ExpenseGroceriesTextBox
             // 
-            this.ExpenseGroceriesTextBox.Location = new System.Drawing.Point(649, 42);
+            this.ExpenseGroceriesTextBox.Location = new System.Drawing.Point(671, 40);
             this.ExpenseGroceriesTextBox.Name = "ExpenseGroceriesTextBox";
             this.ExpenseGroceriesTextBox.Size = new System.Drawing.Size(100, 20);
             this.ExpenseGroceriesTextBox.TabIndex = 39;
