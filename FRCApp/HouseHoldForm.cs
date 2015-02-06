@@ -79,6 +79,7 @@ namespace FRCApp
                         Convert.ToBoolean(item.SubItems[6].Text),
                         item.SubItems[2].Text);
             }
+            this.Close();
         }
 
         /**
