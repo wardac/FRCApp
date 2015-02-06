@@ -93,18 +93,21 @@ namespace FRCApp
             this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
             if (newrequest)
             {
-                this.Text = "efa request form";
+                this.Text = "New EFA Request";
                 statusPanel.Visible = false;
-                efa_reqamount.Enabled = true;
             }
            
            
             // TODO: This line of code loads data into the 'dataSet1.EFARequestTypes' table. You can move, or remove it, as needed.
             this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
 
-            cmbEfaCategory.DataSource = this.eFARequestTypesTableAdapter.GetData();
-            cmbEfaCategory.ValueMember = "EFARequestTypeID";
-            cmbEfaCategory.DisplayMember = "Type";
+            //cmbEfaCategory.DataSource = this.eFARequestTypesTableAdapter.GetData();
+            //cmbEfaCategory.ValueMember = "EFARequestTypeID";
+            //cmbEfaCategory.DisplayMember = "Type";
+            var reqTypes = this.eFARequestTypesTableAdapter.GetData();
+            foreach (var reqType in reqTypes) {
+                checklist_requestType.Items.Add(reqType.Type);
+            }
 
             DataSet1TableAdapters.ClientsTableAdapter client = new DataSet1TableAdapters.ClientsTableAdapter();
             var clients = client.GetDataByid(ClientID);

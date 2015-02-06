@@ -73,11 +73,8 @@
             this.efa_proofharship = new System.Windows.Forms.CheckBox();
             this.efa_proofIncome = new System.Windows.Forms.CheckBox();
             this.efa_proofaddress = new System.Windows.Forms.CheckBox();
-            this.efa_reqamount = new System.Windows.Forms.TextBox();
-            this.lblamtrequest = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.requestdate = new System.Windows.Forms.Label();
-            this.cmbEfaCategory = new System.Windows.Forms.ComboBox();
             this.lblefacategory = new System.Windows.Forms.Label();
             this.efa_ID = new System.Windows.Forms.TextBox();
             this.lblreqId = new System.Windows.Forms.Label();
@@ -90,6 +87,7 @@
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
+            this.checklist_requestType = new System.Windows.Forms.CheckedListBox();
             this.requestPanel.SuspendLayout();
             this.statusPanel.SuspendLayout();
             this.grpcauseshardship.SuspendLayout();
@@ -101,6 +99,7 @@
             // 
             // requestPanel
             // 
+            this.requestPanel.Controls.Add(this.checklist_requestType);
             this.requestPanel.Controls.Add(this.statusPanel);
             this.requestPanel.Controls.Add(this.lblComment);
             this.requestPanel.Controls.Add(this.grpcauseshardship);
@@ -108,11 +107,8 @@
             this.requestPanel.Controls.Add(this.textBox1);
             this.requestPanel.Controls.Add(this.efa_comment);
             this.requestPanel.Controls.Add(this.efa_proofGroup);
-            this.requestPanel.Controls.Add(this.efa_reqamount);
-            this.requestPanel.Controls.Add(this.lblamtrequest);
             this.requestPanel.Controls.Add(this.dateTimePicker1);
             this.requestPanel.Controls.Add(this.requestdate);
-            this.requestPanel.Controls.Add(this.cmbEfaCategory);
             this.requestPanel.Controls.Add(this.lblefacategory);
             this.requestPanel.Controls.Add(this.efa_ID);
             this.requestPanel.Controls.Add(this.lblreqId);
@@ -123,7 +119,7 @@
             this.requestPanel.Controls.Add(this.shapeContainer1);
             this.requestPanel.Location = new System.Drawing.Point(24, 12);
             this.requestPanel.Name = "requestPanel";
-            this.requestPanel.Size = new System.Drawing.Size(867, 597);
+            this.requestPanel.Size = new System.Drawing.Size(867, 611);
             this.requestPanel.TabIndex = 1;
             // 
             // statusPanel
@@ -263,7 +259,7 @@
             "HH not compliance with action/program",
             "HH request on NON approved Rx",
             "other"});
-            this.ChkDeniedReason.Location = new System.Drawing.Point(207, 52);
+            this.ChkDeniedReason.Location = new System.Drawing.Point(204, 52);
             this.ChkDeniedReason.Name = "ChkDeniedReason";
             this.ChkDeniedReason.ScrollAlwaysVisible = true;
             this.ChkDeniedReason.Size = new System.Drawing.Size(190, 109);
@@ -406,9 +402,9 @@
             this.efa_financegroup.Controls.Add(this.label1);
             this.efa_financegroup.Controls.Add(this.label3);
             this.efa_financegroup.Controls.Add(this.lblCQinfo);
-            this.efa_financegroup.Location = new System.Drawing.Point(45, 383);
+            this.efa_financegroup.Location = new System.Drawing.Point(45, 441);
             this.efa_financegroup.Name = "efa_financegroup";
-            this.efa_financegroup.Size = new System.Drawing.Size(386, 130);
+            this.efa_financegroup.Size = new System.Drawing.Size(386, 131);
             this.efa_financegroup.TabIndex = 18;
             this.efa_financegroup.TabStop = false;
             this.efa_financegroup.Text = "Financial Summary";
@@ -424,7 +420,7 @@
             // txt_Mincome
             // 
             this.txt_Mincome.Enabled = false;
-            this.txt_Mincome.Location = new System.Drawing.Point(97, 49);
+            this.txt_Mincome.Location = new System.Drawing.Point(99, 49);
             this.txt_Mincome.Name = "txt_Mincome";
             this.txt_Mincome.Size = new System.Drawing.Size(73, 20);
             this.txt_Mincome.TabIndex = 6;
@@ -432,7 +428,7 @@
             // txt_QHincome
             // 
             this.txt_QHincome.Enabled = false;
-            this.txt_QHincome.Location = new System.Drawing.Point(97, 26);
+            this.txt_QHincome.Location = new System.Drawing.Point(99, 26);
             this.txt_QHincome.Name = "txt_QHincome";
             this.txt_QHincome.Size = new System.Drawing.Size(73, 20);
             this.txt_QHincome.TabIndex = 4;
@@ -460,16 +456,16 @@
             this.lblCQinfo.AutoSize = true;
             this.lblCQinfo.Location = new System.Drawing.Point(9, 26);
             this.lblCQinfo.Name = "lblCQinfo";
-            this.lblCQinfo.Size = new System.Drawing.Size(84, 13);
+            this.lblCQinfo.Size = new System.Drawing.Size(87, 13);
             this.lblCQinfo.TabIndex = 0;
-            this.lblCQinfo.Text = "Quaterly Income";
+            this.lblCQinfo.Text = "Quarterly Income";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 100);
+            this.textBox1.Location = new System.Drawing.Point(161, 183);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 47);
+            this.textBox1.Size = new System.Drawing.Size(259, 48);
             this.textBox1.TabIndex = 17;
             this.textBox1.Text = "if other explain";
             // 
@@ -493,9 +489,9 @@
             this.efa_proofGroup.Controls.Add(this.efa_proofharship);
             this.efa_proofGroup.Controls.Add(this.efa_proofIncome);
             this.efa_proofGroup.Controls.Add(this.efa_proofaddress);
-            this.efa_proofGroup.Location = new System.Drawing.Point(39, 206);
+            this.efa_proofGroup.Location = new System.Drawing.Point(39, 276);
             this.efa_proofGroup.Name = "efa_proofGroup";
-            this.efa_proofGroup.Size = new System.Drawing.Size(392, 157);
+            this.efa_proofGroup.Size = new System.Drawing.Size(392, 158);
             this.efa_proofGroup.TabIndex = 13;
             this.efa_proofGroup.TabStop = false;
             this.efa_proofGroup.Text = "Required Items";
@@ -595,26 +591,9 @@
             this.efa_proofaddress.UseVisualStyleBackColor = true;
             this.efa_proofaddress.CheckedChanged += new System.EventHandler(this.efa_proofaddress_CheckedChanged);
             // 
-            // efa_reqamount
-            // 
-            this.efa_reqamount.Enabled = false;
-            this.efa_reqamount.Location = new System.Drawing.Point(161, 153);
-            this.efa_reqamount.Name = "efa_reqamount";
-            this.efa_reqamount.Size = new System.Drawing.Size(112, 20);
-            this.efa_reqamount.TabIndex = 11;
-            // 
-            // lblamtrequest
-            // 
-            this.lblamtrequest.AutoSize = true;
-            this.lblamtrequest.Location = new System.Drawing.Point(30, 153);
-            this.lblamtrequest.Name = "lblamtrequest";
-            this.lblamtrequest.Size = new System.Drawing.Size(93, 13);
-            this.lblamtrequest.TabIndex = 10;
-            this.lblamtrequest.Text = "Amount requested";
-            // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(161, 179);
+            this.dateTimePicker1.Location = new System.Drawing.Point(161, 237);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 20);
             this.dateTimePicker1.TabIndex = 9;
@@ -622,19 +601,11 @@
             // requestdate
             // 
             this.requestdate.AutoSize = true;
-            this.requestdate.Location = new System.Drawing.Point(30, 179);
+            this.requestdate.Location = new System.Drawing.Point(30, 237);
             this.requestdate.Name = "requestdate";
             this.requestdate.Size = new System.Drawing.Size(66, 13);
             this.requestdate.TabIndex = 8;
             this.requestdate.Text = "request date";
-            // 
-            // cmbEfaCategory
-            // 
-            this.cmbEfaCategory.FormattingEnabled = true;
-            this.cmbEfaCategory.Location = new System.Drawing.Point(161, 73);
-            this.cmbEfaCategory.Name = "cmbEfaCategory";
-            this.cmbEfaCategory.Size = new System.Drawing.Size(259, 21);
-            this.cmbEfaCategory.TabIndex = 7;
             // 
             // lblefacategory
             // 
@@ -682,7 +653,7 @@
             // 
             // cancelEfa
             // 
-            this.cancelEfa.Location = new System.Drawing.Point(411, 556);
+            this.cancelEfa.Location = new System.Drawing.Point(411, 576);
             this.cancelEfa.Name = "cancelEfa";
             this.cancelEfa.Size = new System.Drawing.Size(76, 29);
             this.cancelEfa.TabIndex = 1;
@@ -691,7 +662,7 @@
             // 
             // update_efa
             // 
-            this.update_efa.Location = new System.Drawing.Point(307, 556);
+            this.update_efa.Location = new System.Drawing.Point(307, 576);
             this.update_efa.Name = "update_efa";
             this.update_efa.Size = new System.Drawing.Size(76, 29);
             this.update_efa.TabIndex = 0;
@@ -705,7 +676,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(867, 597);
+            this.shapeContainer1.Size = new System.Drawing.Size(867, 611);
             this.shapeContainer1.TabIndex = 16;
             this.shapeContainer1.TabStop = false;
             // 
@@ -731,11 +702,20 @@
             // 
             this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
             // 
+            // checklist_requestType
+            // 
+            this.checklist_requestType.CheckOnClick = true;
+            this.checklist_requestType.FormattingEnabled = true;
+            this.checklist_requestType.Location = new System.Drawing.Point(161, 73);
+            this.checklist_requestType.Name = "checklist_requestType";
+            this.checklist_requestType.Size = new System.Drawing.Size(259, 94);
+            this.checklist_requestType.TabIndex = 22;
+            // 
             // requestStatusform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 621);
+            this.ClientSize = new System.Drawing.Size(903, 635);
             this.Controls.Add(this.requestPanel);
             this.Name = "requestStatusform";
             this.Text = "Request Status";
@@ -789,11 +769,8 @@
         private System.Windows.Forms.CheckBox efa_proofharship;
         private System.Windows.Forms.CheckBox efa_proofIncome;
         private System.Windows.Forms.CheckBox efa_proofaddress;
-        private System.Windows.Forms.TextBox efa_reqamount;
-        private System.Windows.Forms.Label lblamtrequest;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label requestdate;
-        private System.Windows.Forms.ComboBox cmbEfaCategory;
         private System.Windows.Forms.Label lblefacategory;
         private System.Windows.Forms.TextBox efa_ID;
         private System.Windows.Forms.Label lblreqId;
@@ -819,5 +796,6 @@
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource eFARequestTypesBindingSource;
         private DataSet1TableAdapters.EFARequestTypesTableAdapter eFARequestTypesTableAdapter;
+        private System.Windows.Forms.CheckedListBox checklist_requestType;
     }
 }
