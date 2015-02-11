@@ -17,12 +17,9 @@ namespace FRCApp {
         private Guid clientID;
         private Guid householdID;
 
-        // form data
-        private ListView financeFormData;
 
         public NewClient() {
             InitializeComponent();
-            financeForm = new FinanceForm(financeFormData);
             clientID = Guid.NewGuid();
             householdID = Guid.NewGuid();
         }
@@ -59,6 +56,7 @@ namespace FRCApp {
 
         private void householdIncome_button_Click(object sender, EventArgs e)
         {
+            financeForm = new FinanceForm();
             financeForm.Show();
         }
 

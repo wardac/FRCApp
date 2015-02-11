@@ -217,6 +217,7 @@
             this.submitButton.TabIndex = 8;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // removeButton
             // 

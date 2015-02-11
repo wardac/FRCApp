@@ -12,18 +12,10 @@ namespace FRCApp
 {
     public partial class FinanceForm : Form
     {
-        // ListView to keep track of all formData
-        ListView formData;
 
         public FinanceForm()
         {
             InitializeComponent();
-        }
-
-        public FinanceForm(ListView data)
-        {
-            InitializeComponent();
-            formData = data;
         }
 
         /**
@@ -102,6 +94,12 @@ namespace FRCApp
             {
                 this.Close();
             }
+        }
+
+        // submits the data to the database
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+
         }
 
 
