@@ -48,11 +48,37 @@ namespace FRCApp
             }
         }
 
+        /**
+         * Submit data to database and close form
+         **/
         private void submitButton_Click(object sender, EventArgs e)
         {
             DataSet1TableAdapters.MonthlyExpensesTableAdapter adapter = new DataSet1TableAdapters.MonthlyExpensesTableAdapter();
-            
-            
+            adapter.InsertMonthlyExpenses(
+                this.householdID.ToString(), 
+                System.Convert.ToDecimal(this.ExpenseRentTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseElectricTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseHeatingTextBox.Text),
+                System.Convert.ToDecimal(this.ExpensePhoneTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseTrashTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseWaterTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpensePrescriptionsTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseLaundryTextBox.Text),
+                System.Convert.ToDecimal(this.ExpenseCarPaymentTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseCarInsuranceTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseGasolineTransportTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseHealthInsuranceTextBox.Text),
+                System.Convert.ToDecimal(this.ExpenseCableTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseInternetTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseCreditCardTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseLoansTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseGroceriesTextBox.Text),
+                System.Convert.ToDecimal(this.ExpenseHygieneTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseHouseholdTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseChildCareTextBox.Text),
+                System.Convert.ToDecimal(this.ExpenseChildSupportTextBox.Text), 
+                System.Convert.ToDecimal(this.ExpenseOtherTextBox.Text)
+            );
 
             DialogResult messageBox = MessageBox.Show("Successfully submitted data.", "", MessageBoxButtons.OK);
             if (messageBox == DialogResult.OK)
