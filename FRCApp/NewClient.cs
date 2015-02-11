@@ -50,7 +50,7 @@ namespace FRCApp {
 
         private void monthlyExpenses_button_Click(object sender, EventArgs e)
         {
-            expenseForm = new ExpenseForm();
+            expenseForm = new ExpenseForm(householdID);
             expenseForm.Show();
         }
 

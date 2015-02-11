@@ -15,9 +15,11 @@ namespace FRCApp
         private const int BACKSPACE = 8;
         private const int DELETE = 46;
         private const int DECIMAL = 81;
+        private Guid householdID;
 
-        public ExpenseForm()
+        public ExpenseForm(Guid householdID)
         {
+            this.householdID = householdID;
             InitializeComponent();
         }
 
@@ -41,6 +43,15 @@ namespace FRCApp
         {
             DialogResult messageBox = MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.YesNo);
             if (messageBox == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            DialogResult messageBox = MessageBox.Show("Successfully submitted data.", "", MessageBoxButtons.OK);
+            if (messageBox == DialogResult.OK)
             {
                 this.Close();
             }
