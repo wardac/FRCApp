@@ -19,14 +19,17 @@ namespace FRCApp
 
         private void login_submit_Click(object sender, EventArgs e)
         {
-            DataSet1TableAdapters.UsersTableAdapter adapter = new DataSet1TableAdapters.UsersTableAdapter();
-            var accessLevel = adapter.getusers(this.login_username.Text,this.login_Password.Text);
-            if (accessLevel == "admin")
-            { MessageBox.Show("haha"); }
-            StartPage startPage = new StartPage();
-            this.Close();
-            this.Dispose();
-            startPage.Show();
+            DataSet1TableAdapters.UsersTableAdapter usradapter = new DataSet1TableAdapters.UsersTableAdapter();
+            var level = usradapter.getusers(this.login_username.Text,this.login_Password.Text);
+            if (level!=null)
+            {
+
+                StartPage startPage = new StartPage();
+                this.Close();
+                this.Dispose();
+                startPage.Show();
+            }
+            else { MessageBox.Show("sorry wrong credentials"); }
         }
 
         private void login_cancel_Click(object sender, EventArgs e)
