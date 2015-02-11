@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace FRCApp {
     public partial class NewClient : Form {
+
         // form members
         private HouseHoldForm householdForm;
         private ExpenseForm expenseForm;
@@ -17,29 +18,10 @@ namespace FRCApp {
         private Guid clientID;
         private Guid householdID;
 
-
         public NewClient() {
             InitializeComponent();
             clientID = Guid.NewGuid();
             householdID = Guid.NewGuid();
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e) {
-            this.Close();
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void householdInfo_button_Click(object sender, EventArgs e)
@@ -56,10 +38,9 @@ namespace FRCApp {
 
         private void householdIncome_button_Click(object sender, EventArgs e)
         {
-            financeForm = new FinanceForm();
+            financeForm = new FinanceForm(householdID.ToString());
             financeForm.Show();
         }
-
 
         /**
          * Validates the form data
@@ -116,15 +97,10 @@ namespace FRCApp {
 
         private void NewClient_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.GoalTypes' table. You can move, or remove it, as needed.
             this.goalTypesTableAdapter.Fill(this.dataSet1.GoalTypes);
-            // TODO: This line of code loads data into the 'dataSet1.ReferralTypes' table. You can move, or remove it, as needed.
             this.referralTypesTableAdapter.Fill(this.dataSet1.ReferralTypes);
-            // TODO: This line of code loads data into the 'dataSet1.EmploymentStatuses' table. You can move, or remove it, as needed.
             this.employmentStatusesTableAdapter.Fill(this.dataSet1.EmploymentStatuses);
-            // TODO: This line of code loads data into the 'dataSet1.EducationLevels' table. You can move, or remove it, as needed.
             this.educationLevelsTableAdapter.Fill(this.dataSet1.EducationLevels);
-            // TODO: This line of code loads data into the 'dataSet1.HouseholdTypes' table. You can move, or remove it, as needed.
             this.householdTypesTableAdapter.Fill(this.dataSet1.HouseholdTypes);
            
             ReferralsBox.DataSource = this.referralTypesTableAdapter.GetData();

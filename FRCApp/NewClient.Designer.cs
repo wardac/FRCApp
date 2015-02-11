@@ -141,7 +141,6 @@
             this.dataOfBirth_dateTimePicker.Name = "dataOfBirth_dateTimePicker";
             this.dataOfBirth_dateTimePicker.Size = new System.Drawing.Size(150, 20);
             this.dataOfBirth_dateTimePicker.TabIndex = 4;
-            this.dataOfBirth_dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // homeAddress_label
             // 
@@ -158,7 +157,6 @@
             this.homeAddress_textBox.Name = "homeAddress_textBox";
             this.homeAddress_textBox.Size = new System.Drawing.Size(598, 20);
             this.homeAddress_textBox.TabIndex = 5;
-            this.homeAddress_textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // apartmentNumber_label
             // 
