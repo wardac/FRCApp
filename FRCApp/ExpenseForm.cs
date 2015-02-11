@@ -50,6 +50,10 @@ namespace FRCApp
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            DataSet1TableAdapters.MonthlyExpensesTableAdapter adapter = new DataSet1TableAdapters.MonthlyExpensesTableAdapter();
+            
+            
+
             DialogResult messageBox = MessageBox.Show("Successfully submitted data.", "", MessageBoxButtons.OK);
             if (messageBox == DialogResult.OK)
             {
