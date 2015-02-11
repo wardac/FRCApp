@@ -56,7 +56,7 @@ namespace FRCApp {
 
         private void householdIncome_button_Click(object sender, EventArgs e)
         {
-            financeForm = new FinanceForm();
+            financeForm = new FinanceForm(householdID.ToString());
             financeForm.Show();
         }
 

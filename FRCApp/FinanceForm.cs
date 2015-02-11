@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace FRCApp
 {
     public partial class FinanceForm : Form
     {
-
-        public FinanceForm()
+        private String householdID;
+        private List<IncomeSource> incomeSourcesList;
+        public FinanceForm(String householdID)
         {
+            this.householdID = householdID;
+            incomeSourcesList = new List<IncomeSource>();
             InitializeComponent();
         }
 
@@ -24,13 +28,9 @@ namespace FRCApp
        **/
         private string validateForm()
         {
-            if (String.IsNullOrEmpty(firstNameTextBox.Text))
+            if (cmb_householdMember.SelectedIndex == -1)
             {
-                return "Enter a first name";
-            }
-            else if (String.IsNullOrEmpty(lastNameTextBox.Text))
-            {
-                return "Enter a last name";
+                return "Select a household member";
             }
             else if (String.IsNullOrEmpty(sourceOfIncomeTextBox.Text))
             {
@@ -40,9 +40,9 @@ namespace FRCApp
             {
                 return "Enter an amount of income";
             }
-            else if (String.IsNullOrEmpty(timesIncomeReceievedTextBox.Text))
+            else if (cmb_incomeFreqs.SelectedIndex == -1)
             {
-                return "Enter number of times income is received";
+                return "Select an income frequency";
             }
             return "OK";
         }
@@ -61,18 +61,18 @@ namespace FRCApp
                 return;
             }
             //Add the data to the listView
-            ListViewItem item = new ListViewItem(firstNameTextBox.Text);
-            item.SubItems.Add(lastNameTextBox.Text);
+            ListViewItem item = new ListViewItem(cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem));
             item.SubItems.Add(sourceOfIncomeTextBox.Text);
             item.SubItems.Add(amountOfIncomeTextBox.Text);
-            item.SubItems.Add(timesIncomeReceievedTextBox.Text);
+            item.SubItems.Add(cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem));
             FinancelistView.Items.Add(item);
+            // Add entry to the incomeSourcesList
+            incomeSourcesList.Add(new IncomeSource((int)cmb_householdMember.SelectedValue, sourceOfIncomeTextBox.Text, amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem)));
             //clear the fields
-            firstNameTextBox.Clear();
-            lastNameTextBox.Clear();
+            cmb_householdMember.SelectedIndex = -1;
+            cmb_incomeFreqs.SelectedIndex = -1;
             sourceOfIncomeTextBox.Clear();
             amountOfIncomeTextBox.Clear();
-            timesIncomeReceievedTextBox.Clear();
 
         }
 
@@ -81,9 +81,9 @@ namespace FRCApp
         {
             foreach (ListViewItem item in FinancelistView.SelectedItems)
             {
+                incomeSourcesList.RemoveAt(item.Index);
                 item.Remove();
             }     
-
         }
 
         //Gives the user a cancel button, and then closes the form if desired
@@ -100,8 +100,58 @@ namespace FRCApp
         private void submitButton_Click(object sender, EventArgs e)
         {
 
+            var incomeSourcesAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
+            foreach (IncomeSource source in incomeSourcesList)
+            {
+                incomeSourcesAdapter.AddIncomeSource(source.householdMemberID, source.incomeSource, Decimal.Parse(source.amount), source.frequencyID);
+            }
+            this.Close();
         }
 
+        private void FinanceForm_Load(object sender, EventArgs e)
+        {
+            // Get household members for this household as entered on a previous form
+            // Put them in the dropdown with HouseholdMemberID as the ValueMember and 
+            // Name (combined first and last) as the DisplayMember
+            var householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
+            var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(householdID);
+            cmb_householdMember.DataSource = householdMembers;
+            cmb_householdMember.ValueMember = "HouseholdMemberID";
+            cmb_householdMember.DisplayMember = "Name";
+
+            // Get income frequencies from the IncomeFrequencies table
+            // Used the ID as the ValueMember and Frequency as the DisplayMember
+            var incomeFreqsAdapter = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter();
+            var incomeFreqs = incomeFreqsAdapter.GetData();
+            cmb_incomeFreqs.DataSource = incomeFreqs;
+            cmb_incomeFreqs.ValueMember = "IncomeFrequencyID";
+            cmb_incomeFreqs.DisplayMember = "Frequency";
+        }
+
+        private class IncomeSource {
+
+            public int householdMemberID;
+            public int frequencyID;
+            public String incomeSource;
+            public String amount;
+            public String name;
+            public String frequency;
+            
+            
+            public IncomeSource(int householdMemberID, String incomeSource, String amount, int frequencyID, String name, String frequency)
+            {
+                this.householdMemberID = householdMemberID;
+                this.frequencyID = frequencyID;
+                this.incomeSource = incomeSource;
+                this.amount = amount;
+                this.name = name;
+                this.frequency = frequency;
+            }
+
+            public override String ToString() {
+                return householdMemberID + " " + frequencyID + " " + incomeSource + " " + amount + " " + name + " " + frequency;
+            }
+        }
 
     }
 }
