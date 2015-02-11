@@ -69,6 +69,7 @@
             this.referralTypesTableAdapter = new FRCApp.DataSet1TableAdapters.ReferralTypesTableAdapter();
             this.GoalsBox = new System.Windows.Forms.CheckedListBox();
             this.goalTypesTableAdapter = new FRCApp.DataSet1TableAdapters.GoalTypesTableAdapter();
+            this.cancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.householdTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.educationLevelsBindingSource)).BeginInit();
@@ -140,7 +141,6 @@
             this.dataOfBirth_dateTimePicker.Name = "dataOfBirth_dateTimePicker";
             this.dataOfBirth_dateTimePicker.Size = new System.Drawing.Size(150, 20);
             this.dataOfBirth_dateTimePicker.TabIndex = 4;
-            this.dataOfBirth_dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // homeAddress_label
             // 
@@ -157,7 +157,6 @@
             this.homeAddress_textBox.Name = "homeAddress_textBox";
             this.homeAddress_textBox.Size = new System.Drawing.Size(598, 20);
             this.homeAddress_textBox.TabIndex = 5;
-            this.homeAddress_textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // apartmentNumber_label
             // 
@@ -309,7 +308,7 @@
             this.emergencyFunds_button.Location = new System.Drawing.Point(535, 618);
             this.emergencyFunds_button.Name = "emergencyFunds_button";
             this.emergencyFunds_button.Size = new System.Drawing.Size(180, 23);
-            this.emergencyFunds_button.TabIndex = 18;
+            this.emergencyFunds_button.TabIndex = 19;
             this.emergencyFunds_button.Text = "New Emergency Funds Request";
             this.emergencyFunds_button.UseVisualStyleBackColor = true;
             // 
@@ -318,7 +317,7 @@
             this.householdIncome_button.Location = new System.Drawing.Point(313, 618);
             this.householdIncome_button.Name = "householdIncome_button";
             this.householdIncome_button.Size = new System.Drawing.Size(216, 23);
-            this.householdIncome_button.TabIndex = 19;
+            this.householdIncome_button.TabIndex = 18;
             this.householdIncome_button.Text = "Enter Household Income and Finances";
             this.householdIncome_button.UseVisualStyleBackColor = true;
             this.householdIncome_button.Click += new System.EventHandler(this.householdIncome_button_Click);
@@ -427,11 +426,21 @@
             // 
             this.goalTypesTableAdapter.ClearBeforeFill = true;
             // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(640, 647);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 58;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            // 
             // NewClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 675);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.GoalsBox);
             this.Controls.Add(this.ReferralsBox);
             this.Controls.Add(this.EmploymentStatusBox);
@@ -527,5 +536,6 @@
         private DataSet1TableAdapters.ReferralTypesTableAdapter referralTypesTableAdapter;
         private System.Windows.Forms.CheckedListBox GoalsBox;
         private DataSet1TableAdapters.GoalTypesTableAdapter goalTypesTableAdapter;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
