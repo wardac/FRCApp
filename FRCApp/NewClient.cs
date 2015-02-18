@@ -17,6 +17,8 @@ namespace FRCApp {
         private FinanceForm financeForm;
         private Guid clientID;
         private Guid householdID;
+        private const int BACKSPACE = 8;
+        private const int DELETE = 46;
 
         public NewClient() {
             InitializeComponent();
@@ -69,9 +71,9 @@ namespace FRCApp {
                 MessageBox.Show("Please enter in a City");
                 return false;
             }
-            else if (string.IsNullOrEmpty(zipCode_textBox.Text))
+            else if (string.IsNullOrEmpty(zipCode_textBox.Text) || zipCode_textBox.Text.Length != 5)
             {
-                MessageBox.Show("Please enter in a zip code");
+                MessageBox.Show("Please enter in a valid zip code");
                 return false;
             }
             return true;
@@ -81,15 +83,32 @@ namespace FRCApp {
         {
             if (formHasValidData())
             {
-
                 foreach (object item in ReferralsBox.CheckedItems)
                 {
                     Console.WriteLine(((System.Data.DataRowView)item).Row.Field<string>(1));
                 }
                 DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
-                adapter.AddClient(clientID.ToString(), householdID.ToString(), firstName_textBox.Text, lastName_textBox.Text, middleInitial_textBox.Text, DateTime.Parse(dataOfBirth_dateTimePicker.Text), homeAddress_textBox.Text, apartmentNumber_textBox.Text, city_textBox.Text, "Ohio", zipCode_textBox.Text, telephone1_textBox.Text, telephone2_textBox.Text, "", "", "", true, true, true);
-
-                DataSet1TableAdapters.HouseholdsTableAdapter householdAdapter = new DataSet1TableAdapters.HouseholdsTableAdapter();
+                adapter.AddClient(
+                    clientID.ToString(), 
+                    householdID.ToString(), 
+                    firstName_textBox.Text, 
+                    lastName_textBox.Text, 
+                    middleInitial_textBox.Text, 
+                    DateTime.Parse(dataOfBirth_dateTimePicker.Text), 
+                    homeAddress_textBox.Text, 
+                    apartmentNumber_textBox.Text, 
+                    city_textBox.Text, 
+                    "Ohio", 
+                    zipCode_textBox.Text, 
+                    telephone1_textBox.Text, 
+                    telephone2_textBox.Text,
+                    email_textBox.Text,
+                    EducationLevelBox.Text, 
+                    EmploymentStatusBox.Text, 
+                    false, // bank account
+                    false, // credit score
+                    false  // credit report
+                );
                 
                 this.Close();
             }
@@ -114,6 +133,31 @@ namespace FRCApp {
             HouseholdTypeBox.SelectedIndex = -1;
             EducationLevelBox.SelectedIndex = -1;
             EmploymentStatusBox.SelectedIndex = -1;
+        }
+
+        /**
+         * Restric zip code to only accept numbers
+         */
+        private void zipCode_textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != BACKSPACE && ch != DELETE)
+            {
+                e.Handled = true;
+            }
+        }
+
+        /**
+         * Handle clicking of cancel button
+         */
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult messageBox = MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.YesNo);
+            if (messageBox == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
 
