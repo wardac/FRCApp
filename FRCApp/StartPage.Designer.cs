@@ -32,19 +32,21 @@
             this.clientPage_button = new System.Windows.Forms.Button();
             this.addNewClient_button = new System.Windows.Forms.Button();
             this.client_listView = new System.Windows.Forms.ListView();
+            this.clientId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateOfBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clientId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.search_button = new System.Windows.Forms.Button();
             this.search_textBox = new System.Windows.Forms.TextBox();
             this.search_label = new System.Windows.Forms.Label();
+            this.users = new System.Windows.Forms.Button();
             this.startPage_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // startPage_panel
             // 
+            this.startPage_panel.Controls.Add(this.users);
             this.startPage_panel.Controls.Add(this.clientPage_button);
             this.startPage_panel.Controls.Add(this.addNewClient_button);
             this.startPage_panel.Controls.Add(this.client_listView);
@@ -94,6 +96,11 @@
             this.client_listView.View = System.Windows.Forms.View.Details;
             this.client_listView.SelectedIndexChanged += new System.EventHandler(this.client_listView_Click);
             // 
+            // clientId
+            // 
+            this.clientId.Text = "Id";
+            this.clientId.Width = 27;
+            // 
             // name
             // 
             this.name.Text = "Last, First Name";
@@ -113,11 +120,6 @@
             // 
             this.number.Text = "Phone Number";
             this.number.Width = 92;
-            // 
-            // clientId
-            // 
-            this.clientId.Text = "Id";
-            this.clientId.Width = 27;
             // 
             // search_button
             // 
@@ -144,6 +146,16 @@
             this.search_label.Size = new System.Drawing.Size(75, 13);
             this.search_label.TabIndex = 0;
             this.search_label.Text = "Client Lookup:";
+            // 
+            // users
+            // 
+            this.users.Location = new System.Drawing.Point(455, 8);
+            this.users.Name = "users";
+            this.users.Size = new System.Drawing.Size(108, 23);
+            this.users.TabIndex = 6;
+            this.users.Text = "Go to Users page";
+            this.users.UseVisualStyleBackColor = true;
+            this.users.Click += new System.EventHandler(this.users_Click);
             // 
             // StartPage
             // 
@@ -173,5 +185,6 @@
         private System.Windows.Forms.ColumnHeader Address;
         private System.Windows.Forms.ColumnHeader number;
         private System.Windows.Forms.ColumnHeader clientId;
+        private System.Windows.Forms.Button users;
     }
 }
