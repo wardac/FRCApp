@@ -32,7 +32,7 @@ namespace FRCApp
             {
                 return "Select a household member";
             }
-            else if (String.IsNullOrEmpty(sourceOfIncomeTextBox.Text))
+            else if (cmb_incomeSourceType.SelectedIndex == -1)
             {
                 return "Enter a source of income";
             }
@@ -62,16 +62,16 @@ namespace FRCApp
             }
             //Add the data to the listView
             ListViewItem item = new ListViewItem(cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem));
-            item.SubItems.Add(sourceOfIncomeTextBox.Text);
+            item.SubItems.Add(cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem));
             item.SubItems.Add(amountOfIncomeTextBox.Text);
             item.SubItems.Add(cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem));
             FinancelistView.Items.Add(item);
             // Add entry to the incomeSourcesList
-            incomeSourcesList.Add(new IncomeSource((int)cmb_householdMember.SelectedValue, sourceOfIncomeTextBox.Text, amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem)));
+            incomeSourcesList.Add(new IncomeSource((int)cmb_householdMember.SelectedValue, cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem), amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem)));
             //clear the fields
             cmb_householdMember.SelectedIndex = -1;
             cmb_incomeFreqs.SelectedIndex = -1;
-            sourceOfIncomeTextBox.Clear();
+            cmb_incomeSourceType.SelectedIndex = -1;
             amountOfIncomeTextBox.Clear();
 
         }
@@ -126,6 +126,12 @@ namespace FRCApp
             cmb_incomeFreqs.DataSource = incomeFreqs;
             cmb_incomeFreqs.ValueMember = "IncomeFrequencyID";
             cmb_incomeFreqs.DisplayMember = "Frequency";
+
+            var incomeSourceTypesAdapter = new DataSet1TableAdapters.IncomeSourceTypesTableAdapter();
+            var incomeSourceTypes = incomeSourceTypesAdapter.GetData();
+            cmb_incomeSourceType.DataSource = incomeSourceTypes;
+            cmb_incomeSourceType.ValueMember = "IncomeSourceType";
+            cmb_incomeSourceType.DisplayMember = "IncomeSourceType";
         }
 
         private class IncomeSource {
