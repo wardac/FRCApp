@@ -34,10 +34,10 @@
             this.FinancePersonWithIncomeLabel = new System.Windows.Forms.Label();
             this.amountOfIncomeTextBox = new System.Windows.Forms.TextBox();
             this.FinanceFormAmountOfIncomelabel = new System.Windows.Forms.Label();
-            this.sourceOfIncomeTextBox = new System.Windows.Forms.TextBox();
             this.FinanceFormSourceOfIncomelabel = new System.Windows.Forms.Label();
             this.FinanceFormNumTimesRecievedlabel = new System.Windows.Forms.Label();
             this.FinancelistView = new System.Windows.Forms.ListView();
+            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.incomeSource = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.incomeAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.incomeFrequency = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,7 +46,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.cmb_householdMember = new System.Windows.Forms.ComboBox();
             this.cmb_incomeFreqs = new System.Windows.Forms.ComboBox();
-            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmb_incomeSourceType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // addButton
@@ -54,7 +54,7 @@
             this.addButton.Location = new System.Drawing.Point(321, 235);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 6;
+            this.addButton.TabIndex = 4;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
@@ -94,7 +94,7 @@
             this.amountOfIncomeTextBox.Location = new System.Drawing.Point(196, 162);
             this.amountOfIncomeTextBox.Name = "amountOfIncomeTextBox";
             this.amountOfIncomeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.amountOfIncomeTextBox.TabIndex = 3;
+            this.amountOfIncomeTextBox.TabIndex = 2;
             // 
             // FinanceFormAmountOfIncomelabel
             // 
@@ -105,13 +105,6 @@
             this.FinanceFormAmountOfIncomelabel.Size = new System.Drawing.Size(109, 13);
             this.FinanceFormAmountOfIncomelabel.TabIndex = 35;
             this.FinanceFormAmountOfIncomelabel.Text = "Amount of Income";
-            // 
-            // sourceOfIncomeTextBox
-            // 
-            this.sourceOfIncomeTextBox.Location = new System.Drawing.Point(196, 119);
-            this.sourceOfIncomeTextBox.Name = "sourceOfIncomeTextBox";
-            this.sourceOfIncomeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.sourceOfIncomeTextBox.TabIndex = 2;
             // 
             // FinanceFormSourceOfIncomelabel
             // 
@@ -140,14 +133,18 @@
             this.incomeSource,
             this.incomeAmount,
             this.incomeFrequency});
+            this.FinancelistView.FullRowSelect = true;
             this.FinancelistView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.FinancelistView.Location = new System.Drawing.Point(414, 51);
-            this.FinancelistView.MultiSelect = false;
             this.FinancelistView.Name = "FinancelistView";
             this.FinancelistView.Size = new System.Drawing.Size(527, 171);
-            this.FinancelistView.TabIndex = 7;
+            this.FinancelistView.TabIndex = 5;
             this.FinancelistView.UseCompatibleStateImageBehavior = false;
             this.FinancelistView.View = System.Windows.Forms.View.Details;
+            // 
+            // name
+            // 
+            this.name.Text = "Name";
             // 
             // incomeSource
             // 
@@ -169,17 +166,17 @@
             this.submitButton.Location = new System.Drawing.Point(785, 228);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
-            this.submitButton.TabIndex = 8;
+            this.submitButton.TabIndex = 7;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(240, 235);
+            this.removeButton.Location = new System.Drawing.Point(414, 235);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
-            this.removeButton.TabIndex = 5;
+            this.removeButton.TabIndex = 6;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
@@ -189,7 +186,7 @@
             this.cancelButton.Location = new System.Drawing.Point(866, 228);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 42;
+            this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -200,7 +197,7 @@
             this.cmb_householdMember.Location = new System.Drawing.Point(196, 76);
             this.cmb_householdMember.Name = "cmb_householdMember";
             this.cmb_householdMember.Size = new System.Drawing.Size(200, 21);
-            this.cmb_householdMember.TabIndex = 43;
+            this.cmb_householdMember.TabIndex = 0;
             // 
             // cmb_incomeFreqs
             // 
@@ -208,17 +205,22 @@
             this.cmb_incomeFreqs.Location = new System.Drawing.Point(196, 205);
             this.cmb_incomeFreqs.Name = "cmb_incomeFreqs";
             this.cmb_incomeFreqs.Size = new System.Drawing.Size(200, 21);
-            this.cmb_incomeFreqs.TabIndex = 44;
+            this.cmb_incomeFreqs.TabIndex = 3;
             // 
-            // name
+            // cmb_incomeSourceType
             // 
-            this.name.Text = "Name";
+            this.cmb_incomeSourceType.FormattingEnabled = true;
+            this.cmb_incomeSourceType.Location = new System.Drawing.Point(196, 123);
+            this.cmb_incomeSourceType.Name = "cmb_incomeSourceType";
+            this.cmb_incomeSourceType.Size = new System.Drawing.Size(200, 21);
+            this.cmb_incomeSourceType.TabIndex = 1;
             // 
             // FinanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 270);
+            this.Controls.Add(this.cmb_incomeSourceType);
             this.Controls.Add(this.cmb_incomeFreqs);
             this.Controls.Add(this.cmb_householdMember);
             this.Controls.Add(this.cancelButton);
@@ -226,7 +228,6 @@
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.FinancelistView);
             this.Controls.Add(this.FinanceFormNumTimesRecievedlabel);
-            this.Controls.Add(this.sourceOfIncomeTextBox);
             this.Controls.Add(this.FinanceFormSourceOfIncomelabel);
             this.Controls.Add(this.amountOfIncomeTextBox);
             this.Controls.Add(this.FinanceFormAmountOfIncomelabel);
@@ -249,7 +250,6 @@
         private System.Windows.Forms.Label FinancePersonWithIncomeLabel;
         private System.Windows.Forms.TextBox amountOfIncomeTextBox;
         private System.Windows.Forms.Label FinanceFormAmountOfIncomelabel;
-        private System.Windows.Forms.TextBox sourceOfIncomeTextBox;
         private System.Windows.Forms.Label FinanceFormSourceOfIncomelabel;
         private System.Windows.Forms.Label FinanceFormNumTimesRecievedlabel;
         private System.Windows.Forms.ListView FinancelistView;
@@ -262,5 +262,6 @@
         private System.Windows.Forms.ComboBox cmb_householdMember;
         private System.Windows.Forms.ComboBox cmb_incomeFreqs;
         private System.Windows.Forms.ColumnHeader name;
+        private System.Windows.Forms.ComboBox cmb_incomeSourceType;
     }
 }

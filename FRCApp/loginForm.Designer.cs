@@ -60,11 +60,11 @@
             // 
             this.lbl_usrname.AutoSize = true;
             this.lbl_usrname.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usrname.Location = new System.Drawing.Point(96, 61);
+            this.lbl_usrname.Location = new System.Drawing.Point(96, 65);
             this.lbl_usrname.Name = "lbl_usrname";
-            this.lbl_usrname.Size = new System.Drawing.Size(63, 12);
+            this.lbl_usrname.Size = new System.Drawing.Size(62, 12);
             this.lbl_usrname.TabIndex = 2;
-            this.lbl_usrname.Text = "UserName";
+            this.lbl_usrname.Text = "Username";
             // 
             // lblpassword
             // 
@@ -85,14 +85,16 @@
             // 
             // login_Password
             // 
+            this.login_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_Password.Location = new System.Drawing.Point(165, 95);
             this.login_Password.Name = "login_Password";
-            this.login_Password.PasswordChar = '*';
+            this.login_Password.PasswordChar = '•';
             this.login_Password.Size = new System.Drawing.Size(193, 20);
             this.login_Password.TabIndex = 5;
             // 
             // loginForm
             // 
+            this.AcceptButton = this.login_submit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 214);
@@ -103,7 +105,7 @@
             this.Controls.Add(this.login_cancel);
             this.Controls.Add(this.login_submit);
             this.Name = "loginForm";
-            this.Text = "loginForm";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
