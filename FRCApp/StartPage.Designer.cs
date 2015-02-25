@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.startPage_panel = new System.Windows.Forms.Panel();
-            this.users = new System.Windows.Forms.Button();
             this.clientPage_button = new System.Windows.Forms.Button();
             this.addNewClient_button = new System.Windows.Forms.Button();
             this.client_listView = new System.Windows.Forms.ListView();
@@ -41,14 +40,12 @@
             this.search_button = new System.Windows.Forms.Button();
             this.search_textBox = new System.Windows.Forms.TextBox();
             this.search_label = new System.Windows.Forms.Label();
+            this.users = new System.Windows.Forms.Button();
             this.startPage_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // startPage_panel
             // 
-            this.startPage_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.startPage_panel.Controls.Add(this.users);
             this.startPage_panel.Controls.Add(this.clientPage_button);
             this.startPage_panel.Controls.Add(this.addNewClient_button);
@@ -61,20 +58,8 @@
             this.startPage_panel.Size = new System.Drawing.Size(574, 350);
             this.startPage_panel.TabIndex = 0;
             // 
-            // users
-            // 
-            this.users.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.users.Location = new System.Drawing.Point(455, 8);
-            this.users.Name = "users";
-            this.users.Size = new System.Drawing.Size(108, 23);
-            this.users.TabIndex = 6;
-            this.users.Text = "Go to Users page";
-            this.users.UseVisualStyleBackColor = true;
-            this.users.Click += new System.EventHandler(this.users_Click);
-            // 
             // clientPage_button
             // 
-            this.clientPage_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.clientPage_button.Location = new System.Drawing.Point(465, 314);
             this.clientPage_button.Name = "clientPage_button";
             this.clientPage_button.Size = new System.Drawing.Size(98, 23);
@@ -85,7 +70,6 @@
             // 
             // addNewClient_button
             // 
-            this.addNewClient_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addNewClient_button.Location = new System.Drawing.Point(14, 314);
             this.addNewClient_button.Name = "addNewClient_button";
             this.addNewClient_button.Size = new System.Drawing.Size(91, 23);
@@ -96,9 +80,6 @@
             // 
             // client_listView
             // 
-            this.client_listView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.client_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clientId,
             this.name,
@@ -166,6 +147,16 @@
             this.search_label.TabIndex = 0;
             this.search_label.Text = "Client Lookup:";
             // 
+            // users
+            // 
+            this.users.Location = new System.Drawing.Point(455, 8);
+            this.users.Name = "users";
+            this.users.Size = new System.Drawing.Size(108, 23);
+            this.users.TabIndex = 6;
+            this.users.Text = "Go to Users page";
+            this.users.UseVisualStyleBackColor = true;
+            this.users.Click += new System.EventHandler(this.users_Click);
+            // 
             // StartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,7 +164,6 @@
             this.ClientSize = new System.Drawing.Size(578, 355);
             this.Controls.Add(this.startPage_panel);
             this.Name = "StartPage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartPage";
             this.startPage_panel.ResumeLayout(false);
             this.startPage_panel.PerformLayout();
