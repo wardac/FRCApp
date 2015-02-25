@@ -15,8 +15,15 @@ namespace FRCApp
         public UsersPage()
         {
             InitializeComponent();
-           DataSet1TableAdapters.UsersTableAdapter adapter = new DataSet1TableAdapters.UsersTableAdapter();
-            
+        }
+
+        private void fillListView()
+        {
+            DataSet1TableAdapters.UsersTableAdapter adapter = new DataSet1TableAdapters.UsersTableAdapter();
+            foreach (DataRow row in adapter.GetData().Rows)
+            {
+               // ListViewItem item = new ListViewItem(row.);
+            }
         }
 
         private void newUser_Click(object sender, EventArgs e)
