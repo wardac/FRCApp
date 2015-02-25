@@ -21,6 +21,7 @@ namespace FRCApp
 
         private void addNewClient_button_Click(object sender, EventArgs e)
         {
+            search_textBox.Text = "";
             NewClient nc = new NewClient();
             nc.Show();
         }
@@ -60,14 +61,34 @@ namespace FRCApp
             new ClientDetails(selectedClientId).Show();
         }
 
-        private void client_listView_Click(object sender, EventArgs e)
-        {
-        }
-
         private void users_Click(object sender, EventArgs e)
         {
             UsersPage usrpage = new UsersPage();
             usrpage.Show();
+        }
+
+        /**
+         * Populate listview with all current clients
+         */
+        private void activated(object sender, EventArgs e)
+        {
+            if (search_textBox.Text.Equals(""))
+            {
+                client_listView.Items.Clear();
+
+                DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
+                DataSet1.ClientsDataTable clientsTable = clientsTable = adapter.GetData();
+
+                foreach (DataSet1.ClientsRow client in clientsTable)
+                {
+                    ListViewItem item = new ListViewItem(client.ClientID.ToString());
+                    item.SubItems.Add(client.LastName.ToString() + ", " + client.FirstName.ToString());
+                    item.SubItems.Add(client.Birthdate.ToShortDateString());
+                    item.SubItems.Add(client.Address.ToString());
+                    item.SubItems.Add(client.Phone1.ToString());
+                    client_listView.Items.Add(item);
+                }
+            }
         }
 
     }

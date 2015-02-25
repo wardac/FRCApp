@@ -109,7 +109,7 @@ namespace FRCApp {
                     false, // credit score
                     false  // credit report
                 );
-                
+
                 this.Close();
             }
         }

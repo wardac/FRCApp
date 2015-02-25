@@ -94,7 +94,6 @@
             this.client_listView.TabIndex = 3;
             this.client_listView.UseCompatibleStateImageBehavior = false;
             this.client_listView.View = System.Windows.Forms.View.Details;
-            this.client_listView.SelectedIndexChanged += new System.EventHandler(this.client_listView_Click);
             // 
             // clientId
             // 
@@ -165,6 +164,7 @@
             this.Controls.Add(this.startPage_panel);
             this.Name = "StartPage";
             this.Text = "StartPage";
+            this.Activated += new System.EventHandler(this.activated);
             this.startPage_panel.ResumeLayout(false);
             this.startPage_panel.PerformLayout();
             this.ResumeLayout(false);
