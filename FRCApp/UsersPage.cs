@@ -15,10 +15,13 @@ namespace FRCApp
         public UsersPage()
         {
             InitializeComponent();
+           DataSet1TableAdapters.UsersTableAdapter adapter = new DataSet1TableAdapters.UsersTableAdapter();
+            
         }
 
         private void newUser_Click(object sender, EventArgs e)
         {
+
             newUser usr = new newUser();
             usr.Show();
         }

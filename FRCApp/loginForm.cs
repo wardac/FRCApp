@@ -20,7 +20,7 @@ namespace FRCApp
         private void login_submit_Click(object sender, EventArgs e)
         {
             DataSet1TableAdapters.UsersTableAdapter usradapter = new DataSet1TableAdapters.UsersTableAdapter();
-            var level = usradapter.getusers(this.login_username.Text,this.login_Password.Text);
+            var level = usradapter.GetAccessLevel(this.login_username.Text,this.login_Password.Text);
             if (level!=null)
             {
 
