@@ -360,6 +360,7 @@
             this.ClientSize = new System.Drawing.Size(970, 425);
             this.Controls.Add(this.title);
             this.Name = "HouseHoldForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.HouseHoldForm_Load);
             this.title.ResumeLayout(false);
             this.title.PerformLayout();

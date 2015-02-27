@@ -578,6 +578,7 @@
             this.Controls.Add(this.ExpenseFormRentLabel);
             this.Controls.Add(this.ExpenseFormTitle);
             this.Name = "ExpenseForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

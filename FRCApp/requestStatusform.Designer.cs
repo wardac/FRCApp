@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.requestPanel = new System.Windows.Forms.Panel();
+            this.checklist_requestType = new System.Windows.Forms.CheckedListBox();
             this.statusPanel = new System.Windows.Forms.Panel();
             this.lblReferals = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -87,7 +88,6 @@
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
-            this.checklist_requestType = new System.Windows.Forms.CheckedListBox();
             this.requestPanel.SuspendLayout();
             this.statusPanel.SuspendLayout();
             this.grpcauseshardship.SuspendLayout();
@@ -121,6 +121,15 @@
             this.requestPanel.Name = "requestPanel";
             this.requestPanel.Size = new System.Drawing.Size(867, 611);
             this.requestPanel.TabIndex = 1;
+            // 
+            // checklist_requestType
+            // 
+            this.checklist_requestType.CheckOnClick = true;
+            this.checklist_requestType.FormattingEnabled = true;
+            this.checklist_requestType.Location = new System.Drawing.Point(161, 73);
+            this.checklist_requestType.Name = "checklist_requestType";
+            this.checklist_requestType.Size = new System.Drawing.Size(259, 94);
+            this.checklist_requestType.TabIndex = 22;
             // 
             // statusPanel
             // 
@@ -702,15 +711,6 @@
             // 
             this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
             // 
-            // checklist_requestType
-            // 
-            this.checklist_requestType.CheckOnClick = true;
-            this.checklist_requestType.FormattingEnabled = true;
-            this.checklist_requestType.Location = new System.Drawing.Point(161, 73);
-            this.checklist_requestType.Name = "checklist_requestType";
-            this.checklist_requestType.Size = new System.Drawing.Size(259, 94);
-            this.checklist_requestType.TabIndex = 22;
-            // 
             // requestStatusform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -718,6 +718,7 @@
             this.ClientSize = new System.Drawing.Size(903, 635);
             this.Controls.Add(this.requestPanel);
             this.Name = "requestStatusform";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Request Status";
             this.Load += new System.EventHandler(this.requestStatusform_Load);
             this.requestPanel.ResumeLayout(false);
