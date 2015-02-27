@@ -13,9 +13,11 @@ namespace FRCApp
     public partial class StartPage : Form
     {
         private string selectedClientId = "";
+        private string AccessLevel;
 
-        public StartPage()
+        public StartPage(string AccessLevel)
         {
+            this.AccessLevel = AccessLevel;
             InitializeComponent();
         }
 
@@ -88,6 +90,14 @@ namespace FRCApp
                 item.SubItems.Add(row.Address);
                 item.SubItems.Add(row.Phone1);
                 client_listView.Items.Add(item);
+            }
+        }
+
+        private void StartPage_Load(object sender, EventArgs e)
+        {
+            if (!AccessLevel.Equals("admin"))
+            {
+                usersPagebutton.Visible = false;
             }
         }
 

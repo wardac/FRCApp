@@ -20,14 +20,14 @@ namespace FRCApp
         private void login_submit_Click(object sender, EventArgs e)
         {
             DataSet1TableAdapters.UsersTableAdapter usradapter = new DataSet1TableAdapters.UsersTableAdapter();
-            var level = usradapter.GetAccessLevel(this.login_username.Text,this.login_Password.Text);
-            if (level!=null)
+            String level = usradapter.GetAccessLevel(this.login_username.Text, this.login_Password.Text).ToString();
+            if (level != null)
             {
-
-                StartPage startPage = new StartPage();
+                StartPage startPage = new StartPage(level);
                 this.Close();
                 this.Dispose();
                 startPage.Show();
+
             }
             else { MessageBox.Show("sorry wrong credentials"); }
         }

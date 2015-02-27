@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.startPage_panel = new System.Windows.Forms.Panel();
-            this.users = new System.Windows.Forms.Button();
+            this.usersPagebutton = new System.Windows.Forms.Button();
             this.clientPage_button = new System.Windows.Forms.Button();
             this.addNewClient_button = new System.Windows.Forms.Button();
             this.client_listView = new System.Windows.Forms.ListView();
@@ -45,7 +45,7 @@
             // 
             // startPage_panel
             // 
-            this.startPage_panel.Controls.Add(this.users);
+            this.startPage_panel.Controls.Add(this.usersPagebutton);
             this.startPage_panel.Controls.Add(this.clientPage_button);
             this.startPage_panel.Controls.Add(this.addNewClient_button);
             this.startPage_panel.Controls.Add(this.client_listView);
@@ -57,15 +57,15 @@
             this.startPage_panel.Size = new System.Drawing.Size(574, 350);
             this.startPage_panel.TabIndex = 0;
             // 
-            // users
+            // usersPagebutton
             // 
-            this.users.Location = new System.Drawing.Point(455, 8);
-            this.users.Name = "users";
-            this.users.Size = new System.Drawing.Size(108, 23);
-            this.users.TabIndex = 6;
-            this.users.Text = "Go to Users page";
-            this.users.UseVisualStyleBackColor = true;
-            this.users.Click += new System.EventHandler(this.users_Click);
+            this.usersPagebutton.Location = new System.Drawing.Point(455, 8);
+            this.usersPagebutton.Name = "usersPagebutton";
+            this.usersPagebutton.Size = new System.Drawing.Size(108, 23);
+            this.usersPagebutton.TabIndex = 6;
+            this.usersPagebutton.Text = "Go to Users page";
+            this.usersPagebutton.UseVisualStyleBackColor = true;
+            this.usersPagebutton.Click += new System.EventHandler(this.users_Click);
             // 
             // clientPage_button
             // 
@@ -160,6 +160,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartPage";
             this.Activated += new System.EventHandler(this.activated);
+            this.Load += new System.EventHandler(this.StartPage_Load);
             this.startPage_panel.ResumeLayout(false);
             this.startPage_panel.PerformLayout();
             this.ResumeLayout(false);
@@ -179,6 +180,6 @@
         private System.Windows.Forms.ColumnHeader dateOfBirth;
         private System.Windows.Forms.ColumnHeader Address;
         private System.Windows.Forms.ColumnHeader number;
-        private System.Windows.Forms.Button users;
+        private System.Windows.Forms.Button usersPagebutton;
     }
 }

@@ -44,6 +44,7 @@
             this.firstName,
             this.lastname,
             this.AccessLevel});
+            this.listusers.FullRowSelect = true;
             this.listusers.Location = new System.Drawing.Point(41, 25);
             this.listusers.Name = "listusers";
             this.listusers.Size = new System.Drawing.Size(542, 216);
