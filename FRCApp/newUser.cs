@@ -17,26 +17,55 @@ namespace FRCApp
             InitializeComponent();
         }
 
+        /**
+        * Check to ensure each form field has been given a value 
+        * returns a message containing information about which field needs to be filled in
+        **/
+        private string validateForm()
+        {
+            if (String.IsNullOrEmpty(FirstnameTextbox.Text))
+            {
+                return "Enter a first name";
+            }
+            else if (String.IsNullOrEmpty(LastNameTextBox.Text))
+            {
+                return "Enter a last name";
+            }
+            else if (String.IsNullOrEmpty(UserNameTextBox.Text))
+            {
+                return "Enter a username";
+            }
+            else if (AccessLevelComboBox.SelectedIndex == -1)
+            {
+                return "Select an access level";
+            }
+            return "OK";
+        }
+
         private void save_Click(object sender, EventArgs e)
         {
-            bool valid=true;
-            foreach( Control x in this.Controls)
+            //validate the form
+            String message = validateForm();
+            if (message != "OK")
             {
-                if ((x is TextBox)&&( x.Text.Trim()==""))
-                {
-                    valid = false;
-                    MessageBox.Show(x.Name + " cannot be empty");
-                }
+                MessageBox.Show(message);
+                return;
             }
-            if (valid == true)
-            {
-                MessageBox.Show( "cool");
-            }
-
+            //Add the data to the users database with the default password frc123
+            DataSet1TableAdapters.UsersTableAdapter adapter = new DataSet1TableAdapters.UsersTableAdapter();
+            adapter.AddUser(UserNameTextBox.Text, FirstnameTextbox.Text, LastNameTextBox.Text, "frc123", AccessLevelComboBox.GetItemText(AccessLevelComboBox.SelectedItem));
+            MessageBox.Show("User Added");
+            
+            this.Close();
         }
 
         private void cancel_Click(object sender, EventArgs e)
         {
+            DialogResult messageBox = MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.YesNo);
+            if (messageBox == DialogResult.Yes)
+            {
+                this.Close();
+            }
             this.Dispose();
         }
     }
