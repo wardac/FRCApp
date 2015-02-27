@@ -35,6 +35,10 @@ namespace FRCApp
             {
                 return "Enter a username";
             }
+            else if (String.IsNullOrEmpty(passwordTextBox.Text))
+            {
+                return "Enter a password";
+            }
             else if (AccessLevelComboBox.SelectedIndex == -1)
             {
                 return "Select an access level";
@@ -53,7 +57,7 @@ namespace FRCApp
             }
             //Add the data to the users database with the default password frc123
             DataSet1TableAdapters.UsersTableAdapter adapter = new DataSet1TableAdapters.UsersTableAdapter();
-            adapter.AddUser(UserNameTextBox.Text, FirstnameTextbox.Text, LastNameTextBox.Text, "frc123", AccessLevelComboBox.GetItemText(AccessLevelComboBox.SelectedItem));
+            adapter.AddUser(UserNameTextBox.Text, FirstnameTextbox.Text, LastNameTextBox.Text, passwordTextBox.Text, AccessLevelComboBox.GetItemText(AccessLevelComboBox.SelectedItem));
             MessageBox.Show("User Added");
             
             this.Close();
