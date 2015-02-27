@@ -502,6 +502,7 @@
             this.Controls.Add(this.firstName_label);
             this.Controls.Add(this.lastName_label);
             this.Name = "NewClient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewClient";
             this.Load += new System.EventHandler(this.NewClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.householdTypesBindingSource)).EndInit();

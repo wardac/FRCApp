@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.startPage_panel = new System.Windows.Forms.Panel();
+            this.users = new System.Windows.Forms.Button();
             this.clientPage_button = new System.Windows.Forms.Button();
             this.addNewClient_button = new System.Windows.Forms.Button();
             this.client_listView = new System.Windows.Forms.ListView();
-            this.clientId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateOfBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Address = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,7 +40,6 @@
             this.search_button = new System.Windows.Forms.Button();
             this.search_textBox = new System.Windows.Forms.TextBox();
             this.search_label = new System.Windows.Forms.Label();
-            this.users = new System.Windows.Forms.Button();
             this.startPage_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +56,16 @@
             this.startPage_panel.Name = "startPage_panel";
             this.startPage_panel.Size = new System.Drawing.Size(574, 350);
             this.startPage_panel.TabIndex = 0;
+            // 
+            // users
+            // 
+            this.users.Location = new System.Drawing.Point(455, 8);
+            this.users.Name = "users";
+            this.users.Size = new System.Drawing.Size(108, 23);
+            this.users.TabIndex = 6;
+            this.users.Text = "Go to Users page";
+            this.users.UseVisualStyleBackColor = true;
+            this.users.Click += new System.EventHandler(this.users_Click);
             // 
             // clientPage_button
             // 
@@ -81,7 +90,6 @@
             // client_listView
             // 
             this.client_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clientId,
             this.name,
             this.dateOfBirth,
             this.Address,
@@ -94,11 +102,6 @@
             this.client_listView.TabIndex = 3;
             this.client_listView.UseCompatibleStateImageBehavior = false;
             this.client_listView.View = System.Windows.Forms.View.Details;
-            // 
-            // clientId
-            // 
-            this.clientId.Text = "Id";
-            this.clientId.Width = 27;
             // 
             // name
             // 
@@ -136,6 +139,7 @@
             this.search_textBox.Name = "search_textBox";
             this.search_textBox.Size = new System.Drawing.Size(142, 20);
             this.search_textBox.TabIndex = 1;
+            this.search_textBox.TextChanged += new System.EventHandler(this.textChanged);
             // 
             // search_label
             // 
@@ -146,16 +150,6 @@
             this.search_label.TabIndex = 0;
             this.search_label.Text = "Client Lookup:";
             // 
-            // users
-            // 
-            this.users.Location = new System.Drawing.Point(455, 8);
-            this.users.Name = "users";
-            this.users.Size = new System.Drawing.Size(108, 23);
-            this.users.TabIndex = 6;
-            this.users.Text = "Go to Users page";
-            this.users.UseVisualStyleBackColor = true;
-            this.users.Click += new System.EventHandler(this.users_Click);
-            // 
             // StartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +157,7 @@
             this.ClientSize = new System.Drawing.Size(578, 355);
             this.Controls.Add(this.startPage_panel);
             this.Name = "StartPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartPage";
             this.Activated += new System.EventHandler(this.activated);
             this.startPage_panel.ResumeLayout(false);
@@ -184,7 +179,6 @@
         private System.Windows.Forms.ColumnHeader dateOfBirth;
         private System.Windows.Forms.ColumnHeader Address;
         private System.Windows.Forms.ColumnHeader number;
-        private System.Windows.Forms.ColumnHeader clientId;
         private System.Windows.Forms.Button users;
     }
 }

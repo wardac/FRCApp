@@ -236,6 +236,7 @@
             this.Controls.Add(this.FinanceFormTitle);
             this.Controls.Add(this.FinanceFormName);
             this.Name = "FinanceForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FinanceForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

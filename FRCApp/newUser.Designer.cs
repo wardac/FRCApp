@@ -31,12 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Firstname = new System.Windows.Forms.TextBox();
-            this.UserName = new System.Windows.Forms.TextBox();
-            this.AccessLevel = new System.Windows.Forms.ComboBox();
+            this.FirstnameTextbox = new System.Windows.Forms.TextBox();
+            this.UserNameTextBox = new System.Windows.Forms.TextBox();
+            this.AccessLevelComboBox = new System.Windows.Forms.ComboBox();
             this.save = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
-            this.LastName = new System.Windows.Forms.TextBox();
+            this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -70,30 +70,30 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Access Level";
             // 
-            // Firstname
+            // FirstnameTextbox
             // 
-            this.Firstname.Location = new System.Drawing.Point(179, 49);
-            this.Firstname.Name = "Firstname";
-            this.Firstname.Size = new System.Drawing.Size(219, 20);
-            this.Firstname.TabIndex = 3;
+            this.FirstnameTextbox.Location = new System.Drawing.Point(179, 49);
+            this.FirstnameTextbox.Name = "FirstnameTextbox";
+            this.FirstnameTextbox.Size = new System.Drawing.Size(219, 20);
+            this.FirstnameTextbox.TabIndex = 3;
             // 
-            // UserName
+            // UserNameTextBox
             // 
-            this.UserName.Location = new System.Drawing.Point(179, 125);
-            this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(219, 20);
-            this.UserName.TabIndex = 5;
+            this.UserNameTextBox.Location = new System.Drawing.Point(179, 125);
+            this.UserNameTextBox.Name = "UserNameTextBox";
+            this.UserNameTextBox.Size = new System.Drawing.Size(219, 20);
+            this.UserNameTextBox.TabIndex = 5;
             // 
-            // AccessLevel
+            // AccessLevelComboBox
             // 
-            this.AccessLevel.FormattingEnabled = true;
-            this.AccessLevel.Items.AddRange(new object[] {
+            this.AccessLevelComboBox.FormattingEnabled = true;
+            this.AccessLevelComboBox.Items.AddRange(new object[] {
             "Administrator",
             "Regular"});
-            this.AccessLevel.Location = new System.Drawing.Point(179, 165);
-            this.AccessLevel.Name = "AccessLevel";
-            this.AccessLevel.Size = new System.Drawing.Size(219, 21);
-            this.AccessLevel.TabIndex = 6;
+            this.AccessLevelComboBox.Location = new System.Drawing.Point(179, 165);
+            this.AccessLevelComboBox.Name = "AccessLevelComboBox";
+            this.AccessLevelComboBox.Size = new System.Drawing.Size(219, 21);
+            this.AccessLevelComboBox.TabIndex = 6;
             // 
             // save
             // 
@@ -115,12 +115,12 @@
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
-            // LastName
+            // LastNameTextBox
             // 
-            this.LastName.Location = new System.Drawing.Point(179, 86);
-            this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(219, 20);
-            this.LastName.TabIndex = 4;
+            this.LastNameTextBox.Location = new System.Drawing.Point(179, 86);
+            this.LastNameTextBox.Name = "LastNameTextBox";
+            this.LastNameTextBox.Size = new System.Drawing.Size(219, 20);
+            this.LastNameTextBox.TabIndex = 4;
             // 
             // label4
             // 
@@ -137,13 +137,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 324);
-            this.Controls.Add(this.LastName);
+            this.Controls.Add(this.LastNameTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.save);
-            this.Controls.Add(this.AccessLevel);
-            this.Controls.Add(this.UserName);
-            this.Controls.Add(this.Firstname);
+            this.Controls.Add(this.AccessLevelComboBox);
+            this.Controls.Add(this.UserNameTextBox);
+            this.Controls.Add(this.FirstnameTextbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -159,12 +159,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Firstname;
-        private System.Windows.Forms.TextBox UserName;
-        private System.Windows.Forms.ComboBox AccessLevel;
+        private System.Windows.Forms.TextBox FirstnameTextbox;
+        private System.Windows.Forms.TextBox UserNameTextBox;
+        private System.Windows.Forms.ComboBox AccessLevelComboBox;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button cancel;
-        private System.Windows.Forms.TextBox LastName;
+        private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.Label label4;
     }
 }

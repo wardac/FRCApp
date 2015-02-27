@@ -41,7 +41,7 @@
             this.login_submit.Location = new System.Drawing.Point(165, 135);
             this.login_submit.Name = "login_submit";
             this.login_submit.Size = new System.Drawing.Size(75, 23);
-            this.login_submit.TabIndex = 0;
+            this.login_submit.TabIndex = 2;
             this.login_submit.Text = "submit";
             this.login_submit.UseVisualStyleBackColor = true;
             this.login_submit.Click += new System.EventHandler(this.login_submit_Click);
@@ -51,7 +51,7 @@
             this.login_cancel.Location = new System.Drawing.Point(257, 135);
             this.login_cancel.Name = "login_cancel";
             this.login_cancel.Size = new System.Drawing.Size(75, 23);
-            this.login_cancel.TabIndex = 1;
+            this.login_cancel.TabIndex = 3;
             this.login_cancel.Text = "cancel";
             this.login_cancel.UseVisualStyleBackColor = true;
             this.login_cancel.Click += new System.EventHandler(this.login_cancel_Click);
@@ -81,7 +81,7 @@
             this.login_username.Location = new System.Drawing.Point(165, 61);
             this.login_username.Name = "login_username";
             this.login_username.Size = new System.Drawing.Size(193, 20);
-            this.login_username.TabIndex = 4;
+            this.login_username.TabIndex = 0;
             // 
             // login_Password
             // 
@@ -90,7 +90,7 @@
             this.login_Password.Name = "login_Password";
             this.login_Password.PasswordChar = '•';
             this.login_Password.Size = new System.Drawing.Size(193, 20);
-            this.login_Password.TabIndex = 5;
+            this.login_Password.TabIndex = 1;
             // 
             // loginForm
             // 
@@ -105,6 +105,7 @@
             this.Controls.Add(this.login_cancel);
             this.Controls.Add(this.login_submit);
             this.Name = "loginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

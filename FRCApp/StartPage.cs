@@ -28,26 +28,7 @@ namespace FRCApp
 
         private void search_button_Click(object sender, EventArgs e)
         {
-            // earse any previous search results
-            foreach (ListViewItem item in client_listView.Items)
-            {
-                item.Remove();
-            }
-
-            // query database
-            DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
-            var clients = adapter.ClientLookUp(search_textBox.Text);
-
-            // for each row in our query result, add a listViewItem to our listview
-            foreach (DataSet1.ClientsRow row in clients)
-            {
-                ListViewItem item = new ListViewItem(row.ClientID.ToString());
-                item.SubItems.Add(row.LastName + ", " + row.FirstName);
-                item.SubItems.Add(row.Birthdate.ToShortDateString());
-                item.SubItems.Add(row.Address);
-                item.SubItems.Add(row.Phone1);
-                client_listView.Items.Add(item);
-            }
+            addItems(search_textBox.Text);
         }
 
         private void clientPage_button_Click(object sender, EventArgs e)
@@ -74,20 +55,38 @@ namespace FRCApp
         {
             if (search_textBox.Text.Equals(""))
             {
-                client_listView.Items.Clear();
+                addItems("");
+            }
+        }
 
-                DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
-                DataSet1.ClientsDataTable clientsTable = clientsTable = adapter.GetData();
+        /**
+         * responsible for responsive filtering as the user enters text
+         */
+        private void textChanged(object sender, EventArgs e)
+        {
+            addItems(search_textBox.Text);
+        }
 
-                foreach (DataSet1.ClientsRow client in clientsTable)
-                {
-                    ListViewItem item = new ListViewItem(client.ClientID.ToString());
-                    item.SubItems.Add(client.LastName.ToString() + ", " + client.FirstName.ToString());
-                    item.SubItems.Add(client.Birthdate.ToShortDateString());
-                    item.SubItems.Add(client.Address.ToString());
-                    item.SubItems.Add(client.Phone1.ToString());
-                    client_listView.Items.Add(item);
-                }
+        /**
+         * Populate listview
+         */
+        private void addItems(string searchOn)
+        {
+            // clear items
+            client_listView.Items.Clear();
+
+            // query database
+            DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
+            var clients = adapter.ClientLookUp(searchOn);
+
+            // for each row in our query result, add a listViewItem to our listview
+            foreach (DataSet1.ClientsRow row in clients)
+            {
+                ListViewItem item = new ListViewItem(row.LastName + ", " + row.FirstName);
+                item.SubItems.Add(row.Birthdate.ToShortDateString());
+                item.SubItems.Add(row.Address);
+                item.SubItems.Add(row.Phone1);
+                client_listView.Items.Add(item);
             }
         }
 
