@@ -123,13 +123,6 @@
     <Compile Include="newUser.Designer.cs">
       <DependentUpon>newUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="ow_tab.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ow_tab.Designer.cs">
-      <DependentUpon>ow_tab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PinkSheetHouseHoldInformation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="requestStatusform.cs">
@@ -173,9 +166,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="newUser.resx">
       <DependentUpon>newUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ow_tab.resx">
-      <DependentUpon>ow_tab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -108,7 +108,7 @@
             // 
             // HouseHoldFormCancelButton
             // 
-            this.HouseHoldFormCancelButton.Location = new System.Drawing.Point(857, 381);
+            this.HouseHoldFormCancelButton.Location = new System.Drawing.Point(880, 382);
             this.HouseHoldFormCancelButton.Name = "HouseHoldFormCancelButton";
             this.HouseHoldFormCancelButton.Size = new System.Drawing.Size(75, 23);
             this.HouseHoldFormCancelButton.TabIndex = 11;
@@ -166,11 +166,11 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(708, 382);
+            this.btnSubmit.Location = new System.Drawing.Point(799, 382);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(109, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 10;
-            this.btnSubmit.Text = "Submit to Database";
+            this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 

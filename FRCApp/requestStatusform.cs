@@ -65,27 +65,6 @@ namespace FRCApp
             assistancedate.Value = DateTime.Today.Date;
         }
 
-        private void chkApproved_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkApproved.Checked)
-            {
-                chkApprovedReason.Visible = true;
-                ChkDeniedReason.Visible = false;
-                chkDenied.Enabled = false;
-
-            }
-        }
-
-        private void chkDenied_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkDenied.Checked)
-            {
-                chkApprovedReason.Visible = false;
-                ChkDeniedReason.Visible = true;
-                chkApprovedReason.Enabled = false;
-
-            }
-        }
 
         private void requestStatusform_Load(object sender, EventArgs e)
         {
@@ -94,7 +73,6 @@ namespace FRCApp
             if (newrequest)
             {
                 this.Text = "New EFA Request";
-                statusPanel.Visible = false;
             }
            
            
@@ -120,6 +98,11 @@ namespace FRCApp
             var expensesAdapter = new DataSet1TableAdapters.MonthlyExpensesTableAdapter();
             var monthlyExpenses = expensesAdapter.getExpenseInfoByHouseholdID(clients[0].HouseholdID);
             txt_Mexpenses.Text = monthlyExpenses.ToString();
+        }
+
+        private void update_efa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
