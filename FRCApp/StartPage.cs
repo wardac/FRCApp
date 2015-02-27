@@ -33,7 +33,7 @@ namespace FRCApp
 
         private void clientPage_button_Click(object sender, EventArgs e)
         {
-            if (client_listView.SelectedItems.Count == 0 || (selectedClientId = client_listView.SelectedItems[0].SubItems[0].Text) == "")
+            if (client_listView.SelectedItems.Count == 0 || (selectedClientId = (String)client_listView.SelectedItems[0].Tag) == "")
             {
                 MessageBox.Show("Please select a client");
                 return;
@@ -83,6 +83,7 @@ namespace FRCApp
             foreach (DataSet1.ClientsRow row in clients)
             {
                 ListViewItem item = new ListViewItem(row.LastName + ", " + row.FirstName);
+                item.Tag = row.ClientID;
                 item.SubItems.Add(row.Birthdate.ToShortDateString());
                 item.SubItems.Add(row.Address);
                 item.SubItems.Add(row.Phone1);
