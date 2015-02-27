@@ -30,8 +30,6 @@ namespace FRCApp {
         
         private EFARequestTypesDataTable tableEFARequestTypes;
         
-        private EFASubrequestsDataTable tableEFASubrequests;
-        
         private EmploymentStatusesDataTable tableEmploymentStatuses;
         
         private ExpenseTypesDataTable tableExpenseTypes;
@@ -56,8 +54,6 @@ namespace FRCApp {
         
         private HouseholdMembersDataTable tableHouseholdMembers;
         
-        private EFARequestsDataTable tableEFARequests;
-        
         private HouseholdsDataTable tableHouseholds;
         
         private IncomeInfoDataTable tableIncomeInfo;
@@ -68,19 +64,19 @@ namespace FRCApp {
         
         private UsersDataTable tableUsers;
         
-        private global::System.Data.DataRelation relationFK__EFASubreq__EFARe__51EF2864;
+        private EFASubrequestsDataTable tableEFASubrequests;
         
-        private global::System.Data.DataRelation relationFK__EFASubreq__EFARe__52E34C9D;
+        private EFARequestsDataTable tableEFARequests;
         
         private global::System.Data.DataRelation relationFK__IncomeSou__Frequ__3FD07829;
         
         private global::System.Data.DataRelation relationFK__IncomeSou__House__3EDC53F0;
         
-        private global::System.Data.DataRelation relationFK__EFASubreq__EFARe__50FB042B;
-        
-        private global::System.Data.DataRelation relationFK__EFAReques__Hards__4E1E9780;
-        
         private global::System.Data.DataRelation relationFK__Household__House__3B95D2F1;
+        
+        private global::System.Data.DataRelation relationFK__EFASubreq__EFARe__44B528D7;
+        
+        private global::System.Data.DataRelation relationFK__EFAReques__Hards__1E8F7FEF;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -119,9 +115,6 @@ namespace FRCApp {
                 if ((ds.Tables["EFARequestTypes"] != null)) {
                     base.Tables.Add(new EFARequestTypesDataTable(ds.Tables["EFARequestTypes"]));
                 }
-                if ((ds.Tables["EFASubrequests"] != null)) {
-                    base.Tables.Add(new EFASubrequestsDataTable(ds.Tables["EFASubrequests"]));
-                }
                 if ((ds.Tables["EmploymentStatuses"] != null)) {
                     base.Tables.Add(new EmploymentStatusesDataTable(ds.Tables["EmploymentStatuses"]));
                 }
@@ -158,9 +151,6 @@ namespace FRCApp {
                 if ((ds.Tables["HouseholdMembers"] != null)) {
                     base.Tables.Add(new HouseholdMembersDataTable(ds.Tables["HouseholdMembers"]));
                 }
-                if ((ds.Tables["EFARequests"] != null)) {
-                    base.Tables.Add(new EFARequestsDataTable(ds.Tables["EFARequests"]));
-                }
                 if ((ds.Tables["Households"] != null)) {
                     base.Tables.Add(new HouseholdsDataTable(ds.Tables["Households"]));
                 }
@@ -175,6 +165,12 @@ namespace FRCApp {
                 }
                 if ((ds.Tables["Users"] != null)) {
                     base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
+                }
+                if ((ds.Tables["EFASubrequests"] != null)) {
+                    base.Tables.Add(new EFASubrequestsDataTable(ds.Tables["EFASubrequests"]));
+                }
+                if ((ds.Tables["EFARequests"] != null)) {
+                    base.Tables.Add(new EFARequestsDataTable(ds.Tables["EFARequests"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -221,16 +217,6 @@ namespace FRCApp {
         public EFARequestTypesDataTable EFARequestTypes {
             get {
                 return this.tableEFARequestTypes;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public EFASubrequestsDataTable EFASubrequests {
-            get {
-                return this.tableEFASubrequests;
             }
         }
         
@@ -358,16 +344,6 @@ namespace FRCApp {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public EFARequestsDataTable EFARequests {
-            get {
-                return this.tableEFARequests;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public HouseholdsDataTable Households {
             get {
                 return this.tableHouseholds;
@@ -411,6 +387,26 @@ namespace FRCApp {
         public UsersDataTable Users {
             get {
                 return this.tableUsers;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public EFASubrequestsDataTable EFASubrequests {
+            get {
+                return this.tableEFASubrequests;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public EFARequestsDataTable EFARequests {
+            get {
+                return this.tableEFARequests;
             }
         }
         
@@ -490,9 +486,6 @@ namespace FRCApp {
                 if ((ds.Tables["EFARequestTypes"] != null)) {
                     base.Tables.Add(new EFARequestTypesDataTable(ds.Tables["EFARequestTypes"]));
                 }
-                if ((ds.Tables["EFASubrequests"] != null)) {
-                    base.Tables.Add(new EFASubrequestsDataTable(ds.Tables["EFASubrequests"]));
-                }
                 if ((ds.Tables["EmploymentStatuses"] != null)) {
                     base.Tables.Add(new EmploymentStatusesDataTable(ds.Tables["EmploymentStatuses"]));
                 }
@@ -529,9 +522,6 @@ namespace FRCApp {
                 if ((ds.Tables["HouseholdMembers"] != null)) {
                     base.Tables.Add(new HouseholdMembersDataTable(ds.Tables["HouseholdMembers"]));
                 }
-                if ((ds.Tables["EFARequests"] != null)) {
-                    base.Tables.Add(new EFARequestsDataTable(ds.Tables["EFARequests"]));
-                }
                 if ((ds.Tables["Households"] != null)) {
                     base.Tables.Add(new HouseholdsDataTable(ds.Tables["Households"]));
                 }
@@ -546,6 +536,12 @@ namespace FRCApp {
                 }
                 if ((ds.Tables["Users"] != null)) {
                     base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
+                }
+                if ((ds.Tables["EFASubrequests"] != null)) {
+                    base.Tables.Add(new EFASubrequestsDataTable(ds.Tables["EFASubrequests"]));
+                }
+                if ((ds.Tables["EFARequests"] != null)) {
+                    base.Tables.Add(new EFARequestsDataTable(ds.Tables["EFARequests"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -596,12 +592,6 @@ namespace FRCApp {
             if ((initTable == true)) {
                 if ((this.tableEFARequestTypes != null)) {
                     this.tableEFARequestTypes.InitVars();
-                }
-            }
-            this.tableEFASubrequests = ((EFASubrequestsDataTable)(base.Tables["EFASubrequests"]));
-            if ((initTable == true)) {
-                if ((this.tableEFASubrequests != null)) {
-                    this.tableEFASubrequests.InitVars();
                 }
             }
             this.tableEmploymentStatuses = ((EmploymentStatusesDataTable)(base.Tables["EmploymentStatuses"]));
@@ -676,12 +666,6 @@ namespace FRCApp {
                     this.tableHouseholdMembers.InitVars();
                 }
             }
-            this.tableEFARequests = ((EFARequestsDataTable)(base.Tables["EFARequests"]));
-            if ((initTable == true)) {
-                if ((this.tableEFARequests != null)) {
-                    this.tableEFARequests.InitVars();
-                }
-            }
             this.tableHouseholds = ((HouseholdsDataTable)(base.Tables["Households"]));
             if ((initTable == true)) {
                 if ((this.tableHouseholds != null)) {
@@ -712,13 +696,23 @@ namespace FRCApp {
                     this.tableUsers.InitVars();
                 }
             }
-            this.relationFK__EFASubreq__EFARe__51EF2864 = this.Relations["FK__EFASubreq__EFARe__51EF2864"];
-            this.relationFK__EFASubreq__EFARe__52E34C9D = this.Relations["FK__EFASubreq__EFARe__52E34C9D"];
+            this.tableEFASubrequests = ((EFASubrequestsDataTable)(base.Tables["EFASubrequests"]));
+            if ((initTable == true)) {
+                if ((this.tableEFASubrequests != null)) {
+                    this.tableEFASubrequests.InitVars();
+                }
+            }
+            this.tableEFARequests = ((EFARequestsDataTable)(base.Tables["EFARequests"]));
+            if ((initTable == true)) {
+                if ((this.tableEFARequests != null)) {
+                    this.tableEFARequests.InitVars();
+                }
+            }
             this.relationFK__IncomeSou__Frequ__3FD07829 = this.Relations["FK__IncomeSou__Frequ__3FD07829"];
             this.relationFK__IncomeSou__House__3EDC53F0 = this.Relations["FK__IncomeSou__House__3EDC53F0"];
-            this.relationFK__EFASubreq__EFARe__50FB042B = this.Relations["FK__EFASubreq__EFARe__50FB042B"];
-            this.relationFK__EFAReques__Hards__4E1E9780 = this.Relations["FK__EFAReques__Hards__4E1E9780"];
             this.relationFK__Household__House__3B95D2F1 = this.Relations["FK__Household__House__3B95D2F1"];
+            this.relationFK__EFASubreq__EFARe__44B528D7 = this.Relations["FK__EFASubreq__EFARe__44B528D7"];
+            this.relationFK__EFAReques__Hards__1E8F7FEF = this.Relations["FK__EFAReques__Hards__1E8F7FEF"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -735,8 +729,6 @@ namespace FRCApp {
             base.Tables.Add(this.tableEFARequestStatuses);
             this.tableEFARequestTypes = new EFARequestTypesDataTable();
             base.Tables.Add(this.tableEFARequestTypes);
-            this.tableEFASubrequests = new EFASubrequestsDataTable();
-            base.Tables.Add(this.tableEFASubrequests);
             this.tableEmploymentStatuses = new EmploymentStatusesDataTable();
             base.Tables.Add(this.tableEmploymentStatuses);
             this.tableExpenseTypes = new ExpenseTypesDataTable();
@@ -761,8 +753,6 @@ namespace FRCApp {
             base.Tables.Add(this.tableRaces);
             this.tableHouseholdMembers = new HouseholdMembersDataTable();
             base.Tables.Add(this.tableHouseholdMembers);
-            this.tableEFARequests = new EFARequestsDataTable();
-            base.Tables.Add(this.tableEFARequests);
             this.tableHouseholds = new HouseholdsDataTable();
             base.Tables.Add(this.tableHouseholds);
             this.tableIncomeInfo = new IncomeInfoDataTable();
@@ -773,14 +763,10 @@ namespace FRCApp {
             base.Tables.Add(this.tableIncomeSourceTypes);
             this.tableUsers = new UsersDataTable();
             base.Tables.Add(this.tableUsers);
-            this.relationFK__EFASubreq__EFARe__51EF2864 = new global::System.Data.DataRelation("FK__EFASubreq__EFARe__51EF2864", new global::System.Data.DataColumn[] {
-                        this.tableEFARequestTypes.EFARequestTypeIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEFASubrequests.EFARequestTypeIDColumn}, false);
-            this.Relations.Add(this.relationFK__EFASubreq__EFARe__51EF2864);
-            this.relationFK__EFASubreq__EFARe__52E34C9D = new global::System.Data.DataRelation("FK__EFASubreq__EFARe__52E34C9D", new global::System.Data.DataColumn[] {
-                        this.tableEFARequestStatuses.EFARequestStatusIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEFASubrequests.EFARequestStatusColumn}, false);
-            this.Relations.Add(this.relationFK__EFASubreq__EFARe__52E34C9D);
+            this.tableEFASubrequests = new EFASubrequestsDataTable();
+            base.Tables.Add(this.tableEFASubrequests);
+            this.tableEFARequests = new EFARequestsDataTable();
+            base.Tables.Add(this.tableEFARequests);
             this.relationFK__IncomeSou__Frequ__3FD07829 = new global::System.Data.DataRelation("FK__IncomeSou__Frequ__3FD07829", new global::System.Data.DataColumn[] {
                         this.tableIncomeFrequencies.IncomeFrequencyIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableIncomeSources.FrequencyIDColumn}, false);
@@ -789,18 +775,18 @@ namespace FRCApp {
                         this.tableHouseholdMembers.HouseholdMemberIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableIncomeSources.HouseholdMemberIDColumn}, false);
             this.Relations.Add(this.relationFK__IncomeSou__House__3EDC53F0);
-            this.relationFK__EFASubreq__EFARe__50FB042B = new global::System.Data.DataRelation("FK__EFASubreq__EFARe__50FB042B", new global::System.Data.DataColumn[] {
-                        this.tableEFARequests.EFARequestIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEFASubrequests.EFARequestIDColumn}, false);
-            this.Relations.Add(this.relationFK__EFASubreq__EFARe__50FB042B);
-            this.relationFK__EFAReques__Hards__4E1E9780 = new global::System.Data.DataRelation("FK__EFAReques__Hards__4E1E9780", new global::System.Data.DataColumn[] {
-                        this.tableHardshipTypes.HardshipTypeIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEFARequests.HardshipTypeIDColumn}, false);
-            this.Relations.Add(this.relationFK__EFAReques__Hards__4E1E9780);
             this.relationFK__Household__House__3B95D2F1 = new global::System.Data.DataRelation("FK__Household__House__3B95D2F1", new global::System.Data.DataColumn[] {
                         this.tableHouseholdTypes.HouseholdTypeIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableHouseholds.HouseholdTypeIDColumn}, false);
             this.Relations.Add(this.relationFK__Household__House__3B95D2F1);
+            this.relationFK__EFASubreq__EFARe__44B528D7 = new global::System.Data.DataRelation("FK__EFASubreq__EFARe__44B528D7", new global::System.Data.DataColumn[] {
+                        this.tableEFARequestTypes.EFARequestTypeIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEFASubrequests.EFARequestTypeIDColumn}, false);
+            this.Relations.Add(this.relationFK__EFASubreq__EFARe__44B528D7);
+            this.relationFK__EFAReques__Hards__1E8F7FEF = new global::System.Data.DataRelation("FK__EFAReques__Hards__1E8F7FEF", new global::System.Data.DataColumn[] {
+                        this.tableHardshipTypes.HardshipTypeIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEFARequests.HardshipTypeIDColumn}, false);
+            this.Relations.Add(this.relationFK__EFAReques__Hards__1E8F7FEF);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -818,12 +804,6 @@ namespace FRCApp {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeEFARequestTypes() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeEFASubrequests() {
             return false;
         }
         
@@ -901,12 +881,6 @@ namespace FRCApp {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeEFARequests() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeHouseholds() {
             return false;
         }
@@ -932,6 +906,18 @@ namespace FRCApp {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeUsers() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeEFASubrequests() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeEFARequests() {
             return false;
         }
         
@@ -1000,9 +986,6 @@ namespace FRCApp {
         public delegate void EFARequestTypesRowChangeEventHandler(object sender, EFARequestTypesRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void EFASubrequestsRowChangeEventHandler(object sender, EFASubrequestsRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void EmploymentStatusesRowChangeEventHandler(object sender, EmploymentStatusesRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1039,9 +1022,6 @@ namespace FRCApp {
         public delegate void HouseholdMembersRowChangeEventHandler(object sender, HouseholdMembersRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void EFARequestsRowChangeEventHandler(object sender, EFARequestsRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void HouseholdsRowChangeEventHandler(object sender, HouseholdsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1055,6 +1035,12 @@ namespace FRCApp {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void UsersRowChangeEventHandler(object sender, UsersRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void EFASubrequestsRowChangeEventHandler(object sender, EFASubrequestsRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void EFARequestsRowChangeEventHandler(object sender, EFARequestsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1850,348 +1836,6 @@ namespace FRCApp {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "EFARequestTypesDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class EFASubrequestsDataTable : global::System.Data.TypedTableBase<EFASubrequestsRow> {
-            
-            private global::System.Data.DataColumn columnEFASubrequestID;
-            
-            private global::System.Data.DataColumn columnEFARequestID;
-            
-            private global::System.Data.DataColumn columnEFARequestTypeID;
-            
-            private global::System.Data.DataColumn columnOptionalDetails;
-            
-            private global::System.Data.DataColumn columnEFARequestStatus;
-            
-            private global::System.Data.DataColumn columnDateClosed;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFASubrequestsDataTable() {
-                this.TableName = "EFASubrequests";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal EFASubrequestsDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected EFASubrequestsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EFASubrequestIDColumn {
-                get {
-                    return this.columnEFASubrequestID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EFARequestIDColumn {
-                get {
-                    return this.columnEFARequestID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EFARequestTypeIDColumn {
-                get {
-                    return this.columnEFARequestTypeID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OptionalDetailsColumn {
-                get {
-                    return this.columnOptionalDetails;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EFARequestStatusColumn {
-                get {
-                    return this.columnEFARequestStatus;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DateClosedColumn {
-                get {
-                    return this.columnDateClosed;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFASubrequestsRow this[int index] {
-                get {
-                    return ((EFASubrequestsRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EFASubrequestsRowChangeEventHandler EFASubrequestsRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EFASubrequestsRowChangeEventHandler EFASubrequestsRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EFASubrequestsRowChangeEventHandler EFASubrequestsRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EFASubrequestsRowChangeEventHandler EFASubrequestsRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddEFASubrequestsRow(EFASubrequestsRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFASubrequestsRow AddEFASubrequestsRow(EFARequestsRow parentEFARequestsRowByFK__EFASubreq__EFARe__50FB042B, EFARequestTypesRow parentEFARequestTypesRowByFK__EFASubreq__EFARe__51EF2864, string OptionalDetails, EFARequestStatusesRow parentEFARequestStatusesRowByFK__EFASubreq__EFARe__52E34C9D, System.DateTime DateClosed) {
-                EFASubrequestsRow rowEFASubrequestsRow = ((EFASubrequestsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        null,
-                        OptionalDetails,
-                        null,
-                        DateClosed};
-                if ((parentEFARequestsRowByFK__EFASubreq__EFARe__50FB042B != null)) {
-                    columnValuesArray[1] = parentEFARequestsRowByFK__EFASubreq__EFARe__50FB042B[0];
-                }
-                if ((parentEFARequestTypesRowByFK__EFASubreq__EFARe__51EF2864 != null)) {
-                    columnValuesArray[2] = parentEFARequestTypesRowByFK__EFASubreq__EFARe__51EF2864[0];
-                }
-                if ((parentEFARequestStatusesRowByFK__EFASubreq__EFARe__52E34C9D != null)) {
-                    columnValuesArray[4] = parentEFARequestStatusesRowByFK__EFASubreq__EFARe__52E34C9D[0];
-                }
-                rowEFASubrequestsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowEFASubrequestsRow);
-                return rowEFASubrequestsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFASubrequestsRow FindByEFASubrequestID(int EFASubrequestID) {
-                return ((EFASubrequestsRow)(this.Rows.Find(new object[] {
-                            EFASubrequestID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                EFASubrequestsDataTable cln = ((EFASubrequestsDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new EFASubrequestsDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnEFASubrequestID = base.Columns["EFASubrequestID"];
-                this.columnEFARequestID = base.Columns["EFARequestID"];
-                this.columnEFARequestTypeID = base.Columns["EFARequestTypeID"];
-                this.columnOptionalDetails = base.Columns["OptionalDetails"];
-                this.columnEFARequestStatus = base.Columns["EFARequestStatus"];
-                this.columnDateClosed = base.Columns["DateClosed"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnEFASubrequestID = new global::System.Data.DataColumn("EFASubrequestID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEFASubrequestID);
-                this.columnEFARequestID = new global::System.Data.DataColumn("EFARequestID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEFARequestID);
-                this.columnEFARequestTypeID = new global::System.Data.DataColumn("EFARequestTypeID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEFARequestTypeID);
-                this.columnOptionalDetails = new global::System.Data.DataColumn("OptionalDetails", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOptionalDetails);
-                this.columnEFARequestStatus = new global::System.Data.DataColumn("EFARequestStatus", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEFARequestStatus);
-                this.columnDateClosed = new global::System.Data.DataColumn("DateClosed", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDateClosed);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnEFASubrequestID}, true));
-                this.columnEFASubrequestID.AutoIncrement = true;
-                this.columnEFASubrequestID.AutoIncrementSeed = -1;
-                this.columnEFASubrequestID.AutoIncrementStep = -1;
-                this.columnEFASubrequestID.AllowDBNull = false;
-                this.columnEFASubrequestID.ReadOnly = true;
-                this.columnEFASubrequestID.Unique = true;
-                this.columnOptionalDetails.MaxLength = 2147483647;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFASubrequestsRow NewEFASubrequestsRow() {
-                return ((EFASubrequestsRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new EFASubrequestsRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(EFASubrequestsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.EFASubrequestsRowChanged != null)) {
-                    this.EFASubrequestsRowChanged(this, new EFASubrequestsRowChangeEvent(((EFASubrequestsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.EFASubrequestsRowChanging != null)) {
-                    this.EFASubrequestsRowChanging(this, new EFASubrequestsRowChangeEvent(((EFASubrequestsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.EFASubrequestsRowDeleted != null)) {
-                    this.EFASubrequestsRowDeleted(this, new EFASubrequestsRowChangeEvent(((EFASubrequestsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.EFASubrequestsRowDeleting != null)) {
-                    this.EFASubrequestsRowDeleting(this, new EFASubrequestsRowChangeEvent(((EFASubrequestsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveEFASubrequestsRow(EFASubrequestsRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "EFASubrequestsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6006,400 +5650,6 @@ namespace FRCApp {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class EFARequestsDataTable : global::System.Data.TypedTableBase<EFARequestsRow> {
-            
-            private global::System.Data.DataColumn columnEFARequestID;
-            
-            private global::System.Data.DataColumn columnClientID;
-            
-            private global::System.Data.DataColumn columnAddressVerification;
-            
-            private global::System.Data.DataColumn columnHouseholdVerification;
-            
-            private global::System.Data.DataColumn columnIncomeVerification;
-            
-            private global::System.Data.DataColumn columnBillVerification;
-            
-            private global::System.Data.DataColumn columnHardshipVerification;
-            
-            private global::System.Data.DataColumn columnHardshipTypeID;
-            
-            private global::System.Data.DataColumn columnHardshpDetail;
-            
-            private global::System.Data.DataColumn columnDateRequested;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsDataTable() {
-                this.TableName = "EFARequests";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal EFARequestsDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected EFARequestsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EFARequestIDColumn {
-                get {
-                    return this.columnEFARequestID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ClientIDColumn {
-                get {
-                    return this.columnClientID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AddressVerificationColumn {
-                get {
-                    return this.columnAddressVerification;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HouseholdVerificationColumn {
-                get {
-                    return this.columnHouseholdVerification;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IncomeVerificationColumn {
-                get {
-                    return this.columnIncomeVerification;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BillVerificationColumn {
-                get {
-                    return this.columnBillVerification;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HardshipVerificationColumn {
-                get {
-                    return this.columnHardshipVerification;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HardshipTypeIDColumn {
-                get {
-                    return this.columnHardshipTypeID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HardshpDetailColumn {
-                get {
-                    return this.columnHardshpDetail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DateRequestedColumn {
-                get {
-                    return this.columnDateRequested;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsRow this[int index] {
-                get {
-                    return ((EFARequestsRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EFARequestsRowChangeEventHandler EFARequestsRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EFARequestsRowChangeEventHandler EFARequestsRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EFARequestsRowChangeEventHandler EFARequestsRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EFARequestsRowChangeEventHandler EFARequestsRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddEFARequestsRow(EFARequestsRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsRow AddEFARequestsRow(string ClientID, bool AddressVerification, bool HouseholdVerification, bool IncomeVerification, bool BillVerification, bool HardshipVerification, HardshipTypesRow parentHardshipTypesRowByFK__EFAReques__Hards__4E1E9780, string HardshpDetail, System.DateTime DateRequested) {
-                EFARequestsRow rowEFARequestsRow = ((EFARequestsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        ClientID,
-                        AddressVerification,
-                        HouseholdVerification,
-                        IncomeVerification,
-                        BillVerification,
-                        HardshipVerification,
-                        null,
-                        HardshpDetail,
-                        DateRequested};
-                if ((parentHardshipTypesRowByFK__EFAReques__Hards__4E1E9780 != null)) {
-                    columnValuesArray[7] = parentHardshipTypesRowByFK__EFAReques__Hards__4E1E9780[0];
-                }
-                rowEFARequestsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowEFARequestsRow);
-                return rowEFARequestsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsRow FindByEFARequestID(int EFARequestID) {
-                return ((EFARequestsRow)(this.Rows.Find(new object[] {
-                            EFARequestID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                EFARequestsDataTable cln = ((EFARequestsDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new EFARequestsDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnEFARequestID = base.Columns["EFARequestID"];
-                this.columnClientID = base.Columns["ClientID"];
-                this.columnAddressVerification = base.Columns["AddressVerification"];
-                this.columnHouseholdVerification = base.Columns["HouseholdVerification"];
-                this.columnIncomeVerification = base.Columns["IncomeVerification"];
-                this.columnBillVerification = base.Columns["BillVerification"];
-                this.columnHardshipVerification = base.Columns["HardshipVerification"];
-                this.columnHardshipTypeID = base.Columns["HardshipTypeID"];
-                this.columnHardshpDetail = base.Columns["HardshpDetail"];
-                this.columnDateRequested = base.Columns["DateRequested"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnEFARequestID = new global::System.Data.DataColumn("EFARequestID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEFARequestID);
-                this.columnClientID = new global::System.Data.DataColumn("ClientID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClientID);
-                this.columnAddressVerification = new global::System.Data.DataColumn("AddressVerification", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddressVerification);
-                this.columnHouseholdVerification = new global::System.Data.DataColumn("HouseholdVerification", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHouseholdVerification);
-                this.columnIncomeVerification = new global::System.Data.DataColumn("IncomeVerification", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIncomeVerification);
-                this.columnBillVerification = new global::System.Data.DataColumn("BillVerification", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBillVerification);
-                this.columnHardshipVerification = new global::System.Data.DataColumn("HardshipVerification", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHardshipVerification);
-                this.columnHardshipTypeID = new global::System.Data.DataColumn("HardshipTypeID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHardshipTypeID);
-                this.columnHardshpDetail = new global::System.Data.DataColumn("HardshpDetail", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHardshpDetail);
-                this.columnDateRequested = new global::System.Data.DataColumn("DateRequested", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDateRequested);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnEFARequestID}, true));
-                this.columnEFARequestID.AutoIncrement = true;
-                this.columnEFARequestID.AutoIncrementSeed = -1;
-                this.columnEFARequestID.AutoIncrementStep = -1;
-                this.columnEFARequestID.AllowDBNull = false;
-                this.columnEFARequestID.ReadOnly = true;
-                this.columnEFARequestID.Unique = true;
-                this.columnClientID.MaxLength = 36;
-                this.columnHardshpDetail.MaxLength = 2147483647;
-                this.columnDateRequested.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsRow NewEFARequestsRow() {
-                return ((EFARequestsRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new EFARequestsRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(EFARequestsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.EFARequestsRowChanged != null)) {
-                    this.EFARequestsRowChanged(this, new EFARequestsRowChangeEvent(((EFARequestsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.EFARequestsRowChanging != null)) {
-                    this.EFARequestsRowChanging(this, new EFARequestsRowChangeEvent(((EFARequestsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.EFARequestsRowDeleted != null)) {
-                    this.EFARequestsRowDeleted(this, new EFARequestsRowChangeEvent(((EFARequestsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.EFARequestsRowDeleting != null)) {
-                    this.EFARequestsRowDeleting(this, new EFARequestsRowChangeEvent(((EFARequestsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveEFARequestsRow(EFARequestsRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "EFARequestsDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class HouseholdsDataTable : global::System.Data.TypedTableBase<HouseholdsRow> {
             
             private global::System.Data.DataColumn columnHouseholdID;
@@ -8201,6 +7451,745 @@ namespace FRCApp {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class EFASubrequestsDataTable : global::System.Data.TypedTableBase<EFASubrequestsRow> {
+            
+            private global::System.Data.DataColumn columnEFASubrequestID;
+            
+            private global::System.Data.DataColumn columnEFARequestID;
+            
+            private global::System.Data.DataColumn columnEFARequestTypeID;
+            
+            private global::System.Data.DataColumn columnOptionalDetails;
+            
+            private global::System.Data.DataColumn columnDateClosed;
+            
+            private global::System.Data.DataColumn columnApproved;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFASubrequestsDataTable() {
+                this.TableName = "EFASubrequests";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal EFASubrequestsDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected EFASubrequestsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EFASubrequestIDColumn {
+                get {
+                    return this.columnEFASubrequestID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EFARequestIDColumn {
+                get {
+                    return this.columnEFARequestID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EFARequestTypeIDColumn {
+                get {
+                    return this.columnEFARequestTypeID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OptionalDetailsColumn {
+                get {
+                    return this.columnOptionalDetails;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateClosedColumn {
+                get {
+                    return this.columnDateClosed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ApprovedColumn {
+                get {
+                    return this.columnApproved;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFASubrequestsRow this[int index] {
+                get {
+                    return ((EFASubrequestsRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EFASubrequestsRowChangeEventHandler EFASubrequestsRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EFASubrequestsRowChangeEventHandler EFASubrequestsRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EFASubrequestsRowChangeEventHandler EFASubrequestsRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EFASubrequestsRowChangeEventHandler EFASubrequestsRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddEFASubrequestsRow(EFASubrequestsRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFASubrequestsRow AddEFASubrequestsRow(string EFASubrequestID, string EFARequestID, EFARequestTypesRow parentEFARequestTypesRowByFK__EFASubreq__EFARe__44B528D7, string OptionalDetails, System.DateTime DateClosed, bool Approved) {
+                EFASubrequestsRow rowEFASubrequestsRow = ((EFASubrequestsRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        EFASubrequestID,
+                        EFARequestID,
+                        null,
+                        OptionalDetails,
+                        DateClosed,
+                        Approved};
+                if ((parentEFARequestTypesRowByFK__EFASubreq__EFARe__44B528D7 != null)) {
+                    columnValuesArray[2] = parentEFARequestTypesRowByFK__EFASubreq__EFARe__44B528D7[0];
+                }
+                rowEFASubrequestsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEFASubrequestsRow);
+                return rowEFASubrequestsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFASubrequestsRow FindByEFASubrequestID(string EFASubrequestID) {
+                return ((EFASubrequestsRow)(this.Rows.Find(new object[] {
+                            EFASubrequestID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                EFASubrequestsDataTable cln = ((EFASubrequestsDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new EFASubrequestsDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnEFASubrequestID = base.Columns["EFASubrequestID"];
+                this.columnEFARequestID = base.Columns["EFARequestID"];
+                this.columnEFARequestTypeID = base.Columns["EFARequestTypeID"];
+                this.columnOptionalDetails = base.Columns["OptionalDetails"];
+                this.columnDateClosed = base.Columns["DateClosed"];
+                this.columnApproved = base.Columns["Approved"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnEFASubrequestID = new global::System.Data.DataColumn("EFASubrequestID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEFASubrequestID);
+                this.columnEFARequestID = new global::System.Data.DataColumn("EFARequestID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEFARequestID);
+                this.columnEFARequestTypeID = new global::System.Data.DataColumn("EFARequestTypeID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEFARequestTypeID);
+                this.columnOptionalDetails = new global::System.Data.DataColumn("OptionalDetails", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionalDetails);
+                this.columnDateClosed = new global::System.Data.DataColumn("DateClosed", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateClosed);
+                this.columnApproved = new global::System.Data.DataColumn("Approved", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApproved);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnEFASubrequestID}, true));
+                this.columnEFASubrequestID.AllowDBNull = false;
+                this.columnEFASubrequestID.Unique = true;
+                this.columnEFASubrequestID.MaxLength = 36;
+                this.columnEFARequestID.MaxLength = 36;
+                this.columnOptionalDetails.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFASubrequestsRow NewEFASubrequestsRow() {
+                return ((EFASubrequestsRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new EFASubrequestsRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(EFASubrequestsRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.EFASubrequestsRowChanged != null)) {
+                    this.EFASubrequestsRowChanged(this, new EFASubrequestsRowChangeEvent(((EFASubrequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.EFASubrequestsRowChanging != null)) {
+                    this.EFASubrequestsRowChanging(this, new EFASubrequestsRowChangeEvent(((EFASubrequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.EFASubrequestsRowDeleted != null)) {
+                    this.EFASubrequestsRowDeleted(this, new EFASubrequestsRowChangeEvent(((EFASubrequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.EFASubrequestsRowDeleting != null)) {
+                    this.EFASubrequestsRowDeleting(this, new EFASubrequestsRowChangeEvent(((EFASubrequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveEFASubrequestsRow(EFASubrequestsRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "EFASubrequestsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class EFARequestsDataTable : global::System.Data.TypedTableBase<EFARequestsRow> {
+            
+            private global::System.Data.DataColumn columnEFARequestID;
+            
+            private global::System.Data.DataColumn columnClientID;
+            
+            private global::System.Data.DataColumn columnAddressVerification;
+            
+            private global::System.Data.DataColumn columnHouseholdVerification;
+            
+            private global::System.Data.DataColumn columnIncomeVerification;
+            
+            private global::System.Data.DataColumn columnBillVerification;
+            
+            private global::System.Data.DataColumn columnHardshipVerification;
+            
+            private global::System.Data.DataColumn columnHardshipTypeID;
+            
+            private global::System.Data.DataColumn columnHardshipDetail;
+            
+            private global::System.Data.DataColumn columnDateRequested;
+            
+            private global::System.Data.DataColumn columnEFARequestStatusID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFARequestsDataTable() {
+                this.TableName = "EFARequests";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal EFARequestsDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected EFARequestsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EFARequestIDColumn {
+                get {
+                    return this.columnEFARequestID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ClientIDColumn {
+                get {
+                    return this.columnClientID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AddressVerificationColumn {
+                get {
+                    return this.columnAddressVerification;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HouseholdVerificationColumn {
+                get {
+                    return this.columnHouseholdVerification;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IncomeVerificationColumn {
+                get {
+                    return this.columnIncomeVerification;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BillVerificationColumn {
+                get {
+                    return this.columnBillVerification;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HardshipVerificationColumn {
+                get {
+                    return this.columnHardshipVerification;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HardshipTypeIDColumn {
+                get {
+                    return this.columnHardshipTypeID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HardshipDetailColumn {
+                get {
+                    return this.columnHardshipDetail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateRequestedColumn {
+                get {
+                    return this.columnDateRequested;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EFARequestStatusIDColumn {
+                get {
+                    return this.columnEFARequestStatusID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFARequestsRow this[int index] {
+                get {
+                    return ((EFARequestsRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EFARequestsRowChangeEventHandler EFARequestsRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EFARequestsRowChangeEventHandler EFARequestsRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EFARequestsRowChangeEventHandler EFARequestsRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event EFARequestsRowChangeEventHandler EFARequestsRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddEFARequestsRow(EFARequestsRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFARequestsRow AddEFARequestsRow(string EFARequestID, string ClientID, System.DateTime AddressVerification, System.DateTime HouseholdVerification, System.DateTime IncomeVerification, System.DateTime BillVerification, System.DateTime HardshipVerification, HardshipTypesRow parentHardshipTypesRowByFK__EFAReques__Hards__1E8F7FEF, string HardshipDetail, System.DateTime DateRequested, int EFARequestStatusID) {
+                EFARequestsRow rowEFARequestsRow = ((EFARequestsRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        EFARequestID,
+                        ClientID,
+                        AddressVerification,
+                        HouseholdVerification,
+                        IncomeVerification,
+                        BillVerification,
+                        HardshipVerification,
+                        null,
+                        HardshipDetail,
+                        DateRequested,
+                        EFARequestStatusID};
+                if ((parentHardshipTypesRowByFK__EFAReques__Hards__1E8F7FEF != null)) {
+                    columnValuesArray[7] = parentHardshipTypesRowByFK__EFAReques__Hards__1E8F7FEF[0];
+                }
+                rowEFARequestsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEFARequestsRow);
+                return rowEFARequestsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFARequestsRow FindByEFARequestID(string EFARequestID) {
+                return ((EFARequestsRow)(this.Rows.Find(new object[] {
+                            EFARequestID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                EFARequestsDataTable cln = ((EFARequestsDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new EFARequestsDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnEFARequestID = base.Columns["EFARequestID"];
+                this.columnClientID = base.Columns["ClientID"];
+                this.columnAddressVerification = base.Columns["AddressVerification"];
+                this.columnHouseholdVerification = base.Columns["HouseholdVerification"];
+                this.columnIncomeVerification = base.Columns["IncomeVerification"];
+                this.columnBillVerification = base.Columns["BillVerification"];
+                this.columnHardshipVerification = base.Columns["HardshipVerification"];
+                this.columnHardshipTypeID = base.Columns["HardshipTypeID"];
+                this.columnHardshipDetail = base.Columns["HardshipDetail"];
+                this.columnDateRequested = base.Columns["DateRequested"];
+                this.columnEFARequestStatusID = base.Columns["EFARequestStatusID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnEFARequestID = new global::System.Data.DataColumn("EFARequestID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEFARequestID);
+                this.columnClientID = new global::System.Data.DataColumn("ClientID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClientID);
+                this.columnAddressVerification = new global::System.Data.DataColumn("AddressVerification", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddressVerification);
+                this.columnHouseholdVerification = new global::System.Data.DataColumn("HouseholdVerification", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHouseholdVerification);
+                this.columnIncomeVerification = new global::System.Data.DataColumn("IncomeVerification", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIncomeVerification);
+                this.columnBillVerification = new global::System.Data.DataColumn("BillVerification", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBillVerification);
+                this.columnHardshipVerification = new global::System.Data.DataColumn("HardshipVerification", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHardshipVerification);
+                this.columnHardshipTypeID = new global::System.Data.DataColumn("HardshipTypeID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHardshipTypeID);
+                this.columnHardshipDetail = new global::System.Data.DataColumn("HardshipDetail", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHardshipDetail);
+                this.columnDateRequested = new global::System.Data.DataColumn("DateRequested", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateRequested);
+                this.columnEFARequestStatusID = new global::System.Data.DataColumn("EFARequestStatusID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEFARequestStatusID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnEFARequestID}, true));
+                this.columnEFARequestID.AllowDBNull = false;
+                this.columnEFARequestID.Unique = true;
+                this.columnEFARequestID.MaxLength = 36;
+                this.columnClientID.MaxLength = 36;
+                this.columnHardshipDetail.MaxLength = 2147483647;
+                this.columnDateRequested.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFARequestsRow NewEFARequestsRow() {
+                return ((EFARequestsRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new EFARequestsRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(EFARequestsRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.EFARequestsRowChanged != null)) {
+                    this.EFARequestsRowChanged(this, new EFARequestsRowChangeEvent(((EFARequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.EFARequestsRowChanging != null)) {
+                    this.EFARequestsRowChanging(this, new EFARequestsRowChangeEvent(((EFARequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.EFARequestsRowDeleted != null)) {
+                    this.EFARequestsRowDeleted(this, new EFARequestsRowChangeEvent(((EFARequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.EFARequestsRowDeleting != null)) {
+                    this.EFARequestsRowDeleting(this, new EFARequestsRowChangeEvent(((EFARequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveEFARequestsRow(EFARequestsRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "EFARequestsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class EducationLevelsRow : global::System.Data.DataRow {
@@ -8272,17 +8261,6 @@ namespace FRCApp {
                     this[this.tableEFARequestStatuses.StatusColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFASubrequestsRow[] GetEFASubrequestsRows() {
-                if ((this.Table.ChildRelations["FK__EFASubreq__EFARe__52E34C9D"] == null)) {
-                    return new EFASubrequestsRow[0];
-                }
-                else {
-                    return ((EFASubrequestsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__EFASubreq__EFARe__52E34C9D"])));
-                }
-            }
         }
         
         /// <summary>
@@ -8324,211 +8302,12 @@ namespace FRCApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EFASubrequestsRow[] GetEFASubrequestsRows() {
-                if ((this.Table.ChildRelations["FK__EFASubreq__EFARe__51EF2864"] == null)) {
+                if ((this.Table.ChildRelations["FK__EFASubreq__EFARe__44B528D7"] == null)) {
                     return new EFASubrequestsRow[0];
                 }
                 else {
-                    return ((EFASubrequestsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__EFASubreq__EFARe__51EF2864"])));
+                    return ((EFASubrequestsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__EFASubreq__EFARe__44B528D7"])));
                 }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class EFASubrequestsRow : global::System.Data.DataRow {
-            
-            private EFASubrequestsDataTable tableEFASubrequests;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal EFASubrequestsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableEFASubrequests = ((EFASubrequestsDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int EFASubrequestID {
-                get {
-                    return ((int)(this[this.tableEFASubrequests.EFASubrequestIDColumn]));
-                }
-                set {
-                    this[this.tableEFASubrequests.EFASubrequestIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int EFARequestID {
-                get {
-                    try {
-                        return ((int)(this[this.tableEFASubrequests.EFARequestIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EFARequestID\' in table \'EFASubrequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFASubrequests.EFARequestIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int EFARequestTypeID {
-                get {
-                    try {
-                        return ((int)(this[this.tableEFASubrequests.EFARequestTypeIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EFARequestTypeID\' in table \'EFASubrequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFASubrequests.EFARequestTypeIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OptionalDetails {
-                get {
-                    try {
-                        return ((string)(this[this.tableEFASubrequests.OptionalDetailsColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OptionalDetails\' in table \'EFASubrequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFASubrequests.OptionalDetailsColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int EFARequestStatus {
-                get {
-                    try {
-                        return ((int)(this[this.tableEFASubrequests.EFARequestStatusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EFARequestStatus\' in table \'EFASubrequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFASubrequests.EFARequestStatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DateClosed {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableEFASubrequests.DateClosedColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DateClosed\' in table \'EFASubrequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFASubrequests.DateClosedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestTypesRow EFARequestTypesRow {
-                get {
-                    return ((EFARequestTypesRow)(this.GetParentRow(this.Table.ParentRelations["FK__EFASubreq__EFARe__51EF2864"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__EFASubreq__EFARe__51EF2864"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestStatusesRow EFARequestStatusesRow {
-                get {
-                    return ((EFARequestStatusesRow)(this.GetParentRow(this.Table.ParentRelations["FK__EFASubreq__EFARe__52E34C9D"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__EFASubreq__EFARe__52E34C9D"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsRow EFARequestsRow {
-                get {
-                    return ((EFARequestsRow)(this.GetParentRow(this.Table.ParentRelations["FK__EFASubreq__EFARe__50FB042B"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__EFASubreq__EFARe__50FB042B"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEFARequestIDNull() {
-                return this.IsNull(this.tableEFASubrequests.EFARequestIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEFARequestIDNull() {
-                this[this.tableEFASubrequests.EFARequestIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEFARequestTypeIDNull() {
-                return this.IsNull(this.tableEFASubrequests.EFARequestTypeIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEFARequestTypeIDNull() {
-                this[this.tableEFASubrequests.EFARequestTypeIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOptionalDetailsNull() {
-                return this.IsNull(this.tableEFASubrequests.OptionalDetailsColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOptionalDetailsNull() {
-                this[this.tableEFASubrequests.OptionalDetailsColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEFARequestStatusNull() {
-                return this.IsNull(this.tableEFASubrequests.EFARequestStatusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEFARequestStatusNull() {
-                this[this.tableEFASubrequests.EFARequestStatusColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDateClosedNull() {
-                return this.IsNull(this.tableEFASubrequests.DateClosedColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDateClosedNull() {
-                this[this.tableEFASubrequests.DateClosedColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8656,11 +8435,11 @@ namespace FRCApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EFARequestsRow[] GetEFARequestsRows() {
-                if ((this.Table.ChildRelations["FK__EFAReques__Hards__4E1E9780"] == null)) {
+                if ((this.Table.ChildRelations["FK__EFAReques__Hards__1E8F7FEF"] == null)) {
                     return new EFARequestsRow[0];
                 }
                 else {
-                    return ((EFARequestsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__EFAReques__Hards__4E1E9780"])));
+                    return ((EFARequestsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__EFAReques__Hards__1E8F7FEF"])));
                 }
             }
         }
@@ -9778,289 +9557,6 @@ namespace FRCApp {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class EFARequestsRow : global::System.Data.DataRow {
-            
-            private EFARequestsDataTable tableEFARequests;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal EFARequestsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableEFARequests = ((EFARequestsDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int EFARequestID {
-                get {
-                    return ((int)(this[this.tableEFARequests.EFARequestIDColumn]));
-                }
-                set {
-                    this[this.tableEFARequests.EFARequestIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ClientID {
-                get {
-                    try {
-                        return ((string)(this[this.tableEFARequests.ClientIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ClientID\' in table \'EFARequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFARequests.ClientIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool AddressVerification {
-                get {
-                    try {
-                        return ((bool)(this[this.tableEFARequests.AddressVerificationColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AddressVerification\' in table \'EFARequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFARequests.AddressVerificationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool HouseholdVerification {
-                get {
-                    try {
-                        return ((bool)(this[this.tableEFARequests.HouseholdVerificationColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HouseholdVerification\' in table \'EFARequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFARequests.HouseholdVerificationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IncomeVerification {
-                get {
-                    try {
-                        return ((bool)(this[this.tableEFARequests.IncomeVerificationColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IncomeVerification\' in table \'EFARequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFARequests.IncomeVerificationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool BillVerification {
-                get {
-                    try {
-                        return ((bool)(this[this.tableEFARequests.BillVerificationColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BillVerification\' in table \'EFARequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFARequests.BillVerificationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool HardshipVerification {
-                get {
-                    try {
-                        return ((bool)(this[this.tableEFARequests.HardshipVerificationColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HardshipVerification\' in table \'EFARequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFARequests.HardshipVerificationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int HardshipTypeID {
-                get {
-                    try {
-                        return ((int)(this[this.tableEFARequests.HardshipTypeIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HardshipTypeID\' in table \'EFARequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFARequests.HardshipTypeIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string HardshpDetail {
-                get {
-                    try {
-                        return ((string)(this[this.tableEFARequests.HardshpDetailColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HardshpDetail\' in table \'EFARequests\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEFARequests.HardshpDetailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DateRequested {
-                get {
-                    return ((global::System.DateTime)(this[this.tableEFARequests.DateRequestedColumn]));
-                }
-                set {
-                    this[this.tableEFARequests.DateRequestedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HardshipTypesRow HardshipTypesRow {
-                get {
-                    return ((HardshipTypesRow)(this.GetParentRow(this.Table.ParentRelations["FK__EFAReques__Hards__4E1E9780"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__EFAReques__Hards__4E1E9780"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsClientIDNull() {
-                return this.IsNull(this.tableEFARequests.ClientIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetClientIDNull() {
-                this[this.tableEFARequests.ClientIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAddressVerificationNull() {
-                return this.IsNull(this.tableEFARequests.AddressVerificationColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAddressVerificationNull() {
-                this[this.tableEFARequests.AddressVerificationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHouseholdVerificationNull() {
-                return this.IsNull(this.tableEFARequests.HouseholdVerificationColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHouseholdVerificationNull() {
-                this[this.tableEFARequests.HouseholdVerificationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsIncomeVerificationNull() {
-                return this.IsNull(this.tableEFARequests.IncomeVerificationColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetIncomeVerificationNull() {
-                this[this.tableEFARequests.IncomeVerificationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBillVerificationNull() {
-                return this.IsNull(this.tableEFARequests.BillVerificationColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBillVerificationNull() {
-                this[this.tableEFARequests.BillVerificationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHardshipVerificationNull() {
-                return this.IsNull(this.tableEFARequests.HardshipVerificationColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHardshipVerificationNull() {
-                this[this.tableEFARequests.HardshipVerificationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHardshipTypeIDNull() {
-                return this.IsNull(this.tableEFARequests.HardshipTypeIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHardshipTypeIDNull() {
-                this[this.tableEFARequests.HardshipTypeIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHardshpDetailNull() {
-                return this.IsNull(this.tableEFARequests.HardshpDetailColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHardshpDetailNull() {
-                this[this.tableEFARequests.HardshpDetailColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFASubrequestsRow[] GetEFASubrequestsRows() {
-                if ((this.Table.ChildRelations["FK__EFASubreq__EFARe__50FB042B"] == null)) {
-                    return new EFASubrequestsRow[0];
-                }
-                else {
-                    return ((EFASubrequestsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__EFASubreq__EFARe__50FB042B"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class HouseholdsRow : global::System.Data.DataRow {
             
             private HouseholdsDataTable tableHouseholds;
@@ -11022,6 +10518,483 @@ namespace FRCApp {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class EFASubrequestsRow : global::System.Data.DataRow {
+            
+            private EFASubrequestsDataTable tableEFASubrequests;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal EFASubrequestsRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableEFASubrequests = ((EFASubrequestsDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EFASubrequestID {
+                get {
+                    return ((string)(this[this.tableEFASubrequests.EFASubrequestIDColumn]));
+                }
+                set {
+                    this[this.tableEFASubrequests.EFASubrequestIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EFARequestID {
+                get {
+                    try {
+                        return ((string)(this[this.tableEFASubrequests.EFARequestIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EFARequestID\' in table \'EFASubrequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFASubrequests.EFARequestIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int EFARequestTypeID {
+                get {
+                    try {
+                        return ((int)(this[this.tableEFASubrequests.EFARequestTypeIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EFARequestTypeID\' in table \'EFASubrequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFASubrequests.EFARequestTypeIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OptionalDetails {
+                get {
+                    try {
+                        return ((string)(this[this.tableEFASubrequests.OptionalDetailsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OptionalDetails\' in table \'EFASubrequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFASubrequests.OptionalDetailsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateClosed {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEFASubrequests.DateClosedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateClosed\' in table \'EFASubrequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFASubrequests.DateClosedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Approved {
+                get {
+                    try {
+                        return ((bool)(this[this.tableEFASubrequests.ApprovedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Approved\' in table \'EFASubrequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFASubrequests.ApprovedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFARequestTypesRow EFARequestTypesRow {
+                get {
+                    return ((EFARequestTypesRow)(this.GetParentRow(this.Table.ParentRelations["FK__EFASubreq__EFARe__44B528D7"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__EFASubreq__EFARe__44B528D7"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEFARequestIDNull() {
+                return this.IsNull(this.tableEFASubrequests.EFARequestIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEFARequestIDNull() {
+                this[this.tableEFASubrequests.EFARequestIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEFARequestTypeIDNull() {
+                return this.IsNull(this.tableEFASubrequests.EFARequestTypeIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEFARequestTypeIDNull() {
+                this[this.tableEFASubrequests.EFARequestTypeIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOptionalDetailsNull() {
+                return this.IsNull(this.tableEFASubrequests.OptionalDetailsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOptionalDetailsNull() {
+                this[this.tableEFASubrequests.OptionalDetailsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateClosedNull() {
+                return this.IsNull(this.tableEFASubrequests.DateClosedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateClosedNull() {
+                this[this.tableEFASubrequests.DateClosedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsApprovedNull() {
+                return this.IsNull(this.tableEFASubrequests.ApprovedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetApprovedNull() {
+                this[this.tableEFASubrequests.ApprovedColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class EFARequestsRow : global::System.Data.DataRow {
+            
+            private EFARequestsDataTable tableEFARequests;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal EFARequestsRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableEFARequests = ((EFARequestsDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EFARequestID {
+                get {
+                    return ((string)(this[this.tableEFARequests.EFARequestIDColumn]));
+                }
+                set {
+                    this[this.tableEFARequests.EFARequestIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ClientID {
+                get {
+                    try {
+                        return ((string)(this[this.tableEFARequests.ClientIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClientID\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.ClientIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime AddressVerification {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEFARequests.AddressVerificationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AddressVerification\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.AddressVerificationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime HouseholdVerification {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEFARequests.HouseholdVerificationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HouseholdVerification\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.HouseholdVerificationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime IncomeVerification {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEFARequests.IncomeVerificationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IncomeVerification\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.IncomeVerificationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime BillVerification {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEFARequests.BillVerificationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BillVerification\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.BillVerificationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime HardshipVerification {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEFARequests.HardshipVerificationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HardshipVerification\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.HardshipVerificationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int HardshipTypeID {
+                get {
+                    try {
+                        return ((int)(this[this.tableEFARequests.HardshipTypeIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HardshipTypeID\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.HardshipTypeIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HardshipDetail {
+                get {
+                    try {
+                        return ((string)(this[this.tableEFARequests.HardshipDetailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HardshipDetail\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.HardshipDetailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateRequested {
+                get {
+                    return ((global::System.DateTime)(this[this.tableEFARequests.DateRequestedColumn]));
+                }
+                set {
+                    this[this.tableEFARequests.DateRequestedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int EFARequestStatusID {
+                get {
+                    try {
+                        return ((int)(this[this.tableEFARequests.EFARequestStatusIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EFARequestStatusID\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.EFARequestStatusIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public HardshipTypesRow HardshipTypesRow {
+                get {
+                    return ((HardshipTypesRow)(this.GetParentRow(this.Table.ParentRelations["FK__EFAReques__Hards__1E8F7FEF"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__EFAReques__Hards__1E8F7FEF"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClientIDNull() {
+                return this.IsNull(this.tableEFARequests.ClientIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClientIDNull() {
+                this[this.tableEFARequests.ClientIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAddressVerificationNull() {
+                return this.IsNull(this.tableEFARequests.AddressVerificationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAddressVerificationNull() {
+                this[this.tableEFARequests.AddressVerificationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHouseholdVerificationNull() {
+                return this.IsNull(this.tableEFARequests.HouseholdVerificationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHouseholdVerificationNull() {
+                this[this.tableEFARequests.HouseholdVerificationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIncomeVerificationNull() {
+                return this.IsNull(this.tableEFARequests.IncomeVerificationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIncomeVerificationNull() {
+                this[this.tableEFARequests.IncomeVerificationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBillVerificationNull() {
+                return this.IsNull(this.tableEFARequests.BillVerificationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBillVerificationNull() {
+                this[this.tableEFARequests.BillVerificationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHardshipVerificationNull() {
+                return this.IsNull(this.tableEFARequests.HardshipVerificationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHardshipVerificationNull() {
+                this[this.tableEFARequests.HardshipVerificationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHardshipTypeIDNull() {
+                return this.IsNull(this.tableEFARequests.HardshipTypeIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHardshipTypeIDNull() {
+                this[this.tableEFARequests.HardshipTypeIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHardshipDetailNull() {
+                return this.IsNull(this.tableEFARequests.HardshipDetailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHardshipDetailNull() {
+                this[this.tableEFARequests.HardshipDetailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEFARequestStatusIDNull() {
+                return this.IsNull(this.tableEFARequests.EFARequestStatusIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEFARequestStatusIDNull() {
+                this[this.tableEFARequests.EFARequestStatusIDColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -11109,40 +11082,6 @@ namespace FRCApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EFARequestTypesRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class EFASubrequestsRowChangeEvent : global::System.EventArgs {
-            
-            private EFASubrequestsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFASubrequestsRowChangeEvent(EFASubrequestsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFASubrequestsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -11569,40 +11508,6 @@ namespace FRCApp {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class EFARequestsRowChangeEvent : global::System.EventArgs {
-            
-            private EFARequestsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsRowChangeEvent(EFARequestsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class HouseholdsRowChangeEvent : global::System.EventArgs {
             
             private HouseholdsRow eventRow;
@@ -11755,6 +11660,74 @@ namespace FRCApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public UsersRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class EFASubrequestsRowChangeEvent : global::System.EventArgs {
+            
+            private EFASubrequestsRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFASubrequestsRowChangeEvent(EFASubrequestsRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFASubrequestsRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class EFARequestsRowChangeEvent : global::System.EventArgs {
+            
+            private EFARequestsRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFARequestsRowChangeEvent(EFARequestsRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EFARequestsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -12740,449 +12713,6 @@ SELECT EFARequestStatusID, Status FROM EFARequestStatuses WHERE (EFARequestStatu
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Type, int Original_EFARequestTypeID, string Original_Type) {
             return this.Update(Type, Original_EFARequestTypeID, Original_Type, Original_EFARequestTypeID);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class EFASubrequestsTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public EFASubrequestsTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "EFASubrequests";
-            tableMapping.ColumnMappings.Add("EFASubrequestID", "EFASubrequestID");
-            tableMapping.ColumnMappings.Add("EFARequestID", "EFARequestID");
-            tableMapping.ColumnMappings.Add("EFARequestTypeID", "EFARequestTypeID");
-            tableMapping.ColumnMappings.Add("OptionalDetails", "OptionalDetails");
-            tableMapping.ColumnMappings.Add("EFARequestStatus", "EFARequestStatus");
-            tableMapping.ColumnMappings.Add("DateClosed", "DateClosed");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[EFASubrequests] WHERE (([EFASubrequestID] = @Original_EFASubrequestID) AND ((@IsNull_EFARequestID = 1 AND [EFARequestID] IS NULL) OR ([EFARequestID] = @Original_EFARequestID)) AND ((@IsNull_EFARequestTypeID = 1 AND [EFARequestTypeID] IS NULL) OR ([EFARequestTypeID] = @Original_EFARequestTypeID)) AND ((@IsNull_EFARequestStatus = 1 AND [EFARequestStatus] IS NULL) OR ([EFARequestStatus] = @Original_EFARequestStatus)) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFASubrequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateClosed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EFASubrequests] ([EFARequestID], [EFARequestTypeID], [OptionalDetails], [EFARequestStatus], [DateClosed]) VALUES (@EFARequestID, @EFARequestTypeID, @OptionalDetails, @EFARequestStatus, @DateClosed);
-SELECT EFASubrequestID, EFARequestID, EFARequestTypeID, OptionalDetails, EFARequestStatus, DateClosed FROM EFASubrequests WHERE (EFASubrequestID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionalDetails", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionalDetails", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[EFASubrequests] SET [EFARequestID] = @EFARequestID, [EFARequestTypeID] = @EFARequestTypeID, [OptionalDetails] = @OptionalDetails, [EFARequestStatus] = @EFARequestStatus, [DateClosed] = @DateClosed WHERE (([EFASubrequestID] = @Original_EFASubrequestID) AND ((@IsNull_EFARequestID = 1 AND [EFARequestID] IS NULL) OR ([EFARequestID] = @Original_EFARequestID)) AND ((@IsNull_EFARequestTypeID = 1 AND [EFARequestTypeID] IS NULL) OR ([EFARequestTypeID] = @Original_EFARequestTypeID)) AND ((@IsNull_EFARequestStatus = 1 AND [EFARequestStatus] IS NULL) OR ([EFARequestStatus] = @Original_EFARequestStatus)) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)));
-SELECT EFASubrequestID, EFARequestID, EFARequestTypeID, OptionalDetails, EFARequestStatus, DateClosed FROM EFASubrequests WHERE (EFASubrequestID = @EFASubrequestID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionalDetails", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionalDetails", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFASubrequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateClosed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFASubrequestID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FRCApp.Properties.Settings.Default.dBConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EFASubrequestID, EFARequestID, EFARequestTypeID, OptionalDetails, EFAReque" +
-                "stStatus, DateClosed FROM dbo.EFASubrequests";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.EFASubrequestsDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.EFASubrequestsDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.EFASubrequestsDataTable dataTable = new DataSet1.EFASubrequestsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.EFASubrequestsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "EFASubrequests");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_EFASubrequestID, global::System.Nullable<int> Original_EFARequestID, global::System.Nullable<int> Original_EFARequestTypeID, global::System.Nullable<int> Original_EFARequestStatus, global::System.Nullable<global::System.DateTime> Original_DateClosed) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_EFASubrequestID));
-            if ((Original_EFARequestID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_EFARequestID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_EFARequestTypeID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_EFARequestTypeID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_EFARequestStatus.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_EFARequestStatus.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DateClosed.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_DateClosed.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> EFARequestID, global::System.Nullable<int> EFARequestTypeID, string OptionalDetails, global::System.Nullable<int> EFARequestStatus, global::System.Nullable<global::System.DateTime> DateClosed) {
-            if ((EFARequestID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(EFARequestID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((EFARequestTypeID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(EFARequestTypeID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((OptionalDetails == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(OptionalDetails));
-            }
-            if ((EFARequestStatus.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(EFARequestStatus.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((DateClosed.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DateClosed.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> EFARequestID, global::System.Nullable<int> EFARequestTypeID, string OptionalDetails, global::System.Nullable<int> EFARequestStatus, global::System.Nullable<global::System.DateTime> DateClosed, int Original_EFASubrequestID, global::System.Nullable<int> Original_EFARequestID, global::System.Nullable<int> Original_EFARequestTypeID, global::System.Nullable<int> Original_EFARequestStatus, global::System.Nullable<global::System.DateTime> Original_DateClosed, int EFASubrequestID) {
-            if ((EFARequestID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(EFARequestID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((EFARequestTypeID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(EFARequestTypeID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((OptionalDetails == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(OptionalDetails));
-            }
-            if ((EFARequestStatus.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(EFARequestStatus.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((DateClosed.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DateClosed.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_EFASubrequestID));
-            if ((Original_EFARequestID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_EFARequestID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_EFARequestTypeID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_EFARequestTypeID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_EFARequestStatus.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_EFARequestStatus.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DateClosed.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_DateClosed.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(EFASubrequestID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> EFARequestID, global::System.Nullable<int> EFARequestTypeID, string OptionalDetails, global::System.Nullable<int> EFARequestStatus, global::System.Nullable<global::System.DateTime> DateClosed, int Original_EFASubrequestID, global::System.Nullable<int> Original_EFARequestID, global::System.Nullable<int> Original_EFARequestTypeID, global::System.Nullable<int> Original_EFARequestStatus, global::System.Nullable<global::System.DateTime> Original_DateClosed) {
-            return this.Update(EFARequestID, EFARequestTypeID, OptionalDetails, EFARequestStatus, DateClosed, Original_EFASubrequestID, Original_EFARequestID, Original_EFARequestTypeID, Original_EFARequestStatus, Original_DateClosed, Original_EFASubrequestID);
         }
     }
     
@@ -18622,619 +18152,6 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class EFARequestsTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public EFARequestsTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "EFARequests";
-            tableMapping.ColumnMappings.Add("EFARequestID", "EFARequestID");
-            tableMapping.ColumnMappings.Add("ClientID", "ClientID");
-            tableMapping.ColumnMappings.Add("AddressVerification", "AddressVerification");
-            tableMapping.ColumnMappings.Add("HouseholdVerification", "HouseholdVerification");
-            tableMapping.ColumnMappings.Add("IncomeVerification", "IncomeVerification");
-            tableMapping.ColumnMappings.Add("BillVerification", "BillVerification");
-            tableMapping.ColumnMappings.Add("HardshipVerification", "HardshipVerification");
-            tableMapping.ColumnMappings.Add("HardshipTypeID", "HardshipTypeID");
-            tableMapping.ColumnMappings.Add("HardshpDetail", "HardshpDetail");
-            tableMapping.ColumnMappings.Add("DateRequested", "DateRequested");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[EFARequests] WHERE (([EFARequestID] = @Original_EFARequestID) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_AddressVerification = 1 AND [AddressVerification] IS NULL) OR ([AddressVerification] = @Original_AddressVerification)) AND ((@IsNull_HouseholdVerification = 1 AND [HouseholdVerification] IS NULL) OR ([HouseholdVerification] = @Original_HouseholdVerification)) AND ((@IsNull_IncomeVerification = 1 AND [IncomeVerification] IS NULL) OR ([IncomeVerification] = @Original_IncomeVerification)) AND ((@IsNull_BillVerification = 1 AND [BillVerification] IS NULL) OR ([BillVerification] = @Original_BillVerification)) AND ((@IsNull_HardshipVerification = 1 AND [HardshipVerification] IS NULL) OR ([HardshipVerification] = @Original_HardshipVerification)) AND ((@IsNull_HardshipTypeID = 1 AND [HardshipTypeID] IS NULL) OR ([HardshipTypeID] = @Original_HardshipTypeID)) AND ([DateRequested] = @Original_DateRequested))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AddressVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AddressVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HouseholdVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IncomeVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IncomeVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BillVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HardshipVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HardshipVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateRequested", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateRequested", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EFARequests] ([ClientID], [AddressVerification], [HouseholdVerification], [IncomeVerification], [BillVerification], [HardshipVerification], [HardshipTypeID], [HardshpDetail], [DateRequested]) VALUES (@ClientID, @AddressVerification, @HouseholdVerification, @IncomeVerification, @BillVerification, @HardshipVerification, @HardshipTypeID, @HardshpDetail, @DateRequested);
-SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, IncomeVerification, BillVerification, HardshipVerification, HardshipTypeID, HardshpDetail, DateRequested FROM EFARequests WHERE (EFARequestID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AddressVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IncomeVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshpDetail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshpDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateRequested", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateRequested", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[EFARequests] SET [ClientID] = @ClientID, [AddressVerification] = @A" +
-                "ddressVerification, [HouseholdVerification] = @HouseholdVerification, [IncomeVer" +
-                "ification] = @IncomeVerification, [BillVerification] = @BillVerification, [Hards" +
-                "hipVerification] = @HardshipVerification, [HardshipTypeID] = @HardshipTypeID, [H" +
-                "ardshpDetail] = @HardshpDetail, [DateRequested] = @DateRequested WHERE (([EFAReq" +
-                "uestID] = @Original_EFARequestID) AND ((@IsNull_ClientID = 1 AND [ClientID] IS N" +
-                "ULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_AddressVerification = 1" +
-                " AND [AddressVerification] IS NULL) OR ([AddressVerification] = @Original_Addres" +
-                "sVerification)) AND ((@IsNull_HouseholdVerification = 1 AND [HouseholdVerificati" +
-                "on] IS NULL) OR ([HouseholdVerification] = @Original_HouseholdVerification)) AND" +
-                " ((@IsNull_IncomeVerification = 1 AND [IncomeVerification] IS NULL) OR ([IncomeV" +
-                "erification] = @Original_IncomeVerification)) AND ((@IsNull_BillVerification = 1" +
-                " AND [BillVerification] IS NULL) OR ([BillVerification] = @Original_BillVerifica" +
-                "tion)) AND ((@IsNull_HardshipVerification = 1 AND [HardshipVerification] IS NULL" +
-                ") OR ([HardshipVerification] = @Original_HardshipVerification)) AND ((@IsNull_Ha" +
-                "rdshipTypeID = 1 AND [HardshipTypeID] IS NULL) OR ([HardshipTypeID] = @Original_" +
-                "HardshipTypeID)) AND ([DateRequested] = @Original_DateRequested));\r\nSELECT EFARe" +
-                "questID, ClientID, AddressVerification, HouseholdVerification, IncomeVerificatio" +
-                "n, BillVerification, HardshipVerification, HardshipTypeID, HardshpDetail, DateRe" +
-                "quested FROM EFARequests WHERE (EFARequestID = @EFARequestID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AddressVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IncomeVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshpDetail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshpDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateRequested", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateRequested", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AddressVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AddressVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HouseholdVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IncomeVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IncomeVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BillVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HardshipVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HardshipVerification", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateRequested", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateRequested", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FRCApp.Properties.Settings.Default.dBConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Income" +
-                "Verification, BillVerification, HardshipVerification, HardshipTypeID, HardshpDet" +
-                "ail, DateRequested FROM dbo.EFARequests";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.EFARequestsDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.EFARequestsDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.EFARequestsDataTable dataTable = new DataSet1.EFARequestsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.EFARequestsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "EFARequests");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_EFARequestID, string Original_ClientID, global::System.Nullable<bool> Original_AddressVerification, global::System.Nullable<bool> Original_HouseholdVerification, global::System.Nullable<bool> Original_IncomeVerification, global::System.Nullable<bool> Original_BillVerification, global::System.Nullable<bool> Original_HardshipVerification, global::System.Nullable<int> Original_HardshipTypeID, System.DateTime Original_DateRequested) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_EFARequestID));
-            if ((Original_ClientID == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_ClientID));
-            }
-            if ((Original_AddressVerification.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_AddressVerification.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_HouseholdVerification.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_HouseholdVerification.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_IncomeVerification.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_IncomeVerification.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_BillVerification.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((bool)(Original_BillVerification.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_HardshipVerification.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((bool)(Original_HardshipVerification.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_HardshipTypeID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_HardshipTypeID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(Original_DateRequested));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ClientID, global::System.Nullable<bool> AddressVerification, global::System.Nullable<bool> HouseholdVerification, global::System.Nullable<bool> IncomeVerification, global::System.Nullable<bool> BillVerification, global::System.Nullable<bool> HardshipVerification, global::System.Nullable<int> HardshipTypeID, string HardshpDetail, System.DateTime DateRequested) {
-            if ((ClientID == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ClientID));
-            }
-            if ((AddressVerification.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(AddressVerification.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((HouseholdVerification.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(HouseholdVerification.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((IncomeVerification.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(IncomeVerification.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((BillVerification.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(BillVerification.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((HardshipVerification.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(HardshipVerification.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((HardshipTypeID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(HardshipTypeID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((HardshpDetail == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(HardshpDetail));
-            }
-            this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(DateRequested));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string ClientID, 
-                    global::System.Nullable<bool> AddressVerification, 
-                    global::System.Nullable<bool> HouseholdVerification, 
-                    global::System.Nullable<bool> IncomeVerification, 
-                    global::System.Nullable<bool> BillVerification, 
-                    global::System.Nullable<bool> HardshipVerification, 
-                    global::System.Nullable<int> HardshipTypeID, 
-                    string HardshpDetail, 
-                    System.DateTime DateRequested, 
-                    int Original_EFARequestID, 
-                    string Original_ClientID, 
-                    global::System.Nullable<bool> Original_AddressVerification, 
-                    global::System.Nullable<bool> Original_HouseholdVerification, 
-                    global::System.Nullable<bool> Original_IncomeVerification, 
-                    global::System.Nullable<bool> Original_BillVerification, 
-                    global::System.Nullable<bool> Original_HardshipVerification, 
-                    global::System.Nullable<int> Original_HardshipTypeID, 
-                    System.DateTime Original_DateRequested, 
-                    int EFARequestID) {
-            if ((ClientID == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ClientID));
-            }
-            if ((AddressVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((bool)(AddressVerification.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((HouseholdVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(HouseholdVerification.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((IncomeVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(IncomeVerification.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((BillVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((bool)(BillVerification.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((HardshipVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(HardshipVerification.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((HardshipTypeID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(HardshipTypeID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((HardshpDetail == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(HardshpDetail));
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(DateRequested));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_EFARequestID));
-            if ((Original_ClientID == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_ClientID));
-            }
-            if ((Original_AddressVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Original_AddressVerification.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Original_HouseholdVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((bool)(Original_HouseholdVerification.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((Original_IncomeVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(Original_IncomeVerification.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((Original_BillVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(Original_BillVerification.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((Original_HardshipVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((bool)(Original_HardshipVerification.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((Original_HardshipTypeID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_HardshipTypeID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_DateRequested));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(EFARequestID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string ClientID, 
-                    global::System.Nullable<bool> AddressVerification, 
-                    global::System.Nullable<bool> HouseholdVerification, 
-                    global::System.Nullable<bool> IncomeVerification, 
-                    global::System.Nullable<bool> BillVerification, 
-                    global::System.Nullable<bool> HardshipVerification, 
-                    global::System.Nullable<int> HardshipTypeID, 
-                    string HardshpDetail, 
-                    System.DateTime DateRequested, 
-                    int Original_EFARequestID, 
-                    string Original_ClientID, 
-                    global::System.Nullable<bool> Original_AddressVerification, 
-                    global::System.Nullable<bool> Original_HouseholdVerification, 
-                    global::System.Nullable<bool> Original_IncomeVerification, 
-                    global::System.Nullable<bool> Original_BillVerification, 
-                    global::System.Nullable<bool> Original_HardshipVerification, 
-                    global::System.Nullable<int> Original_HardshipTypeID, 
-                    System.DateTime Original_DateRequested) {
-            return this.Update(ClientID, AddressVerification, HouseholdVerification, IncomeVerification, BillVerification, HardshipVerification, HardshipTypeID, HardshpDetail, DateRequested, Original_EFARequestID, Original_ClientID, Original_AddressVerification, Original_HouseholdVerification, Original_IncomeVerification, Original_BillVerification, Original_HardshipVerification, Original_HardshipTypeID, Original_DateRequested, Original_EFARequestID);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class HouseholdsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -22240,6 +21157,1148 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class EFASubrequestsTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public EFASubrequestsTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "EFASubrequests";
+            tableMapping.ColumnMappings.Add("EFASubrequestID", "EFASubrequestID");
+            tableMapping.ColumnMappings.Add("EFARequestID", "EFARequestID");
+            tableMapping.ColumnMappings.Add("EFARequestTypeID", "EFARequestTypeID");
+            tableMapping.ColumnMappings.Add("OptionalDetails", "OptionalDetails");
+            tableMapping.ColumnMappings.Add("DateClosed", "DateClosed");
+            tableMapping.ColumnMappings.Add("Approved", "Approved");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[EFASubrequests] WHERE (([EFASubrequestID] = @Original_EFASubrequestID) AND ((@IsNull_EFARequestID = 1 AND [EFARequestID] IS NULL) OR ([EFARequestID] = @Original_EFARequestID)) AND ((@IsNull_EFARequestTypeID = 1 AND [EFARequestTypeID] IS NULL) OR ([EFARequestTypeID] = @Original_EFARequestTypeID)) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)) AND ((@IsNull_Approved = 1 AND [Approved] IS NULL) OR ([Approved] = @Original_Approved)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFASubrequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateClosed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Approved", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Approved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EFASubrequests] ([EFASubrequestID], [EFARequestID], [EFARequestTypeID], [OptionalDetails], [DateClosed], [Approved]) VALUES (@EFASubrequestID, @EFARequestID, @EFARequestTypeID, @OptionalDetails, @DateClosed, @Approved);
+SELECT EFASubrequestID, EFARequestID, EFARequestTypeID, OptionalDetails, DateClosed, Approved FROM EFASubrequests WHERE (EFASubrequestID = @EFASubrequestID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFASubrequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionalDetails", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionalDetails", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Approved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[EFASubrequests] SET [EFASubrequestID] = @EFASubrequestID, [EFARequestID] = @EFARequestID, [EFARequestTypeID] = @EFARequestTypeID, [OptionalDetails] = @OptionalDetails, [DateClosed] = @DateClosed, [Approved] = @Approved WHERE (([EFASubrequestID] = @Original_EFASubrequestID) AND ((@IsNull_EFARequestID = 1 AND [EFARequestID] IS NULL) OR ([EFARequestID] = @Original_EFARequestID)) AND ((@IsNull_EFARequestTypeID = 1 AND [EFARequestTypeID] IS NULL) OR ([EFARequestTypeID] = @Original_EFARequestTypeID)) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)) AND ((@IsNull_Approved = 1 AND [Approved] IS NULL) OR ([Approved] = @Original_Approved)));
+SELECT EFASubrequestID, EFARequestID, EFARequestTypeID, OptionalDetails, DateClosed, Approved FROM EFASubrequests WHERE (EFASubrequestID = @EFASubrequestID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFASubrequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionalDetails", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionalDetails", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Approved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFASubrequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestTypeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateClosed", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Approved", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Approved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::FRCApp.Properties.Settings.Default.dBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT EFASubrequestID, EFARequestID, EFARequestTypeID, OptionalDetails, DateClos" +
+                "ed, Approved FROM dbo.EFASubrequests";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.EFASubrequestsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.EFASubrequestsDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.EFASubrequestsDataTable dataTable = new DataSet1.EFASubrequestsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.EFASubrequestsDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "EFASubrequests");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_EFASubrequestID, string Original_EFARequestID, global::System.Nullable<int> Original_EFARequestTypeID, global::System.Nullable<global::System.DateTime> Original_DateClosed, global::System.Nullable<bool> Original_Approved) {
+            if ((Original_EFASubrequestID == null)) {
+                throw new global::System.ArgumentNullException("Original_EFASubrequestID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_EFASubrequestID));
+            }
+            if ((Original_EFARequestID == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_EFARequestID));
+            }
+            if ((Original_EFARequestTypeID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_EFARequestTypeID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DateClosed.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_DateClosed.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Approved.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_Approved.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string EFASubrequestID, string EFARequestID, global::System.Nullable<int> EFARequestTypeID, string OptionalDetails, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved) {
+            if ((EFASubrequestID == null)) {
+                throw new global::System.ArgumentNullException("EFASubrequestID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(EFASubrequestID));
+            }
+            if ((EFARequestID == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(EFARequestID));
+            }
+            if ((EFARequestTypeID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(EFARequestTypeID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((OptionalDetails == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(OptionalDetails));
+            }
+            if ((DateClosed.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DateClosed.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Approved.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(Approved.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string EFASubrequestID, string EFARequestID, global::System.Nullable<int> EFARequestTypeID, string OptionalDetails, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved, string Original_EFASubrequestID, string Original_EFARequestID, global::System.Nullable<int> Original_EFARequestTypeID, global::System.Nullable<global::System.DateTime> Original_DateClosed, global::System.Nullable<bool> Original_Approved) {
+            if ((EFASubrequestID == null)) {
+                throw new global::System.ArgumentNullException("EFASubrequestID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(EFASubrequestID));
+            }
+            if ((EFARequestID == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(EFARequestID));
+            }
+            if ((EFARequestTypeID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(EFARequestTypeID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((OptionalDetails == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(OptionalDetails));
+            }
+            if ((DateClosed.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DateClosed.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Approved.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(Approved.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_EFASubrequestID == null)) {
+                throw new global::System.ArgumentNullException("Original_EFASubrequestID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_EFASubrequestID));
+            }
+            if ((Original_EFARequestID == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_EFARequestID));
+            }
+            if ((Original_EFARequestTypeID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_EFARequestTypeID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DateClosed.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_DateClosed.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Approved.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_Approved.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string EFARequestID, global::System.Nullable<int> EFARequestTypeID, string OptionalDetails, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved, string Original_EFASubrequestID, string Original_EFARequestID, global::System.Nullable<int> Original_EFARequestTypeID, global::System.Nullable<global::System.DateTime> Original_DateClosed, global::System.Nullable<bool> Original_Approved) {
+            return this.Update(Original_EFASubrequestID, EFARequestID, EFARequestTypeID, OptionalDetails, DateClosed, Approved, Original_EFASubrequestID, Original_EFARequestID, Original_EFARequestTypeID, Original_DateClosed, Original_Approved);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class EFARequestsTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public EFARequestsTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "EFARequests";
+            tableMapping.ColumnMappings.Add("EFARequestID", "EFARequestID");
+            tableMapping.ColumnMappings.Add("ClientID", "ClientID");
+            tableMapping.ColumnMappings.Add("AddressVerification", "AddressVerification");
+            tableMapping.ColumnMappings.Add("HouseholdVerification", "HouseholdVerification");
+            tableMapping.ColumnMappings.Add("IncomeVerification", "IncomeVerification");
+            tableMapping.ColumnMappings.Add("BillVerification", "BillVerification");
+            tableMapping.ColumnMappings.Add("HardshipVerification", "HardshipVerification");
+            tableMapping.ColumnMappings.Add("HardshipTypeID", "HardshipTypeID");
+            tableMapping.ColumnMappings.Add("HardshipDetail", "HardshipDetail");
+            tableMapping.ColumnMappings.Add("DateRequested", "DateRequested");
+            tableMapping.ColumnMappings.Add("EFARequestStatusID", "EFARequestStatusID");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[EFARequests] WHERE (([EFARequestID] = @Original_EFARequestID) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_AddressVerification = 1 AND [AddressVerification] IS NULL) OR ([AddressVerification] = @Original_AddressVerification)) AND ((@IsNull_HouseholdVerification = 1 AND [HouseholdVerification] IS NULL) OR ([HouseholdVerification] = @Original_HouseholdVerification)) AND ((@IsNull_IncomeVerification = 1 AND [IncomeVerification] IS NULL) OR ([IncomeVerification] = @Original_IncomeVerification)) AND ((@IsNull_BillVerification = 1 AND [BillVerification] IS NULL) OR ([BillVerification] = @Original_BillVerification)) AND ((@IsNull_HardshipVerification = 1 AND [HardshipVerification] IS NULL) OR ([HardshipVerification] = @Original_HardshipVerification)) AND ((@IsNull_HardshipTypeID = 1 AND [HardshipTypeID] IS NULL) OR ([HardshipTypeID] = @Original_HardshipTypeID)) AND ([DateRequested] = @Original_DateRequested) AND ((@IsNull_EFARequestStatusID = 1 AND [EFARequestStatusID] IS NULL) OR ([EFARequestStatusID] = @Original_EFARequestStatusID)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AddressVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AddressVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HouseholdVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IncomeVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IncomeVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BillVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HardshipVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HardshipVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateRequested", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateRequested", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestStatusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatusID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestStatusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatusID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EFARequests] ([EFARequestID], [ClientID], [AddressVerification], [HouseholdVerification], [IncomeVerification], [BillVerification], [HardshipVerification], [HardshipTypeID], [HardshipDetail], [DateRequested], [EFARequestStatusID]) VALUES (@EFARequestID, @ClientID, @AddressVerification, @HouseholdVerification, @IncomeVerification, @BillVerification, @HardshipVerification, @HardshipTypeID, @HardshipDetail, @DateRequested, @EFARequestStatusID);
+SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, IncomeVerification, BillVerification, HardshipVerification, HardshipTypeID, HardshipDetail, DateRequested, EFARequestStatusID FROM EFARequests WHERE (EFARequestID = @EFARequestID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AddressVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IncomeVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipDetail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateRequested", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateRequested", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestStatusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatusID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[EFARequests] SET [EFARequestID] = @EFARequestID, [ClientID] = @Clie" +
+                "ntID, [AddressVerification] = @AddressVerification, [HouseholdVerification] = @H" +
+                "ouseholdVerification, [IncomeVerification] = @IncomeVerification, [BillVerificat" +
+                "ion] = @BillVerification, [HardshipVerification] = @HardshipVerification, [Hards" +
+                "hipTypeID] = @HardshipTypeID, [HardshipDetail] = @HardshipDetail, [DateRequested" +
+                "] = @DateRequested, [EFARequestStatusID] = @EFARequestStatusID WHERE (([EFAReque" +
+                "stID] = @Original_EFARequestID) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NUL" +
+                "L) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_AddressVerification = 1 A" +
+                "ND [AddressVerification] IS NULL) OR ([AddressVerification] = @Original_AddressV" +
+                "erification)) AND ((@IsNull_HouseholdVerification = 1 AND [HouseholdVerification" +
+                "] IS NULL) OR ([HouseholdVerification] = @Original_HouseholdVerification)) AND (" +
+                "(@IsNull_IncomeVerification = 1 AND [IncomeVerification] IS NULL) OR ([IncomeVer" +
+                "ification] = @Original_IncomeVerification)) AND ((@IsNull_BillVerification = 1 A" +
+                "ND [BillVerification] IS NULL) OR ([BillVerification] = @Original_BillVerificati" +
+                "on)) AND ((@IsNull_HardshipVerification = 1 AND [HardshipVerification] IS NULL) " +
+                "OR ([HardshipVerification] = @Original_HardshipVerification)) AND ((@IsNull_Hard" +
+                "shipTypeID = 1 AND [HardshipTypeID] IS NULL) OR ([HardshipTypeID] = @Original_Ha" +
+                "rdshipTypeID)) AND ([DateRequested] = @Original_DateRequested) AND ((@IsNull_EFA" +
+                "RequestStatusID = 1 AND [EFARequestStatusID] IS NULL) OR ([EFARequestStatusID] =" +
+                " @Original_EFARequestStatusID)));\r\nSELECT EFARequestID, ClientID, AddressVerific" +
+                "ation, HouseholdVerification, IncomeVerification, BillVerification, HardshipVeri" +
+                "fication, HardshipTypeID, HardshipDetail, DateRequested, EFARequestStatusID FROM" +
+                " EFARequests WHERE (EFARequestID = @EFARequestID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AddressVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IncomeVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipDetail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateRequested", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateRequested", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestStatusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatusID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AddressVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AddressVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HouseholdVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IncomeVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IncomeVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IncomeVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BillVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HardshipVerification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HardshipVerification", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipVerification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HardshipTypeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipTypeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateRequested", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateRequested", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestStatusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatusID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestStatusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatusID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::FRCApp.Properties.Settings.Default.dBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Income" +
+                "Verification, BillVerification, HardshipVerification, HardshipTypeID, HardshipDe" +
+                "tail, DateRequested, EFARequestStatusID FROM dbo.EFARequests";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.EFARequestsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.EFARequestsDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.EFARequestsDataTable dataTable = new DataSet1.EFARequestsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.EFARequestsDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "EFARequests");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_EFARequestID, string Original_ClientID, global::System.Nullable<global::System.DateTime> Original_AddressVerification, global::System.Nullable<global::System.DateTime> Original_HouseholdVerification, global::System.Nullable<global::System.DateTime> Original_IncomeVerification, global::System.Nullable<global::System.DateTime> Original_BillVerification, global::System.Nullable<global::System.DateTime> Original_HardshipVerification, global::System.Nullable<int> Original_HardshipTypeID, System.DateTime Original_DateRequested, global::System.Nullable<int> Original_EFARequestStatusID) {
+            if ((Original_EFARequestID == null)) {
+                throw new global::System.ArgumentNullException("Original_EFARequestID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_EFARequestID));
+            }
+            if ((Original_ClientID == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_ClientID));
+            }
+            if ((Original_AddressVerification.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_AddressVerification.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_HouseholdVerification.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_HouseholdVerification.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_IncomeVerification.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_IncomeVerification.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_BillVerification.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_BillVerification.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_HardshipVerification.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_HardshipVerification.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_HardshipTypeID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_HardshipTypeID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(Original_DateRequested));
+            if ((Original_EFARequestStatusID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((int)(Original_EFARequestStatusID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string EFARequestID, string ClientID, global::System.Nullable<global::System.DateTime> AddressVerification, global::System.Nullable<global::System.DateTime> HouseholdVerification, global::System.Nullable<global::System.DateTime> IncomeVerification, global::System.Nullable<global::System.DateTime> BillVerification, global::System.Nullable<global::System.DateTime> HardshipVerification, global::System.Nullable<int> HardshipTypeID, string HardshipDetail, System.DateTime DateRequested, global::System.Nullable<int> EFARequestStatusID) {
+            if ((EFARequestID == null)) {
+                throw new global::System.ArgumentNullException("EFARequestID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(EFARequestID));
+            }
+            if ((ClientID == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ClientID));
+            }
+            if ((AddressVerification.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(AddressVerification.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((HouseholdVerification.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(HouseholdVerification.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((IncomeVerification.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(IncomeVerification.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((BillVerification.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(BillVerification.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((HardshipVerification.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(HardshipVerification.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((HardshipTypeID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(HardshipTypeID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((HardshipDetail == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(HardshipDetail));
+            }
+            this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(DateRequested));
+            if ((EFARequestStatusID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(EFARequestStatusID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string EFARequestID, 
+                    string ClientID, 
+                    global::System.Nullable<global::System.DateTime> AddressVerification, 
+                    global::System.Nullable<global::System.DateTime> HouseholdVerification, 
+                    global::System.Nullable<global::System.DateTime> IncomeVerification, 
+                    global::System.Nullable<global::System.DateTime> BillVerification, 
+                    global::System.Nullable<global::System.DateTime> HardshipVerification, 
+                    global::System.Nullable<int> HardshipTypeID, 
+                    string HardshipDetail, 
+                    System.DateTime DateRequested, 
+                    global::System.Nullable<int> EFARequestStatusID, 
+                    string Original_EFARequestID, 
+                    string Original_ClientID, 
+                    global::System.Nullable<global::System.DateTime> Original_AddressVerification, 
+                    global::System.Nullable<global::System.DateTime> Original_HouseholdVerification, 
+                    global::System.Nullable<global::System.DateTime> Original_IncomeVerification, 
+                    global::System.Nullable<global::System.DateTime> Original_BillVerification, 
+                    global::System.Nullable<global::System.DateTime> Original_HardshipVerification, 
+                    global::System.Nullable<int> Original_HardshipTypeID, 
+                    System.DateTime Original_DateRequested, 
+                    global::System.Nullable<int> Original_EFARequestStatusID) {
+            if ((EFARequestID == null)) {
+                throw new global::System.ArgumentNullException("EFARequestID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(EFARequestID));
+            }
+            if ((ClientID == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ClientID));
+            }
+            if ((AddressVerification.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(AddressVerification.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((HouseholdVerification.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(HouseholdVerification.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((IncomeVerification.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(IncomeVerification.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((BillVerification.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(BillVerification.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((HardshipVerification.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(HardshipVerification.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((HardshipTypeID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(HardshipTypeID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((HardshipDetail == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(HardshipDetail));
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(DateRequested));
+            if ((EFARequestStatusID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(EFARequestStatusID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_EFARequestID == null)) {
+                throw new global::System.ArgumentNullException("Original_EFARequestID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_EFARequestID));
+            }
+            if ((Original_ClientID == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_ClientID));
+            }
+            if ((Original_AddressVerification.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_AddressVerification.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Original_HouseholdVerification.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_HouseholdVerification.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Original_IncomeVerification.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_IncomeVerification.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Original_BillVerification.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_BillVerification.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((Original_HardshipVerification.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_HardshipVerification.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((Original_HardshipTypeID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_HardshipTypeID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_DateRequested));
+            if ((Original_EFARequestStatusID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_EFARequestStatusID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string ClientID, 
+                    global::System.Nullable<global::System.DateTime> AddressVerification, 
+                    global::System.Nullable<global::System.DateTime> HouseholdVerification, 
+                    global::System.Nullable<global::System.DateTime> IncomeVerification, 
+                    global::System.Nullable<global::System.DateTime> BillVerification, 
+                    global::System.Nullable<global::System.DateTime> HardshipVerification, 
+                    global::System.Nullable<int> HardshipTypeID, 
+                    string HardshipDetail, 
+                    System.DateTime DateRequested, 
+                    global::System.Nullable<int> EFARequestStatusID, 
+                    string Original_EFARequestID, 
+                    string Original_ClientID, 
+                    global::System.Nullable<global::System.DateTime> Original_AddressVerification, 
+                    global::System.Nullable<global::System.DateTime> Original_HouseholdVerification, 
+                    global::System.Nullable<global::System.DateTime> Original_IncomeVerification, 
+                    global::System.Nullable<global::System.DateTime> Original_BillVerification, 
+                    global::System.Nullable<global::System.DateTime> Original_HardshipVerification, 
+                    global::System.Nullable<int> Original_HardshipTypeID, 
+                    System.DateTime Original_DateRequested, 
+                    global::System.Nullable<int> Original_EFARequestStatusID) {
+            return this.Update(Original_EFARequestID, ClientID, AddressVerification, HouseholdVerification, IncomeVerification, BillVerification, HardshipVerification, HardshipTypeID, HardshipDetail, DateRequested, EFARequestStatusID, Original_EFARequestID, Original_ClientID, Original_AddressVerification, Original_HouseholdVerification, Original_IncomeVerification, Original_BillVerification, Original_HardshipVerification, Original_HardshipTypeID, Original_DateRequested, Original_EFARequestStatusID);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.IDbCommand[] _commandCollection;
@@ -22320,8 +22379,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
         
         private EFARequestTypesTableAdapter _eFARequestTypesTableAdapter;
         
-        private EFASubrequestsTableAdapter _eFASubrequestsTableAdapter;
-        
         private EmploymentStatusesTableAdapter _employmentStatusesTableAdapter;
         
         private ExpenseTypesTableAdapter _expenseTypesTableAdapter;
@@ -22346,8 +22403,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
         
         private HouseholdMembersTableAdapter _householdMembersTableAdapter;
         
-        private EFARequestsTableAdapter _eFARequestsTableAdapter;
-        
         private HouseholdsTableAdapter _householdsTableAdapter;
         
         private MonthlyExpensesTableAdapter _monthlyExpensesTableAdapter;
@@ -22355,6 +22410,10 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
         private IncomeSourceTypesTableAdapter _incomeSourceTypesTableAdapter;
         
         private UsersTableAdapter _usersTableAdapter;
+        
+        private EFASubrequestsTableAdapter _eFASubrequestsTableAdapter;
+        
+        private EFARequestsTableAdapter _eFARequestsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -22410,20 +22469,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
             }
             set {
                 this._eFARequestTypesTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public EFASubrequestsTableAdapter EFASubrequestsTableAdapter {
-            get {
-                return this._eFASubrequestsTableAdapter;
-            }
-            set {
-                this._eFASubrequestsTableAdapter = value;
             }
         }
         
@@ -22600,20 +22645,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public EFARequestsTableAdapter EFARequestsTableAdapter {
-            get {
-                return this._eFARequestsTableAdapter;
-            }
-            set {
-                this._eFARequestsTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public HouseholdsTableAdapter HouseholdsTableAdapter {
             get {
                 return this._householdsTableAdapter;
@@ -22667,6 +22698,34 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public EFASubrequestsTableAdapter EFASubrequestsTableAdapter {
+            get {
+                return this._eFASubrequestsTableAdapter;
+            }
+            set {
+                this._eFASubrequestsTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public EFARequestsTableAdapter EFARequestsTableAdapter {
+            get {
+                return this._eFARequestsTableAdapter;
+            }
+            set {
+                this._eFARequestsTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -22695,10 +22754,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                 if (((this._eFARequestTypesTableAdapter != null) 
                             && (this._eFARequestTypesTableAdapter.Connection != null))) {
                     return this._eFARequestTypesTableAdapter.Connection;
-                }
-                if (((this._eFASubrequestsTableAdapter != null) 
-                            && (this._eFASubrequestsTableAdapter.Connection != null))) {
-                    return this._eFASubrequestsTableAdapter.Connection;
                 }
                 if (((this._employmentStatusesTableAdapter != null) 
                             && (this._employmentStatusesTableAdapter.Connection != null))) {
@@ -22748,10 +22803,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                             && (this._householdMembersTableAdapter.Connection != null))) {
                     return this._householdMembersTableAdapter.Connection;
                 }
-                if (((this._eFARequestsTableAdapter != null) 
-                            && (this._eFARequestsTableAdapter.Connection != null))) {
-                    return this._eFARequestsTableAdapter.Connection;
-                }
                 if (((this._householdsTableAdapter != null) 
                             && (this._householdsTableAdapter.Connection != null))) {
                     return this._householdsTableAdapter.Connection;
@@ -22767,6 +22818,14 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                 if (((this._usersTableAdapter != null) 
                             && (this._usersTableAdapter.Connection != null))) {
                     return this._usersTableAdapter.Connection;
+                }
+                if (((this._eFASubrequestsTableAdapter != null) 
+                            && (this._eFASubrequestsTableAdapter.Connection != null))) {
+                    return this._eFASubrequestsTableAdapter.Connection;
+                }
+                if (((this._eFARequestsTableAdapter != null) 
+                            && (this._eFARequestsTableAdapter.Connection != null))) {
+                    return this._eFARequestsTableAdapter.Connection;
                 }
                 return null;
             }
@@ -22788,9 +22847,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     count = (count + 1);
                 }
                 if ((this._eFARequestTypesTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._eFASubrequestsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._employmentStatusesTableAdapter != null)) {
@@ -22829,9 +22885,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                 if ((this._householdMembersTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._eFARequestsTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._householdsTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -22842,6 +22895,12 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     count = (count + 1);
                 }
                 if ((this._usersTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._eFASubrequestsTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._eFARequestsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -22855,30 +22914,21 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._hardshipTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._hardshipTypesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._eFARequestStatusesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EFARequestStatuses.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._eFARequestStatusesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._eFARequestTypesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.EFARequestTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._eFARequestTypesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._hardshipTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._hardshipTypesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -22900,15 +22950,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._eFARequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EFARequests.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._eFARequestsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._householdMembersTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.HouseholdMembers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -22924,6 +22965,24 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._educationLevelsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._usersTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._usersTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._incomeSourceTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.IncomeSourceTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._incomeSourceTypesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -22954,24 +23013,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._goalTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.GoalTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._goalTypesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._relationTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.RelationTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._relationTypesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._clientsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Clients.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -22981,12 +23022,30 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._incomeSourceTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.IncomeSourceTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._referralTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ReferralTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._incomeSourceTypesTableAdapter.Update(updatedRows));
+                    result = (result + this._referralTypesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._eFASubrequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._eFASubrequestsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._relationTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.RelationTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._relationTypesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23017,30 +23076,30 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._eFASubrequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eFARequestStatusesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EFARequestStatuses.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._eFASubrequestsTableAdapter.Update(updatedRows));
+                    result = (result + this._eFARequestStatusesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._referralTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ReferralTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._goalTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.GoalTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._referralTypesTableAdapter.Update(updatedRows));
+                    result = (result + this._goalTypesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._usersTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eFARequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EFARequests.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._usersTableAdapter.Update(updatedRows));
+                    result = (result + this._eFARequestsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23054,27 +23113,19 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._hardshipTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._hardshipTypesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._eFARequestStatusesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EFARequestStatuses.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._eFARequestStatusesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._eFARequestTypesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.EFARequestTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._eFARequestTypesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._hardshipTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._hardshipTypesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23094,14 +23145,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._eFARequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EFARequests.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._eFARequestsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._householdMembersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.HouseholdMembers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -23115,6 +23158,22 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._educationLevelsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._usersTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._usersTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._incomeSourceTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.IncomeSourceTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._incomeSourceTypesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23142,22 +23201,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._goalTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.GoalTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._goalTypesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._relationTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.RelationTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._relationTypesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._clientsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Clients.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -23166,11 +23209,27 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._incomeSourceTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.IncomeSourceTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._referralTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ReferralTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._incomeSourceTypesTableAdapter.Update(addedRows));
+                    result = (result + this._referralTypesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._eFASubrequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._eFASubrequestsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._relationTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.RelationTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._relationTypesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23198,27 +23257,27 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._eFASubrequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eFARequestStatusesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EFARequestStatuses.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._eFASubrequestsTableAdapter.Update(addedRows));
+                    result = (result + this._eFARequestStatusesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._referralTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ReferralTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._goalTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.GoalTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._referralTypesTableAdapter.Update(addedRows));
+                    result = (result + this._goalTypesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._usersTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eFARequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EFARequests.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._usersTableAdapter.Update(addedRows));
+                    result = (result + this._eFARequestsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23232,27 +23291,27 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._usersTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eFARequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EFARequests.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._usersTableAdapter.Update(deletedRows));
+                    result = (result + this._eFARequestsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._referralTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ReferralTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._goalTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.GoalTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._referralTypesTableAdapter.Update(deletedRows));
+                    result = (result + this._goalTypesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._eFASubrequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eFARequestStatusesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EFARequestStatuses.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._eFASubrequestsTableAdapter.Update(deletedRows));
+                    result = (result + this._eFARequestStatusesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -23280,22 +23339,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._incomeSourceTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.IncomeSourceTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._incomeSourceTypesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._clientsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Clients.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._clientsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._relationTypesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.RelationTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -23304,11 +23347,27 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._goalTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.GoalTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eFASubrequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._goalTypesTableAdapter.Update(deletedRows));
+                    result = (result + this._eFASubrequestsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._referralTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ReferralTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._referralTypesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._clientsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Clients.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._clientsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -23336,6 +23395,22 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._incomeSourceTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.IncomeSourceTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._incomeSourceTypesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._usersTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._usersTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._educationLevelsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.EducationLevels.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -23349,14 +23424,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._householdMembersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._eFARequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EFARequests.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eFARequestsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -23376,27 +23443,19 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._eFARequestTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EFARequestTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eFARequestTypesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._eFARequestStatusesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EFARequestStatuses.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eFARequestStatusesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._hardshipTypesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._hardshipTypesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._eFARequestTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EFARequestTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._eFARequestTypesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -23451,11 +23510,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
             }
             if (((this._eFARequestTypesTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._eFARequestTypesTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._eFASubrequestsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._eFASubrequestsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -23519,11 +23573,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._eFARequestsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._eFARequestsTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._householdsTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._householdsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -23541,6 +23590,16 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
             }
             if (((this._usersTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._usersTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._eFASubrequestsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._eFASubrequestsTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._eFARequestsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._eFARequestsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -23601,15 +23660,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     if (this._eFARequestTypesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._eFARequestTypesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._eFARequestTypesTableAdapter.Adapter);
-                    }
-                }
-                if ((this._eFASubrequestsTableAdapter != null)) {
-                    revertConnections.Add(this._eFASubrequestsTableAdapter, this._eFASubrequestsTableAdapter.Connection);
-                    this._eFASubrequestsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._eFASubrequestsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._eFASubrequestsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._eFASubrequestsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._eFASubrequestsTableAdapter.Adapter);
                     }
                 }
                 if ((this._employmentStatusesTableAdapter != null)) {
@@ -23720,15 +23770,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                         adaptersWithAcceptChangesDuringUpdate.Add(this._householdMembersTableAdapter.Adapter);
                     }
                 }
-                if ((this._eFARequestsTableAdapter != null)) {
-                    revertConnections.Add(this._eFARequestsTableAdapter, this._eFARequestsTableAdapter.Connection);
-                    this._eFARequestsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._eFARequestsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._eFARequestsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._eFARequestsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._eFARequestsTableAdapter.Adapter);
-                    }
-                }
                 if ((this._householdsTableAdapter != null)) {
                     revertConnections.Add(this._householdsTableAdapter, this._householdsTableAdapter.Connection);
                     this._householdsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -23763,6 +23804,24 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     if (this._usersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._usersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._usersTableAdapter.Adapter);
+                    }
+                }
+                if ((this._eFASubrequestsTableAdapter != null)) {
+                    revertConnections.Add(this._eFASubrequestsTableAdapter, this._eFASubrequestsTableAdapter.Connection);
+                    this._eFASubrequestsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._eFASubrequestsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._eFASubrequestsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._eFASubrequestsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._eFASubrequestsTableAdapter.Adapter);
+                    }
+                }
+                if ((this._eFARequestsTableAdapter != null)) {
+                    revertConnections.Add(this._eFARequestsTableAdapter, this._eFARequestsTableAdapter.Connection);
+                    this._eFARequestsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._eFARequestsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._eFARequestsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._eFARequestsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._eFARequestsTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -23835,10 +23894,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     this._eFARequestTypesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._eFARequestTypesTableAdapter]));
                     this._eFARequestTypesTableAdapter.Transaction = null;
                 }
-                if ((this._eFASubrequestsTableAdapter != null)) {
-                    this._eFASubrequestsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._eFASubrequestsTableAdapter]));
-                    this._eFASubrequestsTableAdapter.Transaction = null;
-                }
                 if ((this._employmentStatusesTableAdapter != null)) {
                     this._employmentStatusesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._employmentStatusesTableAdapter]));
                     this._employmentStatusesTableAdapter.Transaction = null;
@@ -23887,10 +23942,6 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                     this._householdMembersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._householdMembersTableAdapter]));
                     this._householdMembersTableAdapter.Transaction = null;
                 }
-                if ((this._eFARequestsTableAdapter != null)) {
-                    this._eFARequestsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._eFARequestsTableAdapter]));
-                    this._eFARequestsTableAdapter.Transaction = null;
-                }
                 if ((this._householdsTableAdapter != null)) {
                     this._householdsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._householdsTableAdapter]));
                     this._householdsTableAdapter.Transaction = null;
@@ -23906,6 +23957,14 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
                 if ((this._usersTableAdapter != null)) {
                     this._usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usersTableAdapter]));
                     this._usersTableAdapter.Transaction = null;
+                }
+                if ((this._eFASubrequestsTableAdapter != null)) {
+                    this._eFASubrequestsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._eFASubrequestsTableAdapter]));
+                    this._eFASubrequestsTableAdapter.Transaction = null;
+                }
+                if ((this._eFARequestsTableAdapter != null)) {
+                    this._eFARequestsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._eFARequestsTableAdapter]));
+                    this._eFARequestsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
