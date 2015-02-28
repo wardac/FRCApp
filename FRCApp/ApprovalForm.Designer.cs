@@ -250,6 +250,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.Name = "ApprovalForm";
             this.Text = "Request Approval";
+            this.Load += new System.EventHandler(this.ApprovalForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

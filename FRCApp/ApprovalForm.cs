@@ -29,5 +29,10 @@ namespace FRCApp
                }
            }
         }
+
+        private void ApprovalForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
