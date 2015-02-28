@@ -54,19 +54,27 @@ namespace FRCApp
 
         private void addEFAButton_Click(object sender, EventArgs e)
         {
-            requestStatusform efareq = new requestStatusform(ClientID, true);
+            requestStatusform efareq = new requestStatusform(ClientID, null, true);
             efareq.Show();
-        }
-
-        private void lstActiveReq_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void ClientDetails_Load(object sender, EventArgs e)
         {
-            var efaRequestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
-            //var efaRequests = efaRequestAdapter.
+            var efaRequestDisplayAdapter = new DataSet1TableAdapters.EFARequestsDisplayTableAdapter();
+            var efaRequests = efaRequestDisplayAdapter.GetActiveEFARequestsByClientID(ClientID);
+            foreach (var efaRequest in efaRequests) {
+                var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
+                item.Tag = efaRequest.EFARequestID;
+                item.SubItems.Add(efaRequest.RequestTypes);
+                item.SubItems.Add(efaRequest.Status);
+                lstActiveReq.Items.Add(item);
+            }
+
+            lstActiveReq.DoubleClick += new System.EventHandler((object o, System.EventArgs e1) =>
+            {
+                requestStatusform efareq = new requestStatusform(ClientID, lstActiveReq.SelectedItems[0].Tag.ToString(), false);
+                efareq.Show();
+            });
         }
     }
 }

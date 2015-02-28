@@ -292,13 +292,13 @@
             this.date,
             this.assistance,
             this.Status});
+            this.lstActiveReq.FullRowSelect = true;
             this.lstActiveReq.Location = new System.Drawing.Point(22, 22);
             this.lstActiveReq.Name = "lstActiveReq";
             this.lstActiveReq.Size = new System.Drawing.Size(558, 157);
             this.lstActiveReq.TabIndex = 3;
             this.lstActiveReq.UseCompatibleStateImageBehavior = false;
             this.lstActiveReq.View = System.Windows.Forms.View.Details;
-            this.lstActiveReq.SelectedIndexChanged += new System.EventHandler(this.lstActiveReq_SelectedIndexChanged);
             // 
             // date
             // 

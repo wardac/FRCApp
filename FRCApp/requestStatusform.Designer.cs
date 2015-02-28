@@ -30,17 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.requestPanel = new System.Windows.Forms.Panel();
+            this.lst_reqTypes = new System.Windows.Forms.ListBox();
             this.checklist_requestType = new System.Windows.Forms.CheckedListBox();
             this.lblComment = new System.Windows.Forms.Label();
             this.grpcauseshardship = new System.Windows.Forms.GroupBox();
-            this.txtother = new System.Windows.Forms.TextBox();
-            this.chkother = new System.Windows.Forms.CheckBox();
-            this.chkmajorLchange = new System.Windows.Forms.CheckBox();
-            this.chkUnexpectedloss = new System.Windows.Forms.CheckBox();
-            this.chklossBenefit = new System.Windows.Forms.CheckBox();
-            this.chkLosseanedIncome = new System.Windows.Forms.CheckBox();
-            this.chkrecentlyemp = new System.Windows.Forms.CheckBox();
-            this.chkjobloss = new System.Windows.Forms.CheckBox();
             this.efa_financegroup = new System.Windows.Forms.GroupBox();
             this.txt_Mexpenses = new System.Windows.Forms.TextBox();
             this.txt_Mincome = new System.Windows.Forms.TextBox();
@@ -48,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCQinfo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_other = new System.Windows.Forms.TextBox();
             this.efa_comment = new System.Windows.Forms.TextBox();
             this.efa_proofGroup = new System.Windows.Forms.GroupBox();
             this.householdDate = new System.Windows.Forms.DateTimePicker();
@@ -61,17 +54,18 @@
             this.efa_proofharship = new System.Windows.Forms.CheckBox();
             this.efa_proofIncome = new System.Windows.Forms.CheckBox();
             this.efa_proofaddress = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.date_requestDate = new System.Windows.Forms.DateTimePicker();
             this.requestdate = new System.Windows.Forms.Label();
             this.lblefacategory = new System.Windows.Forms.Label();
-            this.efa_ID = new System.Windows.Forms.TextBox();
-            this.lblreqId = new System.Windows.Forms.Label();
             this.efa_clientName = new System.Windows.Forms.TextBox();
             this.lblname = new System.Windows.Forms.Label();
             this.cancelEfa = new System.Windows.Forms.Button();
             this.update_efa = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.cmb_hardship = new System.Windows.Forms.ComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txt_hardshipDesc = new System.Windows.Forms.TextBox();
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
@@ -85,18 +79,17 @@
             // 
             // requestPanel
             // 
+            this.requestPanel.Controls.Add(this.lst_reqTypes);
             this.requestPanel.Controls.Add(this.checklist_requestType);
             this.requestPanel.Controls.Add(this.lblComment);
             this.requestPanel.Controls.Add(this.grpcauseshardship);
             this.requestPanel.Controls.Add(this.efa_financegroup);
-            this.requestPanel.Controls.Add(this.textBox1);
+            this.requestPanel.Controls.Add(this.txt_other);
             this.requestPanel.Controls.Add(this.efa_comment);
             this.requestPanel.Controls.Add(this.efa_proofGroup);
-            this.requestPanel.Controls.Add(this.dateTimePicker1);
+            this.requestPanel.Controls.Add(this.date_requestDate);
             this.requestPanel.Controls.Add(this.requestdate);
             this.requestPanel.Controls.Add(this.lblefacategory);
-            this.requestPanel.Controls.Add(this.efa_ID);
-            this.requestPanel.Controls.Add(this.lblreqId);
             this.requestPanel.Controls.Add(this.efa_clientName);
             this.requestPanel.Controls.Add(this.lblname);
             this.requestPanel.Controls.Add(this.cancelEfa);
@@ -107,11 +100,20 @@
             this.requestPanel.Size = new System.Drawing.Size(867, 611);
             this.requestPanel.TabIndex = 1;
             // 
+            // lst_reqTypes
+            // 
+            this.lst_reqTypes.FormattingEnabled = true;
+            this.lst_reqTypes.Location = new System.Drawing.Point(161, 52);
+            this.lst_reqTypes.Name = "lst_reqTypes";
+            this.lst_reqTypes.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.lst_reqTypes.Size = new System.Drawing.Size(259, 95);
+            this.lst_reqTypes.TabIndex = 23;
+            // 
             // checklist_requestType
             // 
             this.checklist_requestType.CheckOnClick = true;
             this.checklist_requestType.FormattingEnabled = true;
-            this.checklist_requestType.Location = new System.Drawing.Point(161, 73);
+            this.checklist_requestType.Location = new System.Drawing.Point(161, 52);
             this.checklist_requestType.Name = "checklist_requestType";
             this.checklist_requestType.Size = new System.Drawing.Size(259, 94);
             this.checklist_requestType.TabIndex = 22;
@@ -127,98 +129,14 @@
             // 
             // grpcauseshardship
             // 
-            this.grpcauseshardship.Controls.Add(this.txtother);
-            this.grpcauseshardship.Controls.Add(this.chkother);
-            this.grpcauseshardship.Controls.Add(this.chkmajorLchange);
-            this.grpcauseshardship.Controls.Add(this.chkUnexpectedloss);
-            this.grpcauseshardship.Controls.Add(this.chklossBenefit);
-            this.grpcauseshardship.Controls.Add(this.chkLosseanedIncome);
-            this.grpcauseshardship.Controls.Add(this.chkrecentlyemp);
-            this.grpcauseshardship.Controls.Add(this.chkjobloss);
+            this.grpcauseshardship.Controls.Add(this.txt_hardshipDesc);
+            this.grpcauseshardship.Controls.Add(this.cmb_hardship);
             this.grpcauseshardship.Location = new System.Drawing.Point(446, 32);
             this.grpcauseshardship.Name = "grpcauseshardship";
             this.grpcauseshardship.Size = new System.Drawing.Size(397, 115);
             this.grpcauseshardship.TabIndex = 19;
             this.grpcauseshardship.TabStop = false;
-            this.grpcauseshardship.Text = "Causes of hardship";
-            // 
-            // txtother
-            // 
-            this.txtother.Location = new System.Drawing.Point(7, 85);
-            this.txtother.Name = "txtother";
-            this.txtother.Size = new System.Drawing.Size(384, 20);
-            this.txtother.TabIndex = 7;
-            this.txtother.Visible = false;
-            // 
-            // chkother
-            // 
-            this.chkother.AutoSize = true;
-            this.chkother.Location = new System.Drawing.Point(241, 12);
-            this.chkother.Name = "chkother";
-            this.chkother.Size = new System.Drawing.Size(50, 17);
-            this.chkother.TabIndex = 6;
-            this.chkother.Text = "other";
-            this.chkother.UseVisualStyleBackColor = true;
-            // 
-            // chkmajorLchange
-            // 
-            this.chkmajorLchange.AutoSize = true;
-            this.chkmajorLchange.Location = new System.Drawing.Point(139, 61);
-            this.chkmajorLchange.Name = "chkmajorLchange";
-            this.chkmajorLchange.Size = new System.Drawing.Size(106, 17);
-            this.chkmajorLchange.TabIndex = 5;
-            this.chkmajorLchange.Text = "major life change";
-            this.chkmajorLchange.UseVisualStyleBackColor = true;
-            // 
-            // chkUnexpectedloss
-            // 
-            this.chkUnexpectedloss.AutoSize = true;
-            this.chkUnexpectedloss.Location = new System.Drawing.Point(139, 38);
-            this.chkUnexpectedloss.Name = "chkUnexpectedloss";
-            this.chkUnexpectedloss.Size = new System.Drawing.Size(130, 17);
-            this.chkUnexpectedloss.TabIndex = 4;
-            this.chkUnexpectedloss.Text = "unexpected expenses";
-            this.chkUnexpectedloss.UseVisualStyleBackColor = true;
-            // 
-            // chklossBenefit
-            // 
-            this.chklossBenefit.AutoSize = true;
-            this.chklossBenefit.Location = new System.Drawing.Point(139, 15);
-            this.chklossBenefit.Name = "chklossBenefit";
-            this.chklossBenefit.Size = new System.Drawing.Size(91, 17);
-            this.chklossBenefit.TabIndex = 3;
-            this.chklossBenefit.Text = "loss of benefit";
-            this.chklossBenefit.UseVisualStyleBackColor = true;
-            // 
-            // chkLosseanedIncome
-            // 
-            this.chkLosseanedIncome.AutoSize = true;
-            this.chkLosseanedIncome.Location = new System.Drawing.Point(7, 62);
-            this.chkLosseanedIncome.Name = "chkLosseanedIncome";
-            this.chkLosseanedIncome.Size = new System.Drawing.Size(129, 17);
-            this.chkLosseanedIncome.TabIndex = 2;
-            this.chkLosseanedIncome.Text = "loss of earned income";
-            this.chkLosseanedIncome.UseVisualStyleBackColor = true;
-            // 
-            // chkrecentlyemp
-            // 
-            this.chkrecentlyemp.AutoSize = true;
-            this.chkrecentlyemp.Location = new System.Drawing.Point(7, 40);
-            this.chkrecentlyemp.Name = "chkrecentlyemp";
-            this.chkrecentlyemp.Size = new System.Drawing.Size(116, 17);
-            this.chkrecentlyemp.TabIndex = 1;
-            this.chkrecentlyemp.Text = "Recently employed";
-            this.chkrecentlyemp.UseVisualStyleBackColor = true;
-            // 
-            // chkjobloss
-            // 
-            this.chkjobloss.AutoSize = true;
-            this.chkjobloss.Location = new System.Drawing.Point(7, 20);
-            this.chkjobloss.Name = "chkjobloss";
-            this.chkjobloss.Size = new System.Drawing.Size(61, 17);
-            this.chkjobloss.TabIndex = 0;
-            this.chkjobloss.Text = "job loss";
-            this.chkjobloss.UseVisualStyleBackColor = true;
+            this.grpcauseshardship.Text = "Cause of hardship";
             // 
             // efa_financegroup
             // 
@@ -286,14 +204,15 @@
             this.lblCQinfo.TabIndex = 0;
             this.lblCQinfo.Text = "Quarterly Income";
             // 
-            // textBox1
+            // txt_other
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 183);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 48);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.Text = "if other explain";
+            this.txt_other.Location = new System.Drawing.Point(161, 152);
+            this.txt_other.MaxLength = 30;
+            this.txt_other.Multiline = true;
+            this.txt_other.Name = "txt_other";
+            this.txt_other.Size = new System.Drawing.Size(259, 20);
+            this.txt_other.TabIndex = 17;
+            this.txt_other.Text = "if other explain";
             // 
             // efa_comment
             // 
@@ -417,12 +336,12 @@
             this.efa_proofaddress.UseVisualStyleBackColor = true;
             this.efa_proofaddress.CheckedChanged += new System.EventHandler(this.efa_proofaddress_CheckedChanged);
             // 
-            // dateTimePicker1
+            // date_requestDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(161, 237);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.date_requestDate.Location = new System.Drawing.Point(189, 237);
+            this.date_requestDate.Name = "date_requestDate";
+            this.date_requestDate.Size = new System.Drawing.Size(200, 20);
+            this.date_requestDate.TabIndex = 9;
             // 
             // requestdate
             // 
@@ -436,29 +355,11 @@
             // lblefacategory
             // 
             this.lblefacategory.AutoSize = true;
-            this.lblefacategory.Location = new System.Drawing.Point(30, 73);
+            this.lblefacategory.Location = new System.Drawing.Point(30, 52);
             this.lblefacategory.Name = "lblefacategory";
             this.lblefacategory.Size = new System.Drawing.Size(125, 13);
             this.lblefacategory.TabIndex = 6;
             this.lblefacategory.Text = "EFA Assistance category";
-            // 
-            // efa_ID
-            // 
-            this.efa_ID.Enabled = false;
-            this.efa_ID.Location = new System.Drawing.Point(161, 45);
-            this.efa_ID.Name = "efa_ID";
-            this.efa_ID.Size = new System.Drawing.Size(112, 20);
-            this.efa_ID.TabIndex = 5;
-            this.efa_ID.Text = "autogen ID";
-            // 
-            // lblreqId
-            // 
-            this.lblreqId.AutoSize = true;
-            this.lblreqId.Location = new System.Drawing.Point(30, 48);
-            this.lblreqId.Name = "lblreqId";
-            this.lblreqId.Size = new System.Drawing.Size(61, 13);
-            this.lblreqId.TabIndex = 4;
-            this.lblreqId.Text = "Request ID";
             // 
             // efa_clientName
             // 
@@ -515,6 +416,28 @@
             this.lineShape1.Y1 = 100;
             this.lineShape1.Y2 = 378;
             // 
+            // cmb_hardship
+            // 
+            this.cmb_hardship.FormattingEnabled = true;
+            this.cmb_hardship.Location = new System.Drawing.Point(7, 20);
+            this.cmb_hardship.Name = "cmb_hardship";
+            this.cmb_hardship.Size = new System.Drawing.Size(384, 21);
+            this.cmb_hardship.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // txt_hardshipDesc
+            // 
+            this.txt_hardshipDesc.Enabled = false;
+            this.txt_hardshipDesc.Location = new System.Drawing.Point(7, 48);
+            this.txt_hardshipDesc.Multiline = true;
+            this.txt_hardshipDesc.Name = "txt_hardshipDesc";
+            this.txt_hardshipDesc.Size = new System.Drawing.Size(384, 61);
+            this.txt_hardshipDesc.TabIndex = 1;
+            // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
@@ -557,14 +480,6 @@
         private System.Windows.Forms.Panel requestPanel;
         private System.Windows.Forms.Label lblComment;
         private System.Windows.Forms.GroupBox grpcauseshardship;
-        private System.Windows.Forms.TextBox txtother;
-        private System.Windows.Forms.CheckBox chkother;
-        private System.Windows.Forms.CheckBox chkmajorLchange;
-        private System.Windows.Forms.CheckBox chkUnexpectedloss;
-        private System.Windows.Forms.CheckBox chklossBenefit;
-        private System.Windows.Forms.CheckBox chkLosseanedIncome;
-        private System.Windows.Forms.CheckBox chkrecentlyemp;
-        private System.Windows.Forms.CheckBox chkjobloss;
         private System.Windows.Forms.GroupBox efa_financegroup;
         private System.Windows.Forms.TextBox txt_Mexpenses;
         private System.Windows.Forms.TextBox txt_Mincome;
@@ -572,7 +487,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCQinfo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_other;
         private System.Windows.Forms.TextBox efa_comment;
         private System.Windows.Forms.GroupBox efa_proofGroup;
         private System.Windows.Forms.DateTimePicker householdDate;
@@ -585,11 +500,9 @@
         private System.Windows.Forms.CheckBox efa_proofharship;
         private System.Windows.Forms.CheckBox efa_proofIncome;
         private System.Windows.Forms.CheckBox efa_proofaddress;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker date_requestDate;
         private System.Windows.Forms.Label requestdate;
         private System.Windows.Forms.Label lblefacategory;
-        private System.Windows.Forms.TextBox efa_ID;
-        private System.Windows.Forms.Label lblreqId;
         private System.Windows.Forms.TextBox efa_clientName;
         private System.Windows.Forms.Label lblname;
         private System.Windows.Forms.Button cancelEfa;
@@ -600,5 +513,9 @@
         private System.Windows.Forms.BindingSource eFARequestTypesBindingSource;
         private DataSet1TableAdapters.EFARequestTypesTableAdapter eFARequestTypesTableAdapter;
         private System.Windows.Forms.CheckedListBox checklist_requestType;
+        private System.Windows.Forms.ListBox lst_reqTypes;
+        private System.Windows.Forms.TextBox txt_hardshipDesc;
+        private System.Windows.Forms.ComboBox cmb_hardship;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
