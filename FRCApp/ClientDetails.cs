@@ -62,5 +62,11 @@ namespace FRCApp
         {
 
         }
+
+        private void ClientDetails_Load(object sender, EventArgs e)
+        {
+            var efaRequestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
+            //var efaRequests = efaRequestAdapter.
+        }
     }
 }

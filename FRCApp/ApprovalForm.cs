@@ -34,9 +34,13 @@ namespace FRCApp
         {
             var efaSubrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
             var efaSubrequests = efaSubrequestAdapter.GetEFASubrequestsByEFARequestID(requestID);
-            //foreach (var subrequest in efaSubrequests) {
-            //    chklst_services.Items.Add(subrequest.
-            //}
+            chklst_services.DisplayMember = "Type";
+            chklst_services.ValueMember = "EFASubrequestID";
+            foreach (var subrequest in efaSubrequests) {
+                chklst_services.Items.Add(
+                    new { Type = subrequest.EFARequestType, EFASubrequestID = subrequest.EFASubrequestID }
+                );
+            }
         }
     }
 }

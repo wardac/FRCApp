@@ -53,7 +53,6 @@
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.assistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addEFAButton = new System.Windows.Forms.Button();
             this.lblefa_request = new System.Windows.Forms.Label();
             this.efaHistPanel = new System.Windows.Forms.Panel();
@@ -292,8 +291,7 @@
             this.lstActiveReq.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.date,
             this.assistance,
-            this.Status,
-            this.amount});
+            this.Status});
             this.lstActiveReq.Location = new System.Drawing.Point(22, 22);
             this.lstActiveReq.Name = "lstActiveReq";
             this.lstActiveReq.Size = new System.Drawing.Size(558, 157);
@@ -304,23 +302,17 @@
             // 
             // date
             // 
-            this.date.Text = "Date";
-            this.date.Width = 81;
+            this.date.Text = "Date Requested";
+            this.date.Width = 90;
             // 
             // assistance
             // 
-            this.assistance.Text = "Assistance type";
-            this.assistance.Width = 167;
+            this.assistance.Text = "Assistance Types";
+            this.assistance.Width = 400;
             // 
             // Status
             // 
-            this.Status.Text = "status";
-            this.Status.Width = 73;
-            // 
-            // amount
-            // 
-            this.amount.Text = "Amount";
-            this.amount.Width = 296;
+            this.Status.Text = "Status";
             // 
             // addEFAButton
             // 
@@ -529,6 +521,7 @@
             this.Controls.Add(this.reqpanel);
             this.Controls.Add(this.Contactpanel);
             this.Name = "ClientDetails";
+            this.Load += new System.EventHandler(this.ClientDetails_Load);
             this.Contactpanel.ResumeLayout(false);
             this.Contactpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -573,7 +566,6 @@
         private System.Windows.Forms.ColumnHeader date;
         private System.Windows.Forms.ColumnHeader assistance;
         private System.Windows.Forms.ColumnHeader Status;
-        private System.Windows.Forms.ColumnHeader amount;
         private System.Windows.Forms.Button addEFAButton;
         private System.Windows.Forms.ListView lstViewHist;
         private System.Windows.Forms.ColumnHeader hist_date;
