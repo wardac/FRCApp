@@ -12,8 +12,8 @@ namespace FRCApp
 {
     public partial class ApprovalForm : Form
     {
-        private int requestID;
-        public ApprovalForm(int requestID)
+        private String requestID;
+        public ApprovalForm(String requestID)
         {
             this.requestID = requestID;
             InitializeComponent();
@@ -32,7 +32,11 @@ namespace FRCApp
 
         private void ApprovalForm_Load(object sender, EventArgs e)
         {
-
+            var efaSubrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
+            var efaSubrequests = efaSubrequestAdapter.GetEFASubrequestsByEFARequestID(requestID);
+            //foreach (var subrequest in efaSubrequests) {
+            //    chklst_services.Items.Add(subrequest.
+            //}
         }
     }
 }
