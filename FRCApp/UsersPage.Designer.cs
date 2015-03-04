@@ -88,8 +88,9 @@
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(129, 23);
             this.back.TabIndex = 2;
-            this.back.Text = "Back to start Page";
+            this.back.Text = "Cancel";
             this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // UsersPage
             // 
@@ -101,6 +102,7 @@
             this.Controls.Add(this.listusers);
             this.Name = "UsersPage";
             this.Text = "Users page";
+            this.Activated += new System.EventHandler(this.UsersPage_Activated);
             this.ResumeLayout(false);
 
         }

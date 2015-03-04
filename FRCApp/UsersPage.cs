@@ -24,6 +24,7 @@ namespace FRCApp
          **/
         private void fillListView()
         {
+            listusers.Items.Clear();
             DataSet1TableAdapters.UsersTableAdapter adapter = new DataSet1TableAdapters.UsersTableAdapter();
             foreach (DataRow row in adapter.GetData().Rows)
             {
@@ -39,6 +40,19 @@ namespace FRCApp
         {
             newUser usr = new newUser();
             usr.Show();
+        }
+
+        /**
+         * Updates the users page every time it is activated
+         **/
+        private void UsersPage_Activated(object sender, EventArgs e)
+        {
+            fillListView();
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
