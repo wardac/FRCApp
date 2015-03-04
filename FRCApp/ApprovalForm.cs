@@ -49,7 +49,7 @@ namespace FRCApp
             lst_approvedServices.ValueMember = "EFASubrequestID";
             foreach (var subrequest in efaSubrequests) {
                 lst_requestedServices.Items.Add(
-                    new { Type = subrequest.EFARequestType, EFASubrequestID = subrequest.EFASubrequestID }
+                    new Service(subrequest.EFARequestType, subrequest.EFASubrequestID)
                 );
             }
         }
@@ -61,9 +61,34 @@ namespace FRCApp
 
         private void btn_done_Click(object sender, EventArgs e)
         {
+            var efaSubrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
+            foreach (Service unapprovedService in lst_requestedServices.Items)
+            {
+                efaSubrequestAdapter.AddOrUpdateEFASubrequest(unapprovedService.EFASubrequestID, requestID, unapprovedService.Type, DateTime.Now, false);
+            }
 
+            foreach (Service approvedService in lst_approvedServices.Items)
+            {
+                efaSubrequestAdapter.AddOrUpdateEFASubrequest(approvedService.EFASubrequestID, requestID, approvedService.Type, DateTime.Now, true);
+            }
+
+            this.Close();
         }
 
-        
+        private class Service
+        {
+            public String Type;
+            public String EFASubrequestID;
+            public Service(String Type, String EFASubrequestID)
+            {
+                this.Type = Type;
+                this.EFASubrequestID = EFASubrequestID;
+            }
+
+            public override string ToString()
+            {
+                return Type;
+            }
+        }
     }
 }
