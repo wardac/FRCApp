@@ -77,6 +77,10 @@
             this.caseNoteupdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.casenoteCmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblcasenote = new System.Windows.Forms.Label();
+            this.editClientButton = new System.Windows.Forms.Button();
+            this.editHouseholdInformationButton = new System.Windows.Forms.Button();
+            this.editMonthlyExpensesButton = new System.Windows.Forms.Button();
+            this.editIncomeAndFinancesButton = new System.Windows.Forms.Button();
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,6 +94,10 @@
             // Contactpanel
             // 
             this.Contactpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Contactpanel.Controls.Add(this.editIncomeAndFinancesButton);
+            this.Contactpanel.Controls.Add(this.editMonthlyExpensesButton);
+            this.Contactpanel.Controls.Add(this.editHouseholdInformationButton);
+            this.Contactpanel.Controls.Add(this.editClientButton);
             this.Contactpanel.Controls.Add(this.lstdateContact);
             this.Contactpanel.Controls.Add(this.lblLastContact);
             this.Contactpanel.Controls.Add(this.ClientDetailsAddressTextBox);
@@ -150,7 +158,7 @@
             // ClientDetailsEmailTextBox
             // 
             this.ClientDetailsEmailTextBox.Enabled = false;
-            this.ClientDetailsEmailTextBox.Location = new System.Drawing.Point(57, 185);
+            this.ClientDetailsEmailTextBox.Location = new System.Drawing.Point(55, 191);
             this.ClientDetailsEmailTextBox.Name = "ClientDetailsEmailTextBox";
             this.ClientDetailsEmailTextBox.Size = new System.Drawing.Size(129, 20);
             this.ClientDetailsEmailTextBox.TabIndex = 13;
@@ -158,7 +166,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 185);
+            this.pictureBox2.Location = new System.Drawing.Point(5, 185);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(44, 29);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,7 +176,7 @@
             // ClientDetailsPhone2TextBox
             // 
             this.ClientDetailsPhone2TextBox.Enabled = false;
-            this.ClientDetailsPhone2TextBox.Location = new System.Drawing.Point(57, 150);
+            this.ClientDetailsPhone2TextBox.Location = new System.Drawing.Point(55, 150);
             this.ClientDetailsPhone2TextBox.Name = "ClientDetailsPhone2TextBox";
             this.ClientDetailsPhone2TextBox.Size = new System.Drawing.Size(129, 20);
             this.ClientDetailsPhone2TextBox.TabIndex = 11;
@@ -184,7 +192,7 @@
             // ClientDetailsZipTextBox
             // 
             this.ClientDetailsZipTextBox.Enabled = false;
-            this.ClientDetailsZipTextBox.Location = new System.Drawing.Point(200, 89);
+            this.ClientDetailsZipTextBox.Location = new System.Drawing.Point(210, 87);
             this.ClientDetailsZipTextBox.Name = "ClientDetailsZipTextBox";
             this.ClientDetailsZipTextBox.Size = new System.Drawing.Size(48, 20);
             this.ClientDetailsZipTextBox.TabIndex = 9;
@@ -194,7 +202,7 @@
             this.ClientDetailsStateTextBox.Enabled = false;
             this.ClientDetailsStateTextBox.Location = new System.Drawing.Point(154, 87);
             this.ClientDetailsStateTextBox.Name = "ClientDetailsStateTextBox";
-            this.ClientDetailsStateTextBox.Size = new System.Drawing.Size(32, 20);
+            this.ClientDetailsStateTextBox.Size = new System.Drawing.Size(35, 20);
             this.ClientDetailsStateTextBox.TabIndex = 8;
             // 
             // ClientDetailsCityTextBox
@@ -229,7 +237,7 @@
             // 
             this.lblzip.AutoSize = true;
             this.lblzip.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblzip.Location = new System.Drawing.Point(212, 73);
+            this.lblzip.Location = new System.Drawing.Point(225, 73);
             this.lblzip.Name = "lblzip";
             this.lblzip.Size = new System.Drawing.Size(21, 12);
             this.lblzip.TabIndex = 4;
@@ -510,6 +518,43 @@
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
             // 
+            // editClientButton
+            // 
+            this.editClientButton.Location = new System.Drawing.Point(265, 87);
+            this.editClientButton.Name = "editClientButton";
+            this.editClientButton.Size = new System.Drawing.Size(149, 23);
+            this.editClientButton.TabIndex = 18;
+            this.editClientButton.Text = "Edit Client";
+            this.editClientButton.UseVisualStyleBackColor = true;
+            this.editClientButton.Click += new System.EventHandler(this.editClientButton_Click);
+            // 
+            // editHouseholdInformationButton
+            // 
+            this.editHouseholdInformationButton.Location = new System.Drawing.Point(265, 121);
+            this.editHouseholdInformationButton.Name = "editHouseholdInformationButton";
+            this.editHouseholdInformationButton.Size = new System.Drawing.Size(149, 23);
+            this.editHouseholdInformationButton.TabIndex = 19;
+            this.editHouseholdInformationButton.Text = "Edit Household Information";
+            this.editHouseholdInformationButton.UseVisualStyleBackColor = true;
+            // 
+            // editMonthlyExpensesButton
+            // 
+            this.editMonthlyExpensesButton.Location = new System.Drawing.Point(265, 155);
+            this.editMonthlyExpensesButton.Name = "editMonthlyExpensesButton";
+            this.editMonthlyExpensesButton.Size = new System.Drawing.Size(149, 23);
+            this.editMonthlyExpensesButton.TabIndex = 20;
+            this.editMonthlyExpensesButton.Text = "Edit Monthly Expenses";
+            this.editMonthlyExpensesButton.UseVisualStyleBackColor = true;
+            // 
+            // editIncomeAndFinancesButton
+            // 
+            this.editIncomeAndFinancesButton.Location = new System.Drawing.Point(265, 189);
+            this.editIncomeAndFinancesButton.Name = "editIncomeAndFinancesButton";
+            this.editIncomeAndFinancesButton.Size = new System.Drawing.Size(149, 23);
+            this.editIncomeAndFinancesButton.TabIndex = 21;
+            this.editIncomeAndFinancesButton.Text = "Edit Income and Finances";
+            this.editIncomeAndFinancesButton.UseVisualStyleBackColor = true;
+            // 
             // ClientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,5 +634,9 @@
         private System.Windows.Forms.ColumnHeader caseNoteupdate;
         private System.Windows.Forms.ColumnHeader casenoteCmt;
         private System.Windows.Forms.Label lblcasenote;
+        private System.Windows.Forms.Button editClientButton;
+        private System.Windows.Forms.Button editIncomeAndFinancesButton;
+        private System.Windows.Forms.Button editMonthlyExpensesButton;
+        private System.Windows.Forms.Button editHouseholdInformationButton;
     }
 }

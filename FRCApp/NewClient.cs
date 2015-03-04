@@ -17,13 +17,23 @@ namespace FRCApp {
         private FinanceForm financeForm;
         private Guid clientID;
         private Guid householdID;
+        private String clientIdAsString;
+        private String householdIdAsString;
         private const int BACKSPACE = 8;
         private const int DELETE = 46;
 
-        public NewClient() {
+        public NewClient() 
+        {
             InitializeComponent();
             clientID = Guid.NewGuid();
             householdID = Guid.NewGuid();
+        }
+
+        public NewClient(String ClientID, String householdId)
+        {
+            InitializeComponent();
+            clientIdAsString = ClientID;
+            householdIdAsString = householdId;
         }
 
         private void householdInfo_button_Click(object sender, EventArgs e)
@@ -111,6 +121,7 @@ namespace FRCApp {
                 );
 
                 this.Close();
+                new ClientDetails(clientID.ToString()).Show();
             }
         }
 
