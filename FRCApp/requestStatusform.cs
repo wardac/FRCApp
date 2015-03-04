@@ -148,7 +148,7 @@ namespace FRCApp
             }
 
             var requestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
-            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID, dates[0], dates[1], dates[2], dates[3], dates[4], (int)cmb_hardship.SelectedValue, efa_comment.Text, date_requestDate.Value, 3);
+            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID, dates[0], dates[1], dates[2], dates[3], dates[4], (int)cmb_hardship.SelectedValue, efa_comment.Text, date_requestDate.Value, 3, null, null);
 
             if (NewRequest)
             {
