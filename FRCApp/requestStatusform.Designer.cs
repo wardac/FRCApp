@@ -34,6 +34,8 @@
             this.checklist_requestType = new System.Windows.Forms.CheckedListBox();
             this.lblComment = new System.Windows.Forms.Label();
             this.grpcauseshardship = new System.Windows.Forms.GroupBox();
+            this.txt_hardshipDesc = new System.Windows.Forms.TextBox();
+            this.cmb_hardship = new System.Windows.Forms.ComboBox();
             this.efa_financegroup = new System.Windows.Forms.GroupBox();
             this.txt_Mexpenses = new System.Windows.Forms.TextBox();
             this.txt_Mincome = new System.Windows.Forms.TextBox();
@@ -63,9 +65,7 @@
             this.update_efa = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.cmb_hardship = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.txt_hardshipDesc = new System.Windows.Forms.TextBox();
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
@@ -137,6 +137,25 @@
             this.grpcauseshardship.TabIndex = 19;
             this.grpcauseshardship.TabStop = false;
             this.grpcauseshardship.Text = "Cause of hardship";
+            // 
+            // txt_hardshipDesc
+            // 
+            this.txt_hardshipDesc.BackColor = System.Drawing.SystemColors.Menu;
+            this.txt_hardshipDesc.Enabled = false;
+            this.txt_hardshipDesc.Location = new System.Drawing.Point(7, 48);
+            this.txt_hardshipDesc.Multiline = true;
+            this.txt_hardshipDesc.Name = "txt_hardshipDesc";
+            this.txt_hardshipDesc.ReadOnly = true;
+            this.txt_hardshipDesc.Size = new System.Drawing.Size(384, 61);
+            this.txt_hardshipDesc.TabIndex = 1;
+            // 
+            // cmb_hardship
+            // 
+            this.cmb_hardship.FormattingEnabled = true;
+            this.cmb_hardship.Location = new System.Drawing.Point(7, 20);
+            this.cmb_hardship.Name = "cmb_hardship";
+            this.cmb_hardship.Size = new System.Drawing.Size(384, 21);
+            this.cmb_hardship.TabIndex = 0;
             // 
             // efa_financegroup
             // 
@@ -386,6 +405,7 @@
             this.cancelEfa.TabIndex = 1;
             this.cancelEfa.Text = "cancel";
             this.cancelEfa.UseVisualStyleBackColor = true;
+            this.cancelEfa.Click += new System.EventHandler(this.cancelEfa_Click);
             // 
             // update_efa
             // 
@@ -416,27 +436,10 @@
             this.lineShape1.Y1 = 100;
             this.lineShape1.Y2 = 378;
             // 
-            // cmb_hardship
-            // 
-            this.cmb_hardship.FormattingEnabled = true;
-            this.cmb_hardship.Location = new System.Drawing.Point(7, 20);
-            this.cmb_hardship.Name = "cmb_hardship";
-            this.cmb_hardship.Size = new System.Drawing.Size(384, 21);
-            this.cmb_hardship.TabIndex = 0;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // txt_hardshipDesc
-            // 
-            this.txt_hardshipDesc.Enabled = false;
-            this.txt_hardshipDesc.Location = new System.Drawing.Point(7, 48);
-            this.txt_hardshipDesc.Multiline = true;
-            this.txt_hardshipDesc.Name = "txt_hardshipDesc";
-            this.txt_hardshipDesc.Size = new System.Drawing.Size(384, 61);
-            this.txt_hardshipDesc.TabIndex = 1;
             // 
             // dataSet1
             // 

@@ -20,7 +20,7 @@ namespace FRCApp
             this.NewRequest = NewRequest;
             InitializeComponent();
             this.ClientID = ClientID;
-            this.RequestID = RequestID;
+            this.RequestID = RequestID ?? System.Guid.NewGuid().ToString();
         }
 
 
@@ -115,7 +115,6 @@ namespace FRCApp
                 foreach (var reqType in reqTypes)
                 {
                     checklist_requestType.Items.Add(reqType.Type);
-
                 }
             }
             else
@@ -158,6 +157,31 @@ namespace FRCApp
         private void update_efa_Click(object sender, EventArgs e)
         {
 
+            CheckBox[] boxes = { efa_proofaddress, efa_proofHousehold, efa_proofIncome, efa_proofAssistance, efa_proofharship };
+            DateTimePicker[] pickers = { addressdate, householdDate, incomedate, assistancedate, hardshipdate };
+            DateTime?[] dates = new DateTime?[boxes.Length];
+            for (int i = 0; i < boxes.Length; ++i) {
+                dates[i] = boxes[i].Checked ? (DateTime?)DateTime.Parse(pickers[i].Text) : null;
+            }
+
+            var requestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
+            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID, dates[0], dates[1], dates[2], dates[3], dates[4], (int)cmb_hardship.SelectedValue, efa_comment.Text, (DateTime?)DateTime.Parse(date_requestDate.Text), 3);
+
+            if (NewRequest)
+            {
+                var subrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
+                foreach (var category in checklist_requestType.CheckedItems)
+                {
+                    subrequestAdapter.AddOrUpdateEFASubrequest(System.Guid.NewGuid().ToString(), RequestID, category.ToString(), null, null);
+                }
+            }
+
+            this.Close();
+        }
+
+        private void cancelEfa_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
