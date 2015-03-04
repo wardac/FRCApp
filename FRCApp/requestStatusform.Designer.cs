@@ -69,6 +69,7 @@
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
+            this.btn_handleRequest = new System.Windows.Forms.Button();
             this.requestPanel.SuspendLayout();
             this.grpcauseshardship.SuspendLayout();
             this.efa_financegroup.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // requestPanel
             // 
+            this.requestPanel.Controls.Add(this.btn_handleRequest);
             this.requestPanel.Controls.Add(this.lst_reqTypes);
             this.requestPanel.Controls.Add(this.checklist_requestType);
             this.requestPanel.Controls.Add(this.lblComment);
@@ -403,17 +405,17 @@
             this.cancelEfa.Name = "cancelEfa";
             this.cancelEfa.Size = new System.Drawing.Size(76, 29);
             this.cancelEfa.TabIndex = 1;
-            this.cancelEfa.Text = "cancel";
+            this.cancelEfa.Text = "Cancel";
             this.cancelEfa.UseVisualStyleBackColor = true;
             this.cancelEfa.Click += new System.EventHandler(this.cancelEfa_Click);
             // 
             // update_efa
             // 
-            this.update_efa.Location = new System.Drawing.Point(307, 576);
+            this.update_efa.Location = new System.Drawing.Point(211, 576);
             this.update_efa.Name = "update_efa";
             this.update_efa.Size = new System.Drawing.Size(76, 29);
             this.update_efa.TabIndex = 0;
-            this.update_efa.Text = "submit";
+            this.update_efa.Text = "Submit";
             this.update_efa.UseVisualStyleBackColor = true;
             this.update_efa.Click += new System.EventHandler(this.update_efa_Click);
             // 
@@ -454,6 +456,16 @@
             // eFARequestTypesTableAdapter
             // 
             this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_handleRequest
+            // 
+            this.btn_handleRequest.Location = new System.Drawing.Point(311, 576);
+            this.btn_handleRequest.Name = "btn_handleRequest";
+            this.btn_handleRequest.Size = new System.Drawing.Size(76, 29);
+            this.btn_handleRequest.TabIndex = 24;
+            this.btn_handleRequest.Text = "Handle";
+            this.btn_handleRequest.UseVisualStyleBackColor = true;
+            this.btn_handleRequest.Click += new System.EventHandler(this.btn_handleRequest_Click);
             // 
             // requestStatusform
             // 
@@ -520,5 +532,6 @@
         private System.Windows.Forms.TextBox txt_hardshipDesc;
         private System.Windows.Forms.ComboBox cmb_hardship;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button btn_handleRequest;
     }
 }

@@ -15,85 +15,64 @@ namespace FRCApp
         Boolean NewRequest;
         String ClientID;
         String RequestID;
-        public requestStatusform(String ClientID, String RequestID, Boolean NewRequest)
+        public requestStatusform(String ClientID, String RequestID, Boolean NewRequest, Action OnCloseEvent)
         {
             this.NewRequest = NewRequest;
             InitializeComponent();
             this.ClientID = ClientID;
             this.RequestID = RequestID ?? System.Guid.NewGuid().ToString();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler((o, e) => OnCloseEvent());
         }
 
 
 
         private void efa_proofaddress_CheckedChanged(object sender, EventArgs e)
         {
-            if (efa_proofaddress.Checked)
-            {
-                addressdate.Visible = true;
-                addressdate.Value = DateTime.Today.Date;
-            }
+            addressdate.Visible = efa_proofaddress.Checked;
         }
 
         private void efa_proofHousehold_CheckedChanged(object sender, EventArgs e)
         {
-            if (efa_proofHousehold.Checked)
-            {
-                householdDate.Visible = true;
-                householdDate.Value = DateTime.Today.Date;
-            }
+            householdDate.Visible = efa_proofHousehold.Checked;
         }
 
         private void efa_proofIncome_CheckedChanged(object sender, EventArgs e)
         {
-            if (efa_proofIncome.Checked)
-            {
-                incomedate.Visible = true;
-                incomedate.Value = DateTime.Today.Date;
-            }
+            incomedate.Visible = efa_proofIncome.Checked;
         }
 
         private void efa_proofharship_CheckedChanged(object sender, EventArgs e)
         {
-            if (efa_proofharship.Checked)
-            {
-                hardshipdate.Visible = true;
-                hardshipdate.Value = DateTime.Today.Date;
-            }
+            hardshipdate.Visible = efa_proofharship.Checked;
         }
 
         private void efa_proofAssistance_CheckedChanged(object sender, EventArgs e)
         {
-            assistancedate.Visible = true;
-            assistancedate.Value = DateTime.Today.Date;
+            assistancedate.Visible = efa_proofAssistance.Checked;
         }
 
 
         private void requestStatusform_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.EFARequestTypes' table. You can move, or remove it, as needed.
-            this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
-            
-           
-           
-            // TODO: This line of code loads data into the 'dataSet1.EFARequestTypes' table. You can move, or remove it, as needed.
-            this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
-
-            //cmbEfaCategory.DataSource = this.eFARequestTypesTableAdapter.GetData();
-            //cmbEfaCategory.ValueMember = "EFARequestTypeID";
-            //cmbEfaCategory.DisplayMember = "Type";
-            
-
             DataSet1TableAdapters.ClientsTableAdapter client = new DataSet1TableAdapters.ClientsTableAdapter();
             var clients = client.GetDataByid(ClientID);
             efa_clientName.Text = clients[0].FirstName;
             DataSet1TableAdapters.IncomeInfoTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeInfoTableAdapter();
             var incomeinfo = incomeAdapter.GetIncomeInfo(clients[0].HouseholdID);
-            txt_QHincome.Text = incomeinfo[0].QuarterlyIncome.ToString();
-            txt_Mincome.Text = incomeinfo[0].MonthlyIncome.ToString();
+            if (incomeinfo != null && incomeinfo.Count > 0)
+            {
+                txt_QHincome.Text = incomeinfo[0].QuarterlyIncome.ToString();
+                txt_Mincome.Text = incomeinfo[0].MonthlyIncome.ToString();
+            }
+            else
+            {
+                txt_QHincome.Text = "0";
+                txt_Mincome.Text = "0";
+            }
             
             var expensesAdapter = new DataSet1TableAdapters.MonthlyExpensesTableAdapter();
             var monthlyExpenses = expensesAdapter.getExpenseInfoByHouseholdID(clients[0].HouseholdID);
-            txt_Mexpenses.Text = monthlyExpenses.ToString();
+            txt_Mexpenses.Text = monthlyExpenses == null ? "0" : monthlyExpenses.ToString();
 
             var hardshipsAdapter = new DataSet1TableAdapters.HardshipTypesTableAdapter();
             var hardships = hardshipsAdapter.GetData();
@@ -107,6 +86,7 @@ namespace FRCApp
                 txt_hardshipDesc.Text = hardship.Description;
             });
 
+
             if (NewRequest)
             {
                 this.Text = "New EFA Request";
@@ -116,6 +96,8 @@ namespace FRCApp
                 {
                     checklist_requestType.Items.Add(reqType.Type);
                 }
+                var hardship = hardshipsAdapter.GetHardshipsByID((int)cmb_hardship.SelectedValue)[0];
+                txt_hardshipDesc.Text = hardship.Description;
             }
             else
             {
@@ -151,6 +133,7 @@ namespace FRCApp
                 cmb_hardship.Text = hardship.Name;
                 txt_hardshipDesc.Text = hardship.Description;
                 efa_comment.Text = request.HardshipDetail;
+                date_requestDate.Value = request.DateRequested;
             }
         }
 
@@ -165,7 +148,7 @@ namespace FRCApp
             }
 
             var requestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
-            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID, dates[0], dates[1], dates[2], dates[3], dates[4], (int)cmb_hardship.SelectedValue, efa_comment.Text, (DateTime?)DateTime.Parse(date_requestDate.Text), 3);
+            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID, dates[0], dates[1], dates[2], dates[3], dates[4], (int)cmb_hardship.SelectedValue, efa_comment.Text, date_requestDate.Value, 3, null, null);
 
             if (NewRequest)
             {
@@ -175,13 +158,19 @@ namespace FRCApp
                     subrequestAdapter.AddOrUpdateEFASubrequest(System.Guid.NewGuid().ToString(), RequestID, category.ToString(), null, null);
                 }
             }
-
             this.Close();
         }
 
         private void cancelEfa_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_handleRequest_Click(object sender, EventArgs e)
+        {
+            var approvalForm = new ApprovalForm(RequestID, (() => this.Show()));
+            this.Hide();
+            approvalForm.Show();
         }
     }
 }

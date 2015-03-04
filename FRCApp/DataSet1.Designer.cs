@@ -7507,6 +7507,10 @@ namespace FRCApp {
             
             private global::System.Data.DataColumn columnEFARequestStatusID;
             
+            private global::System.Data.DataColumn columnDenialReason;
+            
+            private global::System.Data.DataColumn columnApprovalReason;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EFARequestsDataTable() {
@@ -7630,6 +7634,22 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DenialReasonColumn {
+                get {
+                    return this.columnDenialReason;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ApprovalReasonColumn {
+                get {
+                    return this.columnApprovalReason;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7665,7 +7685,7 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsRow AddEFARequestsRow(string EFARequestID, string ClientID, System.DateTime AddressVerification, System.DateTime HouseholdVerification, System.DateTime IncomeVerification, System.DateTime BillVerification, System.DateTime HardshipVerification, HardshipTypesRow parentHardshipTypesRowByFK__EFAReques__Hards__1E8F7FEF, string HardshipDetail, System.DateTime DateRequested, int EFARequestStatusID) {
+            public EFARequestsRow AddEFARequestsRow(string EFARequestID, string ClientID, System.DateTime AddressVerification, System.DateTime HouseholdVerification, System.DateTime IncomeVerification, System.DateTime BillVerification, System.DateTime HardshipVerification, HardshipTypesRow parentHardshipTypesRowByFK__EFAReques__Hards__1E8F7FEF, string HardshipDetail, System.DateTime DateRequested, int EFARequestStatusID, string DenialReason, string ApprovalReason) {
                 EFARequestsRow rowEFARequestsRow = ((EFARequestsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EFARequestID,
@@ -7678,7 +7698,9 @@ namespace FRCApp {
                         null,
                         HardshipDetail,
                         DateRequested,
-                        EFARequestStatusID};
+                        EFARequestStatusID,
+                        DenialReason,
+                        ApprovalReason};
                 if ((parentHardshipTypesRowByFK__EFAReques__Hards__1E8F7FEF != null)) {
                     columnValuesArray[7] = parentHardshipTypesRowByFK__EFAReques__Hards__1E8F7FEF[0];
                 }
@@ -7722,6 +7744,8 @@ namespace FRCApp {
                 this.columnHardshipDetail = base.Columns["HardshipDetail"];
                 this.columnDateRequested = base.Columns["DateRequested"];
                 this.columnEFARequestStatusID = base.Columns["EFARequestStatusID"];
+                this.columnDenialReason = base.Columns["DenialReason"];
+                this.columnApprovalReason = base.Columns["ApprovalReason"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7749,6 +7773,10 @@ namespace FRCApp {
                 base.Columns.Add(this.columnDateRequested);
                 this.columnEFARequestStatusID = new global::System.Data.DataColumn("EFARequestStatusID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEFARequestStatusID);
+                this.columnDenialReason = new global::System.Data.DataColumn("DenialReason", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDenialReason);
+                this.columnApprovalReason = new global::System.Data.DataColumn("ApprovalReason", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApprovalReason);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEFARequestID}, true));
                 this.columnEFARequestID.AllowDBNull = false;
@@ -7757,6 +7785,8 @@ namespace FRCApp {
                 this.columnClientID.MaxLength = 36;
                 this.columnHardshipDetail.MaxLength = 2147483647;
                 this.columnDateRequested.AllowDBNull = false;
+                this.columnDenialReason.MaxLength = 2147483647;
+                this.columnApprovalReason.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11005,6 +11035,38 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DenialReason {
+                get {
+                    try {
+                        return ((string)(this[this.tableEFARequests.DenialReasonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DenialReason\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.DenialReasonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ApprovalReason {
+                get {
+                    try {
+                        return ((string)(this[this.tableEFARequests.ApprovalReasonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ApprovalReason\' in table \'EFARequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequests.ApprovalReasonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public HardshipTypesRow HardshipTypesRow {
                 get {
                     return ((HardshipTypesRow)(this.GetParentRow(this.Table.ParentRelations["FK__EFAReques__Hards__1E8F7FEF"])));
@@ -11120,6 +11182,30 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEFARequestStatusIDNull() {
                 this[this.tableEFARequests.EFARequestStatusIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDenialReasonNull() {
+                return this.IsNull(this.tableEFARequests.DenialReasonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDenialReasonNull() {
+                this[this.tableEFARequests.DenialReasonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsApprovalReasonNull() {
+                return this.IsNull(this.tableEFARequests.ApprovalReasonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetApprovalReasonNull() {
+                this[this.tableEFARequests.ApprovalReasonColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -21680,6 +21766,8 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
             tableMapping.ColumnMappings.Add("HardshipDetail", "HardshipDetail");
             tableMapping.ColumnMappings.Add("DateRequested", "DateRequested");
             tableMapping.ColumnMappings.Add("EFARequestStatusID", "EFARequestStatusID");
+            tableMapping.ColumnMappings.Add("DenialReason", "DenialReason");
+            tableMapping.ColumnMappings.Add("ApprovalReason", "ApprovalReason");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -21705,8 +21793,8 @@ SELECT id, UserName, FirstName, LastName, Password, AccessLevel FROM Users WHERE
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestStatusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatusID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EFARequests] ([EFARequestID], [ClientID], [AddressVerification], [HouseholdVerification], [IncomeVerification], [BillVerification], [HardshipVerification], [HardshipTypeID], [HardshipDetail], [DateRequested], [EFARequestStatusID]) VALUES (@EFARequestID, @ClientID, @AddressVerification, @HouseholdVerification, @IncomeVerification, @BillVerification, @HardshipVerification, @HardshipTypeID, @HardshipDetail, @DateRequested, @EFARequestStatusID);
-SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, IncomeVerification, BillVerification, HardshipVerification, HardshipTypeID, HardshipDetail, DateRequested, EFARequestStatusID FROM EFARequests WHERE (EFARequestID = @EFARequestID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EFARequests] ([EFARequestID], [ClientID], [AddressVerification], [HouseholdVerification], [IncomeVerification], [BillVerification], [HardshipVerification], [HardshipTypeID], [HardshipDetail], [DateRequested], [EFARequestStatusID], [DenialReason], [ApprovalReason]) VALUES (@EFARequestID, @ClientID, @AddressVerification, @HouseholdVerification, @IncomeVerification, @BillVerification, @HardshipVerification, @HardshipTypeID, @HardshipDetail, @DateRequested, @EFARequestStatusID, @DenialReason, @ApprovalReason);
+SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, IncomeVerification, BillVerification, HardshipVerification, HardshipTypeID, HardshipDetail, DateRequested, EFARequestStatusID, DenialReason, ApprovalReason FROM EFARequests WHERE (EFARequestID = @EFARequestID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21719,6 +21807,8 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipDetail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateRequested", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateRequested", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestStatusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatusID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DenialReason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DenialReason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApprovalReason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApprovalReason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[EFARequests] SET [EFARequestID] = @EFARequestID, [ClientID] = @Clie" +
@@ -21726,24 +21816,25 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                 "ouseholdVerification, [IncomeVerification] = @IncomeVerification, [BillVerificat" +
                 "ion] = @BillVerification, [HardshipVerification] = @HardshipVerification, [Hards" +
                 "hipTypeID] = @HardshipTypeID, [HardshipDetail] = @HardshipDetail, [DateRequested" +
-                "] = @DateRequested, [EFARequestStatusID] = @EFARequestStatusID WHERE (([EFAReque" +
-                "stID] = @Original_EFARequestID) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NUL" +
-                "L) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_AddressVerification = 1 A" +
-                "ND [AddressVerification] IS NULL) OR ([AddressVerification] = @Original_AddressV" +
-                "erification)) AND ((@IsNull_HouseholdVerification = 1 AND [HouseholdVerification" +
-                "] IS NULL) OR ([HouseholdVerification] = @Original_HouseholdVerification)) AND (" +
-                "(@IsNull_IncomeVerification = 1 AND [IncomeVerification] IS NULL) OR ([IncomeVer" +
-                "ification] = @Original_IncomeVerification)) AND ((@IsNull_BillVerification = 1 A" +
-                "ND [BillVerification] IS NULL) OR ([BillVerification] = @Original_BillVerificati" +
-                "on)) AND ((@IsNull_HardshipVerification = 1 AND [HardshipVerification] IS NULL) " +
-                "OR ([HardshipVerification] = @Original_HardshipVerification)) AND ((@IsNull_Hard" +
-                "shipTypeID = 1 AND [HardshipTypeID] IS NULL) OR ([HardshipTypeID] = @Original_Ha" +
-                "rdshipTypeID)) AND ([DateRequested] = @Original_DateRequested) AND ((@IsNull_EFA" +
-                "RequestStatusID = 1 AND [EFARequestStatusID] IS NULL) OR ([EFARequestStatusID] =" +
-                " @Original_EFARequestStatusID)));\r\nSELECT EFARequestID, ClientID, AddressVerific" +
-                "ation, HouseholdVerification, IncomeVerification, BillVerification, HardshipVeri" +
-                "fication, HardshipTypeID, HardshipDetail, DateRequested, EFARequestStatusID FROM" +
-                " EFARequests WHERE (EFARequestID = @EFARequestID)";
+                "] = @DateRequested, [EFARequestStatusID] = @EFARequestStatusID, [DenialReason] =" +
+                " @DenialReason, [ApprovalReason] = @ApprovalReason WHERE (([EFARequestID] = @Ori" +
+                "ginal_EFARequestID) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([Clie" +
+                "ntID] = @Original_ClientID)) AND ((@IsNull_AddressVerification = 1 AND [AddressV" +
+                "erification] IS NULL) OR ([AddressVerification] = @Original_AddressVerification)" +
+                ") AND ((@IsNull_HouseholdVerification = 1 AND [HouseholdVerification] IS NULL) O" +
+                "R ([HouseholdVerification] = @Original_HouseholdVerification)) AND ((@IsNull_Inc" +
+                "omeVerification = 1 AND [IncomeVerification] IS NULL) OR ([IncomeVerification] =" +
+                " @Original_IncomeVerification)) AND ((@IsNull_BillVerification = 1 AND [BillVeri" +
+                "fication] IS NULL) OR ([BillVerification] = @Original_BillVerification)) AND ((@" +
+                "IsNull_HardshipVerification = 1 AND [HardshipVerification] IS NULL) OR ([Hardshi" +
+                "pVerification] = @Original_HardshipVerification)) AND ((@IsNull_HardshipTypeID =" +
+                " 1 AND [HardshipTypeID] IS NULL) OR ([HardshipTypeID] = @Original_HardshipTypeID" +
+                ")) AND ([DateRequested] = @Original_DateRequested) AND ((@IsNull_EFARequestStatu" +
+                "sID = 1 AND [EFARequestStatusID] IS NULL) OR ([EFARequestStatusID] = @Original_E" +
+                "FARequestStatusID)));\r\nSELECT EFARequestID, ClientID, AddressVerification, House" +
+                "holdVerification, IncomeVerification, BillVerification, HardshipVerification, Ha" +
+                "rdshipTypeID, HardshipDetail, DateRequested, EFARequestStatusID, DenialReason, A" +
+                "pprovalReason FROM EFARequests WHERE (EFARequestID = @EFARequestID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21756,6 +21847,8 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipDetail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HardshipDetail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateRequested", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateRequested", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestStatusID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestStatusID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DenialReason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DenialReason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApprovalReason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ApprovalReason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -21791,7 +21884,8 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Income" +
                 "Verification, BillVerification, HardshipVerification, HardshipTypeID, HardshipDe" +
-                "tail, DateRequested, EFARequestStatusID FROM dbo.EFARequests";
+                "tail, DateRequested, EFARequestStatusID, DenialReason, ApprovalReason FROM dbo.E" +
+                "FARequests";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -21809,6 +21903,8 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HardshipDetail", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateRequested", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestStatusID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DenialReason", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApprovalReason", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "dbo.GetEFARequestByEFARequestID";
@@ -21983,7 +22079,7 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string EFARequestID, string ClientID, global::System.Nullable<global::System.DateTime> AddressVerification, global::System.Nullable<global::System.DateTime> HouseholdVerification, global::System.Nullable<global::System.DateTime> IncomeVerification, global::System.Nullable<global::System.DateTime> BillVerification, global::System.Nullable<global::System.DateTime> HardshipVerification, global::System.Nullable<int> HardshipTypeID, string HardshipDetail, System.DateTime DateRequested, global::System.Nullable<int> EFARequestStatusID) {
+        public virtual int Insert(string EFARequestID, string ClientID, global::System.Nullable<global::System.DateTime> AddressVerification, global::System.Nullable<global::System.DateTime> HouseholdVerification, global::System.Nullable<global::System.DateTime> IncomeVerification, global::System.Nullable<global::System.DateTime> BillVerification, global::System.Nullable<global::System.DateTime> HardshipVerification, global::System.Nullable<int> HardshipTypeID, string HardshipDetail, System.DateTime DateRequested, global::System.Nullable<int> EFARequestStatusID, string DenialReason, string ApprovalReason) {
             if ((EFARequestID == null)) {
                 throw new global::System.ArgumentNullException("EFARequestID");
             }
@@ -22045,6 +22141,18 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((DenialReason == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(DenialReason));
+            }
+            if ((ApprovalReason == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(ApprovalReason));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22077,6 +22185,8 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     string HardshipDetail, 
                     System.DateTime DateRequested, 
                     global::System.Nullable<int> EFARequestStatusID, 
+                    string DenialReason, 
+                    string ApprovalReason, 
                     string Original_EFARequestID, 
                     string Original_ClientID, 
                     global::System.Nullable<global::System.DateTime> Original_AddressVerification, 
@@ -22148,76 +22258,88 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((DenialReason == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(DenialReason));
+            }
+            if ((ApprovalReason == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(ApprovalReason));
+            }
             if ((Original_EFARequestID == null)) {
                 throw new global::System.ArgumentNullException("Original_EFARequestID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_EFARequestID));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_EFARequestID));
             }
             if ((Original_ClientID == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_ClientID));
-            }
-            if ((Original_AddressVerification.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_AddressVerification.Value));
-            }
-            else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Original_HouseholdVerification.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_ClientID));
+            }
+            if ((Original_AddressVerification.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_HouseholdVerification.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_AddressVerification.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((Original_IncomeVerification.HasValue == true)) {
+            if ((Original_HouseholdVerification.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_IncomeVerification.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_HouseholdVerification.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Original_BillVerification.HasValue == true)) {
+            if ((Original_IncomeVerification.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_BillVerification.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_IncomeVerification.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((Original_HardshipVerification.HasValue == true)) {
+            if ((Original_BillVerification.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_HardshipVerification.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_BillVerification.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            if ((Original_HardshipTypeID.HasValue == true)) {
+            if ((Original_HardshipVerification.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_HardshipTypeID.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_HardshipVerification.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_DateRequested));
-            if ((Original_EFARequestStatusID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_EFARequestStatusID.Value));
+            if ((Original_HardshipTypeID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_HardshipTypeID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTime)(Original_DateRequested));
+            if ((Original_EFARequestStatusID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_EFARequestStatusID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -22250,6 +22372,8 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     string HardshipDetail, 
                     System.DateTime DateRequested, 
                     global::System.Nullable<int> EFARequestStatusID, 
+                    string DenialReason, 
+                    string ApprovalReason, 
                     string Original_EFARequestID, 
                     string Original_ClientID, 
                     global::System.Nullable<global::System.DateTime> Original_AddressVerification, 
@@ -22260,13 +22384,13 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     global::System.Nullable<int> Original_HardshipTypeID, 
                     System.DateTime Original_DateRequested, 
                     global::System.Nullable<int> Original_EFARequestStatusID) {
-            return this.Update(Original_EFARequestID, ClientID, AddressVerification, HouseholdVerification, IncomeVerification, BillVerification, HardshipVerification, HardshipTypeID, HardshipDetail, DateRequested, EFARequestStatusID, Original_EFARequestID, Original_ClientID, Original_AddressVerification, Original_HouseholdVerification, Original_IncomeVerification, Original_BillVerification, Original_HardshipVerification, Original_HardshipTypeID, Original_DateRequested, Original_EFARequestStatusID);
+            return this.Update(Original_EFARequestID, ClientID, AddressVerification, HouseholdVerification, IncomeVerification, BillVerification, HardshipVerification, HardshipTypeID, HardshipDetail, DateRequested, EFARequestStatusID, DenialReason, ApprovalReason, Original_EFARequestID, Original_ClientID, Original_AddressVerification, Original_HouseholdVerification, Original_IncomeVerification, Original_BillVerification, Original_HardshipVerification, Original_HardshipTypeID, Original_DateRequested, Original_EFARequestStatusID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int AddOrUpdateEFARequest(string EFARequestID, string ClientID, global::System.Nullable<global::System.DateTime> AddressVerification, global::System.Nullable<global::System.DateTime> HouseholdVerification, global::System.Nullable<global::System.DateTime> IncomeVerification, global::System.Nullable<global::System.DateTime> BillVerification, global::System.Nullable<global::System.DateTime> HardshipVerification, global::System.Nullable<int> HardshipTypeID, string HardshipDetail, global::System.Nullable<global::System.DateTime> DateRequested, global::System.Nullable<int> EFARequestStatusID) {
+        public virtual int AddOrUpdateEFARequest(string EFARequestID, string ClientID, global::System.Nullable<global::System.DateTime> AddressVerification, global::System.Nullable<global::System.DateTime> HouseholdVerification, global::System.Nullable<global::System.DateTime> IncomeVerification, global::System.Nullable<global::System.DateTime> BillVerification, global::System.Nullable<global::System.DateTime> HardshipVerification, global::System.Nullable<int> HardshipTypeID, string HardshipDetail, global::System.Nullable<global::System.DateTime> DateRequested, global::System.Nullable<int> EFARequestStatusID, string DenialReason, string ApprovalReason) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((EFARequestID == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
@@ -22333,6 +22457,18 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
             }
             else {
                 command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((DenialReason == null)) {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[12].Value = ((string)(DenialReason));
+            }
+            if ((ApprovalReason == null)) {
+                command.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[13].Value = ((string)(ApprovalReason));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

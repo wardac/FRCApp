@@ -48,7 +48,6 @@
             this.futureGoals_label = new System.Windows.Forms.Label();
             this.householdInfo_button = new System.Windows.Forms.Button();
             this.monthlyExpenses_button = new System.Windows.Forms.Button();
-            this.emergencyFunds_button = new System.Windows.Forms.Button();
             this.householdIncome_button = new System.Windows.Forms.Button();
             this.submit_button = new System.Windows.Forms.Button();
             this.HouseholdTypeBox = new System.Windows.Forms.ComboBox();
@@ -266,7 +265,7 @@
             // 
             // householdInfo_button
             // 
-            this.householdInfo_button.Location = new System.Drawing.Point(14, 517);
+            this.householdInfo_button.Location = new System.Drawing.Point(90, 517);
             this.householdInfo_button.Name = "householdInfo_button";
             this.householdInfo_button.Size = new System.Drawing.Size(149, 23);
             this.householdInfo_button.TabIndex = 17;
@@ -276,7 +275,7 @@
             // 
             // monthlyExpenses_button
             // 
-            this.monthlyExpenses_button.Location = new System.Drawing.Point(173, 517);
+            this.monthlyExpenses_button.Location = new System.Drawing.Point(245, 517);
             this.monthlyExpenses_button.Name = "monthlyExpenses_button";
             this.monthlyExpenses_button.Size = new System.Drawing.Size(134, 23);
             this.monthlyExpenses_button.TabIndex = 18;
@@ -284,18 +283,9 @@
             this.monthlyExpenses_button.UseVisualStyleBackColor = true;
             this.monthlyExpenses_button.Click += new System.EventHandler(this.monthlyExpenses_button_Click);
             // 
-            // emergencyFunds_button
-            // 
-            this.emergencyFunds_button.Location = new System.Drawing.Point(535, 517);
-            this.emergencyFunds_button.Name = "emergencyFunds_button";
-            this.emergencyFunds_button.Size = new System.Drawing.Size(180, 23);
-            this.emergencyFunds_button.TabIndex = 20;
-            this.emergencyFunds_button.Text = "New Emergency Funds Request";
-            this.emergencyFunds_button.UseVisualStyleBackColor = true;
-            // 
             // householdIncome_button
             // 
-            this.householdIncome_button.Location = new System.Drawing.Point(313, 517);
+            this.householdIncome_button.Location = new System.Drawing.Point(385, 517);
             this.householdIncome_button.Name = "householdIncome_button";
             this.householdIncome_button.Size = new System.Drawing.Size(216, 23);
             this.householdIncome_button.TabIndex = 19;
@@ -476,7 +466,6 @@
             this.Controls.Add(this.HouseholdTypeBox);
             this.Controls.Add(this.submit_button);
             this.Controls.Add(this.householdIncome_button);
-            this.Controls.Add(this.emergencyFunds_button);
             this.Controls.Add(this.monthlyExpenses_button);
             this.Controls.Add(this.householdInfo_button);
             this.Controls.Add(this.futureGoals_label);
@@ -541,7 +530,6 @@
         private System.Windows.Forms.Label futureGoals_label;
         private System.Windows.Forms.Button householdInfo_button;
         private System.Windows.Forms.Button monthlyExpenses_button;
-        private System.Windows.Forms.Button emergencyFunds_button;
         private System.Windows.Forms.Button householdIncome_button;
         private System.Windows.Forms.Button submit_button;
         private System.Windows.Forms.ComboBox HouseholdTypeBox;
