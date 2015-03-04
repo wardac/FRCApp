@@ -13,34 +13,57 @@ namespace FRCApp
     public partial class ApprovalForm : Form
     {
         private String requestID;
-        public ApprovalForm(String requestID)
+        public ApprovalForm(String requestID, Action OnCloseEvent)
         {
             this.requestID = requestID;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler((o, e) => OnCloseEvent());
             InitializeComponent();
         }
 
         private void btn_approve_Click(object sender, EventArgs e)
         {
-           for(int i=0;i<chklst_services.Items.Count;i++)
-           {
-               if (chklst_services.GetItemChecked(i))
-               {
-                   chklst_approved.Items.Add(chklst_services.GetItemChecked(i));
-               }
-           }
+            while (lst_requestedServices.SelectedItems.Count > 0)
+            {
+                lst_approvedServices.Items.Add(lst_requestedServices.SelectedItems[0]);
+                lst_requestedServices.Items.Remove(lst_requestedServices.SelectedItems[0]);
+            }
+            
+        }
+
+        private void btn_leftArrows_Click(object sender, EventArgs e)
+        {
+            while (lst_approvedServices.SelectedItems.Count > 0)
+            {
+                lst_requestedServices.Items.Add(lst_approvedServices.SelectedItems[0]);
+                lst_approvedServices.Items.Remove(lst_approvedServices.SelectedItems[0]);
+            }
         }
 
         private void ApprovalForm_Load(object sender, EventArgs e)
         {
             var efaSubrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
             var efaSubrequests = efaSubrequestAdapter.GetEFASubrequestsByEFARequestID(requestID);
-            chklst_services.DisplayMember = "Type";
-            chklst_services.ValueMember = "EFASubrequestID";
+            lst_requestedServices.DisplayMember = "Type";
+            lst_requestedServices.ValueMember = "EFASubrequestID";
+            lst_approvedServices.DisplayMember = "Type";
+            lst_approvedServices.ValueMember = "EFASubrequestID";
             foreach (var subrequest in efaSubrequests) {
-                chklst_services.Items.Add(
+                lst_requestedServices.Items.Add(
                     new { Type = subrequest.EFARequestType, EFASubrequestID = subrequest.EFASubrequestID }
                 );
             }
         }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_done_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

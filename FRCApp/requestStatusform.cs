@@ -54,19 +54,6 @@ namespace FRCApp
 
         private void requestStatusform_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.EFARequestTypes' table. You can move, or remove it, as needed.
-            this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
-            
-           
-           
-            // TODO: This line of code loads data into the 'dataSet1.EFARequestTypes' table. You can move, or remove it, as needed.
-            this.eFARequestTypesTableAdapter.Fill(this.dataSet1.EFARequestTypes);
-
-            //cmbEfaCategory.DataSource = this.eFARequestTypesTableAdapter.GetData();
-            //cmbEfaCategory.ValueMember = "EFARequestTypeID";
-            //cmbEfaCategory.DisplayMember = "Type";
-            
-
             DataSet1TableAdapters.ClientsTableAdapter client = new DataSet1TableAdapters.ClientsTableAdapter();
             var clients = client.GetDataByid(ClientID);
             efa_clientName.Text = clients[0].FirstName;
@@ -177,6 +164,13 @@ namespace FRCApp
         private void cancelEfa_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_handleRequest_Click(object sender, EventArgs e)
+        {
+            var approvalForm = new ApprovalForm(RequestID, (() => this.Show()));
+            this.Hide();
+            approvalForm.Show();
         }
     }
 }

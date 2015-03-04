@@ -28,38 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.chklst_services = new System.Windows.Forms.CheckedListBox();
-            this.chklst_approved = new System.Windows.Forms.CheckedListBox();
             this.lblReferals = new System.Windows.Forms.Label();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.chkApprovedReason = new System.Windows.Forms.CheckedListBox();
             this.ChkDeniedReason = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_approve = new System.Windows.Forms.Button();
+            this.btn_rightArrows = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_done = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lst_requestedServices = new System.Windows.Forms.ListBox();
+            this.lst_approvedServices = new System.Windows.Forms.ListBox();
+            this.btn_leftArrows = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // chklst_services
-            // 
-            this.chklst_services.FormattingEnabled = true;
-            this.chklst_services.Location = new System.Drawing.Point(12, 43);
-            this.chklst_services.Name = "chklst_services";
-            this.chklst_services.Size = new System.Drawing.Size(396, 304);
-            this.chklst_services.TabIndex = 0;
-            // 
-            // chklst_approved
-            // 
-            this.chklst_approved.FormattingEnabled = true;
-            this.chklst_approved.Location = new System.Drawing.Point(496, 43);
-            this.chklst_approved.Name = "chklst_approved";
-            this.chklst_approved.Size = new System.Drawing.Size(396, 304);
-            this.chklst_approved.TabIndex = 1;
             // 
             // lblReferals
             // 
@@ -96,7 +81,6 @@
             this.checkedListBox2.ScrollAlwaysVisible = true;
             this.checkedListBox2.Size = new System.Drawing.Size(396, 109);
             this.checkedListBox2.TabIndex = 7;
-            this.checkedListBox2.Visible = false;
             // 
             // chkApprovedReason
             // 
@@ -117,7 +101,6 @@
             this.chkApprovedReason.ScrollAlwaysVisible = true;
             this.chkApprovedReason.Size = new System.Drawing.Size(396, 109);
             this.chkApprovedReason.TabIndex = 3;
-            this.chkApprovedReason.Visible = false;
             // 
             // ChkDeniedReason
             // 
@@ -138,7 +121,6 @@
             this.ChkDeniedReason.ScrollAlwaysVisible = true;
             this.ChkDeniedReason.Size = new System.Drawing.Size(395, 109);
             this.ChkDeniedReason.TabIndex = 2;
-            this.ChkDeniedReason.Visible = false;
             // 
             // label1
             // 
@@ -160,16 +142,16 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "APPROVED SERVICES";
             // 
-            // btn_approve
+            // btn_rightArrows
             // 
-            this.btn_approve.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_approve.Location = new System.Drawing.Point(414, 166);
-            this.btn_approve.Name = "btn_approve";
-            this.btn_approve.Size = new System.Drawing.Size(76, 23);
-            this.btn_approve.TabIndex = 26;
-            this.btn_approve.Text = "Approve";
-            this.btn_approve.UseVisualStyleBackColor = true;
-            this.btn_approve.Click += new System.EventHandler(this.btn_approve_Click);
+            this.btn_rightArrows.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rightArrows.Location = new System.Drawing.Point(414, 166);
+            this.btn_rightArrows.Name = "btn_rightArrows";
+            this.btn_rightArrows.Size = new System.Drawing.Size(76, 23);
+            this.btn_rightArrows.TabIndex = 26;
+            this.btn_rightArrows.Text = ">>";
+            this.btn_rightArrows.UseVisualStyleBackColor = true;
+            this.btn_rightArrows.Click += new System.EventHandler(this.btn_approve_Click);
             // 
             // label2
             // 
@@ -199,6 +181,7 @@
             this.btn_back.TabIndex = 29;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // btn_done
             // 
@@ -208,6 +191,7 @@
             this.btn_done.TabIndex = 29;
             this.btn_done.Text = "Done";
             this.btn_done.UseVisualStyleBackColor = true;
+            this.btn_done.Click += new System.EventHandler(this.btn_done_Click);
             // 
             // shapeContainer1
             // 
@@ -229,25 +213,54 @@
             this.lineShape1.Y1 = 491;
             this.lineShape1.Y2 = 491;
             // 
+            // lst_requestedServices
+            // 
+            this.lst_requestedServices.FormattingEnabled = true;
+            this.lst_requestedServices.Location = new System.Drawing.Point(12, 43);
+            this.lst_requestedServices.Name = "lst_requestedServices";
+            this.lst_requestedServices.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lst_requestedServices.Size = new System.Drawing.Size(396, 303);
+            this.lst_requestedServices.TabIndex = 31;
+            // 
+            // lst_approvedServices
+            // 
+            this.lst_approvedServices.FormattingEnabled = true;
+            this.lst_approvedServices.Location = new System.Drawing.Point(496, 43);
+            this.lst_approvedServices.Name = "lst_approvedServices";
+            this.lst_approvedServices.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lst_approvedServices.Size = new System.Drawing.Size(396, 303);
+            this.lst_approvedServices.TabIndex = 32;
+            // 
+            // btn_leftArrows
+            // 
+            this.btn_leftArrows.Location = new System.Drawing.Point(415, 196);
+            this.btn_leftArrows.Name = "btn_leftArrows";
+            this.btn_leftArrows.Size = new System.Drawing.Size(75, 23);
+            this.btn_leftArrows.TabIndex = 33;
+            this.btn_leftArrows.Text = "<<";
+            this.btn_leftArrows.UseVisualStyleBackColor = true;
+            this.btn_leftArrows.Click += new System.EventHandler(this.btn_leftArrows_Click);
+            // 
             // ApprovalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(904, 635);
+            this.Controls.Add(this.btn_leftArrows);
+            this.Controls.Add(this.lst_approvedServices);
+            this.Controls.Add(this.lst_requestedServices);
             this.Controls.Add(this.btn_done);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.lblReferals);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.checkedListBox2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btn_approve);
+            this.Controls.Add(this.btn_rightArrows);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ChkDeniedReason);
             this.Controls.Add(this.chkApprovedReason);
-            this.Controls.Add(this.chklst_approved);
-            this.Controls.Add(this.chklst_services);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "ApprovalForm";
             this.Text = "Request Approval";
@@ -259,20 +272,21 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox chklst_services;
-        private System.Windows.Forms.CheckedListBox chklst_approved;
         private System.Windows.Forms.Label lblReferals;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.CheckedListBox chkApprovedReason;
         private System.Windows.Forms.CheckedListBox ChkDeniedReason;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btn_approve;
+        private System.Windows.Forms.Button btn_rightArrows;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button btn_done;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.ListBox lst_requestedServices;
+        private System.Windows.Forms.ListBox lst_approvedServices;
+        private System.Windows.Forms.Button btn_leftArrows;
     }
 }
