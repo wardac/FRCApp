@@ -96,7 +96,7 @@
             "Assistance promotes self-sufficency",
             "Household unexpected expenses",
             "other"});
-            this.chkApprovedReason.Location = new System.Drawing.Point(12, 372);
+            this.chkApprovedReason.Location = new System.Drawing.Point(496, 372);
             this.chkApprovedReason.Name = "chkApprovedReason";
             this.chkApprovedReason.ScrollAlwaysVisible = true;
             this.chkApprovedReason.Size = new System.Drawing.Size(396, 109);
@@ -116,7 +116,7 @@
             "HH not compliance with action/program",
             "HH request on NON approved Rx",
             "other"});
-            this.ChkDeniedReason.Location = new System.Drawing.Point(496, 372);
+            this.ChkDeniedReason.Location = new System.Drawing.Point(12, 372);
             this.ChkDeniedReason.Name = "ChkDeniedReason";
             this.ChkDeniedReason.ScrollAlwaysVisible = true;
             this.ChkDeniedReason.Size = new System.Drawing.Size(395, 109);
@@ -259,8 +259,8 @@
             this.Controls.Add(this.btn_rightArrows);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ChkDeniedReason);
             this.Controls.Add(this.chkApprovedReason);
+            this.Controls.Add(this.ChkDeniedReason);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "ApprovalForm";
             this.Text = "Request Approval";

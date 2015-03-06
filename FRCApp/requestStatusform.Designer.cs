@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.requestPanel = new System.Windows.Forms.Panel();
+            this.btn_handleRequest = new System.Windows.Forms.Button();
             this.lst_reqTypes = new System.Windows.Forms.ListBox();
             this.checklist_requestType = new System.Windows.Forms.CheckedListBox();
             this.lblComment = new System.Windows.Forms.Label();
@@ -66,10 +67,11 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lbl_completedDate = new System.Windows.Forms.Label();
+            this.date_completedDate = new System.Windows.Forms.DateTimePicker();
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
-            this.btn_handleRequest = new System.Windows.Forms.Button();
             this.requestPanel.SuspendLayout();
             this.grpcauseshardship.SuspendLayout();
             this.efa_financegroup.SuspendLayout();
@@ -80,6 +82,8 @@
             // 
             // requestPanel
             // 
+            this.requestPanel.Controls.Add(this.date_completedDate);
+            this.requestPanel.Controls.Add(this.lbl_completedDate);
             this.requestPanel.Controls.Add(this.btn_handleRequest);
             this.requestPanel.Controls.Add(this.lst_reqTypes);
             this.requestPanel.Controls.Add(this.checklist_requestType);
@@ -101,6 +105,16 @@
             this.requestPanel.Name = "requestPanel";
             this.requestPanel.Size = new System.Drawing.Size(867, 611);
             this.requestPanel.TabIndex = 1;
+            // 
+            // btn_handleRequest
+            // 
+            this.btn_handleRequest.Location = new System.Drawing.Point(311, 576);
+            this.btn_handleRequest.Name = "btn_handleRequest";
+            this.btn_handleRequest.Size = new System.Drawing.Size(76, 29);
+            this.btn_handleRequest.TabIndex = 24;
+            this.btn_handleRequest.Text = "Handle";
+            this.btn_handleRequest.UseVisualStyleBackColor = true;
+            this.btn_handleRequest.Click += new System.EventHandler(this.btn_handleRequest_Click);
             // 
             // lst_reqTypes
             // 
@@ -125,9 +139,9 @@
             this.lblComment.AutoSize = true;
             this.lblComment.Location = new System.Drawing.Point(450, 153);
             this.lblComment.Name = "lblComment";
-            this.lblComment.Size = new System.Drawing.Size(128, 13);
+            this.lblComment.Size = new System.Drawing.Size(139, 13);
             this.lblComment.TabIndex = 20;
-            this.lblComment.Text = "hardship details/comment";
+            this.lblComment.Text = "Hardship Details / Comment";
             // 
             // grpcauseshardship
             // 
@@ -138,7 +152,7 @@
             this.grpcauseshardship.Size = new System.Drawing.Size(397, 115);
             this.grpcauseshardship.TabIndex = 19;
             this.grpcauseshardship.TabStop = false;
-            this.grpcauseshardship.Text = "Cause of hardship";
+            this.grpcauseshardship.Text = "Cause of Hardship";
             // 
             // txt_hardshipDesc
             // 
@@ -264,7 +278,7 @@
             // 
             // householdDate
             // 
-            this.householdDate.Location = new System.Drawing.Point(150, 42);
+            this.householdDate.Location = new System.Drawing.Point(150, 41);
             this.householdDate.Name = "householdDate";
             this.householdDate.Size = new System.Drawing.Size(200, 20);
             this.householdDate.TabIndex = 9;
@@ -273,17 +287,17 @@
             // efa_proofHousehold
             // 
             this.efa_proofHousehold.AutoSize = true;
-            this.efa_proofHousehold.Location = new System.Drawing.Point(6, 42);
+            this.efa_proofHousehold.Location = new System.Drawing.Point(6, 44);
             this.efa_proofHousehold.Name = "efa_proofHousehold";
-            this.efa_proofHousehold.Size = new System.Drawing.Size(131, 17);
+            this.efa_proofHousehold.Size = new System.Drawing.Size(137, 17);
             this.efa_proofHousehold.TabIndex = 8;
-            this.efa_proofHousehold.Text = "id household members";
+            this.efa_proofHousehold.Text = "ID Household Members";
             this.efa_proofHousehold.UseVisualStyleBackColor = true;
             this.efa_proofHousehold.CheckedChanged += new System.EventHandler(this.efa_proofHousehold_CheckedChanged);
             // 
             // assistancedate
             // 
-            this.assistancedate.Location = new System.Drawing.Point(150, 121);
+            this.assistancedate.Location = new System.Drawing.Point(150, 116);
             this.assistancedate.Name = "assistancedate";
             this.assistancedate.Size = new System.Drawing.Size(200, 20);
             this.assistancedate.TabIndex = 7;
@@ -291,7 +305,7 @@
             // 
             // hardshipdate
             // 
-            this.hardshipdate.Location = new System.Drawing.Point(150, 95);
+            this.hardshipdate.Location = new System.Drawing.Point(150, 91);
             this.hardshipdate.Name = "hardshipdate";
             this.hardshipdate.Size = new System.Drawing.Size(200, 20);
             this.hardshipdate.TabIndex = 6;
@@ -299,7 +313,7 @@
             // 
             // incomedate
             // 
-            this.incomedate.Location = new System.Drawing.Point(150, 68);
+            this.incomedate.Location = new System.Drawing.Point(150, 66);
             this.incomedate.Name = "incomedate";
             this.incomedate.Size = new System.Drawing.Size(200, 20);
             this.incomedate.TabIndex = 5;
@@ -307,7 +321,7 @@
             // 
             // addressdate
             // 
-            this.addressdate.Location = new System.Drawing.Point(150, 19);
+            this.addressdate.Location = new System.Drawing.Point(150, 16);
             this.addressdate.Name = "addressdate";
             this.addressdate.Size = new System.Drawing.Size(200, 20);
             this.addressdate.TabIndex = 4;
@@ -316,33 +330,33 @@
             // efa_proofAssistance
             // 
             this.efa_proofAssistance.AutoSize = true;
-            this.efa_proofAssistance.Location = new System.Drawing.Point(6, 120);
+            this.efa_proofAssistance.Location = new System.Drawing.Point(6, 119);
             this.efa_proofAssistance.Name = "efa_proofAssistance";
-            this.efa_proofAssistance.Size = new System.Drawing.Size(138, 17);
+            this.efa_proofAssistance.Size = new System.Drawing.Size(135, 17);
             this.efa_proofAssistance.TabIndex = 3;
-            this.efa_proofAssistance.Text = "proof of assistance type";
+            this.efa_proofAssistance.Text = "Proof of Hardship Type";
             this.efa_proofAssistance.UseVisualStyleBackColor = true;
             this.efa_proofAssistance.CheckedChanged += new System.EventHandler(this.efa_proofAssistance_CheckedChanged);
             // 
             // efa_proofharship
             // 
             this.efa_proofharship.AutoSize = true;
-            this.efa_proofharship.Location = new System.Drawing.Point(6, 89);
+            this.efa_proofharship.Location = new System.Drawing.Point(6, 94);
             this.efa_proofharship.Name = "efa_proofharship";
-            this.efa_proofharship.Size = new System.Drawing.Size(105, 17);
+            this.efa_proofharship.Size = new System.Drawing.Size(108, 17);
             this.efa_proofharship.TabIndex = 2;
-            this.efa_proofharship.Text = "proof of hardship";
+            this.efa_proofharship.Text = "Proof of Hardship";
             this.efa_proofharship.UseVisualStyleBackColor = true;
             this.efa_proofharship.CheckedChanged += new System.EventHandler(this.efa_proofharship_CheckedChanged);
             // 
             // efa_proofIncome
             // 
             this.efa_proofIncome.AutoSize = true;
-            this.efa_proofIncome.Location = new System.Drawing.Point(6, 65);
+            this.efa_proofIncome.Location = new System.Drawing.Point(6, 69);
             this.efa_proofIncome.Name = "efa_proofIncome";
-            this.efa_proofIncome.Size = new System.Drawing.Size(99, 17);
+            this.efa_proofIncome.Size = new System.Drawing.Size(101, 17);
             this.efa_proofIncome.TabIndex = 1;
-            this.efa_proofIncome.Text = "proof of income";
+            this.efa_proofIncome.Text = "Proof of Income";
             this.efa_proofIncome.UseVisualStyleBackColor = true;
             this.efa_proofIncome.CheckedChanged += new System.EventHandler(this.efa_proofIncome_CheckedChanged);
             // 
@@ -351,15 +365,15 @@
             this.efa_proofaddress.AutoSize = true;
             this.efa_proofaddress.Location = new System.Drawing.Point(6, 19);
             this.efa_proofaddress.Name = "efa_proofaddress";
-            this.efa_proofaddress.Size = new System.Drawing.Size(102, 17);
+            this.efa_proofaddress.Size = new System.Drawing.Size(104, 17);
             this.efa_proofaddress.TabIndex = 0;
-            this.efa_proofaddress.Text = "proof of address";
+            this.efa_proofaddress.Text = "Proof of Address";
             this.efa_proofaddress.UseVisualStyleBackColor = true;
             this.efa_proofaddress.CheckedChanged += new System.EventHandler(this.efa_proofaddress_CheckedChanged);
             // 
             // date_requestDate
             // 
-            this.date_requestDate.Location = new System.Drawing.Point(189, 237);
+            this.date_requestDate.Location = new System.Drawing.Point(189, 227);
             this.date_requestDate.Name = "date_requestDate";
             this.date_requestDate.Size = new System.Drawing.Size(200, 20);
             this.date_requestDate.TabIndex = 9;
@@ -367,20 +381,20 @@
             // requestdate
             // 
             this.requestdate.AutoSize = true;
-            this.requestdate.Location = new System.Drawing.Point(30, 237);
+            this.requestdate.Location = new System.Drawing.Point(30, 227);
             this.requestdate.Name = "requestdate";
-            this.requestdate.Size = new System.Drawing.Size(66, 13);
+            this.requestdate.Size = new System.Drawing.Size(85, 13);
             this.requestdate.TabIndex = 8;
-            this.requestdate.Text = "request date";
+            this.requestdate.Text = "Date Requested";
             // 
             // lblefacategory
             // 
             this.lblefacategory.AutoSize = true;
             this.lblefacategory.Location = new System.Drawing.Point(30, 52);
             this.lblefacategory.Name = "lblefacategory";
-            this.lblefacategory.Size = new System.Drawing.Size(125, 13);
+            this.lblefacategory.Size = new System.Drawing.Size(126, 13);
             this.lblefacategory.TabIndex = 6;
-            this.lblefacategory.Text = "EFA Assistance category";
+            this.lblefacategory.Text = "EFA Assistance Category";
             // 
             // efa_clientName
             // 
@@ -434,7 +448,7 @@
             // 
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 436;
-            this.lineShape1.X2 = 438;
+            this.lineShape1.X2 = 436;
             this.lineShape1.Y1 = 100;
             this.lineShape1.Y2 = 378;
             // 
@@ -442,6 +456,25 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // lbl_completedDate
+            // 
+            this.lbl_completedDate.AutoSize = true;
+            this.lbl_completedDate.Location = new System.Drawing.Point(30, 251);
+            this.lbl_completedDate.Name = "lbl_completedDate";
+            this.lbl_completedDate.Size = new System.Drawing.Size(83, 13);
+            this.lbl_completedDate.TabIndex = 8;
+            this.lbl_completedDate.Text = "Date Completed";
+            this.lbl_completedDate.Visible = false;
+            // 
+            // date_completedDate
+            // 
+            this.date_completedDate.Enabled = false;
+            this.date_completedDate.Location = new System.Drawing.Point(189, 251);
+            this.date_completedDate.Name = "date_completedDate";
+            this.date_completedDate.Size = new System.Drawing.Size(200, 20);
+            this.date_completedDate.TabIndex = 9;
+            this.date_completedDate.Visible = false;
             // 
             // dataSet1
             // 
@@ -456,16 +489,6 @@
             // eFARequestTypesTableAdapter
             // 
             this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_handleRequest
-            // 
-            this.btn_handleRequest.Location = new System.Drawing.Point(311, 576);
-            this.btn_handleRequest.Name = "btn_handleRequest";
-            this.btn_handleRequest.Size = new System.Drawing.Size(76, 29);
-            this.btn_handleRequest.TabIndex = 24;
-            this.btn_handleRequest.Text = "Handle";
-            this.btn_handleRequest.UseVisualStyleBackColor = true;
-            this.btn_handleRequest.Click += new System.EventHandler(this.btn_handleRequest_Click);
             // 
             // requestStatusform
             // 
@@ -533,5 +556,7 @@
         private System.Windows.Forms.ComboBox cmb_hardship;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btn_handleRequest;
+        private System.Windows.Forms.DateTimePicker date_completedDate;
+        private System.Windows.Forms.Label lbl_completedDate;
     }
 }

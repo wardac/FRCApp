@@ -60,21 +60,35 @@ namespace FRCApp
                 requestStatusform efareq = new requestStatusform(ClientID, lstActiveReq.SelectedItems[0].Tag.ToString(), false, (() => LoadFormData()));
                 efareq.Show();
             });
+
+            lstViewHist.DoubleClick += new System.EventHandler((object o, System.EventArgs e1) =>
+            {
+                requestStatusform efareq = new requestStatusform(ClientID, lstViewHist.SelectedItems[0].Tag.ToString(), false, (() => LoadFormData()));
+                efareq.Show();
+            });
         }
 
         private void LoadFormData()
         {
-            var efaRequestDisplayAdapter = new DataSet1TableAdapters.EFARequestsDisplayTableAdapter();
-            var efaRequests = efaRequestDisplayAdapter.GetActiveEFARequestsByClientID(ClientID);
             lstActiveReq.Items.Clear();
             lstViewHist.Items.Clear();
-            foreach (var efaRequest in efaRequests)
+            var efaRequestDisplayAdapter = new DataSet1TableAdapters.EFARequestsDisplayTableAdapter();
+            var activeEfaRequests = efaRequestDisplayAdapter.GetActiveEFARequestsByClientID(ClientID);
+            foreach (var efaRequest in activeEfaRequests)
             {
                 var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
                 item.Tag = efaRequest.EFARequestID;
                 item.SubItems.Add(efaRequest.RequestTypes);
-                item.SubItems.Add(efaRequest.Status);
                 lstActiveReq.Items.Add(item);
+            }
+
+            var inactiveEfaRequests = efaRequestDisplayAdapter.GetInactiveEFARequestsByClientID(ClientID);
+            foreach (var efaRequest in inactiveEfaRequests)
+            {
+                var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
+                item.Tag = efaRequest.EFARequestID;
+                item.SubItems.Add(efaRequest.RequestTypes);
+                lstViewHist.Items.Add(item);
             }
         }
 

@@ -98,6 +98,7 @@ namespace FRCApp
                 }
                 var hardship = hardshipsAdapter.GetHardshipsByID((int)cmb_hardship.SelectedValue)[0];
                 txt_hardshipDesc.Text = hardship.Description;
+                btn_handleRequest.Visible = false;
             }
             else
             {
@@ -134,6 +135,16 @@ namespace FRCApp
                 txt_hardshipDesc.Text = hardship.Description;
                 efa_comment.Text = request.HardshipDetail;
                 date_requestDate.Value = request.DateRequested;
+
+                if (!request.IsDateClosedNull())
+                {
+                    date_completedDate.Value = request.DateClosed;
+                    lbl_completedDate.Visible = true;
+                    date_completedDate.Visible = true;
+                    btn_handleRequest.Visible = false;
+                    update_efa.Visible = false;
+                }
+
             }
         }
 
@@ -148,14 +159,14 @@ namespace FRCApp
             }
 
             var requestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
-            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID, dates[0], dates[1], dates[2], dates[3], dates[4], (int)cmb_hardship.SelectedValue, efa_comment.Text, date_requestDate.Value, 3, null, null);
+            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID, dates[0], dates[1], dates[2], dates[3], dates[4], (int)cmb_hardship.SelectedValue, efa_comment.Text, date_requestDate.Value, 3, null, null, null);
 
             if (NewRequest)
             {
                 var subrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
                 foreach (var category in checklist_requestType.CheckedItems)
                 {
-                    subrequestAdapter.AddOrUpdateEFASubrequest(System.Guid.NewGuid().ToString(), RequestID, category.ToString(), null, null);
+                    subrequestAdapter.AddOrUpdateEFASubrequest(System.Guid.NewGuid().ToString(), RequestID, category.ToString() == "Other" ? txt_other.Text : category.ToString(), null, null);
                 }
             }
             this.Close();
@@ -168,7 +179,7 @@ namespace FRCApp
 
         private void btn_handleRequest_Click(object sender, EventArgs e)
         {
-            var approvalForm = new ApprovalForm(RequestID, (() => this.Show()));
+            var approvalForm = new ApprovalForm(RequestID, (() => this.Close()));
             this.Hide();
             approvalForm.Show();
         }

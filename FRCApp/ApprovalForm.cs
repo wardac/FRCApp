@@ -72,6 +72,26 @@ namespace FRCApp
                 efaSubrequestAdapter.AddOrUpdateEFASubrequest(approvedService.EFASubrequestID, requestID, approvedService.Type, DateTime.Now, true);
             }
 
+            var efaRequestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
+            var request = efaRequestAdapter.GetEFARequestsByEFARequestID(requestID)[0];
+            var approvalReason = chkApprovedReason.CheckedItems.Count > 0 ? chkApprovedReason.CheckedItems[0].ToString() : "";
+            var deniedReason = ChkDeniedReason.CheckedItems.Count > 0 ? ChkDeniedReason.CheckedItems[0].ToString() : "";
+            efaRequestAdapter.AddOrUpdateEFARequest(requestID, 
+                request.ClientID,
+                (request.IsAddressVerificationNull() ? (DateTime?) null : request.AddressVerification),
+                (request.IsHouseholdVerificationNull() ? (DateTime?) null : request.HouseholdVerification),
+                (request.IsIncomeVerificationNull() ? (DateTime?) null : request.IncomeVerification),
+                (request.IsBillVerificationNull() ? (DateTime?) null : request.BillVerification),
+                (request.IsHardshipVerificationNull() ? (DateTime?) null : request.HardshipVerification),
+                (request.IsHardshipTypeIDNull() ? (int?) null : request.HardshipTypeID),
+                request.HardshipDetail,
+                request.DateRequested,
+                request.EFARequestStatusID,
+                deniedReason,
+                approvalReason,
+                DateTime.Now);
+                
+
             this.Close();
         }
 

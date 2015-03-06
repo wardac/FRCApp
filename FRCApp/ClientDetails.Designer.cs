@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientDetails));
             this.Contactpanel = new System.Windows.Forms.Panel();
+            this.editIncomeAndFinancesButton = new System.Windows.Forms.Button();
+            this.editMonthlyExpensesButton = new System.Windows.Forms.Button();
+            this.editHouseholdInformationButton = new System.Windows.Forms.Button();
+            this.editClientButton = new System.Windows.Forms.Button();
             this.lstdateContact = new System.Windows.Forms.DateTimePicker();
             this.lblLastContact = new System.Windows.Forms.Label();
             this.ClientDetailsAddressTextBox = new System.Windows.Forms.TextBox();
@@ -52,18 +56,12 @@
             this.lstActiveReq = new System.Windows.Forms.ListView();
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.assistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addEFAButton = new System.Windows.Forms.Button();
             this.lblefa_request = new System.Windows.Forms.Label();
             this.efaHistPanel = new System.Windows.Forms.Panel();
             this.lstViewHist = new System.Windows.Forms.ListView();
             this.hist_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.histAssitancetype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.statusHist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.justification = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AmountHist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.paidDatehist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.vendorHist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.histAssistancetypes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSummaryAMT = new System.Windows.Forms.TextBox();
@@ -77,10 +75,6 @@
             this.caseNoteupdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.casenoteCmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblcasenote = new System.Windows.Forms.Label();
-            this.editClientButton = new System.Windows.Forms.Button();
-            this.editHouseholdInformationButton = new System.Windows.Forms.Button();
-            this.editMonthlyExpensesButton = new System.Windows.Forms.Button();
-            this.editIncomeAndFinancesButton = new System.Windows.Forms.Button();
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -120,6 +114,43 @@
             this.Contactpanel.Name = "Contactpanel";
             this.Contactpanel.Size = new System.Drawing.Size(428, 225);
             this.Contactpanel.TabIndex = 0;
+            // 
+            // editIncomeAndFinancesButton
+            // 
+            this.editIncomeAndFinancesButton.Location = new System.Drawing.Point(265, 189);
+            this.editIncomeAndFinancesButton.Name = "editIncomeAndFinancesButton";
+            this.editIncomeAndFinancesButton.Size = new System.Drawing.Size(149, 23);
+            this.editIncomeAndFinancesButton.TabIndex = 21;
+            this.editIncomeAndFinancesButton.Text = "Edit Income and Finances";
+            this.editIncomeAndFinancesButton.UseVisualStyleBackColor = true;
+            // 
+            // editMonthlyExpensesButton
+            // 
+            this.editMonthlyExpensesButton.Location = new System.Drawing.Point(265, 155);
+            this.editMonthlyExpensesButton.Name = "editMonthlyExpensesButton";
+            this.editMonthlyExpensesButton.Size = new System.Drawing.Size(149, 23);
+            this.editMonthlyExpensesButton.TabIndex = 20;
+            this.editMonthlyExpensesButton.Text = "Edit Monthly Expenses";
+            this.editMonthlyExpensesButton.UseVisualStyleBackColor = true;
+            // 
+            // editHouseholdInformationButton
+            // 
+            this.editHouseholdInformationButton.Location = new System.Drawing.Point(265, 121);
+            this.editHouseholdInformationButton.Name = "editHouseholdInformationButton";
+            this.editHouseholdInformationButton.Size = new System.Drawing.Size(149, 23);
+            this.editHouseholdInformationButton.TabIndex = 19;
+            this.editHouseholdInformationButton.Text = "Edit Household Information";
+            this.editHouseholdInformationButton.UseVisualStyleBackColor = true;
+            // 
+            // editClientButton
+            // 
+            this.editClientButton.Location = new System.Drawing.Point(265, 87);
+            this.editClientButton.Name = "editClientButton";
+            this.editClientButton.Size = new System.Drawing.Size(149, 23);
+            this.editClientButton.TabIndex = 18;
+            this.editClientButton.Text = "Edit Client";
+            this.editClientButton.UseVisualStyleBackColor = true;
+            this.editClientButton.Click += new System.EventHandler(this.editClientButton_Click);
             // 
             // lstdateContact
             // 
@@ -298,12 +329,12 @@
             // 
             this.lstActiveReq.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.date,
-            this.assistance,
-            this.Status});
+            this.assistance});
             this.lstActiveReq.FullRowSelect = true;
-            this.lstActiveReq.Location = new System.Drawing.Point(22, 22);
+            this.lstActiveReq.Location = new System.Drawing.Point(5, 22);
+            this.lstActiveReq.MultiSelect = false;
             this.lstActiveReq.Name = "lstActiveReq";
-            this.lstActiveReq.Size = new System.Drawing.Size(558, 157);
+            this.lstActiveReq.Size = new System.Drawing.Size(593, 157);
             this.lstActiveReq.TabIndex = 3;
             this.lstActiveReq.UseCompatibleStateImageBehavior = false;
             this.lstActiveReq.View = System.Windows.Forms.View.Details;
@@ -316,15 +347,11 @@
             // assistance
             // 
             this.assistance.Text = "Assistance Types";
-            this.assistance.Width = 400;
-            // 
-            // Status
-            // 
-            this.Status.Text = "Status";
+            this.assistance.Width = 499;
             // 
             // addEFAButton
             // 
-            this.addEFAButton.Location = new System.Drawing.Point(22, 191);
+            this.addEFAButton.Location = new System.Drawing.Point(5, 191);
             this.addEFAButton.Name = "addEFAButton";
             this.addEFAButton.Size = new System.Drawing.Size(141, 23);
             this.addEFAButton.TabIndex = 2;
@@ -336,7 +363,7 @@
             // 
             this.lblefa_request.AutoSize = true;
             this.lblefa_request.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblefa_request.Location = new System.Drawing.Point(20, 7);
+            this.lblefa_request.Location = new System.Drawing.Point(5, 7);
             this.lblefa_request.Name = "lblefa_request";
             this.lblefa_request.Size = new System.Drawing.Size(120, 12);
             this.lblefa_request.TabIndex = 0;
@@ -356,57 +383,31 @@
             // 
             this.lstViewHist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.hist_date,
-            this.histAssitancetype,
-            this.statusHist,
-            this.justification,
-            this.AmountHist,
-            this.paidDatehist,
-            this.vendorHist});
-            this.lstViewHist.Enabled = false;
-            this.lstViewHist.Location = new System.Drawing.Point(18, 34);
+            this.histAssistancetypes});
+            this.lstViewHist.FullRowSelect = true;
+            this.lstViewHist.Location = new System.Drawing.Point(5, 22);
+            this.lstViewHist.MultiSelect = false;
             this.lstViewHist.Name = "lstViewHist";
-            this.lstViewHist.Size = new System.Drawing.Size(576, 157);
+            this.lstViewHist.Size = new System.Drawing.Size(593, 157);
             this.lstViewHist.TabIndex = 4;
             this.lstViewHist.UseCompatibleStateImageBehavior = false;
             this.lstViewHist.View = System.Windows.Forms.View.Details;
             // 
             // hist_date
             // 
-            this.hist_date.Text = "Date";
-            this.hist_date.Width = 81;
+            this.hist_date.Text = "Date Requested";
+            this.hist_date.Width = 90;
             // 
-            // histAssitancetype
+            // histAssistancetypes
             // 
-            this.histAssitancetype.Text = "Assistance type";
-            this.histAssitancetype.Width = 129;
-            // 
-            // statusHist
-            // 
-            this.statusHist.Text = "status";
-            this.statusHist.Width = 73;
-            // 
-            // justification
-            // 
-            this.justification.Text = "Justification";
-            this.justification.Width = 99;
-            // 
-            // AmountHist
-            // 
-            this.AmountHist.Text = "Amount";
-            // 
-            // paidDatehist
-            // 
-            this.paidDatehist.Text = "paid date";
-            // 
-            // vendorHist
-            // 
-            this.vendorHist.Text = "Vendor";
+            this.histAssistancetypes.Text = "Assistance Types";
+            this.histAssistancetypes.Width = 499;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 7);
+            this.label1.Location = new System.Drawing.Point(5, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 12);
             this.label1.TabIndex = 0;
@@ -518,43 +519,6 @@
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
             // 
-            // editClientButton
-            // 
-            this.editClientButton.Location = new System.Drawing.Point(265, 87);
-            this.editClientButton.Name = "editClientButton";
-            this.editClientButton.Size = new System.Drawing.Size(149, 23);
-            this.editClientButton.TabIndex = 18;
-            this.editClientButton.Text = "Edit Client";
-            this.editClientButton.UseVisualStyleBackColor = true;
-            this.editClientButton.Click += new System.EventHandler(this.editClientButton_Click);
-            // 
-            // editHouseholdInformationButton
-            // 
-            this.editHouseholdInformationButton.Location = new System.Drawing.Point(265, 121);
-            this.editHouseholdInformationButton.Name = "editHouseholdInformationButton";
-            this.editHouseholdInformationButton.Size = new System.Drawing.Size(149, 23);
-            this.editHouseholdInformationButton.TabIndex = 19;
-            this.editHouseholdInformationButton.Text = "Edit Household Information";
-            this.editHouseholdInformationButton.UseVisualStyleBackColor = true;
-            // 
-            // editMonthlyExpensesButton
-            // 
-            this.editMonthlyExpensesButton.Location = new System.Drawing.Point(265, 155);
-            this.editMonthlyExpensesButton.Name = "editMonthlyExpensesButton";
-            this.editMonthlyExpensesButton.Size = new System.Drawing.Size(149, 23);
-            this.editMonthlyExpensesButton.TabIndex = 20;
-            this.editMonthlyExpensesButton.Text = "Edit Monthly Expenses";
-            this.editMonthlyExpensesButton.UseVisualStyleBackColor = true;
-            // 
-            // editIncomeAndFinancesButton
-            // 
-            this.editIncomeAndFinancesButton.Location = new System.Drawing.Point(265, 189);
-            this.editIncomeAndFinancesButton.Name = "editIncomeAndFinancesButton";
-            this.editIncomeAndFinancesButton.Size = new System.Drawing.Size(149, 23);
-            this.editIncomeAndFinancesButton.TabIndex = 21;
-            this.editIncomeAndFinancesButton.Text = "Edit Income and Finances";
-            this.editIncomeAndFinancesButton.UseVisualStyleBackColor = true;
-            // 
             // ClientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -610,16 +574,10 @@
         private System.Windows.Forms.ListView lstActiveReq;
         private System.Windows.Forms.ColumnHeader date;
         private System.Windows.Forms.ColumnHeader assistance;
-        private System.Windows.Forms.ColumnHeader Status;
         private System.Windows.Forms.Button addEFAButton;
         private System.Windows.Forms.ListView lstViewHist;
         private System.Windows.Forms.ColumnHeader hist_date;
-        private System.Windows.Forms.ColumnHeader histAssitancetype;
-        private System.Windows.Forms.ColumnHeader statusHist;
-        private System.Windows.Forms.ColumnHeader justification;
-        private System.Windows.Forms.ColumnHeader AmountHist;
-        private System.Windows.Forms.ColumnHeader paidDatehist;
-        private System.Windows.Forms.ColumnHeader vendorHist;
+        private System.Windows.Forms.ColumnHeader histAssistancetypes;
         private System.Windows.Forms.DateTimePicker lstdateContact;
         private System.Windows.Forms.Label lblLastContact;
         private System.Windows.Forms.Panel panel1;
