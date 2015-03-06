@@ -52,6 +52,17 @@ namespace FRCApp
                     new Service(subrequest.EFARequestType, subrequest.EFASubrequestID)
                 );
             }
+
+            var approvalReasonsAdapter = new DataSet1TableAdapters.EFAApprovalReasonsTableAdapter();
+            var denialReasonsAdapter = new DataSet1TableAdapters.EFADenialReasonsTableAdapter();
+            var approvalReasons = approvalReasonsAdapter.GetData();
+            var denialReasons = denialReasonsAdapter.GetData();
+            cmb_approvalReason.DataSource = approvalReasons;
+            cmb_approvalReason.DisplayMember = "Reason";
+            cmb_approvalReason.ValueMember = "Reason";
+            cmb_denialReason.DataSource = denialReasons;
+            cmb_denialReason.DisplayMember = "Reason";
+            cmb_denialReason.ValueMember = "Reason";
         }
 
         private void btn_back_Click(object sender, EventArgs e)
@@ -74,8 +85,8 @@ namespace FRCApp
 
             var efaRequestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
             var request = efaRequestAdapter.GetEFARequestsByEFARequestID(requestID)[0];
-            var approvalReason = chkApprovedReason.CheckedItems.Count > 0 ? chkApprovedReason.CheckedItems[0].ToString() : "";
-            var deniedReason = ChkDeniedReason.CheckedItems.Count > 0 ? ChkDeniedReason.CheckedItems[0].ToString() : "";
+            var approvalReason = cmb_approvalReason.SelectedValue == null ? "" : cmb_approvalReason.SelectedValue.ToString();
+            var deniedReason = cmb_denialReason.SelectedValue == null ? "" : cmb_denialReason.SelectedValue.ToString();
             efaRequestAdapter.AddOrUpdateEFARequest(requestID, 
                 request.ClientID,
                 (request.IsAddressVerificationNull() ? (DateTime?) null : request.AddressVerification),

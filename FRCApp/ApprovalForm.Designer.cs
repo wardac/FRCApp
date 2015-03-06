@@ -30,8 +30,6 @@
         {
             this.lblReferals = new System.Windows.Forms.Label();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.chkApprovedReason = new System.Windows.Forms.CheckedListBox();
-            this.ChkDeniedReason = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_rightArrows = new System.Windows.Forms.Button();
@@ -44,13 +42,15 @@
             this.lst_requestedServices = new System.Windows.Forms.ListBox();
             this.lst_approvedServices = new System.Windows.Forms.ListBox();
             this.btn_leftArrows = new System.Windows.Forms.Button();
+            this.cmb_denialReason = new System.Windows.Forms.ComboBox();
+            this.cmb_approvalReason = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblReferals
             // 
             this.lblReferals.AutoSize = true;
             this.lblReferals.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReferals.Location = new System.Drawing.Point(9, 500);
+            this.lblReferals.Location = new System.Drawing.Point(9, 408);
             this.lblReferals.Name = "lblReferals";
             this.lblReferals.Size = new System.Drawing.Size(222, 13);
             this.lblReferals.TabIndex = 8;
@@ -76,51 +76,11 @@
             "OAAC",
             "Senior Commodities",
             "Other"});
-            this.checkedListBox2.Location = new System.Drawing.Point(12, 516);
+            this.checkedListBox2.Location = new System.Drawing.Point(12, 424);
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.ScrollAlwaysVisible = true;
-            this.checkedListBox2.Size = new System.Drawing.Size(396, 109);
+            this.checkedListBox2.Size = new System.Drawing.Size(396, 199);
             this.checkedListBox2.TabIndex = 7;
-            // 
-            // chkApprovedReason
-            // 
-            this.chkApprovedReason.FormattingEnabled = true;
-            this.chkApprovedReason.Items.AddRange(new object[] {
-            "HH Member recently unemployed",
-            "Household temporary loss income",
-            "HH member recently employed",
-            "HH member participating in programming",
-            "HH has major life event",
-            "HH has emergency medical need",
-            "HH is homeless",
-            "Assistance promotes self-sufficency",
-            "Household unexpected expenses",
-            "other"});
-            this.chkApprovedReason.Location = new System.Drawing.Point(496, 372);
-            this.chkApprovedReason.Name = "chkApprovedReason";
-            this.chkApprovedReason.ScrollAlwaysVisible = true;
-            this.chkApprovedReason.Size = new System.Drawing.Size(396, 109);
-            this.chkApprovedReason.TabIndex = 3;
-            // 
-            // ChkDeniedReason
-            // 
-            this.ChkDeniedReason.FormattingEnabled = true;
-            this.ChkDeniedReason.Items.AddRange(new object[] {
-            "HH income > 125% of FPG",
-            "HH has  not experienced qualifying hardship",
-            "HH expenses unsustainable",
-            "Poor Payment History",
-            "HH exceeded financial assistance limit",
-            "HH withdrew request",
-            "HH did not follow up",
-            "HH not compliance with action/program",
-            "HH request on NON approved Rx",
-            "other"});
-            this.ChkDeniedReason.Location = new System.Drawing.Point(12, 372);
-            this.ChkDeniedReason.Name = "ChkDeniedReason";
-            this.ChkDeniedReason.ScrollAlwaysVisible = true;
-            this.ChkDeniedReason.Size = new System.Drawing.Size(395, 109);
-            this.ChkDeniedReason.TabIndex = 2;
             // 
             // label1
             // 
@@ -210,8 +170,8 @@
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 12;
             this.lineShape1.X2 = 890;
-            this.lineShape1.Y1 = 491;
-            this.lineShape1.Y2 = 491;
+            this.lineShape1.Y1 = 403;
+            this.lineShape1.Y2 = 403;
             // 
             // lst_requestedServices
             // 
@@ -241,12 +201,32 @@
             this.btn_leftArrows.UseVisualStyleBackColor = true;
             this.btn_leftArrows.Click += new System.EventHandler(this.btn_leftArrows_Click);
             // 
+            // cmb_denialReason
+            // 
+            this.cmb_denialReason.FormattingEnabled = true;
+            this.cmb_denialReason.Location = new System.Drawing.Point(13, 371);
+            this.cmb_denialReason.Name = "cmb_denialReason";
+            this.cmb_denialReason.Size = new System.Drawing.Size(395, 21);
+            this.cmb_denialReason.Sorted = true;
+            this.cmb_denialReason.TabIndex = 34;
+            // 
+            // cmb_approvalReason
+            // 
+            this.cmb_approvalReason.FormattingEnabled = true;
+            this.cmb_approvalReason.Location = new System.Drawing.Point(496, 371);
+            this.cmb_approvalReason.Name = "cmb_approvalReason";
+            this.cmb_approvalReason.Size = new System.Drawing.Size(395, 21);
+            this.cmb_approvalReason.Sorted = true;
+            this.cmb_approvalReason.TabIndex = 34;
+            // 
             // ApprovalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(904, 635);
+            this.Controls.Add(this.cmb_approvalReason);
+            this.Controls.Add(this.cmb_denialReason);
             this.Controls.Add(this.btn_leftArrows);
             this.Controls.Add(this.lst_approvedServices);
             this.Controls.Add(this.lst_requestedServices);
@@ -259,8 +239,6 @@
             this.Controls.Add(this.btn_rightArrows);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.chkApprovedReason);
-            this.Controls.Add(this.ChkDeniedReason);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "ApprovalForm";
             this.Text = "Request Approval";
@@ -274,8 +252,6 @@
 
         private System.Windows.Forms.Label lblReferals;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.CheckedListBox chkApprovedReason;
-        private System.Windows.Forms.CheckedListBox ChkDeniedReason;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_rightArrows;
@@ -288,5 +264,7 @@
         private System.Windows.Forms.ListBox lst_requestedServices;
         private System.Windows.Forms.ListBox lst_approvedServices;
         private System.Windows.Forms.Button btn_leftArrows;
+        private System.Windows.Forms.ComboBox cmb_denialReason;
+        private System.Windows.Forms.ComboBox cmb_approvalReason;
     }
 }
