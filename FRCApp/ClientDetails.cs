@@ -92,6 +92,21 @@ namespace FRCApp
                 item.SubItems.Add(efaRequest.RequestTypes);
                 lstViewHist.Items.Add(item);
             }
+            loadcaseNote();
+        }
+
+        private void loadcaseNote()
+        {
+            var casenoteadapter = new DataSet1TableAdapters.CaseNoteTableAdapter();
+            var casenotes = casenoteadapter.GetcasenotebyId(this.ClientID);
+            foreach (var casenote in casenotes)
+            {
+                var item = new ListViewItem(casenote.date.ToString("MM/dd/yyyy"));
+                item.Tag = casenote.Id;
+                item.SubItems.Add(casenote.updateType);
+                item.SubItems.Add(casenote.comment);
+                lstCaseNotes.Items.Add(item);
+            }
         }
 
         private void editClientButton_Click(object sender, EventArgs e)
@@ -108,7 +123,15 @@ namespace FRCApp
 
         private void addcase_Click(object sender, EventArgs e)
         {
-
+            if (txtcomment.Text.Trim() != "" && txtupdateType.Text.Trim() != "")
+            {
+                DataSet1TableAdapters.CaseNoteTableAdapter caseAdapter = new DataSet1TableAdapters.CaseNoteTableAdapter();
+                caseAdapter.addCaseNote(System.DateTime.Now, txtupdateType.Text, txtcomment.Text, ClientID);
+                txtupdateType.Clear();
+                txtcomment.Clear();
+                lstCaseNotes.Items.Clear();
+                loadcaseNote();
+            }
         }
     }
 }
