@@ -103,5 +103,10 @@ namespace FRCApp
             txtcomment.Text = "";
             txtupdateType.Text = "";
         }
+
+        private void addcase_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

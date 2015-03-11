@@ -64,6 +64,8 @@
             this.histAssistancetypes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.clrbutton = new System.Windows.Forms.Button();
+            this.addcase = new System.Windows.Forms.Button();
             this.txtcomment = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtupdateType = new System.Windows.Forms.TextBox();
@@ -75,8 +77,6 @@
             this.caseNoteupdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.casenoteCmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblcasenote = new System.Windows.Forms.Label();
-            this.addcase = new System.Windows.Forms.Button();
-            this.clrbutton = new System.Windows.Forms.Button();
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -430,9 +430,28 @@
             this.panel1.Size = new System.Drawing.Size(428, 161);
             this.panel1.TabIndex = 3;
             // 
+            // clrbutton
+            // 
+            this.clrbutton.Location = new System.Drawing.Point(227, 128);
+            this.clrbutton.Name = "clrbutton";
+            this.clrbutton.Size = new System.Drawing.Size(75, 23);
+            this.clrbutton.TabIndex = 20;
+            this.clrbutton.Text = "clear";
+            this.clrbutton.UseVisualStyleBackColor = true;
+            this.clrbutton.Click += new System.EventHandler(this.clrbutton_Click);
+            // 
+            // addcase
+            // 
+            this.addcase.Location = new System.Drawing.Point(125, 128);
+            this.addcase.Name = "addcase";
+            this.addcase.Size = new System.Drawing.Size(75, 23);
+            this.addcase.TabIndex = 19;
+            this.addcase.Text = "add case";
+            this.addcase.UseVisualStyleBackColor = true;
+            this.addcase.Click += new System.EventHandler(this.addcase_Click);
+            // 
             // txtcomment
             // 
-            this.txtcomment.Enabled = false;
             this.txtcomment.Location = new System.Drawing.Point(125, 66);
             this.txtcomment.Multiline = true;
             this.txtcomment.Name = "txtcomment";
@@ -451,7 +470,6 @@
             // 
             // txtupdateType
             // 
-            this.txtupdateType.Enabled = false;
             this.txtupdateType.Location = new System.Drawing.Point(125, 37);
             this.txtupdateType.Name = "txtupdateType";
             this.txtupdateType.Size = new System.Drawing.Size(207, 20);
@@ -523,25 +541,6 @@
             this.lblcasenote.Size = new System.Drawing.Size(68, 12);
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
-            // 
-            // addcase
-            // 
-            this.addcase.Location = new System.Drawing.Point(125, 128);
-            this.addcase.Name = "addcase";
-            this.addcase.Size = new System.Drawing.Size(75, 23);
-            this.addcase.TabIndex = 19;
-            this.addcase.Text = "add case";
-            this.addcase.UseVisualStyleBackColor = true;
-            // 
-            // clrbutton
-            // 
-            this.clrbutton.Location = new System.Drawing.Point(227, 128);
-            this.clrbutton.Name = "clrbutton";
-            this.clrbutton.Size = new System.Drawing.Size(75, 23);
-            this.clrbutton.TabIndex = 20;
-            this.clrbutton.Text = "clear";
-            this.clrbutton.UseVisualStyleBackColor = true;
-            this.clrbutton.Click += new System.EventHandler(this.clrbutton_Click);
             // 
             // ClientDetails
             // 
