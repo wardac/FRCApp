@@ -1,0 +1,26 @@
+CREATE PROC AddOrUpdateHouseholdMembers(@HouseholdMemberID INT,
+												@HouseholdID NVARCHAR(36),
+												@FirstName NVARCHAR(20),
+												@LastName NVARCHAR(20),
+												@Birthdate DATE,
+												@Relationship NVARCHAR(200),
+												@Race NVARCHAR(20),
+												@HealthCoverage BIT,
+												@LastFourSSN NVARCHAR(10)) AS BEGIN
+	IF EXISTS (SELECT 1 FROM HouseholdMembers WHERE HouseholdMemberID = @HouseholdMemberID) BEGIN
+		UPDATE HouseholdMembers SET 
+									HouseholdID = @HouseholdID,
+									FirstName = @FirstName,
+									LastName = @LastName,
+									Birthdate = @Birthdate,
+									Relationship = @Relationship,
+									Race = @Race,
+									HealthCoverage = @HealthCoverage,
+									LastFourSSN = @LastFourSSN
+				WHERE HouseholdMemberID = @HouseholdMemberID
+	END
+	ELSE BEGIN
+		INSERT INTO HouseholdMembers
+		SELECT  @HouseholdID, @FirstName, @LastName, @Birthdate, @Relationship, @Race, @HealthCoverage, @LastFourSSN
+	END
+END

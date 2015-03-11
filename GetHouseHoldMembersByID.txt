@@ -1,0 +1,6 @@
+CREATE PROCEDURE dbo.getHouseholdMembersById
+	(@HouseholdID NVARCHAR (36))
+AS
+BEGIN
+	SELECT * from HouseholdMembers where HouseholdID = @HouseholdID
+END

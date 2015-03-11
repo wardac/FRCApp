@@ -15,10 +15,10 @@ namespace FRCApp {
         private HouseHoldForm householdForm;
         private ExpenseForm expenseForm;
         private FinanceForm financeForm;
-        private Guid clientID;
-        private Guid householdID;
-        private String clientIdAsString = "";
-        private String householdIdAsString = "";
+        public Guid clientID;
+        public Guid householdID;
+        public String clientIdAsString = "";
+        public String householdIdAsString = "";
         private const int BACKSPACE = 8;
         private const int DELETE = 46;
 
@@ -34,6 +34,12 @@ namespace FRCApp {
             InitializeComponent();
             clientIdAsString = ClientID;
             householdIdAsString = householdId;
+        }
+
+        public NewClient(DataSet1.ClientsRow clientData)
+        {
+            InitializeComponent();
+            populateFormData(clientData);
         }
 
         private void householdInfo_button_Click(object sender, EventArgs e)
@@ -199,6 +205,27 @@ namespace FRCApp {
             }
         }
 
+        /**
+         * Populate form via given DataSet
+         */
+        private void populateFormData(DataSet1.ClientsRow clientData)
+        {
+            clientIdAsString = clientData.ClientID;
+            householdIdAsString = clientData.HouseholdID;
+            firstName_textBox.Text = clientData.FirstName;
+            lastName_textBox.Text = clientData.LastName;
+            middleInitial_textBox.Text = clientData.MiddleInitial;
+            dataOfBirth_dateTimePicker.Text = clientData.Birthdate.ToString();
+            homeAddress_textBox.Text = clientData.Address;
+            if (!clientData.IsAptNoNull()) { apartmentNumber_textBox.Text = clientData.AptNo; }
+            if (!clientData.IsCityNull()) { city_textBox.Text = clientData.City; }
+            if (!clientData.IsZipNull()) { zipCode_textBox.Text = clientData.Zip; }
+            if (!clientData.IsPhone1Null()) { telephone1_textBox.Text = clientData.Phone1; }
+            if (!clientData.IsPhone2Null()) { telephone2_textBox.Text = clientData.Phone2; } 
+            if (!clientData.IsEmailNull()) { email_textBox.Text = clientData.Email; }
+            if (!clientData.IsEducationLevelNull()) { EducationLevelBox.Text = clientData.EducationLevel; }
+            if (!clientData.IsEmploymentStatusNull()) { EmploymentStatusBox.Text = clientData.EmploymentStatus; }
+        }
 
     }
 }
