@@ -14,22 +14,24 @@ namespace FRCApp
     {
         private string ClientID;
         private string householdID;
+        private DataSet1.ClientsRow clientData;
 
         public ClientDetails(string clientID)
         {
             this.ClientID = clientID;
             InitializeComponent();
-            fillFields();
+            createClientObject();
         }
 
         /**
         * This will fill all of the required fields
         * relevant to the client
         */
-        private void fillFields()
+        private void createClientObject()
         {
-            //get data fromt the Client table
-            DataSet1.ClientsRow clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
+            // get data fromt the Client table
+            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
+
             ClientDetailsNameTextBox.Text =
                 clientData.FirstName +
                 " " + clientData.MiddleInitial +
@@ -94,8 +96,8 @@ namespace FRCApp
 
         private void editClientButton_Click(object sender, EventArgs e)
         {
-
-            new NewClient(ClientID, householdID).Show();
+            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
+            new NewClient(clientData).Show();
         }
 
         private void clrbutton_Click(object sender, EventArgs e)
