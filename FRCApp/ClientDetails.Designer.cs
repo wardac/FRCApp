@@ -64,17 +64,19 @@
             this.histAssistancetypes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSummaryAMT = new System.Windows.Forms.TextBox();
+            this.txtcomment = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSummarycnt = new System.Windows.Forms.TextBox();
+            this.txtupdateType = new System.Windows.Forms.TextBox();
             this.lblreqcnt = new System.Windows.Forms.Label();
-            this.lblSumary = new System.Windows.Forms.Label();
+            this.lblcase = new System.Windows.Forms.Label();
             this.caseNotePanel = new System.Windows.Forms.Panel();
             this.lstCaseNotes = new System.Windows.Forms.ListView();
             this.caseNoteDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.caseNoteupdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.casenoteCmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblcasenote = new System.Windows.Forms.Label();
+            this.addcase = new System.Windows.Forms.Button();
+            this.clrbutton = new System.Windows.Forms.Button();
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -376,7 +378,7 @@
             this.efaHistPanel.Controls.Add(this.label1);
             this.efaHistPanel.Location = new System.Drawing.Point(470, 283);
             this.efaHistPanel.Name = "efaHistPanel";
-            this.efaHistPanel.Size = new System.Drawing.Size(603, 221);
+            this.efaHistPanel.Size = new System.Drawing.Size(603, 370);
             this.efaHistPanel.TabIndex = 2;
             // 
             // lstViewHist
@@ -416,23 +418,26 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.txtSummaryAMT);
+            this.panel1.Controls.Add(this.clrbutton);
+            this.panel1.Controls.Add(this.addcase);
+            this.panel1.Controls.Add(this.txtcomment);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtSummarycnt);
+            this.panel1.Controls.Add(this.txtupdateType);
             this.panel1.Controls.Add(this.lblreqcnt);
-            this.panel1.Controls.Add(this.lblSumary);
+            this.panel1.Controls.Add(this.lblcase);
             this.panel1.Location = new System.Drawing.Point(21, 280);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(428, 102);
+            this.panel1.Size = new System.Drawing.Size(428, 161);
             this.panel1.TabIndex = 3;
             // 
-            // txtSummaryAMT
+            // txtcomment
             // 
-            this.txtSummaryAMT.Enabled = false;
-            this.txtSummaryAMT.Location = new System.Drawing.Point(125, 66);
-            this.txtSummaryAMT.Name = "txtSummaryAMT";
-            this.txtSummaryAMT.Size = new System.Drawing.Size(98, 20);
-            this.txtSummaryAMT.TabIndex = 18;
+            this.txtcomment.Enabled = false;
+            this.txtcomment.Location = new System.Drawing.Point(125, 66);
+            this.txtcomment.Multiline = true;
+            this.txtcomment.Name = "txtcomment";
+            this.txtcomment.Size = new System.Drawing.Size(247, 57);
+            this.txtcomment.TabIndex = 18;
             // 
             // label2
             // 
@@ -440,17 +445,17 @@
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(4, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 12);
+            this.label2.Size = new System.Drawing.Size(57, 12);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Total request Made:";
+            this.label2.Text = "comment";
             // 
-            // txtSummarycnt
+            // txtupdateType
             // 
-            this.txtSummarycnt.Enabled = false;
-            this.txtSummarycnt.Location = new System.Drawing.Point(125, 37);
-            this.txtSummarycnt.Name = "txtSummarycnt";
-            this.txtSummarycnt.Size = new System.Drawing.Size(51, 20);
-            this.txtSummarycnt.TabIndex = 16;
+            this.txtupdateType.Enabled = false;
+            this.txtupdateType.Location = new System.Drawing.Point(125, 37);
+            this.txtupdateType.Name = "txtupdateType";
+            this.txtupdateType.Size = new System.Drawing.Size(207, 20);
+            this.txtupdateType.TabIndex = 16;
             // 
             // lblreqcnt
             // 
@@ -458,28 +463,28 @@
             this.lblreqcnt.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblreqcnt.Location = new System.Drawing.Point(4, 37);
             this.lblreqcnt.Name = "lblreqcnt";
-            this.lblreqcnt.Size = new System.Drawing.Size(115, 12);
+            this.lblreqcnt.Size = new System.Drawing.Size(68, 12);
             this.lblreqcnt.TabIndex = 15;
-            this.lblreqcnt.Text = "Total request Made:";
+            this.lblreqcnt.Text = "updatetype";
             // 
-            // lblSumary
+            // lblcase
             // 
-            this.lblSumary.AutoSize = true;
-            this.lblSumary.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSumary.Location = new System.Drawing.Point(20, 7);
-            this.lblSumary.Name = "lblSumary";
-            this.lblSumary.Size = new System.Drawing.Size(82, 12);
-            this.lblSumary.TabIndex = 0;
-            this.lblSumary.Text = "EFA Summary";
+            this.lblcase.AutoSize = true;
+            this.lblcase.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcase.Location = new System.Drawing.Point(20, 7);
+            this.lblcase.Name = "lblcase";
+            this.lblcase.Size = new System.Drawing.Size(93, 12);
+            this.lblcase.TabIndex = 0;
+            this.lblcase.Text = "Add Case Notes";
             // 
             // caseNotePanel
             // 
             this.caseNotePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.caseNotePanel.Controls.Add(this.lstCaseNotes);
             this.caseNotePanel.Controls.Add(this.lblcasenote);
-            this.caseNotePanel.Location = new System.Drawing.Point(21, 396);
+            this.caseNotePanel.Location = new System.Drawing.Point(21, 447);
             this.caseNotePanel.Name = "caseNotePanel";
-            this.caseNotePanel.Size = new System.Drawing.Size(428, 108);
+            this.caseNotePanel.Size = new System.Drawing.Size(428, 206);
             this.caseNotePanel.TabIndex = 4;
             // 
             // lstCaseNotes
@@ -490,7 +495,7 @@
             this.casenoteCmt});
             this.lstCaseNotes.Location = new System.Drawing.Point(6, 22);
             this.lstCaseNotes.Name = "lstCaseNotes";
-            this.lstCaseNotes.Size = new System.Drawing.Size(408, 80);
+            this.lstCaseNotes.Size = new System.Drawing.Size(408, 166);
             this.lstCaseNotes.TabIndex = 1;
             this.lstCaseNotes.UseCompatibleStateImageBehavior = false;
             this.lstCaseNotes.View = System.Windows.Forms.View.Details;
@@ -519,11 +524,30 @@
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
             // 
+            // addcase
+            // 
+            this.addcase.Location = new System.Drawing.Point(125, 128);
+            this.addcase.Name = "addcase";
+            this.addcase.Size = new System.Drawing.Size(75, 23);
+            this.addcase.TabIndex = 19;
+            this.addcase.Text = "add case";
+            this.addcase.UseVisualStyleBackColor = true;
+            // 
+            // clrbutton
+            // 
+            this.clrbutton.Location = new System.Drawing.Point(227, 128);
+            this.clrbutton.Name = "clrbutton";
+            this.clrbutton.Size = new System.Drawing.Size(75, 23);
+            this.clrbutton.TabIndex = 20;
+            this.clrbutton.Text = "clear";
+            this.clrbutton.UseVisualStyleBackColor = true;
+            this.clrbutton.Click += new System.EventHandler(this.clrbutton_Click);
+            // 
             // ClientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 507);
+            this.ClientSize = new System.Drawing.Size(1112, 665);
             this.Controls.Add(this.caseNotePanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.efaHistPanel);
@@ -581,11 +605,11 @@
         private System.Windows.Forms.DateTimePicker lstdateContact;
         private System.Windows.Forms.Label lblLastContact;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtSummaryAMT;
+        private System.Windows.Forms.TextBox txtcomment;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSummarycnt;
+        private System.Windows.Forms.TextBox txtupdateType;
         private System.Windows.Forms.Label lblreqcnt;
-        private System.Windows.Forms.Label lblSumary;
+        private System.Windows.Forms.Label lblcase;
         private System.Windows.Forms.Panel caseNotePanel;
         private System.Windows.Forms.ListView lstCaseNotes;
         private System.Windows.Forms.ColumnHeader caseNoteDate;
@@ -596,5 +620,7 @@
         private System.Windows.Forms.Button editIncomeAndFinancesButton;
         private System.Windows.Forms.Button editMonthlyExpensesButton;
         private System.Windows.Forms.Button editHouseholdInformationButton;
+        private System.Windows.Forms.Button clrbutton;
+        private System.Windows.Forms.Button addcase;
     }
 }

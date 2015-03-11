@@ -97,5 +97,11 @@ namespace FRCApp
 
             new NewClient(ClientID, householdID).Show();
         }
+
+        private void clrbutton_Click(object sender, EventArgs e)
+        {
+            txtcomment.Text = "";
+            txtupdateType.Text = "";
+        }
     }
 }
