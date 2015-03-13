@@ -62,6 +62,7 @@
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -119,6 +120,7 @@
             // HouseHoldForm_ListView_Summary
             // 
             this.HouseHoldForm_ListView_Summary.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
             this.First,
             this.Last,
             this.SSN,
@@ -353,6 +355,11 @@
             // 
             this.racesTableAdapter.ClearBeforeFill = true;
             // 
+            // Id
+            // 
+            this.Id.Text = "ID";
+            this.Id.Width = 32;
+            // 
             // HouseHoldForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,5 +414,6 @@
         private System.Windows.Forms.ColumnHeader Coverage;
         private System.Windows.Forms.Button HouseHoldFormCancelButton;
         private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.ColumnHeader Id;
     }
 }

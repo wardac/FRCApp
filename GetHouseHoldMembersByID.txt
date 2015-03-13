@@ -1,5 +1,5 @@
 CREATE PROCEDURE dbo.getHouseholdMembersById
-	(@HouseholdID NVARCHAR (36))
+	(@HouseholdID UNIQUEIDENTIFIER)
 AS
 BEGIN
 	SELECT * from HouseholdMembers where HouseholdID = @HouseholdID

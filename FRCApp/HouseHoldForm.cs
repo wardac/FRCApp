@@ -23,11 +23,28 @@ namespace FRCApp
             InitializeComponent();
             table = new DataSet1.HouseholdMembersDataTable();
             this.houseHoldId = houseHoldId;
+            fillListView();
         }
 
-        private void loadDataFromDatabase()
+        /**
+         * Fill the list view on the Household form with data from the database
+         **/
+        private void fillListView()
         {
-
+            HouseHoldForm_ListView_Summary.Items.Clear();
+            DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
+            foreach (DataRow row in adapter.getHouseholdMembersById(houseHoldId).Rows)
+            {
+                ListViewItem item = new ListViewItem(row["HouseholdMemberID"].ToString());
+                item.SubItems.Add(row["FirstName"].ToString());
+                item.SubItems.Add(row["LastName"].ToString());
+                item.SubItems.Add(row["LastFourSSN"].ToString());
+                item.SubItems.Add(row["Birthdate"].ToString());
+                item.SubItems.Add(row["Relationship"].ToString());
+                item.SubItems.Add(row["Race"].ToString());
+                item.SubItems.Add(row["HealthCoverage"].ToString());
+                HouseHoldForm_ListView_Summary.Items.Add(item);
+            }
         }
 
         /**
@@ -41,11 +58,11 @@ namespace FRCApp
             {
                 MessageBox.Show(message);
                 return;
-            } 
-            
+            }
+
             //Add the items to the listView
-            ListViewItem item = new ListViewItem(HouseHoldFormFirstNameTextBox.Text);
-            //item.SubItems.Add();
+            ListViewItem item = new ListViewItem("-1");
+            item.SubItems.Add(HouseHoldFormFirstNameTextBox.Text);
             item.SubItems.Add(HouseHoldFormlastNameTextBox.Text);
             item.SubItems.Add(HouseHoldFormlast4DigitsOfSsnTextBox.Text);
             item.SubItems.Add(HouseHoldFormBirthDateDateTimePicker.Text);
@@ -72,17 +89,29 @@ namespace FRCApp
          **/
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-           // add ListView items to DataSet1 table
-           DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
-            foreach (ListViewItem item in HouseHoldForm_ListView_Summary.Items) {
-                adapter.addHouseHoldMember(houseHoldId.ToString(),
-                        item.SubItems[0].Text,
+            // add ListView items to DataSet1 table
+            DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
+            foreach (ListViewItem item in HouseHoldForm_ListView_Summary.Items)
+            {
+                /*@HouseholdMemberID INT,
+												@HouseholdID UNIQUEIDENTIFIER,
+												@FirstName NVARCHAR(20),
+												@LastName NVARCHAR(20),
+												@Birthdate DATE,
+												@Relationship NVARCHAR(200),
+												@Race NVARCHAR(20),
+												@HealthCoverage BIT,
+												@LastFourSSN NVARCHAR(10)
+                 * */
+                adapter.AddOrUpdateHouseholdMembers(Convert.ToInt32(item.SubItems[0].Text),
+                        houseHoldId,
                         item.SubItems[1].Text,
-                        System.DateTime.Parse(item.SubItems[3].Text),
-                        item.SubItems[4].Text,
+                        item.SubItems[2].Text,
+                        System.DateTime.Parse(item.SubItems[4].Text),
                         item.SubItems[5].Text,
-                        Convert.ToBoolean(item.SubItems[6].Text),
-                        item.SubItems[2].Text);
+                        item.SubItems[6].Text,
+                        Convert.ToBoolean(item.SubItems[7].Text),
+                        item.SubItems[3].Text);
             }
             this.Close();
         }
@@ -99,32 +128,45 @@ namespace FRCApp
          * Check to ensure each form field has been given a value and household member does not already exist
          * returns a message containing information about which field needs to be filled in
          **/
-        private string validateForm() {
-                if(!textExists(HouseHoldFormFirstNameTextBox.Text)){
-                    return "Enter a first name";
-                } else if(!textExists(HouseHoldFormlastNameTextBox.Text)) {
-                    return "Enter a last name";
-                }
-                else if (!textExists(HouseHoldFormlast4DigitsOfSsnTextBox.Text) || HouseHoldFormlast4DigitsOfSsnTextBox.Text.Length != 4)
-                {
-                    return "Enter a valid SSN";
-                } else if(!textExists(HouseHoldFormBirthDateDateTimePicker.Text)){
-                    return "Enter a birth date";
-                } else if(!textExists(HouseHoldFormRelationshipToApplicant.Text)){
-                    return "Enter a relationship to the applicant";
-                } else if(!textExists((string)HouseHoldFormEthnicityListBox.SelectedValue)){
-                    return "Enter a Ethnicity";
-                }else if (!HouseHoldFormRadioButtonYes.Checked && !HouseHoldFormRadioButtonNo.Checked){
-                    return "Enter health insurance info";
-                }
+        private string validateForm()
+        {
+            if (!textExists(HouseHoldFormFirstNameTextBox.Text))
+            {
+                return "Enter a first name";
+            }
+            else if (!textExists(HouseHoldFormlastNameTextBox.Text))
+            {
+                return "Enter a last name";
+            }
+            else if (!textExists(HouseHoldFormlast4DigitsOfSsnTextBox.Text) || HouseHoldFormlast4DigitsOfSsnTextBox.Text.Length != 4)
+            {
+                return "Enter a valid SSN";
+            }
+            else if (!textExists(HouseHoldFormBirthDateDateTimePicker.Text))
+            {
+                return "Enter a birth date";
+            }
+            else if (!textExists(HouseHoldFormRelationshipToApplicant.Text))
+            {
+                return "Enter a relationship to the applicant";
+            }
+            else if (!textExists((string)HouseHoldFormEthnicityListBox.SelectedValue))
+            {
+                return "Enter a Ethnicity";
+            }
+            else if (!HouseHoldFormRadioButtonYes.Checked && !HouseHoldFormRadioButtonNo.Checked)
+            {
+                return "Enter health insurance info";
+            }
 
-                return "OK";
+            return "OK";
         }
 
         /**
          * Check if text exists inside a textbox. Used for validating our form
          **/
-        private bool textExists(string str) {
+        private bool textExists(string str)
+        {
             return str != null && str != "";
         }
 
@@ -148,7 +190,7 @@ namespace FRCApp
             foreach (ListViewItem item in HouseHoldForm_ListView_Summary.SelectedItems)
             {
                 item.Remove();
-            }     
+            }
         }
 
         /**
