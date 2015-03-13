@@ -29,17 +29,12 @@ namespace FRCApp {
             householdID = Guid.NewGuid();
         }
 
-        public NewClient(String ClientID, String householdId)
-        {
-            InitializeComponent();
-            clientIdAsString = ClientID;
-            householdIdAsString = householdId;
-        }
-
         public NewClient(DataSet1.ClientsRow clientData)
         {
             InitializeComponent();
             populateFormData(clientData);
+            this.Text = "Edit Client";
+            this.submit_button.Text = "Update";
         }
 
         private void householdInfo_button_Click(object sender, EventArgs e)
@@ -223,7 +218,7 @@ namespace FRCApp {
             if (!clientData.IsPhone1Null()) { telephone1_textBox.Text = clientData.Phone1; }
             if (!clientData.IsPhone2Null()) { telephone2_textBox.Text = clientData.Phone2; } 
             if (!clientData.IsEmailNull()) { email_textBox.Text = clientData.Email; }
-            if (!clientData.IsEducationLevelNull()) { EducationLevelBox.Text = clientData.EducationLevel; }
+            if (!clientData.IsEducationLevelNull()) { EducationLevelBox.SelectedIndex = EducationLevelBox.FindString(clientData.EducationLevel); }
             if (!clientData.IsEmploymentStatusNull()) { EmploymentStatusBox.Text = clientData.EmploymentStatus; }
         }
 

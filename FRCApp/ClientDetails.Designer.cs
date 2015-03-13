@@ -553,6 +553,7 @@
             this.Controls.Add(this.reqpanel);
             this.Controls.Add(this.Contactpanel);
             this.Name = "ClientDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ClientDetails_Load);
             this.Contactpanel.ResumeLayout(false);
             this.Contactpanel.PerformLayout();
