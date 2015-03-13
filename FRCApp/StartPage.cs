@@ -12,7 +12,7 @@ namespace FRCApp
 {
     public partial class StartPage : Form
     {
-        private string selectedClientId = "";
+        private Guid selectedClientId = Guid.Empty;
         private string AccessLevel;
 
         public StartPage(string AccessLevel)
@@ -35,7 +35,7 @@ namespace FRCApp
 
         private void clientPage_button_Click(object sender, EventArgs e)
         {
-            if (client_listView.SelectedItems.Count == 0 || (selectedClientId = (String)client_listView.SelectedItems[0].Tag) == "")
+            if (client_listView.SelectedItems.Count == 0 || (selectedClientId = new Guid(client_listView.SelectedItems[0].Tag.ToString())) == Guid.Empty)
             {
                 MessageBox.Show("Please select a client");
                 return;

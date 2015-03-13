@@ -21,6 +21,10 @@
 }
 
 namespace FRCApp.DataSet1TableAdapters {
+    partial class EFARequestsTableAdapter
+    {
+    }
+
     partial class UsersTableAdapter
     {
     }

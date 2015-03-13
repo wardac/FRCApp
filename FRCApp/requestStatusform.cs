@@ -13,9 +13,9 @@ namespace FRCApp
     public partial class requestStatusform : Form
     {
         Boolean NewRequest;
-        String ClientID;
+        Guid ClientID;
         String RequestID;
-        public requestStatusform(String ClientID, String RequestID, Boolean NewRequest, Action OnCloseEvent)
+        public requestStatusform(Guid ClientID, String RequestID, Boolean NewRequest, Action OnCloseEvent)
         {
             this.NewRequest = NewRequest;
             InitializeComponent();
@@ -159,7 +159,7 @@ namespace FRCApp
             }
 
             var requestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
-            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID, dates[0], dates[1], dates[2], dates[3], dates[4], (int)cmb_hardship.SelectedValue, efa_comment.Text, date_requestDate.Value, 3, null, null, null);
+            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID.ToString(), dates[0], dates[1], dates[2], dates[3], dates[4], (int)cmb_hardship.SelectedValue, efa_comment.Text, date_requestDate.Value, 3, null, null, null);
 
             if (NewRequest)
             {

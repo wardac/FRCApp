@@ -150,7 +150,7 @@ namespace FRCApp {
                     );
                 }
                 this.Close();
-                new ClientDetails(clientID.ToString()).Show();
+                new ClientDetails(clientID).Show();
             }
         }
 

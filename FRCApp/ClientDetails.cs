@@ -12,11 +12,12 @@ namespace FRCApp
 {
     public partial class ClientDetails : Form
     {
-        private string ClientID;
-        private string householdID;
+        private Guid ClientID;
+        private Guid householdID;
         private DataSet1.ClientsRow clientData;
+        private Guid clientIDGuid;
 
-        public ClientDetails(string clientID)
+        public ClientDetails(Guid clientID)
         {
             this.ClientID = clientID;
             InitializeComponent();
@@ -30,13 +31,14 @@ namespace FRCApp
         private void createClientObject()
         {
             // get data fromt the Client table
-            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
+            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID.ToString());
+            clientIDGuid = new Guid(clientData.ClientID);
 
             ClientDetailsNameTextBox.Text =
                 clientData.FirstName +
                 " " + clientData.MiddleInitial +
                 " " + clientData.LastName;
-            householdID = clientData.HouseholdID;
+            householdID = new Guid(clientData.HouseholdID);
             if (!clientData.IsAddressNull()) { ClientDetailsAddressTextBox.Text = clientData.Address; }
             //TODO: Last contact date
             if (!clientData.IsCityNull()) { ClientDetailsCityTextBox.Text = clientData.City; }
@@ -75,7 +77,7 @@ namespace FRCApp
             lstActiveReq.Items.Clear();
             lstViewHist.Items.Clear();
             var efaRequestDisplayAdapter = new DataSet1TableAdapters.EFARequestsDisplayTableAdapter();
-            var activeEfaRequests = efaRequestDisplayAdapter.GetActiveEFARequestsByClientID(ClientID);
+            var activeEfaRequests = efaRequestDisplayAdapter.GetActiveEFARequestsByClientID(ClientID.ToString());
             foreach (var efaRequest in activeEfaRequests)
             {
                 var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
@@ -84,7 +86,7 @@ namespace FRCApp
                 lstActiveReq.Items.Add(item);
             }
 
-            var inactiveEfaRequests = efaRequestDisplayAdapter.GetInactiveEFARequestsByClientID(ClientID);
+            var inactiveEfaRequests = efaRequestDisplayAdapter.GetInactiveEFARequestsByClientID(ClientID.ToString());
             foreach (var efaRequest in inactiveEfaRequests)
             {
                 var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
@@ -98,7 +100,7 @@ namespace FRCApp
         private void loadcaseNote()
         {
             var casenoteadapter = new DataSet1TableAdapters.CaseNoteTableAdapter();
-            var casenotes = casenoteadapter.GetcasenotebyId(this.ClientID);
+            var casenotes = casenoteadapter.GetcasenotebyId(ClientID.ToString());
             foreach (var casenote in casenotes)
             {
                 var item = new ListViewItem(casenote.date.ToString("MM/dd/yyyy"));
@@ -111,7 +113,7 @@ namespace FRCApp
 
         private void editClientButton_Click(object sender, EventArgs e)
         {
-            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
+            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID.ToString());
             new NewClient(clientData).Show();
         }
 
@@ -126,7 +128,7 @@ namespace FRCApp
             if (txtcomment.Text.Trim() != "" && txtupdateType.Text.Trim() != "")
             {
                 DataSet1TableAdapters.CaseNoteTableAdapter caseAdapter = new DataSet1TableAdapters.CaseNoteTableAdapter();
-                caseAdapter.addCaseNote(System.DateTime.Now, txtupdateType.Text, txtcomment.Text, ClientID);
+                caseAdapter.addCaseNote(System.DateTime.Now, txtupdateType.Text, txtcomment.Text, ClientID.ToString());
                 txtupdateType.Clear();
                 txtcomment.Clear();
                 lstCaseNotes.Items.Clear();
