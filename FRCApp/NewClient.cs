@@ -19,6 +19,8 @@ namespace FRCApp {
         public Guid householdID;
         private const int BACKSPACE = 8;
         private const int DELETE = 46;
+        private bool isEditing = false;
+        private DataSet1.ClientsRow clientData;
 
         public NewClient() 
         {
@@ -30,9 +32,10 @@ namespace FRCApp {
         public NewClient(DataSet1.ClientsRow clientData)
         {
             InitializeComponent();
-            populateFormData(clientData);
+            this.clientData = clientData;
             this.Text = "Edit Client";
             this.submit_button.Text = "Update";
+            this.isEditing = true;
         }
 
         private void householdInfo_button_Click(object sender, EventArgs e)
@@ -119,7 +122,10 @@ namespace FRCApp {
                         false  // credit report
                 );
                 this.Close();
-                new ClientDetails(clientID).Show();
+                if (!isEditing)
+                {
+                    new ClientDetails(clientID).Show();
+                }
             }
         }
 
@@ -130,7 +136,7 @@ namespace FRCApp {
             this.employmentStatusesTableAdapter.Fill(this.dataSet1.EmploymentStatuses);
             this.educationLevelsTableAdapter.Fill(this.dataSet1.EducationLevels);
             this.householdTypesTableAdapter.Fill(this.dataSet1.HouseholdTypes);
-           
+
             ReferralsBox.DataSource = this.referralTypesTableAdapter.GetData();
             ReferralsBox.DisplayMember = "ReferralType";
             ReferralsBox.ValueMember = "ReferralTypeID";
@@ -142,6 +148,11 @@ namespace FRCApp {
             HouseholdTypeBox.SelectedIndex = -1;
             EducationLevelBox.SelectedIndex = -1;
             EmploymentStatusBox.SelectedIndex = -1;
+
+            if (isEditing)
+            {
+                populateFormData();
+            }
         }
 
         /**
@@ -172,7 +183,7 @@ namespace FRCApp {
         /**
          * Populate form via given DataSet
          */
-        private void populateFormData(DataSet1.ClientsRow clientData)
+        private void populateFormData()
         {
             clientID = new Guid(clientData.ClientID);
             householdID = new Guid(clientData.HouseholdID);
@@ -187,7 +198,7 @@ namespace FRCApp {
             if (!clientData.IsPhone1Null()) { telephone1_textBox.Text = clientData.Phone1; }
             if (!clientData.IsPhone2Null()) { telephone2_textBox.Text = clientData.Phone2; } 
             if (!clientData.IsEmailNull()) { email_textBox.Text = clientData.Email; }
-            if (!clientData.IsEducationLevelNull()) { EducationLevelBox.SelectedIndex = EducationLevelBox.FindString(clientData.EducationLevel); }
+            if (!clientData.IsEducationLevelNull()) { EducationLevelBox.Text = clientData.EducationLevel; }
             if (!clientData.IsEmploymentStatusNull()) { EmploymentStatusBox.Text = clientData.EmploymentStatus; }
         }
 

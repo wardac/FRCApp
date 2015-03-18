@@ -135,5 +135,21 @@ namespace FRCApp
                 loadcaseNote();
             }
         }
+
+        // update any changed information when the form regains focus
+        private void ClientDetails_Activated(object sender, EventArgs e)
+        {
+            // get data fromt the Client table
+            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID.ToString());
+            ClientDetailsNameTextBox.Text = clientData.FirstName + " " + clientData.MiddleInitial + " " + clientData.LastName;
+            if (!clientData.IsAddressNull()) { ClientDetailsAddressTextBox.Text = clientData.Address; }
+            //TODO: Last contact date
+            if (!clientData.IsCityNull()) { ClientDetailsCityTextBox.Text = clientData.City; }
+            if (!clientData.IsStateNull()) { ClientDetailsStateTextBox.Text = clientData.State; }
+            if (!clientData.IsZipNull()) { ClientDetailsZipTextBox.Text = clientData.Zip; }
+            if (!clientData.IsPhone1Null()) { ClientDetailsPhone1TextBox.Text = clientData.Phone1; }
+            if (!clientData.IsPhone2Null()) { ClientDetailsPhone2TextBox.Text = clientData.Phone2; }
+            if (!clientData.IsEmailNull()) { ClientDetailsEmailTextBox.Text = clientData.Email; }
+        }
     }
 }
