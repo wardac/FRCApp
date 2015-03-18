@@ -31,7 +31,7 @@ namespace FRCApp
         {
             // get data fromt the Client table
             clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
-            clientIDGuid = (clientData.ClientID);
+            ClientID = (clientData.ClientID);
             ClientDetailsNameTextBox.Text =
                 clientData.FirstName +
                 " " + clientData.MiddleInitial +
@@ -142,7 +142,7 @@ namespace FRCApp
         private void ClientDetails_Activated(object sender, EventArgs e)
         {
             // get data fromt the Client table
-            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID.ToString());
+            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
             ClientDetailsNameTextBox.Text = clientData.FirstName + " " + clientData.MiddleInitial + " " + clientData.LastName;
             if (!clientData.IsAddressNull()) { ClientDetailsAddressTextBox.Text = clientData.Address; }
             //TODO: Last contact date
