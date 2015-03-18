@@ -59,6 +59,7 @@
             this.addEFAButton = new System.Windows.Forms.Button();
             this.lblefa_request = new System.Windows.Forms.Label();
             this.efaHistPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.lstViewHist = new System.Windows.Forms.ListView();
             this.hist_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.histAssistancetypes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -77,7 +78,6 @@
             this.caseNoteupdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.casenoteCmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblcasenote = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -126,6 +126,7 @@
             this.editIncomeAndFinancesButton.TabIndex = 21;
             this.editIncomeAndFinancesButton.Text = "Edit Income and Finances";
             this.editIncomeAndFinancesButton.UseVisualStyleBackColor = true;
+            this.editIncomeAndFinancesButton.Click += new System.EventHandler(this.editIncomeAndFinancesButton_Click);
             // 
             // editMonthlyExpensesButton
             // 
@@ -135,6 +136,7 @@
             this.editMonthlyExpensesButton.TabIndex = 20;
             this.editMonthlyExpensesButton.Text = "Edit Monthly Expenses";
             this.editMonthlyExpensesButton.UseVisualStyleBackColor = true;
+            this.editMonthlyExpensesButton.Click += new System.EventHandler(this.editMonthlyExpensesButton_Click);
             // 
             // editHouseholdInformationButton
             // 
@@ -144,6 +146,7 @@
             this.editHouseholdInformationButton.TabIndex = 19;
             this.editHouseholdInformationButton.Text = "Edit Household Information";
             this.editHouseholdInformationButton.UseVisualStyleBackColor = true;
+            this.editHouseholdInformationButton.Click += new System.EventHandler(this.editHouseholdInformationButton_Click);
             // 
             // editClientButton
             // 
@@ -161,7 +164,6 @@
             this.ClientdateContact.Name = "ClientdateContact";
             this.ClientdateContact.Size = new System.Drawing.Size(149, 20);
             this.ClientdateContact.TabIndex = 17;
-            this.ClientdateContact.ValueChanged += new System.EventHandler(this.lstdateContact_ValueChanged);
             // 
             // lblLastContact
             // 
@@ -384,6 +386,15 @@
             this.efaHistPanel.Size = new System.Drawing.Size(603, 370);
             this.efaHistPanel.TabIndex = 2;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 195);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "label3";
+            // 
             // lstViewHist
             // 
             this.lstViewHist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -544,15 +555,6 @@
             this.lblcasenote.Size = new System.Drawing.Size(68, 12);
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 195);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
             // 
             // ClientDetails
             // 

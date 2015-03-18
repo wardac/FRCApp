@@ -15,7 +15,6 @@ namespace FRCApp
         private Guid ClientID;
         private Guid householdID;
         private DataSet1.ClientsRow clientData;
-        private Guid clientIDGuid;
 
         public ClientDetails(Guid clientID)
         {
@@ -32,8 +31,6 @@ namespace FRCApp
         {
             // get data fromt the Client table
             clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID.ToString());
-            clientIDGuid = new Guid(clientData.ClientID);
-
             ClientDetailsNameTextBox.Text =
                 clientData.FirstName +
                 " " + clientData.MiddleInitial +
@@ -47,7 +44,7 @@ namespace FRCApp
             if (!clientData.IsPhone1Null()) { ClientDetailsPhone1TextBox.Text = clientData.Phone1; }
             if (!clientData.IsPhone2Null()) { ClientDetailsPhone2TextBox.Text = clientData.Phone2; }
             if (!clientData.IsEmailNull()) { ClientDetailsEmailTextBox.Text = clientData.Email; }
-            if (!clientData.IsLastContactNull()) { ClientdateContact.Text = clientData.LastContact; }
+            //if (!clientData.IsLastContactNull()) { ClientdateContact.Text = clientData.LastContact; }
         }
 
         private void addEFAButton_Click(object sender, EventArgs e)
@@ -114,7 +111,6 @@ namespace FRCApp
 
         private void editClientButton_Click(object sender, EventArgs e)
         {
-            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID.ToString());
             new NewClient(clientData).Show();
         }
 
@@ -153,11 +149,26 @@ namespace FRCApp
             if (!clientData.IsEmailNull()) { ClientDetailsEmailTextBox.Text = clientData.Email; }
         }
 
-        private void lstdateContact_ValueChanged(object sender, EventArgs e)
+        private void editHouseholdInformationButton_Click(object sender, EventArgs e)
+        {
+            new HouseHoldForm(householdID).Show();
+        }
+
+        private void editMonthlyExpensesButton_Click(object sender, EventArgs e)
+        {
+            new ExpenseForm(householdID).Show();
+        }
+
+        private void editIncomeAndFinancesButton_Click(object sender, EventArgs e)
+        {
+            new FinanceForm(householdID.ToString()).Show();
+        }
+
+        /*private void lstdateContact_ValueChanged(object sender, EventArgs e)
         {
             DataSet1TableAdapters.ClientsTableAdapter dateAdapter = new DataSet1TableAdapters.ClientsTableAdapter();
             dateAdapter.editContactDate(ClientdateContact.Text);
             MessageBox.Show("last contact date changed");
-        }
+        }*/
     }
 }
