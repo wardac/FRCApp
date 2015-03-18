@@ -78,6 +78,16 @@
             this.caseNoteupdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.casenoteCmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblcasenote = new System.Windows.Forms.Label();
+            this.from = new System.Windows.Forms.Label();
+            this.To = new System.Windows.Forms.Label();
+            this.fromDate = new System.Windows.Forms.DateTimePicker();
+            this.Todate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTotalRequest = new System.Windows.Forms.TextBox();
+            this.txtApprovedRequest = new System.Windows.Forms.TextBox();
+            this.TxtApporvedAmount = new System.Windows.Forms.TextBox();
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -161,7 +171,6 @@
             this.ClientdateContact.Name = "ClientdateContact";
             this.ClientdateContact.Size = new System.Drawing.Size(149, 20);
             this.ClientdateContact.TabIndex = 17;
-            
             // 
             // lblLastContact
             // 
@@ -376,6 +385,16 @@
             // efaHistPanel
             // 
             this.efaHistPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.efaHistPanel.Controls.Add(this.TxtApporvedAmount);
+            this.efaHistPanel.Controls.Add(this.txtApprovedRequest);
+            this.efaHistPanel.Controls.Add(this.txtTotalRequest);
+            this.efaHistPanel.Controls.Add(this.label6);
+            this.efaHistPanel.Controls.Add(this.label5);
+            this.efaHistPanel.Controls.Add(this.label4);
+            this.efaHistPanel.Controls.Add(this.Todate);
+            this.efaHistPanel.Controls.Add(this.fromDate);
+            this.efaHistPanel.Controls.Add(this.To);
+            this.efaHistPanel.Controls.Add(this.from);
             this.efaHistPanel.Controls.Add(this.label3);
             this.efaHistPanel.Controls.Add(this.lstViewHist);
             this.efaHistPanel.Controls.Add(this.label1);
@@ -387,11 +406,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(4, 195);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(91, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
+            this.label3.Text = "Quick Report";
             // 
             // lstViewHist
             // 
@@ -554,6 +574,91 @@
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
             // 
+            // from
+            // 
+            this.from.AutoSize = true;
+            this.from.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.from.Location = new System.Drawing.Point(15, 224);
+            this.from.Name = "from";
+            this.from.Size = new System.Drawing.Size(37, 12);
+            this.from.TabIndex = 6;
+            this.from.Text = "From:";
+            // 
+            // To
+            // 
+            this.To.AutoSize = true;
+            this.To.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.To.Location = new System.Drawing.Point(281, 225);
+            this.To.Name = "To";
+            this.To.Size = new System.Drawing.Size(22, 12);
+            this.To.TabIndex = 7;
+            this.To.Text = "To:";
+            // 
+            // fromDate
+            // 
+            this.fromDate.Location = new System.Drawing.Point(55, 221);
+            this.fromDate.Name = "fromDate";
+            this.fromDate.Size = new System.Drawing.Size(200, 20);
+            this.fromDate.TabIndex = 8;
+            // 
+            // Todate
+            // 
+            this.Todate.Location = new System.Drawing.Point(316, 221);
+            this.Todate.Name = "Todate";
+            this.Todate.Size = new System.Drawing.Size(200, 20);
+            this.Todate.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 256);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 12);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Total Request";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 285);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(139, 12);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Total Request Approved";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 320);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 12);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Total Amount Approved";
+            // 
+            // txtTotalRequest
+            // 
+            this.txtTotalRequest.Location = new System.Drawing.Point(190, 256);
+            this.txtTotalRequest.Name = "txtTotalRequest";
+            this.txtTotalRequest.Size = new System.Drawing.Size(223, 20);
+            this.txtTotalRequest.TabIndex = 13;
+            // 
+            // txtApprovedRequest
+            // 
+            this.txtApprovedRequest.Location = new System.Drawing.Point(190, 285);
+            this.txtApprovedRequest.Name = "txtApprovedRequest";
+            this.txtApprovedRequest.Size = new System.Drawing.Size(223, 20);
+            this.txtApprovedRequest.TabIndex = 14;
+            // 
+            // TxtApporvedAmount
+            // 
+            this.TxtApporvedAmount.Location = new System.Drawing.Point(190, 316);
+            this.TxtApporvedAmount.Name = "TxtApporvedAmount";
+            this.TxtApporvedAmount.Size = new System.Drawing.Size(223, 20);
+            this.TxtApporvedAmount.TabIndex = 15;
+            // 
             // ClientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -636,5 +741,15 @@
         private System.Windows.Forms.Button clrbutton;
         private System.Windows.Forms.Button addcase;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtApporvedAmount;
+        private System.Windows.Forms.TextBox txtApprovedRequest;
+        private System.Windows.Forms.TextBox txtTotalRequest;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker Todate;
+        private System.Windows.Forms.DateTimePicker fromDate;
+        private System.Windows.Forms.Label To;
+        private System.Windows.Forms.Label from;
     }
 }
