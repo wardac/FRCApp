@@ -34,7 +34,7 @@
             this.editMonthlyExpensesButton = new System.Windows.Forms.Button();
             this.editHouseholdInformationButton = new System.Windows.Forms.Button();
             this.editClientButton = new System.Windows.Forms.Button();
-            this.lstdateContact = new System.Windows.Forms.DateTimePicker();
+            this.ClientdateContact = new System.Windows.Forms.DateTimePicker();
             this.lblLastContact = new System.Windows.Forms.Label();
             this.ClientDetailsAddressTextBox = new System.Windows.Forms.TextBox();
             this.ClientDetailsNameTextBox = new System.Windows.Forms.TextBox();
@@ -77,6 +77,7 @@
             this.caseNoteupdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.casenoteCmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblcasenote = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,7 +95,7 @@
             this.Contactpanel.Controls.Add(this.editMonthlyExpensesButton);
             this.Contactpanel.Controls.Add(this.editHouseholdInformationButton);
             this.Contactpanel.Controls.Add(this.editClientButton);
-            this.Contactpanel.Controls.Add(this.lstdateContact);
+            this.Contactpanel.Controls.Add(this.ClientdateContact);
             this.Contactpanel.Controls.Add(this.lblLastContact);
             this.Contactpanel.Controls.Add(this.ClientDetailsAddressTextBox);
             this.Contactpanel.Controls.Add(this.ClientDetailsNameTextBox);
@@ -154,12 +155,13 @@
             this.editClientButton.UseVisualStyleBackColor = true;
             this.editClientButton.Click += new System.EventHandler(this.editClientButton_Click);
             // 
-            // lstdateContact
+            // ClientdateContact
             // 
-            this.lstdateContact.Location = new System.Drawing.Point(265, 34);
-            this.lstdateContact.Name = "lstdateContact";
-            this.lstdateContact.Size = new System.Drawing.Size(149, 20);
-            this.lstdateContact.TabIndex = 17;
+            this.ClientdateContact.Location = new System.Drawing.Point(265, 34);
+            this.ClientdateContact.Name = "ClientdateContact";
+            this.ClientdateContact.Size = new System.Drawing.Size(149, 20);
+            this.ClientdateContact.TabIndex = 17;
+            this.ClientdateContact.ValueChanged += new System.EventHandler(this.lstdateContact_ValueChanged);
             // 
             // lblLastContact
             // 
@@ -374,6 +376,7 @@
             // efaHistPanel
             // 
             this.efaHistPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.efaHistPanel.Controls.Add(this.label3);
             this.efaHistPanel.Controls.Add(this.lstViewHist);
             this.efaHistPanel.Controls.Add(this.label1);
             this.efaHistPanel.Location = new System.Drawing.Point(470, 283);
@@ -542,6 +545,15 @@
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 195);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "label3";
+            // 
             // ClientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,7 +614,7 @@
         private System.Windows.Forms.ListView lstViewHist;
         private System.Windows.Forms.ColumnHeader hist_date;
         private System.Windows.Forms.ColumnHeader histAssistancetypes;
-        private System.Windows.Forms.DateTimePicker lstdateContact;
+        private System.Windows.Forms.DateTimePicker ClientdateContact;
         private System.Windows.Forms.Label lblLastContact;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtcomment;
@@ -622,5 +634,6 @@
         private System.Windows.Forms.Button editHouseholdInformationButton;
         private System.Windows.Forms.Button clrbutton;
         private System.Windows.Forms.Button addcase;
+        private System.Windows.Forms.Label label3;
     }
 }

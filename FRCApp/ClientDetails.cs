@@ -47,6 +47,7 @@ namespace FRCApp
             if (!clientData.IsPhone1Null()) { ClientDetailsPhone1TextBox.Text = clientData.Phone1; }
             if (!clientData.IsPhone2Null()) { ClientDetailsPhone2TextBox.Text = clientData.Phone2; }
             if (!clientData.IsEmailNull()) { ClientDetailsEmailTextBox.Text = clientData.Email; }
+            if (!clientData.IsLastContactNull()) { ClientdateContact.Text = clientData.LastContact; }
         }
 
         private void addEFAButton_Click(object sender, EventArgs e)
@@ -134,6 +135,13 @@ namespace FRCApp
                 lstCaseNotes.Items.Clear();
                 loadcaseNote();
             }
+        }
+
+        private void lstdateContact_ValueChanged(object sender, EventArgs e)
+        {
+            DataSet1TableAdapters.ClientsTableAdapter dateAdapter = new DataSet1TableAdapters.ClientsTableAdapter();
+            dateAdapter.editContactDate(ClientdateContact.Text);
+            MessageBox.Show("last contact date changed");
         }
     }
 }
