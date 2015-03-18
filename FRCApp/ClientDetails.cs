@@ -30,12 +30,13 @@ namespace FRCApp
         private void createClientObject()
         {
             // get data fromt the Client table
-            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID.ToString());
+            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
+            clientIDGuid = (clientData.ClientID);
             ClientDetailsNameTextBox.Text =
                 clientData.FirstName +
                 " " + clientData.MiddleInitial +
                 " " + clientData.LastName;
-            householdID = new Guid(clientData.HouseholdID);
+            householdID = (clientData.HouseholdID);
             if (!clientData.IsAddressNull()) { ClientDetailsAddressTextBox.Text = clientData.Address; }
             //TODO: Last contact date
             if (!clientData.IsCityNull()) { ClientDetailsCityTextBox.Text = clientData.City; }
@@ -44,7 +45,7 @@ namespace FRCApp
             if (!clientData.IsPhone1Null()) { ClientDetailsPhone1TextBox.Text = clientData.Phone1; }
             if (!clientData.IsPhone2Null()) { ClientDetailsPhone2TextBox.Text = clientData.Phone2; }
             if (!clientData.IsEmailNull()) { ClientDetailsEmailTextBox.Text = clientData.Email; }
-            //if (!clientData.IsLastContactNull()) { ClientdateContact.Text = clientData.LastContact; }
+            if (!clientData.IsLastContactNull()) { ClientdateContact.Value = clientData.LastContact; }
         }
 
         private void addEFAButton_Click(object sender, EventArgs e)
@@ -68,6 +69,8 @@ namespace FRCApp
                 requestStatusform efareq = new requestStatusform(ClientID, lstViewHist.SelectedItems[0].Tag.ToString(), false, (() => LoadFormData()));
                 efareq.Show();
             });
+
+            this.ClientdateContact.ValueChanged += new System.EventHandler(this.ClientdateContact_ValueChanged);
         }
 
         private void LoadFormData()
@@ -111,6 +114,7 @@ namespace FRCApp
 
         private void editClientButton_Click(object sender, EventArgs e)
         {
+            clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
             new NewClient(clientData).Show();
         }
 
@@ -132,6 +136,7 @@ namespace FRCApp
                 loadcaseNote();
             }
         }
+
 
         // update any changed information when the form regains focus
         private void ClientDetails_Activated(object sender, EventArgs e)
@@ -164,11 +169,11 @@ namespace FRCApp
             new FinanceForm(householdID.ToString()).Show();
         }
 
-        /*private void lstdateContact_ValueChanged(object sender, EventArgs e)
+        private void ClientdateContact_ValueChanged(object sender, EventArgs e)
         {
             DataSet1TableAdapters.ClientsTableAdapter dateAdapter = new DataSet1TableAdapters.ClientsTableAdapter();
-            dateAdapter.editContactDate(ClientdateContact.Text);
-            MessageBox.Show("last contact date changed");
-        }*/
+            dateAdapter.editContactDate(ClientdateContact.Value, ClientID);
+            MessageBox.Show("this");
+        }
     }
 }
