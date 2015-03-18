@@ -174,8 +174,8 @@ namespace FRCApp {
          */
         private void populateFormData(DataSet1.ClientsRow clientData)
         {
-            clientID = new Guid(clientData.ClientID);
-            householdID = new Guid(clientData.HouseholdID);
+            clientID = clientData.ClientID;
+            householdID = clientData.HouseholdID;
             firstName_textBox.Text = clientData.FirstName;
             lastName_textBox.Text = clientData.LastName;
             middleInitial_textBox.Text = clientData.MiddleInitial;
