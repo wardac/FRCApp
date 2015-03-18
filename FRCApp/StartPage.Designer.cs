@@ -30,7 +30,6 @@
         {
             this.search_label = new System.Windows.Forms.Label();
             this.search_textBox = new System.Windows.Forms.TextBox();
-            this.search_button = new System.Windows.Forms.Button();
             this.client_listView = new System.Windows.Forms.ListView();
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateOfBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,16 +58,6 @@
             this.search_textBox.Size = new System.Drawing.Size(142, 20);
             this.search_textBox.TabIndex = 1;
             this.search_textBox.TextChanged += new System.EventHandler(this.textChanged);
-            // 
-            // search_button
-            // 
-            this.search_button.Location = new System.Drawing.Point(240, 6);
-            this.search_button.Name = "search_button";
-            this.search_button.Size = new System.Drawing.Size(75, 23);
-            this.search_button.TabIndex = 2;
-            this.search_button.Text = "Search";
-            this.search_button.UseVisualStyleBackColor = true;
-            this.search_button.Click += new System.EventHandler(this.search_button_Click);
             // 
             // client_listView
             // 
@@ -151,7 +140,6 @@
             this.startPage_panel.Controls.Add(this.clientPage_button);
             this.startPage_panel.Controls.Add(this.addNewClient_button);
             this.startPage_panel.Controls.Add(this.client_listView);
-            this.startPage_panel.Controls.Add(this.search_button);
             this.startPage_panel.Controls.Add(this.search_textBox);
             this.startPage_panel.Controls.Add(this.search_label);
             this.startPage_panel.Location = new System.Drawing.Point(2, 2);
@@ -180,7 +168,6 @@
 
         private System.Windows.Forms.Label search_label;
         private System.Windows.Forms.TextBox search_textBox;
-        private System.Windows.Forms.Button search_button;
         private System.Windows.Forms.ListView client_listView;
         private System.Windows.Forms.ColumnHeader name;
         private System.Windows.Forms.ColumnHeader dateOfBirth;

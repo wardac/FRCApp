@@ -143,6 +143,10 @@ namespace FRCApp
                     date_completedDate.Visible = true;
                     btn_handleRequest.Visible = false;
                     update_efa.Visible = false;
+                    cmb_hardship.Enabled = false;
+                    efa_comment.Enabled = false;
+                    boxes.ToList().ForEach((box) => box.Enabled = false);
+                    pickers.ToList().ForEach((picker) => picker.Enabled = false);
                 }
 
             }
