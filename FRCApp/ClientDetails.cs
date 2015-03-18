@@ -15,7 +15,6 @@ namespace FRCApp
         private Guid ClientID;
         private Guid householdID;
         private DataSet1.ClientsRow clientData;
-        private Guid clientIDGuid;
 
         public ClientDetails(Guid clientID)
         {
@@ -32,8 +31,7 @@ namespace FRCApp
         {
             // get data fromt the Client table
             clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
-            clientIDGuid = (clientData.ClientID);
-
+            ClientID = (clientData.ClientID);
             ClientDetailsNameTextBox.Text =
                 clientData.FirstName +
                 " " + clientData.MiddleInitial +
@@ -156,13 +154,26 @@ namespace FRCApp
             if (!clientData.IsEmailNull()) { ClientDetailsEmailTextBox.Text = clientData.Email; }
         }
 
-           private void ClientdateContact_ValueChanged(object sender, EventArgs e)
+        private void editHouseholdInformationButton_Click(object sender, EventArgs e)
+        {
+            new HouseHoldForm(householdID).Show();
+        }
+
+        private void editMonthlyExpensesButton_Click(object sender, EventArgs e)
+        {
+            new ExpenseForm(householdID).Show();
+        }
+
+        private void editIncomeAndFinancesButton_Click(object sender, EventArgs e)
+        {
+            new FinanceForm(householdID.ToString()).Show();
+        }
+
+        private void ClientdateContact_ValueChanged(object sender, EventArgs e)
         {
             DataSet1TableAdapters.ClientsTableAdapter dateAdapter = new DataSet1TableAdapters.ClientsTableAdapter();
             dateAdapter.editContactDate(ClientdateContact.Value, ClientID);
             MessageBox.Show("this");
         }
-
-
     }
 }

@@ -136,6 +136,7 @@
             this.editIncomeAndFinancesButton.TabIndex = 21;
             this.editIncomeAndFinancesButton.Text = "Edit Income and Finances";
             this.editIncomeAndFinancesButton.UseVisualStyleBackColor = true;
+            this.editIncomeAndFinancesButton.Click += new System.EventHandler(this.editIncomeAndFinancesButton_Click);
             // 
             // editMonthlyExpensesButton
             // 
@@ -145,6 +146,7 @@
             this.editMonthlyExpensesButton.TabIndex = 20;
             this.editMonthlyExpensesButton.Text = "Edit Monthly Expenses";
             this.editMonthlyExpensesButton.UseVisualStyleBackColor = true;
+            this.editMonthlyExpensesButton.Click += new System.EventHandler(this.editMonthlyExpensesButton_Click);
             // 
             // editHouseholdInformationButton
             // 
@@ -154,6 +156,7 @@
             this.editHouseholdInformationButton.TabIndex = 19;
             this.editHouseholdInformationButton.Text = "Edit Household Information";
             this.editHouseholdInformationButton.UseVisualStyleBackColor = true;
+            this.editHouseholdInformationButton.Click += new System.EventHandler(this.editHouseholdInformationButton_Click);
             // 
             // editClientButton
             // 
