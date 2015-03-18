@@ -95,7 +95,7 @@ namespace FRCApp
 
         private void StartPage_Load(object sender, EventArgs e)
         {
-            if (!AccessLevel.Equals("admin"))
+            if (!AccessLevel.Equals("Administrator"))
             {
                 usersPagebutton.Visible = false;
             }
