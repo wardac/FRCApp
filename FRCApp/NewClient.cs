@@ -17,8 +17,6 @@ namespace FRCApp {
         private FinanceForm financeForm;
         public Guid clientID;
         public Guid householdID;
-        public String clientIdAsString = "";
-        public String householdIdAsString = "";
         private const int BACKSPACE = 8;
         private const int DELETE = 46;
 
@@ -99,12 +97,9 @@ namespace FRCApp {
                     Console.WriteLine(((System.Data.DataRowView)item).Row.Field<string>(1));
                 }
                 DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
-
-                if (clientIdAsString.Equals(""))
-                {
-                    adapter.AddClient(
-                        clientID.ToString(),
-                        householdID.ToString(),
+                adapter.AddOrUpdateClient(
+                        clientID,
+                        householdID,
                         firstName_textBox.Text,
                         lastName_textBox.Text,
                         middleInitial_textBox.Text,
@@ -122,33 +117,7 @@ namespace FRCApp {
                         false, // bank account
                         false, // credit score
                         false  // credit report
-                    );
-                }
-                else
-                {
-                    adapter.UpdateClient(
-                        clientIdAsString,
-                        householdIdAsString,
-                        firstName_textBox.Text,
-                        lastName_textBox.Text,
-                        middleInitial_textBox.Text,
-                        DateTime.Parse(dataOfBirth_dateTimePicker.Text),
-                        homeAddress_textBox.Text,
-                        apartmentNumber_textBox.Text,
-                        city_textBox.Text,
-                        "Ohio",
-                        zipCode_textBox.Text,
-                        telephone1_textBox.Text,
-                        telephone2_textBox.Text,
-                        email_textBox.Text,
-                        EducationLevelBox.Text,
-                        EmploymentStatusBox.Text,
-                        false, // bank account
-                        false, // credit score
-                        false,  // credit report
-                        clientIdAsString
-                    );
-                }
+                );
                 this.Close();
                 new ClientDetails(clientID).Show();
             }
@@ -205,8 +174,8 @@ namespace FRCApp {
          */
         private void populateFormData(DataSet1.ClientsRow clientData)
         {
-            clientIdAsString = clientData.ClientID;
-            householdIdAsString = clientData.HouseholdID;
+            clientID = new Guid(clientData.ClientID);
+            householdID = new Guid(clientData.HouseholdID);
             firstName_textBox.Text = clientData.FirstName;
             lastName_textBox.Text = clientData.LastName;
             middleInitial_textBox.Text = clientData.MiddleInitial;
