@@ -77,6 +77,7 @@
             this.client_listView.TabIndex = 3;
             this.client_listView.UseCompatibleStateImageBehavior = false;
             this.client_listView.View = System.Windows.Forms.View.Details;
+            this.client_listView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.client_listView_MouseDoubleClick);
             // 
             // name
             // 

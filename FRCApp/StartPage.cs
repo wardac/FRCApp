@@ -101,5 +101,15 @@ namespace FRCApp
             }
         }
 
+        private void client_listView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (client_listView.SelectedItems.Count == 0 || (selectedClientId = new Guid(client_listView.SelectedItems[0].Tag.ToString())) == Guid.Empty)
+            {
+                MessageBox.Show("Please select a client");
+                return;
+            }
+            client_listView.SelectedItems.Clear();
+            new ClientDetails(selectedClientId).Show();
+        }
     }
 }
