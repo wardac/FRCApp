@@ -8376,6 +8376,8 @@ namespace FRCApp {
             
             private global::System.Data.DataColumn columnRequestTypes;
             
+            private global::System.Data.DataColumn columnHandledRequestTypes;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EFARequestsDisplayDataTable() {
@@ -8443,6 +8445,14 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HandledRequestTypesColumn {
+                get {
+                    return this.columnHandledRequestTypes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8478,13 +8488,14 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsDisplayRow AddEFARequestsDisplayRow(string EFARequestID, System.DateTime DateRequested, string Status, string RequestTypes) {
+            public EFARequestsDisplayRow AddEFARequestsDisplayRow(string EFARequestID, System.DateTime DateRequested, string Status, string RequestTypes, string HandledRequestTypes) {
                 EFARequestsDisplayRow rowEFARequestsDisplayRow = ((EFARequestsDisplayRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EFARequestID,
                         DateRequested,
                         Status,
-                        RequestTypes};
+                        RequestTypes,
+                        HandledRequestTypes};
                 rowEFARequestsDisplayRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEFARequestsDisplayRow);
                 return rowEFARequestsDisplayRow;
@@ -8518,6 +8529,7 @@ namespace FRCApp {
                 this.columnDateRequested = base.Columns["DateRequested"];
                 this.columnStatus = base.Columns["Status"];
                 this.columnRequestTypes = base.Columns["RequestTypes"];
+                this.columnHandledRequestTypes = base.Columns["HandledRequestTypes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8531,6 +8543,8 @@ namespace FRCApp {
                 base.Columns.Add(this.columnStatus);
                 this.columnRequestTypes = new global::System.Data.DataColumn("RequestTypes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRequestTypes);
+                this.columnHandledRequestTypes = new global::System.Data.DataColumn("HandledRequestTypes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHandledRequestTypes);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEFARequestID}, true));
                 this.columnEFARequestID.AllowDBNull = false;
@@ -8541,6 +8555,8 @@ namespace FRCApp {
                 this.columnStatus.MaxLength = 200;
                 this.columnRequestTypes.ReadOnly = true;
                 this.columnRequestTypes.MaxLength = 2147483647;
+                this.columnHandledRequestTypes.ReadOnly = true;
+                this.columnHandledRequestTypes.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12478,6 +12494,23 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string HandledRequestTypes {
+                get {
+                    try {
+                        return ((string)(this[this.tableEFARequestsDisplay.HandledRequestTypesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HandledRequestTypes\' in table \'EFARequestsDisplay\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequestsDisplay.HandledRequestTypesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsRequestTypesNull() {
                 return this.IsNull(this.tableEFARequestsDisplay.RequestTypesColumn);
             }
@@ -12486,6 +12519,18 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetRequestTypesNull() {
                 this[this.tableEFARequestsDisplay.RequestTypesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHandledRequestTypesNull() {
+                return this.IsNull(this.tableEFARequestsDisplay.HandledRequestTypesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHandledRequestTypesNull() {
+                this[this.tableEFARequestsDisplay.HandledRequestTypesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -24434,6 +24479,7 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
             tableMapping.ColumnMappings.Add("DateRequested", "DateRequested");
             tableMapping.ColumnMappings.Add("Status", "Status");
             tableMapping.ColumnMappings.Add("RequestTypes", "RequestTypes");
+            tableMapping.ColumnMappings.Add("HandledRequestTypes", "HandledRequestTypes");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -24450,8 +24496,8 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EFARequestID, DateRequested, Status, RequestTypes FROM dbo.EFARequestsDisp" +
-                "lay";
+            this._commandCollection[0].CommandText = "SELECT EFARequestID, DateRequested, Status, RequestTypes,HandledRequestTypes FROM" +
+                " dbo.EFARequestsDisplay";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;

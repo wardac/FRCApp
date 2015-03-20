@@ -92,12 +92,8 @@ namespace FRCApp
             {
                 var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
                 item.Tag = efaRequest.EFARequestID;
-                if (efaRequest.Status == "approved")
-                {
-                    item.SubItems.Add(efaRequest.RequestTypes);
-                }
-                else
-                { }
+                item.SubItems.Add(efaRequest.HandledRequestTypes);
+                item.SubItems.Add(efaRequest.RequestTypes);
                 lstViewHist.Items.Add(item);
             }
             loadcaseNote();
@@ -105,6 +101,7 @@ namespace FRCApp
 
         private void loadcaseNote()
         {
+            lstCaseNotes.Items.Clear();
             var casenoteadapter = new DataSet1TableAdapters.CaseNoteTableAdapter();
             var casenotes = casenoteadapter.GetcasenotebyId(ClientID.ToString());
             foreach (var casenote in casenotes)
