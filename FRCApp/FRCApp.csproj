@@ -123,6 +123,7 @@
     <Compile Include="loginForm.Designer.cs">
       <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginTimeout.cs" />
     <Compile Include="NewClient.cs">
       <SubType>Form</SubType>
     </Compile>

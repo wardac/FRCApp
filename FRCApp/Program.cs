@@ -16,9 +16,12 @@ namespace FRCApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            loginForm login = new loginForm();
+            System.Timers.Timer timer = new System.Timers.Timer(1000);
+            timer.Elapsed += ((o, e) => { if (LoginTimeout.LastInputTime() < DateTime.Now.AddSeconds(-3)) { Application.Restart(); } });
+            loginForm login = new loginForm(timer);
             login.Show();
             Application.Run();
+            
         }
     }
 }

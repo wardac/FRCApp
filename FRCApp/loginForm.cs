@@ -12,9 +12,11 @@ namespace FRCApp
 {
     public partial class loginForm : Form
     {
-        public loginForm()
+        private System.Timers.Timer timer;
+        public loginForm(System.Timers.Timer timer)
         {
             InitializeComponent();
+            this.timer = timer;
         }
 
         private void login_submit_Click(object sender, EventArgs e)
@@ -24,6 +26,7 @@ namespace FRCApp
             if (level != null)
             {
                 // check for default password
+                timer.Enabled = true;
                 StartPage startPage = new StartPage(level.ToString());
                 this.Close();
                 this.Dispose();
