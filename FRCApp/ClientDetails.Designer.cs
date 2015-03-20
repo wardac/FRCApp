@@ -59,10 +59,20 @@
             this.addEFAButton = new System.Windows.Forms.Button();
             this.lblefa_request = new System.Windows.Forms.Label();
             this.efaHistPanel = new System.Windows.Forms.Panel();
+            this.TxtApporvedAmount = new System.Windows.Forms.TextBox();
+            this.txtApprovedRequest = new System.Windows.Forms.TextBox();
+            this.txtTotalRequest = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Todate = new System.Windows.Forms.DateTimePicker();
+            this.fromDate = new System.Windows.Forms.DateTimePicker();
+            this.To = new System.Windows.Forms.Label();
+            this.from = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lstViewHist = new System.Windows.Forms.ListView();
             this.hist_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.histAssistancetypes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ApprovedAssistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.clrbutton = new System.Windows.Forms.Button();
@@ -78,16 +88,7 @@
             this.caseNoteupdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.casenoteCmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblcasenote = new System.Windows.Forms.Label();
-            this.from = new System.Windows.Forms.Label();
-            this.To = new System.Windows.Forms.Label();
-            this.fromDate = new System.Windows.Forms.DateTimePicker();
-            this.Todate = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTotalRequest = new System.Windows.Forms.TextBox();
-            this.txtApprovedRequest = new System.Windows.Forms.TextBox();
-            this.TxtApporvedAmount = new System.Windows.Forms.TextBox();
+            this.deniedAssistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -406,6 +407,91 @@
             this.efaHistPanel.Size = new System.Drawing.Size(603, 370);
             this.efaHistPanel.TabIndex = 2;
             // 
+            // TxtApporvedAmount
+            // 
+            this.TxtApporvedAmount.Location = new System.Drawing.Point(190, 316);
+            this.TxtApporvedAmount.Name = "TxtApporvedAmount";
+            this.TxtApporvedAmount.Size = new System.Drawing.Size(223, 20);
+            this.TxtApporvedAmount.TabIndex = 15;
+            // 
+            // txtApprovedRequest
+            // 
+            this.txtApprovedRequest.Location = new System.Drawing.Point(190, 285);
+            this.txtApprovedRequest.Name = "txtApprovedRequest";
+            this.txtApprovedRequest.Size = new System.Drawing.Size(223, 20);
+            this.txtApprovedRequest.TabIndex = 14;
+            // 
+            // txtTotalRequest
+            // 
+            this.txtTotalRequest.Location = new System.Drawing.Point(190, 256);
+            this.txtTotalRequest.Name = "txtTotalRequest";
+            this.txtTotalRequest.Size = new System.Drawing.Size(223, 20);
+            this.txtTotalRequest.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 320);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 12);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Total Amount Approved";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 285);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(139, 12);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Total Request Approved";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 256);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 12);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Total Request";
+            // 
+            // Todate
+            // 
+            this.Todate.Location = new System.Drawing.Point(316, 221);
+            this.Todate.Name = "Todate";
+            this.Todate.Size = new System.Drawing.Size(200, 20);
+            this.Todate.TabIndex = 9;
+            // 
+            // fromDate
+            // 
+            this.fromDate.Location = new System.Drawing.Point(55, 221);
+            this.fromDate.Name = "fromDate";
+            this.fromDate.Size = new System.Drawing.Size(200, 20);
+            this.fromDate.TabIndex = 8;
+            // 
+            // To
+            // 
+            this.To.AutoSize = true;
+            this.To.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.To.Location = new System.Drawing.Point(281, 225);
+            this.To.Name = "To";
+            this.To.Size = new System.Drawing.Size(22, 12);
+            this.To.TabIndex = 7;
+            this.To.Text = "To:";
+            // 
+            // from
+            // 
+            this.from.AutoSize = true;
+            this.from.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.from.Location = new System.Drawing.Point(15, 224);
+            this.from.Name = "from";
+            this.from.Size = new System.Drawing.Size(37, 12);
+            this.from.TabIndex = 6;
+            this.from.Text = "From:";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -420,9 +506,10 @@
             // 
             this.lstViewHist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.hist_date,
-            this.histAssistancetypes});
+            this.ApprovedAssistance,
+            this.deniedAssistance});
             this.lstViewHist.FullRowSelect = true;
-            this.lstViewHist.Location = new System.Drawing.Point(5, 22);
+            this.lstViewHist.Location = new System.Drawing.Point(7, 22);
             this.lstViewHist.MultiSelect = false;
             this.lstViewHist.Name = "lstViewHist";
             this.lstViewHist.Size = new System.Drawing.Size(593, 157);
@@ -433,12 +520,12 @@
             // hist_date
             // 
             this.hist_date.Text = "Date Requested";
-            this.hist_date.Width = 90;
+            this.hist_date.Width = 109;
             // 
-            // histAssistancetypes
+            // ApprovedAssistance
             // 
-            this.histAssistancetypes.Text = "Assistance Types";
-            this.histAssistancetypes.Width = 499;
+            this.ApprovedAssistance.Text = "Approved Request";
+            this.ApprovedAssistance.Width = 223;
             // 
             // label1
             // 
@@ -507,7 +594,7 @@
             // 
             this.txtupdateType.Location = new System.Drawing.Point(125, 37);
             this.txtupdateType.Name = "txtupdateType";
-            this.txtupdateType.Size = new System.Drawing.Size(207, 20);
+            this.txtupdateType.Size = new System.Drawing.Size(247, 20);
             this.txtupdateType.TabIndex = 16;
             // 
             // lblreqcnt
@@ -577,90 +664,10 @@
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
             // 
-            // from
+            // deniedAssistance
             // 
-            this.from.AutoSize = true;
-            this.from.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.from.Location = new System.Drawing.Point(15, 224);
-            this.from.Name = "from";
-            this.from.Size = new System.Drawing.Size(37, 12);
-            this.from.TabIndex = 6;
-            this.from.Text = "From:";
-            // 
-            // To
-            // 
-            this.To.AutoSize = true;
-            this.To.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.To.Location = new System.Drawing.Point(281, 225);
-            this.To.Name = "To";
-            this.To.Size = new System.Drawing.Size(22, 12);
-            this.To.TabIndex = 7;
-            this.To.Text = "To:";
-            // 
-            // fromDate
-            // 
-            this.fromDate.Location = new System.Drawing.Point(55, 221);
-            this.fromDate.Name = "fromDate";
-            this.fromDate.Size = new System.Drawing.Size(200, 20);
-            this.fromDate.TabIndex = 8;
-            // 
-            // Todate
-            // 
-            this.Todate.Location = new System.Drawing.Point(316, 221);
-            this.Todate.Name = "Todate";
-            this.Todate.Size = new System.Drawing.Size(200, 20);
-            this.Todate.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 256);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 12);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Total Request";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 285);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 12);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Total Request Approved";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 320);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 12);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Total Amount Approved";
-            // 
-            // txtTotalRequest
-            // 
-            this.txtTotalRequest.Location = new System.Drawing.Point(190, 256);
-            this.txtTotalRequest.Name = "txtTotalRequest";
-            this.txtTotalRequest.Size = new System.Drawing.Size(223, 20);
-            this.txtTotalRequest.TabIndex = 13;
-            // 
-            // txtApprovedRequest
-            // 
-            this.txtApprovedRequest.Location = new System.Drawing.Point(190, 285);
-            this.txtApprovedRequest.Name = "txtApprovedRequest";
-            this.txtApprovedRequest.Size = new System.Drawing.Size(223, 20);
-            this.txtApprovedRequest.TabIndex = 14;
-            // 
-            // TxtApporvedAmount
-            // 
-            this.TxtApporvedAmount.Location = new System.Drawing.Point(190, 316);
-            this.TxtApporvedAmount.Name = "TxtApporvedAmount";
-            this.TxtApporvedAmount.Size = new System.Drawing.Size(223, 20);
-            this.TxtApporvedAmount.TabIndex = 15;
+            this.deniedAssistance.Text = "Denied Request";
+            this.deniedAssistance.Width = 200;
             // 
             // ClientDetails
             // 
@@ -722,7 +729,7 @@
         private System.Windows.Forms.Button addEFAButton;
         private System.Windows.Forms.ListView lstViewHist;
         private System.Windows.Forms.ColumnHeader hist_date;
-        private System.Windows.Forms.ColumnHeader histAssistancetypes;
+        private System.Windows.Forms.ColumnHeader ApprovedAssistance;
         private System.Windows.Forms.DateTimePicker ClientdateContact;
         private System.Windows.Forms.Label lblLastContact;
         private System.Windows.Forms.Panel panel1;
@@ -754,5 +761,6 @@
         private System.Windows.Forms.DateTimePicker fromDate;
         private System.Windows.Forms.Label To;
         private System.Windows.Forms.Label from;
+        private System.Windows.Forms.ColumnHeader deniedAssistance;
     }
 }

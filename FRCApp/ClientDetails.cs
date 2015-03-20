@@ -92,7 +92,12 @@ namespace FRCApp
             {
                 var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
                 item.Tag = efaRequest.EFARequestID;
-                item.SubItems.Add(efaRequest.RequestTypes);
+                if (efaRequest.Status == "approved")
+                {
+                    item.SubItems.Add(efaRequest.RequestTypes);
+                }
+                else
+                { }
                 lstViewHist.Items.Add(item);
             }
             loadcaseNote();
@@ -173,7 +178,7 @@ namespace FRCApp
         {
             DataSet1TableAdapters.ClientsTableAdapter dateAdapter = new DataSet1TableAdapters.ClientsTableAdapter();
             dateAdapter.editContactDate(ClientdateContact.Value, ClientID);
-            MessageBox.Show("this");
+            MessageBox.Show("last contact date changed");
         }
     }
 }

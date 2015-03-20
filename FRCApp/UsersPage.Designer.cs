@@ -88,7 +88,7 @@
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(129, 23);
             this.back.TabIndex = 2;
-            this.back.Text = "Cancel";
+            this.back.Text = "Back";
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
