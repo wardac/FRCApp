@@ -32,13 +32,9 @@ namespace FRCApp
             // get data fromt the Client table
             clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
             ClientID = (clientData.ClientID);
-            ClientDetailsNameTextBox.Text =
-                clientData.FirstName +
-                " " + clientData.MiddleInitial +
-                " " + clientData.LastName;
             householdID = (clientData.HouseholdID);
+            ClientDetailsNameTextBox.Text = clientData.FirstName + " " + clientData.MiddleInitial + " " + clientData.LastName;
             if (!clientData.IsAddressNull()) { ClientDetailsAddressTextBox.Text = clientData.Address; }
-            //TODO: Last contact date
             if (!clientData.IsCityNull()) { ClientDetailsCityTextBox.Text = clientData.City; }
             if (!clientData.IsStateNull()) { ClientDetailsStateTextBox.Text = clientData.State; }
             if (!clientData.IsZipNull()) { ClientDetailsZipTextBox.Text = clientData.Zip; }

@@ -153,5 +153,38 @@ namespace FRCApp
         {
             return str != null && str != "";
         }
+
+        /**
+         * Load data from database
+         **/
+        private void ExpenseForm_Load(object sender, EventArgs e)
+        {
+            DataSet1.MonthlyExpensesDataTable monthlyExpenseData = new DataSet1TableAdapters.MonthlyExpensesTableAdapter().GetMonthlyExpensesByHouseholdID(householdID);
+            foreach (DataRow row in monthlyExpenseData.Rows)
+            {
+            }
+            //ExpenseRentTextBox.Text = monthlyExpenseData
+            ExpenseElectricTextBox.Text = monthlyExpenseData.ElectricColumn.ToString();
+            ExpenseHeatingTextBox.Text = monthlyExpenseData.HeatingColumn.ToString();
+            ExpensePhoneTextBox.Text = monthlyExpenseData.PhoneColumn.ToString();
+            ExpenseTrashTextBox.Text = monthlyExpenseData.TrashColumn.ToString();
+            ExpenseWaterTextBox.Text = monthlyExpenseData.WaterColumn.ToString();
+            ExpensePrescriptionsTextBox.Text = monthlyExpenseData.PrescriptionsColumn.ToString();
+            ExpenseLaundryTextBox.Text = monthlyExpenseData.LaundryColumn.ToString();
+            ExpenseCarPaymentTextBox.Text = monthlyExpenseData.CarPaymentColumn.ToString();
+            ExpenseCarInsuranceTextBox.Text = monthlyExpenseData.CarInsuranceColumn.ToString();
+            ExpenseGasolineTransportTextBox.Text = monthlyExpenseData.TransportationColumn.ToString();
+            ExpenseHealthInsuranceTextBox.Text = monthlyExpenseData.HealthInsuranceColumn.ToString();
+            ExpenseCableTextBox.Text = monthlyExpenseData.CableColumn.ToString();
+            ExpenseInternetTextBox.Text = monthlyExpenseData.InternetColumn.ToString();
+            ExpenseCreditCardTextBox.Text = monthlyExpenseData.CreditCardColumn.ToString();
+            ExpenseLoansTextBox.Text = monthlyExpenseData.LoansColumn.ToString();
+            ExpenseGroceriesTextBox.Text = monthlyExpenseData.GroceriesColumn.ToString();
+            ExpenseHygieneTextBox.Text = monthlyExpenseData.HygieneColumn.ToString();
+            ExpenseHouseholdTextBox.Text = monthlyExpenseData.HouseholdColumn.ToString();
+            ExpenseChildCareTextBox.Text = monthlyExpenseData.ChildCareColumn.ToString();
+            ExpenseChildSupportTextBox.Text = monthlyExpenseData.ChildSupportColumn.ToString();
+            ExpenseOtherTextBox.Text = monthlyExpenseData.OtherColumn.ToString();
+        }
     }
 }

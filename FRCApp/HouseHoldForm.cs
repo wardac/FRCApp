@@ -35,8 +35,7 @@ namespace FRCApp
             DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
             foreach (DataRow row in adapter.getHouseholdMembersById(houseHoldId).Rows)
             {
-                ListViewItem item = new ListViewItem(row["HouseholdMemberID"].ToString());
-                item.SubItems.Add(row["FirstName"].ToString());
+                ListViewItem item = new ListViewItem(row["FirstName"].ToString());
                 item.SubItems.Add(row["LastName"].ToString());
                 item.SubItems.Add(row["LastFourSSN"].ToString());
                 item.SubItems.Add(row["Birthdate"].ToString());
