@@ -24,7 +24,13 @@ namespace FRCApp
         {
             while (lst_requestedServices.SelectedItems.Count > 0)
             {
-                lst_approvedServices.Items.Add(lst_requestedServices.SelectedItems[0]);
+                var amount = 0;
+                Service current = new Service((Service)lst_requestedServices.SelectedItems[0]);
+                ListViewItem item = new ListViewItem(current.getType() );
+                item.Tag = current.getefaSubrequestID();
+                item.SubItems.Add(amount.ToString());
+                lst_approvedServices.Items.Add(item);
+                //lst_approvedServices.Items.Add(lst_requestedServices.SelectedItems[0]);
                 lst_requestedServices.Items.Remove(lst_requestedServices.SelectedItems[0]);
             }
             
@@ -45,8 +51,9 @@ namespace FRCApp
             var efaSubrequests = efaSubrequestAdapter.GetEFASubrequestsByEFARequestID(requestID);
             lst_requestedServices.DisplayMember = "Type";
             lst_requestedServices.ValueMember = "EFASubrequestID";
-            lst_approvedServices.DisplayMember = "Type";
-            lst_approvedServices.ValueMember = "EFASubrequestID";
+           // lst_approvedServices.Items;
+           // lst_approvedServices.DisplayMember = "Type";
+            //lst_approvedServices.ValueMember = "EFASubrequestID";
             foreach (var subrequest in efaSubrequests) {
                 lst_requestedServices.Items.Add(
                     new Service(subrequest.EFARequestType, subrequest.EFASubrequestID)
@@ -115,6 +122,17 @@ namespace FRCApp
                 this.Type = Type;
                 this.EFASubrequestID = EFASubrequestID;
             }
+            public Service(Service old)
+            {
+                this.Type = old.Type;
+                this.EFASubrequestID = old.EFASubrequestID;
+            }
+            public string getType()
+            {
+                return this.Type;
+            }
+            public string getefaSubrequestID()
+            { return this.EFASubrequestID; }
 
             public override string ToString()
             {

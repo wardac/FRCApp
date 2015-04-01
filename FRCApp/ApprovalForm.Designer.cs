@@ -39,11 +39,13 @@
             this.btn_done = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lst_requestedServices = new System.Windows.Forms.ListBox();
-            this.lst_approvedServices = new System.Windows.Forms.ListBox();
             this.btn_leftArrows = new System.Windows.Forms.Button();
             this.cmb_denialReason = new System.Windows.Forms.ComboBox();
             this.cmb_approvalReason = new System.Windows.Forms.ComboBox();
+            this.lst_requestedServices = new System.Windows.Forms.ListBox();
+            this.lst_approvedServices = new System.Windows.Forms.ListView();
+            this.service = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lblReferals
@@ -173,24 +175,6 @@
             this.lineShape1.Y1 = 403;
             this.lineShape1.Y2 = 403;
             // 
-            // lst_requestedServices
-            // 
-            this.lst_requestedServices.FormattingEnabled = true;
-            this.lst_requestedServices.Location = new System.Drawing.Point(12, 43);
-            this.lst_requestedServices.Name = "lst_requestedServices";
-            this.lst_requestedServices.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lst_requestedServices.Size = new System.Drawing.Size(396, 303);
-            this.lst_requestedServices.TabIndex = 31;
-            // 
-            // lst_approvedServices
-            // 
-            this.lst_approvedServices.FormattingEnabled = true;
-            this.lst_approvedServices.Location = new System.Drawing.Point(496, 43);
-            this.lst_approvedServices.Name = "lst_approvedServices";
-            this.lst_approvedServices.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lst_approvedServices.Size = new System.Drawing.Size(396, 303);
-            this.lst_approvedServices.TabIndex = 32;
-            // 
             // btn_leftArrows
             // 
             this.btn_leftArrows.Location = new System.Drawing.Point(415, 196);
@@ -219,16 +203,48 @@
             this.cmb_approvalReason.Sorted = true;
             this.cmb_approvalReason.TabIndex = 34;
             // 
+            // lst_requestedServices
+            // 
+            this.lst_requestedServices.FormattingEnabled = true;
+            this.lst_requestedServices.Location = new System.Drawing.Point(12, 43);
+            this.lst_requestedServices.Name = "lst_requestedServices";
+            this.lst_requestedServices.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lst_requestedServices.Size = new System.Drawing.Size(396, 303);
+            this.lst_requestedServices.TabIndex = 31;
+            // 
+            // lst_approvedServices
+            // 
+            this.lst_approvedServices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.service,
+            this.amount});
+            this.lst_approvedServices.LabelEdit = true;
+            this.lst_approvedServices.Location = new System.Drawing.Point(499, 43);
+            this.lst_approvedServices.Name = "lst_approvedServices";
+            this.lst_approvedServices.Size = new System.Drawing.Size(396, 303);
+            this.lst_approvedServices.TabIndex = 35;
+            this.lst_approvedServices.UseCompatibleStateImageBehavior = false;
+            this.lst_approvedServices.View = System.Windows.Forms.View.Details;
+            // 
+            // service
+            // 
+            this.service.Text = "service";
+            this.service.Width = 286;
+            // 
+            // amount
+            // 
+            this.amount.Text = "amount";
+            this.amount.Width = 100;
+            // 
             // ApprovalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(904, 635);
+            this.Controls.Add(this.lst_approvedServices);
             this.Controls.Add(this.cmb_approvalReason);
             this.Controls.Add(this.cmb_denialReason);
             this.Controls.Add(this.btn_leftArrows);
-            this.Controls.Add(this.lst_approvedServices);
             this.Controls.Add(this.lst_requestedServices);
             this.Controls.Add(this.btn_done);
             this.Controls.Add(this.btn_back);
@@ -261,10 +277,12 @@
         private System.Windows.Forms.Button btn_done;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private System.Windows.Forms.ListBox lst_requestedServices;
-        private System.Windows.Forms.ListBox lst_approvedServices;
         private System.Windows.Forms.Button btn_leftArrows;
         private System.Windows.Forms.ComboBox cmb_denialReason;
         private System.Windows.Forms.ComboBox cmb_approvalReason;
+        private System.Windows.Forms.ListBox lst_requestedServices;
+        private System.Windows.Forms.ListView lst_approvedServices;
+        private System.Windows.Forms.ColumnHeader service;
+        private System.Windows.Forms.ColumnHeader amount;
     }
 }
