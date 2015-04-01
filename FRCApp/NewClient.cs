@@ -186,6 +186,7 @@ namespace FRCApp {
          */
         private void populateFormData()
         {
+
             clientID = clientData.ClientID;
             householdID = clientData.HouseholdID;
             firstName_textBox.Text = clientData.FirstName;
@@ -201,6 +202,13 @@ namespace FRCApp {
             if (!clientData.IsEmailNull()) { email_textBox.Text = clientData.Email; }
             if (!clientData.IsEducationLevelNull()) { EducationLevelBox.Text = clientData.EducationLevel; }
             if (!clientData.IsEmploymentStatusNull()) { EmploymentStatusBox.Text = clientData.EmploymentStatus; }
+            MessageBox.Show(householdID.ToString());
+            var adapter = new DataSet1TableAdapters.HouseholdsTableAdapter();
+            var tmp = adapter.GetHouseholdsDataByHouseholdID(householdID);
+            foreach (DataRow row in adapter.GetHouseholdsDataByHouseholdID(householdID).Rows)
+            {
+                MessageBox.Show(row["HouseholdTypeID"].ToString());
+            }
         }
 
     }
