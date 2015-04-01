@@ -119,7 +119,8 @@ namespace FRCApp {
                         EmploymentStatusBox.Text,
                         false, // bank account
                         false, // credit score
-                        false  // credit report
+                        false,  // credit report
+                        DateTime.Today
                 );
                 this.Close();
                 if (!isEditing)

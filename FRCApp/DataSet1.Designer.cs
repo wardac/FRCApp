@@ -17362,6 +17362,7 @@ SELECT ClientID, HouseholdID, FirstName, LastName, MiddleInitial, Birthdate, Add
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BankAccount", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreditScore", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreditReport", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastContact", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "dbo.clientLookUp";
@@ -17695,7 +17696,8 @@ SELECT ClientID, HouseholdID, FirstName, LastName, MiddleInitial, Birthdate, Add
                     string EmploymentStatus, 
                     global::System.Nullable<bool> BankAccount, 
                     global::System.Nullable<bool> CreditScore, 
-                    global::System.Nullable<bool> CreditReport) {
+                    global::System.Nullable<bool> CreditReport, 
+                    global::System.Nullable<global::System.DateTime> LastContact) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((ClientID.HasValue == true)) {
                 command.Parameters[1].Value = ((System.Guid)(ClientID.Value));
@@ -17810,6 +17812,12 @@ SELECT ClientID, HouseholdID, FirstName, LastName, MiddleInitial, Birthdate, Add
             }
             else {
                 command.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((LastContact.HasValue == true)) {
+                command.Parameters[20].Value = ((System.DateTime)(LastContact.Value));
+            }
+            else {
+                command.Parameters[20].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
