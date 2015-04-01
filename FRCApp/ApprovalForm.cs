@@ -24,13 +24,21 @@ namespace FRCApp
         {
             while (lst_requestedServices.SelectedItems.Count > 0)
             {
-                var amount = 0;
+         /*       var amount = 0;
                 Service current = new Service((Service)lst_requestedServices.SelectedItems[0]);
                 ListViewItem item = new ListViewItem(current.getType() );
                 item.Tag = current.getefaSubrequestID();
                 item.SubItems.Add(amount.ToString());
                 lst_approvedServices.Items.Add(item);
                 //lst_approvedServices.Items.Add(lst_requestedServices.SelectedItems[0]);
+                lst_requestedServices.Items.Remove(lst_requestedServices.SelectedItems[0]);
+            */ 
+            var amount = 0;
+                Service current = new Service((Service)lst_requestedServices.SelectedItems[0]);
+                ListViewItem item = new ListViewItem(current.getType());
+                item.Tag = current.getefaSubrequestID();
+                item.SubItems.Add(amount.ToString());
+                gridApprovedservices.Rows.Add(item.SubItems[0].Text,amount);
                 lst_requestedServices.Items.Remove(lst_requestedServices.SelectedItems[0]);
             }
             
@@ -47,6 +55,8 @@ namespace FRCApp
 
         private void ApprovalForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.IncomeSources' table. You can move, or remove it, as needed.
+            this.incomeSourcesTableAdapter.Fill(this.dataSet1.IncomeSources);
             var efaSubrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
             var efaSubrequests = efaSubrequestAdapter.GetEFASubrequestsByEFARequestID(requestID);
             lst_requestedServices.DisplayMember = "Type";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblReferals = new System.Windows.Forms.Label();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +47,17 @@
             this.lst_approvedServices = new System.Windows.Forms.ListView();
             this.service = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataSet1 = new FRCApp.DataSet1();
+            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.incomeSourcesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.incomeSourcesTableAdapter = new FRCApp.DataSet1TableAdapters.IncomeSourcesTableAdapter();
+            this.gridApprovedservices = new System.Windows.Forms.DataGridView();
+            this.services = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amounts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomeSourcesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridApprovedservices)).BeginInit();
             this.SuspendLayout();
             // 
             // lblReferals
@@ -217,6 +229,7 @@
             this.lst_approvedServices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.service,
             this.amount});
+            this.lst_approvedServices.HideSelection = false;
             this.lst_approvedServices.LabelEdit = true;
             this.lst_approvedServices.Location = new System.Drawing.Point(499, 43);
             this.lst_approvedServices.Name = "lst_approvedServices";
@@ -235,12 +248,56 @@
             this.amount.Text = "amount";
             this.amount.Width = 100;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
+            // 
+            // incomeSourcesBindingSource
+            // 
+            this.incomeSourcesBindingSource.DataMember = "IncomeSources";
+            this.incomeSourcesBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
+            // incomeSourcesTableAdapter
+            // 
+            this.incomeSourcesTableAdapter.ClearBeforeFill = true;
+            // 
+            // gridApprovedservices
+            // 
+            this.gridApprovedservices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridApprovedservices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.services,
+            this.amounts});
+            this.gridApprovedservices.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.gridApprovedservices.Location = new System.Drawing.Point(499, 442);
+            this.gridApprovedservices.Name = "gridApprovedservices";
+            this.gridApprovedservices.Size = new System.Drawing.Size(392, 150);
+            this.gridApprovedservices.TabIndex = 36;
+            // 
+            // services
+            // 
+            this.services.HeaderText = "services";
+            this.services.Name = "services";
+            this.services.Width = 300;
+            // 
+            // amounts
+            // 
+            this.amounts.HeaderText = "amount";
+            this.amounts.Name = "amounts";
+            this.amounts.Width = 90;
+            // 
             // ApprovalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(904, 635);
+            this.Controls.Add(this.gridApprovedservices);
             this.Controls.Add(this.lst_approvedServices);
             this.Controls.Add(this.cmb_approvalReason);
             this.Controls.Add(this.cmb_denialReason);
@@ -259,6 +316,10 @@
             this.Name = "ApprovalForm";
             this.Text = "Request Approval";
             this.Load += new System.EventHandler(this.ApprovalForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomeSourcesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridApprovedservices)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +345,12 @@
         private System.Windows.Forms.ListView lst_approvedServices;
         private System.Windows.Forms.ColumnHeader service;
         private System.Windows.Forms.ColumnHeader amount;
+        private System.Windows.Forms.BindingSource dataSet1BindingSource;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource incomeSourcesBindingSource;
+        private DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourcesTableAdapter;
+        private System.Windows.Forms.DataGridView gridApprovedservices;
+        private System.Windows.Forms.DataGridViewTextBoxColumn services;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amounts;
     }
 }
