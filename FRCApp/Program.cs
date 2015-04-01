@@ -17,7 +17,7 @@ namespace FRCApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             System.Timers.Timer timer = new System.Timers.Timer(1000);
-            timer.Elapsed += ((o, e) => { if (LoginTimeout.LastInputTime() < DateTime.Now.AddSeconds(-3)) { Application.Restart(); } });
+            timer.Elapsed += ((o, e) => { if (LoginTimeout.LastInputTime() < DateTime.Now.AddMinutes(-30)) { Application.Exit(); } });
             loginForm login = new loginForm(timer);
             login.Show();
             Application.Run();
