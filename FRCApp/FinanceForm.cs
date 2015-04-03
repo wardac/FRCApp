@@ -139,6 +139,20 @@ namespace FRCApp
 
             // Fill listview with any persons from the database
             DataSet1TableAdapters.IncomeSourcesTableAdapter adapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
+            foreach (DataRow householdMember in householdMembers.Rows)
+            {
+                var incomeDetails = adapter.GetIncomeSourcesByHouseholdMemberID(Int32.Parse(householdMember["HouseholdMemberID"].ToString()));
+                ListViewItem item = new ListViewItem(householdMember["Name"].ToString());
+                foreach (DataRow row in incomeDetails.Rows)
+                {
+                    item.SubItems.Add(row["IncomeSource"].ToString());
+                    item.SubItems.Add(row["Amount"].ToString());
+                    item.SubItems.Add(row["FrequencyID"].ToString());
+                    item.Tag = row["IncomeSourceID"];
+                }
+                FinancelistView.Items.Add(item);
+            }
+            
         }
 
         private class IncomeSource {
