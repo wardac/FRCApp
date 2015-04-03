@@ -15,6 +15,7 @@ namespace FRCApp
     {
         private String householdID;
         private List<IncomeSource> incomeSourcesList;
+
         public FinanceForm(String householdID)
         {
             this.householdID = householdID;
@@ -60,23 +61,25 @@ namespace FRCApp
                 MessageBox.Show(message);
                 return;
             }
+            
             //Add the data to the listView
             ListViewItem item = new ListViewItem(cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem));
             item.SubItems.Add(cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem));
             item.SubItems.Add(amountOfIncomeTextBox.Text);
             item.SubItems.Add(cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem));
             FinancelistView.Items.Add(item);
+            
             // Add entry to the incomeSourcesList
             incomeSourcesList.Add(new IncomeSource((int)cmb_householdMember.SelectedValue, cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem), amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem)));
+            
             //clear the fields
             cmb_householdMember.SelectedIndex = -1;
             cmb_incomeFreqs.SelectedIndex = -1;
             cmb_incomeSourceType.SelectedIndex = -1;
             amountOfIncomeTextBox.Clear();
-
         }
 
-        //removes the selected items fromt he FinanceListView
+        //removes the selected items from the FinanceListView
         private void removeButton_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in FinancelistView.SelectedItems)
@@ -127,11 +130,29 @@ namespace FRCApp
             cmb_incomeFreqs.ValueMember = "IncomeFrequencyID";
             cmb_incomeFreqs.DisplayMember = "Frequency";
 
+            // Get income sources from the IncomeSourceTypes table
             var incomeSourceTypesAdapter = new DataSet1TableAdapters.IncomeSourceTypesTableAdapter();
             var incomeSourceTypes = incomeSourceTypesAdapter.GetData();
             cmb_incomeSourceType.DataSource = incomeSourceTypes;
             cmb_incomeSourceType.ValueMember = "IncomeSourceType";
             cmb_incomeSourceType.DisplayMember = "IncomeSourceType";
+
+            // Fill listview with any persons from the database
+            DataSet1TableAdapters.IncomeSourcesTableAdapter adapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
+            foreach (DataRow householdMember in householdMembers.Rows)
+            {
+                var incomeDetails = adapter.GetIncomeSourcesByHouseholdMemberID(Int32.Parse(householdMember["HouseholdMemberID"].ToString()));
+                ListViewItem item = new ListViewItem(householdMember["Name"].ToString());
+                foreach (DataRow row in incomeDetails.Rows)
+                {
+                    item.SubItems.Add(row["IncomeSource"].ToString());
+                    item.SubItems.Add(row["Amount"].ToString());
+                    item.SubItems.Add(row["FrequencyID"].ToString());
+                    item.Tag = row["IncomeSourceID"];
+                }
+                FinancelistView.Items.Add(item);
+            }
+            
         }
 
         private class IncomeSource {
