@@ -21,6 +21,7 @@ namespace FRCApp {
         private const int DELETE = 46;
         private bool isEditing = false;
         private DataSet1.ClientsRow clientData;
+        private int householdTypeID = -1;
 
         public NewClient() 
         {
@@ -122,6 +123,14 @@ namespace FRCApp {
                         false,  // credit report
                         DateTime.Today
                 );
+
+                DataSet1TableAdapters.HouseholdsTableAdapter houseAdapter = new DataSet1TableAdapters.HouseholdsTableAdapter();
+                houseAdapter.AddOrUpdateHouseholds(
+                    householdID,
+                    householdTypeID,
+                    null
+                    );
+
                 this.Close();
                 if (!isEditing)
                 {
@@ -206,8 +215,9 @@ namespace FRCApp {
             //populate the households family data
             foreach (DataRow row in adapter.GetHouseholdsDataByHouseholdID(householdID).Rows)
             {
+               householdTypeID = Int32.Parse(row["HouseholdTypeID"].ToString());
                var household = new DataSet1TableAdapters.HouseholdTypesTableAdapter().
-                   GetTypeByHouseholdTypeID(Int32.Parse(row["HouseholdTypeID"].ToString()));
+               GetTypeByHouseholdTypeID(householdTypeID);
                HouseholdTypeBox.Text = household.Rows[0]["Type"].ToString();
             }
         }
