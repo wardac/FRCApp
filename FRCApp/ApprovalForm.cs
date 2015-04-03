@@ -33,12 +33,8 @@ namespace FRCApp
                 //lst_approvedServices.Items.Add(lst_requestedServices.SelectedItems[0]);
                 lst_requestedServices.Items.Remove(lst_requestedServices.SelectedItems[0]);
             */ 
-            var amount = 0;
-                Service current = new Service((Service)lst_requestedServices.SelectedItems[0]);
-                ListViewItem item = new ListViewItem(current.getType());
-                item.Tag = current.getefaSubrequestID();
-                item.SubItems.Add(amount.ToString());
-                gridApprovedservices.Rows.Add(item.SubItems[0].Text,amount);
+                Service currentService = ((Service)lst_requestedServices.SelectedItems[0]);
+                gridApprovedservices.Rows.Add(currentService.getData());
                 lst_requestedServices.Items.Remove(lst_requestedServices.SelectedItems[0]);
             }
             
@@ -117,9 +113,7 @@ namespace FRCApp
                 request.EFARequestStatusID,
                 deniedReason,
                 approvalReason,
-                DateTime.Now);
-                
-
+                DateTime.Now);                
             this.Close();
         }
 
@@ -127,23 +121,33 @@ namespace FRCApp
         {
             public String Type;
             public String EFASubrequestID;
+            public double amount; 
             public Service(String Type, String EFASubrequestID)
             {
                 this.Type = Type;
                 this.EFASubrequestID = EFASubrequestID;
+                this.amount = 0;
             }
             public Service(Service old)
             {
                 this.Type = old.Type;
                 this.EFASubrequestID = old.EFASubrequestID;
+                this.amount = old.amount;
             }
             public string getType()
             {
                 return this.Type;
             }
+            public double getAmount()
+            { return this.amount; }
             public string getefaSubrequestID()
             { return this.EFASubrequestID; }
 
+            public string[] getData()
+            { 
+                string []data= {this.EFASubrequestID,this.Type,amount.ToString()};
+                return data;
+            }
             public override string ToString()
             {
                 return Type;

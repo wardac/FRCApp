@@ -52,6 +52,7 @@
             this.incomeSourcesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.incomeSourcesTableAdapter = new FRCApp.DataSet1TableAdapters.IncomeSourcesTableAdapter();
             this.gridApprovedservices = new System.Windows.Forms.DataGridView();
+            this.subreqID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.services = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amounts = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -269,15 +270,25 @@
             // 
             // gridApprovedservices
             // 
+            this.gridApprovedservices.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.gridApprovedservices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridApprovedservices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.subreqID,
             this.services,
             this.amounts});
-            this.gridApprovedservices.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.gridApprovedservices.GridColor = System.Drawing.Color.White;
             this.gridApprovedservices.Location = new System.Drawing.Point(499, 442);
             this.gridApprovedservices.Name = "gridApprovedservices";
+            this.gridApprovedservices.RowHeadersVisible = false;
             this.gridApprovedservices.Size = new System.Drawing.Size(392, 150);
             this.gridApprovedservices.TabIndex = 36;
+            // 
+            // subreqID
+            // 
+            this.subreqID.HeaderText = "subReqId";
+            this.subreqID.Name = "subreqID";
+            this.subreqID.ReadOnly = true;
+            this.subreqID.Visible = false;
             // 
             // services
             // 
@@ -350,6 +361,7 @@
         private System.Windows.Forms.BindingSource incomeSourcesBindingSource;
         private DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourcesTableAdapter;
         private System.Windows.Forms.DataGridView gridApprovedservices;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subreqID;
         private System.Windows.Forms.DataGridViewTextBoxColumn services;
         private System.Windows.Forms.DataGridViewTextBoxColumn amounts;
     }

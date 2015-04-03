@@ -73,6 +73,7 @@
             this.lstViewHist = new System.Windows.Forms.ListView();
             this.hist_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ApprovedAssistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.deniedAssistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.clrbutton = new System.Windows.Forms.Button();
@@ -88,7 +89,6 @@
             this.caseNoteupdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.casenoteCmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblcasenote = new System.Windows.Forms.Label();
-            this.deniedAssistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -402,28 +402,28 @@
             this.efaHistPanel.Controls.Add(this.label3);
             this.efaHistPanel.Controls.Add(this.lstViewHist);
             this.efaHistPanel.Controls.Add(this.label1);
-            this.efaHistPanel.Location = new System.Drawing.Point(470, 283);
+            this.efaHistPanel.Location = new System.Drawing.Point(470, 286);
             this.efaHistPanel.Name = "efaHistPanel";
-            this.efaHistPanel.Size = new System.Drawing.Size(603, 370);
+            this.efaHistPanel.Size = new System.Drawing.Size(603, 373);
             this.efaHistPanel.TabIndex = 2;
             // 
             // TxtApporvedAmount
             // 
-            this.TxtApporvedAmount.Location = new System.Drawing.Point(190, 316);
+            this.TxtApporvedAmount.Location = new System.Drawing.Point(192, 325);
             this.TxtApporvedAmount.Name = "TxtApporvedAmount";
             this.TxtApporvedAmount.Size = new System.Drawing.Size(223, 20);
             this.TxtApporvedAmount.TabIndex = 15;
             // 
             // txtApprovedRequest
             // 
-            this.txtApprovedRequest.Location = new System.Drawing.Point(190, 285);
+            this.txtApprovedRequest.Location = new System.Drawing.Point(192, 294);
             this.txtApprovedRequest.Name = "txtApprovedRequest";
             this.txtApprovedRequest.Size = new System.Drawing.Size(223, 20);
             this.txtApprovedRequest.TabIndex = 14;
             // 
             // txtTotalRequest
             // 
-            this.txtTotalRequest.Location = new System.Drawing.Point(190, 256);
+            this.txtTotalRequest.Location = new System.Drawing.Point(192, 265);
             this.txtTotalRequest.Name = "txtTotalRequest";
             this.txtTotalRequest.Size = new System.Drawing.Size(223, 20);
             this.txtTotalRequest.TabIndex = 13;
@@ -432,7 +432,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 320);
+            this.label6.Location = new System.Drawing.Point(17, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(136, 12);
             this.label6.TabIndex = 12;
@@ -442,7 +442,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 285);
+            this.label5.Location = new System.Drawing.Point(17, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 12);
             this.label5.TabIndex = 11;
@@ -452,7 +452,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 256);
+            this.label4.Location = new System.Drawing.Point(17, 265);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 12);
             this.label4.TabIndex = 10;
@@ -460,14 +460,14 @@
             // 
             // Todate
             // 
-            this.Todate.Location = new System.Drawing.Point(316, 221);
+            this.Todate.Location = new System.Drawing.Point(316, 40);
             this.Todate.Name = "Todate";
             this.Todate.Size = new System.Drawing.Size(200, 20);
             this.Todate.TabIndex = 9;
             // 
             // fromDate
             // 
-            this.fromDate.Location = new System.Drawing.Point(55, 221);
+            this.fromDate.Location = new System.Drawing.Point(55, 40);
             this.fromDate.Name = "fromDate";
             this.fromDate.Size = new System.Drawing.Size(200, 20);
             this.fromDate.TabIndex = 8;
@@ -476,7 +476,7 @@
             // 
             this.To.AutoSize = true;
             this.To.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.To.Location = new System.Drawing.Point(281, 225);
+            this.To.Location = new System.Drawing.Point(281, 44);
             this.To.Name = "To";
             this.To.Size = new System.Drawing.Size(22, 12);
             this.To.TabIndex = 7;
@@ -486,7 +486,7 @@
             // 
             this.from.AutoSize = true;
             this.from.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.from.Location = new System.Drawing.Point(15, 224);
+            this.from.Location = new System.Drawing.Point(15, 43);
             this.from.Name = "from";
             this.from.Size = new System.Drawing.Size(37, 12);
             this.from.TabIndex = 6;
@@ -496,7 +496,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 195);
+            this.label3.Location = new System.Drawing.Point(6, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 15);
             this.label3.TabIndex = 5;
@@ -509,10 +509,10 @@
             this.ApprovedAssistance,
             this.deniedAssistance});
             this.lstViewHist.FullRowSelect = true;
-            this.lstViewHist.Location = new System.Drawing.Point(7, 22);
+            this.lstViewHist.Location = new System.Drawing.Point(17, 92);
             this.lstViewHist.MultiSelect = false;
             this.lstViewHist.Name = "lstViewHist";
-            this.lstViewHist.Size = new System.Drawing.Size(593, 157);
+            this.lstViewHist.Size = new System.Drawing.Size(593, 158);
             this.lstViewHist.TabIndex = 4;
             this.lstViewHist.UseCompatibleStateImageBehavior = false;
             this.lstViewHist.View = System.Windows.Forms.View.Details;
@@ -527,11 +527,16 @@
             this.ApprovedAssistance.Text = "Approved Request";
             this.ApprovedAssistance.Width = 223;
             // 
+            // deniedAssistance
+            // 
+            this.deniedAssistance.Text = "Denied Request";
+            this.deniedAssistance.Width = 200;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 7);
+            this.label1.Location = new System.Drawing.Point(22, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 12);
             this.label1.TabIndex = 0;
@@ -663,11 +668,6 @@
             this.lblcasenote.Size = new System.Drawing.Size(68, 12);
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
-            // 
-            // deniedAssistance
-            // 
-            this.deniedAssistance.Text = "Denied Request";
-            this.deniedAssistance.Width = 200;
             // 
             // ClientDetails
             // 
