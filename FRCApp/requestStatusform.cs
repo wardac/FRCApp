@@ -170,7 +170,7 @@ namespace FRCApp
                 var subrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
                 foreach (var category in checklist_requestType.CheckedItems)
                 {
-                    subrequestAdapter.AddOrUpdateEFASubrequest(System.Guid.NewGuid().ToString(), RequestID, category.ToString() == "Other" ? txt_other.Text : category.ToString(), null, null);
+                    subrequestAdapter.AddOrUpdateEFASubrequest(System.Guid.NewGuid().ToString(), RequestID, category.ToString() == "Other" ? txt_other.Text : category.ToString(), null, null,0);
                 }
             }
             this.Close();

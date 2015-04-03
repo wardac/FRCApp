@@ -24,15 +24,7 @@ namespace FRCApp
         {
             while (lst_requestedServices.SelectedItems.Count > 0)
             {
-         /*       var amount = 0;
-                Service current = new Service((Service)lst_requestedServices.SelectedItems[0]);
-                ListViewItem item = new ListViewItem(current.getType() );
-                item.Tag = current.getefaSubrequestID();
-                item.SubItems.Add(amount.ToString());
-                lst_approvedServices.Items.Add(item);
-                //lst_approvedServices.Items.Add(lst_requestedServices.SelectedItems[0]);
-                lst_requestedServices.Items.Remove(lst_requestedServices.SelectedItems[0]);
-            */ 
+
                 Service currentService = ((Service)lst_requestedServices.SelectedItems[0]);
                 gridApprovedservices.Rows.Add(currentService.getData());
                 lst_requestedServices.Items.Remove(lst_requestedServices.SelectedItems[0]);
@@ -42,10 +34,11 @@ namespace FRCApp
 
         private void btn_leftArrows_Click(object sender, EventArgs e)
         {
-            while (lst_approvedServices.SelectedItems.Count > 0)
+            while (gridApprovedservices.SelectedRows.Count > 0)
             {
-                lst_requestedServices.Items.Add(lst_approvedServices.SelectedItems[0]);
-                lst_approvedServices.Items.Remove(lst_approvedServices.SelectedItems[0]);
+                Service service = new Service( Convert.ToString(gridApprovedservices.SelectedRows[0].Cells[1].Value),Convert.ToString(gridApprovedservices.SelectedRows[0].Cells[0].Value));
+                lst_requestedServices.Items.Add(service);
+                gridApprovedservices.Rows.Remove(gridApprovedservices.SelectedRows[0]);
             }
         }
 
@@ -88,13 +81,21 @@ namespace FRCApp
             var efaSubrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
             foreach (Service unapprovedService in lst_requestedServices.Items)
             {
-                efaSubrequestAdapter.AddOrUpdateEFASubrequest(unapprovedService.EFASubrequestID, requestID, unapprovedService.Type, DateTime.Now, false);
+                efaSubrequestAdapter.AddOrUpdateEFASubrequest(unapprovedService.EFASubrequestID, requestID, unapprovedService.Type, DateTime.Now, false, unapprovedService.amount);
             }
 
-            foreach (Service approvedService in lst_approvedServices.Items)
+            foreach(DataGridViewRow data in gridApprovedservices.Rows)
             {
-                efaSubrequestAdapter.AddOrUpdateEFASubrequest(approvedService.EFASubrequestID, requestID, approvedService.Type, DateTime.Now, true);
+                if (data != null)
+                {
+                    Service approvedService = new Service(Convert.ToString(data.Cells[0].Value), Convert.ToString(data.Cells[1].Value), Convert.ToDecimal(data.Cells[2].Value));
+                    efaSubrequestAdapter.AddOrUpdateEFASubrequest(approvedService.EFASubrequestID, requestID, approvedService.Type, DateTime.Now, true, approvedService.amount);
+                }
             }
+  /*          foreach (Service approvedService in lst_approvedServices.Items)
+            {
+                efaSubrequestAdapter.AddOrUpdateEFASubrequest(approvedService.EFASubrequestID, requestID, approvedService.Type, DateTime.Now, true,approvedService.amount);
+            }*/
 
             var efaRequestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
             var request = efaRequestAdapter.GetEFARequestsByEFARequestID(requestID)[0];
@@ -121,12 +122,19 @@ namespace FRCApp
         {
             public String Type;
             public String EFASubrequestID;
-            public double amount; 
+            public Decimal amount; 
             public Service(String Type, String EFASubrequestID)
             {
                 this.Type = Type;
                 this.EFASubrequestID = EFASubrequestID;
                 this.amount = 0;
+            }
+
+            public Service(String EFASubrequestID, String Type, Decimal amount)
+            {
+                this.Type = Type;
+                this.EFASubrequestID = EFASubrequestID;
+                this.amount = amount;
             }
             public Service(Service old)
             {
@@ -134,18 +142,18 @@ namespace FRCApp
                 this.EFASubrequestID = old.EFASubrequestID;
                 this.amount = old.amount;
             }
-            public string getType()
+            public String getType()
             {
                 return this.Type;
             }
-            public double getAmount()
+            public Decimal getAmount()
             { return this.amount; }
-            public string getefaSubrequestID()
+            public String getefaSubrequestID()
             { return this.EFASubrequestID; }
 
-            public string[] getData()
+            public String[] getData()
             { 
-                string []data= {this.EFASubrequestID,this.Type,amount.ToString()};
+                String []data= {this.EFASubrequestID,this.Type,amount.ToString()};
                 return data;
             }
             public override string ToString()

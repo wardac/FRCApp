@@ -24395,6 +24395,7 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestType", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateClosed", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Approved", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "dbo.GetEFASubrequestsByEFARequestID";
@@ -24686,7 +24687,7 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int AddOrUpdateEFASubrequest(string EFASubrequestID, string EFARequestID, string EFARequestType, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved) {
+        public virtual int AddOrUpdateEFASubrequest(string EFASubrequestID, string EFARequestID, string EFARequestType, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved, global::System.Nullable<decimal> amount) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((EFASubrequestID == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
@@ -24717,6 +24718,12 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
             }
             else {
                 command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((amount.HasValue == true)) {
+                command.Parameters[6].Value = ((decimal)(amount.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

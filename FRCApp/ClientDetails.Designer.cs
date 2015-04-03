@@ -512,7 +512,7 @@
             this.lstViewHist.Location = new System.Drawing.Point(17, 92);
             this.lstViewHist.MultiSelect = false;
             this.lstViewHist.Name = "lstViewHist";
-            this.lstViewHist.Size = new System.Drawing.Size(593, 158);
+            this.lstViewHist.Size = new System.Drawing.Size(581, 158);
             this.lstViewHist.TabIndex = 4;
             this.lstViewHist.UseCompatibleStateImageBehavior = false;
             this.lstViewHist.View = System.Windows.Forms.View.Details;

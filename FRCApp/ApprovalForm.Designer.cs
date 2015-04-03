@@ -44,9 +44,6 @@
             this.cmb_denialReason = new System.Windows.Forms.ComboBox();
             this.cmb_approvalReason = new System.Windows.Forms.ComboBox();
             this.lst_requestedServices = new System.Windows.Forms.ListBox();
-            this.lst_approvedServices = new System.Windows.Forms.ListView();
-            this.service = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dataSet1 = new FRCApp.DataSet1();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.incomeSourcesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -225,30 +222,6 @@
             this.lst_requestedServices.Size = new System.Drawing.Size(396, 303);
             this.lst_requestedServices.TabIndex = 31;
             // 
-            // lst_approvedServices
-            // 
-            this.lst_approvedServices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.service,
-            this.amount});
-            this.lst_approvedServices.HideSelection = false;
-            this.lst_approvedServices.LabelEdit = true;
-            this.lst_approvedServices.Location = new System.Drawing.Point(499, 43);
-            this.lst_approvedServices.Name = "lst_approvedServices";
-            this.lst_approvedServices.Size = new System.Drawing.Size(396, 303);
-            this.lst_approvedServices.TabIndex = 35;
-            this.lst_approvedServices.UseCompatibleStateImageBehavior = false;
-            this.lst_approvedServices.View = System.Windows.Forms.View.Details;
-            // 
-            // service
-            // 
-            this.service.Text = "service";
-            this.service.Width = 286;
-            // 
-            // amount
-            // 
-            this.amount.Text = "amount";
-            this.amount.Width = 100;
-            // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
@@ -277,10 +250,9 @@
             this.services,
             this.amounts});
             this.gridApprovedservices.GridColor = System.Drawing.Color.White;
-            this.gridApprovedservices.Location = new System.Drawing.Point(499, 442);
+            this.gridApprovedservices.Location = new System.Drawing.Point(496, 43);
             this.gridApprovedservices.Name = "gridApprovedservices";
-            this.gridApprovedservices.RowHeadersVisible = false;
-            this.gridApprovedservices.Size = new System.Drawing.Size(392, 150);
+            this.gridApprovedservices.Size = new System.Drawing.Size(392, 303);
             this.gridApprovedservices.TabIndex = 36;
             // 
             // subreqID
@@ -294,6 +266,7 @@
             // 
             this.services.HeaderText = "services";
             this.services.Name = "services";
+            this.services.ReadOnly = true;
             this.services.Width = 300;
             // 
             // amounts
@@ -309,7 +282,6 @@
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(904, 635);
             this.Controls.Add(this.gridApprovedservices);
-            this.Controls.Add(this.lst_approvedServices);
             this.Controls.Add(this.cmb_approvalReason);
             this.Controls.Add(this.cmb_denialReason);
             this.Controls.Add(this.btn_leftArrows);
@@ -353,9 +325,6 @@
         private System.Windows.Forms.ComboBox cmb_denialReason;
         private System.Windows.Forms.ComboBox cmb_approvalReason;
         private System.Windows.Forms.ListBox lst_requestedServices;
-        private System.Windows.Forms.ListView lst_approvedServices;
-        private System.Windows.Forms.ColumnHeader service;
-        private System.Windows.Forms.ColumnHeader amount;
         private System.Windows.Forms.BindingSource dataSet1BindingSource;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource incomeSourcesBindingSource;
