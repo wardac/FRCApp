@@ -42,5 +42,10 @@ namespace FRCApp
             login_username.Clear();
             login_Password.Clear();
         }
+
+        private void loginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,6 +38,9 @@
             // 
             // login_submit
             // 
+            this.login_submit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.login_submit.Location = new System.Drawing.Point(165, 135);
             this.login_submit.Name = "login_submit";
             this.login_submit.Size = new System.Drawing.Size(75, 23);
@@ -48,6 +51,9 @@
             // 
             // login_cancel
             // 
+            this.login_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.login_cancel.Location = new System.Drawing.Point(257, 135);
             this.login_cancel.Name = "login_cancel";
             this.login_cancel.Size = new System.Drawing.Size(75, 23);
@@ -58,6 +64,9 @@
             // 
             // lbl_usrname
             // 
+            this.lbl_usrname.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_usrname.AutoSize = true;
             this.lbl_usrname.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_usrname.Location = new System.Drawing.Point(96, 65);
@@ -68,6 +77,9 @@
             // 
             // lblpassword
             // 
+            this.lblpassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblpassword.AutoSize = true;
             this.lblpassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpassword.Location = new System.Drawing.Point(96, 99);
@@ -78,6 +90,9 @@
             // 
             // login_username
             // 
+            this.login_username.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.login_username.Location = new System.Drawing.Point(165, 61);
             this.login_username.Name = "login_username";
             this.login_username.Size = new System.Drawing.Size(193, 20);
@@ -85,6 +100,9 @@
             // 
             // login_Password
             // 
+            this.login_Password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.login_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_Password.Location = new System.Drawing.Point(165, 95);
             this.login_Password.Name = "login_Password";
@@ -97,16 +115,18 @@
             this.AcceptButton = this.login_submit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 214);
+            this.ClientSize = new System.Drawing.Size(475, 237);
             this.Controls.Add(this.login_Password);
             this.Controls.Add(this.login_username);
             this.Controls.Add(this.lblpassword);
             this.Controls.Add(this.lbl_usrname);
             this.Controls.Add(this.login_cancel);
             this.Controls.Add(this.login_submit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "loginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.loginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
