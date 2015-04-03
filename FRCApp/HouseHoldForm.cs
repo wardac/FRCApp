@@ -42,6 +42,7 @@ namespace FRCApp
                 item.SubItems.Add(row["Relationship"].ToString());
                 item.SubItems.Add(row["Race"].ToString());
                 item.SubItems.Add(row["HealthCoverage"].ToString());
+                item.Tag = row["HouseholdMemberID"];
                 HouseHoldForm_ListView_Summary.Items.Add(item);
             }
         }
@@ -101,15 +102,16 @@ namespace FRCApp
 												@HealthCoverage BIT,
 												@LastFourSSN NVARCHAR(10)
                  * */
-                adapter.AddOrUpdateHouseholdMembers(Convert.ToInt32(item.SubItems[0].Text),
+                adapter.AddOrUpdateHouseholdMembers(
+                        Convert.ToInt32(item.Tag),
                         houseHoldId,
+                        item.SubItems[0].Text,
                         item.SubItems[1].Text,
-                        item.SubItems[2].Text,
-                        System.DateTime.Parse(item.SubItems[4].Text),
+                        System.DateTime.Parse(item.SubItems[3].Text),
+                        item.SubItems[4].Text,
                         item.SubItems[5].Text,
-                        item.SubItems[6].Text,
-                        Convert.ToBoolean(item.SubItems[7].Text),
-                        item.SubItems[3].Text);
+                        Convert.ToBoolean(item.SubItems[6].Text),
+                        item.SubItems[2].Text);
             }
             this.Close();
         }
