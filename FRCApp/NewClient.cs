@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FRCApp {
-    public partial class NewClient : Form {
+namespace FRCApp
+{
+    public partial class NewClient : Form
+    {
 
         // form members
         private HouseHoldForm householdForm;
@@ -21,9 +23,8 @@ namespace FRCApp {
         private const int DELETE = 46;
         private bool isEditing = false;
         private DataSet1.ClientsRow clientData;
-        private int householdTypeID = -1;
 
-        public NewClient() 
+        public NewClient()
         {
             InitializeComponent();
             clientID = Guid.NewGuid();
@@ -127,7 +128,7 @@ namespace FRCApp {
                 DataSet1TableAdapters.HouseholdsTableAdapter houseAdapter = new DataSet1TableAdapters.HouseholdsTableAdapter();
                 houseAdapter.AddOrUpdateHouseholds(
                     householdID,
-                    householdTypeID,
+                    HouseholdTypeBox.SelectedIndex + 1,
                     null
                     );
 
@@ -206,19 +207,19 @@ namespace FRCApp {
             if (!clientData.IsCityNull()) { city_textBox.Text = clientData.City; }
             if (!clientData.IsZipNull()) { zipCode_textBox.Text = clientData.Zip; }
             if (!clientData.IsPhone1Null()) { telephone1_textBox.Text = clientData.Phone1; }
-            if (!clientData.IsPhone2Null()) { telephone2_textBox.Text = clientData.Phone2; } 
+            if (!clientData.IsPhone2Null()) { telephone2_textBox.Text = clientData.Phone2; }
             if (!clientData.IsEmailNull()) { email_textBox.Text = clientData.Email; }
             if (!clientData.IsEducationLevelNull()) { EducationLevelBox.Text = clientData.EducationLevel; }
             if (!clientData.IsEmploymentStatusNull()) { EmploymentStatusBox.Text = clientData.EmploymentStatus; }
             var adapter = new DataSet1TableAdapters.HouseholdsTableAdapter();
-            
+
             //populate the households family data
             foreach (DataRow row in adapter.GetHouseholdsDataByHouseholdID(householdID).Rows)
             {
-               householdTypeID = Int32.Parse(row["HouseholdTypeID"].ToString());
-               var household = new DataSet1TableAdapters.HouseholdTypesTableAdapter().
-               GetTypeByHouseholdTypeID(householdTypeID);
-               HouseholdTypeBox.Text = household.Rows[0]["Type"].ToString();
+                int householdTypeID = Int32.Parse(row["HouseholdTypeID"].ToString());
+                var household = new DataSet1TableAdapters.HouseholdTypesTableAdapter().
+                GetTypeByHouseholdTypeID(householdTypeID);
+                HouseholdTypeBox.Text = household.Rows[0]["Type"].ToString();
             }
         }
 
