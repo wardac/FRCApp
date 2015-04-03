@@ -61,14 +61,17 @@ namespace FRCApp
                 MessageBox.Show(message);
                 return;
             }
+            
             //Add the data to the listView
             ListViewItem item = new ListViewItem(cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem));
             item.SubItems.Add(cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem));
             item.SubItems.Add(amountOfIncomeTextBox.Text);
             item.SubItems.Add(cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem));
             FinancelistView.Items.Add(item);
+            
             // Add entry to the incomeSourcesList
             incomeSourcesList.Add(new IncomeSource((int)cmb_householdMember.SelectedValue, cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem), amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem)));
+            
             //clear the fields
             cmb_householdMember.SelectedIndex = -1;
             cmb_incomeFreqs.SelectedIndex = -1;
@@ -134,7 +137,7 @@ namespace FRCApp
             cmb_incomeSourceType.ValueMember = "IncomeSourceType";
             cmb_incomeSourceType.DisplayMember = "IncomeSourceType";
 
-            // Fill listview with any perons from the database
+            // Fill listview with any persons from the database
             DataSet1TableAdapters.IncomeSourcesTableAdapter adapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
         }
 
