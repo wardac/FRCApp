@@ -16,6 +16,7 @@ namespace FRCApp
         private const int DELETE = 46;
         private const int DECIMAL = 81;
         private Guid householdID;
+        private int monthlyExpenseID = -1;
 
         public ExpenseForm(Guid householdID)
         {
@@ -62,9 +63,10 @@ namespace FRCApp
             }
 
             DataSet1TableAdapters.MonthlyExpensesTableAdapter adapter = new DataSet1TableAdapters.MonthlyExpensesTableAdapter();
-            adapter.InsertMonthlyExpenses(
-                this.householdID.ToString(), 
-                System.Convert.ToDecimal(this.ExpenseRentTextBox.Text), 
+            adapter.AddOrUpdateMonthlyExpenses(
+                this.householdID,
+                monthlyExpenseID,
+                System.Convert.ToDecimal(this.ExpenseRentTextBox.Text),
                 System.Convert.ToDecimal(this.ExpenseElectricTextBox.Text), 
                 System.Convert.ToDecimal(this.ExpenseHeatingTextBox.Text),
                 System.Convert.ToDecimal(this.ExpensePhoneTextBox.Text), 
@@ -158,6 +160,7 @@ namespace FRCApp
             DataSet1.MonthlyExpensesDataTable monthlyExpenseData = new DataSet1TableAdapters.MonthlyExpensesTableAdapter().GetMonthlyExpensesByHouseholdID(householdID);
             foreach (DataRow row in monthlyExpenseData.Rows)
             {
+                monthlyExpenseID = Int32.Parse(row["MonthlyExpenseID"].ToString());
                 ExpenseRentTextBox.Text = row["Rent"].ToString();
                 ExpenseElectricTextBox.Text = row["Electric"].ToString();
                 ExpenseHeatingTextBox.Text = row["Heating"].ToString();
