@@ -15,6 +15,7 @@ namespace FRCApp
     {
         private String householdID;
         private List<IncomeSource> incomeSourcesList;
+
         public FinanceForm(String householdID)
         {
             this.householdID = householdID;
@@ -73,10 +74,9 @@ namespace FRCApp
             cmb_incomeFreqs.SelectedIndex = -1;
             cmb_incomeSourceType.SelectedIndex = -1;
             amountOfIncomeTextBox.Clear();
-
         }
 
-        //removes the selected items fromt he FinanceListView
+        //removes the selected items from the FinanceListView
         private void removeButton_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in FinancelistView.SelectedItems)
@@ -127,11 +127,15 @@ namespace FRCApp
             cmb_incomeFreqs.ValueMember = "IncomeFrequencyID";
             cmb_incomeFreqs.DisplayMember = "Frequency";
 
+            // Get income sources from the IncomeSourceTypes table
             var incomeSourceTypesAdapter = new DataSet1TableAdapters.IncomeSourceTypesTableAdapter();
             var incomeSourceTypes = incomeSourceTypesAdapter.GetData();
             cmb_incomeSourceType.DataSource = incomeSourceTypes;
             cmb_incomeSourceType.ValueMember = "IncomeSourceType";
             cmb_incomeSourceType.DisplayMember = "IncomeSourceType";
+
+            // Fill listview with any perons from the database
+            DataSet1TableAdapters.IncomeSourcesTableAdapter adapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
         }
 
         private class IncomeSource {

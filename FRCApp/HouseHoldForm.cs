@@ -60,8 +60,7 @@ namespace FRCApp
             }
 
             //Add the items to the listView
-            ListViewItem item = new ListViewItem("-1");
-            item.SubItems.Add(HouseHoldFormFirstNameTextBox.Text);
+            ListViewItem item = new ListViewItem(HouseHoldFormFirstNameTextBox.Text);
             item.SubItems.Add(HouseHoldFormlastNameTextBox.Text);
             item.SubItems.Add(HouseHoldFormlast4DigitsOfSsnTextBox.Text);
             item.SubItems.Add(HouseHoldFormBirthDateDateTimePicker.Text);
