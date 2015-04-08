@@ -84,18 +84,42 @@ namespace FRCApp
             }
 
             var inactiveEfaRequests = efaRequestDisplayAdapter.GetInactiveEFARequestsByClientID(ClientID.ToString());
+            DateTime lowestDate=DateTime.Now;
             foreach (var efaRequest in inactiveEfaRequests)
             {
                 var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
+                if (efaRequest.DateRequested < lowestDate)
+                {
+                    lowestDate = efaRequest.DateRequested;
+                }
                 item.Tag = efaRequest.EFARequestID;
                 item.SubItems.Add(efaRequest.HandledRequestTypes);
                 item.SubItems.Add(efaRequest.totalamount + "");
                 item.SubItems.Add(efaRequest.RequestTypes);
                 lstViewHist.Items.Add(item);
             }
+            fromDate.Value = lowestDate;
             loadcaseNote();
+            loadQuickReport();
         }
 
+        private void loadQuickReport()
+        {
+            var totalRequest = lstViewHist.Items.Count;
+            var totalRequestApproved = 0;
+            Decimal totalAmountApproved=0;
+            foreach(ListViewItem itm in lstViewHist.Items)
+            {
+                if (itm.SubItems[2].Text != 0 + "")
+                {
+                    totalRequestApproved++;
+                    totalAmountApproved += Convert.ToDecimal(itm.SubItems[2].Text);
+                }
+            }
+            txtTotalRequest.Text = totalRequest.ToString();
+            txtApprovedRequest.Text = totalRequestApproved.ToString();
+            TxtApprovedAmount.Text = totalAmountApproved.ToString();
+        }
         private void loadcaseNote()
         {
             lstCaseNotes.Items.Clear();
@@ -187,6 +211,28 @@ namespace FRCApp
             addcase.Enabled = false;
             lstCaseNotes.SelectedItems.Clear();
             
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            var efaRequestDisplayAdapter = new DataSet1TableAdapters.EFARequestsDisplayTableAdapter();
+            var inactiveEfaRequests = efaRequestDisplayAdapter.GetInactiveEFARequestsByClientID(ClientID.ToString());
+            DateTime lowestDate = fromDate.Value;
+            lstViewHist.Items.Clear();
+            foreach (var efaRequest in inactiveEfaRequests)
+            {
+
+                if (efaRequest.DateRequested>=fromDate.Value  && efaRequest.DateRequested <= Todate.Value)
+                {
+                    var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
+                    item.Tag = efaRequest.EFARequestID;
+                    item.SubItems.Add(efaRequest.HandledRequestTypes);
+                    item.SubItems.Add(efaRequest.totalamount + "");
+                    item.SubItems.Add(efaRequest.RequestTypes);
+                    lstViewHist.Items.Add(item);  
+                }
+            }
+            loadQuickReport();
         }
     }
 }

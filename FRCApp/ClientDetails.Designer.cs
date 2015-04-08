@@ -60,7 +60,7 @@
             this.lblefa_request = new System.Windows.Forms.Label();
             this.efaHistPanel = new System.Windows.Forms.Panel();
             this.Search = new System.Windows.Forms.Button();
-            this.TxtApporvedAmount = new System.Windows.Forms.TextBox();
+            this.TxtApprovedAmount = new System.Windows.Forms.TextBox();
             this.txtApprovedRequest = new System.Windows.Forms.TextBox();
             this.txtTotalRequest = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -392,7 +392,7 @@
             // 
             this.efaHistPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.efaHistPanel.Controls.Add(this.Search);
-            this.efaHistPanel.Controls.Add(this.TxtApporvedAmount);
+            this.efaHistPanel.Controls.Add(this.TxtApprovedAmount);
             this.efaHistPanel.Controls.Add(this.txtApprovedRequest);
             this.efaHistPanel.Controls.Add(this.txtTotalRequest);
             this.efaHistPanel.Controls.Add(this.label6);
@@ -418,13 +418,14 @@
             this.Search.TabIndex = 16;
             this.Search.Text = "search";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
-            // TxtApporvedAmount
+            // TxtApprovedAmount
             // 
-            this.TxtApporvedAmount.Location = new System.Drawing.Point(192, 325);
-            this.TxtApporvedAmount.Name = "TxtApporvedAmount";
-            this.TxtApporvedAmount.Size = new System.Drawing.Size(223, 20);
-            this.TxtApporvedAmount.TabIndex = 15;
+            this.TxtApprovedAmount.Location = new System.Drawing.Point(192, 325);
+            this.TxtApprovedAmount.Name = "TxtApprovedAmount";
+            this.TxtApprovedAmount.Size = new System.Drawing.Size(223, 20);
+            this.TxtApprovedAmount.TabIndex = 15;
             // 
             // txtApprovedRequest
             // 
@@ -771,7 +772,7 @@
         private System.Windows.Forms.Button clrbutton;
         private System.Windows.Forms.Button addcase;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TxtApporvedAmount;
+        private System.Windows.Forms.TextBox TxtApprovedAmount;
         private System.Windows.Forms.TextBox txtApprovedRequest;
         private System.Windows.Forms.TextBox txtTotalRequest;
         private System.Windows.Forms.Label label6;
