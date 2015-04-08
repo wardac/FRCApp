@@ -65,7 +65,6 @@ namespace FRCApp
             DataSet1TableAdapters.MonthlyExpensesTableAdapter adapter = new DataSet1TableAdapters.MonthlyExpensesTableAdapter();
             adapter.AddOrUpdateMonthlyExpenses(
                 this.householdID,
-                monthlyExpenseID,
                 System.Convert.ToDecimal(this.ExpenseRentTextBox.Text),
                 System.Convert.ToDecimal(this.ExpenseElectricTextBox.Text), 
                 System.Convert.ToDecimal(this.ExpenseHeatingTextBox.Text),

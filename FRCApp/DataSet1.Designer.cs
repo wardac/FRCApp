@@ -21057,7 +21057,6 @@ SELECT HouseholdID, MonthlyExpenseID, Rent, Electric, Heating, Phone, Trash, Wat
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MonthlyExpenseID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rent", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Electric", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Heating", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22076,7 +22075,6 @@ SELECT HouseholdID, MonthlyExpenseID, Rent, Electric, Heating, Phone, Trash, Wat
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int AddOrUpdateMonthlyExpenses(
                     global::System.Nullable<global::System.Guid> HouseholdID, 
-                    global::System.Nullable<int> MonthlyExpenseID, 
                     global::System.Nullable<decimal> Rent, 
                     global::System.Nullable<decimal> Electric, 
                     global::System.Nullable<decimal> Heating, 
@@ -22106,143 +22104,137 @@ SELECT HouseholdID, MonthlyExpenseID, Rent, Electric, Heating, Phone, Trash, Wat
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((MonthlyExpenseID.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(MonthlyExpenseID.Value));
+            if ((Rent.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(Rent.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Rent.HasValue == true)) {
-                command.Parameters[3].Value = ((decimal)(Rent.Value));
+            if ((Electric.HasValue == true)) {
+                command.Parameters[3].Value = ((decimal)(Electric.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Electric.HasValue == true)) {
-                command.Parameters[4].Value = ((decimal)(Electric.Value));
+            if ((Heating.HasValue == true)) {
+                command.Parameters[4].Value = ((decimal)(Heating.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Heating.HasValue == true)) {
-                command.Parameters[5].Value = ((decimal)(Heating.Value));
+            if ((Phone.HasValue == true)) {
+                command.Parameters[5].Value = ((decimal)(Phone.Value));
             }
             else {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Phone.HasValue == true)) {
-                command.Parameters[6].Value = ((decimal)(Phone.Value));
+            if ((Trash.HasValue == true)) {
+                command.Parameters[6].Value = ((decimal)(Trash.Value));
             }
             else {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Trash.HasValue == true)) {
-                command.Parameters[7].Value = ((decimal)(Trash.Value));
+            if ((Water.HasValue == true)) {
+                command.Parameters[7].Value = ((decimal)(Water.Value));
             }
             else {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Water.HasValue == true)) {
-                command.Parameters[8].Value = ((decimal)(Water.Value));
+            if ((Prescriptions.HasValue == true)) {
+                command.Parameters[8].Value = ((decimal)(Prescriptions.Value));
             }
             else {
                 command.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Prescriptions.HasValue == true)) {
-                command.Parameters[9].Value = ((decimal)(Prescriptions.Value));
+            if ((Laundry.HasValue == true)) {
+                command.Parameters[9].Value = ((decimal)(Laundry.Value));
             }
             else {
                 command.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Laundry.HasValue == true)) {
-                command.Parameters[10].Value = ((decimal)(Laundry.Value));
+            if ((CarPayment.HasValue == true)) {
+                command.Parameters[10].Value = ((decimal)(CarPayment.Value));
             }
             else {
                 command.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((CarPayment.HasValue == true)) {
-                command.Parameters[11].Value = ((decimal)(CarPayment.Value));
+            if ((CarInsurance.HasValue == true)) {
+                command.Parameters[11].Value = ((decimal)(CarInsurance.Value));
             }
             else {
                 command.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((CarInsurance.HasValue == true)) {
-                command.Parameters[12].Value = ((decimal)(CarInsurance.Value));
+            if ((Transportation.HasValue == true)) {
+                command.Parameters[12].Value = ((decimal)(Transportation.Value));
             }
             else {
                 command.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Transportation.HasValue == true)) {
-                command.Parameters[13].Value = ((decimal)(Transportation.Value));
+            if ((HealthInsurance.HasValue == true)) {
+                command.Parameters[13].Value = ((decimal)(HealthInsurance.Value));
             }
             else {
                 command.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((HealthInsurance.HasValue == true)) {
-                command.Parameters[14].Value = ((decimal)(HealthInsurance.Value));
+            if ((Cable.HasValue == true)) {
+                command.Parameters[14].Value = ((decimal)(Cable.Value));
             }
             else {
                 command.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Cable.HasValue == true)) {
-                command.Parameters[15].Value = ((decimal)(Cable.Value));
+            if ((Internet.HasValue == true)) {
+                command.Parameters[15].Value = ((decimal)(Internet.Value));
             }
             else {
                 command.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Internet.HasValue == true)) {
-                command.Parameters[16].Value = ((decimal)(Internet.Value));
+            if ((CreditCard.HasValue == true)) {
+                command.Parameters[16].Value = ((decimal)(CreditCard.Value));
             }
             else {
                 command.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((CreditCard.HasValue == true)) {
-                command.Parameters[17].Value = ((decimal)(CreditCard.Value));
+            if ((Loans.HasValue == true)) {
+                command.Parameters[17].Value = ((decimal)(Loans.Value));
             }
             else {
                 command.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((Loans.HasValue == true)) {
-                command.Parameters[18].Value = ((decimal)(Loans.Value));
+            if ((Groceries.HasValue == true)) {
+                command.Parameters[18].Value = ((decimal)(Groceries.Value));
             }
             else {
                 command.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Groceries.HasValue == true)) {
-                command.Parameters[19].Value = ((decimal)(Groceries.Value));
+            if ((Hygiene.HasValue == true)) {
+                command.Parameters[19].Value = ((decimal)(Hygiene.Value));
             }
             else {
                 command.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Hygiene.HasValue == true)) {
-                command.Parameters[20].Value = ((decimal)(Hygiene.Value));
+            if ((Household.HasValue == true)) {
+                command.Parameters[20].Value = ((decimal)(Household.Value));
             }
             else {
                 command.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((Household.HasValue == true)) {
-                command.Parameters[21].Value = ((decimal)(Household.Value));
+            if ((ChildCare.HasValue == true)) {
+                command.Parameters[21].Value = ((decimal)(ChildCare.Value));
             }
             else {
                 command.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((ChildCare.HasValue == true)) {
-                command.Parameters[22].Value = ((decimal)(ChildCare.Value));
+            if ((ChildSupport.HasValue == true)) {
+                command.Parameters[22].Value = ((decimal)(ChildSupport.Value));
             }
             else {
                 command.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((ChildSupport.HasValue == true)) {
-                command.Parameters[23].Value = ((decimal)(ChildSupport.Value));
+            if ((Other.HasValue == true)) {
+                command.Parameters[23].Value = ((decimal)(Other.Value));
             }
             else {
                 command.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            if ((Other.HasValue == true)) {
-                command.Parameters[24].Value = ((decimal)(Other.Value));
-            }
-            else {
-                command.Parameters[24].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
