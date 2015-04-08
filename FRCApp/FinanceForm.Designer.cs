@@ -193,6 +193,7 @@
             // 
             // cmb_householdMember
             // 
+            this.cmb_householdMember.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_householdMember.FormattingEnabled = true;
             this.cmb_householdMember.Location = new System.Drawing.Point(196, 76);
             this.cmb_householdMember.Name = "cmb_householdMember";
@@ -201,6 +202,7 @@
             // 
             // cmb_incomeFreqs
             // 
+            this.cmb_incomeFreqs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_incomeFreqs.FormattingEnabled = true;
             this.cmb_incomeFreqs.Location = new System.Drawing.Point(196, 205);
             this.cmb_incomeFreqs.Name = "cmb_incomeFreqs";
@@ -209,6 +211,7 @@
             // 
             // cmb_incomeSourceType
             // 
+            this.cmb_incomeSourceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_incomeSourceType.FormattingEnabled = true;
             this.cmb_incomeSourceType.Location = new System.Drawing.Point(196, 123);
             this.cmb_incomeSourceType.Name = "cmb_incomeSourceType";

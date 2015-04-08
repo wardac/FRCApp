@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.requestPanel = new System.Windows.Forms.Panel();
+            this.date_completedDate = new System.Windows.Forms.DateTimePicker();
+            this.lbl_completedDate = new System.Windows.Forms.Label();
             this.btn_handleRequest = new System.Windows.Forms.Button();
             this.lst_reqTypes = new System.Windows.Forms.ListBox();
             this.checklist_requestType = new System.Windows.Forms.CheckedListBox();
@@ -67,8 +69,6 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lbl_completedDate = new System.Windows.Forms.Label();
-            this.date_completedDate = new System.Windows.Forms.DateTimePicker();
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
@@ -105,6 +105,25 @@
             this.requestPanel.Name = "requestPanel";
             this.requestPanel.Size = new System.Drawing.Size(867, 611);
             this.requestPanel.TabIndex = 1;
+            // 
+            // date_completedDate
+            // 
+            this.date_completedDate.Enabled = false;
+            this.date_completedDate.Location = new System.Drawing.Point(189, 251);
+            this.date_completedDate.Name = "date_completedDate";
+            this.date_completedDate.Size = new System.Drawing.Size(200, 20);
+            this.date_completedDate.TabIndex = 9;
+            this.date_completedDate.Visible = false;
+            // 
+            // lbl_completedDate
+            // 
+            this.lbl_completedDate.AutoSize = true;
+            this.lbl_completedDate.Location = new System.Drawing.Point(30, 251);
+            this.lbl_completedDate.Name = "lbl_completedDate";
+            this.lbl_completedDate.Size = new System.Drawing.Size(83, 13);
+            this.lbl_completedDate.TabIndex = 8;
+            this.lbl_completedDate.Text = "Date Completed";
+            this.lbl_completedDate.Visible = false;
             // 
             // btn_handleRequest
             // 
@@ -167,6 +186,7 @@
             // 
             // cmb_hardship
             // 
+            this.cmb_hardship.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_hardship.FormattingEnabled = true;
             this.cmb_hardship.Location = new System.Drawing.Point(7, 20);
             this.cmb_hardship.Name = "cmb_hardship";
@@ -456,25 +476,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // lbl_completedDate
-            // 
-            this.lbl_completedDate.AutoSize = true;
-            this.lbl_completedDate.Location = new System.Drawing.Point(30, 251);
-            this.lbl_completedDate.Name = "lbl_completedDate";
-            this.lbl_completedDate.Size = new System.Drawing.Size(83, 13);
-            this.lbl_completedDate.TabIndex = 8;
-            this.lbl_completedDate.Text = "Date Completed";
-            this.lbl_completedDate.Visible = false;
-            // 
-            // date_completedDate
-            // 
-            this.date_completedDate.Enabled = false;
-            this.date_completedDate.Location = new System.Drawing.Point(189, 251);
-            this.date_completedDate.Name = "date_completedDate";
-            this.date_completedDate.Size = new System.Drawing.Size(200, 20);
-            this.date_completedDate.TabIndex = 9;
-            this.date_completedDate.Visible = false;
             // 
             // dataSet1
             // 

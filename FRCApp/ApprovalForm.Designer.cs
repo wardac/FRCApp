@@ -197,6 +197,7 @@
             // 
             // cmb_denialReason
             // 
+            this.cmb_denialReason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_denialReason.FormattingEnabled = true;
             this.cmb_denialReason.Location = new System.Drawing.Point(13, 371);
             this.cmb_denialReason.Name = "cmb_denialReason";
@@ -206,6 +207,7 @@
             // 
             // cmb_approvalReason
             // 
+            this.cmb_approvalReason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_approvalReason.FormattingEnabled = true;
             this.cmb_approvalReason.Location = new System.Drawing.Point(496, 371);
             this.cmb_approvalReason.Name = "cmb_approvalReason";

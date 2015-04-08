@@ -88,6 +88,7 @@
             // 
             // AccessLevelComboBox
             // 
+            this.AccessLevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AccessLevelComboBox.FormattingEnabled = true;
             this.AccessLevelComboBox.Items.AddRange(new object[] {
             "Administrator",

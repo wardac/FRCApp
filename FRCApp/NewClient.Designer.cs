@@ -307,6 +307,7 @@
             // 
             this.HouseholdTypeBox.DataSource = this.householdTypesBindingSource;
             this.HouseholdTypeBox.DisplayMember = "Type";
+            this.HouseholdTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HouseholdTypeBox.FormattingEnabled = true;
             this.HouseholdTypeBox.Location = new System.Drawing.Point(117, 176);
             this.HouseholdTypeBox.Name = "HouseholdTypeBox";
@@ -332,6 +333,7 @@
             // 
             this.EducationLevelBox.DataSource = this.educationLevelsBindingSource;
             this.EducationLevelBox.DisplayMember = "EducationLevel";
+            this.EducationLevelBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EducationLevelBox.FormattingEnabled = true;
             this.EducationLevelBox.Location = new System.Drawing.Point(117, 203);
             this.EducationLevelBox.Name = "EducationLevelBox";
@@ -352,6 +354,7 @@
             // 
             this.EmploymentStatusBox.DataSource = this.employmentStatusesBindingSource;
             this.EmploymentStatusBox.DisplayMember = "EmploymentStatus";
+            this.EmploymentStatusBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EmploymentStatusBox.FormattingEnabled = true;
             this.EmploymentStatusBox.Location = new System.Drawing.Point(117, 230);
             this.EmploymentStatusBox.Name = "EmploymentStatusBox";
