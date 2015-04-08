@@ -138,23 +138,25 @@ namespace FRCApp
             cmb_incomeSourceType.DisplayMember = "IncomeSourceType";
 
             // Fill listview with any persons from the database
-            DataSet1TableAdapters.IncomeSourcesTableAdapter adapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
+            DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
             foreach (DataRow householdMember in householdMembers.Rows)
             {
-                var incomeDetails = adapter.GetIncomeSourcesByHouseholdMemberID(Int32.Parse(householdMember["HouseholdMemberID"].ToString()));
-                ListViewItem item = new ListViewItem(householdMember["Name"].ToString());
+                var incomeDetails = incomeSourceAdapter.GetIncomeSourcesByHouseholdMemberID(Int32.Parse(householdMember["HouseholdMemberID"].ToString()));                
                 foreach (DataRow row in incomeDetails.Rows)
                 {
-                    item.SubItems.Add(row["IncomeSource"].ToString());
-                    item.SubItems.Add(row["Amount"].ToString());
-                    DataSet1TableAdapters.IncomeFrequenciesTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter();
-                    String frequency = incomeAdapter.GetFrequencyByID(Int32.Parse(row["FrequencyID"].ToString())).ToString();
-                    item.SubItems.Add(frequency);
-                    item.Tag = row["IncomeSourceID"];
-                }
-                FinancelistView.Items.Add(item);
-            }
-            
+                    if (!row["IncomeSource"].ToString().Equals(""))
+                    {
+                        ListViewItem item = new ListViewItem(householdMember["Name"].ToString());
+                        item.SubItems.Add(row["IncomeSource"].ToString());
+                        item.SubItems.Add(row["Amount"].ToString());
+                        DataSet1TableAdapters.IncomeFrequenciesTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter();
+                        String frequency = incomeAdapter.GetFrequencyByID(Int32.Parse(row["FrequencyID"].ToString())).ToString();
+                        item.SubItems.Add(frequency);
+                        item.Tag = row["IncomeSourceID"];
+                        FinancelistView.Items.Add(item);
+                    }
+                }                
+            }            
         }
 
         private class IncomeSource {

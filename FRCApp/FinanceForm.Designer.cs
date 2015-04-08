@@ -137,7 +137,7 @@
             this.FinancelistView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.FinancelistView.Location = new System.Drawing.Point(414, 51);
             this.FinancelistView.Name = "FinancelistView";
-            this.FinancelistView.Size = new System.Drawing.Size(386, 171);
+            this.FinancelistView.Size = new System.Drawing.Size(479, 171);
             this.FinancelistView.TabIndex = 5;
             this.FinancelistView.UseCompatibleStateImageBehavior = false;
             this.FinancelistView.View = System.Windows.Forms.View.Details;
@@ -145,11 +145,12 @@
             // name
             // 
             this.name.Text = "Name";
+            this.name.Width = 130;
             // 
             // incomeSource
             // 
             this.incomeSource.Text = "Source of Income";
-            this.incomeSource.Width = 108;
+            this.incomeSource.Width = 128;
             // 
             // incomeAmount
             // 
@@ -163,7 +164,7 @@
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(644, 235);
+            this.submitButton.Location = new System.Drawing.Point(737, 235);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 7;
@@ -183,7 +184,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(725, 235);
+            this.cancelButton.Location = new System.Drawing.Point(818, 235);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 8;
@@ -222,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 270);
+            this.ClientSize = new System.Drawing.Size(917, 270);
             this.Controls.Add(this.cmb_incomeSourceType);
             this.Controls.Add(this.cmb_incomeFreqs);
             this.Controls.Add(this.cmb_householdMember);
