@@ -89,6 +89,7 @@ namespace FRCApp
                 var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
                 item.Tag = efaRequest.EFARequestID;
                 item.SubItems.Add(efaRequest.HandledRequestTypes);
+                item.SubItems.Add(efaRequest.totalamount + "");
                 item.SubItems.Add(efaRequest.RequestTypes);
                 lstViewHist.Items.Add(item);
             }

@@ -8378,6 +8378,8 @@ namespace FRCApp {
             
             private global::System.Data.DataColumn columnHandledRequestTypes;
             
+            private global::System.Data.DataColumn columntotalamount;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EFARequestsDisplayDataTable() {
@@ -8453,6 +8455,14 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn totalamountColumn {
+                get {
+                    return this.columntotalamount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8488,14 +8498,15 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFARequestsDisplayRow AddEFARequestsDisplayRow(string EFARequestID, System.DateTime DateRequested, string Status, string RequestTypes, string HandledRequestTypes) {
+            public EFARequestsDisplayRow AddEFARequestsDisplayRow(string EFARequestID, System.DateTime DateRequested, string Status, string RequestTypes, string HandledRequestTypes, decimal totalamount) {
                 EFARequestsDisplayRow rowEFARequestsDisplayRow = ((EFARequestsDisplayRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EFARequestID,
                         DateRequested,
                         Status,
                         RequestTypes,
-                        HandledRequestTypes};
+                        HandledRequestTypes,
+                        totalamount};
                 rowEFARequestsDisplayRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEFARequestsDisplayRow);
                 return rowEFARequestsDisplayRow;
@@ -8530,6 +8541,7 @@ namespace FRCApp {
                 this.columnStatus = base.Columns["Status"];
                 this.columnRequestTypes = base.Columns["RequestTypes"];
                 this.columnHandledRequestTypes = base.Columns["HandledRequestTypes"];
+                this.columntotalamount = base.Columns["totalamount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8545,6 +8557,8 @@ namespace FRCApp {
                 base.Columns.Add(this.columnRequestTypes);
                 this.columnHandledRequestTypes = new global::System.Data.DataColumn("HandledRequestTypes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHandledRequestTypes);
+                this.columntotalamount = new global::System.Data.DataColumn("totalamount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalamount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEFARequestID}, true));
                 this.columnEFARequestID.AllowDBNull = false;
@@ -8557,6 +8571,7 @@ namespace FRCApp {
                 this.columnRequestTypes.MaxLength = 2147483647;
                 this.columnHandledRequestTypes.ReadOnly = true;
                 this.columnHandledRequestTypes.MaxLength = 2147483647;
+                this.columntotalamount.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12511,6 +12526,22 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal totalamount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableEFARequestsDisplay.totalamountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totalamount\' in table \'EFARequestsDisplay\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFARequestsDisplay.totalamountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsRequestTypesNull() {
                 return this.IsNull(this.tableEFARequestsDisplay.RequestTypesColumn);
             }
@@ -12531,6 +12562,18 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetHandledRequestTypesNull() {
                 this[this.tableEFARequestsDisplay.HandledRequestTypesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstotalamountNull() {
+                return this.IsNull(this.tableEFARequestsDisplay.totalamountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettotalamountNull() {
+                this[this.tableEFARequestsDisplay.totalamountColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -24901,6 +24944,7 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
             tableMapping.ColumnMappings.Add("Status", "Status");
             tableMapping.ColumnMappings.Add("RequestTypes", "RequestTypes");
             tableMapping.ColumnMappings.Add("HandledRequestTypes", "HandledRequestTypes");
+            tableMapping.ColumnMappings.Add("totalamount", "totalamount");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -24917,8 +24961,8 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EFARequestID, DateRequested, Status, RequestTypes,HandledRequestTypes FROM" +
-                " dbo.EFARequestsDisplay";
+            this._commandCollection[0].CommandText = "SELECT EFARequestID, DateRequested, Status, RequestTypes,totalamount,HandledReque" +
+                "stTypes FROM dbo.EFARequestsDisplay";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
