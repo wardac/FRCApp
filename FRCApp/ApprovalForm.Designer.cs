@@ -245,7 +245,7 @@
             // 
             // gridApprovedservices
             // 
-            this.gridApprovedservices.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gridApprovedservices.BackgroundColor = System.Drawing.Color.White;
             this.gridApprovedservices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridApprovedservices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.subreqID,

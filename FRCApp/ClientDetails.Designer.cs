@@ -59,6 +59,7 @@
             this.addEFAButton = new System.Windows.Forms.Button();
             this.lblefa_request = new System.Windows.Forms.Label();
             this.efaHistPanel = new System.Windows.Forms.Panel();
+            this.Search = new System.Windows.Forms.Button();
             this.TxtApporvedAmount = new System.Windows.Forms.TextBox();
             this.txtApprovedRequest = new System.Windows.Forms.TextBox();
             this.txtTotalRequest = new System.Windows.Forms.TextBox();
@@ -73,6 +74,7 @@
             this.lstViewHist = new System.Windows.Forms.ListView();
             this.hist_date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ApprovedAssistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.deniedAssistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -389,6 +391,7 @@
             // efaHistPanel
             // 
             this.efaHistPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.efaHistPanel.Controls.Add(this.Search);
             this.efaHistPanel.Controls.Add(this.TxtApporvedAmount);
             this.efaHistPanel.Controls.Add(this.txtApprovedRequest);
             this.efaHistPanel.Controls.Add(this.txtTotalRequest);
@@ -406,6 +409,15 @@
             this.efaHistPanel.Name = "efaHistPanel";
             this.efaHistPanel.Size = new System.Drawing.Size(603, 373);
             this.efaHistPanel.TabIndex = 2;
+            // 
+            // Search
+            // 
+            this.Search.Location = new System.Drawing.Point(523, 38);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(51, 22);
+            this.Search.TabIndex = 16;
+            this.Search.Text = "search";
+            this.Search.UseVisualStyleBackColor = true;
             // 
             // TxtApporvedAmount
             // 
@@ -460,9 +472,9 @@
             // 
             // Todate
             // 
-            this.Todate.Location = new System.Drawing.Point(316, 40);
+            this.Todate.Location = new System.Drawing.Point(307, 40);
             this.Todate.Name = "Todate";
-            this.Todate.Size = new System.Drawing.Size(200, 20);
+            this.Todate.Size = new System.Drawing.Size(199, 20);
             this.Todate.TabIndex = 9;
             // 
             // fromDate
@@ -476,7 +488,7 @@
             // 
             this.To.AutoSize = true;
             this.To.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.To.Location = new System.Drawing.Point(281, 44);
+            this.To.Location = new System.Drawing.Point(272, 44);
             this.To.Name = "To";
             this.To.Size = new System.Drawing.Size(22, 12);
             this.To.TabIndex = 7;
@@ -507,6 +519,7 @@
             this.lstViewHist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.hist_date,
             this.ApprovedAssistance,
+            this.amount,
             this.deniedAssistance});
             this.lstViewHist.FullRowSelect = true;
             this.lstViewHist.Location = new System.Drawing.Point(17, 92);
@@ -525,12 +538,16 @@
             // ApprovedAssistance
             // 
             this.ApprovedAssistance.Text = "Approved Request";
-            this.ApprovedAssistance.Width = 223;
+            this.ApprovedAssistance.Width = 215;
+            // 
+            // amount
+            // 
+            this.amount.Text = "amount";
             // 
             // deniedAssistance
             // 
             this.deniedAssistance.Text = "Denied Request";
-            this.deniedAssistance.Width = 200;
+            this.deniedAssistance.Width = 100;
             // 
             // label1
             // 
@@ -638,12 +655,16 @@
             this.caseNoteDate,
             this.caseNoteupdate,
             this.casenoteCmt});
+            this.lstCaseNotes.FullRowSelect = true;
             this.lstCaseNotes.Location = new System.Drawing.Point(6, 22);
+            this.lstCaseNotes.MultiSelect = false;
             this.lstCaseNotes.Name = "lstCaseNotes";
             this.lstCaseNotes.Size = new System.Drawing.Size(408, 166);
             this.lstCaseNotes.TabIndex = 1;
             this.lstCaseNotes.UseCompatibleStateImageBehavior = false;
             this.lstCaseNotes.View = System.Windows.Forms.View.Details;
+            this.lstCaseNotes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstCaseNotes_MouseDoubleClick);
+
             // 
             // caseNoteDate
             // 
@@ -762,5 +783,7 @@
         private System.Windows.Forms.Label To;
         private System.Windows.Forms.Label from;
         private System.Windows.Forms.ColumnHeader deniedAssistance;
+        private System.Windows.Forms.ColumnHeader amount;
+        private System.Windows.Forms.Button Search;
     }
 }

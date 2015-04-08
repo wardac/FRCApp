@@ -120,6 +120,7 @@ namespace FRCApp
         {
             txtcomment.Text = "";
             txtupdateType.Text = "";
+            addcase.Enabled = true;
         }
 
         private void addcase_Click(object sender, EventArgs e)
@@ -172,6 +173,19 @@ namespace FRCApp
             DataSet1TableAdapters.ClientsTableAdapter dateAdapter = new DataSet1TableAdapters.ClientsTableAdapter();
             dateAdapter.editContactDate(ClientdateContact.Value, ClientID);
             MessageBox.Show("last contact date changed");
+        }
+
+        private void lstCaseNotes_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (lstCaseNotes.SelectedItems.Count != 1)
+            {
+                return;
+            }
+            txtupdateType.Text =lstCaseNotes.SelectedItems[0].SubItems[1].Text;
+            txtcomment.Text = lstCaseNotes.SelectedItems[0].SubItems[2].Text;
+            addcase.Enabled = false;
+            lstCaseNotes.SelectedItems.Clear();
+            
         }
     }
 }
