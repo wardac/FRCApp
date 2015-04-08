@@ -147,7 +147,9 @@ namespace FRCApp
                 {
                     item.SubItems.Add(row["IncomeSource"].ToString());
                     item.SubItems.Add(row["Amount"].ToString());
-                    item.SubItems.Add(row["FrequencyID"].ToString());
+                    DataSet1TableAdapters.IncomeFrequenciesTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter();
+                    String frequency = incomeAdapter.GetFrequencyByID(Int32.Parse(row["FrequencyID"].ToString())).ToString();
+                    item.SubItems.Add(frequency);
                     item.Tag = row["IncomeSourceID"];
                 }
                 FinancelistView.Items.Add(item);
