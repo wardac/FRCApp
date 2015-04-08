@@ -265,7 +265,7 @@
             // 
             // householdInfo_button
             // 
-            this.householdInfo_button.Location = new System.Drawing.Point(90, 517);
+            this.householdInfo_button.Location = new System.Drawing.Point(142, 517);
             this.householdInfo_button.Name = "householdInfo_button";
             this.householdInfo_button.Size = new System.Drawing.Size(149, 23);
             this.householdInfo_button.TabIndex = 17;
@@ -275,7 +275,7 @@
             // 
             // monthlyExpenses_button
             // 
-            this.monthlyExpenses_button.Location = new System.Drawing.Point(245, 517);
+            this.monthlyExpenses_button.Location = new System.Drawing.Point(297, 517);
             this.monthlyExpenses_button.Name = "monthlyExpenses_button";
             this.monthlyExpenses_button.Size = new System.Drawing.Size(134, 23);
             this.monthlyExpenses_button.TabIndex = 18;
@@ -285,7 +285,7 @@
             // 
             // householdIncome_button
             // 
-            this.householdIncome_button.Location = new System.Drawing.Point(385, 517);
+            this.householdIncome_button.Location = new System.Drawing.Point(437, 517);
             this.householdIncome_button.Name = "householdIncome_button";
             this.householdIncome_button.Size = new System.Drawing.Size(216, 23);
             this.householdIncome_button.TabIndex = 19;
@@ -299,7 +299,7 @@
             this.submit_button.Name = "submit_button";
             this.submit_button.Size = new System.Drawing.Size(75, 23);
             this.submit_button.TabIndex = 21;
-            this.submit_button.Text = "Add Client";
+            this.submit_button.Text = "Submit";
             this.submit_button.UseVisualStyleBackColor = true;
             this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
             // 

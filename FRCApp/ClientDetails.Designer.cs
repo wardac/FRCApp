@@ -405,7 +405,7 @@
             this.efaHistPanel.Controls.Add(this.label3);
             this.efaHistPanel.Controls.Add(this.lstViewHist);
             this.efaHistPanel.Controls.Add(this.label1);
-            this.efaHistPanel.Location = new System.Drawing.Point(470, 286);
+            this.efaHistPanel.Location = new System.Drawing.Point(470, 280);
             this.efaHistPanel.Name = "efaHistPanel";
             this.efaHistPanel.Size = new System.Drawing.Size(603, 373);
             this.efaHistPanel.TabIndex = 2;
@@ -664,7 +664,6 @@
             this.lstCaseNotes.UseCompatibleStateImageBehavior = false;
             this.lstCaseNotes.View = System.Windows.Forms.View.Details;
             this.lstCaseNotes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstCaseNotes_MouseDoubleClick);
-
             // 
             // caseNoteDate
             // 
