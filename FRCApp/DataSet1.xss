@@ -28,7 +28,7 @@
     <Shape ID="DesignTable:Users" ZOrder="10" X="3255" Y="224" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:EFARequests" ZOrder="5" X="1089" Y="87" Height="343" Width="328" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
     <Shape ID="DesignTable:EFASubrequests" ZOrder="20" X="916" Y="467" Height="75" Width="237" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="140" SplitterPosition="24" />
-    <Shape ID="DesignTable:EFARequestsDisplay" ZOrder="1" X="89" Y="23" Height="229" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:EFARequestsDisplay" ZOrder="1" X="130" Y="82" Height="229" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:EFAApprovalReasons" ZOrder="8" X="140" Y="203" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:EFADenialReasons" ZOrder="7" X="32" Y="254" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:CaseNote" ZOrder="6" X="666" Y="736" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="121" />

@@ -78,12 +78,15 @@ namespace FRCApp
             lstViewHist.Items.Clear();
             var efaRequestDisplayAdapter = new DataSet1TableAdapters.EFARequestsDisplayTableAdapter();
             var activeEfaRequests = efaRequestDisplayAdapter.GetActiveEFARequestsByClientID(ClientID.ToString());
-            foreach (var efaRequest in activeEfaRequests)
+            if (activeEfaRequests.IsInitialized )
             {
-                var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
-                item.Tag = efaRequest.EFARequestID;
-                item.SubItems.Add(efaRequest.RequestTypes);
-                lstActiveReq.Items.Add(item);
+                foreach (var efaRequest in activeEfaRequests)
+                {
+                    var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
+                    item.Tag = efaRequest.EFARequestID;
+                    item.SubItems.Add(efaRequest.RequestTypes);
+                    lstActiveReq.Items.Add(item);
+                }
             }
 
             var inactiveEfaRequests = efaRequestDisplayAdapter.GetInactiveEFARequestsByClientID(ClientID.ToString());

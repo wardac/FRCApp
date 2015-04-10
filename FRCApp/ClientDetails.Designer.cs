@@ -551,7 +551,7 @@
             // deniedAssistance
             // 
             this.deniedAssistance.Text = "Denied Request";
-            this.deniedAssistance.Width = 100;
+            this.deniedAssistance.Width = 181;
             // 
             // label1
             // 

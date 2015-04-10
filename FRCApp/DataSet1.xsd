@@ -2793,14 +2793,14 @@ SELECT Id, date, updateType, comment, ClientID FROM CaseNote WHERE (Id = @Id)</C
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RequestTypes" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRequestTypes" msprop:Generator_ColumnPropNameInRow="RequestTypes" msprop:Generator_ColumnPropNameInTable="RequestTypesColumn" msprop:Generator_UserColumnName="RequestTypes" minOccurs="0">
+              <xs:element name="RequestTypes" msdata:ReadOnly="true" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="RequestTypes" msprop:Generator_ColumnVarNameInTable="columnRequestTypes" msprop:Generator_ColumnPropNameInTable="RequestTypesColumn" msprop:Generator_UserColumnName="RequestTypes" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="HandledRequestTypes" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHandledRequestTypes" msprop:Generator_ColumnPropNameInRow="HandledRequestTypes" msprop:Generator_ColumnPropNameInTable="HandledRequestTypesColumn" msprop:Generator_UserColumnName="HandledRequestTypes" minOccurs="0">
+              <xs:element name="HandledRequestTypes" msdata:ReadOnly="true" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="HandledRequestTypes" msprop:Generator_ColumnVarNameInTable="columnHandledRequestTypes" msprop:Generator_ColumnPropNameInTable="HandledRequestTypesColumn" msprop:Generator_UserColumnName="HandledRequestTypes" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />

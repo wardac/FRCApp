@@ -13,6 +13,8 @@ namespace FRCApp
     public partial class ApprovalForm : Form
     {
         private String requestID;
+        private const int BACKSPACE = 8;
+        private const int DELETE = 46;
         public ApprovalForm(String requestID, Action OnCloseEvent)
         {
             this.requestID = requestID;
@@ -50,9 +52,6 @@ namespace FRCApp
             var efaSubrequests = efaSubrequestAdapter.GetEFASubrequestsByEFARequestID(requestID);
             lst_requestedServices.DisplayMember = "Type";
             lst_requestedServices.ValueMember = "EFASubrequestID";
-           // lst_approvedServices.Items;
-           // lst_approvedServices.DisplayMember = "Type";
-            //lst_approvedServices.ValueMember = "EFASubrequestID";
             foreach (var subrequest in efaSubrequests) {
                 lst_requestedServices.Items.Add(
                     new Service(subrequest.EFARequestType, subrequest.EFASubrequestID)
@@ -69,6 +68,32 @@ namespace FRCApp
             cmb_denialReason.DataSource = denialReasons;
             cmb_denialReason.DisplayMember = "Reason";
             cmb_denialReason.ValueMember = "Reason";
+        }
+        private void gridApprovedservices_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(Column1_KeyPress);
+            if (gridApprovedservices.CurrentCell.ColumnIndex == 2) //Desired Column
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(Column1_KeyPress);
+                }
+            }
+        }
+
+        private void Column1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == BACKSPACE)
+            {
+                return;
+            }
+            Double value =0;
+            if (!Double.TryParse(((TextBox)sender).Text + e.KeyChar, out value))
+            {
+                e.Handled = true;
+            }
+            
         }
 
         private void btn_back_Click(object sender, EventArgs e)
@@ -92,10 +117,7 @@ namespace FRCApp
                     efaSubrequestAdapter.AddOrUpdateEFASubrequest(approvedService.EFASubrequestID, requestID, approvedService.Type, DateTime.Now, true, approvedService.amount);
                 }
             }
-  /*          foreach (Service approvedService in lst_approvedServices.Items)
-            {
-                efaSubrequestAdapter.AddOrUpdateEFASubrequest(approvedService.EFASubrequestID, requestID, approvedService.Type, DateTime.Now, true,approvedService.amount);
-            }*/
+
 
             var efaRequestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
             var request = efaRequestAdapter.GetEFARequestsByEFARequestID(requestID)[0];

@@ -12495,11 +12495,11 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string RequestTypes {
                 get {
-                    try {
-                        return ((string)(this[this.tableEFARequestsDisplay.RequestTypesColumn]));
+                    if (this.IsRequestTypesNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RequestTypes\' in table \'EFARequestsDisplay\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableEFARequestsDisplay.RequestTypesColumn]));
                     }
                 }
                 set {
@@ -12511,12 +12511,11 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string HandledRequestTypes {
                 get {
-                    try {
-                        return ((string)(this[this.tableEFARequestsDisplay.HandledRequestTypesColumn]));
+                    if (this.IsHandledRequestTypesNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HandledRequestTypes\' in table \'EFARequestsDisplay\' is DBNul" +
-                                "l.", e);
+                    else {
+                        return ((string)(this[this.tableEFARequestsDisplay.HandledRequestTypesColumn]));
                     }
                 }
                 set {

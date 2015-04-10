@@ -44,18 +44,18 @@
             this.cmb_denialReason = new System.Windows.Forms.ComboBox();
             this.cmb_approvalReason = new System.Windows.Forms.ComboBox();
             this.lst_requestedServices = new System.Windows.Forms.ListBox();
-            this.dataSet1 = new FRCApp.DataSet1();
-            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.incomeSourcesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.incomeSourcesTableAdapter = new FRCApp.DataSet1TableAdapters.IncomeSourcesTableAdapter();
             this.gridApprovedservices = new System.Windows.Forms.DataGridView();
+            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new FRCApp.DataSet1();
+            this.incomeSourcesTableAdapter = new FRCApp.DataSet1TableAdapters.IncomeSourcesTableAdapter();
             this.subreqID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.services = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amounts = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.incomeSourcesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridApprovedservices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblReferals
@@ -224,24 +224,10 @@
             this.lst_requestedServices.Size = new System.Drawing.Size(396, 303);
             this.lst_requestedServices.TabIndex = 31;
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataSet1BindingSource
-            // 
-            this.dataSet1BindingSource.DataSource = this.dataSet1;
-            this.dataSet1BindingSource.Position = 0;
-            // 
             // incomeSourcesBindingSource
             // 
             this.incomeSourcesBindingSource.DataMember = "IncomeSources";
             this.incomeSourcesBindingSource.DataSource = this.dataSet1BindingSource;
-            // 
-            // incomeSourcesTableAdapter
-            // 
-            this.incomeSourcesTableAdapter.ClearBeforeFill = true;
             // 
             // gridApprovedservices
             // 
@@ -256,6 +242,21 @@
             this.gridApprovedservices.Name = "gridApprovedservices";
             this.gridApprovedservices.Size = new System.Drawing.Size(392, 303);
             this.gridApprovedservices.TabIndex = 36;
+            this.gridApprovedservices.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gridApprovedservices_EditingControlShowing);
+            // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // incomeSourcesTableAdapter
+            // 
+            this.incomeSourcesTableAdapter.ClearBeforeFill = true;
             // 
             // subreqID
             // 
@@ -263,13 +264,14 @@
             this.subreqID.Name = "subreqID";
             this.subreqID.ReadOnly = true;
             this.subreqID.Visible = false;
+            this.subreqID.Width = 90;
             // 
             // services
             // 
             this.services.HeaderText = "services";
             this.services.Name = "services";
             this.services.ReadOnly = true;
-            this.services.Width = 300;
+            this.services.Width = 290;
             // 
             // amounts
             // 
@@ -302,10 +304,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Request Approval";
             this.Load += new System.EventHandler(this.ApprovalForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.incomeSourcesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridApprovedservices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
