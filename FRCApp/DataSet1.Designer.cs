@@ -8061,6 +8061,8 @@ namespace FRCApp {
             
             private global::System.Data.DataColumn columnApproved;
             
+            private global::System.Data.DataColumn columnamount;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EFASubrequestsDataTable() {
@@ -8136,6 +8138,14 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn amountColumn {
+                get {
+                    return this.columnamount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8171,14 +8181,15 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EFASubrequestsRow AddEFASubrequestsRow(string EFASubrequestID, string EFARequestID, string EFARequestType, System.DateTime DateClosed, bool Approved) {
+            public EFASubrequestsRow AddEFASubrequestsRow(string EFASubrequestID, string EFARequestID, string EFARequestType, System.DateTime DateClosed, bool Approved, decimal amount) {
                 EFASubrequestsRow rowEFASubrequestsRow = ((EFASubrequestsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EFASubrequestID,
                         EFARequestID,
                         EFARequestType,
                         DateClosed,
-                        Approved};
+                        Approved,
+                        amount};
                 rowEFASubrequestsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEFASubrequestsRow);
                 return rowEFASubrequestsRow;
@@ -8213,6 +8224,7 @@ namespace FRCApp {
                 this.columnEFARequestType = base.Columns["EFARequestType"];
                 this.columnDateClosed = base.Columns["DateClosed"];
                 this.columnApproved = base.Columns["Approved"];
+                this.columnamount = base.Columns["amount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8228,6 +8240,8 @@ namespace FRCApp {
                 base.Columns.Add(this.columnDateClosed);
                 this.columnApproved = new global::System.Data.DataColumn("Approved", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApproved);
+                this.columnamount = new global::System.Data.DataColumn("amount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnamount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEFASubrequestID}, true));
                 this.columnEFASubrequestID.AllowDBNull = false;
@@ -12397,6 +12411,22 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal amount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableEFASubrequests.amountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'amount\' in table \'EFASubrequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEFASubrequests.amountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEFARequestIDNull() {
                 return this.IsNull(this.tableEFASubrequests.EFARequestIDColumn);
             }
@@ -12441,6 +12471,18 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetApprovedNull() {
                 this[this.tableEFASubrequests.ApprovedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsamountNull() {
+                return this.IsNull(this.tableEFASubrequests.amountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetamountNull() {
+                this[this.tableEFASubrequests.amountColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -24402,10 +24444,11 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
             tableMapping.ColumnMappings.Add("EFARequestType", "EFARequestType");
             tableMapping.ColumnMappings.Add("DateClosed", "DateClosed");
             tableMapping.ColumnMappings.Add("Approved", "Approved");
+            tableMapping.ColumnMappings.Add("amount", "amount");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[EFASubrequests] WHERE (([EFASubrequestID] = @Original_EFASubrequestID) AND ((@IsNull_EFARequestID = 1 AND [EFARequestID] IS NULL) OR ([EFARequestID] = @Original_EFARequestID)) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)) AND ((@IsNull_Approved = 1 AND [Approved] IS NULL) OR ([Approved] = @Original_Approved)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[EFASubrequests] WHERE (([EFASubrequestID] = @Original_EFASubrequestID) AND ((@IsNull_EFARequestID = 1 AND [EFARequestID] IS NULL) OR ([EFARequestID] = @Original_EFARequestID)) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)) AND ((@IsNull_Approved = 1 AND [Approved] IS NULL) OR ([Approved] = @Original_Approved)) AND ((@IsNull_amount = 1 AND [amount] IS NULL) OR ([amount] = @Original_amount)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFASubrequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -24414,26 +24457,30 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Approved", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Approved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EFASubrequests] ([EFASubrequestID], [EFARequestID], [EFARequestType], [DateClosed], [Approved]) VALUES (@EFASubrequestID, @EFARequestID, @EFARequestType, @DateClosed, @Approved);
-SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM EFASubrequests WHERE (EFASubrequestID = @EFASubrequestID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EFASubrequests] ([EFASubrequestID], [EFARequestID], [EFARequestType], [DateClosed], [Approved], [amount]) VALUES (@EFASubrequestID, @EFARequestID, @EFARequestType, @DateClosed, @Approved, @amount);
+SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved, amount FROM EFASubrequests WHERE (EFASubrequestID = @EFASubrequestID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFASubrequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestType", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Approved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[EFASubrequests] SET [EFASubrequestID] = @EFASubrequestID, [EFARequestID] = @EFARequestID, [EFARequestType] = @EFARequestType, [DateClosed] = @DateClosed, [Approved] = @Approved WHERE (([EFASubrequestID] = @Original_EFASubrequestID) AND ((@IsNull_EFARequestID = 1 AND [EFARequestID] IS NULL) OR ([EFARequestID] = @Original_EFARequestID)) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)) AND ((@IsNull_Approved = 1 AND [Approved] IS NULL) OR ([Approved] = @Original_Approved)));
-SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM EFASubrequests WHERE (EFASubrequestID = @EFASubrequestID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[EFASubrequests] SET [EFASubrequestID] = @EFASubrequestID, [EFARequestID] = @EFARequestID, [EFARequestType] = @EFARequestType, [DateClosed] = @DateClosed, [Approved] = @Approved, [amount] = @amount WHERE (([EFASubrequestID] = @Original_EFASubrequestID) AND ((@IsNull_EFARequestID = 1 AND [EFARequestID] IS NULL) OR ([EFARequestID] = @Original_EFARequestID)) AND ((@IsNull_DateClosed = 1 AND [DateClosed] IS NULL) OR ([DateClosed] = @Original_DateClosed)) AND ((@IsNull_Approved = 1 AND [Approved] IS NULL) OR ([Approved] = @Original_Approved)) AND ((@IsNull_amount = 1 AND [amount] IS NULL) OR ([amount] = @Original_amount)));
+SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved, amount FROM EFASubrequests WHERE (EFASubrequestID = @EFASubrequestID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFASubrequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EFARequestType", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Approved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFASubrequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFASubrequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EFARequestID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EFARequestID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EFARequestID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -24441,6 +24488,8 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateClosed", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateClosed", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Approved", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Approved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Approved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_amount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24456,8 +24505,8 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM d" +
-                "bo.EFASubrequests";
+            this._commandCollection[0].CommandText = "SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved,amount" +
+                " FROM dbo.EFASubrequests";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -24571,7 +24620,7 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_EFASubrequestID, string Original_EFARequestID, global::System.Nullable<global::System.DateTime> Original_DateClosed, global::System.Nullable<bool> Original_Approved) {
+        public virtual int Delete(string Original_EFASubrequestID, string Original_EFARequestID, global::System.Nullable<global::System.DateTime> Original_DateClosed, global::System.Nullable<bool> Original_Approved, global::System.Nullable<decimal> Original_amount) {
             if ((Original_EFASubrequestID == null)) {
                 throw new global::System.ArgumentNullException("Original_EFASubrequestID");
             }
@@ -24602,6 +24651,14 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((Original_amount.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_amount.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24622,7 +24679,7 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string EFASubrequestID, string EFARequestID, string EFARequestType, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved) {
+        public virtual int Insert(string EFASubrequestID, string EFARequestID, string EFARequestType, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved, global::System.Nullable<decimal> amount) {
             if ((EFASubrequestID == null)) {
                 throw new global::System.ArgumentNullException("EFASubrequestID");
             }
@@ -24653,6 +24710,12 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((amount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(amount.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24673,7 +24736,7 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string EFASubrequestID, string EFARequestID, string EFARequestType, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved, string Original_EFASubrequestID, string Original_EFARequestID, global::System.Nullable<global::System.DateTime> Original_DateClosed, global::System.Nullable<bool> Original_Approved) {
+        public virtual int Update(string EFASubrequestID, string EFARequestID, string EFARequestType, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved, global::System.Nullable<decimal> amount, string Original_EFASubrequestID, string Original_EFARequestID, global::System.Nullable<global::System.DateTime> Original_DateClosed, global::System.Nullable<bool> Original_Approved, global::System.Nullable<decimal> Original_amount) {
             if ((EFASubrequestID == null)) {
                 throw new global::System.ArgumentNullException("EFASubrequestID");
             }
@@ -24704,35 +24767,49 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((amount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(amount.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             if ((Original_EFASubrequestID == null)) {
                 throw new global::System.ArgumentNullException("Original_EFASubrequestID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_EFASubrequestID));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_EFASubrequestID));
             }
             if ((Original_EFARequestID == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_EFARequestID));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_EFARequestID));
             }
             if ((Original_DateClosed.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_DateClosed.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DateClosed.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_Approved.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_Approved.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Original_Approved.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_amount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_amount.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -24754,8 +24831,8 @@ SELECT EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string EFARequestID, string EFARequestType, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved, string Original_EFASubrequestID, string Original_EFARequestID, global::System.Nullable<global::System.DateTime> Original_DateClosed, global::System.Nullable<bool> Original_Approved) {
-            return this.Update(Original_EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved, Original_EFASubrequestID, Original_EFARequestID, Original_DateClosed, Original_Approved);
+        public virtual int Update(string EFARequestID, string EFARequestType, global::System.Nullable<global::System.DateTime> DateClosed, global::System.Nullable<bool> Approved, global::System.Nullable<decimal> amount, string Original_EFASubrequestID, string Original_EFARequestID, global::System.Nullable<global::System.DateTime> Original_DateClosed, global::System.Nullable<bool> Original_Approved, global::System.Nullable<decimal> Original_amount) {
+            return this.Update(Original_EFASubrequestID, EFARequestID, EFARequestType, DateClosed, Approved, amount, Original_EFASubrequestID, Original_EFARequestID, Original_DateClosed, Original_Approved, Original_amount);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

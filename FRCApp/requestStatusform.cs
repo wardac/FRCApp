@@ -105,11 +105,17 @@ namespace FRCApp
                 checklist_requestType.Visible = false;
                 txt_other.Visible = false;
                 date_requestDate.Enabled = false;
+                datagridRequests.Visible = true;
                 var subrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
                 var subrequests = subrequestAdapter.GetEFASubrequestsByEFARequestID(RequestID);
                 foreach (var subrequest in subrequests)
                 {
                     lst_reqTypes.Items.Add(subrequest);
+                    if (datagridRequests.Visible == true)
+                    {
+                        String []data= {subrequest.EFARequestType, subrequest.amount+""};
+                        datagridRequests.Rows.Add(data);
+                    }
                 }
                 lst_reqTypes.DisplayMember = "EFARequestType";
 

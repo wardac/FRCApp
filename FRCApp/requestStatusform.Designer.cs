@@ -69,6 +69,9 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.datagridRequests = new System.Windows.Forms.DataGridView();
+            this.Request = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
@@ -76,12 +79,14 @@
             this.grpcauseshardship.SuspendLayout();
             this.efa_financegroup.SuspendLayout();
             this.efa_proofGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eFARequestTypesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // requestPanel
             // 
+            this.requestPanel.Controls.Add(this.datagridRequests);
             this.requestPanel.Controls.Add(this.date_completedDate);
             this.requestPanel.Controls.Add(this.lbl_completedDate);
             this.requestPanel.Controls.Add(this.btn_handleRequest);
@@ -477,6 +482,34 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // datagridRequests
+            // 
+            this.datagridRequests.BackgroundColor = System.Drawing.Color.White;
+            this.datagridRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Request,
+            this.amount});
+            this.datagridRequests.Location = new System.Drawing.Point(161, 52);
+            this.datagridRequests.Name = "datagridRequests";
+            this.datagridRequests.RowHeadersWidth = 20;
+            this.datagridRequests.Size = new System.Drawing.Size(258, 155);
+            this.datagridRequests.TabIndex = 25;
+            this.datagridRequests.Visible = false;
+            // 
+            // Request
+            // 
+            this.Request.HeaderText = "request";
+            this.Request.Name = "Request";
+            this.Request.ReadOnly = true;
+            this.Request.Width = 175;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            this.amount.Width = 60;
+            // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
@@ -509,6 +542,7 @@
             this.efa_financegroup.PerformLayout();
             this.efa_proofGroup.ResumeLayout(false);
             this.efa_proofGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eFARequestTypesBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -560,5 +594,8 @@
         private System.Windows.Forms.Button btn_handleRequest;
         private System.Windows.Forms.DateTimePicker date_completedDate;
         private System.Windows.Forms.Label lbl_completedDate;
+        private System.Windows.Forms.DataGridView datagridRequests;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Request;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
     }
 }
