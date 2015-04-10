@@ -93,6 +93,11 @@ namespace FRCApp
                 MessageBox.Show("Please enter in a valid zip code");
                 return false;
             }
+            else if (string.IsNullOrEmpty(HouseholdTypeBox.Text))
+            {
+                MessageBox.Show("Please select a Household Type");
+                return false;
+            }
             return true;
         }
 
