@@ -92,16 +92,6 @@ namespace FRCApp
             DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
             foreach (ListViewItem item in HouseHoldForm_ListView_Summary.Items)
             {
-                /*@HouseholdMemberID INT,
-												@HouseholdID UNIQUEIDENTIFIER,
-												@FirstName NVARCHAR(20),
-												@LastName NVARCHAR(20),
-												@Birthdate DATE,
-												@Relationship NVARCHAR(200),
-												@Race NVARCHAR(20),
-												@HealthCoverage BIT,
-												@LastFourSSN NVARCHAR(10)
-                 * */
                 adapter.AddOrUpdateHouseholdMembers(
                         Convert.ToInt32(item.Tag),
                         houseHoldId,

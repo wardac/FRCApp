@@ -46,9 +46,6 @@
             this.employmentStatus_label = new System.Windows.Forms.Label();
             this.referral_label = new System.Windows.Forms.Label();
             this.futureGoals_label = new System.Windows.Forms.Label();
-            this.householdInfo_button = new System.Windows.Forms.Button();
-            this.monthlyExpenses_button = new System.Windows.Forms.Button();
-            this.householdIncome_button = new System.Windows.Forms.Button();
             this.submit_button = new System.Windows.Forms.Button();
             this.HouseholdTypeBox = new System.Windows.Forms.ComboBox();
             this.householdTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -71,6 +68,13 @@
             this.telephone1_textBox = new System.Windows.Forms.MaskedTextBox();
             this.telephone2_textBox = new System.Windows.Forms.MaskedTextBox();
             this.zipCode_textBox = new System.Windows.Forms.MaskedTextBox();
+            this.social_label = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.health_coverage_label = new System.Windows.Forms.Label();
+            this.yes_radio_button = new System.Windows.Forms.RadioButton();
+            this.no_radio_button = new System.Windows.Forms.RadioButton();
+            this.race_label = new System.Windows.Forms.Label();
+            this.raceComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.householdTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.educationLevelsBindingSource)).BeginInit();
@@ -248,7 +252,7 @@
             // referral_label
             // 
             this.referral_label.AutoSize = true;
-            this.referral_label.Location = new System.Drawing.Point(19, 257);
+            this.referral_label.Location = new System.Drawing.Point(19, 287);
             this.referral_label.Name = "referral_label";
             this.referral_label.Size = new System.Drawing.Size(93, 13);
             this.referral_label.TabIndex = 43;
@@ -257,41 +261,11 @@
             // futureGoals_label
             // 
             this.futureGoals_label.AutoSize = true;
-            this.futureGoals_label.Location = new System.Drawing.Point(75, 387);
+            this.futureGoals_label.Location = new System.Drawing.Point(75, 417);
             this.futureGoals_label.Name = "futureGoals_label";
             this.futureGoals_label.Size = new System.Drawing.Size(37, 13);
             this.futureGoals_label.TabIndex = 57;
             this.futureGoals_label.Text = "Goals:";
-            // 
-            // householdInfo_button
-            // 
-            this.householdInfo_button.Location = new System.Drawing.Point(142, 517);
-            this.householdInfo_button.Name = "householdInfo_button";
-            this.householdInfo_button.Size = new System.Drawing.Size(149, 23);
-            this.householdInfo_button.TabIndex = 17;
-            this.householdInfo_button.Text = "Enter Household Information";
-            this.householdInfo_button.UseVisualStyleBackColor = true;
-            this.householdInfo_button.Click += new System.EventHandler(this.householdInfo_button_Click);
-            // 
-            // monthlyExpenses_button
-            // 
-            this.monthlyExpenses_button.Location = new System.Drawing.Point(297, 517);
-            this.monthlyExpenses_button.Name = "monthlyExpenses_button";
-            this.monthlyExpenses_button.Size = new System.Drawing.Size(134, 23);
-            this.monthlyExpenses_button.TabIndex = 18;
-            this.monthlyExpenses_button.Text = "Enter Monthly Expenses";
-            this.monthlyExpenses_button.UseVisualStyleBackColor = true;
-            this.monthlyExpenses_button.Click += new System.EventHandler(this.monthlyExpenses_button_Click);
-            // 
-            // householdIncome_button
-            // 
-            this.householdIncome_button.Location = new System.Drawing.Point(437, 517);
-            this.householdIncome_button.Name = "householdIncome_button";
-            this.householdIncome_button.Size = new System.Drawing.Size(216, 23);
-            this.householdIncome_button.TabIndex = 19;
-            this.householdIncome_button.Text = "Enter Household Income and Finances";
-            this.householdIncome_button.UseVisualStyleBackColor = true;
-            this.householdIncome_button.Click += new System.EventHandler(this.householdIncome_button_Click);
             // 
             // submit_button
             // 
@@ -374,7 +348,7 @@
             // ReferralsBox
             // 
             this.ReferralsBox.FormattingEnabled = true;
-            this.ReferralsBox.Location = new System.Drawing.Point(117, 257);
+            this.ReferralsBox.Location = new System.Drawing.Point(117, 287);
             this.ReferralsBox.Name = "ReferralsBox";
             this.ReferralsBox.Size = new System.Drawing.Size(598, 124);
             this.ReferralsBox.TabIndex = 15;
@@ -391,7 +365,7 @@
             // GoalsBox
             // 
             this.GoalsBox.FormattingEnabled = true;
-            this.GoalsBox.Location = new System.Drawing.Point(117, 387);
+            this.GoalsBox.Location = new System.Drawing.Point(117, 417);
             this.GoalsBox.Name = "GoalsBox";
             this.GoalsBox.Size = new System.Drawing.Size(598, 124);
             this.GoalsBox.TabIndex = 16;
@@ -447,15 +421,90 @@
             this.zipCode_textBox.Location = new System.Drawing.Point(332, 93);
             this.zipCode_textBox.Mask = "00000";
             this.zipCode_textBox.Name = "zipCode_textBox";
-            this.zipCode_textBox.Size = new System.Drawing.Size(47, 20);
+            this.zipCode_textBox.Size = new System.Drawing.Size(35, 20);
             this.zipCode_textBox.TabIndex = 8;
             this.zipCode_textBox.ValidatingType = typeof(int);
+            // 
+            // social_label
+            // 
+            this.social_label.AutoSize = true;
+            this.social_label.Location = new System.Drawing.Point(273, 45);
+            this.social_label.Name = "social_label";
+            this.social_label.Size = new System.Drawing.Size(103, 13);
+            this.social_label.TabIndex = 60;
+            this.social_label.Text = "Last 4 digits of SSN:";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(382, 41);
+            this.maskedTextBox1.Mask = "0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(31, 20);
+            this.maskedTextBox1.TabIndex = 61;
+            // 
+            // health_coverage_label
+            // 
+            this.health_coverage_label.AutoSize = true;
+            this.health_coverage_label.Location = new System.Drawing.Point(420, 45);
+            this.health_coverage_label.Name = "health_coverage_label";
+            this.health_coverage_label.Size = new System.Drawing.Size(115, 13);
+            this.health_coverage_label.TabIndex = 62;
+            this.health_coverage_label.Text = "Health Care Coverage:";
+            // 
+            // yes_radio_button
+            // 
+            this.yes_radio_button.AutoSize = true;
+            this.yes_radio_button.Location = new System.Drawing.Point(542, 43);
+            this.yes_radio_button.Name = "yes_radio_button";
+            this.yes_radio_button.Size = new System.Drawing.Size(43, 17);
+            this.yes_radio_button.TabIndex = 63;
+            this.yes_radio_button.TabStop = true;
+            this.yes_radio_button.Text = "Yes";
+            this.yes_radio_button.UseVisualStyleBackColor = true;
+            // 
+            // no_radio_button
+            // 
+            this.no_radio_button.AutoSize = true;
+            this.no_radio_button.Location = new System.Drawing.Point(592, 43);
+            this.no_radio_button.Name = "no_radio_button";
+            this.no_radio_button.Size = new System.Drawing.Size(39, 17);
+            this.no_radio_button.TabIndex = 64;
+            this.no_radio_button.TabStop = true;
+            this.no_radio_button.Text = "No";
+            this.no_radio_button.UseVisualStyleBackColor = true;
+            // 
+            // race_label
+            // 
+            this.race_label.AutoSize = true;
+            this.race_label.Location = new System.Drawing.Point(31, 264);
+            this.race_label.Name = "race_label";
+            this.race_label.Size = new System.Drawing.Size(81, 13);
+            this.race_label.TabIndex = 66;
+            this.race_label.Text = "Ethnicity/Race:";
+            // 
+            // raceComboBox
+            // 
+            this.raceComboBox.DataSource = this.GoalsBox.CustomTabOffsets;
+            this.raceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.raceComboBox.FormattingEnabled = true;
+            this.raceComboBox.Location = new System.Drawing.Point(117, 260);
+            this.raceComboBox.Name = "raceComboBox";
+            this.raceComboBox.Size = new System.Drawing.Size(598, 21);
+            this.raceComboBox.TabIndex = 68;
+            this.raceComboBox.ValueMember = "EmploymentStatusID";
             // 
             // NewClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 579);
+            this.Controls.Add(this.raceComboBox);
+            this.Controls.Add(this.race_label);
+            this.Controls.Add(this.no_radio_button);
+            this.Controls.Add(this.yes_radio_button);
+            this.Controls.Add(this.health_coverage_label);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.social_label);
             this.Controls.Add(this.zipCode_textBox);
             this.Controls.Add(this.telephone2_textBox);
             this.Controls.Add(this.telephone1_textBox);
@@ -468,9 +517,6 @@
             this.Controls.Add(this.EducationLevelBox);
             this.Controls.Add(this.HouseholdTypeBox);
             this.Controls.Add(this.submit_button);
-            this.Controls.Add(this.householdIncome_button);
-            this.Controls.Add(this.monthlyExpenses_button);
-            this.Controls.Add(this.householdInfo_button);
             this.Controls.Add(this.futureGoals_label);
             this.Controls.Add(this.referral_label);
             this.Controls.Add(this.employmentStatus_label);
@@ -531,9 +577,6 @@
         private System.Windows.Forms.Label employmentStatus_label;
         private System.Windows.Forms.Label referral_label;
         private System.Windows.Forms.Label futureGoals_label;
-        private System.Windows.Forms.Button householdInfo_button;
-        private System.Windows.Forms.Button monthlyExpenses_button;
-        private System.Windows.Forms.Button householdIncome_button;
         private System.Windows.Forms.Button submit_button;
         private System.Windows.Forms.ComboBox HouseholdTypeBox;
         private DataSet1 dataSet1;
@@ -556,5 +599,12 @@
         private System.Windows.Forms.MaskedTextBox telephone1_textBox;
         private System.Windows.Forms.MaskedTextBox telephone2_textBox;
         private System.Windows.Forms.MaskedTextBox zipCode_textBox;
+        private System.Windows.Forms.Label social_label;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label health_coverage_label;
+        private System.Windows.Forms.RadioButton yes_radio_button;
+        private System.Windows.Forms.RadioButton no_radio_button;
+        private System.Windows.Forms.Label race_label;
+        private System.Windows.Forms.ComboBox raceComboBox;
     }
 }

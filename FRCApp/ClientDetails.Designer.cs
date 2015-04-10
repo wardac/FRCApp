@@ -196,7 +196,7 @@
             this.ClientDetailsAddressTextBox.Location = new System.Drawing.Point(55, 34);
             this.ClientDetailsAddressTextBox.Multiline = true;
             this.ClientDetailsAddressTextBox.Name = "ClientDetailsAddressTextBox";
-            this.ClientDetailsAddressTextBox.Size = new System.Drawing.Size(203, 36);
+            this.ClientDetailsAddressTextBox.Size = new System.Drawing.Size(203, 20);
             this.ClientDetailsAddressTextBox.TabIndex = 15;
             // 
             // ClientDetailsNameTextBox
@@ -204,6 +204,7 @@
             this.ClientDetailsNameTextBox.Enabled = false;
             this.ClientDetailsNameTextBox.Location = new System.Drawing.Point(55, 6);
             this.ClientDetailsNameTextBox.Name = "ClientDetailsNameTextBox";
+            this.ClientDetailsNameTextBox.ReadOnly = true;
             this.ClientDetailsNameTextBox.Size = new System.Drawing.Size(203, 20);
             this.ClientDetailsNameTextBox.TabIndex = 14;
             // 
@@ -319,7 +320,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(4, 34);
+            this.lblAddress.Location = new System.Drawing.Point(4, 38);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(51, 12);
             this.lblAddress.TabIndex = 1;
@@ -329,7 +330,7 @@
             // 
             this.lblname.AutoSize = true;
             this.lblname.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblname.Location = new System.Drawing.Point(4, 6);
+            this.lblname.Location = new System.Drawing.Point(4, 10);
             this.lblname.Name = "lblname";
             this.lblname.Size = new System.Drawing.Size(37, 12);
             this.lblname.TabIndex = 0;
