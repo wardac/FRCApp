@@ -101,6 +101,7 @@
             this.Controls.Add(this.newUser);
             this.Controls.Add(this.listusers);
             this.Name = "UsersPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Users page";
             this.Activated += new System.EventHandler(this.UsersPage_Activated);
             this.ResumeLayout(false);

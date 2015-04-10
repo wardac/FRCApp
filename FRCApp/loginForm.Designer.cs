@@ -58,7 +58,7 @@
             this.login_cancel.Name = "login_cancel";
             this.login_cancel.Size = new System.Drawing.Size(75, 23);
             this.login_cancel.TabIndex = 3;
-            this.login_cancel.Text = "cancel";
+            this.login_cancel.Text = "Exit";
             this.login_cancel.UseVisualStyleBackColor = true;
             this.login_cancel.Click += new System.EventHandler(this.login_cancel_Click);
             // 

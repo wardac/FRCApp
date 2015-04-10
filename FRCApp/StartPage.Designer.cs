@@ -39,13 +39,16 @@
             this.clientPage_button = new System.Windows.Forms.Button();
             this.usersPagebutton = new System.Windows.Forms.Button();
             this.startPage_panel = new System.Windows.Forms.Panel();
+            this.welcome_label = new System.Windows.Forms.Label();
+            this.current_user = new System.Windows.Forms.Label();
+            this.logout_button = new System.Windows.Forms.Button();
             this.startPage_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // search_label
             // 
             this.search_label.AutoSize = true;
-            this.search_label.Location = new System.Drawing.Point(11, 11);
+            this.search_label.Location = new System.Drawing.Point(11, 14);
             this.search_label.Name = "search_label";
             this.search_label.Size = new System.Drawing.Size(75, 13);
             this.search_label.TabIndex = 0;
@@ -53,7 +56,7 @@
             // 
             // search_textBox
             // 
-            this.search_textBox.Location = new System.Drawing.Point(92, 8);
+            this.search_textBox.Location = new System.Drawing.Point(92, 10);
             this.search_textBox.Name = "search_textBox";
             this.search_textBox.Size = new System.Drawing.Size(142, 20);
             this.search_textBox.TabIndex = 1;
@@ -124,11 +127,11 @@
             // usersPagebutton
             // 
             this.usersPagebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.usersPagebutton.Location = new System.Drawing.Point(455, 8);
+            this.usersPagebutton.Location = new System.Drawing.Point(411, 8);
             this.usersPagebutton.Name = "usersPagebutton";
-            this.usersPagebutton.Size = new System.Drawing.Size(108, 23);
+            this.usersPagebutton.Size = new System.Drawing.Size(73, 23);
             this.usersPagebutton.TabIndex = 6;
-            this.usersPagebutton.Text = "Go to Users page";
+            this.usersPagebutton.Text = "Users Page";
             this.usersPagebutton.UseVisualStyleBackColor = true;
             this.usersPagebutton.Click += new System.EventHandler(this.users_Click);
             // 
@@ -137,6 +140,9 @@
             this.startPage_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.startPage_panel.Controls.Add(this.logout_button);
+            this.startPage_panel.Controls.Add(this.current_user);
+            this.startPage_panel.Controls.Add(this.welcome_label);
             this.startPage_panel.Controls.Add(this.usersPagebutton);
             this.startPage_panel.Controls.Add(this.clientPage_button);
             this.startPage_panel.Controls.Add(this.addNewClient_button);
@@ -147,6 +153,36 @@
             this.startPage_panel.Name = "startPage_panel";
             this.startPage_panel.Size = new System.Drawing.Size(574, 350);
             this.startPage_panel.TabIndex = 0;
+            // 
+            // welcome_label
+            // 
+            this.welcome_label.AutoSize = true;
+            this.welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcome_label.Location = new System.Drawing.Point(240, 12);
+            this.welcome_label.Name = "welcome_label";
+            this.welcome_label.Size = new System.Drawing.Size(84, 15);
+            this.welcome_label.TabIndex = 7;
+            this.welcome_label.Text = "Logged in as: ";
+            // 
+            // current_user
+            // 
+            this.current_user.AutoSize = true;
+            this.current_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.current_user.Location = new System.Drawing.Point(321, 12);
+            this.current_user.Name = "current_user";
+            this.current_user.Size = new System.Drawing.Size(41, 15);
+            this.current_user.TabIndex = 8;
+            this.current_user.Text = "label1";
+            // 
+            // logout_button
+            // 
+            this.logout_button.Location = new System.Drawing.Point(490, 8);
+            this.logout_button.Name = "logout_button";
+            this.logout_button.Size = new System.Drawing.Size(73, 23);
+            this.logout_button.TabIndex = 9;
+            this.logout_button.Text = "Logout";
+            this.logout_button.UseVisualStyleBackColor = true;
+            this.logout_button.Click += new System.EventHandler(this.logout_button_Click);
             // 
             // StartPage
             // 
@@ -178,6 +214,9 @@
         private System.Windows.Forms.Button clientPage_button;
         private System.Windows.Forms.Button usersPagebutton;
         private System.Windows.Forms.Panel startPage_panel;
+        private System.Windows.Forms.Label welcome_label;
+        private System.Windows.Forms.Label current_user;
+        private System.Windows.Forms.Button logout_button;
 
     }
 }

@@ -14,17 +14,20 @@ namespace FRCApp
     {
         private Guid selectedClientId = Guid.Empty;
         private string AccessLevel;
+        private string userName;
 
-        public StartPage(string AccessLevel)
+        public StartPage(string AccessLevel, string userName)
         {
             this.AccessLevel = AccessLevel;
+            this.userName = userName;        
             InitializeComponent();
+            this.current_user.Text = userName;
         }
 
         private void addNewClient_button_Click(object sender, EventArgs e)
         {
             search_textBox.Text = "";
-            NewClient nc = new NewClient();
+            NewClient nc = new NewClient(userName);
             nc.Show();
         }
 
@@ -41,7 +44,7 @@ namespace FRCApp
                 return;
             }
             client_listView.SelectedItems.Clear();
-            new ClientDetails(selectedClientId).Show();
+            new ClientDetails(selectedClientId, userName).Show();
         }
 
         private void users_Click(object sender, EventArgs e)
@@ -109,7 +112,19 @@ namespace FRCApp
                 return;
             }
             client_listView.SelectedItems.Clear();
-            new ClientDetails(selectedClientId).Show();
+            new ClientDetails(selectedClientId, userName).Show();
+        }
+
+        private void logout_button_Click(object sender, EventArgs e)
+        {
+            DialogResult messageBox = MessageBox.Show("Are you sure you want to logout?", "", MessageBoxButtons.YesNo);
+            if (messageBox == DialogResult.Yes)
+            {
+                this.Close();
+                System.Timers.Timer timer = new System.Timers.Timer(1000);
+                timer.Elapsed += ((o, a) => { if (LoginTimeout.LastInputTime() < DateTime.Now.AddMinutes(-30)) { Application.Exit(); } });
+                new loginForm(timer).Show();
+            }
         }
     }
 }

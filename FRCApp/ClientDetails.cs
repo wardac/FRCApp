@@ -15,12 +15,15 @@ namespace FRCApp
         private Guid ClientID;
         private Guid householdID;
         private DataSet1.ClientsRow clientData;
+        private string userName;
 
-        public ClientDetails(Guid clientID)
+        public ClientDetails(Guid clientID, string userName)
         {
             this.ClientID = clientID;
+            this.userName = userName;
             InitializeComponent();
             createClientObject();
+            this.username_label.Text = userName;
         }
 
         /**
@@ -138,7 +141,7 @@ namespace FRCApp
         private void editClientButton_Click(object sender, EventArgs e)
         {
             clientData = new DataSet1TableAdapters.ClientsTableAdapter().GetData().FindByClientID(ClientID);
-            new NewClient(clientData).Show();
+            new NewClient(clientData, userName).Show();
         }
 
         private void clrbutton_Click(object sender, EventArgs e)

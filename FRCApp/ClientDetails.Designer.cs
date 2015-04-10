@@ -91,6 +91,8 @@
             this.caseNoteupdate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.casenoteCmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblcasenote = new System.Windows.Forms.Label();
+            this.logged_in_label = new System.Windows.Forms.Label();
+            this.username_label = new System.Windows.Forms.Label();
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -690,11 +692,35 @@
             this.lblcasenote.TabIndex = 0;
             this.lblcasenote.Text = "Case Notes";
             // 
+            // logged_in_label
+            // 
+            this.logged_in_label.AutoSize = true;
+            this.logged_in_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logged_in_label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.logged_in_label.Location = new System.Drawing.Point(908, 13);
+            this.logged_in_label.Name = "logged_in_label";
+            this.logged_in_label.Size = new System.Drawing.Size(89, 16);
+            this.logged_in_label.TabIndex = 5;
+            this.logged_in_label.Text = "Logged in as:";
+            // 
+            // username_label
+            // 
+            this.username_label.AutoSize = true;
+            this.username_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username_label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.username_label.Location = new System.Drawing.Point(1003, 13);
+            this.username_label.Name = "username_label";
+            this.username_label.Size = new System.Drawing.Size(45, 16);
+            this.username_label.TabIndex = 6;
+            this.username_label.Text = "label7";
+            // 
             // ClientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 665);
+            this.Controls.Add(this.username_label);
+            this.Controls.Add(this.logged_in_label);
             this.Controls.Add(this.caseNotePanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.efaHistPanel);
@@ -718,6 +744,7 @@
             this.caseNotePanel.ResumeLayout(false);
             this.caseNotePanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -785,5 +812,7 @@
         private System.Windows.Forms.ColumnHeader deniedAssistance;
         private System.Windows.Forms.ColumnHeader amount;
         private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.Label logged_in_label;
+        private System.Windows.Forms.Label username_label;
     }
 }

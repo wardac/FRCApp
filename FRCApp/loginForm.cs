@@ -27,7 +27,7 @@ namespace FRCApp
             {
                 // check for default password
                 timer.Enabled = true;
-                StartPage startPage = new StartPage(level.ToString());
+                StartPage startPage = new StartPage(level.ToString(), this.login_username.Text);
                 this.Close();
                 this.Dispose();
                 startPage.Show();
@@ -39,8 +39,7 @@ namespace FRCApp
 
         private void login_cancel_Click(object sender, EventArgs e)
         {
-            login_username.Clear();
-            login_Password.Clear();
+            Application.Exit();
         }
 
         private void loginForm_Load(object sender, EventArgs e)

@@ -23,21 +23,24 @@ namespace FRCApp
         private const int DELETE = 46;
         private bool isEditing = false;
         private DataSet1.ClientsRow clientData;
+        private string userName;
 
-        public NewClient()
+        public NewClient(string userName)
         {
             InitializeComponent();
             clientID = Guid.NewGuid();
             householdID = Guid.NewGuid();
+            this.userName = userName;
         }
 
-        public NewClient(DataSet1.ClientsRow clientData)
+        public NewClient(DataSet1.ClientsRow clientData, string userName)
         {
             InitializeComponent();
             this.clientData = clientData;
             this.Text = "Edit Client";
             this.submit_button.Text = "Update";
             this.isEditing = true;
+            this.userName = userName;
         }
 
         private void householdInfo_button_Click(object sender, EventArgs e)
@@ -135,7 +138,7 @@ namespace FRCApp
                 this.Close();
                 if (!isEditing)
                 {
-                    new ClientDetails(clientID).Show();
+                    new ClientDetails(clientID, userName).Show();
                 }
             }
         }
