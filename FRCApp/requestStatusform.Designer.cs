@@ -498,6 +498,7 @@
             this.ClientSize = new System.Drawing.Size(903, 635);
             this.Controls.Add(this.requestPanel);
             this.Name = "requestStatusform";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Request Status";
             this.Load += new System.EventHandler(this.requestStatusform_Load);
             this.requestPanel.ResumeLayout(false);

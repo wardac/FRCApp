@@ -299,6 +299,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "ApprovalForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Request Approval";
             this.Load += new System.EventHandler(this.ApprovalForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
