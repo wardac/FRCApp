@@ -14,9 +14,6 @@ namespace FRCApp
     {
 
         // form members
-        private HouseHoldForm householdForm;
-        private ExpenseForm expenseForm;
-        private FinanceForm financeForm;
         public Guid clientID;
         public Guid householdID;
         private const int BACKSPACE = 8;
@@ -24,6 +21,7 @@ namespace FRCApp
         private bool isEditing = false;
         private DataSet1.ClientsRow clientData;
         private string userName;
+        private int householdMemberID = -1;
 
         public NewClient(string userName)
         {
@@ -41,24 +39,6 @@ namespace FRCApp
             this.submit_button.Text = "Update";
             this.isEditing = true;
             this.userName = userName;
-        }
-
-        private void householdInfo_button_Click(object sender, EventArgs e)
-        {
-            householdForm = new HouseHoldForm(householdID);
-            householdForm.Show();
-        }
-
-        private void monthlyExpenses_button_Click(object sender, EventArgs e)
-        {
-            expenseForm = new ExpenseForm(householdID);
-            expenseForm.Show();
-        }
-
-        private void householdIncome_button_Click(object sender, EventArgs e)
-        {
-            financeForm = new FinanceForm(householdID.ToString());
-            financeForm.Show();
         }
 
         /**
@@ -159,7 +139,7 @@ namespace FRCApp
 
                 DataSet1TableAdapters.HouseholdMembersTableAdapter householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
                 householdMembersAdapter.AddOrUpdateHouseholdMembers(
-                    -1,
+                    householdMemberID,
                     householdID,
                     firstName_textBox.Text,
                     lastName_textBox.Text,
@@ -260,15 +240,36 @@ namespace FRCApp
             if (!clientData.IsEmailNull()) { email_textBox.Text = clientData.Email; }
             if (!clientData.IsEducationLevelNull()) { EducationLevelBox.Text = clientData.EducationLevel; }
             if (!clientData.IsEmploymentStatusNull()) { EmploymentStatusBox.Text = clientData.EmploymentStatus; }
-            var adapter = new DataSet1TableAdapters.HouseholdsTableAdapter();
 
-            //populate the households family data
+            // populate the households family data
+            var adapter = new DataSet1TableAdapters.HouseholdsTableAdapter();
             foreach (DataRow row in adapter.GetHouseholdsDataByHouseholdID(householdID).Rows)
             {
                 int householdTypeID = Int32.Parse(row["HouseholdTypeID"].ToString());
                 var household = new DataSet1TableAdapters.HouseholdTypesTableAdapter().
                 GetTypeByHouseholdTypeID(householdTypeID);
                 HouseholdTypeBox.Text = household.Rows[0]["Type"].ToString();
+            }
+
+            // populate householdMembers data fields
+            DataSet1TableAdapters.HouseholdMembersTableAdapter householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
+            foreach (DataRow row in householdMembersAdapter.getHouseholdMembersById(householdID).Rows)
+            {
+                if (row["FirstName"].ToString().Equals(firstName_textBox.Text) && row["LastName"].ToString().Equals(lastName_textBox.Text))
+                {
+                    householdMemberID = (int)row["HouseholdMemberID"];
+                    social_textbox.Text = row["LastFourSSN"].ToString();
+                    RaceBox.Text = row["Race"].ToString();
+                    bool coverage = (bool)row["HealthCoverage"];
+                    if (coverage)
+                    {
+                        yes_radio_button.Checked = true;
+                    }
+                    else
+                    {
+                        no_radio_button.Checked = true;
+                    }
+                }
             }
         }
 

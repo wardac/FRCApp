@@ -164,7 +164,7 @@
             this.homeAddress_textBox.Location = new System.Drawing.Point(117, 67);
             this.homeAddress_textBox.Name = "homeAddress_textBox";
             this.homeAddress_textBox.Size = new System.Drawing.Size(462, 20);
-            this.homeAddress_textBox.TabIndex = 5;
+            this.homeAddress_textBox.TabIndex = 6;
             // 
             // apartmentNumber_label
             // 
@@ -180,7 +180,7 @@
             this.apartmentNumber_textBox.Location = new System.Drawing.Point(659, 67);
             this.apartmentNumber_textBox.Name = "apartmentNumber_textBox";
             this.apartmentNumber_textBox.Size = new System.Drawing.Size(56, 20);
-            this.apartmentNumber_textBox.TabIndex = 6;
+            this.apartmentNumber_textBox.TabIndex = 7;
             // 
             // city_label
             // 
@@ -196,7 +196,7 @@
             this.city_textBox.Location = new System.Drawing.Point(117, 93);
             this.city_textBox.Name = "city_textBox";
             this.city_textBox.Size = new System.Drawing.Size(150, 20);
-            this.city_textBox.TabIndex = 7;
+            this.city_textBox.TabIndex = 8;
             // 
             // zipCode_label
             // 
@@ -275,7 +275,7 @@
             this.submit_button.Location = new System.Drawing.Point(327, 546);
             this.submit_button.Name = "submit_button";
             this.submit_button.Size = new System.Drawing.Size(75, 23);
-            this.submit_button.TabIndex = 21;
+            this.submit_button.TabIndex = 19;
             this.submit_button.Text = "Submit";
             this.submit_button.UseVisualStyleBackColor = true;
             this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
@@ -289,7 +289,7 @@
             this.HouseholdTypeBox.Location = new System.Drawing.Point(117, 176);
             this.HouseholdTypeBox.Name = "HouseholdTypeBox";
             this.HouseholdTypeBox.Size = new System.Drawing.Size(598, 21);
-            this.HouseholdTypeBox.TabIndex = 12;
+            this.HouseholdTypeBox.TabIndex = 13;
             this.HouseholdTypeBox.ValueMember = "HouseholdTypeID";
             // 
             // householdTypesBindingSource
@@ -315,7 +315,7 @@
             this.EducationLevelBox.Location = new System.Drawing.Point(117, 203);
             this.EducationLevelBox.Name = "EducationLevelBox";
             this.EducationLevelBox.Size = new System.Drawing.Size(598, 21);
-            this.EducationLevelBox.TabIndex = 13;
+            this.EducationLevelBox.TabIndex = 14;
             this.EducationLevelBox.ValueMember = "EducationLevelID";
             // 
             // educationLevelsBindingSource
@@ -336,7 +336,7 @@
             this.EmploymentStatusBox.Location = new System.Drawing.Point(117, 230);
             this.EmploymentStatusBox.Name = "EmploymentStatusBox";
             this.EmploymentStatusBox.Size = new System.Drawing.Size(598, 21);
-            this.EmploymentStatusBox.TabIndex = 14;
+            this.EmploymentStatusBox.TabIndex = 15;
             this.EmploymentStatusBox.ValueMember = "EmploymentStatusID";
             // 
             // employmentStatusesBindingSource
@@ -354,7 +354,7 @@
             this.ReferralsBox.Location = new System.Drawing.Point(117, 287);
             this.ReferralsBox.Name = "ReferralsBox";
             this.ReferralsBox.Size = new System.Drawing.Size(598, 124);
-            this.ReferralsBox.TabIndex = 15;
+            this.ReferralsBox.TabIndex = 17;
             // 
             // referralTypesBindingSource
             // 
@@ -371,7 +371,7 @@
             this.GoalsBox.Location = new System.Drawing.Point(117, 417);
             this.GoalsBox.Name = "GoalsBox";
             this.GoalsBox.Size = new System.Drawing.Size(598, 124);
-            this.GoalsBox.TabIndex = 16;
+            this.GoalsBox.TabIndex = 18;
             // 
             // goalTypesTableAdapter
             // 
@@ -382,7 +382,7 @@
             this.cancelButton.Location = new System.Drawing.Point(640, 546);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 22;
+            this.cancelButton.TabIndex = 20;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -401,7 +401,7 @@
             this.email_textBox.Location = new System.Drawing.Point(117, 150);
             this.email_textBox.Name = "email_textBox";
             this.email_textBox.Size = new System.Drawing.Size(262, 20);
-            this.email_textBox.TabIndex = 11;
+            this.email_textBox.TabIndex = 12;
             // 
             // telephone1_textBox
             // 
@@ -409,7 +409,7 @@
             this.telephone1_textBox.Mask = "(999) 000-0000";
             this.telephone1_textBox.Name = "telephone1_textBox";
             this.telephone1_textBox.Size = new System.Drawing.Size(83, 20);
-            this.telephone1_textBox.TabIndex = 9;
+            this.telephone1_textBox.TabIndex = 10;
             // 
             // telephone2_textBox
             // 
@@ -417,7 +417,7 @@
             this.telephone2_textBox.Mask = "(999) 000-0000";
             this.telephone2_textBox.Name = "telephone2_textBox";
             this.telephone2_textBox.Size = new System.Drawing.Size(81, 20);
-            this.telephone2_textBox.TabIndex = 10;
+            this.telephone2_textBox.TabIndex = 11;
             // 
             // zipCode_textBox
             // 
@@ -425,7 +425,7 @@
             this.zipCode_textBox.Mask = "00000";
             this.zipCode_textBox.Name = "zipCode_textBox";
             this.zipCode_textBox.Size = new System.Drawing.Size(35, 20);
-            this.zipCode_textBox.TabIndex = 8;
+            this.zipCode_textBox.TabIndex = 9;
             this.zipCode_textBox.ValidatingType = typeof(int);
             // 
             // social_label
@@ -443,7 +443,7 @@
             this.social_textbox.Mask = "0000";
             this.social_textbox.Name = "social_textbox";
             this.social_textbox.Size = new System.Drawing.Size(31, 20);
-            this.social_textbox.TabIndex = 61;
+            this.social_textbox.TabIndex = 5;
             // 
             // health_coverage_label
             // 
@@ -503,7 +503,7 @@
             this.RaceBox.Location = new System.Drawing.Point(117, 260);
             this.RaceBox.Name = "RaceBox";
             this.RaceBox.Size = new System.Drawing.Size(598, 21);
-            this.RaceBox.TabIndex = 67;
+            this.RaceBox.TabIndex = 16;
             this.RaceBox.ValueMember = "Race";
             // 
             // NewClient
