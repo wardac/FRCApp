@@ -109,6 +109,8 @@ namespace FRCApp
                 {
                     Console.WriteLine(((System.Data.DataRowView)item).Row.Field<string>(1));
                 }
+
+                //insert into client table
                 DataSet1TableAdapters.ClientsTableAdapter adapter = new DataSet1TableAdapters.ClientsTableAdapter();
                 adapter.AddOrUpdateClient(
                         clientID,
@@ -139,6 +141,8 @@ namespace FRCApp
                     HouseholdTypeBox.SelectedIndex + 1,
                     null
                     );
+
+                //delete ClientGoals
 
                 this.Close();
                 if (!isEditing)
