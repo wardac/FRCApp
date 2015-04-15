@@ -51,18 +51,21 @@
             // 
             // addButton
             // 
+            this.addButton.BackColor = System.Drawing.Color.Teal;
+            this.addButton.ForeColor = System.Drawing.Color.White;
             this.addButton.Location = new System.Drawing.Point(321, 235);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 4;
             this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // FinanceFormTitle
             // 
             this.FinanceFormTitle.AutoSize = true;
             this.FinanceFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinanceFormTitle.ForeColor = System.Drawing.Color.Teal;
             this.FinanceFormTitle.Location = new System.Drawing.Point(16, 11);
             this.FinanceFormTitle.Name = "FinanceFormTitle";
             this.FinanceFormTitle.Size = new System.Drawing.Size(376, 25);
@@ -73,6 +76,7 @@
             // 
             this.FinanceFormName.AutoSize = true;
             this.FinanceFormName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinanceFormName.ForeColor = System.Drawing.Color.Teal;
             this.FinanceFormName.Location = new System.Drawing.Point(19, 80);
             this.FinanceFormName.Name = "FinanceFormName";
             this.FinanceFormName.Size = new System.Drawing.Size(39, 13);
@@ -83,6 +87,7 @@
             // 
             this.FinancePersonWithIncomeLabel.AutoSize = true;
             this.FinancePersonWithIncomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinancePersonWithIncomeLabel.ForeColor = System.Drawing.Color.Teal;
             this.FinancePersonWithIncomeLabel.Location = new System.Drawing.Point(19, 51);
             this.FinancePersonWithIncomeLabel.Name = "FinancePersonWithIncomeLabel";
             this.FinancePersonWithIncomeLabel.Size = new System.Drawing.Size(141, 16);
@@ -100,6 +105,7 @@
             // 
             this.FinanceFormAmountOfIncomelabel.AutoSize = true;
             this.FinanceFormAmountOfIncomelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinanceFormAmountOfIncomelabel.ForeColor = System.Drawing.Color.Teal;
             this.FinanceFormAmountOfIncomelabel.Location = new System.Drawing.Point(18, 166);
             this.FinanceFormAmountOfIncomelabel.Name = "FinanceFormAmountOfIncomelabel";
             this.FinanceFormAmountOfIncomelabel.Size = new System.Drawing.Size(109, 13);
@@ -110,6 +116,7 @@
             // 
             this.FinanceFormSourceOfIncomelabel.AutoSize = true;
             this.FinanceFormSourceOfIncomelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinanceFormSourceOfIncomelabel.ForeColor = System.Drawing.Color.Teal;
             this.FinanceFormSourceOfIncomelabel.Location = new System.Drawing.Point(18, 123);
             this.FinanceFormSourceOfIncomelabel.Name = "FinanceFormSourceOfIncomelabel";
             this.FinanceFormSourceOfIncomelabel.Size = new System.Drawing.Size(107, 13);
@@ -120,6 +127,7 @@
             // 
             this.FinanceFormNumTimesRecievedlabel.AutoSize = true;
             this.FinanceFormNumTimesRecievedlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinanceFormNumTimesRecievedlabel.ForeColor = System.Drawing.Color.Teal;
             this.FinanceFormNumTimesRecievedlabel.Location = new System.Drawing.Point(18, 209);
             this.FinanceFormNumTimesRecievedlabel.Name = "FinanceFormNumTimesRecievedlabel";
             this.FinanceFormNumTimesRecievedlabel.Size = new System.Drawing.Size(175, 13);
@@ -164,32 +172,38 @@
             // 
             // submitButton
             // 
+            this.submitButton.BackColor = System.Drawing.Color.Teal;
+            this.submitButton.ForeColor = System.Drawing.Color.White;
             this.submitButton.Location = new System.Drawing.Point(737, 235);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 7;
             this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // removeButton
             // 
+            this.removeButton.BackColor = System.Drawing.Color.Teal;
+            this.removeButton.ForeColor = System.Drawing.Color.White;
             this.removeButton.Location = new System.Drawing.Point(414, 235);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 6;
             this.removeButton.Text = "Remove";
-            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.UseVisualStyleBackColor = false;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // cancelButton
             // 
+            this.cancelButton.BackColor = System.Drawing.Color.Teal;
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
             this.cancelButton.Location = new System.Drawing.Point(818, 235);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // cmb_householdMember
@@ -223,6 +237,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(917, 270);
             this.Controls.Add(this.cmb_incomeSourceType);
             this.Controls.Add(this.cmb_incomeFreqs);

@@ -201,6 +201,7 @@
             // 
             // ClientDetailsAddressTextBox
             // 
+            this.ClientDetailsAddressTextBox.BackColor = System.Drawing.Color.White;
             this.ClientDetailsAddressTextBox.Enabled = false;
             this.ClientDetailsAddressTextBox.Location = new System.Drawing.Point(55, 34);
             this.ClientDetailsAddressTextBox.Multiline = true;
@@ -210,6 +211,7 @@
             // 
             // ClientDetailsNameTextBox
             // 
+            this.ClientDetailsNameTextBox.BackColor = System.Drawing.Color.White;
             this.ClientDetailsNameTextBox.Enabled = false;
             this.ClientDetailsNameTextBox.Location = new System.Drawing.Point(55, 6);
             this.ClientDetailsNameTextBox.Name = "ClientDetailsNameTextBox";
@@ -219,6 +221,7 @@
             // 
             // ClientDetailsEmailTextBox
             // 
+            this.ClientDetailsEmailTextBox.BackColor = System.Drawing.Color.White;
             this.ClientDetailsEmailTextBox.Enabled = false;
             this.ClientDetailsEmailTextBox.Location = new System.Drawing.Point(55, 191);
             this.ClientDetailsEmailTextBox.Name = "ClientDetailsEmailTextBox";
@@ -237,6 +240,7 @@
             // 
             // ClientDetailsPhone2TextBox
             // 
+            this.ClientDetailsPhone2TextBox.BackColor = System.Drawing.Color.White;
             this.ClientDetailsPhone2TextBox.Enabled = false;
             this.ClientDetailsPhone2TextBox.Location = new System.Drawing.Point(55, 150);
             this.ClientDetailsPhone2TextBox.Name = "ClientDetailsPhone2TextBox";
@@ -245,6 +249,7 @@
             // 
             // ClientDetailsPhone1TextBox
             // 
+            this.ClientDetailsPhone1TextBox.BackColor = System.Drawing.Color.White;
             this.ClientDetailsPhone1TextBox.Enabled = false;
             this.ClientDetailsPhone1TextBox.Location = new System.Drawing.Point(55, 115);
             this.ClientDetailsPhone1TextBox.Name = "ClientDetailsPhone1TextBox";
@@ -253,6 +258,7 @@
             // 
             // ClientDetailsZipTextBox
             // 
+            this.ClientDetailsZipTextBox.BackColor = System.Drawing.Color.White;
             this.ClientDetailsZipTextBox.Enabled = false;
             this.ClientDetailsZipTextBox.Location = new System.Drawing.Point(210, 87);
             this.ClientDetailsZipTextBox.Name = "ClientDetailsZipTextBox";
@@ -261,6 +267,7 @@
             // 
             // ClientDetailsStateTextBox
             // 
+            this.ClientDetailsStateTextBox.BackColor = System.Drawing.Color.White;
             this.ClientDetailsStateTextBox.Enabled = false;
             this.ClientDetailsStateTextBox.Location = new System.Drawing.Point(154, 87);
             this.ClientDetailsStateTextBox.Name = "ClientDetailsStateTextBox";
@@ -269,6 +276,7 @@
             // 
             // ClientDetailsCityTextBox
             // 
+            this.ClientDetailsCityTextBox.BackColor = System.Drawing.Color.White;
             this.ClientDetailsCityTextBox.Enabled = false;
             this.ClientDetailsCityTextBox.Location = new System.Drawing.Point(5, 87);
             this.ClientDetailsCityTextBox.Name = "ClientDetailsCityTextBox";

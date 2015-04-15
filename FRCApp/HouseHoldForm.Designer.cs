@@ -70,6 +70,7 @@
             // 
             // title
             // 
+            this.title.BackColor = System.Drawing.Color.Lavender;
             this.title.Controls.Add(this.removeButton);
             this.title.Controls.Add(this.HouseHoldFormCancelButton);
             this.title.Controls.Add(this.HouseHoldForm_ListView_Summary);
@@ -98,22 +99,26 @@
             // 
             // removeButton
             // 
+            this.removeButton.BackColor = System.Drawing.Color.Teal;
+            this.removeButton.ForeColor = System.Drawing.Color.White;
             this.removeButton.Location = new System.Drawing.Point(315, 353);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 9;
             this.removeButton.Text = "Remove";
-            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.UseVisualStyleBackColor = false;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // HouseHoldFormCancelButton
             // 
+            this.HouseHoldFormCancelButton.BackColor = System.Drawing.Color.Teal;
+            this.HouseHoldFormCancelButton.ForeColor = System.Drawing.Color.White;
             this.HouseHoldFormCancelButton.Location = new System.Drawing.Point(880, 382);
             this.HouseHoldFormCancelButton.Name = "HouseHoldFormCancelButton";
             this.HouseHoldFormCancelButton.Size = new System.Drawing.Size(75, 23);
             this.HouseHoldFormCancelButton.TabIndex = 11;
             this.HouseHoldFormCancelButton.Text = "Cancel";
-            this.HouseHoldFormCancelButton.UseVisualStyleBackColor = true;
+            this.HouseHoldFormCancelButton.UseVisualStyleBackColor = false;
             this.HouseHoldFormCancelButton.Click += new System.EventHandler(this.HouseHoldFormCancelButton_Click);
             // 
             // HouseHoldForm_ListView_Summary
@@ -167,12 +172,14 @@
             // 
             // btnSubmit
             // 
+            this.btnSubmit.BackColor = System.Drawing.Color.Teal;
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
             this.btnSubmit.Location = new System.Drawing.Point(799, 382);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // HouseHoldFormRadioButtonNo
@@ -201,6 +208,7 @@
             // 
             this.HouseHoldFormHealthCoverageRadioButton.AutoSize = true;
             this.HouseHoldFormHealthCoverageRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HouseHoldFormHealthCoverageRadioButton.ForeColor = System.Drawing.Color.Teal;
             this.HouseHoldFormHealthCoverageRadioButton.Location = new System.Drawing.Point(9, 291);
             this.HouseHoldFormHealthCoverageRadioButton.Name = "HouseHoldFormHealthCoverageRadioButton";
             this.HouseHoldFormHealthCoverageRadioButton.Size = new System.Drawing.Size(102, 13);
@@ -269,6 +277,7 @@
             // 
             this.HouseHoldFormEthnicity.AutoSize = true;
             this.HouseHoldFormEthnicity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HouseHoldFormEthnicity.ForeColor = System.Drawing.Color.Teal;
             this.HouseHoldFormEthnicity.Location = new System.Drawing.Point(6, 182);
             this.HouseHoldFormEthnicity.Name = "HouseHoldFormEthnicity";
             this.HouseHoldFormEthnicity.Size = new System.Drawing.Size(92, 13);
@@ -279,6 +288,7 @@
             // 
             this.HouseHoldFormRelationship.AutoSize = true;
             this.HouseHoldFormRelationship.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HouseHoldFormRelationship.ForeColor = System.Drawing.Color.Teal;
             this.HouseHoldFormRelationship.Location = new System.Drawing.Point(6, 156);
             this.HouseHoldFormRelationship.Name = "HouseHoldFormRelationship";
             this.HouseHoldFormRelationship.Size = new System.Drawing.Size(149, 13);
@@ -289,6 +299,7 @@
             // 
             this.HouseHoldFormBirthDate.AutoSize = true;
             this.HouseHoldFormBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HouseHoldFormBirthDate.ForeColor = System.Drawing.Color.Teal;
             this.HouseHoldFormBirthDate.Location = new System.Drawing.Point(6, 126);
             this.HouseHoldFormBirthDate.Name = "HouseHoldFormBirthDate";
             this.HouseHoldFormBirthDate.Size = new System.Drawing.Size(64, 13);
@@ -299,6 +310,7 @@
             // 
             this.HouseHoldFormSSN.AutoSize = true;
             this.HouseHoldFormSSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HouseHoldFormSSN.ForeColor = System.Drawing.Color.Teal;
             this.HouseHoldFormSSN.Location = new System.Drawing.Point(6, 98);
             this.HouseHoldFormSSN.Name = "HouseHoldFormSSN";
             this.HouseHoldFormSSN.Size = new System.Drawing.Size(116, 13);
@@ -309,6 +321,7 @@
             // 
             this.HouseHoldFormLastName.AutoSize = true;
             this.HouseHoldFormLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HouseHoldFormLastName.ForeColor = System.Drawing.Color.Teal;
             this.HouseHoldFormLastName.Location = new System.Drawing.Point(6, 68);
             this.HouseHoldFormLastName.Name = "HouseHoldFormLastName";
             this.HouseHoldFormLastName.Size = new System.Drawing.Size(67, 13);
@@ -317,18 +330,21 @@
             // 
             // btnHouseholdMemberAdd
             // 
+            this.btnHouseholdMemberAdd.BackColor = System.Drawing.Color.Teal;
+            this.btnHouseholdMemberAdd.ForeColor = System.Drawing.Color.White;
             this.btnHouseholdMemberAdd.Location = new System.Drawing.Point(234, 353);
             this.btnHouseholdMemberAdd.Name = "btnHouseholdMemberAdd";
             this.btnHouseholdMemberAdd.Size = new System.Drawing.Size(75, 23);
             this.btnHouseholdMemberAdd.TabIndex = 8;
             this.btnHouseholdMemberAdd.Text = "Add";
-            this.btnHouseholdMemberAdd.UseVisualStyleBackColor = true;
+            this.btnHouseholdMemberAdd.UseVisualStyleBackColor = false;
             this.btnHouseholdMemberAdd.Click += new System.EventHandler(this.HouseHoldAddButton_Click);
             // 
             // HouseHoldFormTitle
             // 
             this.HouseHoldFormTitle.AutoSize = true;
             this.HouseHoldFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HouseHoldFormTitle.ForeColor = System.Drawing.Color.Teal;
             this.HouseHoldFormTitle.Location = new System.Drawing.Point(4, 4);
             this.HouseHoldFormTitle.Name = "HouseHoldFormTitle";
             this.HouseHoldFormTitle.Size = new System.Drawing.Size(282, 25);
@@ -339,6 +355,7 @@
             // 
             this.HouseHoldFormFirstName.AutoSize = true;
             this.HouseHoldFormFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HouseHoldFormFirstName.ForeColor = System.Drawing.Color.Teal;
             this.HouseHoldFormFirstName.Location = new System.Drawing.Point(6, 41);
             this.HouseHoldFormFirstName.Name = "HouseHoldFormFirstName";
             this.HouseHoldFormFirstName.Size = new System.Drawing.Size(67, 13);

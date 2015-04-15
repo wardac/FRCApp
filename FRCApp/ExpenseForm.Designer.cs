@@ -81,6 +81,7 @@
             // 
             this.ExpenseFormTitle.AutoSize = true;
             this.ExpenseFormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormTitle.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormTitle.Location = new System.Drawing.Point(4, 4);
             this.ExpenseFormTitle.Name = "ExpenseFormTitle";
             this.ExpenseFormTitle.Size = new System.Drawing.Size(220, 15);
@@ -91,6 +92,7 @@
             // 
             this.ExpenseFormRentLabel.AutoSize = true;
             this.ExpenseFormRentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormRentLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormRentLabel.Location = new System.Drawing.Point(12, 41);
             this.ExpenseFormRentLabel.Name = "ExpenseFormRentLabel";
             this.ExpenseFormRentLabel.Size = new System.Drawing.Size(37, 15);
@@ -101,6 +103,7 @@
             // 
             this.ExpenseFormElectricLabel.AutoSize = true;
             this.ExpenseFormElectricLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormElectricLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormElectricLabel.Location = new System.Drawing.Point(12, 67);
             this.ExpenseFormElectricLabel.Name = "ExpenseFormElectricLabel";
             this.ExpenseFormElectricLabel.Size = new System.Drawing.Size(55, 15);
@@ -111,6 +114,7 @@
             // 
             this.ExpenseForPhoneLabel.AutoSize = true;
             this.ExpenseForPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseForPhoneLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseForPhoneLabel.Location = new System.Drawing.Point(12, 116);
             this.ExpenseForPhoneLabel.Name = "ExpenseForPhoneLabel";
             this.ExpenseForPhoneLabel.Size = new System.Drawing.Size(48, 15);
@@ -121,6 +125,7 @@
             // 
             this.ExpenseFormHeatingLabel.AutoSize = true;
             this.ExpenseFormHeatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormHeatingLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormHeatingLabel.Location = new System.Drawing.Point(12, 91);
             this.ExpenseFormHeatingLabel.Name = "ExpenseFormHeatingLabel";
             this.ExpenseFormHeatingLabel.Size = new System.Drawing.Size(57, 15);
@@ -131,6 +136,7 @@
             // 
             this.ExpenseFormLaundryLabel.AutoSize = true;
             this.ExpenseFormLaundryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormLaundryLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormLaundryLabel.Location = new System.Drawing.Point(12, 216);
             this.ExpenseFormLaundryLabel.Name = "ExpenseFormLaundryLabel";
             this.ExpenseFormLaundryLabel.Size = new System.Drawing.Size(58, 15);
@@ -141,6 +147,7 @@
             // 
             this.ExpensePrescriptionsLabel.AutoSize = true;
             this.ExpensePrescriptionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpensePrescriptionsLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpensePrescriptionsLabel.Location = new System.Drawing.Point(12, 191);
             this.ExpensePrescriptionsLabel.Name = "ExpensePrescriptionsLabel";
             this.ExpensePrescriptionsLabel.Size = new System.Drawing.Size(91, 15);
@@ -151,6 +158,7 @@
             // 
             this.ExpenseFormWaterLabel.AutoSize = true;
             this.ExpenseFormWaterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormWaterLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormWaterLabel.Location = new System.Drawing.Point(12, 166);
             this.ExpenseFormWaterLabel.Name = "ExpenseFormWaterLabel";
             this.ExpenseFormWaterLabel.Size = new System.Drawing.Size(44, 15);
@@ -161,6 +169,7 @@
             // 
             this.ExpenseFormTrashLabel.AutoSize = true;
             this.ExpenseFormTrashLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormTrashLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormTrashLabel.Location = new System.Drawing.Point(12, 141);
             this.ExpenseFormTrashLabel.Name = "ExpenseFormTrashLabel";
             this.ExpenseFormTrashLabel.Size = new System.Drawing.Size(43, 15);
@@ -171,6 +180,7 @@
             // 
             this.ExpenseFormLoansLabel.AutoSize = true;
             this.ExpenseFormLoansLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormLoansLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormLoansLabel.Location = new System.Drawing.Point(253, 216);
             this.ExpenseFormLoansLabel.Name = "ExpenseFormLoansLabel";
             this.ExpenseFormLoansLabel.Size = new System.Drawing.Size(46, 15);
@@ -181,6 +191,7 @@
             // 
             this.ExpenseFormCreditCardBillLabel.AutoSize = true;
             this.ExpenseFormCreditCardBillLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormCreditCardBillLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormCreditCardBillLabel.Location = new System.Drawing.Point(253, 191);
             this.ExpenseFormCreditCardBillLabel.Name = "ExpenseFormCreditCardBillLabel";
             this.ExpenseFormCreditCardBillLabel.Size = new System.Drawing.Size(104, 15);
@@ -191,6 +202,7 @@
             // 
             this.ExpenseFormInternetLabel.AutoSize = true;
             this.ExpenseFormInternetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormInternetLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormInternetLabel.Location = new System.Drawing.Point(253, 166);
             this.ExpenseFormInternetLabel.Name = "ExpenseFormInternetLabel";
             this.ExpenseFormInternetLabel.Size = new System.Drawing.Size(56, 15);
@@ -201,6 +213,7 @@
             // 
             this.ExpenseFormCableLabel.AutoSize = true;
             this.ExpenseFormCableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormCableLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormCableLabel.Location = new System.Drawing.Point(253, 141);
             this.ExpenseFormCableLabel.Name = "ExpenseFormCableLabel";
             this.ExpenseFormCableLabel.Size = new System.Drawing.Size(101, 15);
@@ -211,6 +224,7 @@
             // 
             this.ExpenseFormHealthInsuranceLabel.AutoSize = true;
             this.ExpenseFormHealthInsuranceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormHealthInsuranceLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormHealthInsuranceLabel.Location = new System.Drawing.Point(253, 116);
             this.ExpenseFormHealthInsuranceLabel.Name = "ExpenseFormHealthInsuranceLabel";
             this.ExpenseFormHealthInsuranceLabel.Size = new System.Drawing.Size(116, 15);
@@ -221,6 +235,7 @@
             // 
             this.ExpenseFormGasolineTransportLabel.AutoSize = true;
             this.ExpenseFormGasolineTransportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormGasolineTransportLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormGasolineTransportLabel.Location = new System.Drawing.Point(253, 91);
             this.ExpenseFormGasolineTransportLabel.Name = "ExpenseFormGasolineTransportLabel";
             this.ExpenseFormGasolineTransportLabel.Size = new System.Drawing.Size(129, 15);
@@ -231,6 +246,7 @@
             // 
             this.ExpenseFormCarInsuranceLabel.AutoSize = true;
             this.ExpenseFormCarInsuranceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormCarInsuranceLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormCarInsuranceLabel.Location = new System.Drawing.Point(253, 67);
             this.ExpenseFormCarInsuranceLabel.Name = "ExpenseFormCarInsuranceLabel";
             this.ExpenseFormCarInsuranceLabel.Size = new System.Drawing.Size(96, 15);
@@ -241,6 +257,7 @@
             // 
             this.ExpenseFormCarPaymentLabel.AutoSize = true;
             this.ExpenseFormCarPaymentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormCarPaymentLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormCarPaymentLabel.Location = new System.Drawing.Point(253, 41);
             this.ExpenseFormCarPaymentLabel.Name = "ExpenseFormCarPaymentLabel";
             this.ExpenseFormCarPaymentLabel.Size = new System.Drawing.Size(88, 15);
@@ -251,6 +268,7 @@
             // 
             this.ExpenseChildSupportLabel.AutoSize = true;
             this.ExpenseChildSupportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseChildSupportLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseChildSupportLabel.Location = new System.Drawing.Point(543, 141);
             this.ExpenseChildSupportLabel.Name = "ExpenseChildSupportLabel";
             this.ExpenseChildSupportLabel.Size = new System.Drawing.Size(94, 15);
@@ -261,6 +279,7 @@
             // 
             this.ExpenseFormChildCareLabel.AutoSize = true;
             this.ExpenseFormChildCareLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormChildCareLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormChildCareLabel.Location = new System.Drawing.Point(543, 116);
             this.ExpenseFormChildCareLabel.Name = "ExpenseFormChildCareLabel";
             this.ExpenseFormChildCareLabel.Size = new System.Drawing.Size(74, 15);
@@ -271,6 +290,7 @@
             // 
             this.ExpenseFormHouseholdLabel.AutoSize = true;
             this.ExpenseFormHouseholdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormHouseholdLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormHouseholdLabel.Location = new System.Drawing.Point(543, 91);
             this.ExpenseFormHouseholdLabel.Name = "ExpenseFormHouseholdLabel";
             this.ExpenseFormHouseholdLabel.Size = new System.Drawing.Size(76, 15);
@@ -281,6 +301,7 @@
             // 
             this.ExpenseFormHygieneLabel.AutoSize = true;
             this.ExpenseFormHygieneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormHygieneLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormHygieneLabel.Location = new System.Drawing.Point(543, 67);
             this.ExpenseFormHygieneLabel.Name = "ExpenseFormHygieneLabel";
             this.ExpenseFormHygieneLabel.Size = new System.Drawing.Size(59, 15);
@@ -291,6 +312,7 @@
             // 
             this.ExpenseFormGroceriesLabel.AutoSize = true;
             this.ExpenseFormGroceriesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseFormGroceriesLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseFormGroceriesLabel.Location = new System.Drawing.Point(543, 41);
             this.ExpenseFormGroceriesLabel.Name = "ExpenseFormGroceriesLabel";
             this.ExpenseFormGroceriesLabel.Size = new System.Drawing.Size(69, 15);
@@ -301,6 +323,7 @@
             // 
             this.ExpenseOtherLabel.AutoSize = true;
             this.ExpenseOtherLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseOtherLabel.ForeColor = System.Drawing.Color.Teal;
             this.ExpenseOtherLabel.Location = new System.Drawing.Point(543, 166);
             this.ExpenseOtherLabel.Name = "ExpenseOtherLabel";
             this.ExpenseOtherLabel.Size = new System.Drawing.Size(42, 15);
@@ -507,28 +530,35 @@
             // 
             // submitButton
             // 
+            this.submitButton.BackColor = System.Drawing.Color.Teal;
+            this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitButton.ForeColor = System.Drawing.Color.White;
             this.submitButton.Location = new System.Drawing.Point(601, 212);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 22;
             this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // cancelButton
             // 
+            this.cancelButton.BackColor = System.Drawing.Color.Teal;
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
             this.cancelButton.Location = new System.Drawing.Point(696, 212);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 23;
             this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // ExpenseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(795, 244);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);

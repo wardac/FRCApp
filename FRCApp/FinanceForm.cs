@@ -68,6 +68,10 @@ namespace FRCApp
             item.SubItems.Add(amountOfIncomeTextBox.Text);
             item.SubItems.Add(cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem));
             FinancelistView.Items.Add(item);
+            if (item.Index % 2 == 0)
+            { item.BackColor = Color.Gainsboro; }
+            else
+            { item.BackColor = Color.WhiteSmoke; }
             
             // Add entry to the incomeSourcesList
             incomeSourcesList.Add(new IncomeSource((int)cmb_householdMember.SelectedValue, cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem), amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem)));

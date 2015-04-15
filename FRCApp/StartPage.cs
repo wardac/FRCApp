@@ -93,6 +93,10 @@ namespace FRCApp
                 item.SubItems.Add(row.Address);
                 item.SubItems.Add(row.Phone1);
                 client_listView.Items.Add(item);
+                if (item.Index % 2 == 0)
+                { item.BackColor = Color.Gainsboro; }
+                else
+                { item.BackColor = Color.WhiteSmoke; }
             }
         }
 

@@ -39,15 +39,16 @@
             this.clientPage_button = new System.Windows.Forms.Button();
             this.usersPagebutton = new System.Windows.Forms.Button();
             this.startPage_panel = new System.Windows.Forms.Panel();
-            this.welcome_label = new System.Windows.Forms.Label();
-            this.current_user = new System.Windows.Forms.Label();
             this.logout_button = new System.Windows.Forms.Button();
+            this.current_user = new System.Windows.Forms.Label();
+            this.welcome_label = new System.Windows.Forms.Label();
             this.startPage_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // search_label
             // 
             this.search_label.AutoSize = true;
+            this.search_label.ForeColor = System.Drawing.Color.Teal;
             this.search_label.Location = new System.Drawing.Point(11, 14);
             this.search_label.Name = "search_label";
             this.search_label.Size = new System.Drawing.Size(75, 13);
@@ -105,34 +106,40 @@
             // addNewClient_button
             // 
             this.addNewClient_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addNewClient_button.BackColor = System.Drawing.Color.Teal;
+            this.addNewClient_button.ForeColor = System.Drawing.Color.White;
             this.addNewClient_button.Location = new System.Drawing.Point(14, 314);
             this.addNewClient_button.Name = "addNewClient_button";
             this.addNewClient_button.Size = new System.Drawing.Size(91, 23);
             this.addNewClient_button.TabIndex = 4;
             this.addNewClient_button.Text = "Add New Client";
-            this.addNewClient_button.UseVisualStyleBackColor = true;
+            this.addNewClient_button.UseVisualStyleBackColor = false;
             this.addNewClient_button.Click += new System.EventHandler(this.addNewClient_button_Click);
             // 
             // clientPage_button
             // 
             this.clientPage_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.clientPage_button.BackColor = System.Drawing.Color.Teal;
+            this.clientPage_button.ForeColor = System.Drawing.Color.White;
             this.clientPage_button.Location = new System.Drawing.Point(465, 314);
             this.clientPage_button.Name = "clientPage_button";
             this.clientPage_button.Size = new System.Drawing.Size(98, 23);
             this.clientPage_button.TabIndex = 5;
             this.clientPage_button.Text = "Go to Client Page";
-            this.clientPage_button.UseVisualStyleBackColor = true;
+            this.clientPage_button.UseVisualStyleBackColor = false;
             this.clientPage_button.Click += new System.EventHandler(this.clientPage_button_Click);
             // 
             // usersPagebutton
             // 
             this.usersPagebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.usersPagebutton.BackColor = System.Drawing.Color.Teal;
+            this.usersPagebutton.ForeColor = System.Drawing.Color.White;
             this.usersPagebutton.Location = new System.Drawing.Point(411, 8);
             this.usersPagebutton.Name = "usersPagebutton";
             this.usersPagebutton.Size = new System.Drawing.Size(73, 23);
             this.usersPagebutton.TabIndex = 6;
             this.usersPagebutton.Text = "Users Page";
-            this.usersPagebutton.UseVisualStyleBackColor = true;
+            this.usersPagebutton.UseVisualStyleBackColor = false;
             this.usersPagebutton.Click += new System.EventHandler(this.users_Click);
             // 
             // startPage_panel
@@ -140,6 +147,7 @@
             this.startPage_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.startPage_panel.BackColor = System.Drawing.Color.Lavender;
             this.startPage_panel.Controls.Add(this.logout_button);
             this.startPage_panel.Controls.Add(this.current_user);
             this.startPage_panel.Controls.Add(this.welcome_label);
@@ -154,35 +162,39 @@
             this.startPage_panel.Size = new System.Drawing.Size(574, 350);
             this.startPage_panel.TabIndex = 0;
             // 
-            // welcome_label
+            // logout_button
             // 
-            this.welcome_label.AutoSize = true;
-            this.welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome_label.Location = new System.Drawing.Point(240, 12);
-            this.welcome_label.Name = "welcome_label";
-            this.welcome_label.Size = new System.Drawing.Size(84, 15);
-            this.welcome_label.TabIndex = 7;
-            this.welcome_label.Text = "Logged in as: ";
+            this.logout_button.BackColor = System.Drawing.Color.Teal;
+            this.logout_button.ForeColor = System.Drawing.Color.White;
+            this.logout_button.Location = new System.Drawing.Point(490, 8);
+            this.logout_button.Name = "logout_button";
+            this.logout_button.Size = new System.Drawing.Size(73, 23);
+            this.logout_button.TabIndex = 9;
+            this.logout_button.Text = "Logout";
+            this.logout_button.UseVisualStyleBackColor = false;
+            this.logout_button.Click += new System.EventHandler(this.logout_button_Click);
             // 
             // current_user
             // 
             this.current_user.AutoSize = true;
             this.current_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.current_user.ForeColor = System.Drawing.Color.Teal;
             this.current_user.Location = new System.Drawing.Point(321, 12);
             this.current_user.Name = "current_user";
             this.current_user.Size = new System.Drawing.Size(41, 15);
             this.current_user.TabIndex = 8;
             this.current_user.Text = "label1";
             // 
-            // logout_button
+            // welcome_label
             // 
-            this.logout_button.Location = new System.Drawing.Point(490, 8);
-            this.logout_button.Name = "logout_button";
-            this.logout_button.Size = new System.Drawing.Size(73, 23);
-            this.logout_button.TabIndex = 9;
-            this.logout_button.Text = "Logout";
-            this.logout_button.UseVisualStyleBackColor = true;
-            this.logout_button.Click += new System.EventHandler(this.logout_button_Click);
+            this.welcome_label.AutoSize = true;
+            this.welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcome_label.ForeColor = System.Drawing.Color.Teal;
+            this.welcome_label.Location = new System.Drawing.Point(240, 12);
+            this.welcome_label.Name = "welcome_label";
+            this.welcome_label.Size = new System.Drawing.Size(84, 15);
+            this.welcome_label.TabIndex = 7;
+            this.welcome_label.Text = "Logged in as: ";
             // 
             // StartPage
             // 
