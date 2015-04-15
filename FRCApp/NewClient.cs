@@ -141,6 +141,14 @@ namespace FRCApp
                     HouseholdTypeBox.SelectedIndex + 1,
                     null
                     );
+                //delete clientReferrals
+                DataSet1TableAdapters.ClientReferralsTableAdapter referralsAdapter = new DataSet1TableAdapters.ClientReferralsTableAdapter();
+                referralsAdapter.DeleteClientReferralsByClientID(clientID);
+                //addClientReferrals
+                foreach (int index in ReferralsBox.CheckedIndices)
+                {
+                    referralsAdapter.AddClientReferral(clientID, index);
+                }
 
                 //delete ClientGoals
                 DataSet1TableAdapters.ClientGoalsTableAdapter goalsAdapter = new DataSet1TableAdapters.ClientGoalsTableAdapter();
@@ -239,6 +247,25 @@ namespace FRCApp
                 var household = new DataSet1TableAdapters.HouseholdTypesTableAdapter().
                 GetTypeByHouseholdTypeID(householdTypeID);
                 HouseholdTypeBox.Text = household.Rows[0]["Type"].ToString();
+            }
+
+            //populate referrals checkboxes
+            var referralsAdapter = new DataSet1TableAdapters.ClientReferralsTableAdapter();
+            foreach (DataRow row in referralsAdapter.GetData().Rows)
+            {
+                if (clientID == (Guid)row["ClientID"])
+                {
+                    ReferralsBox.SetItemCheckState((int)row["ReferralTypeID"], CheckState.Checked);
+                }
+            }
+
+            //populate the goals checkboxes
+            var goalAdapter = new DataSet1TableAdapters.ClientGoalsTableAdapter();
+            foreach(DataRow row in goalAdapter.GetData().Rows){
+                if (clientID == (Guid)row["ClientID"])
+                {
+                    GoalsBox.SetItemCheckState((int)row["GoalTypeID"], CheckState.Checked);
+                }
             }
         }
 
