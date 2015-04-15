@@ -143,6 +143,13 @@ namespace FRCApp
                     );
 
                 //delete ClientGoals
+                DataSet1TableAdapters.ClientGoalsTableAdapter goalsAdapter = new DataSet1TableAdapters.ClientGoalsTableAdapter();
+                goalsAdapter.DeleteClientGoalsByClientID(clientID);
+                //add the client goals
+                foreach(int index in GoalsBox.CheckedIndices){
+                    goalsAdapter.AddClientGoal(clientID, index);
+                }
+
 
                 this.Close();
                 if (!isEditing)

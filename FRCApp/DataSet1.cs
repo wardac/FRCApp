@@ -21,6 +21,10 @@
 }
 
 namespace FRCApp.DataSet1TableAdapters {
+    partial class ClientReferralsTableAdapter
+    {
+    }
+
     partial class HouseholdsTableAdapter
     {
     }
