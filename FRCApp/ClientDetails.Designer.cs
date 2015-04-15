@@ -135,42 +135,50 @@
             // 
             // editIncomeAndFinancesButton
             // 
+            this.editIncomeAndFinancesButton.BackColor = System.Drawing.Color.Teal;
+            this.editIncomeAndFinancesButton.ForeColor = System.Drawing.Color.White;
             this.editIncomeAndFinancesButton.Location = new System.Drawing.Point(265, 189);
             this.editIncomeAndFinancesButton.Name = "editIncomeAndFinancesButton";
             this.editIncomeAndFinancesButton.Size = new System.Drawing.Size(149, 23);
             this.editIncomeAndFinancesButton.TabIndex = 21;
             this.editIncomeAndFinancesButton.Text = "Edit Income and Finances";
-            this.editIncomeAndFinancesButton.UseVisualStyleBackColor = true;
+            this.editIncomeAndFinancesButton.UseVisualStyleBackColor = false;
             this.editIncomeAndFinancesButton.Click += new System.EventHandler(this.editIncomeAndFinancesButton_Click);
             // 
             // editMonthlyExpensesButton
             // 
+            this.editMonthlyExpensesButton.BackColor = System.Drawing.Color.Teal;
+            this.editMonthlyExpensesButton.ForeColor = System.Drawing.Color.White;
             this.editMonthlyExpensesButton.Location = new System.Drawing.Point(265, 155);
             this.editMonthlyExpensesButton.Name = "editMonthlyExpensesButton";
             this.editMonthlyExpensesButton.Size = new System.Drawing.Size(149, 23);
             this.editMonthlyExpensesButton.TabIndex = 20;
             this.editMonthlyExpensesButton.Text = "Edit Monthly Expenses";
-            this.editMonthlyExpensesButton.UseVisualStyleBackColor = true;
+            this.editMonthlyExpensesButton.UseVisualStyleBackColor = false;
             this.editMonthlyExpensesButton.Click += new System.EventHandler(this.editMonthlyExpensesButton_Click);
             // 
             // editHouseholdInformationButton
             // 
+            this.editHouseholdInformationButton.BackColor = System.Drawing.Color.Teal;
+            this.editHouseholdInformationButton.ForeColor = System.Drawing.Color.White;
             this.editHouseholdInformationButton.Location = new System.Drawing.Point(265, 121);
             this.editHouseholdInformationButton.Name = "editHouseholdInformationButton";
             this.editHouseholdInformationButton.Size = new System.Drawing.Size(149, 23);
             this.editHouseholdInformationButton.TabIndex = 19;
             this.editHouseholdInformationButton.Text = "Edit Household Information";
-            this.editHouseholdInformationButton.UseVisualStyleBackColor = true;
+            this.editHouseholdInformationButton.UseVisualStyleBackColor = false;
             this.editHouseholdInformationButton.Click += new System.EventHandler(this.editHouseholdInformationButton_Click);
             // 
             // editClientButton
             // 
+            this.editClientButton.BackColor = System.Drawing.Color.Teal;
+            this.editClientButton.ForeColor = System.Drawing.Color.White;
             this.editClientButton.Location = new System.Drawing.Point(265, 87);
             this.editClientButton.Name = "editClientButton";
             this.editClientButton.Size = new System.Drawing.Size(149, 23);
             this.editClientButton.TabIndex = 18;
             this.editClientButton.Text = "Edit Client";
-            this.editClientButton.UseVisualStyleBackColor = true;
+            this.editClientButton.UseVisualStyleBackColor = false;
             this.editClientButton.Click += new System.EventHandler(this.editClientButton_Click);
             // 
             // ClientdateContact
@@ -184,6 +192,7 @@
             // 
             this.lblLastContact.AutoSize = true;
             this.lblLastContact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastContact.ForeColor = System.Drawing.Color.Teal;
             this.lblLastContact.Location = new System.Drawing.Point(267, 10);
             this.lblLastContact.Name = "lblLastContact";
             this.lblLastContact.Size = new System.Drawing.Size(105, 12);
@@ -290,6 +299,7 @@
             // 
             this.lblzip.AutoSize = true;
             this.lblzip.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblzip.ForeColor = System.Drawing.Color.Teal;
             this.lblzip.Location = new System.Drawing.Point(225, 73);
             this.lblzip.Name = "lblzip";
             this.lblzip.Size = new System.Drawing.Size(21, 12);
@@ -300,6 +310,7 @@
             // 
             this.lblState.AutoSize = true;
             this.lblState.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblState.ForeColor = System.Drawing.Color.Teal;
             this.lblState.Location = new System.Drawing.Point(156, 73);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(33, 12);
@@ -310,6 +321,7 @@
             // 
             this.lblcity.AutoSize = true;
             this.lblcity.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcity.ForeColor = System.Drawing.Color.Teal;
             this.lblcity.Location = new System.Drawing.Point(4, 73);
             this.lblcity.Name = "lblcity";
             this.lblcity.Size = new System.Drawing.Size(25, 12);
@@ -320,6 +332,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.ForeColor = System.Drawing.Color.Teal;
             this.lblAddress.Location = new System.Drawing.Point(4, 38);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(51, 12);
@@ -330,6 +343,7 @@
             // 
             this.lblname.AutoSize = true;
             this.lblname.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblname.ForeColor = System.Drawing.Color.Teal;
             this.lblname.Location = new System.Drawing.Point(4, 10);
             this.lblname.Name = "lblname";
             this.lblname.Size = new System.Drawing.Size(37, 12);
@@ -349,6 +363,7 @@
             // 
             // lstActiveReq
             // 
+            this.lstActiveReq.BackColor = System.Drawing.Color.White;
             this.lstActiveReq.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.date,
             this.assistance});
@@ -373,18 +388,21 @@
             // 
             // addEFAButton
             // 
+            this.addEFAButton.BackColor = System.Drawing.Color.Teal;
+            this.addEFAButton.ForeColor = System.Drawing.Color.White;
             this.addEFAButton.Location = new System.Drawing.Point(5, 191);
             this.addEFAButton.Name = "addEFAButton";
             this.addEFAButton.Size = new System.Drawing.Size(141, 23);
             this.addEFAButton.TabIndex = 2;
             this.addEFAButton.Text = "Add EFA Request";
-            this.addEFAButton.UseVisualStyleBackColor = true;
+            this.addEFAButton.UseVisualStyleBackColor = false;
             this.addEFAButton.Click += new System.EventHandler(this.addEFAButton_Click);
             // 
             // lblefa_request
             // 
             this.lblefa_request.AutoSize = true;
             this.lblefa_request.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblefa_request.ForeColor = System.Drawing.Color.Teal;
             this.lblefa_request.Location = new System.Drawing.Point(5, 7);
             this.lblefa_request.Name = "lblefa_request";
             this.lblefa_request.Size = new System.Drawing.Size(120, 12);
@@ -415,12 +433,14 @@
             // 
             // Search
             // 
+            this.Search.BackColor = System.Drawing.Color.Teal;
+            this.Search.ForeColor = System.Drawing.Color.White;
             this.Search.Location = new System.Drawing.Point(523, 38);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(51, 22);
             this.Search.TabIndex = 16;
             this.Search.Text = "search";
-            this.Search.UseVisualStyleBackColor = true;
+            this.Search.UseVisualStyleBackColor = false;
             this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // TxtApprovedAmount
@@ -448,6 +468,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Teal;
             this.label6.Location = new System.Drawing.Point(17, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(136, 12);
@@ -458,6 +479,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Teal;
             this.label5.Location = new System.Drawing.Point(17, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 12);
@@ -468,6 +490,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Teal;
             this.label4.Location = new System.Drawing.Point(17, 265);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 12);
@@ -492,6 +515,7 @@
             // 
             this.To.AutoSize = true;
             this.To.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.To.ForeColor = System.Drawing.Color.Teal;
             this.To.Location = new System.Drawing.Point(272, 44);
             this.To.Name = "To";
             this.To.Size = new System.Drawing.Size(22, 12);
@@ -502,6 +526,7 @@
             // 
             this.from.AutoSize = true;
             this.from.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.from.ForeColor = System.Drawing.Color.Teal;
             this.from.Location = new System.Drawing.Point(15, 43);
             this.from.Name = "from";
             this.from.Size = new System.Drawing.Size(37, 12);
@@ -512,6 +537,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Teal;
             this.label3.Location = new System.Drawing.Point(6, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 15);
@@ -520,6 +546,7 @@
             // 
             // lstViewHist
             // 
+            this.lstViewHist.BackColor = System.Drawing.Color.White;
             this.lstViewHist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.hist_date,
             this.ApprovedAssistance,
@@ -557,6 +584,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(22, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 12);
@@ -580,22 +608,26 @@
             // 
             // clrbutton
             // 
+            this.clrbutton.BackColor = System.Drawing.Color.Teal;
+            this.clrbutton.ForeColor = System.Drawing.Color.White;
             this.clrbutton.Location = new System.Drawing.Point(227, 128);
             this.clrbutton.Name = "clrbutton";
             this.clrbutton.Size = new System.Drawing.Size(75, 23);
             this.clrbutton.TabIndex = 20;
             this.clrbutton.Text = "clear";
-            this.clrbutton.UseVisualStyleBackColor = true;
+            this.clrbutton.UseVisualStyleBackColor = false;
             this.clrbutton.Click += new System.EventHandler(this.clrbutton_Click);
             // 
             // addcase
             // 
+            this.addcase.BackColor = System.Drawing.Color.Teal;
+            this.addcase.ForeColor = System.Drawing.Color.White;
             this.addcase.Location = new System.Drawing.Point(125, 128);
             this.addcase.Name = "addcase";
             this.addcase.Size = new System.Drawing.Size(75, 23);
             this.addcase.TabIndex = 19;
             this.addcase.Text = "add case";
-            this.addcase.UseVisualStyleBackColor = true;
+            this.addcase.UseVisualStyleBackColor = false;
             this.addcase.Click += new System.EventHandler(this.addcase_Click);
             // 
             // txtcomment
@@ -610,6 +642,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(4, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 12);
@@ -627,6 +660,7 @@
             // 
             this.lblreqcnt.AutoSize = true;
             this.lblreqcnt.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblreqcnt.ForeColor = System.Drawing.Color.Teal;
             this.lblreqcnt.Location = new System.Drawing.Point(4, 37);
             this.lblreqcnt.Name = "lblreqcnt";
             this.lblreqcnt.Size = new System.Drawing.Size(68, 12);
@@ -637,6 +671,7 @@
             // 
             this.lblcase.AutoSize = true;
             this.lblcase.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcase.ForeColor = System.Drawing.Color.Teal;
             this.lblcase.Location = new System.Drawing.Point(20, 7);
             this.lblcase.Name = "lblcase";
             this.lblcase.Size = new System.Drawing.Size(93, 12);
@@ -655,6 +690,7 @@
             // 
             // lstCaseNotes
             // 
+            this.lstCaseNotes.BackColor = System.Drawing.Color.White;
             this.lstCaseNotes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.caseNoteDate,
             this.caseNoteupdate,
@@ -687,6 +723,7 @@
             // 
             this.lblcasenote.AutoSize = true;
             this.lblcasenote.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcasenote.ForeColor = System.Drawing.Color.Teal;
             this.lblcasenote.Location = new System.Drawing.Point(20, 7);
             this.lblcasenote.Name = "lblcasenote";
             this.lblcasenote.Size = new System.Drawing.Size(68, 12);
@@ -719,6 +756,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1112, 665);
             this.Controls.Add(this.username_label);
             this.Controls.Add(this.logged_in_label);

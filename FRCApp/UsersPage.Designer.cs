@@ -74,28 +74,33 @@
             // 
             // newUser
             // 
+            this.newUser.BackColor = System.Drawing.Color.Teal;
+            this.newUser.ForeColor = System.Drawing.Color.White;
             this.newUser.Location = new System.Drawing.Point(58, 263);
             this.newUser.Name = "newUser";
             this.newUser.Size = new System.Drawing.Size(129, 23);
             this.newUser.TabIndex = 1;
             this.newUser.Text = "create new User";
-            this.newUser.UseVisualStyleBackColor = true;
+            this.newUser.UseVisualStyleBackColor = false;
             this.newUser.Click += new System.EventHandler(this.newUser_Click);
             // 
             // back
             // 
+            this.back.BackColor = System.Drawing.Color.Teal;
+            this.back.ForeColor = System.Drawing.Color.White;
             this.back.Location = new System.Drawing.Point(403, 263);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(129, 23);
             this.back.TabIndex = 2;
             this.back.Text = "Back";
-            this.back.UseVisualStyleBackColor = true;
+            this.back.UseVisualStyleBackColor = false;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // UsersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(613, 298);
             this.Controls.Add(this.back);
             this.Controls.Add(this.newUser);

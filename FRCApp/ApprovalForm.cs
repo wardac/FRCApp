@@ -111,7 +111,7 @@ namespace FRCApp
 
             foreach(DataGridViewRow data in gridApprovedservices.Rows)
             {
-                if (data != null)
+                if (data != null && Convert.ToString(data.Cells[0].Value) != "")
                 {
                     Service approvedService = new Service(Convert.ToString(data.Cells[0].Value), Convert.ToString(data.Cells[1].Value), Convert.ToDecimal(data.Cells[2].Value));
                     efaSubrequestAdapter.AddOrUpdateEFASubrequest(approvedService.EFASubrequestID, requestID, approvedService.Type, DateTime.Now, true, approvedService.amount);

@@ -41,12 +41,15 @@
             this.login_submit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.login_submit.BackColor = System.Drawing.Color.Teal;
+            this.login_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_submit.ForeColor = System.Drawing.Color.White;
             this.login_submit.Location = new System.Drawing.Point(165, 135);
             this.login_submit.Name = "login_submit";
             this.login_submit.Size = new System.Drawing.Size(75, 23);
             this.login_submit.TabIndex = 2;
             this.login_submit.Text = "submit";
-            this.login_submit.UseVisualStyleBackColor = true;
+            this.login_submit.UseVisualStyleBackColor = false;
             this.login_submit.Click += new System.EventHandler(this.login_submit_Click);
             // 
             // login_cancel
@@ -54,12 +57,15 @@
             this.login_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.login_cancel.BackColor = System.Drawing.Color.Teal;
+            this.login_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_cancel.ForeColor = System.Drawing.Color.White;
             this.login_cancel.Location = new System.Drawing.Point(257, 135);
             this.login_cancel.Name = "login_cancel";
             this.login_cancel.Size = new System.Drawing.Size(75, 23);
             this.login_cancel.TabIndex = 3;
             this.login_cancel.Text = "Exit";
-            this.login_cancel.UseVisualStyleBackColor = true;
+            this.login_cancel.UseVisualStyleBackColor = false;
             this.login_cancel.Click += new System.EventHandler(this.login_cancel_Click);
             // 
             // lbl_usrname
@@ -68,10 +74,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_usrname.AutoSize = true;
-            this.lbl_usrname.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usrname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usrname.ForeColor = System.Drawing.Color.Teal;
             this.lbl_usrname.Location = new System.Drawing.Point(96, 65);
             this.lbl_usrname.Name = "lbl_usrname";
-            this.lbl_usrname.Size = new System.Drawing.Size(62, 12);
+            this.lbl_usrname.Size = new System.Drawing.Size(65, 15);
             this.lbl_usrname.TabIndex = 2;
             this.lbl_usrname.Text = "Username";
             // 
@@ -81,10 +88,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblpassword.AutoSize = true;
-            this.lblpassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpassword.ForeColor = System.Drawing.Color.Teal;
             this.lblpassword.Location = new System.Drawing.Point(96, 99);
             this.lblpassword.Name = "lblpassword";
-            this.lblpassword.Size = new System.Drawing.Size(59, 12);
+            this.lblpassword.Size = new System.Drawing.Size(61, 15);
             this.lblpassword.TabIndex = 3;
             this.lblpassword.Text = "Password";
             // 
@@ -115,6 +123,7 @@
             this.AcceptButton = this.login_submit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(475, 237);
             this.Controls.Add(this.login_Password);
             this.Controls.Add(this.login_username);

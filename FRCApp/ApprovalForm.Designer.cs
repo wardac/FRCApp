@@ -45,23 +45,24 @@
             this.cmb_approvalReason = new System.Windows.Forms.ComboBox();
             this.lst_requestedServices = new System.Windows.Forms.ListBox();
             this.incomeSourcesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridApprovedservices = new System.Windows.Forms.DataGridView();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new FRCApp.DataSet1();
-            this.incomeSourcesTableAdapter = new FRCApp.DataSet1TableAdapters.IncomeSourcesTableAdapter();
+            this.gridApprovedservices = new System.Windows.Forms.DataGridView();
             this.subreqID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.services = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amounts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.incomeSourcesTableAdapter = new FRCApp.DataSet1TableAdapters.IncomeSourcesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.incomeSourcesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridApprovedservices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridApprovedservices)).BeginInit();
             this.SuspendLayout();
             // 
             // lblReferals
             // 
             this.lblReferals.AutoSize = true;
             this.lblReferals.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReferals.ForeColor = System.Drawing.Color.Teal;
             this.lblReferals.Location = new System.Drawing.Point(9, 408);
             this.lblReferals.Name = "lblReferals";
             this.lblReferals.Size = new System.Drawing.Size(222, 13);
@@ -98,6 +99,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(9, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 13);
@@ -108,6 +110,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Teal;
             this.label3.Location = new System.Drawing.Point(493, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 13);
@@ -129,6 +132,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(9, 354);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 13);
@@ -139,6 +143,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Teal;
             this.label4.Location = new System.Drawing.Point(493, 354);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 13);
@@ -147,22 +152,28 @@
             // 
             // btn_back
             // 
+            this.btn_back.BackColor = System.Drawing.Color.Teal;
+            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.ForeColor = System.Drawing.Color.White;
             this.btn_back.Location = new System.Drawing.Point(735, 599);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 23);
             this.btn_back.TabIndex = 29;
             this.btn_back.Text = "Back";
-            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.UseVisualStyleBackColor = false;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // btn_done
             // 
+            this.btn_done.BackColor = System.Drawing.Color.Teal;
+            this.btn_done.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_done.ForeColor = System.Drawing.Color.White;
             this.btn_done.Location = new System.Drawing.Point(816, 599);
             this.btn_done.Name = "btn_done";
             this.btn_done.Size = new System.Drawing.Size(75, 23);
             this.btn_done.TabIndex = 29;
             this.btn_done.Text = "Done";
-            this.btn_done.UseVisualStyleBackColor = true;
+            this.btn_done.UseVisualStyleBackColor = false;
             this.btn_done.Click += new System.EventHandler(this.btn_done_Click);
             // 
             // shapeContainer1
@@ -229,6 +240,16 @@
             this.incomeSourcesBindingSource.DataMember = "IncomeSources";
             this.incomeSourcesBindingSource.DataSource = this.dataSet1BindingSource;
             // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridApprovedservices
             // 
             this.gridApprovedservices.BackgroundColor = System.Drawing.Color.White;
@@ -243,20 +264,6 @@
             this.gridApprovedservices.Size = new System.Drawing.Size(392, 303);
             this.gridApprovedservices.TabIndex = 36;
             this.gridApprovedservices.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gridApprovedservices_EditingControlShowing);
-            // 
-            // dataSet1BindingSource
-            // 
-            this.dataSet1BindingSource.DataSource = this.dataSet1;
-            this.dataSet1BindingSource.Position = 0;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // incomeSourcesTableAdapter
-            // 
-            this.incomeSourcesTableAdapter.ClearBeforeFill = true;
             // 
             // subreqID
             // 
@@ -279,11 +286,15 @@
             this.amounts.Name = "amounts";
             this.amounts.Width = 90;
             // 
+            // incomeSourcesTableAdapter
+            // 
+            this.incomeSourcesTableAdapter.ClearBeforeFill = true;
+            // 
             // ApprovalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Menu;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(904, 635);
             this.Controls.Add(this.gridApprovedservices);
             this.Controls.Add(this.cmb_approvalReason);
@@ -305,9 +316,9 @@
             this.Text = "Request Approval";
             this.Load += new System.EventHandler(this.ApprovalForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.incomeSourcesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridApprovedservices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridApprovedservices)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

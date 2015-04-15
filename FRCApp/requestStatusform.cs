@@ -108,6 +108,7 @@ namespace FRCApp
                 datagridRequests.Visible = true;
                 var subrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
                 var subrequests = subrequestAdapter.GetEFASubrequestsByEFARequestID(RequestID);
+                datagridRequests.Rows.Clear();
                 foreach (var subrequest in subrequests)
                 {
                     lst_reqTypes.Items.Add(subrequest);

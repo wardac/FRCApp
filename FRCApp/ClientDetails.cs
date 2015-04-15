@@ -83,9 +83,14 @@ namespace FRCApp
                 foreach (var efaRequest in activeEfaRequests)
                 {
                     var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
+               
                     item.Tag = efaRequest.EFARequestID;
                     item.SubItems.Add(efaRequest.RequestTypes);
                     lstActiveReq.Items.Add(item);
+                    if (item.Index % 2 == 0)
+                    {item.BackColor = Color.Gainsboro;}
+                    else
+                    {  item.BackColor = Color.WhiteSmoke;}
                 }
             }
 
@@ -103,6 +108,10 @@ namespace FRCApp
                 item.SubItems.Add(efaRequest.totalamount + "");
                 item.SubItems.Add(efaRequest.RequestTypes);
                 lstViewHist.Items.Add(item);
+                if (item.Index % 2 == 0)
+                { item.BackColor = Color.Gainsboro; }
+                else
+                { item.BackColor = Color.WhiteSmoke; }
             }
             fromDate.Value = lowestDate;
             loadcaseNote();
@@ -124,7 +133,8 @@ namespace FRCApp
             }
             txtTotalRequest.Text = totalRequest.ToString();
             txtApprovedRequest.Text = totalRequestApproved.ToString();
-            TxtApprovedAmount.Text = totalAmountApproved.ToString();
+            //TxtApprovedAmount.Text = totalAmountApproved.ToString();
+            TxtApprovedAmount.Text = string.Format("{0:c}", totalAmountApproved) ;
         }
         private void loadcaseNote()
         {
@@ -138,6 +148,10 @@ namespace FRCApp
                 item.SubItems.Add(casenote.updateType);
                 item.SubItems.Add(casenote.comment);
                 lstCaseNotes.Items.Add(item);
+                if (item.Index % 2 == 0)
+                { item.BackColor = Color.Gainsboro; }
+                else
+                { item.BackColor = Color.WhiteSmoke; }
             }
         }
 
@@ -240,5 +254,6 @@ namespace FRCApp
             }
             loadQuickReport();
         }
+
     }
 }

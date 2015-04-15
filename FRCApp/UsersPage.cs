@@ -33,6 +33,10 @@ namespace FRCApp
                 item.SubItems.Add(row["LastName"].ToString());
                 item.SubItems.Add(row["AccessLevel"].ToString());
                 listusers.Items.Add(item);
+                if (item.Index % 2 == 0)
+                { item.BackColor = Color.Gainsboro; }
+                else
+                { item.BackColor = Color.WhiteSmoke; }
             }
         }
 
