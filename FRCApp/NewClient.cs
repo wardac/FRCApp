@@ -98,6 +98,21 @@ namespace FRCApp
                 MessageBox.Show("Please select a Household Type");
                 return false;
             }
+            else if (string.IsNullOrEmpty(social_textbox.Text))
+            {
+                MessageBox.Show("Please enter the last four digist of your social");
+                return false;
+            }
+            else if (!yes_radio_button.Checked && !no_radio_button.Checked)
+            {
+                MessageBox.Show("Please enter health insurance info");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(RaceBox.Text))
+            {
+                MessageBox.Show("Please select a race");
+                return false;
+            }
             return true;
         }
 
@@ -140,7 +155,8 @@ namespace FRCApp
                     householdID,
                     HouseholdTypeBox.SelectedIndex + 1,
                     null
-                    );
+                );
+
                 //delete clientReferrals
                 DataSet1TableAdapters.ClientReferralsTableAdapter referralsAdapter = new DataSet1TableAdapters.ClientReferralsTableAdapter();
                 referralsAdapter.DeleteClientReferralsByClientID(clientID);
@@ -149,6 +165,19 @@ namespace FRCApp
                 {
                     referralsAdapter.AddClientReferral(clientID, index);
                 }
+
+                DataSet1TableAdapters.HouseholdMembersTableAdapter householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
+                householdMembersAdapter.AddOrUpdateHouseholdMembers(
+                    -1,
+                    householdID,
+                    firstName_textBox.Text,
+                    lastName_textBox.Text,
+                    System.DateTime.Parse(dataOfBirth_dateTimePicker.Text),
+                    "self",
+                    RaceBox.Text,
+                    !no_radio_button.Checked,
+                    social_textbox.Text
+                );
 
                 //delete ClientGoals
                 DataSet1TableAdapters.ClientGoalsTableAdapter goalsAdapter = new DataSet1TableAdapters.ClientGoalsTableAdapter();
@@ -169,6 +198,7 @@ namespace FRCApp
 
         private void NewClient_Load(object sender, EventArgs e)
         {
+            this.racesTableAdapter.Fill(this.dataSet1.Races);
             this.goalTypesTableAdapter.Fill(this.dataSet1.GoalTypes);
             this.referralTypesTableAdapter.Fill(this.dataSet1.ReferralTypes);
             this.employmentStatusesTableAdapter.Fill(this.dataSet1.EmploymentStatuses);
@@ -186,6 +216,7 @@ namespace FRCApp
             HouseholdTypeBox.SelectedIndex = -1;
             EducationLevelBox.SelectedIndex = -1;
             EmploymentStatusBox.SelectedIndex = -1;
+            RaceBox.SelectedIndex = -1;
 
             if (isEditing)
             {

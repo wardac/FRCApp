@@ -69,17 +69,20 @@
             this.telephone2_textBox = new System.Windows.Forms.MaskedTextBox();
             this.zipCode_textBox = new System.Windows.Forms.MaskedTextBox();
             this.social_label = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.social_textbox = new System.Windows.Forms.MaskedTextBox();
             this.health_coverage_label = new System.Windows.Forms.Label();
             this.yes_radio_button = new System.Windows.Forms.RadioButton();
             this.no_radio_button = new System.Windows.Forms.RadioButton();
             this.race_label = new System.Windows.Forms.Label();
-            this.raceComboBox = new System.Windows.Forms.ComboBox();
+            this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
+            this.RaceBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.householdTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.educationLevelsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employmentStatusesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.referralTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lastName_label
@@ -434,13 +437,13 @@
             this.social_label.TabIndex = 60;
             this.social_label.Text = "Last 4 digits of SSN:";
             // 
-            // maskedTextBox1
+            // social_textbox
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(382, 41);
-            this.maskedTextBox1.Mask = "0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(31, 20);
-            this.maskedTextBox1.TabIndex = 61;
+            this.social_textbox.Location = new System.Drawing.Point(382, 41);
+            this.social_textbox.Mask = "0000";
+            this.social_textbox.Name = "social_textbox";
+            this.social_textbox.Size = new System.Drawing.Size(31, 20);
+            this.social_textbox.TabIndex = 61;
             // 
             // health_coverage_label
             // 
@@ -482,28 +485,38 @@
             this.race_label.TabIndex = 66;
             this.race_label.Text = "Ethnicity/Race:";
             // 
-            // raceComboBox
+            // racesBindingSource
             // 
-            this.raceComboBox.DataSource = this.GoalsBox.CustomTabOffsets;
-            this.raceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.raceComboBox.FormattingEnabled = true;
-            this.raceComboBox.Location = new System.Drawing.Point(117, 260);
-            this.raceComboBox.Name = "raceComboBox";
-            this.raceComboBox.Size = new System.Drawing.Size(598, 21);
-            this.raceComboBox.TabIndex = 68;
-            this.raceComboBox.ValueMember = "EmploymentStatusID";
+            this.racesBindingSource.DataMember = "Races";
+            this.racesBindingSource.DataSource = this.dataSet1;
+            // 
+            // racesTableAdapter
+            // 
+            this.racesTableAdapter.ClearBeforeFill = true;
+            // 
+            // RaceBox
+            // 
+            this.RaceBox.DataSource = this.racesBindingSource;
+            this.RaceBox.DisplayMember = "Race";
+            this.RaceBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RaceBox.FormattingEnabled = true;
+            this.RaceBox.Location = new System.Drawing.Point(117, 260);
+            this.RaceBox.Name = "RaceBox";
+            this.RaceBox.Size = new System.Drawing.Size(598, 21);
+            this.RaceBox.TabIndex = 67;
+            this.RaceBox.ValueMember = "Race";
             // 
             // NewClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 579);
-            this.Controls.Add(this.raceComboBox);
+            this.Controls.Add(this.RaceBox);
             this.Controls.Add(this.race_label);
             this.Controls.Add(this.no_radio_button);
             this.Controls.Add(this.yes_radio_button);
             this.Controls.Add(this.health_coverage_label);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.social_textbox);
             this.Controls.Add(this.social_label);
             this.Controls.Add(this.zipCode_textBox);
             this.Controls.Add(this.telephone2_textBox);
@@ -548,6 +561,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.educationLevelsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employmentStatusesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.referralTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -600,11 +614,13 @@
         private System.Windows.Forms.MaskedTextBox telephone2_textBox;
         private System.Windows.Forms.MaskedTextBox zipCode_textBox;
         private System.Windows.Forms.Label social_label;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox social_textbox;
         private System.Windows.Forms.Label health_coverage_label;
         private System.Windows.Forms.RadioButton yes_radio_button;
         private System.Windows.Forms.RadioButton no_radio_button;
         private System.Windows.Forms.Label race_label;
-        private System.Windows.Forms.ComboBox raceComboBox;
+        private System.Windows.Forms.BindingSource racesBindingSource;
+        private DataSet1TableAdapters.RacesTableAdapter racesTableAdapter;
+        private System.Windows.Forms.ComboBox RaceBox;
     }
 }
