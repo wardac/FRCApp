@@ -67,6 +67,7 @@ namespace FRCApp
             item.SubItems.Add(cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem));
             item.SubItems.Add(amountOfIncomeTextBox.Text);
             item.SubItems.Add(cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem));
+            item.SubItems.Add(datePicker.Text);
             FinancelistView.Items.Add(item);
             if (item.Index % 2 == 0)
             { item.BackColor = Color.Gainsboro; }
