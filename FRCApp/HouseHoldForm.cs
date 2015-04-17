@@ -60,20 +60,19 @@ namespace FRCApp
                 return;
             }
 
-            //Add the items to the listView
-            ListViewItem item = new ListViewItem(HouseHoldFormFirstNameTextBox.Text);
-            item.SubItems.Add(HouseHoldFormlastNameTextBox.Text);
-            item.SubItems.Add(HouseHoldFormlast4DigitsOfSsnTextBox.Text);
-            item.SubItems.Add(HouseHoldFormBirthDateDateTimePicker.Text);
-            item.SubItems.Add(HouseHoldFormRelationshipToApplicant.Text);
-            item.SubItems.Add(HouseHoldFormEthnicityListBox.SelectedValue.ToString());
-            item.SubItems.Add((!HouseHoldFormRadioButtonNo.Checked).ToString());
-            if (item.Index % 2 == 0)
-            { item.BackColor = Color.Gainsboro; }
-            else
-            { item.BackColor = Color.WhiteSmoke; }
-
-            HouseHoldForm_ListView_Summary.Items.Add(item);
+            // add ListView items to DataSet1 table
+            DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
+            adapter.AddOrUpdateHouseholdMembers(
+                -1,
+                houseHoldId,
+                HouseHoldFormFirstNameTextBox.Text,
+                HouseHoldFormlastNameTextBox.Text,
+                System.DateTime.Parse(HouseHoldFormBirthDateDateTimePicker.Text),
+                HouseHoldFormRelationshipToApplicant.Text,
+                HouseHoldFormEthnicityListBox.SelectedValue.ToString(),
+                !HouseHoldFormRadioButtonNo.Checked,
+                HouseHoldFormlast4DigitsOfSsnTextBox.Text
+            );
 
             //clear the form fields
             HouseHoldFormFirstNameTextBox.Clear();
@@ -84,30 +83,9 @@ namespace FRCApp
             HouseHoldFormEthnicityListBox.ClearSelected();
             HouseHoldFormRadioButtonNo.Checked = false;
             HouseHoldFormRadioButtonYes.Checked = false;
-        }
 
-        /**
-         * Event handler for user clicking "Submit to Database" button
-         * Submit the data in ListView to the database
-         **/
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            // add ListView items to DataSet1 table
-            DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
-            foreach (ListViewItem item in HouseHoldForm_ListView_Summary.Items)
-            {
-                adapter.AddOrUpdateHouseholdMembers(
-                        Convert.ToInt32(item.Tag),
-                        houseHoldId,
-                        item.SubItems[0].Text,
-                        item.SubItems[1].Text,
-                        System.DateTime.Parse(item.SubItems[3].Text),
-                        item.SubItems[4].Text,
-                        item.SubItems[5].Text,
-                        Convert.ToBoolean(item.SubItems[6].Text),
-                        item.SubItems[2].Text);
-            }
-            this.Close();
+            // fill the listview
+            fillListView();
         }
 
         /**
@@ -165,15 +143,11 @@ namespace FRCApp
         }
 
         /**
-         * Handle clicking the cancel button
+         * Handle clicking the Done button
          **/
         private void HouseHoldFormCancelButton_Click(object sender, EventArgs e)
         {
-            DialogResult messageBox = MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.YesNo);
-            if (messageBox == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            this.Close();
         }
 
         /**
@@ -198,6 +172,20 @@ namespace FRCApp
             {
                 e.Handled = true;
             }
+        }
+
+        /**
+         * Handle Edit Event
+         **/
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            if (HouseHoldForm_ListView_Summary.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a household member");
+                return;
+            }
+
+            new EditHouseholdMemberInfo((int)HouseHoldForm_ListView_Summary.SelectedItems[0].Tag, houseHoldId).Show();
         }
     }
 }

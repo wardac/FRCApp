@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.title = new System.Windows.Forms.Panel();
             this.removeButton = new System.Windows.Forms.Button();
-            this.HouseHoldFormCancelButton = new System.Windows.Forms.Button();
+            this.HouseHoldFormDoneButton = new System.Windows.Forms.Button();
             this.HouseHoldForm_ListView_Summary = new System.Windows.Forms.ListView();
             this.First = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Last = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,7 +40,6 @@
             this.Relationship = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Ethnicity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Coverage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.HouseHoldFormRadioButtonNo = new System.Windows.Forms.RadioButton();
             this.HouseHoldFormRadioButtonYes = new System.Windows.Forms.RadioButton();
             this.HouseHoldFormHealthCoverageRadioButton = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
+            this.editButton = new System.Windows.Forms.Button();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -71,10 +71,10 @@
             // title
             // 
             this.title.BackColor = System.Drawing.Color.Lavender;
+            this.title.Controls.Add(this.editButton);
             this.title.Controls.Add(this.removeButton);
-            this.title.Controls.Add(this.HouseHoldFormCancelButton);
+            this.title.Controls.Add(this.HouseHoldFormDoneButton);
             this.title.Controls.Add(this.HouseHoldForm_ListView_Summary);
-            this.title.Controls.Add(this.btnSubmit);
             this.title.Controls.Add(this.HouseHoldFormRadioButtonNo);
             this.title.Controls.Add(this.HouseHoldFormRadioButtonYes);
             this.title.Controls.Add(this.HouseHoldFormHealthCoverageRadioButton);
@@ -109,17 +109,17 @@
             this.removeButton.UseVisualStyleBackColor = false;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
-            // HouseHoldFormCancelButton
+            // HouseHoldFormDoneButton
             // 
-            this.HouseHoldFormCancelButton.BackColor = System.Drawing.Color.Teal;
-            this.HouseHoldFormCancelButton.ForeColor = System.Drawing.Color.White;
-            this.HouseHoldFormCancelButton.Location = new System.Drawing.Point(880, 382);
-            this.HouseHoldFormCancelButton.Name = "HouseHoldFormCancelButton";
-            this.HouseHoldFormCancelButton.Size = new System.Drawing.Size(75, 23);
-            this.HouseHoldFormCancelButton.TabIndex = 11;
-            this.HouseHoldFormCancelButton.Text = "Cancel";
-            this.HouseHoldFormCancelButton.UseVisualStyleBackColor = false;
-            this.HouseHoldFormCancelButton.Click += new System.EventHandler(this.HouseHoldFormCancelButton_Click);
+            this.HouseHoldFormDoneButton.BackColor = System.Drawing.Color.Teal;
+            this.HouseHoldFormDoneButton.ForeColor = System.Drawing.Color.White;
+            this.HouseHoldFormDoneButton.Location = new System.Drawing.Point(880, 382);
+            this.HouseHoldFormDoneButton.Name = "HouseHoldFormDoneButton";
+            this.HouseHoldFormDoneButton.Size = new System.Drawing.Size(75, 23);
+            this.HouseHoldFormDoneButton.TabIndex = 11;
+            this.HouseHoldFormDoneButton.Text = "Done";
+            this.HouseHoldFormDoneButton.UseVisualStyleBackColor = false;
+            this.HouseHoldFormDoneButton.Click += new System.EventHandler(this.HouseHoldFormCancelButton_Click);
             // 
             // HouseHoldForm_ListView_Summary
             // 
@@ -133,6 +133,7 @@
             this.Coverage});
             this.HouseHoldForm_ListView_Summary.FullRowSelect = true;
             this.HouseHoldForm_ListView_Summary.Location = new System.Drawing.Point(417, 4);
+            this.HouseHoldForm_ListView_Summary.MultiSelect = false;
             this.HouseHoldForm_ListView_Summary.Name = "HouseHoldForm_ListView_Summary";
             this.HouseHoldForm_ListView_Summary.Size = new System.Drawing.Size(538, 372);
             this.HouseHoldForm_ListView_Summary.TabIndex = 12;
@@ -169,18 +170,6 @@
             // Coverage
             // 
             this.Coverage.Text = "Coverage";
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.BackColor = System.Drawing.Color.Teal;
-            this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(799, 382);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 10;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // HouseHoldFormRadioButtonNo
             // 
@@ -371,6 +360,16 @@
             // 
             this.racesTableAdapter.ClearBeforeFill = true;
             // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(417, 382);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(75, 23);
+            this.editButton.TabIndex = 13;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
             // HouseHoldForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,7 +409,6 @@
         private System.Windows.Forms.RadioButton HouseHoldFormRadioButtonNo;
         private System.Windows.Forms.RadioButton HouseHoldFormRadioButtonYes;
         private System.Windows.Forms.Label HouseHoldFormHealthCoverageRadioButton;
-        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.BindingSource dataSet1BindingSource;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource racesBindingSource;
@@ -423,7 +421,8 @@
         private System.Windows.Forms.ColumnHeader Relationship;
         private System.Windows.Forms.ColumnHeader Ethnicity;
         private System.Windows.Forms.ColumnHeader Coverage;
-        private System.Windows.Forms.Button HouseHoldFormCancelButton;
+        private System.Windows.Forms.Button HouseHoldFormDoneButton;
         private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button editButton;
     }
 }
