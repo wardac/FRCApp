@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.requestPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Qincome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Mincome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Mexpenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.active = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.datagridRequests = new System.Windows.Forms.DataGridView();
             this.Request = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +93,8 @@
             // 
             // requestPanel
             // 
+            this.requestPanel.Controls.Add(this.label2);
+            this.requestPanel.Controls.Add(this.listView1);
             this.requestPanel.Controls.Add(this.datagridRequests);
             this.requestPanel.Controls.Add(this.date_completedDate);
             this.requestPanel.Controls.Add(this.lbl_completedDate);
@@ -108,8 +117,56 @@
             this.requestPanel.Controls.Add(this.shapeContainer1);
             this.requestPanel.Location = new System.Drawing.Point(24, 12);
             this.requestPanel.Name = "requestPanel";
-            this.requestPanel.Size = new System.Drawing.Size(867, 611);
+            this.requestPanel.Size = new System.Drawing.Size(867, 632);
             this.requestPanel.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 436);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Financial summary";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.date,
+            this.Qincome,
+            this.Mincome,
+            this.Mexpenses,
+            this.active});
+            this.listView1.Location = new System.Drawing.Point(30, 452);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(452, 138);
+            this.listView1.TabIndex = 26;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // date
+            // 
+            this.date.Text = "Date added";
+            this.date.Width = 95;
+            // 
+            // Qincome
+            // 
+            this.Qincome.Text = "Quaterly Income";
+            this.Qincome.Width = 94;
+            // 
+            // Mincome
+            // 
+            this.Mincome.Text = "Monthly income";
+            this.Mincome.Width = 103;
+            // 
+            // Mexpenses
+            // 
+            this.Mexpenses.Text = "Monthly Expenses";
+            this.Mexpenses.Width = 105;
+            // 
+            // active
+            // 
+            this.active.Text = "current";
             // 
             // datagridRequests
             // 
@@ -165,7 +222,7 @@
             this.btn_handleRequest.BackColor = System.Drawing.Color.Teal;
             this.btn_handleRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_handleRequest.ForeColor = System.Drawing.Color.White;
-            this.btn_handleRequest.Location = new System.Drawing.Point(311, 576);
+            this.btn_handleRequest.Location = new System.Drawing.Point(355, 596);
             this.btn_handleRequest.Name = "btn_handleRequest";
             this.btn_handleRequest.Size = new System.Drawing.Size(76, 29);
             this.btn_handleRequest.TabIndex = 24;
@@ -243,7 +300,7 @@
             this.efa_financegroup.Controls.Add(this.label1);
             this.efa_financegroup.Controls.Add(this.label3);
             this.efa_financegroup.Controls.Add(this.lblCQinfo);
-            this.efa_financegroup.Location = new System.Drawing.Point(45, 441);
+            this.efa_financegroup.Location = new System.Drawing.Point(457, 303);
             this.efa_financegroup.Name = "efa_financegroup";
             this.efa_financegroup.Size = new System.Drawing.Size(386, 131);
             this.efa_financegroup.TabIndex = 18;
@@ -253,7 +310,7 @@
             // txt_Mexpenses
             // 
             this.txt_Mexpenses.Enabled = false;
-            this.txt_Mexpenses.Location = new System.Drawing.Point(274, 23);
+            this.txt_Mexpenses.Location = new System.Drawing.Point(302, 25);
             this.txt_Mexpenses.Name = "txt_Mexpenses";
             this.txt_Mexpenses.Size = new System.Drawing.Size(73, 20);
             this.txt_Mexpenses.TabIndex = 7;
@@ -261,7 +318,7 @@
             // txt_Mincome
             // 
             this.txt_Mincome.Enabled = false;
-            this.txt_Mincome.Location = new System.Drawing.Point(99, 49);
+            this.txt_Mincome.Location = new System.Drawing.Point(115, 51);
             this.txt_Mincome.Name = "txt_Mincome";
             this.txt_Mincome.Size = new System.Drawing.Size(73, 20);
             this.txt_Mincome.TabIndex = 6;
@@ -269,7 +326,7 @@
             // txt_QHincome
             // 
             this.txt_QHincome.Enabled = false;
-            this.txt_QHincome.Location = new System.Drawing.Point(99, 26);
+            this.txt_QHincome.Location = new System.Drawing.Point(115, 26);
             this.txt_QHincome.Name = "txt_QHincome";
             this.txt_QHincome.Size = new System.Drawing.Size(73, 20);
             this.txt_QHincome.TabIndex = 4;
@@ -290,7 +347,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(176, 26);
+            this.label3.Location = new System.Drawing.Point(199, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 15);
             this.label3.TabIndex = 2;
@@ -502,7 +559,7 @@
             this.cancelEfa.BackColor = System.Drawing.Color.Teal;
             this.cancelEfa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelEfa.ForeColor = System.Drawing.Color.White;
-            this.cancelEfa.Location = new System.Drawing.Point(411, 576);
+            this.cancelEfa.Location = new System.Drawing.Point(455, 596);
             this.cancelEfa.Name = "cancelEfa";
             this.cancelEfa.Size = new System.Drawing.Size(76, 29);
             this.cancelEfa.TabIndex = 1;
@@ -515,7 +572,7 @@
             this.update_efa.BackColor = System.Drawing.Color.Teal;
             this.update_efa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_efa.ForeColor = System.Drawing.Color.White;
-            this.update_efa.Location = new System.Drawing.Point(211, 576);
+            this.update_efa.Location = new System.Drawing.Point(255, 596);
             this.update_efa.Name = "update_efa";
             this.update_efa.Size = new System.Drawing.Size(76, 29);
             this.update_efa.TabIndex = 0;
@@ -530,7 +587,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(867, 611);
+            this.shapeContainer1.Size = new System.Drawing.Size(867, 632);
             this.shapeContainer1.TabIndex = 16;
             this.shapeContainer1.TabStop = false;
             // 
@@ -566,7 +623,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(903, 635);
+            this.ClientSize = new System.Drawing.Size(903, 649);
             this.Controls.Add(this.requestPanel);
             this.Name = "requestStatusform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -635,5 +692,12 @@
         private System.Windows.Forms.DataGridView datagridRequests;
         private System.Windows.Forms.DataGridViewTextBoxColumn Request;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader date;
+        private System.Windows.Forms.ColumnHeader Qincome;
+        private System.Windows.Forms.ColumnHeader Mincome;
+        private System.Windows.Forms.ColumnHeader Mexpenses;
+        private System.Windows.Forms.ColumnHeader active;
     }
 }

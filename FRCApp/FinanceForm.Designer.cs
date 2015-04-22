@@ -41,6 +41,7 @@
             this.incomeSource = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.incomeAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.incomeFrequency = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.submitButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -48,8 +49,7 @@
             this.cmb_incomeFreqs = new System.Windows.Forms.ComboBox();
             this.cmb_incomeSourceType = new System.Windows.Forms.ComboBox();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.datePickerDateadded = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // addButton
@@ -178,6 +178,10 @@
             this.incomeFrequency.Text = "Frequency of Income";
             this.incomeFrequency.Width = 114;
             // 
+            // Date
+            // 
+            this.Date.Text = "Date";
+            // 
             // submitButton
             // 
             this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -255,16 +259,12 @@
             this.dateLabel.TabIndex = 42;
             this.dateLabel.Text = "Date";
             // 
-            // datePicker
+            // datePickerDateadded
             // 
-            this.datePicker.Location = new System.Drawing.Point(196, 243);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(200, 20);
-            this.datePicker.TabIndex = 43;
-            // 
-            // Date
-            // 
-            this.Date.Text = "Date";
+            this.datePickerDateadded.Location = new System.Drawing.Point(196, 243);
+            this.datePickerDateadded.Name = "datePickerDateadded";
+            this.datePickerDateadded.Size = new System.Drawing.Size(200, 20);
+            this.datePickerDateadded.TabIndex = 43;
             // 
             // FinanceForm
             // 
@@ -272,7 +272,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(967, 324);
-            this.Controls.Add(this.datePicker);
+            this.Controls.Add(this.datePickerDateadded);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.cmb_incomeSourceType);
             this.Controls.Add(this.cmb_incomeFreqs);
@@ -320,6 +320,6 @@
         private System.Windows.Forms.ComboBox cmb_incomeSourceType;
         private System.Windows.Forms.ColumnHeader Date;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.DateTimePicker datePicker;
+        private System.Windows.Forms.DateTimePicker datePickerDateadded;
     }
 }

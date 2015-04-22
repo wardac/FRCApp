@@ -130,5 +130,10 @@ namespace FRCApp
                 new loginForm(timer).Show();
             }
         }
+
+        private void viewReport_Click(object sender, EventArgs e)
+        {
+            new report(DateTime.Now.Year).Show();
+        }
     }
 }

@@ -42,6 +42,7 @@
             this.logout_button = new System.Windows.Forms.Button();
             this.current_user = new System.Windows.Forms.Label();
             this.welcome_label = new System.Windows.Forms.Label();
+            this.viewReport = new System.Windows.Forms.Button();
             this.startPage_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,6 +149,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.startPage_panel.BackColor = System.Drawing.Color.Lavender;
+            this.startPage_panel.Controls.Add(this.viewReport);
             this.startPage_panel.Controls.Add(this.logout_button);
             this.startPage_panel.Controls.Add(this.current_user);
             this.startPage_panel.Controls.Add(this.welcome_label);
@@ -196,6 +198,19 @@
             this.welcome_label.TabIndex = 7;
             this.welcome_label.Text = "Logged in as: ";
             // 
+            // viewReport
+            // 
+            this.viewReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.viewReport.BackColor = System.Drawing.Color.Teal;
+            this.viewReport.ForeColor = System.Drawing.Color.White;
+            this.viewReport.Location = new System.Drawing.Point(340, 316);
+            this.viewReport.Name = "viewReport";
+            this.viewReport.Size = new System.Drawing.Size(98, 23);
+            this.viewReport.TabIndex = 10;
+            this.viewReport.Text = "View Reports";
+            this.viewReport.UseVisualStyleBackColor = false;
+            this.viewReport.Click += new System.EventHandler(this.viewReport_Click);
+            // 
             // StartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +244,7 @@
         private System.Windows.Forms.Label welcome_label;
         private System.Windows.Forms.Label current_user;
         private System.Windows.Forms.Button logout_button;
+        private System.Windows.Forms.Button viewReport;
 
     }
 }

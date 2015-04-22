@@ -67,7 +67,7 @@ namespace FRCApp
             item.SubItems.Add(cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem));
             item.SubItems.Add(amountOfIncomeTextBox.Text);
             item.SubItems.Add(cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem));
-            item.SubItems.Add(datePicker.Text);
+            item.SubItems.Add(datePickerDateadded.Text);
             FinancelistView.Items.Add(item);
             if (item.Index % 2 == 0)
             { item.BackColor = Color.Gainsboro; }
@@ -75,7 +75,7 @@ namespace FRCApp
             { item.BackColor = Color.WhiteSmoke; }
             
             // Add entry to the incomeSourcesList
-            incomeSourcesList.Add(new IncomeSource((int)cmb_householdMember.SelectedValue, cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem), amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem)));
+            incomeSourcesList.Add(new IncomeSource((int)cmb_householdMember.SelectedValue, cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem), amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem),datePickerDateadded.Value, true));
             
             //clear the fields
             cmb_householdMember.SelectedIndex = -1;
@@ -111,7 +111,7 @@ namespace FRCApp
             var incomeSourcesAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
             foreach (IncomeSource source in incomeSourcesList)
             {
-                incomeSourcesAdapter.AddIncomeSource(source.householdMemberID, source.incomeSource, Decimal.Parse(source.amount), source.frequencyID);
+                incomeSourcesAdapter.AddIncomeSource(source.householdMemberID, source.incomeSource, Decimal.Parse(source.amount), source.frequencyID,source.dateAdded,source.isActive);
             }
             this.Close();
         }
@@ -172,9 +172,11 @@ namespace FRCApp
             public String amount;
             public String name;
             public String frequency;
+            public DateTime dateAdded;
+            public bool isActive;
             
             
-            public IncomeSource(int householdMemberID, String incomeSource, String amount, int frequencyID, String name, String frequency)
+            public IncomeSource(int householdMemberID, String incomeSource, String amount, int frequencyID, String name, String frequency,DateTime dateAdded,bool isActive)
             {
                 this.householdMemberID = householdMemberID;
                 this.frequencyID = frequencyID;
@@ -182,10 +184,12 @@ namespace FRCApp
                 this.amount = amount;
                 this.name = name;
                 this.frequency = frequency;
+                this.dateAdded = dateAdded;
+                this.isActive = isActive;
             }
 
             public override String ToString() {
-                return householdMemberID + " " + frequencyID + " " + incomeSource + " " + amount + " " + name + " " + frequency;
+                return householdMemberID + " " + frequencyID + " " + incomeSource + " " + amount + " " + name + " " + frequency+" " +dateAdded +" "+ isActive;
             }
         }
 
