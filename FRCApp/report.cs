@@ -43,12 +43,18 @@ namespace FRCApp
         private void SearchAssistance(int year)
         {
             DataSet1 ds = new DataSet1();
-            DataSet1.EFARequestsDataTable dt;
+            //DataSet1.EFARequestsDataTable dt;
 
-
-            var requestcnt = new DataSet1TableAdapters.EFASubrequestsTableAdapter().getRentReportbyYear(2015);
+            try
+            {
+                var requestcnt = new DataSet1TableAdapters.EFASubrequestsTableAdapter().getRentReportbyYear(2015);
+            }
+            catch (ConstraintException e)
+            {
+                MessageBox.Show(e.ToString());
+            }
             int ids = 0;
-            foreach (var cntRequest in requestcnt)
+        //    foreach (var cntRequest in requestcnt)
             {
                 ids++;
                 //  rent[i] =cntRequest.cntVal
@@ -58,5 +64,11 @@ namespace FRCApp
         { 
         
         }
+    }
+
+    public class MonthReport
+    {
+    
+    
     }
 }
