@@ -61,22 +61,13 @@ namespace FRCApp
                 MessageBox.Show(message);
                 return;
             }
-            
-            //Add the data to the listView
-            ListViewItem item = new ListViewItem(cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem));
-            item.SubItems.Add(cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem));
-            item.SubItems.Add(amountOfIncomeTextBox.Text);
-            item.SubItems.Add(cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem));
-            item.SubItems.Add(datePickerDateadded.Text);
-            FinancelistView.Items.Add(item);
-            if (item.Index % 2 == 0)
-            { item.BackColor = Color.Gainsboro; }
-            else
-            { item.BackColor = Color.WhiteSmoke; }
-            
-            // Add entry to the incomeSourcesList
-            incomeSourcesList.Add(new IncomeSource((int)cmb_householdMember.SelectedValue, cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem), amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem),datePickerDateadded.Value, true));
-            
+
+            // Add entry to the database
+            var source = new IncomeSource((int)cmb_householdMember.SelectedValue, cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem), amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem), datePickerDateadded.Value, true);
+            var incomeSourcesAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
+            incomeSourcesAdapter.AddIncomeSource(source.householdMemberID, source.incomeSource, Decimal.Parse(source.amount), source.frequencyID, source.dateAdded, source.isActive);
+            fillListViewFromDatabase();
+           
             //clear the fields
             cmb_householdMember.SelectedIndex = -1;
             cmb_incomeFreqs.SelectedIndex = -1;
@@ -85,35 +76,55 @@ namespace FRCApp
         }
 
         //removes the selected items from the FinanceListView
-        private void removeButton_Click(object sender, EventArgs e)
+        private void archiveButton_Click(object sender, EventArgs e)
         {
+            DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
             foreach (ListViewItem item in FinancelistView.SelectedItems)
             {
+              /*  incomeSourceAdapter.AddOrUpdateIncomeSource(item.Tag, item.
                 incomeSourcesList.RemoveAt(item.Index);
-                item.Remove();
-            }     
+                item.Remove();*/
+            }
         }
 
         //Gives the user a cancel button, and then closes the form if desired
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void doneButton_Click(object sender, EventArgs e)
         {
-            DialogResult messageBox = MessageBox.Show("Are you sure you want to cancel?", "", MessageBoxButtons.YesNo);
-            if (messageBox == DialogResult.Yes)
-            {
                 this.Close();
-            }
         }
 
-        // submits the data to the database
-        private void submitButton_Click(object sender, EventArgs e)
+        private void fillListViewFromDatabase()
         {
-
-            var incomeSourcesAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
-            foreach (IncomeSource source in incomeSourcesList)
+            FinancelistView.Items.Clear();
+            var householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
+            var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(householdID);
+            DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
+            
+            
+            foreach (DataRow householdMember in householdMembers.Rows)
             {
-                incomeSourcesAdapter.AddIncomeSource(source.householdMemberID, source.incomeSource, Decimal.Parse(source.amount), source.frequencyID,source.dateAdded,source.isActive);
+                var incomeDetails = incomeSourceAdapter.GetIncomeSourcesByHouseholdMemberID(Int32.Parse(householdMember["HouseholdMemberID"].ToString()));
+                foreach (DataRow row in incomeDetails.Rows)
+                {
+                    if ((bool)row["IsActive"])
+                    {
+                        ListViewItem item = new ListViewItem(householdMember["Name"].ToString());
+                        item.SubItems.Add(row["IncomeSource"].ToString());
+                        item.SubItems.Add(row["Amount"].ToString());
+                        DataSet1TableAdapters.IncomeFrequenciesTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter();
+                        String frequency = incomeAdapter.GetFrequencyByID(Int32.Parse(row["FrequencyID"].ToString())).ToString();
+                        item.SubItems.Add(frequency);
+                        item.Tag = row["IncomeSourceID"];
+
+                        //alternating row colors
+                        if (item.Index % 2 == 0)
+                        { item.BackColor = Color.Gainsboro; }
+                        else
+                        { item.BackColor = Color.WhiteSmoke; }
+                        FinancelistView.Items.Add(item);
+                    }
+                }
             }
-            this.Close();
         }
 
         private void FinanceForm_Load(object sender, EventArgs e)
@@ -143,28 +154,11 @@ namespace FRCApp
             cmb_incomeSourceType.DisplayMember = "IncomeSourceType";
 
             // Fill listview with any persons from the database
-            DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
-            foreach (DataRow householdMember in householdMembers.Rows)
-            {
-                var incomeDetails = incomeSourceAdapter.GetIncomeSourcesByHouseholdMemberID(Int32.Parse(householdMember["HouseholdMemberID"].ToString()));                
-                foreach (DataRow row in incomeDetails.Rows)
-                {
-                    if (!row["IncomeSource"].ToString().Equals(""))
-                    {
-                        ListViewItem item = new ListViewItem(householdMember["Name"].ToString());
-                        item.SubItems.Add(row["IncomeSource"].ToString());
-                        item.SubItems.Add(row["Amount"].ToString());
-                        DataSet1TableAdapters.IncomeFrequenciesTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter();
-                        String frequency = incomeAdapter.GetFrequencyByID(Int32.Parse(row["FrequencyID"].ToString())).ToString();
-                        item.SubItems.Add(frequency);
-                        item.Tag = row["IncomeSourceID"];
-                        FinancelistView.Items.Add(item);
-                    }
-                }                
-            }            
+            fillListViewFromDatabase();
         }
 
-        private class IncomeSource {
+        private class IncomeSource
+        {
 
             public int householdMemberID;
             public int frequencyID;
@@ -174,9 +168,9 @@ namespace FRCApp
             public String frequency;
             public DateTime dateAdded;
             public bool isActive;
-            
-            
-            public IncomeSource(int householdMemberID, String incomeSource, String amount, int frequencyID, String name, String frequency,DateTime dateAdded,bool isActive)
+
+
+            public IncomeSource(int householdMemberID, String incomeSource, String amount, int frequencyID, String name, String frequency, DateTime dateAdded, bool isActive)
             {
                 this.householdMemberID = householdMemberID;
                 this.frequencyID = frequencyID;
@@ -188,8 +182,9 @@ namespace FRCApp
                 this.isActive = isActive;
             }
 
-            public override String ToString() {
-                return householdMemberID + " " + frequencyID + " " + incomeSource + " " + amount + " " + name + " " + frequency+" " +dateAdded +" "+ isActive;
+            public override String ToString()
+            {
+                return householdMemberID + " " + frequencyID + " " + incomeSource + " " + amount + " " + name + " " + frequency + " " + dateAdded + " " + isActive;
             }
         }
 
