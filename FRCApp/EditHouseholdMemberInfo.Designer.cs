@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.SocialLabel = new System.Windows.Forms.Label();
@@ -35,16 +36,23 @@
             this.RelationshipLabel = new System.Windows.Forms.Label();
             this.RaceLabel = new System.Windows.Forms.Label();
             this.HealthCoverageLabel = new System.Windows.Forms.Label();
-            this.FistNameTextBox = new System.Windows.Forms.TextBox();
+            this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.SocialTextBox = new System.Windows.Forms.MaskedTextBox();
             this.BirthDateTextBox = new System.Windows.Forms.DateTimePicker();
             this.RelationshipTextBox = new System.Windows.Forms.TextBox();
             this.RaceBox = new System.Windows.Forms.ComboBox();
+            this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
+            this.dataSet1 = new FRCApp.DataSet1();
             this.no_radio_button = new System.Windows.Forms.RadioButton();
             this.yes_radio_button = new System.Windows.Forms.RadioButton();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // FirstNameLabel
@@ -110,12 +118,12 @@
             this.HealthCoverageLabel.TabIndex = 6;
             this.HealthCoverageLabel.Text = "Health Coverage";
             // 
-            // FistNameTextBox
+            // FirstNameTextBox
             // 
-            this.FistNameTextBox.Location = new System.Drawing.Point(156, 10);
-            this.FistNameTextBox.Name = "FistNameTextBox";
-            this.FistNameTextBox.Size = new System.Drawing.Size(196, 20);
-            this.FistNameTextBox.TabIndex = 7;
+            this.FirstNameTextBox.Location = new System.Drawing.Point(156, 10);
+            this.FirstNameTextBox.Name = "FirstNameTextBox";
+            this.FirstNameTextBox.Size = new System.Drawing.Size(196, 20);
+            this.FirstNameTextBox.TabIndex = 7;
             // 
             // LastNameTextBox
             // 
@@ -148,7 +156,7 @@
             // 
             // RaceBox
             // 
-            this.RaceBox.DisplayMember = "Race";
+            this.RaceBox.DataSource = this.racesBindingSource;
             this.RaceBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RaceBox.FormattingEnabled = true;
             this.RaceBox.Location = new System.Drawing.Point(156, 195);
@@ -156,6 +164,15 @@
             this.RaceBox.Size = new System.Drawing.Size(196, 21);
             this.RaceBox.TabIndex = 17;
             this.RaceBox.ValueMember = "Race";
+            // 
+            // racesTableAdapter
+            // 
+            this.racesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // no_radio_button
             // 
@@ -189,6 +206,7 @@
             this.UpdateButton.TabIndex = 67;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // CancelButton
             // 
@@ -199,6 +217,16 @@
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
+            // 
+            // racesBindingSource
+            // 
+            this.racesBindingSource.DataMember = "Races";
+            this.racesBindingSource.DataSource = this.dataSet1BindingSource;
             // 
             // EditHouseholdMemberInfo
             // 
@@ -214,7 +242,7 @@
             this.Controls.Add(this.BirthDateTextBox);
             this.Controls.Add(this.SocialTextBox);
             this.Controls.Add(this.LastNameTextBox);
-            this.Controls.Add(this.FistNameTextBox);
+            this.Controls.Add(this.FirstNameTextBox);
             this.Controls.Add(this.HealthCoverageLabel);
             this.Controls.Add(this.RaceLabel);
             this.Controls.Add(this.RelationshipLabel);
@@ -223,7 +251,12 @@
             this.Controls.Add(this.LastNameLabel);
             this.Controls.Add(this.FirstNameLabel);
             this.Name = "EditHouseholdMemberInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditHouseholdMemberInfo";
+            this.Load += new System.EventHandler(this.EditHouseholdMemberInfo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +271,7 @@
         private System.Windows.Forms.Label RelationshipLabel;
         private System.Windows.Forms.Label RaceLabel;
         private System.Windows.Forms.Label HealthCoverageLabel;
-        private System.Windows.Forms.TextBox FistNameTextBox;
+        private System.Windows.Forms.TextBox FirstNameTextBox;
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.MaskedTextBox SocialTextBox;
         private System.Windows.Forms.DateTimePicker BirthDateTextBox;
@@ -248,6 +281,10 @@
         private System.Windows.Forms.RadioButton yes_radio_button;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button CancelButton;
+        private DataSet1TableAdapters.RacesTableAdapter racesTableAdapter;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource dataSet1BindingSource;
+        private System.Windows.Forms.BindingSource racesBindingSource;
 
     }
 }
