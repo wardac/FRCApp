@@ -187,5 +187,22 @@ namespace FRCApp
 
             new EditHouseholdMemberInfo((int)HouseHoldForm_ListView_Summary.SelectedItems[0].Tag, houseHoldId).Show();
         }
+
+        private void HouseHoldForm_Activated(object sender, EventArgs e)
+        {
+            this.racesTableAdapter.Fill(this.dataSet1.Races);
+            fillListView();
+        }
+
+        private void HouseHoldForm_ListView_Summary_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (HouseHoldForm_ListView_Summary.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a household member");
+                return;
+            }
+
+            new EditHouseholdMemberInfo((int)HouseHoldForm_ListView_Summary.SelectedItems[0].Tag, houseHoldId).Show();
+        }
     }
 }

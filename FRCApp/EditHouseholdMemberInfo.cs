@@ -21,7 +21,6 @@ namespace FRCApp
             InitializeComponent();
             this.householdMemberId = householdMemberId;
             this.householdId = householdId;
-            populateForm();
         }
 
         /**
@@ -34,7 +33,7 @@ namespace FRCApp
             {
                 if ((int)row["HouseholdMemberID"] == householdMemberId)
                 {
-                    FistNameTextBox.Text = row["FirstName"].ToString();
+                    FirstNameTextBox.Text = row["FirstName"].ToString();
                     LastNameTextBox.Text = row["LastName"].ToString();
                     SocialTextBox.Text = row["LastFourSSN"].ToString();
                     BirthDateTextBox.Text = row["Birthdate"].ToString();
@@ -57,6 +56,34 @@ namespace FRCApp
          **/
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void EditHouseholdMemberInfo_Load(object sender, EventArgs e)
+        {
+            this.racesTableAdapter.Fill(this.dataSet1.Races);
+            RaceBox.SelectedIndex = -1;
+
+            populateForm();
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            // add ListView items to DataSet1 table
+            DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
+            adapter.AddOrUpdateHouseholdMembers(
+                householdMemberId,
+                householdId,
+                FirstNameTextBox.Text,
+                LastNameTextBox.Text,
+                System.DateTime.Parse(BirthDateTextBox.Text),
+                RelationshipTextBox.Text,
+                RaceBox.SelectedValue.ToString(),
+                !no_radio_button.Checked,
+                SocialTextBox.Text
+            );
+
+            // close form
             this.Close();
         }
     }

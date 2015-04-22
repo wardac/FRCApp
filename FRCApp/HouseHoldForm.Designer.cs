@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.title = new System.Windows.Forms.Panel();
+            this.editButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.HouseHoldFormDoneButton = new System.Windows.Forms.Button();
             this.HouseHoldForm_ListView_Summary = new System.Windows.Forms.ListView();
@@ -61,7 +62,6 @@
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
-            this.editButton = new System.Windows.Forms.Button();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -96,6 +96,16 @@
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(966, 420);
             this.title.TabIndex = 0;
+            // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(417, 382);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(75, 23);
+            this.editButton.TabIndex = 13;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // removeButton
             // 
@@ -139,6 +149,7 @@
             this.HouseHoldForm_ListView_Summary.TabIndex = 12;
             this.HouseHoldForm_ListView_Summary.UseCompatibleStateImageBehavior = false;
             this.HouseHoldForm_ListView_Summary.View = System.Windows.Forms.View.Details;
+            this.HouseHoldForm_ListView_Summary.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.HouseHoldForm_ListView_Summary_MouseDoubleClick);
             // 
             // First
             // 
@@ -360,16 +371,6 @@
             // 
             this.racesTableAdapter.ClearBeforeFill = true;
             // 
-            // editButton
-            // 
-            this.editButton.Location = new System.Drawing.Point(417, 382);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(75, 23);
-            this.editButton.TabIndex = 13;
-            this.editButton.Text = "Edit";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            // 
             // HouseHoldForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,7 +379,7 @@
             this.Controls.Add(this.title);
             this.Name = "HouseHoldForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.HouseHoldForm_Load);
+            this.Activated += new System.EventHandler(this.HouseHoldForm_Activated);
             this.title.ResumeLayout(false);
             this.title.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
