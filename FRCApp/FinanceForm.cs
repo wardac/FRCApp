@@ -67,7 +67,7 @@ namespace FRCApp
             var incomeSourcesAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
             incomeSourcesAdapter.AddIncomeSource(source.householdMemberID, source.incomeSource, Decimal.Parse(source.amount), source.frequencyID, source.dateAdded, source.isActive);
             fillListViewFromDatabase();
-           
+
             //clear the fields
             cmb_householdMember.SelectedIndex = -1;
             cmb_incomeFreqs.SelectedIndex = -1;
@@ -78,19 +78,26 @@ namespace FRCApp
         //removes the selected items from the FinanceListView
         private void archiveButton_Click(object sender, EventArgs e)
         {
+            var householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
+            var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(householdID);
             DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
-            foreach (ListViewItem item in FinancelistView.SelectedItems)
+
+
+            foreach (DataRow householdMember in householdMembers.Rows)
             {
-              /*  incomeSourceAdapter.AddOrUpdateIncomeSource(item.Tag, item.
-                incomeSourcesList.RemoveAt(item.Index);
-                item.Remove();*/
+
+                foreach (ListViewItem item in FinancelistView.SelectedItems)
+                {
+                    MessageBox.Show(item.SubItems[4].Text);
+                    incomeSourceAdapter.AddOrUpdateIncomeSources((int)item.Tag, Int32.Parse(householdMember["HouseholdMemberID"].ToString()), item.SubItems[1].Text, Decimal.Parse(item.SubItems[2].Text), Int32.Parse(item.SubItems[3].Text), DateTime.Parse(item.SubItems[4].Text), false, DateTime.Now);
+                }
             }
         }
 
         //Gives the user a cancel button, and then closes the form if desired
         private void doneButton_Click(object sender, EventArgs e)
         {
-                this.Close();
+            this.Close();
         }
 
         private void fillListViewFromDatabase()
@@ -99,8 +106,8 @@ namespace FRCApp
             var householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
             var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(householdID);
             DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
-            
-            
+
+
             foreach (DataRow householdMember in householdMembers.Rows)
             {
                 var incomeDetails = incomeSourceAdapter.GetIncomeSourcesByHouseholdMemberID(Int32.Parse(householdMember["HouseholdMemberID"].ToString()));
@@ -115,6 +122,7 @@ namespace FRCApp
                         String frequency = incomeAdapter.GetFrequencyByID(Int32.Parse(row["FrequencyID"].ToString())).ToString();
                         item.SubItems.Add(frequency);
                         item.Tag = row["IncomeSourceID"];
+                        item.SubItems.Add(row["DateAdded"].ToString());
 
                         //alternating row colors
                         if (item.Index % 2 == 0)
