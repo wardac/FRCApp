@@ -42,9 +42,8 @@
             this.incomeAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.incomeFrequency = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.submitButton = new System.Windows.Forms.Button();
-            this.removeButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.archiveButton = new System.Windows.Forms.Button();
+            this.doneButton = new System.Windows.Forms.Button();
             this.cmb_householdMember = new System.Windows.Forms.ComboBox();
             this.cmb_incomeFreqs = new System.Windows.Forms.ComboBox();
             this.cmb_incomeSourceType = new System.Windows.Forms.ComboBox();
@@ -54,10 +53,9 @@
             // 
             // addButton
             // 
-            this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addButton.BackColor = System.Drawing.Color.Teal;
             this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(321, 291);
+            this.addButton.Location = new System.Drawing.Point(196, 289);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 4;
@@ -182,44 +180,30 @@
             // 
             this.Date.Text = "Date";
             // 
-            // submitButton
+            // archiveButton
             // 
-            this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.submitButton.BackColor = System.Drawing.Color.Teal;
-            this.submitButton.ForeColor = System.Drawing.Color.White;
-            this.submitButton.Location = new System.Drawing.Point(737, 291);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(75, 23);
-            this.submitButton.TabIndex = 7;
-            this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = false;
-            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            this.archiveButton.BackColor = System.Drawing.Color.Teal;
+            this.archiveButton.ForeColor = System.Drawing.Color.White;
+            this.archiveButton.Location = new System.Drawing.Point(317, 289);
+            this.archiveButton.Name = "archiveButton";
+            this.archiveButton.Size = new System.Drawing.Size(75, 23);
+            this.archiveButton.TabIndex = 6;
+            this.archiveButton.Text = "Archive";
+            this.archiveButton.UseVisualStyleBackColor = false;
+            this.archiveButton.Click += new System.EventHandler(this.archiveButton_Click);
             // 
-            // removeButton
+            // doneButton
             // 
-            this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.removeButton.BackColor = System.Drawing.Color.Teal;
-            this.removeButton.ForeColor = System.Drawing.Color.White;
-            this.removeButton.Location = new System.Drawing.Point(414, 291);
-            this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(75, 23);
-            this.removeButton.TabIndex = 6;
-            this.removeButton.Text = "Remove";
-            this.removeButton.UseVisualStyleBackColor = false;
-            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.BackColor = System.Drawing.Color.Teal;
-            this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(818, 291);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 8;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.doneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.doneButton.BackColor = System.Drawing.Color.Teal;
+            this.doneButton.ForeColor = System.Drawing.Color.White;
+            this.doneButton.Location = new System.Drawing.Point(814, 291);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(75, 23);
+            this.doneButton.TabIndex = 8;
+            this.doneButton.Text = "Done";
+            this.doneButton.UseVisualStyleBackColor = false;
+            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
             // 
             // cmb_householdMember
             // 
@@ -277,9 +261,8 @@
             this.Controls.Add(this.cmb_incomeSourceType);
             this.Controls.Add(this.cmb_incomeFreqs);
             this.Controls.Add(this.cmb_householdMember);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.removeButton);
-            this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.doneButton);
+            this.Controls.Add(this.archiveButton);
             this.Controls.Add(this.FinancelistView);
             this.Controls.Add(this.FinanceFormNumTimesRecievedlabel);
             this.Controls.Add(this.FinanceFormSourceOfIncomelabel);
@@ -311,9 +294,8 @@
         private System.Windows.Forms.ColumnHeader incomeSource;
         private System.Windows.Forms.ColumnHeader incomeAmount;
         private System.Windows.Forms.ColumnHeader incomeFrequency;
-        private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.Button removeButton;
-        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button archiveButton;
+        private System.Windows.Forms.Button doneButton;
         private System.Windows.Forms.ComboBox cmb_householdMember;
         private System.Windows.Forms.ComboBox cmb_incomeFreqs;
         private System.Windows.Forms.ColumnHeader name;
