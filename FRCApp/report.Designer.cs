@@ -39,14 +39,34 @@
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "first time applicant at FRC"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Goverment Assistance"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Housing/Rent/Mortgage"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Employment"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Electric"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Mixed"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Water"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
-            "No-income"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Natural Gas/Heating Fuel"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Prescriptions"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, null);
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Transportation"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Important Documents"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, null);
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Homelessness"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
+            "car/home repair/AC/Work clothes"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, null);
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Other"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Goverment Assistance"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Employment"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Mixed"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
+            "No-income"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
             "Other Income"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             this.label1 = new System.Windows.Forms.Label();
             this.lstViewDemographic = new System.Windows.Forms.ListView();
@@ -65,7 +85,6 @@
             this.Dec = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.YTDtotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lstviewAssistance = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TypeAssistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tjan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tfeb = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -81,7 +100,7 @@
             this.Tdec = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tytd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
-            this.lstIncomeReport = new System.Windows.Forms.ListView();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.PrimaryIncome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pjan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pfeb = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -221,7 +240,6 @@
             // lstviewAssistance
             // 
             this.lstviewAssistance.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
             this.TypeAssistance,
             this.Tjan,
             this.Tfeb,
@@ -236,18 +254,23 @@
             this.Tnov,
             this.Tdec,
             this.Tytd});
-            this.lstviewAssistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstviewAssistance.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15});
             this.lstviewAssistance.Location = new System.Drawing.Point(77, 217);
             this.lstviewAssistance.Name = "lstviewAssistance";
             this.lstviewAssistance.Size = new System.Drawing.Size(801, 210);
             this.lstviewAssistance.TabIndex = 2;
             this.lstviewAssistance.UseCompatibleStateImageBehavior = false;
             this.lstviewAssistance.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "";
-            this.columnHeader1.Width = 2;
             // 
             // TypeAssistance
             // 
@@ -276,36 +299,43 @@
             // 
             // Tmay
             // 
+            this.Tmay.DisplayIndex = 11;
             this.Tmay.Text = "May";
             this.Tmay.Width = 40;
             // 
             // TJun
             // 
+            this.TJun.DisplayIndex = 5;
             this.TJun.Text = "Jun";
             this.TJun.Width = 40;
             // 
             // Tjul
             // 
+            this.Tjul.DisplayIndex = 6;
             this.Tjul.Text = "Jul";
             this.Tjul.Width = 40;
             // 
             // Taug
             // 
+            this.Taug.DisplayIndex = 7;
             this.Taug.Text = "Aug";
             this.Taug.Width = 40;
             // 
             // Tsept
             // 
+            this.Tsept.DisplayIndex = 8;
             this.Tsept.Text = "Sept";
             this.Tsept.Width = 40;
             // 
             // Toct
             // 
+            this.Toct.DisplayIndex = 9;
             this.Toct.Text = "Oct";
             this.Toct.Width = 40;
             // 
             // Tnov
             // 
+            this.Tnov.DisplayIndex = 10;
             this.Tnov.Text = "Nov";
             this.Tnov.Width = 40;
             // 
@@ -328,9 +358,9 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Types of Assistance Requested";
             // 
-            // lstIncomeReport
+            // listView1
             // 
-            this.lstIncomeReport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PrimaryIncome,
             this.Pjan,
             this.Pfeb,
@@ -345,18 +375,18 @@
             this.Pnov,
             this.Pdec,
             this.Pytd});
-            this.lstIncomeReport.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10});
-            this.lstIncomeReport.Location = new System.Drawing.Point(77, 472);
-            this.lstIncomeReport.Name = "lstIncomeReport";
-            this.lstIncomeReport.Size = new System.Drawing.Size(801, 135);
-            this.lstIncomeReport.TabIndex = 4;
-            this.lstIncomeReport.UseCompatibleStateImageBehavior = false;
-            this.lstIncomeReport.View = System.Windows.Forms.View.Details;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19,
+            listViewItem20});
+            this.listView1.Location = new System.Drawing.Point(77, 472);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(801, 135);
+            this.listView1.TabIndex = 4;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // PrimaryIncome
             // 
@@ -484,7 +514,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DtpickerYear);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lstIncomeReport);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lstviewAssistance);
             this.Controls.Add(this.lstViewDemographic);
@@ -531,7 +561,7 @@
         private System.Windows.Forms.ColumnHeader Tdec;
         private System.Windows.Forms.ColumnHeader Tytd;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView lstIncomeReport;
+        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader PrimaryIncome;
         private System.Windows.Forms.ColumnHeader Pjan;
         private System.Windows.Forms.ColumnHeader Pfeb;
@@ -550,6 +580,5 @@
         private System.Windows.Forms.DateTimePicker DtpickerYear;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Search;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

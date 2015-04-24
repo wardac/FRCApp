@@ -45,38 +45,26 @@ namespace FRCApp
             var request = new DataSet1TableAdapters.RequestsReportByYearTableAdapter().GetRequestsReportByYear(year);
             foreach(var cntrequest in request)
             {
-   
-                        ListViewItem item = new ListViewItem();
-                        String[] data = {cntrequest.Type , cntrequest.January.ToString(), cntrequest.February.ToString(), cntrequest.March.ToString(), cntrequest.April.ToString(), cntrequest.May.ToString(), cntrequest.June.ToString(), cntrequest.July.ToString(), cntrequest.August.ToString(), cntrequest.September.ToString(), cntrequest.October.ToString(), cntrequest.November.ToString(), cntrequest.December.ToString(), cntrequest.YTD.ToString() };
+                for (int inc = 0; inc < 10; inc++)
+                {
+                    if ((lstviewAssistance.Items[inc].Text).Equals(cntrequest.Type))
+                    {
+                        ListViewItem item = lstviewAssistance.Items[inc];
+                        String[] data = { cntrequest.January.ToString(), cntrequest.February.ToString(), cntrequest.March.ToString(), cntrequest.April.ToString(), cntrequest.May.ToString(), cntrequest.June.ToString(), cntrequest.July.ToString(), cntrequest.August.ToString(), cntrequest.September.ToString(), cntrequest.October.ToString(), cntrequest.November.ToString(), cntrequest.December.ToString(), cntrequest.YTD.ToString() };
                         item.SubItems.AddRange(data);
-                        lstIncomeReport.Items.Add(item);
-                        if (item.Index % 2 == 0)
-                        { item.BackColor = Color.Gainsboro; }
-                        else
-                        { item.BackColor = Color.WhiteSmoke; }
+                    }
+                }
             }
 
         }
         private void SearchPrimaryIncome(int year)
-        {
-            var request = new DataSet1TableAdapters.RequestsReportByYearTableAdapter().GetRequestsReportByYear(year);
-            foreach (var cntrequest in request)
-            {
-
-                ListViewItem item = new ListViewItem();
-                String[] data = { cntrequest.Type, cntrequest.January.ToString(), cntrequest.February.ToString(), cntrequest.March.ToString(), cntrequest.April.ToString(), cntrequest.May.ToString(), cntrequest.June.ToString(), cntrequest.July.ToString(), cntrequest.August.ToString(), cntrequest.September.ToString(), cntrequest.October.ToString(), cntrequest.November.ToString(), cntrequest.December.ToString(), cntrequest.YTD.ToString() };
-                item.SubItems.AddRange(data);
-                lstviewAssistance.Items.Add(item);
-                if (item.Index % 2 == 0)
-                { item.BackColor = Color.Gainsboro; }
-                else
-                { item.BackColor = Color.WhiteSmoke; }
-            }
+        { 
+        
         }
 
         private void Search_Click(object sender, EventArgs e)
         {
-            SearchRequest(this.DtpickerYear.Value.Year);
+
         }
     }
 

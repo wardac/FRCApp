@@ -49,7 +49,7 @@
             this.no_radio_button = new System.Windows.Forms.RadioButton();
             this.yes_radio_button = new System.Windows.Forms.RadioButton();
             this.UpdateButton = new System.Windows.Forms.Button();
-            this.ClButton = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -219,15 +219,15 @@
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
-            // ClButton
+            // CancelButton
             // 
-            this.ClButton.Location = new System.Drawing.Point(184, 277);
-            this.ClButton.Name = "ClButton";
-            this.ClButton.Size = new System.Drawing.Size(75, 23);
-            this.ClButton.TabIndex = 68;
-            this.ClButton.Text = "Cancel";
-            this.ClButton.UseVisualStyleBackColor = true;
-            this.ClButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CancelButton.Location = new System.Drawing.Point(184, 277);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelButton.TabIndex = 68;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // EditHouseholdMemberInfo
             // 
@@ -235,7 +235,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 312);
-            this.Controls.Add(this.ClButton);
+            this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.no_radio_button);
             this.Controls.Add(this.yes_radio_button);
@@ -282,7 +282,7 @@
         private System.Windows.Forms.RadioButton no_radio_button;
         private System.Windows.Forms.RadioButton yes_radio_button;
         private System.Windows.Forms.Button UpdateButton;
-        private System.Windows.Forms.Button ClButton;
+        private System.Windows.Forms.Button CancelButton;
         private DataSet1TableAdapters.RacesTableAdapter racesTableAdapter;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource dataSet1BindingSource;
