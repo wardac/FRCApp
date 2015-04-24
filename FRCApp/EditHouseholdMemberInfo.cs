@@ -69,6 +69,13 @@ namespace FRCApp
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
+            String message = validateForm();
+            if (message != "OK")
+            {
+                MessageBox.Show(message);
+                return;
+            }
+
             // add ListView items to DataSet1 table
             DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
             adapter.AddOrUpdateHouseholdMembers(
@@ -85,6 +92,52 @@ namespace FRCApp
 
             // close form
             this.Close();
+        }
+
+        /**
+        * Check to ensure each form field has been given a value and household member does not already exist
+        * returns a message containing information about which field needs to be filled in
+        **/
+        private string validateForm()
+        {
+            if (!textExists(FirstNameTextBox.Text))
+            {
+                return "Enter a first name";
+            }
+            else if (!textExists(LastNameTextBox.Text))
+            {
+                return "Enter a last name";
+            }
+            else if (!textExists(SocialTextBox.Text) || SocialTextBox.Text.Length != 4)
+            {
+                return "Enter a valid SSN";
+            }
+            else if (!textExists(BirthDateTextBox.Text))
+            {
+                return "Enter a birth date";
+            }
+            else if (!textExists(RelationshipTextBox.Text))
+            {
+                return "Enter a relationship to the applicant";
+            }
+            else if (!textExists((string)RaceBox.SelectedValue))
+            {
+                return "Enter a Ethnicity";
+            }
+            else if (!yes_radio_button.Checked && !no_radio_button.Checked)
+            {
+                return "Enter health insurance info";
+            }
+
+            return "OK";
+        }
+
+        /**
+         * Check if text exists inside a textbox. Used for validating our form
+         **/
+        private bool textExists(string str)
+        {
+            return str != null && str != "";
         }
     }
 }
