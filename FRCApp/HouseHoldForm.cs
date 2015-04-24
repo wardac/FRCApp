@@ -44,6 +44,7 @@ namespace FRCApp
                     item.SubItems.Add(row["Relationship"].ToString());
                     item.SubItems.Add(row["Race"].ToString());
                     item.SubItems.Add(row["HealthCoverage"].ToString());
+                    item.SubItems.Add(row["IsActive"].ToString());
                     item.Tag = row["HouseholdMemberID"];
                     HouseHoldForm_ListView_Summary.Items.Add(item);
                 }

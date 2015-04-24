@@ -62,6 +62,7 @@
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
+            this.IsActive = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.archivedCheckBox = new System.Windows.Forms.CheckBox();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
@@ -71,6 +72,9 @@
             // 
             // title
             // 
+            this.title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.title.BackColor = System.Drawing.Color.Lavender;
             this.title.Controls.Add(this.archivedCheckBox);
             this.title.Controls.Add(this.HouseHoldFormEthnicityListBox);
@@ -96,7 +100,7 @@
             this.title.Controls.Add(this.HouseHoldFormFirstName);
             this.title.Location = new System.Drawing.Point(0, 4);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(966, 341);
+            this.title.Size = new System.Drawing.Size(1018, 341);
             this.title.TabIndex = 0;
             // 
             // HouseHoldFormEthnicityListBox
@@ -131,19 +135,21 @@
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(411, 307);
+            this.editButton.BackColor = System.Drawing.Color.Teal;
+            this.editButton.ForeColor = System.Drawing.Color.White;
+            this.editButton.Location = new System.Drawing.Point(309, 241);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(75, 23);
             this.editButton.TabIndex = 13;
             this.editButton.Text = "Edit";
-            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.UseVisualStyleBackColor = false;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // archiveButton
             // 
             this.archiveButton.BackColor = System.Drawing.Color.Teal;
             this.archiveButton.ForeColor = System.Drawing.Color.White;
-            this.archiveButton.Location = new System.Drawing.Point(315, 241);
+            this.archiveButton.Location = new System.Drawing.Point(228, 241);
             this.archiveButton.Name = "archiveButton";
             this.archiveButton.Size = new System.Drawing.Size(75, 23);
             this.archiveButton.TabIndex = 9;
@@ -153,9 +159,10 @@
             // 
             // HouseHoldFormDoneButton
             // 
+            this.HouseHoldFormDoneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.HouseHoldFormDoneButton.BackColor = System.Drawing.Color.Teal;
             this.HouseHoldFormDoneButton.ForeColor = System.Drawing.Color.White;
-            this.HouseHoldFormDoneButton.Location = new System.Drawing.Point(874, 307);
+            this.HouseHoldFormDoneButton.Location = new System.Drawing.Point(931, 307);
             this.HouseHoldFormDoneButton.Name = "HouseHoldFormDoneButton";
             this.HouseHoldFormDoneButton.Size = new System.Drawing.Size(75, 23);
             this.HouseHoldFormDoneButton.TabIndex = 11;
@@ -165,6 +172,9 @@
             // 
             // HouseHoldForm_ListView_Summary
             // 
+            this.HouseHoldForm_ListView_Summary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.HouseHoldForm_ListView_Summary.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.First,
             this.Last,
@@ -172,12 +182,13 @@
             this.BirthDate,
             this.Relationship,
             this.Ethnicity,
-            this.Coverage});
+            this.Coverage,
+            this.IsActive});
             this.HouseHoldForm_ListView_Summary.FullRowSelect = true;
             this.HouseHoldForm_ListView_Summary.Location = new System.Drawing.Point(411, 41);
             this.HouseHoldForm_ListView_Summary.MultiSelect = false;
             this.HouseHoldForm_ListView_Summary.Name = "HouseHoldForm_ListView_Summary";
-            this.HouseHoldForm_ListView_Summary.Size = new System.Drawing.Size(538, 260);
+            this.HouseHoldForm_ListView_Summary.Size = new System.Drawing.Size(595, 260);
             this.HouseHoldForm_ListView_Summary.TabIndex = 12;
             this.HouseHoldForm_ListView_Summary.UseCompatibleStateImageBehavior = false;
             this.HouseHoldForm_ListView_Summary.View = System.Windows.Forms.View.Details;
@@ -335,7 +346,7 @@
             // 
             this.btnHouseholdMemberAdd.BackColor = System.Drawing.Color.Teal;
             this.btnHouseholdMemberAdd.ForeColor = System.Drawing.Color.White;
-            this.btnHouseholdMemberAdd.Location = new System.Drawing.Point(234, 241);
+            this.btnHouseholdMemberAdd.Location = new System.Drawing.Point(147, 241);
             this.btnHouseholdMemberAdd.Name = "btnHouseholdMemberAdd";
             this.btnHouseholdMemberAdd.Size = new System.Drawing.Size(75, 23);
             this.btnHouseholdMemberAdd.TabIndex = 8;
@@ -374,10 +385,15 @@
             // 
             this.racesTableAdapter.ClearBeforeFill = true;
             // 
+            // IsActive
+            // 
+            this.IsActive.Text = "Is Active";
+            // 
             // archivedCheckBox
             // 
+            this.archivedCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.archivedCheckBox.AutoSize = true;
-            this.archivedCheckBox.Location = new System.Drawing.Point(825, 18);
+            this.archivedCheckBox.Location = new System.Drawing.Point(882, 12);
             this.archivedCheckBox.Name = "archivedCheckBox";
             this.archivedCheckBox.Size = new System.Drawing.Size(124, 17);
             this.archivedCheckBox.TabIndex = 14;
@@ -389,7 +405,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 345);
+            this.ClientSize = new System.Drawing.Size(1018, 345);
             this.Controls.Add(this.title);
             this.Name = "HouseHoldForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -439,6 +455,7 @@
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.MaskedTextBox HouseHoldFormlast4DigitsOfSsnTextBox;
         private System.Windows.Forms.ComboBox HouseHoldFormEthnicityListBox;
+        private System.Windows.Forms.ColumnHeader IsActive;
         private System.Windows.Forms.CheckBox archivedCheckBox;
     }
 }
