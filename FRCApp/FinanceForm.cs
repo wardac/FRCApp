@@ -86,12 +86,20 @@ namespace FRCApp
             foreach (DataRow householdMember in householdMembers.Rows)
             {
                 foreach (ListViewItem item in FinancelistView.SelectedItems)
-                {   
+                {
                     foreach (DataRow freq in frequencyRow)
                     {
                         if (freq["Frequency"].ToString() == item.SubItems[3].Text)
                         {
-                            incomeSourceAdapter.AddOrUpdateIncomeSources((int)item.Tag, Int32.Parse(householdMember["HouseholdMemberID"].ToString()), item.SubItems[1].Text, Decimal.Parse(item.SubItems[2].Text), Int32.Parse(freq["IncomeFrequencyID"].ToString()), DateTime.Parse(item.SubItems[4].Text), false, DateTime.Now);
+                            incomeSourceAdapter.AddOrUpdateIncomeSources(
+                                (int)item.Tag, 
+                                Int32.Parse(householdMember["HouseholdMemberID"].ToString()), 
+                                item.SubItems[1].Text, Decimal.Parse(item.SubItems[2].Text), 
+                                Int32.Parse(freq["IncomeFrequencyID"].ToString()), 
+                                DateTime.Parse(item.SubItems[4].Text), 
+                                false, 
+                                DateTime.Now
+                            );
                         }
                     }
                 }

@@ -35,15 +35,18 @@ namespace FRCApp
             DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
             foreach (DataRow row in adapter.getHouseholdMembersById(houseHoldId).Rows)
             {
-                ListViewItem item = new ListViewItem(row["FirstName"].ToString());
-                item.SubItems.Add(row["LastName"].ToString());
-                item.SubItems.Add(row["LastFourSSN"].ToString());
-                item.SubItems.Add(row["Birthdate"].ToString());
-                item.SubItems.Add(row["Relationship"].ToString());
-                item.SubItems.Add(row["Race"].ToString());
-                item.SubItems.Add(row["HealthCoverage"].ToString());
-                item.Tag = row["HouseholdMemberID"];
-                HouseHoldForm_ListView_Summary.Items.Add(item);
+                if (archivedCheckBox.Checked || (bool)row["IsActive"])
+                {
+                    ListViewItem item = new ListViewItem(row["FirstName"].ToString());
+                    item.SubItems.Add(row["LastName"].ToString());
+                    item.SubItems.Add(row["LastFourSSN"].ToString());
+                    item.SubItems.Add(row["Birthdate"].ToString());
+                    item.SubItems.Add(row["Relationship"].ToString());
+                    item.SubItems.Add(row["Race"].ToString());
+                    item.SubItems.Add(row["HealthCoverage"].ToString());
+                    item.Tag = row["HouseholdMemberID"];
+                    HouseHoldForm_ListView_Summary.Items.Add(item);
+                }
             }
         }
 
@@ -157,10 +160,46 @@ namespace FRCApp
          **/
         private void removeButton_Click(object sender, EventArgs e)
         {
+            // archive household member's income sources
+            DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
             foreach (ListViewItem item in HouseHoldForm_ListView_Summary.SelectedItems)
             {
-                item.Remove();
+                var incomeDetails = incomeSourceAdapter.GetIncomeSourcesByHouseholdMemberID(Int32.Parse(item.Tag.ToString()));
+                foreach (DataRow row in incomeDetails.Rows)
+                {
+                    incomeSourceAdapter.AddOrUpdateIncomeSources(
+                        Int32.Parse(row["IncomeSourceID"].ToString()),
+                        Int32.Parse(row["HouseholdMemberID"].ToString()),
+                        row["IncomeSource"].ToString(),
+                        Decimal.Parse(row["Amount"].ToString()),
+                        Int32.Parse(row["FrequencyID"].ToString()),
+                        DateTime.Parse(row["DateAdded"].ToString()),
+                        false, // not active
+                        DateTime.Now // date archived
+                    );
+                }
             }
+
+
+            // archive household member
+            DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
+            foreach (ListViewItem item in HouseHoldForm_ListView_Summary.SelectedItems)
+            {
+                adapter.AddOrUpdateHouseholdMembers(
+                    Int32.Parse(item.Tag.ToString()),
+                    houseHoldId,
+                    item.SubItems[0].Text, // first name
+                    item.SubItems[1].Text, // last name
+                    DateTime.Parse(item.SubItems[3].Text), // birth date
+                    item.SubItems[4].Text, // relationship
+                    item.SubItems[5].Text, // race
+                    Boolean.Parse(item.SubItems[6].Text), // health care coverage
+                    item.SubItems[2].Text, // last 4 SSN
+                    false, // not active
+                    DateTime.Now // date archived
+                );
+            }
+            fillListView();
         }
 
         /**
@@ -192,6 +231,11 @@ namespace FRCApp
             }
 
             new EditHouseholdMemberInfo((int)HouseHoldForm_ListView_Summary.SelectedItems[0].Tag, houseHoldId).Show();
+        }
+
+        private void archivedCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            fillListView();
         }
     }
 }
