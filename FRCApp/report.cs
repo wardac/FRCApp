@@ -42,7 +42,7 @@ namespace FRCApp
 
         private void SearchRequest(int year)
         {
-            var request = new DataSet1TableAdapters.RequestsReportByYearTableAdapter().GetRequestReportByYear(year);
+            var request = new DataSet1TableAdapters.RequestsReportByYearTableAdapter().GetRequestsReportByYear(year);
             int inc =0;
             foreach(var cntrequest in request)
             {
