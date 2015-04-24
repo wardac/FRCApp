@@ -44,7 +44,8 @@ namespace FRCApp
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-
+            this.login_username.Text = "john";
+            this.login_Password.Text = "doe";
         }
     }
 }

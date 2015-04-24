@@ -43,15 +43,16 @@ namespace FRCApp
         private void SearchRequest(int year)
         {
             var request = new DataSet1TableAdapters.RequestsReportByYearTableAdapter().GetRequestsReportByYear(year);
-            int inc =0;
             foreach(var cntrequest in request)
             {
-                if ((lstviewAssistance.Items[inc].Text).Equals(cntrequest.Type))
+                for (int inc = 0; inc < 10; inc++)
                 {
-                    ListViewItem item = lstviewAssistance.Items[inc];
-                    String[] data = { cntrequest.January.ToString(), cntrequest.February.ToString(), cntrequest.March.ToString(), cntrequest.April.ToString(), cntrequest.May.ToString(), cntrequest.June.ToString(), cntrequest.July.ToString(), cntrequest.August.ToString(), cntrequest.September.ToString(), cntrequest.October.ToString(), cntrequest.November.ToString(), cntrequest.December.ToString(), cntrequest.YTD.ToString() };
-                    item.SubItems.AddRange(data);
-                    inc++;
+                    if ((lstviewAssistance.Items[inc].Text).Equals(cntrequest.Type))
+                    {
+                        ListViewItem item = lstviewAssistance.Items[inc];
+                        String[] data = { cntrequest.January.ToString(), cntrequest.February.ToString(), cntrequest.March.ToString(), cntrequest.April.ToString(), cntrequest.May.ToString(), cntrequest.June.ToString(), cntrequest.July.ToString(), cntrequest.August.ToString(), cntrequest.September.ToString(), cntrequest.October.ToString(), cntrequest.November.ToString(), cntrequest.December.ToString(), cntrequest.YTD.ToString() };
+                        item.SubItems.AddRange(data);
+                    }
                 }
             }
 

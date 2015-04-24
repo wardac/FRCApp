@@ -43,20 +43,21 @@
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "Electric"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Water"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Water"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Natural Gas/Heating Fuel"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+            "Natural Gas/Heating Fuel"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Prescriptions"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
+            "Prescriptions"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, null);
             System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Transportation"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, null);
+            "Transportation"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
             System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Important Documents"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
+            "Important Documents"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, null);
             System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Homelessness"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, null);
+            "Homelessness"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
             System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
-            "car/home repair/AC/Work clothes"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Other");
+            "car/home repair/AC/Work clothes"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, null);
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Other"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.White, null);
             System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "Goverment Assistance"}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
