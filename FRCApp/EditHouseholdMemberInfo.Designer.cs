@@ -42,17 +42,17 @@
             this.BirthDateTextBox = new System.Windows.Forms.DateTimePicker();
             this.RelationshipTextBox = new System.Windows.Forms.TextBox();
             this.RaceBox = new System.Windows.Forms.ComboBox();
-            this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
+            this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new FRCApp.DataSet1();
+            this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
             this.no_radio_button = new System.Windows.Forms.RadioButton();
             this.yes_radio_button = new System.Windows.Forms.RadioButton();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // FirstNameLabel
@@ -157,6 +157,7 @@
             // RaceBox
             // 
             this.RaceBox.DataSource = this.racesBindingSource;
+            this.RaceBox.DisplayMember = "Race";
             this.RaceBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RaceBox.FormattingEnabled = true;
             this.RaceBox.Location = new System.Drawing.Point(156, 195);
@@ -165,14 +166,24 @@
             this.RaceBox.TabIndex = 17;
             this.RaceBox.ValueMember = "Race";
             // 
-            // racesTableAdapter
+            // racesBindingSource
             // 
-            this.racesTableAdapter.ClearBeforeFill = true;
+            this.racesBindingSource.DataMember = "Races";
+            this.racesBindingSource.DataSource = this.dataSet1BindingSource;
+            // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
             // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // racesTableAdapter
+            // 
+            this.racesTableAdapter.ClearBeforeFill = true;
             // 
             // no_radio_button
             // 
@@ -218,18 +229,9 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // dataSet1BindingSource
-            // 
-            this.dataSet1BindingSource.DataSource = this.dataSet1;
-            this.dataSet1BindingSource.Position = 0;
-            // 
-            // racesBindingSource
-            // 
-            this.racesBindingSource.DataMember = "Races";
-            this.racesBindingSource.DataSource = this.dataSet1BindingSource;
-            // 
             // EditHouseholdMemberInfo
             // 
+            this.AcceptButton = this.UpdateButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 312);
@@ -254,9 +256,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditHouseholdMemberInfo";
             this.Load += new System.EventHandler(this.EditHouseholdMemberInfo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -80,7 +80,7 @@ namespace FRCApp
             HouseHoldFormlast4DigitsOfSsnTextBox.Clear();
             HouseHoldFormRelationshipToApplicant.Clear();
             HouseHoldFormRelationshipToApplicant.Clear();
-            HouseHoldFormEthnicityListBox.ClearSelected();
+            HouseHoldFormEthnicityListBox.SelectedIndex = -1;
             HouseHoldFormRadioButtonNo.Checked = false;
             HouseHoldFormRadioButtonYes.Checked = false;
 
@@ -158,19 +158,6 @@ namespace FRCApp
             foreach (ListViewItem item in HouseHoldForm_ListView_Summary.SelectedItems)
             {
                 item.Remove();
-            }
-        }
-
-        /**
-         * Restrict the ssn text box to only accept numbers
-         **/
-        private void HouseHoldFormlast4DigitsOfSsnTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-
-            if (!Char.IsDigit(ch) && ch != BACKSPACE && ch != DELETE)
-            {
-                e.Handled = true;
             }
         }
 
