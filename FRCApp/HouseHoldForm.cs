@@ -71,7 +71,9 @@ namespace FRCApp
                 HouseHoldFormRelationshipToApplicant.Text,
                 HouseHoldFormEthnicityListBox.SelectedValue.ToString(),
                 !HouseHoldFormRadioButtonNo.Checked,
-                HouseHoldFormlast4DigitsOfSsnTextBox.Text
+                HouseHoldFormlast4DigitsOfSsnTextBox.Text,
+                true, //isActive
+                null // no date archived
             );
 
             //clear the form fields
