@@ -81,17 +81,22 @@ namespace FRCApp
             var householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
             var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(householdID);
             DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
-
+            var frequencyRow = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter().GetData().Rows;
 
             foreach (DataRow householdMember in householdMembers.Rows)
             {
-
                 foreach (ListViewItem item in FinancelistView.SelectedItems)
-                {
-                    MessageBox.Show(item.SubItems[4].Text);
-                    incomeSourceAdapter.AddOrUpdateIncomeSources((int)item.Tag, Int32.Parse(householdMember["HouseholdMemberID"].ToString()), item.SubItems[1].Text, Decimal.Parse(item.SubItems[2].Text), Int32.Parse(item.SubItems[3].Text), DateTime.Parse(item.SubItems[4].Text), false, DateTime.Now);
+                {   
+                    foreach (DataRow freq in frequencyRow)
+                    {
+                        if (freq["Frequency"].ToString() == item.SubItems[3].Text)
+                        {
+                            incomeSourceAdapter.AddOrUpdateIncomeSources((int)item.Tag, Int32.Parse(householdMember["HouseholdMemberID"].ToString()), item.SubItems[1].Text, Decimal.Parse(item.SubItems[2].Text), Int32.Parse(freq["IncomeFrequencyID"].ToString()), DateTime.Parse(item.SubItems[4].Text), false, DateTime.Now);
+                        }
+                    }
                 }
             }
+            fillListViewFromDatabase();
         }
 
         //Gives the user a cancel button, and then closes the form if desired
@@ -113,7 +118,7 @@ namespace FRCApp
                 var incomeDetails = incomeSourceAdapter.GetIncomeSourcesByHouseholdMemberID(Int32.Parse(householdMember["HouseholdMemberID"].ToString()));
                 foreach (DataRow row in incomeDetails.Rows)
                 {
-                    if ((bool)row["IsActive"])
+                    if (archiveCheckbox.Checked || (bool)row["IsActive"])
                     {
                         ListViewItem item = new ListViewItem(householdMember["Name"].ToString());
                         item.SubItems.Add(row["IncomeSource"].ToString());
@@ -196,5 +201,9 @@ namespace FRCApp
             }
         }
 
+        private void archiveCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            fillListViewFromDatabase();
+        }
     }
 }

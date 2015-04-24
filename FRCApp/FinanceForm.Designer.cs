@@ -49,6 +49,7 @@
             this.cmb_incomeSourceType = new System.Windows.Forms.ComboBox();
             this.dateLabel = new System.Windows.Forms.Label();
             this.datePickerDateadded = new System.Windows.Forms.DateTimePicker();
+            this.archiveCheckbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // addButton
@@ -250,12 +251,24 @@
             this.datePickerDateadded.Size = new System.Drawing.Size(200, 20);
             this.datePickerDateadded.TabIndex = 43;
             // 
+            // archiveCheckbox
+            // 
+            this.archiveCheckbox.AutoSize = true;
+            this.archiveCheckbox.Location = new System.Drawing.Point(835, 28);
+            this.archiveCheckbox.Name = "archiveCheckbox";
+            this.archiveCheckbox.Size = new System.Drawing.Size(124, 17);
+            this.archiveCheckbox.TabIndex = 44;
+            this.archiveCheckbox.Text = "Show Archived Data";
+            this.archiveCheckbox.UseVisualStyleBackColor = true;
+            this.archiveCheckbox.CheckedChanged += new System.EventHandler(this.archiveCheckbox_CheckedChanged);
+            // 
             // FinanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(967, 324);
+            this.Controls.Add(this.archiveCheckbox);
             this.Controls.Add(this.datePickerDateadded);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.cmb_incomeSourceType);
@@ -303,5 +316,6 @@
         private System.Windows.Forms.ColumnHeader Date;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.DateTimePicker datePickerDateadded;
+        private System.Windows.Forms.CheckBox archiveCheckbox;
     }
 }
