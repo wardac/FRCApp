@@ -36,33 +36,34 @@ namespace FRCApp
 
         private void report_Load(object sender, EventArgs e)
         {
-            SearchAssistance(DateTime.Now.Year);
+           SearchRequest(DateTime.Now.Year);
                 SearchPrimaryIncome(DateTime.Now.Year);
         }
 
-        private void SearchAssistance(int year)
+        private void SearchRequest(int year)
         {
-            DataSet1 ds = new DataSet1();
-            //DataSet1.EFARequestsDataTable dt;
+            var request = new DataSet1TableAdapters.RequestsReportByYearTableAdapter().GetRequestReportByYear(year);
+            int inc =0;
+            foreach(var cntrequest in request)
+            {
+                if ((lstviewAssistance.Items[inc].Text).Equals(cntrequest.Type))
+                {
+                    ListViewItem item = lstviewAssistance.Items[inc];
+                    String[] data = { cntrequest.January.ToString(), cntrequest.February.ToString(), cntrequest.March.ToString(), cntrequest.April.ToString(), cntrequest.May.ToString(), cntrequest.June.ToString(), cntrequest.July.ToString(), cntrequest.August.ToString(), cntrequest.September.ToString(), cntrequest.October.ToString(), cntrequest.November.ToString(), cntrequest.December.ToString(), cntrequest.YTD.ToString() };
+                    item.SubItems.AddRange(data);
+                    inc++;
+                }
+            }
 
-            try
-            {
-                var requestcnt = new DataSet1TableAdapters.EFASubrequestsTableAdapter().getRentReportbyYear(2015);
-            }
-            catch (ConstraintException e)
-            {
-                MessageBox.Show(e.ToString());
-            }
-            int ids = 0;
-        //    foreach (var cntRequest in requestcnt)
-            {
-                ids++;
-                //  rent[i] =cntRequest.cntVal
-            }
         }
         private void SearchPrimaryIncome(int year)
         { 
         
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
