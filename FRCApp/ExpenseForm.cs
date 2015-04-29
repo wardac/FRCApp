@@ -88,6 +88,16 @@ namespace FRCApp
                 System.Convert.ToDecimal(this.ExpenseChildSupportTextBox.Text), 
                 System.Convert.ToDecimal(this.ExpenseOtherTextBox.Text)
             );
+            decimal totalAmt = 0;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    totalAmt = totalAmt + System.Convert.ToDecimal(ctrl.Text);
+                }
+            }
+           // DataSet1TableAdapters.MonthlyExpensesSummaryTableAdapter sumadapter = new DataSet1TableAdapters.MonthlyExpensesSummaryTableAdapter();
+           // sumadapter.add(this.householdID, totalAmt, DateTime.Now);
 
             this.Close();
         }
