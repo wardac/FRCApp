@@ -87,7 +87,9 @@ namespace FRCApp
                 RelationshipTextBox.Text,
                 RaceBox.SelectedValue.ToString(),
                 !no_radio_button.Checked,
-                SocialTextBox.Text
+                SocialTextBox.Text,
+                true, // isActive
+                null // no date archived
             );
 
             // close form

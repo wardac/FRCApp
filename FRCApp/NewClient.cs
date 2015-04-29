@@ -156,7 +156,9 @@ namespace FRCApp
                     "self",
                     RaceBox.Text,
                     !no_radio_button.Checked,
-                    social_textbox.Text
+                    social_textbox.Text,
+                    true, // isActive
+                    null // no date archived
                 );
 
                 //delete ClientGoals

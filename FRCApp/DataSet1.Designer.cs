@@ -21367,6 +21367,8 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Race", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HealthCoverage", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastFourSSN", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsActive", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateArchived", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "dbo.GetHouseholdMembersByHouseholdID";
@@ -21967,7 +21969,7 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int AddOrUpdateHouseholdMembers(global::System.Nullable<int> HouseholdMemberID, global::System.Nullable<global::System.Guid> HouseholdID, string FirstName, string LastName, global::System.Nullable<global::System.DateTime> Birthdate, string Relationship, string Race, global::System.Nullable<bool> HealthCoverage, string LastFourSSN) {
+        public virtual int AddOrUpdateHouseholdMembers(global::System.Nullable<int> HouseholdMemberID, global::System.Nullable<global::System.Guid> HouseholdID, string FirstName, string LastName, global::System.Nullable<global::System.DateTime> Birthdate, string Relationship, string Race, global::System.Nullable<bool> HealthCoverage, string LastFourSSN, global::System.Nullable<bool> IsActive, global::System.Nullable<global::System.DateTime> DateArchived) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((HouseholdMemberID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(HouseholdMemberID.Value));
@@ -22022,6 +22024,18 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
             }
             else {
                 command.Parameters[9].Value = ((string)(LastFourSSN));
+            }
+            if ((IsActive.HasValue == true)) {
+                command.Parameters[10].Value = ((bool)(IsActive.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((DateArchived.HasValue == true)) {
+                command.Parameters[11].Value = ((System.DateTime)(DateArchived.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
