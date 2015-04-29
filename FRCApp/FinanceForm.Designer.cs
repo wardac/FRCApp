@@ -52,6 +52,7 @@
             this.radioUnarchived = new System.Windows.Forms.RadioButton();
             this.radioArchived = new System.Windows.Forms.RadioButton();
             this.radioAll = new System.Windows.Forms.RadioButton();
+            this.Archived = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // addButton
@@ -149,12 +150,13 @@
             this.incomeSource,
             this.incomeAmount,
             this.incomeFrequency,
-            this.Date});
+            this.Date,
+            this.Archived});
             this.FinancelistView.FullRowSelect = true;
             this.FinancelistView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.FinancelistView.Location = new System.Drawing.Point(414, 51);
             this.FinancelistView.Name = "FinancelistView";
-            this.FinancelistView.Size = new System.Drawing.Size(545, 212);
+            this.FinancelistView.Size = new System.Drawing.Size(672, 212);
             this.FinancelistView.TabIndex = 5;
             this.FinancelistView.UseCompatibleStateImageBehavior = false;
             this.FinancelistView.View = System.Windows.Forms.View.Details;
@@ -182,6 +184,7 @@
             // Date
             // 
             this.Date.Text = "Date";
+            this.Date.Width = 66;
             // 
             // archiveButton
             // 
@@ -200,7 +203,7 @@
             this.doneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.doneButton.BackColor = System.Drawing.Color.Teal;
             this.doneButton.ForeColor = System.Drawing.Color.White;
-            this.doneButton.Location = new System.Drawing.Point(814, 291);
+            this.doneButton.Location = new System.Drawing.Point(945, 291);
             this.doneButton.Name = "doneButton";
             this.doneButton.Size = new System.Drawing.Size(75, 23);
             this.doneButton.TabIndex = 8;
@@ -289,12 +292,16 @@
             this.radioAll.UseVisualStyleBackColor = true;
             this.radioAll.CheckedChanged += new System.EventHandler(this.radioAll_CheckedChanged);
             // 
+            // Archived
+            // 
+            this.Archived.Text = "Archived";
+            // 
             // FinanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(967, 324);
+            this.ClientSize = new System.Drawing.Size(1098, 324);
             this.Controls.Add(this.radioAll);
             this.Controls.Add(this.radioArchived);
             this.Controls.Add(this.radioUnarchived);
@@ -348,5 +355,6 @@
         private System.Windows.Forms.RadioButton radioUnarchived;
         private System.Windows.Forms.RadioButton radioArchived;
         private System.Windows.Forms.RadioButton radioAll;
+        private System.Windows.Forms.ColumnHeader Archived;
     }
 }

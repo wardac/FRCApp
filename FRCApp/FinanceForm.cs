@@ -91,7 +91,16 @@ namespace FRCApp
                     {
                         if (freq["Frequency"].ToString() == item.SubItems[3].Text)
                         {
-                            incomeSourceAdapter.AddOrUpdateIncomeSources((int)item.Tag, Int32.Parse(householdMember["HouseholdMemberID"].ToString()), item.SubItems[1].Text, Decimal.Parse(item.SubItems[2].Text), Int32.Parse(freq["IncomeFrequencyID"].ToString()), DateTime.Parse(item.SubItems[4].Text), false, DateTime.Now);
+                            incomeSourceAdapter.AddOrUpdateIncomeSources(
+                                (int)item.Tag,//IncomeSourceID
+                                Int32.Parse(householdMember["HouseholdMemberID"].ToString()),//householdMemberID
+                                item.SubItems[1].Text,//IncomeSource
+                                Decimal.Parse(item.SubItems[2].Text),//Amount
+                                Int32.Parse(freq["IncomeFrequencyID"].ToString()),//FrequencyID
+                                DateTime.Parse(item.SubItems[4].Text),//DateAdded
+                                radioArchived.Checked,//IsActive
+                                DateTime.Now//DateArchived
+                                );
                         }
                     }
                 }
@@ -146,6 +155,7 @@ namespace FRCApp
             item.SubItems.Add(frequency);
             item.Tag = row["IncomeSourceID"];
             item.SubItems.Add(row["DateAdded"].ToString());
+            item.SubItems.Add((!((bool)row["IsActive"])).ToString());
             //alternating row colors
             if (item.Index % 2 == 0)
             { item.BackColor = Color.Gainsboro; }
@@ -232,11 +242,16 @@ namespace FRCApp
             {
                 archiveButton.Text = "Unarchive";
             }
+            else
+            {
+                archiveButton.Text = "Archive";
+            }
             fillListViewFromDatabase();
         }
 
         private void radioAll_CheckedChanged(object sender, EventArgs e)
         {
+
             fillListViewFromDatabase();
         }
     }
