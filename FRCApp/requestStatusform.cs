@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -85,78 +86,120 @@ namespace FRCApp
                 var hardship = hardshipsAdapter.GetHardshipsByID((int)cmb_hardship.SelectedValue)[0];
                 txt_hardshipDesc.Text = hardship.Description;
             });
-
-
-            if (NewRequest)
+            //adding financial summary
+            DataSet1TableAdapters.MonthlyExpensesSummaryTableAdapter monthExpensesAdapter = new DataSet1TableAdapters.MonthlyExpensesSummaryTableAdapter();
+            var monthRequests = monthExpensesAdapter.getMonthlyExpensesByHouseholdID(clients[0].HouseholdID);
+            DataSet1TableAdapters.IncomeByHouseholdIDAndChangeDateTableAdapter amtAdapter = new DataSet1TableAdapters.IncomeByHouseholdIDAndChangeDateTableAdapter();
+            var reqs = amtAdapter.getIncomeChangesByDate(clients[0].HouseholdID);
+            ArrayList lst = new ArrayList();
+            decimal expenseamt = 0;
+            foreach (var req in reqs)
             {
-                this.Text = "New EFA Request";
-                lst_reqTypes.Visible = false;
-                var reqTypes = this.eFARequestTypesTableAdapter.GetData();
-                foreach (var reqType in reqTypes)
+                foreach (var amt in monthRequests)
                 {
-                    checklist_requestType.Items.Add(reqType.Type);
+                    if (req.Date <= amt.dateChanged)
+                    {
+                        expenseamt = amt.MonthExpenses;
+                    }
                 }
-                var hardship = hardshipsAdapter.GetHardshipsByID((int)cmb_hardship.SelectedValue)[0];
-                txt_hardshipDesc.Text = hardship.Description;
-                btn_handleRequest.Visible = false;
+                ListViewItem item = new ListViewItem(req.Date.ToString("MM/dd/yyyy"));
+                String[] data = { req.QuarterlyAmount.ToString("F"), req.MonthlyAmount.ToString("F"),expenseamt.ToString() };
+                lst.Add(req.Date);
+                item.SubItems.AddRange(data);
+                lstFinances.Items.Add(item);
+                if (item.Index % 2 == 0)
+                { item.BackColor = Color.Gainsboro; }
+                else
+                { item.BackColor = Color.WhiteSmoke; }
             }
-            else
+/*            ArrayList amtlst = new ArrayList ();
+            foreach (var mreq in monthRequests)
             {
-                checklist_requestType.Visible = false;
-                txt_other.Visible = false;
-                date_requestDate.Enabled = false;
-                datagridRequests.Visible = true;
-                var subrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
-                var subrequests = subrequestAdapter.GetEFASubrequestsByEFARequestID(RequestID);
-                datagridRequests.Rows.Clear();
-                foreach (var subrequest in subrequests)
+                for (int i = 0; i +2< lst.Count; i = i + 2)
                 {
-                    lst_reqTypes.Items.Add(subrequest);
-                    if (datagridRequests.Visible == true)
+                    if (((DateTime)lst[i]< mreq.dateChanged) && (mreq.dateChanged.Date<=(DateTime)lst[i+1]))
                     {
-                        String []data= {subrequest.EFARequestType, subrequest.amount+""};
-                        datagridRequests.Rows.Add(data);
+                        amtlst.Add(mreq.dateChanged);
                     }
                 }
-                lst_reqTypes.DisplayMember = "EFARequestType";
+            }
 
-                var requestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
-                var request = requestAdapter.GetEFARequestsByEFARequestID(RequestID)[0];
-
-                DateTime?[] dates = { (request.IsAddressVerificationNull() ? null : (DateTime?)request.AddressVerification), (request.IsHouseholdVerificationNull() ? null : (DateTime?)request.HouseholdVerification), (request.IsIncomeVerificationNull() ? null : (DateTime?) request.IncomeVerification), (request.IsBillVerificationNull() ? null : (DateTime?)request.BillVerification), (request.IsHardshipVerificationNull() ? null : (DateTime?)request.HardshipVerification) };
-                CheckBox[] boxes = { efa_proofaddress, efa_proofHousehold, efa_proofIncome, efa_proofAssistance, efa_proofharship };
-                DateTimePicker[] pickers = { addressdate, householdDate, incomedate, assistancedate, hardshipdate };
-
-                for (int i = 0; i < dates.Length; ++i)
+            for(int i =0; i<lstFinances.Items.Count;i++)
+            {
+                lstFinances.Items[i].SubItems.Add(amtlst[i].ToString());
+            }
+            */
+                //end of financial summmary
+                if (NewRequest)
                 {
-                    if (dates[i] != null)
+                    this.Text = "New EFA Request";
+                    lst_reqTypes.Visible = false;
+                    var reqTypes = this.eFARequestTypesTableAdapter.GetData();
+                    foreach (var reqType in reqTypes)
                     {
-                        boxes[i].Checked = true;
-                        pickers[i].Text = dates[i].ToString();
+                        checklist_requestType.Items.Add(reqType.Type);
                     }
-                }
-
-                var hardship = hardshipsAdapter.GetHardshipsByID(request.HardshipTypeID)[0];
-
-                cmb_hardship.Text = hardship.Name;
-                txt_hardshipDesc.Text = hardship.Description;
-                efa_comment.Text = request.HardshipDetail;
-                date_requestDate.Value = request.DateRequested;
-
-                if (!request.IsDateClosedNull())
-                {
-                    date_completedDate.Value = request.DateClosed;
-                    lbl_completedDate.Visible = true;
-                    date_completedDate.Visible = true;
+                    var hardship = hardshipsAdapter.GetHardshipsByID((int)cmb_hardship.SelectedValue)[0];
+                    txt_hardshipDesc.Text = hardship.Description;
                     btn_handleRequest.Visible = false;
-                    update_efa.Visible = false;
-                    cmb_hardship.Enabled = false;
-                    efa_comment.Enabled = false;
-                    boxes.ToList().ForEach((box) => box.Enabled = false);
-                    pickers.ToList().ForEach((picker) => picker.Enabled = false);
                 }
+                else
+                {
+                    checklist_requestType.Visible = false;
+                    txt_other.Visible = false;
+                    date_requestDate.Enabled = false;
+                    datagridRequests.Visible = true;
+                    var subrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
+                    var subrequests = subrequestAdapter.GetEFASubrequestsByEFARequestID(RequestID);
+                    datagridRequests.Rows.Clear();
+                    foreach (var subrequest in subrequests)
+                    {
+                        lst_reqTypes.Items.Add(subrequest);
+                        if (datagridRequests.Visible == true)
+                        {
+                            String[] data = { subrequest.EFARequestType, subrequest.amount + "" };
+                            datagridRequests.Rows.Add(data);
+                        }
+                    }
+                    lst_reqTypes.DisplayMember = "EFARequestType";
 
-            }
+                    var requestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
+                    var request = requestAdapter.GetEFARequestsByEFARequestID(RequestID)[0];
+
+                    DateTime?[] dates = { (request.IsAddressVerificationNull() ? null : (DateTime?)request.AddressVerification), (request.IsHouseholdVerificationNull() ? null : (DateTime?)request.HouseholdVerification), (request.IsIncomeVerificationNull() ? null : (DateTime?)request.IncomeVerification), (request.IsBillVerificationNull() ? null : (DateTime?)request.BillVerification), (request.IsHardshipVerificationNull() ? null : (DateTime?)request.HardshipVerification) };
+                    CheckBox[] boxes = { efa_proofaddress, efa_proofHousehold, efa_proofIncome, efa_proofAssistance, efa_proofharship };
+                    DateTimePicker[] pickers = { addressdate, householdDate, incomedate, assistancedate, hardshipdate };
+
+                    for (int i = 0; i < dates.Length; ++i)
+                    {
+                        if (dates[i] != null)
+                        {
+                            boxes[i].Checked = true;
+                            pickers[i].Text = dates[i].ToString();
+                        }
+                    }
+
+                    var hardship = hardshipsAdapter.GetHardshipsByID(request.HardshipTypeID)[0];
+
+                    cmb_hardship.Text = hardship.Name;
+                    txt_hardshipDesc.Text = hardship.Description;
+                    efa_comment.Text = request.HardshipDetail;
+                    date_requestDate.Value = request.DateRequested;
+
+                    if (!request.IsDateClosedNull())
+                    {
+                        date_completedDate.Value = request.DateClosed;
+                        lbl_completedDate.Visible = true;
+                        date_completedDate.Visible = true;
+                        btn_handleRequest.Visible = false;
+                        update_efa.Visible = false;
+                        cmb_hardship.Enabled = false;
+                        efa_comment.Enabled = false;
+                        boxes.ToList().ForEach((box) => box.Enabled = false);
+                        pickers.ToList().ForEach((picker) => picker.Enabled = false);
+                    }
+
+                }
         }
 
         private void update_efa_Click(object sender, EventArgs e)
