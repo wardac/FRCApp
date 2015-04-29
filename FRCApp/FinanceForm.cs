@@ -118,26 +118,40 @@ namespace FRCApp
                 var incomeDetails = incomeSourceAdapter.GetIncomeSourcesByHouseholdMemberID(Int32.Parse(householdMember["HouseholdMemberID"].ToString()));
                 foreach (DataRow row in incomeDetails.Rows)
                 {
-                    if (archiveCheckbox.Checked || (bool)row["IsActive"])
+                    //show all data
+                    if (radioAll.Checked)
                     {
-                        ListViewItem item = new ListViewItem(householdMember["Name"].ToString());
-                        item.SubItems.Add(row["IncomeSource"].ToString());
-                        item.SubItems.Add(row["Amount"].ToString());
-                        DataSet1TableAdapters.IncomeFrequenciesTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter();
-                        String frequency = incomeAdapter.GetFrequencyByID(Int32.Parse(row["FrequencyID"].ToString())).ToString();
-                        item.SubItems.Add(frequency);
-                        item.Tag = row["IncomeSourceID"];
-                        item.SubItems.Add(row["DateAdded"].ToString());
-
-                        //alternating row colors
-                        if (item.Index % 2 == 0)
-                        { item.BackColor = Color.Gainsboro; }
-                        else
-                        { item.BackColor = Color.WhiteSmoke; }
-                        FinancelistView.Items.Add(item);
+                        fillListViewItem(row, householdMember["Name"].ToString());
+                    } 
+                    //show only archived data
+                    else if(radioArchived.Checked && !(bool)row["IsActive"]){
+                        fillListViewItem(row, householdMember["Name"].ToString());
+                    }
+                    //show only unarchived data
+                    else if(radioUnarchived.Checked && (bool)row["IsActive"])
+                    {
+                        fillListViewItem(row, householdMember["Name"].ToString());
                     }
                 }
             }
+        }
+
+        private void fillListViewItem(DataRow row, String name)
+        {
+            ListViewItem item = new ListViewItem(name);
+            item.SubItems.Add(row["IncomeSource"].ToString());
+            item.SubItems.Add(row["Amount"].ToString());
+            DataSet1TableAdapters.IncomeFrequenciesTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter();
+            String frequency = incomeAdapter.GetFrequencyByID(Int32.Parse(row["FrequencyID"].ToString())).ToString();
+            item.SubItems.Add(frequency);
+            item.Tag = row["IncomeSourceID"];
+            item.SubItems.Add(row["DateAdded"].ToString());
+            //alternating row colors
+            if (item.Index % 2 == 0)
+            { item.BackColor = Color.Gainsboro; }
+            else
+            { item.BackColor = Color.WhiteSmoke; }
+            FinancelistView.Items.Add(item);
         }
 
         private void FinanceForm_Load(object sender, EventArgs e)
@@ -202,6 +216,26 @@ namespace FRCApp
         }
 
         private void archiveCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            fillListViewFromDatabase();
+        }
+
+        private void radioUnarchived_CheckedChanged(object sender, EventArgs e)
+        {
+            fillListViewFromDatabase();
+        }
+
+        private void radioArchived_CheckedChanged(object sender, EventArgs e)
+        {
+            //change the text of the archive button to unarchive if othe radioArchived Button is Checked
+            if (radioArchived.Checked)
+            {
+                archiveButton.Text = "Unarchive";
+            }
+            fillListViewFromDatabase();
+        }
+
+        private void radioAll_CheckedChanged(object sender, EventArgs e)
         {
             fillListViewFromDatabase();
         }

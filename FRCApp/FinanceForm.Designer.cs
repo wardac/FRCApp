@@ -49,7 +49,9 @@
             this.cmb_incomeSourceType = new System.Windows.Forms.ComboBox();
             this.dateLabel = new System.Windows.Forms.Label();
             this.datePickerDateadded = new System.Windows.Forms.DateTimePicker();
-            this.archiveCheckbox = new System.Windows.Forms.CheckBox();
+            this.radioUnarchived = new System.Windows.Forms.RadioButton();
+            this.radioArchived = new System.Windows.Forms.RadioButton();
+            this.radioAll = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // addButton
@@ -139,8 +141,8 @@
             // 
             // FinancelistView
             // 
-            this.FinancelistView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FinancelistView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FinancelistView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.name,
@@ -251,16 +253,41 @@
             this.datePickerDateadded.Size = new System.Drawing.Size(200, 20);
             this.datePickerDateadded.TabIndex = 43;
             // 
-            // archiveCheckbox
+            // radioUnarchived
             // 
-            this.archiveCheckbox.AutoSize = true;
-            this.archiveCheckbox.Location = new System.Drawing.Point(835, 28);
-            this.archiveCheckbox.Name = "archiveCheckbox";
-            this.archiveCheckbox.Size = new System.Drawing.Size(124, 17);
-            this.archiveCheckbox.TabIndex = 44;
-            this.archiveCheckbox.Text = "Show Archived Data";
-            this.archiveCheckbox.UseVisualStyleBackColor = true;
-            this.archiveCheckbox.CheckedChanged += new System.EventHandler(this.archiveCheckbox_CheckedChanged);
+            this.radioUnarchived.AutoSize = true;
+            this.radioUnarchived.Location = new System.Drawing.Point(671, 28);
+            this.radioUnarchived.Name = "radioUnarchived";
+            this.radioUnarchived.Size = new System.Drawing.Size(106, 17);
+            this.radioUnarchived.TabIndex = 45;
+            this.radioUnarchived.TabStop = true;
+            this.radioUnarchived.Text = "Unarchived Data";
+            this.radioUnarchived.UseVisualStyleBackColor = true;
+            this.radioUnarchived.CheckedChanged += new System.EventHandler(this.radioUnarchived_CheckedChanged);
+            // 
+            // radioArchived
+            // 
+            this.radioArchived.AutoSize = true;
+            this.radioArchived.Location = new System.Drawing.Point(783, 28);
+            this.radioArchived.Name = "radioArchived";
+            this.radioArchived.Size = new System.Drawing.Size(93, 17);
+            this.radioArchived.TabIndex = 46;
+            this.radioArchived.TabStop = true;
+            this.radioArchived.Text = "Archived Data";
+            this.radioArchived.UseVisualStyleBackColor = true;
+            this.radioArchived.CheckedChanged += new System.EventHandler(this.radioArchived_CheckedChanged);
+            // 
+            // radioAll
+            // 
+            this.radioAll.AutoSize = true;
+            this.radioAll.Location = new System.Drawing.Point(874, 28);
+            this.radioAll.Name = "radioAll";
+            this.radioAll.Size = new System.Drawing.Size(62, 17);
+            this.radioAll.TabIndex = 47;
+            this.radioAll.TabStop = true;
+            this.radioAll.Text = "All Data";
+            this.radioAll.UseVisualStyleBackColor = true;
+            this.radioAll.CheckedChanged += new System.EventHandler(this.radioAll_CheckedChanged);
             // 
             // FinanceForm
             // 
@@ -268,7 +295,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(967, 324);
-            this.Controls.Add(this.archiveCheckbox);
+            this.Controls.Add(this.radioAll);
+            this.Controls.Add(this.radioArchived);
+            this.Controls.Add(this.radioUnarchived);
             this.Controls.Add(this.datePickerDateadded);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.cmb_incomeSourceType);
@@ -316,6 +345,8 @@
         private System.Windows.Forms.ColumnHeader Date;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.DateTimePicker datePickerDateadded;
-        private System.Windows.Forms.CheckBox archiveCheckbox;
+        private System.Windows.Forms.RadioButton radioUnarchived;
+        private System.Windows.Forms.RadioButton radioArchived;
+        private System.Windows.Forms.RadioButton radioAll;
     }
 }
