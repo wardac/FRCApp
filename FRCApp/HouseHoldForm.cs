@@ -35,20 +35,34 @@ namespace FRCApp
             DataSet1TableAdapters.HouseholdMembersTableAdapter adapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
             foreach (DataRow row in adapter.getHouseholdMembersById(houseHoldId).Rows)
             {
-                if (archivedCheckBox.Checked || (bool)row["IsActive"])
+                // show all data
+                if (radioAll.Checked)
                 {
-                    ListViewItem item = new ListViewItem(row["FirstName"].ToString());
-                    item.SubItems.Add(row["LastName"].ToString());
-                    item.SubItems.Add(row["LastFourSSN"].ToString());
-                    item.SubItems.Add(row["Birthdate"].ToString());
-                    item.SubItems.Add(row["Relationship"].ToString());
-                    item.SubItems.Add(row["Race"].ToString());
-                    item.SubItems.Add(row["HealthCoverage"].ToString());
-                    item.SubItems.Add(row["IsActive"].ToString());
-                    item.Tag = row["HouseholdMemberID"];
-                    HouseHoldForm_ListView_Summary.Items.Add(item);
+                    fillListViewItem(row);
+                }
+                else if (radioArchived.Checked && !(bool)row["IsActive"])
+                {
+                    fillListViewItem(row);
+                }
+                else if (radioUnarchived.Checked && (bool)row["IsActive"])
+                {
+                    fillListViewItem(row);
                 }
             }
+        }
+
+        private void fillListViewItem(DataRow row)
+        {
+            ListViewItem item = new ListViewItem(row["FirstName"].ToString());
+            item.SubItems.Add(row["LastName"].ToString());
+            item.SubItems.Add(row["LastFourSSN"].ToString());
+            item.SubItems.Add(row["Birthdate"].ToString());
+            item.SubItems.Add(row["Relationship"].ToString());
+            item.SubItems.Add(row["Race"].ToString());
+            item.SubItems.Add(row["HealthCoverage"].ToString());
+            item.SubItems.Add(row["IsActive"].ToString());
+            item.Tag = row["HouseholdMemberID"];
+            HouseHoldForm_ListView_Summary.Items.Add(item);
         }
 
         /**
@@ -175,7 +189,7 @@ namespace FRCApp
                         Decimal.Parse(row["Amount"].ToString()),
                         Int32.Parse(row["FrequencyID"].ToString()),
                         DateTime.Parse(row["DateAdded"].ToString()),
-                        false, // not active
+                        radioArchived.Checked, // not active
                         DateTime.Now // date archived
                     );
                 }
@@ -196,7 +210,7 @@ namespace FRCApp
                     item.SubItems[5].Text, // race
                     Boolean.Parse(item.SubItems[6].Text), // health care coverage
                     item.SubItems[2].Text, // last 4 SSN
-                    false, // not active
+                    radioArchived.Checked, // not active
                     DateTime.Now // date archived
                 );
             }
@@ -234,7 +248,26 @@ namespace FRCApp
             new EditHouseholdMemberInfo((int)HouseHoldForm_ListView_Summary.SelectedItems[0].Tag, houseHoldId).Show();
         }
 
-        private void archivedCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void radioUnarchived_CheckedChanged(object sender, EventArgs e)
+        {
+            fillListView();
+        }
+
+        private void radioArchived_CheckedChanged(object sender, EventArgs e)
+        {
+            //change the text of the archive button to unarchive if othe radioArchived Button is Checked
+            if (radioArchived.Checked)
+            {
+                archiveButton.Text = "Unarchive";
+            }
+            else
+            {
+                archiveButton.Text = "Archive";
+            }
+            fillListView();
+        }
+
+        private void radioAll_CheckedChanged(object sender, EventArgs e)
         {
             fillListView();
         }

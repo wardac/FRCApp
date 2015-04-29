@@ -30,13 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.title = new System.Windows.Forms.Panel();
-            this.archivedCheckBox = new System.Windows.Forms.CheckBox();
+            this.radioAll = new System.Windows.Forms.RadioButton();
+            this.radioArchived = new System.Windows.Forms.RadioButton();
+            this.radioUnarchived = new System.Windows.Forms.RadioButton();
             this.HouseHoldFormEthnicityListBox = new System.Windows.Forms.ComboBox();
             this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new FRCApp.DataSet1();
             this.HouseHoldFormlast4DigitsOfSsnTextBox = new System.Windows.Forms.MaskedTextBox();
             this.editButton = new System.Windows.Forms.Button();
-            this.removeButton = new System.Windows.Forms.Button();
+            this.archiveButton = new System.Windows.Forms.Button();
             this.HouseHoldFormDoneButton = new System.Windows.Forms.Button();
             this.HouseHoldForm_ListView_Summary = new System.Windows.Forms.ListView();
             this.First = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,6 +48,7 @@
             this.Relationship = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Ethnicity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Coverage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Archived = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HouseHoldFormRadioButtonNo = new System.Windows.Forms.RadioButton();
             this.HouseHoldFormRadioButtonYes = new System.Windows.Forms.RadioButton();
             this.HouseHoldFormHealthCoverageRadioButton = new System.Windows.Forms.Label();
@@ -63,24 +66,25 @@
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
+            this.archiveGroupBox = new System.Windows.Forms.GroupBox();
+            this.coverageGroupBox = new System.Windows.Forms.GroupBox();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            this.archiveGroupBox.SuspendLayout();
+            this.coverageGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // title
             // 
             this.title.BackColor = System.Drawing.Color.Lavender;
-            this.title.Controls.Add(this.archivedCheckBox);
             this.title.Controls.Add(this.HouseHoldFormEthnicityListBox);
             this.title.Controls.Add(this.HouseHoldFormlast4DigitsOfSsnTextBox);
             this.title.Controls.Add(this.editButton);
-            this.title.Controls.Add(this.removeButton);
+            this.title.Controls.Add(this.archiveButton);
             this.title.Controls.Add(this.HouseHoldFormDoneButton);
             this.title.Controls.Add(this.HouseHoldForm_ListView_Summary);
-            this.title.Controls.Add(this.HouseHoldFormRadioButtonNo);
-            this.title.Controls.Add(this.HouseHoldFormRadioButtonYes);
             this.title.Controls.Add(this.HouseHoldFormHealthCoverageRadioButton);
             this.title.Controls.Add(this.HouseHoldFormRelationshipToApplicant);
             this.title.Controls.Add(this.HouseHoldFormBirthDateDateTimePicker);
@@ -94,21 +98,47 @@
             this.title.Controls.Add(this.btnHouseholdMemberAdd);
             this.title.Controls.Add(this.HouseHoldFormTitle);
             this.title.Controls.Add(this.HouseHoldFormFirstName);
+            this.title.Controls.Add(this.archiveGroupBox);
+            this.title.Controls.Add(this.coverageGroupBox);
             this.title.Location = new System.Drawing.Point(0, 4);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(966, 301);
+            this.title.Size = new System.Drawing.Size(1004, 301);
             this.title.TabIndex = 0;
             // 
-            // archivedCheckBox
+            // radioAll
             // 
-            this.archivedCheckBox.AutoSize = true;
-            this.archivedCheckBox.Location = new System.Drawing.Point(831, 12);
-            this.archivedCheckBox.Name = "archivedCheckBox";
-            this.archivedCheckBox.Size = new System.Drawing.Size(124, 17);
-            this.archivedCheckBox.TabIndex = 12;
-            this.archivedCheckBox.Text = "Show Archived Data";
-            this.archivedCheckBox.UseVisualStyleBackColor = true;
-            this.archivedCheckBox.CheckedChanged += new System.EventHandler(this.archivedCheckBox_CheckedChanged);
+            this.radioAll.AutoSize = true;
+            this.radioAll.Location = new System.Drawing.Point(223, 9);
+            this.radioAll.Name = "radioAll";
+            this.radioAll.Size = new System.Drawing.Size(62, 17);
+            this.radioAll.TabIndex = 50;
+            this.radioAll.Text = "All Data";
+            this.radioAll.UseVisualStyleBackColor = true;
+            this.radioAll.CheckedChanged += new System.EventHandler(this.radioAll_CheckedChanged);
+            // 
+            // radioArchived
+            // 
+            this.radioArchived.AutoSize = true;
+            this.radioArchived.Location = new System.Drawing.Point(124, 9);
+            this.radioArchived.Name = "radioArchived";
+            this.radioArchived.Size = new System.Drawing.Size(93, 17);
+            this.radioArchived.TabIndex = 49;
+            this.radioArchived.Text = "Archived Data";
+            this.radioArchived.UseVisualStyleBackColor = true;
+            this.radioArchived.CheckedChanged += new System.EventHandler(this.radioArchived_CheckedChanged);
+            // 
+            // radioUnarchived
+            // 
+            this.radioUnarchived.AutoSize = true;
+            this.radioUnarchived.Checked = true;
+            this.radioUnarchived.Location = new System.Drawing.Point(12, 9);
+            this.radioUnarchived.Name = "radioUnarchived";
+            this.radioUnarchived.Size = new System.Drawing.Size(106, 17);
+            this.radioUnarchived.TabIndex = 48;
+            this.radioUnarchived.TabStop = true;
+            this.radioUnarchived.Text = "Unarchived Data";
+            this.radioUnarchived.UseVisualStyleBackColor = true;
+            this.radioUnarchived.CheckedChanged += new System.EventHandler(this.radioUnarchived_CheckedChanged);
             // 
             // HouseHoldFormEthnicityListBox
             // 
@@ -152,23 +182,23 @@
             this.editButton.UseVisualStyleBackColor = false;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // removeButton
+            // archiveButton
             // 
-            this.removeButton.BackColor = System.Drawing.Color.Teal;
-            this.removeButton.ForeColor = System.Drawing.Color.White;
-            this.removeButton.Location = new System.Drawing.Point(315, 241);
-            this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(75, 23);
-            this.removeButton.TabIndex = 10;
-            this.removeButton.Text = "Archive";
-            this.removeButton.UseVisualStyleBackColor = false;
-            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            this.archiveButton.BackColor = System.Drawing.Color.Teal;
+            this.archiveButton.ForeColor = System.Drawing.Color.White;
+            this.archiveButton.Location = new System.Drawing.Point(315, 241);
+            this.archiveButton.Name = "archiveButton";
+            this.archiveButton.Size = new System.Drawing.Size(75, 23);
+            this.archiveButton.TabIndex = 10;
+            this.archiveButton.Text = "Archive";
+            this.archiveButton.UseVisualStyleBackColor = false;
+            this.archiveButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // HouseHoldFormDoneButton
             // 
             this.HouseHoldFormDoneButton.BackColor = System.Drawing.Color.Teal;
             this.HouseHoldFormDoneButton.ForeColor = System.Drawing.Color.White;
-            this.HouseHoldFormDoneButton.Location = new System.Drawing.Point(880, 270);
+            this.HouseHoldFormDoneButton.Location = new System.Drawing.Point(919, 270);
             this.HouseHoldFormDoneButton.Name = "HouseHoldFormDoneButton";
             this.HouseHoldFormDoneButton.Size = new System.Drawing.Size(75, 23);
             this.HouseHoldFormDoneButton.TabIndex = 11;
@@ -185,12 +215,13 @@
             this.BirthDate,
             this.Relationship,
             this.Ethnicity,
-            this.Coverage});
+            this.Coverage,
+            this.Archived});
             this.HouseHoldForm_ListView_Summary.FullRowSelect = true;
             this.HouseHoldForm_ListView_Summary.Location = new System.Drawing.Point(417, 41);
             this.HouseHoldForm_ListView_Summary.MultiSelect = false;
             this.HouseHoldForm_ListView_Summary.Name = "HouseHoldForm_ListView_Summary";
-            this.HouseHoldForm_ListView_Summary.Size = new System.Drawing.Size(538, 223);
+            this.HouseHoldForm_ListView_Summary.Size = new System.Drawing.Size(577, 223);
             this.HouseHoldForm_ListView_Summary.TabIndex = 13;
             this.HouseHoldForm_ListView_Summary.UseCompatibleStateImageBehavior = false;
             this.HouseHoldForm_ListView_Summary.View = System.Windows.Forms.View.Details;
@@ -204,7 +235,7 @@
             // Last
             // 
             this.Last.Text = "Last";
-            this.Last.Width = 119;
+            this.Last.Width = 96;
             // 
             // SSN
             // 
@@ -227,10 +258,14 @@
             // 
             this.Coverage.Text = "Coverage";
             // 
+            // Archived
+            // 
+            this.Archived.Text = "Archived";
+            // 
             // HouseHoldFormRadioButtonNo
             // 
             this.HouseHoldFormRadioButtonNo.AutoSize = true;
-            this.HouseHoldFormRadioButtonNo.Location = new System.Drawing.Point(234, 211);
+            this.HouseHoldFormRadioButtonNo.Location = new System.Drawing.Point(49, 2);
             this.HouseHoldFormRadioButtonNo.Name = "HouseHoldFormRadioButtonNo";
             this.HouseHoldFormRadioButtonNo.Size = new System.Drawing.Size(39, 17);
             this.HouseHoldFormRadioButtonNo.TabIndex = 7;
@@ -241,7 +276,7 @@
             // HouseHoldFormRadioButtonYes
             // 
             this.HouseHoldFormRadioButtonYes.AutoSize = true;
-            this.HouseHoldFormRadioButtonYes.Location = new System.Drawing.Point(184, 211);
+            this.HouseHoldFormRadioButtonYes.Location = new System.Drawing.Point(0, 2);
             this.HouseHoldFormRadioButtonYes.Name = "HouseHoldFormRadioButtonYes";
             this.HouseHoldFormRadioButtonYes.Size = new System.Drawing.Size(43, 17);
             this.HouseHoldFormRadioButtonYes.TabIndex = 6;
@@ -387,11 +422,32 @@
             // 
             this.racesTableAdapter.ClearBeforeFill = true;
             // 
+            // archiveGroupBox
+            // 
+            this.archiveGroupBox.Controls.Add(this.radioAll);
+            this.archiveGroupBox.Controls.Add(this.radioUnarchived);
+            this.archiveGroupBox.Controls.Add(this.radioArchived);
+            this.archiveGroupBox.Location = new System.Drawing.Point(709, 3);
+            this.archiveGroupBox.Name = "archiveGroupBox";
+            this.archiveGroupBox.Size = new System.Drawing.Size(285, 32);
+            this.archiveGroupBox.TabIndex = 51;
+            this.archiveGroupBox.TabStop = false;
+            // 
+            // coverageGroupBox
+            // 
+            this.coverageGroupBox.Controls.Add(this.HouseHoldFormRadioButtonNo);
+            this.coverageGroupBox.Controls.Add(this.HouseHoldFormRadioButtonYes);
+            this.coverageGroupBox.Location = new System.Drawing.Point(184, 209);
+            this.coverageGroupBox.Name = "coverageGroupBox";
+            this.coverageGroupBox.Size = new System.Drawing.Size(109, 26);
+            this.coverageGroupBox.TabIndex = 52;
+            this.coverageGroupBox.TabStop = false;
+            // 
             // HouseHoldForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 306);
+            this.ClientSize = new System.Drawing.Size(1006, 306);
             this.Controls.Add(this.title);
             this.Name = "HouseHoldForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -401,6 +457,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            this.archiveGroupBox.ResumeLayout(false);
+            this.archiveGroupBox.PerformLayout();
+            this.coverageGroupBox.ResumeLayout(false);
+            this.coverageGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -437,10 +497,15 @@
         private System.Windows.Forms.ColumnHeader Ethnicity;
         private System.Windows.Forms.ColumnHeader Coverage;
         private System.Windows.Forms.Button HouseHoldFormDoneButton;
-        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button archiveButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.MaskedTextBox HouseHoldFormlast4DigitsOfSsnTextBox;
         private System.Windows.Forms.ComboBox HouseHoldFormEthnicityListBox;
-        private System.Windows.Forms.CheckBox archivedCheckBox;
+        private System.Windows.Forms.RadioButton radioAll;
+        private System.Windows.Forms.RadioButton radioArchived;
+        private System.Windows.Forms.RadioButton radioUnarchived;
+        private System.Windows.Forms.ColumnHeader Archived;
+        private System.Windows.Forms.GroupBox archiveGroupBox;
+        private System.Windows.Forms.GroupBox coverageGroupBox;
     }
 }
