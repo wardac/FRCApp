@@ -45,15 +45,10 @@ namespace FRCApp
             var request = new DataSet1TableAdapters.RequestsReportByYearTableAdapter().GetRequestsReportByYear(year);
             foreach(var cntrequest in request)
             {
-                for (int inc = 0; inc < 10; inc++)
-                {
-                    if ((lstviewAssistance.Items[inc].Text).Equals(cntrequest.Type))
-                    {
-                        ListViewItem item = lstviewAssistance.Items[inc];
+                        ListViewItem item = new ListViewItem (cntrequest.Type);
                         String[] data = { cntrequest.January.ToString(), cntrequest.February.ToString(), cntrequest.March.ToString(), cntrequest.April.ToString(), cntrequest.May.ToString(), cntrequest.June.ToString(), cntrequest.July.ToString(), cntrequest.August.ToString(), cntrequest.September.ToString(), cntrequest.October.ToString(), cntrequest.November.ToString(), cntrequest.December.ToString(), cntrequest.YTD.ToString() };
                         item.SubItems.AddRange(data);
-                    }
-                }
+                        lstviewAssistance.Items.Add(item);
             }
 
         }
