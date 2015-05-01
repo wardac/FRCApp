@@ -39,6 +39,9 @@
             // 
             // listusers
             // 
+            this.listusers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listusers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.UserName,
             this.firstName,
@@ -74,6 +77,7 @@
             // 
             // newUser
             // 
+            this.newUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.newUser.BackColor = System.Drawing.Color.Teal;
             this.newUser.ForeColor = System.Drawing.Color.White;
             this.newUser.Location = new System.Drawing.Point(58, 263);
@@ -86,6 +90,7 @@
             // 
             // back
             // 
+            this.back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.back.BackColor = System.Drawing.Color.Teal;
             this.back.ForeColor = System.Drawing.Color.White;
             this.back.Location = new System.Drawing.Point(403, 263);
