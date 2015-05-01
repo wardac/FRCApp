@@ -71,6 +71,9 @@
             // 
             // checkedListBox2
             // 
+            this.checkedListBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedListBox2.FormattingEnabled = true;
             this.checkedListBox2.Items.AddRange(new object[] {
             "Benefit Bank: food stamp",
@@ -152,10 +155,11 @@
             // 
             // btn_back
             // 
+            this.btn_back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_back.BackColor = System.Drawing.Color.Teal;
             this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_back.ForeColor = System.Drawing.Color.White;
-            this.btn_back.Location = new System.Drawing.Point(735, 599);
+            this.btn_back.Location = new System.Drawing.Point(735, 600);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 23);
             this.btn_back.TabIndex = 29;
@@ -165,10 +169,11 @@
             // 
             // btn_done
             // 
+            this.btn_done.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_done.BackColor = System.Drawing.Color.Teal;
             this.btn_done.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_done.ForeColor = System.Drawing.Color.White;
-            this.btn_done.Location = new System.Drawing.Point(816, 599);
+            this.btn_done.Location = new System.Drawing.Point(816, 600);
             this.btn_done.Name = "btn_done";
             this.btn_done.Size = new System.Drawing.Size(75, 23);
             this.btn_done.TabIndex = 29;
@@ -189,7 +194,8 @@
             // 
             // lineShape1
             // 
-            this.lineShape1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lineShape1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 12;
             this.lineShape1.X2 = 890;
@@ -252,6 +258,8 @@
             // 
             // gridApprovedservices
             // 
+            this.gridApprovedservices.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridApprovedservices.BackgroundColor = System.Drawing.Color.White;
             this.gridApprovedservices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridApprovedservices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

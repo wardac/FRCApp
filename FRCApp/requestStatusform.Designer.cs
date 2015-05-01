@@ -92,6 +92,9 @@
             // 
             // requestPanel
             // 
+            this.requestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.requestPanel.Controls.Add(this.label2);
             this.requestPanel.Controls.Add(this.lstFinances);
             this.requestPanel.Controls.Add(this.datagridRequests);
@@ -116,7 +119,7 @@
             this.requestPanel.Controls.Add(this.shapeContainer1);
             this.requestPanel.Location = new System.Drawing.Point(24, 12);
             this.requestPanel.Name = "requestPanel";
-            this.requestPanel.Size = new System.Drawing.Size(867, 632);
+            this.requestPanel.Size = new System.Drawing.Size(867, 625);
             this.requestPanel.TabIndex = 1;
             // 
             // label2
@@ -130,6 +133,9 @@
             // 
             // lstFinances
             // 
+            this.lstFinances.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstFinances.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.date,
             this.Qincome,
@@ -138,7 +144,7 @@
             this.lstFinances.FullRowSelect = true;
             this.lstFinances.Location = new System.Drawing.Point(30, 452);
             this.lstFinances.Name = "lstFinances";
-            this.lstFinances.Size = new System.Drawing.Size(452, 138);
+            this.lstFinances.Size = new System.Drawing.Size(802, 131);
             this.lstFinances.TabIndex = 26;
             this.lstFinances.UseCompatibleStateImageBehavior = false;
             this.lstFinances.View = System.Windows.Forms.View.Details;
@@ -214,10 +220,11 @@
             // 
             // btn_handleRequest
             // 
+            this.btn_handleRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_handleRequest.BackColor = System.Drawing.Color.Teal;
             this.btn_handleRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_handleRequest.ForeColor = System.Drawing.Color.White;
-            this.btn_handleRequest.Location = new System.Drawing.Point(355, 596);
+            this.btn_handleRequest.Location = new System.Drawing.Point(355, 589);
             this.btn_handleRequest.Name = "btn_handleRequest";
             this.btn_handleRequest.Size = new System.Drawing.Size(76, 29);
             this.btn_handleRequest.TabIndex = 24;
@@ -256,6 +263,8 @@
             // 
             // grpcauseshardship
             // 
+            this.grpcauseshardship.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpcauseshardship.Controls.Add(this.txt_hardshipDesc);
             this.grpcauseshardship.Controls.Add(this.cmb_hardship);
             this.grpcauseshardship.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -269,26 +278,32 @@
             // 
             // txt_hardshipDesc
             // 
+            this.txt_hardshipDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_hardshipDesc.BackColor = System.Drawing.SystemColors.Menu;
             this.txt_hardshipDesc.Enabled = false;
             this.txt_hardshipDesc.Location = new System.Drawing.Point(7, 48);
             this.txt_hardshipDesc.Multiline = true;
             this.txt_hardshipDesc.Name = "txt_hardshipDesc";
             this.txt_hardshipDesc.ReadOnly = true;
-            this.txt_hardshipDesc.Size = new System.Drawing.Size(384, 61);
+            this.txt_hardshipDesc.Size = new System.Drawing.Size(377, 61);
             this.txt_hardshipDesc.TabIndex = 1;
             // 
             // cmb_hardship
             // 
+            this.cmb_hardship.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_hardship.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_hardship.FormattingEnabled = true;
             this.cmb_hardship.Location = new System.Drawing.Point(7, 20);
             this.cmb_hardship.Name = "cmb_hardship";
-            this.cmb_hardship.Size = new System.Drawing.Size(384, 23);
+            this.cmb_hardship.Size = new System.Drawing.Size(377, 23);
             this.cmb_hardship.TabIndex = 0;
             // 
             // efa_financegroup
             // 
+            this.efa_financegroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.efa_financegroup.Controls.Add(this.txt_Mexpenses);
             this.efa_financegroup.Controls.Add(this.txt_Mincome);
             this.efa_financegroup.Controls.Add(this.txt_QHincome);
@@ -371,10 +386,12 @@
             // 
             // efa_comment
             // 
+            this.efa_comment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.efa_comment.Location = new System.Drawing.Point(446, 174);
             this.efa_comment.Multiline = true;
             this.efa_comment.Name = "efa_comment";
-            this.efa_comment.Size = new System.Drawing.Size(408, 71);
+            this.efa_comment.Size = new System.Drawing.Size(386, 71);
             this.efa_comment.TabIndex = 15;
             // 
             // efa_proofGroup
@@ -551,10 +568,11 @@
             // 
             // cancelEfa
             // 
+            this.cancelEfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelEfa.BackColor = System.Drawing.Color.Teal;
             this.cancelEfa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelEfa.ForeColor = System.Drawing.Color.White;
-            this.cancelEfa.Location = new System.Drawing.Point(455, 596);
+            this.cancelEfa.Location = new System.Drawing.Point(455, 589);
             this.cancelEfa.Name = "cancelEfa";
             this.cancelEfa.Size = new System.Drawing.Size(76, 29);
             this.cancelEfa.TabIndex = 1;
@@ -564,10 +582,11 @@
             // 
             // update_efa
             // 
+            this.update_efa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.update_efa.BackColor = System.Drawing.Color.Teal;
             this.update_efa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_efa.ForeColor = System.Drawing.Color.White;
-            this.update_efa.Location = new System.Drawing.Point(255, 596);
+            this.update_efa.Location = new System.Drawing.Point(255, 589);
             this.update_efa.Name = "update_efa";
             this.update_efa.Size = new System.Drawing.Size(76, 29);
             this.update_efa.TabIndex = 0;
@@ -582,7 +601,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(867, 632);
+            this.shapeContainer1.Size = new System.Drawing.Size(867, 625);
             this.shapeContainer1.TabIndex = 16;
             this.shapeContainer1.TabStop = false;
             // 

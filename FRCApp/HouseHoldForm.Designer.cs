@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.title = new System.Windows.Forms.Panel();
-            this.radioAll = new System.Windows.Forms.RadioButton();
-            this.radioArchived = new System.Windows.Forms.RadioButton();
-            this.radioUnarchived = new System.Windows.Forms.RadioButton();
             this.HouseHoldFormEthnicityListBox = new System.Windows.Forms.ComboBox();
             this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new FRCApp.DataSet1();
@@ -49,8 +46,6 @@
             this.Ethnicity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Coverage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Archived = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.HouseHoldFormRadioButtonNo = new System.Windows.Forms.RadioButton();
-            this.HouseHoldFormRadioButtonYes = new System.Windows.Forms.RadioButton();
             this.HouseHoldFormHealthCoverageRadioButton = new System.Windows.Forms.Label();
             this.HouseHoldFormRelationshipToApplicant = new System.Windows.Forms.TextBox();
             this.HouseHoldFormBirthDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -64,20 +59,28 @@
             this.btnHouseholdMemberAdd = new System.Windows.Forms.Button();
             this.HouseHoldFormTitle = new System.Windows.Forms.Label();
             this.HouseHoldFormFirstName = new System.Windows.Forms.Label();
+            this.archiveGroupBox = new System.Windows.Forms.GroupBox();
+            this.radioAll = new System.Windows.Forms.RadioButton();
+            this.radioUnarchived = new System.Windows.Forms.RadioButton();
+            this.radioArchived = new System.Windows.Forms.RadioButton();
+            this.coverageGroupBox = new System.Windows.Forms.GroupBox();
+            this.HouseHoldFormRadioButtonNo = new System.Windows.Forms.RadioButton();
+            this.HouseHoldFormRadioButtonYes = new System.Windows.Forms.RadioButton();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new FRCApp.DataSet1TableAdapters.RacesTableAdapter();
-            this.archiveGroupBox = new System.Windows.Forms.GroupBox();
-            this.coverageGroupBox = new System.Windows.Forms.GroupBox();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             this.archiveGroupBox.SuspendLayout();
             this.coverageGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // title
             // 
+            this.title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.title.BackColor = System.Drawing.Color.Lavender;
             this.title.Controls.Add(this.HouseHoldFormEthnicityListBox);
             this.title.Controls.Add(this.HouseHoldFormlast4DigitsOfSsnTextBox);
@@ -104,41 +107,6 @@
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(1004, 301);
             this.title.TabIndex = 0;
-            // 
-            // radioAll
-            // 
-            this.radioAll.AutoSize = true;
-            this.radioAll.Location = new System.Drawing.Point(223, 9);
-            this.radioAll.Name = "radioAll";
-            this.radioAll.Size = new System.Drawing.Size(62, 17);
-            this.radioAll.TabIndex = 50;
-            this.radioAll.Text = "All Data";
-            this.radioAll.UseVisualStyleBackColor = true;
-            this.radioAll.CheckedChanged += new System.EventHandler(this.radioAll_CheckedChanged);
-            // 
-            // radioArchived
-            // 
-            this.radioArchived.AutoSize = true;
-            this.radioArchived.Location = new System.Drawing.Point(124, 9);
-            this.radioArchived.Name = "radioArchived";
-            this.radioArchived.Size = new System.Drawing.Size(93, 17);
-            this.radioArchived.TabIndex = 49;
-            this.radioArchived.Text = "Archived Data";
-            this.radioArchived.UseVisualStyleBackColor = true;
-            this.radioArchived.CheckedChanged += new System.EventHandler(this.radioArchived_CheckedChanged);
-            // 
-            // radioUnarchived
-            // 
-            this.radioUnarchived.AutoSize = true;
-            this.radioUnarchived.Checked = true;
-            this.radioUnarchived.Location = new System.Drawing.Point(12, 9);
-            this.radioUnarchived.Name = "radioUnarchived";
-            this.radioUnarchived.Size = new System.Drawing.Size(106, 17);
-            this.radioUnarchived.TabIndex = 48;
-            this.radioUnarchived.TabStop = true;
-            this.radioUnarchived.Text = "Unarchived Data";
-            this.radioUnarchived.UseVisualStyleBackColor = true;
-            this.radioUnarchived.CheckedChanged += new System.EventHandler(this.radioUnarchived_CheckedChanged);
             // 
             // HouseHoldFormEthnicityListBox
             // 
@@ -196,6 +164,7 @@
             // 
             // HouseHoldFormDoneButton
             // 
+            this.HouseHoldFormDoneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.HouseHoldFormDoneButton.BackColor = System.Drawing.Color.Teal;
             this.HouseHoldFormDoneButton.ForeColor = System.Drawing.Color.White;
             this.HouseHoldFormDoneButton.Location = new System.Drawing.Point(919, 270);
@@ -208,6 +177,9 @@
             // 
             // HouseHoldForm_ListView_Summary
             // 
+            this.HouseHoldForm_ListView_Summary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.HouseHoldForm_ListView_Summary.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.First,
             this.Last,
@@ -261,28 +233,6 @@
             // Archived
             // 
             this.Archived.Text = "Archived";
-            // 
-            // HouseHoldFormRadioButtonNo
-            // 
-            this.HouseHoldFormRadioButtonNo.AutoSize = true;
-            this.HouseHoldFormRadioButtonNo.Location = new System.Drawing.Point(49, 2);
-            this.HouseHoldFormRadioButtonNo.Name = "HouseHoldFormRadioButtonNo";
-            this.HouseHoldFormRadioButtonNo.Size = new System.Drawing.Size(39, 17);
-            this.HouseHoldFormRadioButtonNo.TabIndex = 7;
-            this.HouseHoldFormRadioButtonNo.TabStop = true;
-            this.HouseHoldFormRadioButtonNo.Text = "No";
-            this.HouseHoldFormRadioButtonNo.UseVisualStyleBackColor = true;
-            // 
-            // HouseHoldFormRadioButtonYes
-            // 
-            this.HouseHoldFormRadioButtonYes.AutoSize = true;
-            this.HouseHoldFormRadioButtonYes.Location = new System.Drawing.Point(0, 2);
-            this.HouseHoldFormRadioButtonYes.Name = "HouseHoldFormRadioButtonYes";
-            this.HouseHoldFormRadioButtonYes.Size = new System.Drawing.Size(43, 17);
-            this.HouseHoldFormRadioButtonYes.TabIndex = 6;
-            this.HouseHoldFormRadioButtonYes.TabStop = true;
-            this.HouseHoldFormRadioButtonYes.Text = "Yes";
-            this.HouseHoldFormRadioButtonYes.UseVisualStyleBackColor = true;
             // 
             // HouseHoldFormHealthCoverageRadioButton
             // 
@@ -413,17 +363,9 @@
             this.HouseHoldFormFirstName.TabIndex = 0;
             this.HouseHoldFormFirstName.Text = "First Name";
             // 
-            // dataSet1BindingSource
-            // 
-            this.dataSet1BindingSource.DataSource = this.dataSet1;
-            this.dataSet1BindingSource.Position = 0;
-            // 
-            // racesTableAdapter
-            // 
-            this.racesTableAdapter.ClearBeforeFill = true;
-            // 
             // archiveGroupBox
             // 
+            this.archiveGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.archiveGroupBox.Controls.Add(this.radioAll);
             this.archiveGroupBox.Controls.Add(this.radioUnarchived);
             this.archiveGroupBox.Controls.Add(this.radioArchived);
@@ -432,6 +374,44 @@
             this.archiveGroupBox.Size = new System.Drawing.Size(285, 32);
             this.archiveGroupBox.TabIndex = 51;
             this.archiveGroupBox.TabStop = false;
+            // 
+            // radioAll
+            // 
+            this.radioAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioAll.AutoSize = true;
+            this.radioAll.Location = new System.Drawing.Point(223, 9);
+            this.radioAll.Name = "radioAll";
+            this.radioAll.Size = new System.Drawing.Size(62, 17);
+            this.radioAll.TabIndex = 50;
+            this.radioAll.Text = "All Data";
+            this.radioAll.UseVisualStyleBackColor = true;
+            this.radioAll.CheckedChanged += new System.EventHandler(this.radioAll_CheckedChanged);
+            // 
+            // radioUnarchived
+            // 
+            this.radioUnarchived.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioUnarchived.AutoSize = true;
+            this.radioUnarchived.Checked = true;
+            this.radioUnarchived.Location = new System.Drawing.Point(12, 9);
+            this.radioUnarchived.Name = "radioUnarchived";
+            this.radioUnarchived.Size = new System.Drawing.Size(106, 17);
+            this.radioUnarchived.TabIndex = 48;
+            this.radioUnarchived.TabStop = true;
+            this.radioUnarchived.Text = "Unarchived Data";
+            this.radioUnarchived.UseVisualStyleBackColor = true;
+            this.radioUnarchived.CheckedChanged += new System.EventHandler(this.radioUnarchived_CheckedChanged);
+            // 
+            // radioArchived
+            // 
+            this.radioArchived.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioArchived.AutoSize = true;
+            this.radioArchived.Location = new System.Drawing.Point(124, 9);
+            this.radioArchived.Name = "radioArchived";
+            this.radioArchived.Size = new System.Drawing.Size(93, 17);
+            this.radioArchived.TabIndex = 49;
+            this.radioArchived.Text = "Archived Data";
+            this.radioArchived.UseVisualStyleBackColor = true;
+            this.radioArchived.CheckedChanged += new System.EventHandler(this.radioArchived_CheckedChanged);
             // 
             // coverageGroupBox
             // 
@@ -442,6 +422,37 @@
             this.coverageGroupBox.Size = new System.Drawing.Size(109, 26);
             this.coverageGroupBox.TabIndex = 52;
             this.coverageGroupBox.TabStop = false;
+            // 
+            // HouseHoldFormRadioButtonNo
+            // 
+            this.HouseHoldFormRadioButtonNo.AutoSize = true;
+            this.HouseHoldFormRadioButtonNo.Location = new System.Drawing.Point(49, 2);
+            this.HouseHoldFormRadioButtonNo.Name = "HouseHoldFormRadioButtonNo";
+            this.HouseHoldFormRadioButtonNo.Size = new System.Drawing.Size(39, 17);
+            this.HouseHoldFormRadioButtonNo.TabIndex = 7;
+            this.HouseHoldFormRadioButtonNo.TabStop = true;
+            this.HouseHoldFormRadioButtonNo.Text = "No";
+            this.HouseHoldFormRadioButtonNo.UseVisualStyleBackColor = true;
+            // 
+            // HouseHoldFormRadioButtonYes
+            // 
+            this.HouseHoldFormRadioButtonYes.AutoSize = true;
+            this.HouseHoldFormRadioButtonYes.Location = new System.Drawing.Point(0, 2);
+            this.HouseHoldFormRadioButtonYes.Name = "HouseHoldFormRadioButtonYes";
+            this.HouseHoldFormRadioButtonYes.Size = new System.Drawing.Size(43, 17);
+            this.HouseHoldFormRadioButtonYes.TabIndex = 6;
+            this.HouseHoldFormRadioButtonYes.TabStop = true;
+            this.HouseHoldFormRadioButtonYes.Text = "Yes";
+            this.HouseHoldFormRadioButtonYes.UseVisualStyleBackColor = true;
+            // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
+            // 
+            // racesTableAdapter
+            // 
+            this.racesTableAdapter.ClearBeforeFill = true;
             // 
             // HouseHoldForm
             // 
@@ -456,11 +467,11 @@
             this.title.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             this.archiveGroupBox.ResumeLayout(false);
             this.archiveGroupBox.PerformLayout();
             this.coverageGroupBox.ResumeLayout(false);
             this.coverageGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
