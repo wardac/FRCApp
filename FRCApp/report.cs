@@ -57,8 +57,8 @@ namespace FRCApp
 
         }
         private void SearchPrimaryIncome(int year)
-        { 
-        
+        {
+            SearchRequest(DateTime.Now.Year);
         }
 
         private void Search_Click(object sender, EventArgs e)
