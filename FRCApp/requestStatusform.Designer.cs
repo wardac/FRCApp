@@ -31,12 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.requestPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstFinances = new System.Windows.Forms.ListView();
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Qincome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Mincome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Mexpenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.active = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.datagridRequests = new System.Windows.Forms.DataGridView();
             this.Request = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,7 +93,7 @@
             // requestPanel
             // 
             this.requestPanel.Controls.Add(this.label2);
-            this.requestPanel.Controls.Add(this.listView1);
+            this.requestPanel.Controls.Add(this.lstFinances);
             this.requestPanel.Controls.Add(this.datagridRequests);
             this.requestPanel.Controls.Add(this.date_completedDate);
             this.requestPanel.Controls.Add(this.lbl_completedDate);
@@ -129,44 +128,40 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Financial summary";
             // 
-            // listView1
+            // lstFinances
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstFinances.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.date,
             this.Qincome,
             this.Mincome,
-            this.Mexpenses,
-            this.active});
-            this.listView1.Location = new System.Drawing.Point(30, 452);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(452, 138);
-            this.listView1.TabIndex = 26;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.Mexpenses});
+            this.lstFinances.FullRowSelect = true;
+            this.lstFinances.Location = new System.Drawing.Point(30, 452);
+            this.lstFinances.Name = "lstFinances";
+            this.lstFinances.Size = new System.Drawing.Size(452, 138);
+            this.lstFinances.TabIndex = 26;
+            this.lstFinances.UseCompatibleStateImageBehavior = false;
+            this.lstFinances.View = System.Windows.Forms.View.Details;
             // 
             // date
             // 
-            this.date.Text = "Date added";
-            this.date.Width = 95;
+            this.date.Text = "significant date";
+            this.date.Width = 100;
             // 
             // Qincome
             // 
             this.Qincome.Text = "Quaterly Income";
-            this.Qincome.Width = 94;
+            this.Qincome.Width = 107;
             // 
             // Mincome
             // 
             this.Mincome.Text = "Monthly income";
-            this.Mincome.Width = 103;
+            this.Mincome.Width = 119;
             // 
             // Mexpenses
             // 
             this.Mexpenses.Text = "Monthly Expenses";
-            this.Mexpenses.Width = 105;
-            // 
-            // active
-            // 
-            this.active.Text = "current";
+            this.Mexpenses.Width = 120;
             // 
             // datagridRequests
             // 
@@ -693,11 +688,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Request;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstFinances;
         private System.Windows.Forms.ColumnHeader date;
         private System.Windows.Forms.ColumnHeader Qincome;
         private System.Windows.Forms.ColumnHeader Mincome;
         private System.Windows.Forms.ColumnHeader Mexpenses;
-        private System.Windows.Forms.ColumnHeader active;
     }
 }

@@ -84,6 +84,10 @@ namespace FRCApp {
         
         private RequestsReportByYearDataTable tableRequestsReportByYear;
         
+        private MonthlyExpensesSummaryDataTable tableMonthlyExpensesSummary;
+        
+        private IncomeByHouseholdIDAndChangeDateDataTable tableIncomeByHouseholdIDAndChangeDate;
+        
         private global::System.Data.DataRelation relationFK__IncomeSou__Frequ__3FD07829;
         
         private global::System.Data.DataRelation relationFK__IncomeSou__House__3EDC53F0;
@@ -209,6 +213,12 @@ namespace FRCApp {
                 }
                 if ((ds.Tables["RequestsReportByYear"] != null)) {
                     base.Tables.Add(new RequestsReportByYearDataTable(ds.Tables["RequestsReportByYear"]));
+                }
+                if ((ds.Tables["MonthlyExpensesSummary"] != null)) {
+                    base.Tables.Add(new MonthlyExpensesSummaryDataTable(ds.Tables["MonthlyExpensesSummary"]));
+                }
+                if ((ds.Tables["IncomeByHouseholdIDAndChangeDate"] != null)) {
+                    base.Tables.Add(new IncomeByHouseholdIDAndChangeDateDataTable(ds.Tables["IncomeByHouseholdIDAndChangeDate"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -530,6 +540,26 @@ namespace FRCApp {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public MonthlyExpensesSummaryDataTable MonthlyExpensesSummary {
+            get {
+                return this.tableMonthlyExpensesSummary;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public IncomeByHouseholdIDAndChangeDateDataTable IncomeByHouseholdIDAndChangeDate {
+            get {
+                return this.tableIncomeByHouseholdIDAndChangeDate;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -684,6 +714,12 @@ namespace FRCApp {
                 }
                 if ((ds.Tables["RequestsReportByYear"] != null)) {
                     base.Tables.Add(new RequestsReportByYearDataTable(ds.Tables["RequestsReportByYear"]));
+                }
+                if ((ds.Tables["MonthlyExpensesSummary"] != null)) {
+                    base.Tables.Add(new MonthlyExpensesSummaryDataTable(ds.Tables["MonthlyExpensesSummary"]));
+                }
+                if ((ds.Tables["IncomeByHouseholdIDAndChangeDate"] != null)) {
+                    base.Tables.Add(new IncomeByHouseholdIDAndChangeDateDataTable(ds.Tables["IncomeByHouseholdIDAndChangeDate"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -898,6 +934,18 @@ namespace FRCApp {
                     this.tableRequestsReportByYear.InitVars();
                 }
             }
+            this.tableMonthlyExpensesSummary = ((MonthlyExpensesSummaryDataTable)(base.Tables["MonthlyExpensesSummary"]));
+            if ((initTable == true)) {
+                if ((this.tableMonthlyExpensesSummary != null)) {
+                    this.tableMonthlyExpensesSummary.InitVars();
+                }
+            }
+            this.tableIncomeByHouseholdIDAndChangeDate = ((IncomeByHouseholdIDAndChangeDateDataTable)(base.Tables["IncomeByHouseholdIDAndChangeDate"]));
+            if ((initTable == true)) {
+                if ((this.tableIncomeByHouseholdIDAndChangeDate != null)) {
+                    this.tableIncomeByHouseholdIDAndChangeDate.InitVars();
+                }
+            }
             this.relationFK__IncomeSou__Frequ__3FD07829 = this.Relations["FK__IncomeSou__Frequ__3FD07829"];
             this.relationFK__IncomeSou__House__3EDC53F0 = this.Relations["FK__IncomeSou__House__3EDC53F0"];
             this.relationFK__Household__House__3B95D2F1 = this.Relations["FK__Household__House__3B95D2F1"];
@@ -972,6 +1020,10 @@ namespace FRCApp {
             base.Tables.Add(this.tableYears);
             this.tableRequestsReportByYear = new RequestsReportByYearDataTable();
             base.Tables.Add(this.tableRequestsReportByYear);
+            this.tableMonthlyExpensesSummary = new MonthlyExpensesSummaryDataTable();
+            base.Tables.Add(this.tableMonthlyExpensesSummary);
+            this.tableIncomeByHouseholdIDAndChangeDate = new IncomeByHouseholdIDAndChangeDateDataTable();
+            base.Tables.Add(this.tableIncomeByHouseholdIDAndChangeDate);
             this.relationFK__IncomeSou__Frequ__3FD07829 = new global::System.Data.DataRelation("FK__IncomeSou__Frequ__3FD07829", new global::System.Data.DataColumn[] {
                         this.tableIncomeFrequencies.IncomeFrequencyIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableIncomeSources.FrequencyIDColumn}, false);
@@ -1172,6 +1224,18 @@ namespace FRCApp {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeMonthlyExpensesSummary() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeIncomeByHouseholdIDAndChangeDate() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1314,6 +1378,12 @@ namespace FRCApp {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void RequestsReportByYearRowChangeEventHandler(object sender, RequestsReportByYearRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void MonthlyExpensesSummaryRowChangeEventHandler(object sender, MonthlyExpensesSummaryRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void IncomeByHouseholdIDAndChangeDateRowChangeEventHandler(object sender, IncomeByHouseholdIDAndChangeDateRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -11052,6 +11122,607 @@ namespace FRCApp {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class MonthlyExpensesSummaryDataTable : global::System.Data.TypedTableBase<MonthlyExpensesSummaryRow> {
+            
+            private global::System.Data.DataColumn columnId;
+            
+            private global::System.Data.DataColumn columnHouseholdID;
+            
+            private global::System.Data.DataColumn columnMonthExpenses;
+            
+            private global::System.Data.DataColumn columndateChanged;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MonthlyExpensesSummaryDataTable() {
+                this.TableName = "MonthlyExpensesSummary";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal MonthlyExpensesSummaryDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected MonthlyExpensesSummaryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HouseholdIDColumn {
+                get {
+                    return this.columnHouseholdID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MonthExpensesColumn {
+                get {
+                    return this.columnMonthExpenses;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn dateChangedColumn {
+                get {
+                    return this.columndateChanged;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MonthlyExpensesSummaryRow this[int index] {
+                get {
+                    return ((MonthlyExpensesSummaryRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MonthlyExpensesSummaryRowChangeEventHandler MonthlyExpensesSummaryRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MonthlyExpensesSummaryRowChangeEventHandler MonthlyExpensesSummaryRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MonthlyExpensesSummaryRowChangeEventHandler MonthlyExpensesSummaryRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MonthlyExpensesSummaryRowChangeEventHandler MonthlyExpensesSummaryRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddMonthlyExpensesSummaryRow(MonthlyExpensesSummaryRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MonthlyExpensesSummaryRow AddMonthlyExpensesSummaryRow(System.Guid HouseholdID, decimal MonthExpenses, System.DateTime dateChanged) {
+                MonthlyExpensesSummaryRow rowMonthlyExpensesSummaryRow = ((MonthlyExpensesSummaryRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        HouseholdID,
+                        MonthExpenses,
+                        dateChanged};
+                rowMonthlyExpensesSummaryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMonthlyExpensesSummaryRow);
+                return rowMonthlyExpensesSummaryRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MonthlyExpensesSummaryRow FindById(int Id) {
+                return ((MonthlyExpensesSummaryRow)(this.Rows.Find(new object[] {
+                            Id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                MonthlyExpensesSummaryDataTable cln = ((MonthlyExpensesSummaryDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new MonthlyExpensesSummaryDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnId = base.Columns["Id"];
+                this.columnHouseholdID = base.Columns["HouseholdID"];
+                this.columnMonthExpenses = base.Columns["MonthExpenses"];
+                this.columndateChanged = base.Columns["dateChanged"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
+                this.columnHouseholdID = new global::System.Data.DataColumn("HouseholdID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHouseholdID);
+                this.columnMonthExpenses = new global::System.Data.DataColumn("MonthExpenses", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMonthExpenses);
+                this.columndateChanged = new global::System.Data.DataColumn("dateChanged", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateChanged);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = -1;
+                this.columnId.AutoIncrementStep = -1;
+                this.columnId.AllowDBNull = false;
+                this.columnId.ReadOnly = true;
+                this.columnId.Unique = true;
+                this.columnHouseholdID.AllowDBNull = false;
+                this.columnMonthExpenses.AllowDBNull = false;
+                this.columndateChanged.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MonthlyExpensesSummaryRow NewMonthlyExpensesSummaryRow() {
+                return ((MonthlyExpensesSummaryRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new MonthlyExpensesSummaryRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(MonthlyExpensesSummaryRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.MonthlyExpensesSummaryRowChanged != null)) {
+                    this.MonthlyExpensesSummaryRowChanged(this, new MonthlyExpensesSummaryRowChangeEvent(((MonthlyExpensesSummaryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.MonthlyExpensesSummaryRowChanging != null)) {
+                    this.MonthlyExpensesSummaryRowChanging(this, new MonthlyExpensesSummaryRowChangeEvent(((MonthlyExpensesSummaryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.MonthlyExpensesSummaryRowDeleted != null)) {
+                    this.MonthlyExpensesSummaryRowDeleted(this, new MonthlyExpensesSummaryRowChangeEvent(((MonthlyExpensesSummaryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.MonthlyExpensesSummaryRowDeleting != null)) {
+                    this.MonthlyExpensesSummaryRowDeleting(this, new MonthlyExpensesSummaryRowChangeEvent(((MonthlyExpensesSummaryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveMonthlyExpensesSummaryRow(MonthlyExpensesSummaryRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "MonthlyExpensesSummaryDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class IncomeByHouseholdIDAndChangeDateDataTable : global::System.Data.TypedTableBase<IncomeByHouseholdIDAndChangeDateRow> {
+            
+            private global::System.Data.DataColumn columnHouseholdID;
+            
+            private global::System.Data.DataColumn columnMonthlyAmount;
+            
+            private global::System.Data.DataColumn columnQuarterlyAmount;
+            
+            private global::System.Data.DataColumn columnDate;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public IncomeByHouseholdIDAndChangeDateDataTable() {
+                this.TableName = "IncomeByHouseholdIDAndChangeDate";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal IncomeByHouseholdIDAndChangeDateDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected IncomeByHouseholdIDAndChangeDateDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HouseholdIDColumn {
+                get {
+                    return this.columnHouseholdID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MonthlyAmountColumn {
+                get {
+                    return this.columnMonthlyAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QuarterlyAmountColumn {
+                get {
+                    return this.columnQuarterlyAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateColumn {
+                get {
+                    return this.columnDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public IncomeByHouseholdIDAndChangeDateRow this[int index] {
+                get {
+                    return ((IncomeByHouseholdIDAndChangeDateRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event IncomeByHouseholdIDAndChangeDateRowChangeEventHandler IncomeByHouseholdIDAndChangeDateRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event IncomeByHouseholdIDAndChangeDateRowChangeEventHandler IncomeByHouseholdIDAndChangeDateRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event IncomeByHouseholdIDAndChangeDateRowChangeEventHandler IncomeByHouseholdIDAndChangeDateRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event IncomeByHouseholdIDAndChangeDateRowChangeEventHandler IncomeByHouseholdIDAndChangeDateRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddIncomeByHouseholdIDAndChangeDateRow(IncomeByHouseholdIDAndChangeDateRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public IncomeByHouseholdIDAndChangeDateRow AddIncomeByHouseholdIDAndChangeDateRow(System.Guid HouseholdID, decimal MonthlyAmount, decimal QuarterlyAmount, System.DateTime Date) {
+                IncomeByHouseholdIDAndChangeDateRow rowIncomeByHouseholdIDAndChangeDateRow = ((IncomeByHouseholdIDAndChangeDateRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        HouseholdID,
+                        MonthlyAmount,
+                        QuarterlyAmount,
+                        Date};
+                rowIncomeByHouseholdIDAndChangeDateRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowIncomeByHouseholdIDAndChangeDateRow);
+                return rowIncomeByHouseholdIDAndChangeDateRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                IncomeByHouseholdIDAndChangeDateDataTable cln = ((IncomeByHouseholdIDAndChangeDateDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new IncomeByHouseholdIDAndChangeDateDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnHouseholdID = base.Columns["HouseholdID"];
+                this.columnMonthlyAmount = base.Columns["MonthlyAmount"];
+                this.columnQuarterlyAmount = base.Columns["QuarterlyAmount"];
+                this.columnDate = base.Columns["Date"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnHouseholdID = new global::System.Data.DataColumn("HouseholdID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHouseholdID);
+                this.columnMonthlyAmount = new global::System.Data.DataColumn("MonthlyAmount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMonthlyAmount);
+                this.columnQuarterlyAmount = new global::System.Data.DataColumn("QuarterlyAmount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuarterlyAmount);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("IncomeByHouseholdIDAndChangeDateKey1", new global::System.Data.DataColumn[] {
+                                this.columnHouseholdID,
+                                this.columnMonthlyAmount,
+                                this.columnDate}, false));
+                this.columnHouseholdID.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public IncomeByHouseholdIDAndChangeDateRow NewIncomeByHouseholdIDAndChangeDateRow() {
+                return ((IncomeByHouseholdIDAndChangeDateRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new IncomeByHouseholdIDAndChangeDateRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(IncomeByHouseholdIDAndChangeDateRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.IncomeByHouseholdIDAndChangeDateRowChanged != null)) {
+                    this.IncomeByHouseholdIDAndChangeDateRowChanged(this, new IncomeByHouseholdIDAndChangeDateRowChangeEvent(((IncomeByHouseholdIDAndChangeDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.IncomeByHouseholdIDAndChangeDateRowChanging != null)) {
+                    this.IncomeByHouseholdIDAndChangeDateRowChanging(this, new IncomeByHouseholdIDAndChangeDateRowChangeEvent(((IncomeByHouseholdIDAndChangeDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.IncomeByHouseholdIDAndChangeDateRowDeleted != null)) {
+                    this.IncomeByHouseholdIDAndChangeDateRowDeleted(this, new IncomeByHouseholdIDAndChangeDateRowChangeEvent(((IncomeByHouseholdIDAndChangeDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.IncomeByHouseholdIDAndChangeDateRowDeleting != null)) {
+                    this.IncomeByHouseholdIDAndChangeDateRowDeleting(this, new IncomeByHouseholdIDAndChangeDateRowChangeEvent(((IncomeByHouseholdIDAndChangeDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveIncomeByHouseholdIDAndChangeDateRow(IncomeByHouseholdIDAndChangeDateRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "IncomeByHouseholdIDAndChangeDateDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class EducationLevelsRow : global::System.Data.DataRow {
@@ -14791,6 +15462,178 @@ namespace FRCApp {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class MonthlyExpensesSummaryRow : global::System.Data.DataRow {
+            
+            private MonthlyExpensesSummaryDataTable tableMonthlyExpensesSummary;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal MonthlyExpensesSummaryRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableMonthlyExpensesSummary = ((MonthlyExpensesSummaryDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Id {
+                get {
+                    return ((int)(this[this.tableMonthlyExpensesSummary.IdColumn]));
+                }
+                set {
+                    this[this.tableMonthlyExpensesSummary.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid HouseholdID {
+                get {
+                    return ((global::System.Guid)(this[this.tableMonthlyExpensesSummary.HouseholdIDColumn]));
+                }
+                set {
+                    this[this.tableMonthlyExpensesSummary.HouseholdIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal MonthExpenses {
+                get {
+                    return ((decimal)(this[this.tableMonthlyExpensesSummary.MonthExpensesColumn]));
+                }
+                set {
+                    this[this.tableMonthlyExpensesSummary.MonthExpensesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime dateChanged {
+                get {
+                    return ((global::System.DateTime)(this[this.tableMonthlyExpensesSummary.dateChangedColumn]));
+                }
+                set {
+                    this[this.tableMonthlyExpensesSummary.dateChangedColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class IncomeByHouseholdIDAndChangeDateRow : global::System.Data.DataRow {
+            
+            private IncomeByHouseholdIDAndChangeDateDataTable tableIncomeByHouseholdIDAndChangeDate;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal IncomeByHouseholdIDAndChangeDateRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableIncomeByHouseholdIDAndChangeDate = ((IncomeByHouseholdIDAndChangeDateDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid HouseholdID {
+                get {
+                    return ((global::System.Guid)(this[this.tableIncomeByHouseholdIDAndChangeDate.HouseholdIDColumn]));
+                }
+                set {
+                    this[this.tableIncomeByHouseholdIDAndChangeDate.HouseholdIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal MonthlyAmount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableIncomeByHouseholdIDAndChangeDate.MonthlyAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MonthlyAmount\' in table \'IncomeByHouseholdIDAndChangeDate\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIncomeByHouseholdIDAndChangeDate.MonthlyAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal QuarterlyAmount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableIncomeByHouseholdIDAndChangeDate.QuarterlyAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QuarterlyAmount\' in table \'IncomeByHouseholdIDAndChangeDate" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIncomeByHouseholdIDAndChangeDate.QuarterlyAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableIncomeByHouseholdIDAndChangeDate.DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'IncomeByHouseholdIDAndChangeDate\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableIncomeByHouseholdIDAndChangeDate.DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMonthlyAmountNull() {
+                return this.IsNull(this.tableIncomeByHouseholdIDAndChangeDate.MonthlyAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMonthlyAmountNull() {
+                this[this.tableIncomeByHouseholdIDAndChangeDate.MonthlyAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQuarterlyAmountNull() {
+                return this.IsNull(this.tableIncomeByHouseholdIDAndChangeDate.QuarterlyAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQuarterlyAmountNull() {
+                this[this.tableIncomeByHouseholdIDAndChangeDate.QuarterlyAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateNull() {
+                return this.IsNull(this.tableIncomeByHouseholdIDAndChangeDate.DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateNull() {
+                this[this.tableIncomeByHouseholdIDAndChangeDate.DateColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -15796,6 +16639,74 @@ namespace FRCApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RequestsReportByYearRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class MonthlyExpensesSummaryRowChangeEvent : global::System.EventArgs {
+            
+            private MonthlyExpensesSummaryRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MonthlyExpensesSummaryRowChangeEvent(MonthlyExpensesSummaryRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MonthlyExpensesSummaryRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class IncomeByHouseholdIDAndChangeDateRowChangeEvent : global::System.EventArgs {
+            
+            private IncomeByHouseholdIDAndChangeDateRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public IncomeByHouseholdIDAndChangeDateRowChangeEvent(IncomeByHouseholdIDAndChangeDateRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public IncomeByHouseholdIDAndChangeDateRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -29856,6 +30767,590 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class MonthlyExpensesSummaryTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public MonthlyExpensesSummaryTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "MonthlyExpensesSummary";
+            tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("HouseholdID", "HouseholdID");
+            tableMapping.ColumnMappings.Add("MonthExpenses", "MonthExpenses");
+            tableMapping.ColumnMappings.Add("dateChanged", "dateChanged");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[MonthlyExpensesSummary] WHERE (([Id] = @Original_Id) AND ([Hou" +
+                "seholdID] = @Original_HouseholdID) AND ([MonthExpenses] = @Original_MonthExpense" +
+                "s) AND ([dateChanged] = @Original_dateChanged))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MonthExpenses", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "MonthExpenses", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateChanged", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateChanged", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[MonthlyExpensesSummary] ([HouseholdID], [MonthExpenses], [date" +
+                "Changed]) VALUES (@HouseholdID, @MonthExpenses, @dateChanged);\r\nSELECT Id, House" +
+                "holdID, MonthExpenses, dateChanged FROM MonthlyExpensesSummary WHERE (Id = SCOPE" +
+                "_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MonthExpenses", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "MonthExpenses", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateChanged", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateChanged", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MonthlyExpensesSummary] SET [HouseholdID] = @HouseholdID, [MonthExpenses] = @MonthExpenses, [dateChanged] = @dateChanged WHERE (([Id] = @Original_Id) AND ([HouseholdID] = @Original_HouseholdID) AND ([MonthExpenses] = @Original_MonthExpenses) AND ([dateChanged] = @Original_dateChanged));
+SELECT Id, HouseholdID, MonthExpenses, dateChanged FROM MonthlyExpensesSummary WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MonthExpenses", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "MonthExpenses", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateChanged", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateChanged", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MonthExpenses", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "MonthExpenses", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateChanged", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateChanged", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::FRCApp.Properties.Settings.Default.dBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT Id, HouseholdID, MonthExpenses, dateChanged FROM dbo.MonthlyExpensesSummar" +
+                "y";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.addExpensesTotalAMT";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalAmt", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateAdded", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.getHouseholdSummaryMonthlyExpenses";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.MonthlyExpensesSummaryDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.MonthlyExpensesSummaryDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.MonthlyExpensesSummaryDataTable dataTable = new DataSet1.MonthlyExpensesSummaryDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.MonthlyExpensesSummaryDataTable getMonthlyExpensesByHouseholdID(global::System.Nullable<global::System.Guid> HouseholdID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((HouseholdID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.Guid)(HouseholdID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            DataSet1.MonthlyExpensesSummaryDataTable dataTable = new DataSet1.MonthlyExpensesSummaryDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.MonthlyExpensesSummaryDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "MonthlyExpensesSummary");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_Id, System.Guid Original_HouseholdID, decimal Original_MonthExpenses, System.DateTime Original_dateChanged) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.Guid)(Original_HouseholdID));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_MonthExpenses));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_dateChanged));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(System.Guid HouseholdID, decimal MonthExpenses, System.DateTime dateChanged) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.Guid)(HouseholdID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(MonthExpenses));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(dateChanged));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(System.Guid HouseholdID, decimal MonthExpenses, System.DateTime dateChanged, int Original_Id, System.Guid Original_HouseholdID, decimal Original_MonthExpenses, System.DateTime Original_dateChanged, int Id) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.Guid)(HouseholdID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(MonthExpenses));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(dateChanged));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.Guid)(Original_HouseholdID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_MonthExpenses));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_dateChanged));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(System.Guid HouseholdID, decimal MonthExpenses, System.DateTime dateChanged, int Original_Id, System.Guid Original_HouseholdID, decimal Original_MonthExpenses, System.DateTime Original_dateChanged) {
+            return this.Update(HouseholdID, MonthExpenses, dateChanged, Original_Id, Original_HouseholdID, Original_MonthExpenses, Original_dateChanged, Original_Id);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int addExpensesTotalAMT(global::System.Nullable<global::System.Guid> HouseholdID, global::System.Nullable<decimal> TotalAmt, global::System.Nullable<global::System.DateTime> DateAdded) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((HouseholdID.HasValue == true)) {
+                command.Parameters[1].Value = ((System.Guid)(HouseholdID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((TotalAmt.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(TotalAmt.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((DateAdded.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(DateAdded.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class IncomeByHouseholdIDAndChangeDateTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public IncomeByHouseholdIDAndChangeDateTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "IncomeByHouseholdIDAndChangeDate";
+            tableMapping.ColumnMappings.Add("HouseholdID", "HouseholdID");
+            tableMapping.ColumnMappings.Add("MonthlyAmount", "MonthlyAmount");
+            tableMapping.ColumnMappings.Add("QuarterlyAmount", "QuarterlyAmount");
+            tableMapping.ColumnMappings.Add("Date", "Date");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::FRCApp.Properties.Settings.Default.dBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT HouseholdID, MonthlyAmount, QuarterlyAmount, Date FROM dbo.IncomeByHouseho" +
+                "ldIDAndChangeDate";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.getIncomeChangesByDate";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@householdID", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.IncomeByHouseholdIDAndChangeDateDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.IncomeByHouseholdIDAndChangeDateDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.IncomeByHouseholdIDAndChangeDateDataTable dataTable = new DataSet1.IncomeByHouseholdIDAndChangeDateDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.IncomeByHouseholdIDAndChangeDateDataTable getIncomeChangesByDate(global::System.Nullable<global::System.Guid> householdID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((householdID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.Guid)(householdID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            DataSet1.IncomeByHouseholdIDAndChangeDateDataTable dataTable = new DataSet1.IncomeByHouseholdIDAndChangeDateDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.IDbCommand[] _commandCollection;
@@ -29983,6 +31478,8 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
         private EFARequestsTableAdapter _eFARequestsTableAdapter;
         
         private YearsTableAdapter _yearsTableAdapter;
+        
+        private MonthlyExpensesSummaryTableAdapter _monthlyExpensesSummaryTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -30379,6 +31876,20 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public MonthlyExpensesSummaryTableAdapter MonthlyExpensesSummaryTableAdapter {
+            get {
+                return this._monthlyExpensesSummaryTableAdapter;
+            }
+            set {
+                this._monthlyExpensesSummaryTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -30504,6 +32015,10 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                             && (this._yearsTableAdapter.Connection != null))) {
                     return this._yearsTableAdapter.Connection;
                 }
+                if (((this._monthlyExpensesSummaryTableAdapter != null) 
+                            && (this._monthlyExpensesSummaryTableAdapter.Connection != null))) {
+                    return this._monthlyExpensesSummaryTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -30598,6 +32113,9 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                 if ((this._yearsTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._monthlyExpensesSummaryTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -30609,12 +32127,12 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._hardshipTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._householdMembersTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.HouseholdMembers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._hardshipTypesTableAdapter.Update(updatedRows));
+                    result = (result + this._householdMembersTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -30636,12 +32154,12 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._householdMembersTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.HouseholdMembers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._hardshipTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._householdMembersTableAdapter.Update(updatedRows));
+                    result = (result + this._hardshipTypesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -30654,48 +32172,12 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._eFARequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EFARequests.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eFAApprovalReasonsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EFAApprovalReasons.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._eFARequestsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._eFASubrequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._eFASubrequestsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._clientReferralsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ClientReferrals.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._clientReferralsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._clientGoalsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ClientGoals.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._clientGoalsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._caseNoteTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CaseNote.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._caseNoteTableAdapter.Update(updatedRows));
+                    result = (result + this._eFAApprovalReasonsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -30708,12 +32190,21 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._eFAApprovalReasonsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EFAApprovalReasons.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._caseNoteTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CaseNote.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._eFAApprovalReasonsTableAdapter.Update(updatedRows));
+                    result = (result + this._caseNoteTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._clientReferralsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ClientReferrals.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._clientReferralsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -30726,30 +32217,21 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._incomeSourceTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.IncomeSourceTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eFASubrequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._incomeSourceTypesTableAdapter.Update(updatedRows));
+                    result = (result + this._eFASubrequestsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._monthlyExpensesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MonthlyExpenses.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eFARequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EFARequests.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._monthlyExpensesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._householdsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Households.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._householdsTableAdapter.Update(updatedRows));
+                    result = (result + this._eFARequestsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -30759,6 +32241,42 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._yearsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._clientGoalsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ClientGoals.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._clientGoalsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._incomeSourceTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.IncomeSourceTypes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._incomeSourceTypesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._monthlyExpensesSummaryTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MonthlyExpensesSummary.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._monthlyExpensesSummaryTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._householdsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Households.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._householdsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -30852,6 +32370,15 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._monthlyExpensesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MonthlyExpenses.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._monthlyExpensesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -30862,11 +32389,11 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._hardshipTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._householdMembersTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.HouseholdMembers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._hardshipTypesTableAdapter.Update(addedRows));
+                    result = (result + this._householdMembersTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -30886,11 +32413,11 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._householdMembersTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.HouseholdMembers.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._hardshipTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._householdMembersTableAdapter.Update(addedRows));
+                    result = (result + this._hardshipTypesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -30902,43 +32429,11 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._eFARequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EFARequests.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eFAApprovalReasonsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EFAApprovalReasons.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._eFARequestsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._eFASubrequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._eFASubrequestsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._clientReferralsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ClientReferrals.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._clientReferralsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._clientGoalsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ClientGoals.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._clientGoalsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._caseNoteTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CaseNote.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._caseNoteTableAdapter.Update(addedRows));
+                    result = (result + this._eFAApprovalReasonsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -30950,11 +32445,19 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._eFAApprovalReasonsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EFAApprovalReasons.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._caseNoteTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CaseNote.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._eFAApprovalReasonsTableAdapter.Update(addedRows));
+                    result = (result + this._caseNoteTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._clientReferralsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ClientReferrals.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._clientReferralsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -30966,27 +32469,19 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._incomeSourceTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.IncomeSourceTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eFASubrequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._incomeSourceTypesTableAdapter.Update(addedRows));
+                    result = (result + this._eFASubrequestsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._monthlyExpensesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MonthlyExpenses.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eFARequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EFARequests.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._monthlyExpensesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._householdsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Households.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._householdsTableAdapter.Update(addedRows));
+                    result = (result + this._eFARequestsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -30995,6 +32490,38 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._yearsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._clientGoalsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ClientGoals.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._clientGoalsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._incomeSourceTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.IncomeSourceTypes.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._incomeSourceTypesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._monthlyExpensesSummaryTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MonthlyExpensesSummary.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._monthlyExpensesSummaryTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._householdsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Households.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._householdsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -31078,6 +32605,14 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._monthlyExpensesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MonthlyExpenses.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._monthlyExpensesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -31088,6 +32623,14 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._monthlyExpensesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MonthlyExpenses.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._monthlyExpensesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._eFARequestStatusesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.EFARequestStatuses.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -31168,14 +32711,6 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._yearsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Years.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._yearsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._householdsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Households.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -31184,11 +32719,11 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._monthlyExpensesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MonthlyExpenses.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._monthlyExpensesSummaryTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MonthlyExpensesSummary.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._monthlyExpensesTableAdapter.Update(deletedRows));
+                    result = (result + this._monthlyExpensesSummaryTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -31200,38 +32735,6 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._usersTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._usersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._eFAApprovalReasonsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EFAApprovalReasons.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eFAApprovalReasonsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._eFADenialReasonsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EFADenialReasons.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eFADenialReasonsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._caseNoteTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CaseNote.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._caseNoteTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._clientGoalsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ClientGoals.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -31240,19 +32743,11 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._clientReferralsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ClientReferrals.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._yearsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Years.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._clientReferralsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._eFASubrequestsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eFASubrequestsTableAdapter.Update(deletedRows));
+                    result = (result + this._yearsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -31264,6 +32759,54 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._eFASubrequestsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EFASubrequests.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._eFASubrequestsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._usersTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._usersTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._clientReferralsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ClientReferrals.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._clientReferralsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._caseNoteTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CaseNote.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._caseNoteTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._eFADenialReasonsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EFADenialReasons.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._eFADenialReasonsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._eFAApprovalReasonsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EFAApprovalReasons.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._eFAApprovalReasonsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._educationLevelsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.EducationLevels.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -31272,11 +32815,11 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._householdMembersTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.HouseholdMembers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._hardshipTypesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._householdMembersTableAdapter.Update(deletedRows));
+                    result = (result + this._hardshipTypesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -31296,11 +32839,11 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._hardshipTypesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.HardshipTypes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._householdMembersTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.HouseholdMembers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._hardshipTypesTableAdapter.Update(deletedRows));
+                    result = (result + this._householdMembersTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -31475,6 +33018,11 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
             }
             if (((this._yearsTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._yearsTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._monthlyExpensesSummaryTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._monthlyExpensesSummaryTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -31753,6 +33301,15 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                         adaptersWithAcceptChangesDuringUpdate.Add(this._yearsTableAdapter.Adapter);
                     }
                 }
+                if ((this._monthlyExpensesSummaryTableAdapter != null)) {
+                    revertConnections.Add(this._monthlyExpensesSummaryTableAdapter, this._monthlyExpensesSummaryTableAdapter.Connection);
+                    this._monthlyExpensesSummaryTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._monthlyExpensesSummaryTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._monthlyExpensesSummaryTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._monthlyExpensesSummaryTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._monthlyExpensesSummaryTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -31918,6 +33475,10 @@ SELECT EFARequestID, ClientID, AddressVerification, HouseholdVerification, Incom
                 if ((this._yearsTableAdapter != null)) {
                     this._yearsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._yearsTableAdapter]));
                     this._yearsTableAdapter.Transaction = null;
+                }
+                if ((this._monthlyExpensesSummaryTableAdapter != null)) {
+                    this._monthlyExpensesSummaryTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._monthlyExpensesSummaryTableAdapter]));
+                    this._monthlyExpensesSummaryTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -96,9 +96,8 @@ namespace FRCApp
                     totalAmt = totalAmt + System.Convert.ToDecimal(ctrl.Text);
                 }
             }
-           // DataSet1TableAdapters.MonthlyExpensesSummaryTableAdapter sumadapter = new DataSet1TableAdapters.MonthlyExpensesSummaryTableAdapter();
-           // sumadapter.add(this.householdID, totalAmt, DateTime.Now);
-
+            DataSet1TableAdapters.MonthlyExpensesSummaryTableAdapter sumadapter = new DataSet1TableAdapters.MonthlyExpensesSummaryTableAdapter();
+            sumadapter.addExpensesTotalAMT(this.householdID, totalAmt, DateTime.Now);
             this.Close();
         }
 
