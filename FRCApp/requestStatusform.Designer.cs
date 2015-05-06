@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.requestPanel = new System.Windows.Forms.Panel();
+            this.lstExpenses = new System.Windows.Forms.ListView();
+            this.expensesDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.expensesAmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.lstFinances = new System.Windows.Forms.ListView();
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -80,9 +83,6 @@
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
-            this.lstExpenses = new System.Windows.Forms.ListView();
-            this.expensesDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.expensesAmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.requestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).BeginInit();
             this.grpcauseshardship.SuspendLayout();
@@ -125,6 +125,30 @@
             this.requestPanel.Size = new System.Drawing.Size(867, 625);
             this.requestPanel.TabIndex = 1;
             // 
+            // lstExpenses
+            // 
+            this.lstExpenses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstExpenses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.expensesDate,
+            this.expensesAmt});
+            this.lstExpenses.Location = new System.Drawing.Point(369, 452);
+            this.lstExpenses.Name = "lstExpenses";
+            this.lstExpenses.Size = new System.Drawing.Size(197, 138);
+            this.lstExpenses.TabIndex = 28;
+            this.lstExpenses.UseCompatibleStateImageBehavior = false;
+            this.lstExpenses.View = System.Windows.Forms.View.Details;
+            // 
+            // expensesDate
+            // 
+            this.expensesDate.Text = "Date";
+            // 
+            // expensesAmt
+            // 
+            this.expensesAmt.Text = "Monthly Expenses";
+            this.expensesAmt.Width = 119;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -136,9 +160,8 @@
             // 
             // lstFinances
             // 
-            this.lstFinances.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstFinances.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lstFinances.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.date,
             this.Qincome,
@@ -217,7 +240,7 @@
             // 
             // btn_handleRequest
             // 
-            this.btn_handleRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_handleRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_handleRequest.BackColor = System.Drawing.Color.Teal;
             this.btn_handleRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_handleRequest.ForeColor = System.Drawing.Color.White;
@@ -566,7 +589,7 @@
             // 
             // cancelEfa
             // 
-            this.cancelEfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelEfa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cancelEfa.BackColor = System.Drawing.Color.Teal;
             this.cancelEfa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelEfa.ForeColor = System.Drawing.Color.White;
@@ -580,7 +603,7 @@
             // 
             // update_efa
             // 
-            this.update_efa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.update_efa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.update_efa.BackColor = System.Drawing.Color.Teal;
             this.update_efa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_efa.ForeColor = System.Drawing.Color.White;
@@ -629,27 +652,6 @@
             // eFARequestTypesTableAdapter
             // 
             this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
-            // 
-            // lstExpenses
-            // 
-            this.lstExpenses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.expensesDate,
-            this.expensesAmt});
-            this.lstExpenses.Location = new System.Drawing.Point(369, 452);
-            this.lstExpenses.Name = "lstExpenses";
-            this.lstExpenses.Size = new System.Drawing.Size(197, 138);
-            this.lstExpenses.TabIndex = 28;
-            this.lstExpenses.UseCompatibleStateImageBehavior = false;
-            this.lstExpenses.View = System.Windows.Forms.View.Details;
-            // 
-            // expensesDate
-            // 
-            this.expensesDate.Text = "Date";
-            // 
-            // expensesAmt
-            // 
-            this.expensesAmt.Text = "Monthly Expenses";
-            this.expensesAmt.Width = 119;
             // 
             // requestStatusform
             // 
