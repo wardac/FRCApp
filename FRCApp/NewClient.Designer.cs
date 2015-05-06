@@ -297,7 +297,6 @@
             // 
             // submit_button
             // 
-            this.submit_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.submit_button.BackColor = System.Drawing.Color.Teal;
             this.submit_button.ForeColor = System.Drawing.Color.White;
             this.submit_button.Location = new System.Drawing.Point(381, 630);
@@ -310,8 +309,6 @@
             // 
             // HouseholdTypeBox
             // 
-            this.HouseholdTypeBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.HouseholdTypeBox.DataSource = this.householdTypesBindingSource;
             this.HouseholdTypeBox.DisplayMember = "Type";
             this.HouseholdTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -338,8 +335,6 @@
             // 
             // EducationLevelBox
             // 
-            this.EducationLevelBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.EducationLevelBox.DataSource = this.educationLevelsBindingSource;
             this.EducationLevelBox.DisplayMember = "EducationLevel";
             this.EducationLevelBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -361,8 +356,6 @@
             // 
             // EmploymentStatusBox
             // 
-            this.EmploymentStatusBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.EmploymentStatusBox.DataSource = this.employmentStatusesBindingSource;
             this.EmploymentStatusBox.DisplayMember = "EmploymentStatus";
             this.EmploymentStatusBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -384,8 +377,6 @@
             // 
             // ReferralsBox
             // 
-            this.ReferralsBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ReferralsBox.FormattingEnabled = true;
             this.ReferralsBox.Location = new System.Drawing.Point(136, 331);
             this.ReferralsBox.Name = "ReferralsBox";
@@ -403,9 +394,6 @@
             // 
             // GoalsBox
             // 
-            this.GoalsBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.GoalsBox.FormattingEnabled = true;
             this.GoalsBox.Location = new System.Drawing.Point(136, 481);
             this.GoalsBox.Name = "GoalsBox";
@@ -418,7 +406,6 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.BackColor = System.Drawing.Color.Teal;
             this.cancelButton.ForeColor = System.Drawing.Color.White;
             this.cancelButton.Location = new System.Drawing.Point(747, 630);
@@ -546,8 +533,6 @@
             // 
             // RaceBox
             // 
-            this.RaceBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.RaceBox.DataSource = this.racesBindingSource;
             this.RaceBox.DisplayMember = "Race";
             this.RaceBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

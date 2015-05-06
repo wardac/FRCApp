@@ -360,21 +360,17 @@
             // 
             // reqpanel
             // 
-            this.reqpanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.reqpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.reqpanel.Controls.Add(this.lstActiveReq);
             this.reqpanel.Controls.Add(this.addEFAButton);
             this.reqpanel.Controls.Add(this.lblefa_request);
             this.reqpanel.Location = new System.Drawing.Point(470, 43);
             this.reqpanel.Name = "reqpanel";
-            this.reqpanel.Size = new System.Drawing.Size(610, 225);
+            this.reqpanel.Size = new System.Drawing.Size(603, 225);
             this.reqpanel.TabIndex = 1;
             // 
             // lstActiveReq
             // 
-            this.lstActiveReq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstActiveReq.BackColor = System.Drawing.Color.White;
             this.lstActiveReq.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.date,
@@ -383,7 +379,7 @@
             this.lstActiveReq.Location = new System.Drawing.Point(5, 22);
             this.lstActiveReq.MultiSelect = false;
             this.lstActiveReq.Name = "lstActiveReq";
-            this.lstActiveReq.Size = new System.Drawing.Size(600, 157);
+            this.lstActiveReq.Size = new System.Drawing.Size(593, 157);
             this.lstActiveReq.TabIndex = 3;
             this.lstActiveReq.UseCompatibleStateImageBehavior = false;
             this.lstActiveReq.View = System.Windows.Forms.View.Details;
@@ -423,9 +419,6 @@
             // 
             // efaHistPanel
             // 
-            this.efaHistPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.efaHistPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.efaHistPanel.Controls.Add(this.Search);
             this.efaHistPanel.Controls.Add(this.TxtApprovedAmount);
@@ -443,7 +436,7 @@
             this.efaHistPanel.Controls.Add(this.label1);
             this.efaHistPanel.Location = new System.Drawing.Point(470, 280);
             this.efaHistPanel.Name = "efaHistPanel";
-            this.efaHistPanel.Size = new System.Drawing.Size(610, 373);
+            this.efaHistPanel.Size = new System.Drawing.Size(603, 373);
             this.efaHistPanel.TabIndex = 2;
             // 
             // Search
@@ -460,30 +453,23 @@
             // 
             // TxtApprovedAmount
             // 
-            this.TxtApprovedAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtApprovedAmount.Location = new System.Drawing.Point(192, 138);
+            this.TxtApprovedAmount.Location = new System.Drawing.Point(192, 325);
             this.TxtApprovedAmount.Name = "TxtApprovedAmount";
-            this.TxtApprovedAmount.Size = new System.Drawing.Size(230, 20);
+            this.TxtApprovedAmount.Size = new System.Drawing.Size(223, 20);
             this.TxtApprovedAmount.TabIndex = 15;
             // 
             // txtApprovedRequest
             // 
-            this.txtApprovedRequest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtApprovedRequest.Location = new System.Drawing.Point(192, 107);
+            this.txtApprovedRequest.Location = new System.Drawing.Point(192, 294);
             this.txtApprovedRequest.Name = "txtApprovedRequest";
-            this.txtApprovedRequest.Size = new System.Drawing.Size(230, 20);
+            this.txtApprovedRequest.Size = new System.Drawing.Size(223, 20);
             this.txtApprovedRequest.TabIndex = 14;
             // 
             // txtTotalRequest
             // 
-            this.txtTotalRequest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotalRequest.Location = new System.Drawing.Point(192, 78);
+            this.txtTotalRequest.Location = new System.Drawing.Point(192, 265);
             this.txtTotalRequest.Name = "txtTotalRequest";
-            this.txtTotalRequest.Size = new System.Drawing.Size(230, 20);
+            this.txtTotalRequest.Size = new System.Drawing.Size(223, 20);
             this.txtTotalRequest.TabIndex = 13;
             // 
             // label6
@@ -491,7 +477,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Teal;
-            this.label6.Location = new System.Drawing.Point(17, 142);
+            this.label6.Location = new System.Drawing.Point(17, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(136, 12);
             this.label6.TabIndex = 12;
@@ -502,7 +488,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(17, 107);
+            this.label5.Location = new System.Drawing.Point(17, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 12);
             this.label5.TabIndex = 11;
@@ -513,7 +499,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(17, 78);
+            this.label4.Location = new System.Drawing.Point(17, 265);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 12);
             this.label4.TabIndex = 10;
@@ -568,9 +554,6 @@
             // 
             // lstViewHist
             // 
-            this.lstViewHist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstViewHist.BackColor = System.Drawing.Color.White;
             this.lstViewHist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.hist_date,
@@ -578,14 +561,13 @@
             this.amount,
             this.deniedAssistance});
             this.lstViewHist.FullRowSelect = true;
-            this.lstViewHist.Location = new System.Drawing.Point(16, 191);
+            this.lstViewHist.Location = new System.Drawing.Point(17, 92);
             this.lstViewHist.MultiSelect = false;
             this.lstViewHist.Name = "lstViewHist";
-            this.lstViewHist.Size = new System.Drawing.Size(588, 158);
+            this.lstViewHist.Size = new System.Drawing.Size(581, 158);
             this.lstViewHist.TabIndex = 4;
             this.lstViewHist.UseCompatibleStateImageBehavior = false;
             this.lstViewHist.View = System.Windows.Forms.View.Details;
-            this.lstViewHist.SelectedIndexChanged += new System.EventHandler(this.lstViewHist_SelectedIndexChanged);
             // 
             // hist_date
             // 
@@ -611,7 +593,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(15, 174);
+            this.label1.Location = new System.Drawing.Point(22, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 12);
             this.label1.TabIndex = 0;
@@ -706,8 +688,6 @@
             // 
             // caseNotePanel
             // 
-            this.caseNotePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.caseNotePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.caseNotePanel.Controls.Add(this.lstCaseNotes);
             this.caseNotePanel.Controls.Add(this.lblcasenote);
@@ -718,8 +698,6 @@
             // 
             // lstCaseNotes
             // 
-            this.lstCaseNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.lstCaseNotes.BackColor = System.Drawing.Color.White;
             this.lstCaseNotes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.caseNoteDate,

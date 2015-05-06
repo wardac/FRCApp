@@ -120,8 +120,6 @@
             // 
             // FirstNameTextBox
             // 
-            this.FirstNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.FirstNameTextBox.Location = new System.Drawing.Point(156, 10);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(196, 20);
@@ -129,8 +127,6 @@
             // 
             // LastNameTextBox
             // 
-            this.LastNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LastNameTextBox.Location = new System.Drawing.Point(156, 47);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(196, 20);
@@ -141,13 +137,11 @@
             this.SocialTextBox.Location = new System.Drawing.Point(156, 84);
             this.SocialTextBox.Mask = "0000";
             this.SocialTextBox.Name = "SocialTextBox";
-            this.SocialTextBox.Size = new System.Drawing.Size(33, 20);
+            this.SocialTextBox.Size = new System.Drawing.Size(31, 20);
             this.SocialTextBox.TabIndex = 9;
             // 
             // BirthDateTextBox
             // 
-            this.BirthDateTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.BirthDateTextBox.Location = new System.Drawing.Point(156, 118);
             this.BirthDateTextBox.Name = "BirthDateTextBox";
             this.BirthDateTextBox.Size = new System.Drawing.Size(196, 20);
@@ -155,8 +149,6 @@
             // 
             // RelationshipTextBox
             // 
-            this.RelationshipTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.RelationshipTextBox.Location = new System.Drawing.Point(156, 158);
             this.RelationshipTextBox.Name = "RelationshipTextBox";
             this.RelationshipTextBox.Size = new System.Drawing.Size(196, 20);
@@ -164,8 +156,6 @@
             // 
             // RaceBox
             // 
-            this.RaceBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.RaceBox.DataSource = this.racesBindingSource;
             this.RaceBox.DisplayMember = "Race";
             this.RaceBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -221,7 +211,6 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.UpdateButton.Location = new System.Drawing.Point(97, 277);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(75, 23);
@@ -232,7 +221,6 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelButton.Location = new System.Drawing.Point(184, 277);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
