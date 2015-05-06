@@ -476,6 +476,8 @@
             // 
             // ExpenseOtherTextBox
             // 
+            this.ExpenseOtherTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ExpenseOtherTextBox.Location = new System.Drawing.Point(671, 165);
             this.ExpenseOtherTextBox.Name = "ExpenseOtherTextBox";
             this.ExpenseOtherTextBox.Size = new System.Drawing.Size(100, 20);
@@ -485,6 +487,8 @@
             // 
             // ExpenseChildSupportTextBox
             // 
+            this.ExpenseChildSupportTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ExpenseChildSupportTextBox.Location = new System.Drawing.Point(671, 140);
             this.ExpenseChildSupportTextBox.Name = "ExpenseChildSupportTextBox";
             this.ExpenseChildSupportTextBox.Size = new System.Drawing.Size(100, 20);
@@ -494,6 +498,8 @@
             // 
             // ExpenseChildCareTextBox
             // 
+            this.ExpenseChildCareTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ExpenseChildCareTextBox.Location = new System.Drawing.Point(671, 115);
             this.ExpenseChildCareTextBox.Name = "ExpenseChildCareTextBox";
             this.ExpenseChildCareTextBox.Size = new System.Drawing.Size(100, 20);
@@ -503,6 +509,8 @@
             // 
             // ExpenseHouseholdTextBox
             // 
+            this.ExpenseHouseholdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ExpenseHouseholdTextBox.Location = new System.Drawing.Point(671, 90);
             this.ExpenseHouseholdTextBox.Name = "ExpenseHouseholdTextBox";
             this.ExpenseHouseholdTextBox.Size = new System.Drawing.Size(100, 20);
@@ -512,6 +520,8 @@
             // 
             // ExpenseHygieneTextBox
             // 
+            this.ExpenseHygieneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ExpenseHygieneTextBox.Location = new System.Drawing.Point(671, 65);
             this.ExpenseHygieneTextBox.Name = "ExpenseHygieneTextBox";
             this.ExpenseHygieneTextBox.Size = new System.Drawing.Size(100, 20);
@@ -521,6 +531,8 @@
             // 
             // ExpenseGroceriesTextBox
             // 
+            this.ExpenseGroceriesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ExpenseGroceriesTextBox.Location = new System.Drawing.Point(671, 40);
             this.ExpenseGroceriesTextBox.Name = "ExpenseGroceriesTextBox";
             this.ExpenseGroceriesTextBox.Size = new System.Drawing.Size(100, 20);
@@ -530,6 +542,7 @@
             // 
             // submitButton
             // 
+            this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.submitButton.BackColor = System.Drawing.Color.Teal;
             this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.ForeColor = System.Drawing.Color.White;
@@ -543,6 +556,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.BackColor = System.Drawing.Color.Teal;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.White;

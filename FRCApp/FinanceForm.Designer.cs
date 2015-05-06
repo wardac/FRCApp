@@ -262,6 +262,7 @@
             // 
             // radioUnarchived
             // 
+            this.radioUnarchived.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioUnarchived.AutoSize = true;
             this.radioUnarchived.Checked = true;
             this.radioUnarchived.Location = new System.Drawing.Point(750, 28);
@@ -275,6 +276,7 @@
             // 
             // radioArchived
             // 
+            this.radioArchived.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioArchived.AutoSize = true;
             this.radioArchived.Location = new System.Drawing.Point(862, 28);
             this.radioArchived.Name = "radioArchived";
@@ -286,6 +288,7 @@
             // 
             // radioAll
             // 
+            this.radioAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioAll.AutoSize = true;
             this.radioAll.Location = new System.Drawing.Point(953, 28);
             this.radioAll.Name = "radioAll";

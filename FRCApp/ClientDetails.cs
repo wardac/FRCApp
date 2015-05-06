@@ -255,5 +255,10 @@ namespace FRCApp
             loadQuickReport();
         }
 
+        private void lstViewHist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
