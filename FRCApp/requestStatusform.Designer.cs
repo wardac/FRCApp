@@ -144,7 +144,7 @@
             this.lstFinances.FullRowSelect = true;
             this.lstFinances.Location = new System.Drawing.Point(30, 452);
             this.lstFinances.Name = "lstFinances";
-            this.lstFinances.Size = new System.Drawing.Size(802, 131);
+            this.lstFinances.Size = new System.Drawing.Size(452, 138);
             this.lstFinances.TabIndex = 26;
             this.lstFinances.UseCompatibleStateImageBehavior = false;
             this.lstFinances.View = System.Windows.Forms.View.Details;

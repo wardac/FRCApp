@@ -10,3 +10,4 @@ FRCApp\bin\Debug\dB_log.ldf
 FRCApp\bin\Debug\FRCApp.pdb
 FRCApp\obj\Debug\FRCApp.csproj.FileListAbsolute.txt
 FRCApp\obj\Debug\FRCApp.csproj.GenerateResource.Cache
+FRCApp/requestStatusform.Designer.cs
