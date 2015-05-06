@@ -49,16 +49,12 @@ namespace FRCApp
                         String[] data = { cntrequest.January.ToString(), cntrequest.February.ToString(), cntrequest.March.ToString(), cntrequest.April.ToString(), cntrequest.May.ToString(), cntrequest.June.ToString(), cntrequest.July.ToString(), cntrequest.August.ToString(), cntrequest.September.ToString(), cntrequest.October.ToString(), cntrequest.November.ToString(), cntrequest.December.ToString(), cntrequest.YTD.ToString() };
                         item.SubItems.AddRange(data);
                         lstviewAssistance.Items.Add(item);
-                        if (item.Index % 2 == 0)
-                        { item.BackColor = Color.Gainsboro; }
-                        else
-                        { item.BackColor = Color.WhiteSmoke; }
             }
 
         }
         private void SearchPrimaryIncome(int year)
-        {
-            SearchRequest(DateTime.Now.Year);
+        { 
+        
         }
 
         private void Search_Click(object sender, EventArgs e)
