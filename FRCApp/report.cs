@@ -36,8 +36,9 @@ namespace FRCApp
 
         private void report_Load(object sender, EventArgs e)
         {
-           SearchRequest(DateTime.Now.Year);
-           SearchPrimaryIncome(DateTime.Now.Year);
+            SearchRequest(DateTime.Now.Year);
+            SearchPrimaryIncome(DateTime.Now.Year);
+            SearchDemographicStats(DateTime.Now.Year);
         }
 
         private void SearchRequest(int year)
@@ -62,9 +63,34 @@ namespace FRCApp
             
         }
 
+        private void SearchDemographicStats(int year)
+        {
+            lstViewDemographic.Items.Clear();
+            var reportAdapter = new DataSet1TableAdapters.RequestsReportByYearTableAdapter();
+            var requestsSubmitted = reportAdapter.GetMonthlyRequestsCountByYear(year)[0];
+            var requestsApproved = reportAdapter.GetMonthlyRequestsApprovedByYear(year)[0];
+            var householdsPerMonth = reportAdapter.GetMonthlyHouseholdsApplyingByYear(year)[0];
+            var firstTimeInYear = reportAdapter.GetMonthlyFirstTimeApplyingInYearByYear(year)[0];
+            var firstTimeEver = reportAdapter.GetMonthlyFirstTimeApplyingEverByYear(year)[0];
+            DataSet1.RequestsReportByYearRow[] rows = {requestsSubmitted, requestsApproved, householdsPerMonth, firstTimeInYear, firstTimeEver};
+            foreach (var row in rows)
+            {
+                ListViewItem item = new ListViewItem(row.Type);
+                String[] data = { row.January.ToString(), row.February.ToString(), row.March.ToString(), row.April.ToString(), row.May.ToString(), row.June.ToString(), row.July.ToString(), row.August.ToString(), row.September.ToString(), row.October.ToString(), row.November.ToString(), row.December.ToString(), row.YTD.ToString() };
+                item.SubItems.AddRange(data);
+                lstViewDemographic.Items.Add(item);
+                if (item.Index % 2 == 0)
+                { item.BackColor = Color.Gainsboro; }
+                else
+                { item.BackColor = Color.WhiteSmoke; }
+            }
+        }
+
         private void Search_Click(object sender, EventArgs e)
         {
             SearchRequest(DtpickerYear.Value.Year);
+            SearchPrimaryIncome(DtpickerYear.Value.Year);
+            SearchDemographicStats(DtpickerYear.Value.Year);
         }
     }
 
