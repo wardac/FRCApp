@@ -91,20 +91,12 @@ namespace FRCApp
             var monthRequests = monthExpensesAdapter.getMonthlyExpensesByHouseholdID(clients[0].HouseholdID);
             DataSet1TableAdapters.IncomeByHouseholdIDAndChangeDateTableAdapter amtAdapter = new DataSet1TableAdapters.IncomeByHouseholdIDAndChangeDateTableAdapter();
             var reqs = amtAdapter.getIncomeChangesByDate(clients[0].HouseholdID);
-            ArrayList lst = new ArrayList();
-            decimal expenseamt = 0;
             foreach (var req in reqs)
             {
-                foreach (var amt in monthRequests)
-                {
-                    if (req.Date <= amt.dateChanged)
-                    {
-                        expenseamt = amt.MonthExpenses;
-                    }
-                }
+
                 ListViewItem item = new ListViewItem(req.Date.ToString("MM/dd/yyyy"));
-                String[] data = { req.QuarterlyAmount.ToString("F"), req.MonthlyAmount.ToString("F"),expenseamt.ToString() };
-                lst.Add(req.Date);
+                String[] data = { req.QuarterlyAmount.ToString("F"), req.MonthlyAmount.ToString("F") };
+            
                 item.SubItems.AddRange(data);
                 lstFinances.Items.Add(item);
                 if (item.Index % 2 == 0)
@@ -112,24 +104,19 @@ namespace FRCApp
                 else
                 { item.BackColor = Color.WhiteSmoke; }
             }
-/*            ArrayList amtlst = new ArrayList ();
-            foreach (var mreq in monthRequests)
-            {
-                for (int i = 0; i +2< lst.Count; i = i + 2)
-                {
-                    if (((DateTime)lst[i]< mreq.dateChanged) && (mreq.dateChanged.Date<=(DateTime)lst[i+1]))
-                    {
-                        amtlst.Add(mreq.dateChanged);
-                    }
-                }
-            }
 
-            for(int i =0; i<lstFinances.Items.Count;i++)
-            {
-                lstFinances.Items[i].SubItems.Add(amtlst[i].ToString());
-            }
-            */
                 //end of financial summmary
+            foreach (var amt in monthRequests)
+            {
+                ListViewItem item = new ListViewItem(amt.dateChanged.ToString("MM/dd/yyyy"));
+                String[] data = { amt.MonthExpenses.ToString("F"), };
+                item.SubItems.AddRange(data);
+                lstExpenses.Items.Add(item);
+                if (item.Index % 2 == 0)
+                { item.BackColor = Color.Gainsboro; }
+                else
+                { item.BackColor = Color.WhiteSmoke; }
+            }
                 if (NewRequest)
                 {
                     this.Text = "New EFA Request";

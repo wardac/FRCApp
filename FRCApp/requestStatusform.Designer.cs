@@ -35,7 +35,6 @@
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Qincome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Mincome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Mexpenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.datagridRequests = new System.Windows.Forms.DataGridView();
             this.Request = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +80,9 @@
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
+            this.lstExpenses = new System.Windows.Forms.ListView();
+            this.expensesDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.expensesAmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.requestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).BeginInit();
             this.grpcauseshardship.SuspendLayout();
@@ -95,6 +97,7 @@
             this.requestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.requestPanel.Controls.Add(this.lstExpenses);
             this.requestPanel.Controls.Add(this.label2);
             this.requestPanel.Controls.Add(this.lstFinances);
             this.requestPanel.Controls.Add(this.datagridRequests);
@@ -139,12 +142,11 @@
             this.lstFinances.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.date,
             this.Qincome,
-            this.Mincome,
-            this.Mexpenses});
+            this.Mincome});
             this.lstFinances.FullRowSelect = true;
             this.lstFinances.Location = new System.Drawing.Point(30, 452);
             this.lstFinances.Name = "lstFinances";
-            this.lstFinances.Size = new System.Drawing.Size(452, 138);
+            this.lstFinances.Size = new System.Drawing.Size(332, 138);
             this.lstFinances.TabIndex = 26;
             this.lstFinances.UseCompatibleStateImageBehavior = false;
             this.lstFinances.View = System.Windows.Forms.View.Details;
@@ -163,11 +165,6 @@
             // 
             this.Mincome.Text = "Monthly income";
             this.Mincome.Width = 119;
-            // 
-            // Mexpenses
-            // 
-            this.Mexpenses.Text = "Monthly Expenses";
-            this.Mexpenses.Width = 120;
             // 
             // datagridRequests
             // 
@@ -316,6 +313,7 @@
             this.efa_financegroup.TabIndex = 18;
             this.efa_financegroup.TabStop = false;
             this.efa_financegroup.Text = "Financial Summary";
+            this.efa_financegroup.Visible = false;
             // 
             // txt_Mexpenses
             // 
@@ -632,6 +630,27 @@
             // 
             this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
             // 
+            // lstExpenses
+            // 
+            this.lstExpenses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.expensesDate,
+            this.expensesAmt});
+            this.lstExpenses.Location = new System.Drawing.Point(369, 452);
+            this.lstExpenses.Name = "lstExpenses";
+            this.lstExpenses.Size = new System.Drawing.Size(197, 138);
+            this.lstExpenses.TabIndex = 28;
+            this.lstExpenses.UseCompatibleStateImageBehavior = false;
+            this.lstExpenses.View = System.Windows.Forms.View.Details;
+            // 
+            // expensesDate
+            // 
+            this.expensesDate.Text = "Date";
+            // 
+            // expensesAmt
+            // 
+            this.expensesAmt.Text = "Monthly Expenses";
+            this.expensesAmt.Width = 119;
+            // 
             // requestStatusform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -711,6 +730,8 @@
         private System.Windows.Forms.ColumnHeader date;
         private System.Windows.Forms.ColumnHeader Qincome;
         private System.Windows.Forms.ColumnHeader Mincome;
-        private System.Windows.Forms.ColumnHeader Mexpenses;
+        private System.Windows.Forms.ListView lstExpenses;
+        private System.Windows.Forms.ColumnHeader expensesDate;
+        private System.Windows.Forms.ColumnHeader expensesAmt;
     }
 }
