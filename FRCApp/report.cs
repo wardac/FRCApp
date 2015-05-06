@@ -37,11 +37,12 @@ namespace FRCApp
         private void report_Load(object sender, EventArgs e)
         {
            SearchRequest(DateTime.Now.Year);
-                SearchPrimaryIncome(DateTime.Now.Year);
+           SearchPrimaryIncome(DateTime.Now.Year);
         }
 
         private void SearchRequest(int year)
         {
+            lstviewAssistance.Items.Clear();
             var request = new DataSet1TableAdapters.RequestsReportByYearTableAdapter().GetRequestsReportByYear(year);
             foreach(var cntrequest in request)
             {
@@ -57,13 +58,13 @@ namespace FRCApp
 
         }
         private void SearchPrimaryIncome(int year)
-        { 
-        
+        {
+            
         }
 
         private void Search_Click(object sender, EventArgs e)
         {
-
+            SearchRequest(DtpickerYear.Value.Year);
         }
     }
 
