@@ -79,7 +79,7 @@ namespace FRCApp
         private void archiveButton_Click(object sender, EventArgs e)
         {
             var householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
-            var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(householdID);
+            var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(new Guid(householdID));
             DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
             var frequencyRow = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter().GetData().Rows;
 
@@ -118,7 +118,7 @@ namespace FRCApp
         {
             FinancelistView.Items.Clear();
             var householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
-            var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(householdID);
+            var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(new Guid(householdID));
             DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
 
 
@@ -170,7 +170,8 @@ namespace FRCApp
             // Put them in the dropdown with HouseholdMemberID as the ValueMember and 
             // Name (combined first and last) as the DisplayMember
             var householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
-            var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(householdID);
+            var householdMembers = householdMembersAdapter.GetActiveHouseholdMembersByHouseholdID(new Guid(householdID));
+            //var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(new Guid(householdID));
             cmb_householdMember.DataSource = householdMembers;
             cmb_householdMember.ValueMember = "HouseholdMemberID";
             cmb_householdMember.DisplayMember = "Name";

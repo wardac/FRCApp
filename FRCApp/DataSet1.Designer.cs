@@ -5382,6 +5382,12 @@ namespace FRCApp {
             
             private global::System.Data.DataColumn columnName;
             
+            private global::System.Data.DataColumn columnHouseholdID1;
+            
+            private global::System.Data.DataColumn columnIsActive;
+            
+            private global::System.Data.DataColumn columnDateArchived;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public HouseholdMembersDataTable() {
@@ -5497,6 +5503,30 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HouseholdID1Column {
+                get {
+                    return this.columnHouseholdID1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IsActiveColumn {
+                get {
+                    return this.columnIsActive;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateArchivedColumn {
+                get {
+                    return this.columnDateArchived;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5532,7 +5562,7 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HouseholdMembersRow AddHouseholdMembersRow(string HouseholdID, string FirstName, string LastName, System.DateTime Birthdate, string Relationship, string Race, bool HealthCoverage, string LastFourSSN, string Name) {
+            public HouseholdMembersRow AddHouseholdMembersRow(string HouseholdID, string FirstName, string LastName, System.DateTime Birthdate, string Relationship, string Race, bool HealthCoverage, string LastFourSSN, string Name, System.Guid HouseholdID1, bool IsActive, System.DateTime DateArchived) {
                 HouseholdMembersRow rowHouseholdMembersRow = ((HouseholdMembersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5544,7 +5574,10 @@ namespace FRCApp {
                         Race,
                         HealthCoverage,
                         LastFourSSN,
-                        Name};
+                        Name,
+                        HouseholdID1,
+                        IsActive,
+                        DateArchived};
                 rowHouseholdMembersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHouseholdMembersRow);
                 return rowHouseholdMembersRow;
@@ -5584,6 +5617,9 @@ namespace FRCApp {
                 this.columnHealthCoverage = base.Columns["HealthCoverage"];
                 this.columnLastFourSSN = base.Columns["LastFourSSN"];
                 this.columnName = base.Columns["Name"];
+                this.columnHouseholdID1 = base.Columns["HouseholdID1"];
+                this.columnIsActive = base.Columns["IsActive"];
+                this.columnDateArchived = base.Columns["DateArchived"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5609,6 +5645,12 @@ namespace FRCApp {
                 base.Columns.Add(this.columnLastFourSSN);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
+                this.columnHouseholdID1 = new global::System.Data.DataColumn("HouseholdID1", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHouseholdID1);
+                this.columnIsActive = new global::System.Data.DataColumn("IsActive", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsActive);
+                this.columnDateArchived = new global::System.Data.DataColumn("DateArchived", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateArchived);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnHouseholdMemberID}, true));
                 this.columnHouseholdMemberID.AutoIncrement = true;
@@ -5618,12 +5660,17 @@ namespace FRCApp {
                 this.columnHouseholdMemberID.ReadOnly = true;
                 this.columnHouseholdMemberID.Unique = true;
                 this.columnHouseholdID.MaxLength = 36;
+                this.columnFirstName.AllowDBNull = false;
                 this.columnFirstName.MaxLength = 20;
+                this.columnLastName.AllowDBNull = false;
                 this.columnLastName.MaxLength = 20;
                 this.columnRelationship.MaxLength = 200;
                 this.columnRace.MaxLength = 20;
+                this.columnHealthCoverage.AllowDBNull = false;
                 this.columnLastFourSSN.MaxLength = 10;
                 this.columnName.MaxLength = 40;
+                this.columnHouseholdID1.Caption = "HouseholdID";
+                this.columnIsActive.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12868,12 +12915,7 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string FirstName {
                 get {
-                    try {
-                        return ((string)(this[this.tableHouseholdMembers.FirstNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FirstName\' in table \'HouseholdMembers\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableHouseholdMembers.FirstNameColumn]));
                 }
                 set {
                     this[this.tableHouseholdMembers.FirstNameColumn] = value;
@@ -12884,12 +12926,7 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string LastName {
                 get {
-                    try {
-                        return ((string)(this[this.tableHouseholdMembers.LastNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LastName\' in table \'HouseholdMembers\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableHouseholdMembers.LastNameColumn]));
                 }
                 set {
                     this[this.tableHouseholdMembers.LastNameColumn] = value;
@@ -12948,12 +12985,7 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool HealthCoverage {
                 get {
-                    try {
-                        return ((bool)(this[this.tableHouseholdMembers.HealthCoverageColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HealthCoverage\' in table \'HouseholdMembers\' is DBNull.", e);
-                    }
+                    return ((bool)(this[this.tableHouseholdMembers.HealthCoverageColumn]));
                 }
                 set {
                     this[this.tableHouseholdMembers.HealthCoverageColumn] = value;
@@ -12994,6 +13026,49 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid HouseholdID1 {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tableHouseholdMembers.HouseholdID1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HouseholdID1\' in table \'HouseholdMembers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHouseholdMembers.HouseholdID1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActive {
+                get {
+                    return ((bool)(this[this.tableHouseholdMembers.IsActiveColumn]));
+                }
+                set {
+                    this[this.tableHouseholdMembers.IsActiveColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateArchived {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableHouseholdMembers.DateArchivedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateArchived\' in table \'HouseholdMembers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHouseholdMembers.DateArchivedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsHouseholdIDNull() {
                 return this.IsNull(this.tableHouseholdMembers.HouseholdIDColumn);
             }
@@ -13002,30 +13077,6 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetHouseholdIDNull() {
                 this[this.tableHouseholdMembers.HouseholdIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFirstNameNull() {
-                return this.IsNull(this.tableHouseholdMembers.FirstNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFirstNameNull() {
-                this[this.tableHouseholdMembers.FirstNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLastNameNull() {
-                return this.IsNull(this.tableHouseholdMembers.LastNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLastNameNull() {
-                this[this.tableHouseholdMembers.LastNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13066,18 +13117,6 @@ namespace FRCApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHealthCoverageNull() {
-                return this.IsNull(this.tableHouseholdMembers.HealthCoverageColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHealthCoverageNull() {
-                this[this.tableHouseholdMembers.HealthCoverageColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLastFourSSNNull() {
                 return this.IsNull(this.tableHouseholdMembers.LastFourSSNColumn);
             }
@@ -13098,6 +13137,30 @@ namespace FRCApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNameNull() {
                 this[this.tableHouseholdMembers.NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHouseholdID1Null() {
+                return this.IsNull(this.tableHouseholdMembers.HouseholdID1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHouseholdID1Null() {
+                this[this.tableHouseholdMembers.HouseholdID1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateArchivedNull() {
+                return this.IsNull(this.tableHouseholdMembers.DateArchivedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateArchivedNull() {
+                this[this.tableHouseholdMembers.DateArchivedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22152,7 +22215,6 @@ SELECT ReferralTypeID, ReferralType FROM ReferralTypes WHERE (ReferralTypeID = @
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "HouseholdMembers";
             tableMapping.ColumnMappings.Add("HouseholdMemberID", "HouseholdMemberID");
-            tableMapping.ColumnMappings.Add("HouseholdID", "HouseholdID");
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
             tableMapping.ColumnMappings.Add("Birthdate", "Birthdate");
@@ -22160,14 +22222,17 @@ SELECT ReferralTypeID, ReferralType FROM ReferralTypes WHERE (ReferralTypeID = @
             tableMapping.ColumnMappings.Add("Race", "Race");
             tableMapping.ColumnMappings.Add("HealthCoverage", "HealthCoverage");
             tableMapping.ColumnMappings.Add("LastFourSSN", "LastFourSSN");
+            tableMapping.ColumnMappings.Add("HouseholdID", "HouseholdID1");
+            tableMapping.ColumnMappings.Add("IsActive", "IsActive");
+            tableMapping.ColumnMappings.Add("DateArchived", "DateArchived");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[HouseholdMembers] WHERE (([HouseholdMemberID] = @Original_HouseholdMemberID) AND ((@IsNull_HouseholdID = 1 AND [HouseholdID] IS NULL) OR ([HouseholdID] = @Original_HouseholdID)) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ((@IsNull_Birthdate = 1 AND [Birthdate] IS NULL) OR ([Birthdate] = @Original_Birthdate)) AND ((@IsNull_Relationship = 1 AND [Relationship] IS NULL) OR ([Relationship] = @Original_Relationship)) AND ((@IsNull_Race = 1 AND [Race] IS NULL) OR ([Race] = @Original_Race)) AND ([HealthCoverage] = @Original_HealthCoverage) AND ((@IsNull_LastFourSSN = 1 AND [LastFourSSN] IS NULL) OR ([LastFourSSN] = @Original_LastFourSSN)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[HouseholdMembers] WHERE (([HouseholdMemberID] = @Original_HouseholdMemberID) AND ((@IsNull_HouseholdID = 1 AND [HouseholdID] IS NULL) OR ([HouseholdID] = @Original_HouseholdID)) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ((@IsNull_Birthdate = 1 AND [Birthdate] IS NULL) OR ([Birthdate] = @Original_Birthdate)) AND ((@IsNull_Relationship = 1 AND [Relationship] IS NULL) OR ([Relationship] = @Original_Relationship)) AND ((@IsNull_Race = 1 AND [Race] IS NULL) OR ([Race] = @Original_Race)) AND ([HealthCoverage] = @Original_HealthCoverage) AND ((@IsNull_LastFourSSN = 1 AND [LastFourSSN] IS NULL) OR ([LastFourSSN] = @Original_LastFourSSN)) AND ([IsActive] = @Original_IsActive) AND ((@IsNull_DateArchived = 1 AND [DateArchived] IS NULL) OR ([DateArchived] = @Original_DateArchived)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdMemberID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdMemberID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HouseholdID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Birthdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -22179,12 +22244,15 @@ SELECT ReferralTypeID, ReferralType FROM ReferralTypes WHERE (ReferralTypeID = @
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HealthCoverage", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HealthCoverage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastFourSSN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastFourSSN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastFourSSN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastFourSSN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsActive", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateArchived", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateArchived", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateArchived", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateArchived", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[HouseholdMembers] ([HouseholdID], [FirstName], [LastName], [Birthdate], [Relationship], [Race], [HealthCoverage], [LastFourSSN]) VALUES (@HouseholdID, @FirstName, @LastName, @Birthdate, @Relationship, @Race, @HealthCoverage, @LastFourSSN);
-SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relationship, Race, HealthCoverage, LastFourSSN FROM HouseholdMembers WHERE (HouseholdMemberID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[HouseholdMembers] ([HouseholdID], [FirstName], [LastName], [Birthdate], [Relationship], [Race], [HealthCoverage], [LastFourSSN], [IsActive], [DateArchived]) VALUES (@HouseholdID, @FirstName, @LastName, @Birthdate, @Relationship, @Race, @HealthCoverage, @LastFourSSN, @IsActive, @DateArchived);
+SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relationship, Race, HealthCoverage, LastFourSSN, IsActive, DateArchived FROM HouseholdMembers WHERE (HouseholdMemberID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birthdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22192,12 +22260,14 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Race", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Race", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HealthCoverage", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HealthCoverage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastFourSSN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastFourSSN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateArchived", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateArchived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[HouseholdMembers] SET [HouseholdID] = @HouseholdID, [FirstName] = @FirstName, [LastName] = @LastName, [Birthdate] = @Birthdate, [Relationship] = @Relationship, [Race] = @Race, [HealthCoverage] = @HealthCoverage, [LastFourSSN] = @LastFourSSN WHERE (([HouseholdMemberID] = @Original_HouseholdMemberID) AND ((@IsNull_HouseholdID = 1 AND [HouseholdID] IS NULL) OR ([HouseholdID] = @Original_HouseholdID)) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ((@IsNull_Birthdate = 1 AND [Birthdate] IS NULL) OR ([Birthdate] = @Original_Birthdate)) AND ((@IsNull_Relationship = 1 AND [Relationship] IS NULL) OR ([Relationship] = @Original_Relationship)) AND ((@IsNull_Race = 1 AND [Race] IS NULL) OR ([Race] = @Original_Race)) AND ([HealthCoverage] = @Original_HealthCoverage) AND ((@IsNull_LastFourSSN = 1 AND [LastFourSSN] IS NULL) OR ([LastFourSSN] = @Original_LastFourSSN)));
-SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relationship, Race, HealthCoverage, LastFourSSN FROM HouseholdMembers WHERE (HouseholdMemberID = @HouseholdMemberID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[HouseholdMembers] SET [HouseholdID] = @HouseholdID, [FirstName] = @FirstName, [LastName] = @LastName, [Birthdate] = @Birthdate, [Relationship] = @Relationship, [Race] = @Race, [HealthCoverage] = @HealthCoverage, [LastFourSSN] = @LastFourSSN, [IsActive] = @IsActive, [DateArchived] = @DateArchived WHERE (([HouseholdMemberID] = @Original_HouseholdMemberID) AND ((@IsNull_HouseholdID = 1 AND [HouseholdID] IS NULL) OR ([HouseholdID] = @Original_HouseholdID)) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ((@IsNull_Birthdate = 1 AND [Birthdate] IS NULL) OR ([Birthdate] = @Original_Birthdate)) AND ((@IsNull_Relationship = 1 AND [Relationship] IS NULL) OR ([Relationship] = @Original_Relationship)) AND ((@IsNull_Race = 1 AND [Race] IS NULL) OR ([Race] = @Original_Race)) AND ([HealthCoverage] = @Original_HealthCoverage) AND ((@IsNull_LastFourSSN = 1 AND [LastFourSSN] IS NULL) OR ([LastFourSSN] = @Original_LastFourSSN)) AND ([IsActive] = @Original_IsActive) AND ((@IsNull_DateArchived = 1 AND [DateArchived] IS NULL) OR ([DateArchived] = @Original_DateArchived)));
+SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relationship, Race, HealthCoverage, LastFourSSN, IsActive, DateArchived FROM HouseholdMembers WHERE (HouseholdMemberID = @HouseholdMemberID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birthdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22205,9 +22275,11 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Race", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Race", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HealthCoverage", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HealthCoverage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastFourSSN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastFourSSN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateArchived", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateArchived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdMemberID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdMemberID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HouseholdID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Birthdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -22219,6 +22291,9 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HealthCoverage", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HealthCoverage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastFourSSN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastFourSSN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastFourSSN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastFourSSN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsActive", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateArchived", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateArchived", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateArchived", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateArchived", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdMemberID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "HouseholdMemberID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -22232,11 +22307,12 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relationsh" +
-                "ip, Race, HealthCoverage, LastFourSSN FROM dbo.HouseholdMembers";
+                "ip, Race, HealthCoverage, LastFourSSN, IsActive, DateArchived FROM dbo.Household" +
+                "Members";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -22285,13 +22361,19 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
             this._commandCollection[4].CommandText = "dbo.GetHouseholdMembersByHouseholdID";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.NVarChar, 36, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "dbo.getHouseholdMembersById";
+            this._commandCollection[5].CommandText = "dbo.GetActiveHouseholdMembersByHouseholdID";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "dbo.getHouseholdMembersById";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HouseholdID", global::System.Data.SqlDbType.UniqueIdentifier, 16, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22322,13 +22404,13 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DataSet1.HouseholdMembersDataTable dataTable, string HouseholdID) {
+        public virtual int FillBy(DataSet1.HouseholdMembersDataTable dataTable, global::System.Nullable<global::System.Guid> HouseholdID) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
-            if ((HouseholdID == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            if ((HouseholdID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.Guid)(HouseholdID.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(HouseholdID));
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -22341,13 +22423,49 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.HouseholdMembersDataTable GetHouseholdMembersByHouseholdID(string HouseholdID) {
+        public virtual DataSet1.HouseholdMembersDataTable GetHouseholdMembersByHouseholdID(global::System.Nullable<global::System.Guid> HouseholdID) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
-            if ((HouseholdID == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            if ((HouseholdID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.Guid)(HouseholdID.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(HouseholdID));
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            DataSet1.HouseholdMembersDataTable dataTable = new DataSet1.HouseholdMembersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(DataSet1.HouseholdMembersDataTable dataTable, global::System.Nullable<global::System.Guid> HouseholdID) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((HouseholdID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.Guid)(HouseholdID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.HouseholdMembersDataTable GetActiveHouseholdMembersByHouseholdID(global::System.Nullable<global::System.Guid> HouseholdID) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((HouseholdID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.Guid)(HouseholdID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             DataSet1.HouseholdMembersDataTable dataTable = new DataSet1.HouseholdMembersDataTable();
             this.Adapter.Fill(dataTable);
@@ -22359,7 +22477,7 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet1.HouseholdMembersDataTable getHouseholdMembersById(global::System.Nullable<global::System.Guid> HouseholdID) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((HouseholdID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.Guid)(HouseholdID.Value));
             }
@@ -22404,29 +22522,24 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(global::System.Nullable<int> Original_HouseholdMemberID, string Original_HouseholdID, string Original_FirstName, string Original_LastName, global::System.Nullable<global::System.DateTime> Original_Birthdate, string Original_Relationship, string Original_Race, global::System.Nullable<bool> Original_HealthCoverage, string Original_LastFourSSN) {
-            if ((Original_HouseholdMemberID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_HouseholdMemberID.Value));
+        public virtual int Delete(int Original_HouseholdMemberID, global::System.Nullable<global::System.Guid> Original_HouseholdID, string Original_FirstName, string Original_LastName, global::System.Nullable<global::System.DateTime> Original_Birthdate, string Original_Relationship, string Original_Race, bool Original_HealthCoverage, string Original_LastFourSSN, bool Original_IsActive, global::System.Nullable<global::System.DateTime> Original_DateArchived) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_HouseholdMemberID));
+            if ((Original_HouseholdID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.Guid)(Original_HouseholdID.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((Original_HouseholdID == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_HouseholdID));
-            }
             if ((Original_FirstName == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_FirstName");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_FirstName));
             }
             if ((Original_LastName == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_LastName");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_LastName));
@@ -22455,12 +22568,7 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Race));
             }
-            if ((Original_HealthCoverage.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_HealthCoverage.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_HealthCoverage));
             if ((Original_LastFourSSN == null)) {
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
@@ -22468,6 +22576,15 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
             else {
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_LastFourSSN));
+            }
+            this.Adapter.DeleteCommand.Parameters[14].Value = ((bool)(Original_IsActive));
+            if ((Original_DateArchived.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((System.DateTime)(Original_DateArchived.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -22489,21 +22606,21 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string HouseholdID, string FirstName, string LastName, global::System.Nullable<global::System.DateTime> Birthdate, string Relationship, string Race, global::System.Nullable<bool> HealthCoverage, string LastFourSSN) {
-            if ((HouseholdID == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(global::System.Nullable<global::System.Guid> HouseholdID, string FirstName, string LastName, global::System.Nullable<global::System.DateTime> Birthdate, string Relationship, string Race, bool HealthCoverage, string LastFourSSN, bool IsActive, global::System.Nullable<global::System.DateTime> DateArchived) {
+            if ((HouseholdID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((System.Guid)(HouseholdID.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(HouseholdID));
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             if ((FirstName == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("FirstName");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(FirstName));
             }
             if ((LastName == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("LastName");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(LastName));
@@ -22526,17 +22643,19 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Race));
             }
-            if ((HealthCoverage.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(HealthCoverage.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(HealthCoverage));
             if ((LastFourSSN == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(LastFourSSN));
+            }
+            this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(IsActive));
+            if ((DateArchived.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(DateArchived.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -22559,38 +22678,42 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string HouseholdID, 
+                    global::System.Nullable<global::System.Guid> HouseholdID, 
                     string FirstName, 
                     string LastName, 
                     global::System.Nullable<global::System.DateTime> Birthdate, 
                     string Relationship, 
                     string Race, 
-                    global::System.Nullable<bool> HealthCoverage, 
+                    bool HealthCoverage, 
                     string LastFourSSN, 
-                    global::System.Nullable<int> Original_HouseholdMemberID, 
-                    string Original_HouseholdID, 
+                    bool IsActive, 
+                    global::System.Nullable<global::System.DateTime> DateArchived, 
+                    int Original_HouseholdMemberID, 
+                    global::System.Nullable<global::System.Guid> Original_HouseholdID, 
                     string Original_FirstName, 
                     string Original_LastName, 
                     global::System.Nullable<global::System.DateTime> Original_Birthdate, 
                     string Original_Relationship, 
                     string Original_Race, 
-                    global::System.Nullable<bool> Original_HealthCoverage, 
+                    bool Original_HealthCoverage, 
                     string Original_LastFourSSN, 
-                    global::System.Nullable<int> HouseholdMemberID) {
-            if ((HouseholdID == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                    bool Original_IsActive, 
+                    global::System.Nullable<global::System.DateTime> Original_DateArchived, 
+                    int HouseholdMemberID) {
+            if ((HouseholdID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.Guid)(HouseholdID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(HouseholdID));
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             if ((FirstName == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("FirstName");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(FirstName));
             }
             if ((LastName == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("LastName");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(LastName));
@@ -22613,88 +22736,84 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Race));
             }
-            if ((HealthCoverage.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(HealthCoverage.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(HealthCoverage));
             if ((LastFourSSN == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(LastFourSSN));
             }
-            if ((Original_HouseholdMemberID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_HouseholdMemberID.Value));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(IsActive));
+            if ((DateArchived.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(DateArchived.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_HouseholdID == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_HouseholdID));
-            }
-            if ((Original_FirstName == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_HouseholdMemberID));
+            if ((Original_HouseholdID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.Guid)(Original_HouseholdID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_FirstName));
-            }
-            if ((Original_LastName == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
+            if ((Original_FirstName == null)) {
+                throw new global::System.ArgumentNullException("Original_FirstName");
+            }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_LastName));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_FirstName));
+            }
+            if ((Original_LastName == null)) {
+                throw new global::System.ArgumentNullException("Original_LastName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_LastName));
             }
             if ((Original_Birthdate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_Birthdate.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_Birthdate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Relationship == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Relationship));
-            }
-            if ((Original_Race == null)) {
+            if ((Original_Relationship == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Race));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Relationship));
             }
-            if ((Original_HealthCoverage.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(Original_HealthCoverage.Value));
+            if ((Original_Race == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Race));
             }
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((bool)(Original_HealthCoverage));
             if ((Original_LastFourSSN == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_LastFourSSN));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_LastFourSSN));
             }
-            if ((HouseholdMemberID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(HouseholdMemberID.Value));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((bool)(Original_IsActive));
+            if ((Original_DateArchived.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_DateArchived.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(HouseholdMemberID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22716,24 +22835,28 @@ SELECT HouseholdMemberID, HouseholdID, FirstName, LastName, Birthdate, Relations
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string HouseholdID, 
+                    global::System.Nullable<global::System.Guid> HouseholdID, 
                     string FirstName, 
                     string LastName, 
                     global::System.Nullable<global::System.DateTime> Birthdate, 
                     string Relationship, 
                     string Race, 
-                    global::System.Nullable<bool> HealthCoverage, 
+                    bool HealthCoverage, 
                     string LastFourSSN, 
-                    global::System.Nullable<int> Original_HouseholdMemberID, 
-                    string Original_HouseholdID, 
+                    bool IsActive, 
+                    global::System.Nullable<global::System.DateTime> DateArchived, 
+                    int Original_HouseholdMemberID, 
+                    global::System.Nullable<global::System.Guid> Original_HouseholdID, 
                     string Original_FirstName, 
                     string Original_LastName, 
                     global::System.Nullable<global::System.DateTime> Original_Birthdate, 
                     string Original_Relationship, 
                     string Original_Race, 
-                    global::System.Nullable<bool> Original_HealthCoverage, 
-                    string Original_LastFourSSN) {
-            return this.Update(HouseholdID, FirstName, LastName, Birthdate, Relationship, Race, HealthCoverage, LastFourSSN, Original_HouseholdMemberID, Original_HouseholdID, Original_FirstName, Original_LastName, Original_Birthdate, Original_Relationship, Original_Race, Original_HealthCoverage, Original_LastFourSSN, Original_HouseholdMemberID);
+                    bool Original_HealthCoverage, 
+                    string Original_LastFourSSN, 
+                    bool Original_IsActive, 
+                    global::System.Nullable<global::System.DateTime> Original_DateArchived) {
+            return this.Update(HouseholdID, FirstName, LastName, Birthdate, Relationship, Race, HealthCoverage, LastFourSSN, IsActive, DateArchived, Original_HouseholdMemberID, Original_HouseholdID, Original_FirstName, Original_LastName, Original_Birthdate, Original_Relationship, Original_Race, Original_HealthCoverage, Original_LastFourSSN, Original_IsActive, Original_DateArchived, Original_HouseholdMemberID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
