@@ -60,7 +60,7 @@
             this.Tdec = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tytd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstPrimaryIncome = new System.Windows.Forms.ListView();
             this.PrimaryIncome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pjan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pfeb = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -144,43 +144,36 @@
             // 
             // may
             // 
-            this.may.DisplayIndex = 11;
             this.may.Text = "May";
             this.may.Width = 40;
             // 
             // Jun
             // 
-            this.Jun.DisplayIndex = 5;
             this.Jun.Text = "Jun";
             this.Jun.Width = 40;
             // 
             // jul
             // 
-            this.jul.DisplayIndex = 6;
             this.jul.Text = "Jul";
             this.jul.Width = 40;
             // 
             // aug
             // 
-            this.aug.DisplayIndex = 7;
             this.aug.Text = "Aug";
             this.aug.Width = 40;
             // 
             // Sept
             // 
-            this.Sept.DisplayIndex = 8;
             this.Sept.Text = "Sept";
             this.Sept.Width = 40;
             // 
             // Oct
             // 
-            this.Oct.DisplayIndex = 9;
             this.Oct.Text = "Oct";
             this.Oct.Width = 40;
             // 
             // Nov
             // 
-            this.Nov.DisplayIndex = 10;
             this.Nov.Text = "Nov";
             this.Nov.Width = 40;
             // 
@@ -246,43 +239,36 @@
             // 
             // Tmay
             // 
-            this.Tmay.DisplayIndex = 11;
             this.Tmay.Text = "May";
             this.Tmay.Width = 40;
             // 
             // TJun
             // 
-            this.TJun.DisplayIndex = 5;
             this.TJun.Text = "Jun";
             this.TJun.Width = 40;
             // 
             // Tjul
             // 
-            this.Tjul.DisplayIndex = 6;
             this.Tjul.Text = "Jul";
             this.Tjul.Width = 40;
             // 
             // Taug
             // 
-            this.Taug.DisplayIndex = 7;
             this.Taug.Text = "Aug";
             this.Taug.Width = 40;
             // 
             // Tsept
             // 
-            this.Tsept.DisplayIndex = 8;
             this.Tsept.Text = "Sept";
             this.Tsept.Width = 40;
             // 
             // Toct
             // 
-            this.Toct.DisplayIndex = 9;
             this.Toct.Text = "Oct";
             this.Toct.Width = 40;
             // 
             // Tnov
             // 
-            this.Tnov.DisplayIndex = 10;
             this.Tnov.Text = "Nov";
             this.Tnov.Width = 40;
             // 
@@ -305,12 +291,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Types of Assistance Requested";
             // 
-            // listView1
+            // lstPrimaryIncome
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lstPrimaryIncome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstPrimaryIncome.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PrimaryIncome,
             this.Pjan,
             this.Pfeb,
@@ -325,12 +311,12 @@
             this.Pnov,
             this.Pdec,
             this.Pytd});
-            this.listView1.Location = new System.Drawing.Point(77, 472);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(801, 135);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lstPrimaryIncome.Location = new System.Drawing.Point(77, 472);
+            this.lstPrimaryIncome.Name = "lstPrimaryIncome";
+            this.lstPrimaryIncome.Size = new System.Drawing.Size(801, 135);
+            this.lstPrimaryIncome.TabIndex = 4;
+            this.lstPrimaryIncome.UseCompatibleStateImageBehavior = false;
+            this.lstPrimaryIncome.View = System.Windows.Forms.View.Details;
             // 
             // PrimaryIncome
             // 
@@ -359,43 +345,36 @@
             // 
             // Pmay
             // 
-            this.Pmay.DisplayIndex = 11;
             this.Pmay.Text = "May";
             this.Pmay.Width = 40;
             // 
             // Pjun
             // 
-            this.Pjun.DisplayIndex = 5;
             this.Pjun.Text = "Jun";
             this.Pjun.Width = 40;
             // 
             // Pjul
             // 
-            this.Pjul.DisplayIndex = 6;
             this.Pjul.Text = "Jul";
             this.Pjul.Width = 40;
             // 
             // Paug
             // 
-            this.Paug.DisplayIndex = 7;
             this.Paug.Text = "Aug";
             this.Paug.Width = 40;
             // 
             // Psept
             // 
-            this.Psept.DisplayIndex = 8;
             this.Psept.Text = "Sept";
             this.Psept.Width = 40;
             // 
             // Poct
             // 
-            this.Poct.DisplayIndex = 9;
             this.Poct.Text = "Oct";
             this.Poct.Width = 40;
             // 
             // Pnov
             // 
-            this.Pnov.DisplayIndex = 10;
             this.Pnov.Text = "Nov";
             this.Pnov.Width = 40;
             // 
@@ -461,7 +440,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DtpickerYear);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lstPrimaryIncome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lstviewAssistance);
             this.Controls.Add(this.lstViewDemographic);
@@ -508,7 +487,7 @@
         private System.Windows.Forms.ColumnHeader Tdec;
         private System.Windows.Forms.ColumnHeader Tytd;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstPrimaryIncome;
         private System.Windows.Forms.ColumnHeader PrimaryIncome;
         private System.Windows.Forms.ColumnHeader Pjan;
         private System.Windows.Forms.ColumnHeader Pfeb;

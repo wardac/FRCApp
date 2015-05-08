@@ -60,7 +60,20 @@ namespace FRCApp
         }
         private void SearchPrimaryIncome(int year)
         {
-            
+            lstPrimaryIncome.Items.Clear();
+            var incomeAdapter = new DataSet1TableAdapters.RequestsReportByYearTableAdapter();
+            var primaryIncomes = incomeAdapter.GetMonthlyPrimaryIncomeSourceByYear(year);
+            foreach (var income in primaryIncomes)
+            {
+                ListViewItem item = new ListViewItem(income.Type);
+                String[] data = { income.January.ToString(), income.February.ToString(), income.March.ToString(), income.April.ToString(), income.May.ToString(), income.June.ToString(), income.July.ToString(), income.August.ToString(), income.September.ToString(), income.October.ToString(), income.November.ToString(), income.December.ToString(), income.YTD.ToString() };
+                item.SubItems.AddRange(data);
+                lstPrimaryIncome.Items.Add(item);
+                if (item.Index % 2 == 0)
+                { item.BackColor = Color.Gainsboro; }
+                else
+                { item.BackColor = Color.WhiteSmoke; }
+            }
         }
 
         private void SearchDemographicStats(int year)
