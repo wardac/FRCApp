@@ -132,6 +132,7 @@ namespace FRCApp
                 }
                 else
                 {
+
                     checklist_requestType.Visible = false;
                     txt_other.Visible = false;
                     date_requestDate.Enabled = false;
@@ -152,7 +153,6 @@ namespace FRCApp
 
                     var requestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
                     var request = requestAdapter.GetEFARequestsByEFARequestID(RequestID)[0];
-
                     DateTime?[] dates = { (request.IsAddressVerificationNull() ? null : (DateTime?)request.AddressVerification), (request.IsHouseholdVerificationNull() ? null : (DateTime?)request.HouseholdVerification), (request.IsIncomeVerificationNull() ? null : (DateTime?)request.IncomeVerification), (request.IsBillVerificationNull() ? null : (DateTime?)request.BillVerification), (request.IsHardshipVerificationNull() ? null : (DateTime?)request.HardshipVerification) };
                     CheckBox[] boxes = { efa_proofaddress, efa_proofHousehold, efa_proofIncome, efa_proofAssistance, efa_proofharship };
                     DateTimePicker[] pickers = { addressdate, householdDate, incomedate, assistancedate, hardshipdate };
@@ -175,6 +175,10 @@ namespace FRCApp
 
                     if (!request.IsDateClosedNull())
                     {
+                        lblApproval.Visible = true;
+                        lblDenial.Visible = true;
+                        txtApproval.Visible = true;
+                        txtDenial.Visible = true;
                         date_completedDate.Value = request.DateClosed;
                         lbl_completedDate.Visible = true;
                         date_completedDate.Visible = true;
@@ -184,6 +188,8 @@ namespace FRCApp
                         efa_comment.Enabled = false;
                         boxes.ToList().ForEach((box) => box.Enabled = false);
                         pickers.ToList().ForEach((picker) => picker.Enabled = false);
+                        txtApproval.Text = request.ApprovalReason;
+                        txtDenial.Text = request.DenialReason;
                     }
 
                 }

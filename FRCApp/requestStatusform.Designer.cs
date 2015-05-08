@@ -83,6 +83,10 @@
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
+            this.lblApproval = new System.Windows.Forms.Label();
+            this.txtApproval = new System.Windows.Forms.TextBox();
+            this.txtDenial = new System.Windows.Forms.TextBox();
+            this.lblDenial = new System.Windows.Forms.Label();
             this.requestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).BeginInit();
             this.grpcauseshardship.SuspendLayout();
@@ -97,6 +101,10 @@
             this.requestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.requestPanel.Controls.Add(this.txtDenial);
+            this.requestPanel.Controls.Add(this.lblDenial);
+            this.requestPanel.Controls.Add(this.txtApproval);
+            this.requestPanel.Controls.Add(this.lblApproval);
             this.requestPanel.Controls.Add(this.lstExpenses);
             this.requestPanel.Controls.Add(this.label2);
             this.requestPanel.Controls.Add(this.lstFinances);
@@ -330,9 +338,9 @@
             this.efa_financegroup.Controls.Add(this.label1);
             this.efa_financegroup.Controls.Add(this.label3);
             this.efa_financegroup.Controls.Add(this.lblCQinfo);
-            this.efa_financegroup.Location = new System.Drawing.Point(457, 303);
+            this.efa_financegroup.Location = new System.Drawing.Point(598, 452);
             this.efa_financegroup.Name = "efa_financegroup";
-            this.efa_financegroup.Size = new System.Drawing.Size(386, 131);
+            this.efa_financegroup.Size = new System.Drawing.Size(245, 92);
             this.efa_financegroup.TabIndex = 18;
             this.efa_financegroup.TabStop = false;
             this.efa_financegroup.Text = "Financial Summary";
@@ -653,6 +661,48 @@
             // 
             this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
             // 
+            // lblApproval
+            // 
+            this.lblApproval.AutoSize = true;
+            this.lblApproval.ForeColor = System.Drawing.Color.Teal;
+            this.lblApproval.Location = new System.Drawing.Point(446, 276);
+            this.lblApproval.Name = "lblApproval";
+            this.lblApproval.Size = new System.Drawing.Size(93, 13);
+            this.lblApproval.TabIndex = 29;
+            this.lblApproval.Text = "Approved Reason";
+            this.lblApproval.Visible = false;
+            // 
+            // txtApproval
+            // 
+            this.txtApproval.Enabled = false;
+            this.txtApproval.Location = new System.Drawing.Point(446, 295);
+            this.txtApproval.Multiline = true;
+            this.txtApproval.Name = "txtApproval";
+            this.txtApproval.Size = new System.Drawing.Size(386, 37);
+            this.txtApproval.TabIndex = 30;
+            this.txtApproval.Visible = false;
+            // 
+            // txtDenial
+            // 
+            this.txtDenial.Enabled = false;
+            this.txtDenial.Location = new System.Drawing.Point(449, 377);
+            this.txtDenial.Multiline = true;
+            this.txtDenial.Name = "txtDenial";
+            this.txtDenial.Size = new System.Drawing.Size(386, 37);
+            this.txtDenial.TabIndex = 32;
+            this.txtDenial.Visible = false;
+            // 
+            // lblDenial
+            // 
+            this.lblDenial.AutoSize = true;
+            this.lblDenial.ForeColor = System.Drawing.Color.Teal;
+            this.lblDenial.Location = new System.Drawing.Point(449, 358);
+            this.lblDenial.Name = "lblDenial";
+            this.lblDenial.Size = new System.Drawing.Size(77, 13);
+            this.lblDenial.TabIndex = 31;
+            this.lblDenial.Text = "Denial Reason";
+            this.lblDenial.Visible = false;
+            // 
             // requestStatusform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -735,5 +785,9 @@
         private System.Windows.Forms.ListView lstExpenses;
         private System.Windows.Forms.ColumnHeader expensesDate;
         private System.Windows.Forms.ColumnHeader expensesAmt;
+        private System.Windows.Forms.TextBox txtDenial;
+        private System.Windows.Forms.Label lblDenial;
+        private System.Windows.Forms.TextBox txtApproval;
+        private System.Windows.Forms.Label lblApproval;
     }
 }

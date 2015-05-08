@@ -68,6 +68,7 @@
             this.lblReferals.Size = new System.Drawing.Size(222, 13);
             this.lblReferals.TabIndex = 8;
             this.lblReferals.Text = "REFERRALS AND OTHER SERVICES";
+            this.lblReferals.Visible = false;
             // 
             // checkedListBox2
             // 
@@ -97,6 +98,7 @@
             this.checkedListBox2.ScrollAlwaysVisible = true;
             this.checkedListBox2.Size = new System.Drawing.Size(396, 199);
             this.checkedListBox2.TabIndex = 7;
+            this.checkedListBox2.Visible = false;
             // 
             // label1
             // 
@@ -219,7 +221,6 @@
             this.cmb_denialReason.Location = new System.Drawing.Point(13, 371);
             this.cmb_denialReason.Name = "cmb_denialReason";
             this.cmb_denialReason.Size = new System.Drawing.Size(395, 21);
-            this.cmb_denialReason.Sorted = true;
             this.cmb_denialReason.TabIndex = 34;
             // 
             // cmb_approvalReason
@@ -229,7 +230,6 @@
             this.cmb_approvalReason.Location = new System.Drawing.Point(496, 371);
             this.cmb_approvalReason.Name = "cmb_approvalReason";
             this.cmb_approvalReason.Size = new System.Drawing.Size(395, 21);
-            this.cmb_approvalReason.Sorted = true;
             this.cmb_approvalReason.TabIndex = 34;
             // 
             // lst_requestedServices

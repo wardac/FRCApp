@@ -60,7 +60,7 @@ namespace FRCApp
 
             var approvalReasonsAdapter = new DataSet1TableAdapters.EFAApprovalReasonsTableAdapter();
             var denialReasonsAdapter = new DataSet1TableAdapters.EFADenialReasonsTableAdapter();
-            var approvalReasons = approvalReasonsAdapter.GetData();
+            var approvalReasons = approvalReasonsAdapter.GetEFAApprovalReasons();
             var denialReasons = denialReasonsAdapter.GetData();
             cmb_approvalReason.DataSource = approvalReasons;
             cmb_approvalReason.DisplayMember = "Reason";
@@ -103,6 +103,11 @@ namespace FRCApp
 
         private void btn_done_Click(object sender, EventArgs e)
         {
+            if (cmb_approvalReason.Text == "None" && cmb_denialReason.Text == "None")
+            {
+                MessageBox.Show("Approval and Denial reasons can't both be None");
+                return;
+            }
             var efaSubrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
             foreach (Service unapprovedService in lst_requestedServices.Items)
             {
