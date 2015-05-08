@@ -17,6 +17,7 @@ namespace FRCApp
         {
             InitializeComponent();
             this.timer = timer;
+            this.FormClosed += ExitProgramEvent;
         }
 
         private void login_submit_Click(object sender, EventArgs e)
@@ -26,6 +27,7 @@ namespace FRCApp
             if (level != null)
             {
                 // check for default password
+                this.FormClosed -= ExitProgramEvent;
                 timer.Enabled = true;
                 StartPage startPage = new StartPage(level.ToString(), this.login_username.Text);
                 this.Close();
@@ -46,6 +48,10 @@ namespace FRCApp
         {
             this.login_username.Text = "";
             this.login_Password.Text = "";
+        }
+
+        private void ExitProgramEvent(object sender, EventArgs e) {
+            Application.Exit();
         }
     }
 }

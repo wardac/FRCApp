@@ -22,6 +22,7 @@ namespace FRCApp
             this.userName = userName;        
             InitializeComponent();
             this.current_user.Text = userName;
+            this.FormClosed += ExitProgramEvent;
         }
 
         private void addNewClient_button_Click(object sender, EventArgs e)
@@ -124,6 +125,7 @@ namespace FRCApp
             DialogResult messageBox = MessageBox.Show("Are you sure you want to logout?", "", MessageBoxButtons.YesNo);
             if (messageBox == DialogResult.Yes)
             {
+                this.FormClosed -= ExitProgramEvent;
                 this.Close();
                 System.Timers.Timer timer = new System.Timers.Timer(1000);
                 timer.Elapsed += ((o, a) => { if (LoginTimeout.LastInputTime() < DateTime.Now.AddMinutes(-30)) { Application.Exit(); } });
@@ -134,6 +136,10 @@ namespace FRCApp
         private void viewReport_Click(object sender, EventArgs e)
         {
             new report(DateTime.Now.Year).Show();
+        }
+
+        private void ExitProgramEvent(object sender, EventArgs e) {
+            Application.Exit();
         }
     }
 }
