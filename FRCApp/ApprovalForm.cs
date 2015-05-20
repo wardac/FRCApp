@@ -109,13 +109,17 @@ namespace FRCApp
                 return;
             }
             var efaSubrequestAdapter = new DataSet1TableAdapters.EFASubrequestsTableAdapter();
-            foreach (Service unapprovedService in lst_requestedServices.Items)
+            for (int i = 0; i < lst_requestedServices.Items.Count; ++i)
+            //foreach (Service unapprovedService in lst_requestedServices.Items)
             {
+                Service unapprovedService = (Service)lst_requestedServices.Items[i];
                 efaSubrequestAdapter.AddOrUpdateEFASubrequest(unapprovedService.EFASubrequestID, requestID, unapprovedService.Type, DateTime.Now, false, unapprovedService.amount);
             }
 
-            foreach(DataGridViewRow data in gridApprovedservices.Rows)
+            for (int i = 0; i < gridApprovedservices.Rows.Count; ++i)
+            //foreach(DataGridViewRow data in gridApprovedservices.Rows)
             {
+                DataGridViewRow data = gridApprovedservices.Rows[i];
                 if (data != null && Convert.ToString(data.Cells[0].Value) != "")
                 {
                     Service approvedService = new Service(Convert.ToString(data.Cells[0].Value), Convert.ToString(data.Cells[1].Value), Convert.ToDecimal(data.Cells[2].Value));
