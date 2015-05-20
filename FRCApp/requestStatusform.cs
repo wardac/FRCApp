@@ -22,7 +22,7 @@ namespace FRCApp
             InitializeComponent();
             this.ClientID = ClientID;
             this.RequestID = RequestID ?? System.Guid.NewGuid().ToString();
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler((o, e) => OnCloseEvent());
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler((o, e) => OnCloseEvent());
         }
 
 

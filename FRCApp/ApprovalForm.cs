@@ -18,7 +18,7 @@ namespace FRCApp
         public ApprovalForm(String requestID, Action OnCloseEvent)
         {
             this.requestID = requestID;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler((o, e) => OnCloseEvent());
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler((o, e) => OnCloseEvent());
             InitializeComponent();
         }
 
