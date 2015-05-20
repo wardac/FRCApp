@@ -80,7 +80,7 @@ namespace FRCApp
             var activeEfaRequests = efaRequestDisplayAdapter.GetActiveEFARequestsByClientID(ClientID.ToString());
             if (activeEfaRequests.IsInitialized )
             {
-                foreach (var efaRequest in activeEfaRequests)
+                foreach (var efaRequest in activeEfaRequests.ToList())
                 {
                     var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
                
@@ -96,7 +96,7 @@ namespace FRCApp
 
             var inactiveEfaRequests = efaRequestDisplayAdapter.GetInactiveEFARequestsByClientID(ClientID.ToString());
             DateTime lowestDate=DateTime.Now;
-            foreach (var efaRequest in inactiveEfaRequests)
+            foreach (var efaRequest in inactiveEfaRequests.ToList())
             {
                 var item = new ListViewItem(efaRequest.DateRequested.ToString("MM/dd/yyyy"));
                 if (efaRequest.DateRequested < lowestDate)
@@ -141,7 +141,7 @@ namespace FRCApp
             lstCaseNotes.Items.Clear();
             var casenoteadapter = new DataSet1TableAdapters.CaseNoteTableAdapter();
             var casenotes = casenoteadapter.GetcasenotebyId(ClientID.ToString());
-            foreach (var casenote in casenotes)
+            foreach (var casenote in casenotes.ToList())
             {
                 var item = new ListViewItem(casenote.date.ToString("MM/dd/yyyy"));
                 item.Tag = casenote.Id;
@@ -239,7 +239,7 @@ namespace FRCApp
             var inactiveEfaRequests = efaRequestDisplayAdapter.GetInactiveEFARequestsByClientID(ClientID.ToString());
             DateTime lowestDate = fromDate.Value;
             lstViewHist.Items.Clear();
-            foreach (var efaRequest in inactiveEfaRequests)
+            foreach (var efaRequest in inactiveEfaRequests.ToList())
             {
 
                 if (efaRequest.DateRequested>=fromDate.Value  && efaRequest.DateRequested <= Todate.Value)
