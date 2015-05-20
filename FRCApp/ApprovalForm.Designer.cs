@@ -38,8 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_done = new System.Windows.Forms.Button();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.btn_leftArrows = new System.Windows.Forms.Button();
             this.cmb_denialReason = new System.Windows.Forms.ComboBox();
             this.cmb_approvalReason = new System.Windows.Forms.ComboBox();
@@ -183,27 +181,6 @@
             this.btn_done.UseVisualStyleBackColor = false;
             this.btn_done.Click += new System.EventHandler(this.btn_done_Click);
             // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(904, 635);
-            this.shapeContainer1.TabIndex = 30;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 12;
-            this.lineShape1.X2 = 890;
-            this.lineShape1.Y1 = 403;
-            this.lineShape1.Y2 = 403;
-            // 
             // btn_leftArrows
             // 
             this.btn_leftArrows.Location = new System.Drawing.Point(415, 196);
@@ -318,7 +295,6 @@
             this.Controls.Add(this.btn_rightArrows);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.shapeContainer1);
             this.Name = "ApprovalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Request Approval";
@@ -343,8 +319,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button btn_done;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Button btn_leftArrows;
         private System.Windows.Forms.ComboBox cmb_denialReason;
         private System.Windows.Forms.ComboBox cmb_approvalReason;

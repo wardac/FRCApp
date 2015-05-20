@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.requestPanel = new System.Windows.Forms.Panel();
+            this.txtDenial = new System.Windows.Forms.TextBox();
+            this.lblDenial = new System.Windows.Forms.Label();
+            this.txtApproval = new System.Windows.Forms.TextBox();
+            this.lblApproval = new System.Windows.Forms.Label();
             this.lstExpenses = new System.Windows.Forms.ListView();
             this.expensesDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.expensesAmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -77,16 +81,10 @@
             this.lblname = new System.Windows.Forms.Label();
             this.cancelEfa = new System.Windows.Forms.Button();
             this.update_efa = new System.Windows.Forms.Button();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
-            this.lblApproval = new System.Windows.Forms.Label();
-            this.txtApproval = new System.Windows.Forms.TextBox();
-            this.txtDenial = new System.Windows.Forms.TextBox();
-            this.lblDenial = new System.Windows.Forms.Label();
             this.requestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).BeginInit();
             this.grpcauseshardship.SuspendLayout();
@@ -127,11 +125,52 @@
             this.requestPanel.Controls.Add(this.lblname);
             this.requestPanel.Controls.Add(this.cancelEfa);
             this.requestPanel.Controls.Add(this.update_efa);
-            this.requestPanel.Controls.Add(this.shapeContainer1);
             this.requestPanel.Location = new System.Drawing.Point(24, 12);
             this.requestPanel.Name = "requestPanel";
             this.requestPanel.Size = new System.Drawing.Size(867, 625);
             this.requestPanel.TabIndex = 1;
+            // 
+            // txtDenial
+            // 
+            this.txtDenial.Enabled = false;
+            this.txtDenial.Location = new System.Drawing.Point(449, 377);
+            this.txtDenial.Multiline = true;
+            this.txtDenial.Name = "txtDenial";
+            this.txtDenial.Size = new System.Drawing.Size(386, 37);
+            this.txtDenial.TabIndex = 32;
+            this.txtDenial.Visible = false;
+            // 
+            // lblDenial
+            // 
+            this.lblDenial.AutoSize = true;
+            this.lblDenial.ForeColor = System.Drawing.Color.Teal;
+            this.lblDenial.Location = new System.Drawing.Point(449, 358);
+            this.lblDenial.Name = "lblDenial";
+            this.lblDenial.Size = new System.Drawing.Size(77, 13);
+            this.lblDenial.TabIndex = 31;
+            this.lblDenial.Text = "Denial Reason";
+            this.lblDenial.Visible = false;
+            // 
+            // txtApproval
+            // 
+            this.txtApproval.Enabled = false;
+            this.txtApproval.Location = new System.Drawing.Point(446, 295);
+            this.txtApproval.Multiline = true;
+            this.txtApproval.Name = "txtApproval";
+            this.txtApproval.Size = new System.Drawing.Size(386, 37);
+            this.txtApproval.TabIndex = 30;
+            this.txtApproval.Visible = false;
+            // 
+            // lblApproval
+            // 
+            this.lblApproval.AutoSize = true;
+            this.lblApproval.ForeColor = System.Drawing.Color.Teal;
+            this.lblApproval.Location = new System.Drawing.Point(446, 276);
+            this.lblApproval.Name = "lblApproval";
+            this.lblApproval.Size = new System.Drawing.Size(93, 13);
+            this.lblApproval.TabIndex = 29;
+            this.lblApproval.Text = "Approved Reason";
+            this.lblApproval.Visible = false;
             // 
             // lstExpenses
             // 
@@ -623,25 +662,6 @@
             this.update_efa.UseVisualStyleBackColor = false;
             this.update_efa.Click += new System.EventHandler(this.update_efa_Click);
             // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(867, 625);
-            this.shapeContainer1.TabIndex = 16;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 436;
-            this.lineShape1.X2 = 436;
-            this.lineShape1.Y1 = 100;
-            this.lineShape1.Y2 = 378;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -660,48 +680,6 @@
             // eFARequestTypesTableAdapter
             // 
             this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
-            // 
-            // lblApproval
-            // 
-            this.lblApproval.AutoSize = true;
-            this.lblApproval.ForeColor = System.Drawing.Color.Teal;
-            this.lblApproval.Location = new System.Drawing.Point(446, 276);
-            this.lblApproval.Name = "lblApproval";
-            this.lblApproval.Size = new System.Drawing.Size(93, 13);
-            this.lblApproval.TabIndex = 29;
-            this.lblApproval.Text = "Approved Reason";
-            this.lblApproval.Visible = false;
-            // 
-            // txtApproval
-            // 
-            this.txtApproval.Enabled = false;
-            this.txtApproval.Location = new System.Drawing.Point(446, 295);
-            this.txtApproval.Multiline = true;
-            this.txtApproval.Name = "txtApproval";
-            this.txtApproval.Size = new System.Drawing.Size(386, 37);
-            this.txtApproval.TabIndex = 30;
-            this.txtApproval.Visible = false;
-            // 
-            // txtDenial
-            // 
-            this.txtDenial.Enabled = false;
-            this.txtDenial.Location = new System.Drawing.Point(449, 377);
-            this.txtDenial.Multiline = true;
-            this.txtDenial.Name = "txtDenial";
-            this.txtDenial.Size = new System.Drawing.Size(386, 37);
-            this.txtDenial.TabIndex = 32;
-            this.txtDenial.Visible = false;
-            // 
-            // lblDenial
-            // 
-            this.lblDenial.AutoSize = true;
-            this.lblDenial.ForeColor = System.Drawing.Color.Teal;
-            this.lblDenial.Location = new System.Drawing.Point(449, 358);
-            this.lblDenial.Name = "lblDenial";
-            this.lblDenial.Size = new System.Drawing.Size(77, 13);
-            this.lblDenial.TabIndex = 31;
-            this.lblDenial.Text = "Denial Reason";
-            this.lblDenial.Visible = false;
             // 
             // requestStatusform
             // 
@@ -761,8 +739,6 @@
         private System.Windows.Forms.Label lblname;
         private System.Windows.Forms.Button cancelEfa;
         private System.Windows.Forms.Button update_efa;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource eFARequestTypesBindingSource;
         private DataSet1TableAdapters.EFARequestTypesTableAdapter eFARequestTypesTableAdapter;
