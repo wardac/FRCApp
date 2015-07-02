@@ -54,13 +54,6 @@
             this.grpcauseshardship = new System.Windows.Forms.GroupBox();
             this.txt_hardshipDesc = new System.Windows.Forms.TextBox();
             this.cmb_hardship = new System.Windows.Forms.ComboBox();
-            this.efa_financegroup = new System.Windows.Forms.GroupBox();
-            this.txt_Mexpenses = new System.Windows.Forms.TextBox();
-            this.txt_Mincome = new System.Windows.Forms.TextBox();
-            this.txt_QHincome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblCQinfo = new System.Windows.Forms.Label();
             this.txt_other = new System.Windows.Forms.TextBox();
             this.efa_comment = new System.Windows.Forms.TextBox();
             this.efa_proofGroup = new System.Windows.Forms.GroupBox();
@@ -88,7 +81,6 @@
             this.requestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).BeginInit();
             this.grpcauseshardship.SuspendLayout();
-            this.efa_financegroup.SuspendLayout();
             this.efa_proofGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eFARequestTypesBindingSource)).BeginInit();
@@ -114,7 +106,6 @@
             this.requestPanel.Controls.Add(this.checklist_requestType);
             this.requestPanel.Controls.Add(this.lblComment);
             this.requestPanel.Controls.Add(this.grpcauseshardship);
-            this.requestPanel.Controls.Add(this.efa_financegroup);
             this.requestPanel.Controls.Add(this.txt_other);
             this.requestPanel.Controls.Add(this.efa_comment);
             this.requestPanel.Controls.Add(this.efa_proofGroup);
@@ -180,9 +171,9 @@
             this.lstExpenses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.expensesDate,
             this.expensesAmt});
-            this.lstExpenses.Location = new System.Drawing.Point(369, 452);
+            this.lstExpenses.Location = new System.Drawing.Point(368, 452);
             this.lstExpenses.Name = "lstExpenses";
-            this.lstExpenses.Size = new System.Drawing.Size(197, 138);
+            this.lstExpenses.Size = new System.Drawing.Size(205, 138);
             this.lstExpenses.TabIndex = 28;
             this.lstExpenses.UseCompatibleStateImageBehavior = false;
             this.lstExpenses.View = System.Windows.Forms.View.Details;
@@ -190,6 +181,7 @@
             // expensesDate
             // 
             this.expensesDate.Text = "Date";
+            this.expensesDate.Width = 80;
             // 
             // expensesAmt
             // 
@@ -223,17 +215,17 @@
             // 
             // date
             // 
-            this.date.Text = "significant date";
+            this.date.Text = "Significant Date";
             this.date.Width = 100;
             // 
             // Qincome
             // 
-            this.Qincome.Text = "Quaterly Income";
+            this.Qincome.Text = "Quarterly Income";
             this.Qincome.Width = 107;
             // 
             // Mincome
             // 
-            this.Mincome.Text = "Monthly income";
+            this.Mincome.Text = "Monthly Income";
             this.Mincome.Width = 119;
             // 
             // datagridRequests
@@ -366,81 +358,6 @@
             this.cmb_hardship.Name = "cmb_hardship";
             this.cmb_hardship.Size = new System.Drawing.Size(377, 23);
             this.cmb_hardship.TabIndex = 0;
-            // 
-            // efa_financegroup
-            // 
-            this.efa_financegroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.efa_financegroup.Controls.Add(this.txt_Mexpenses);
-            this.efa_financegroup.Controls.Add(this.txt_Mincome);
-            this.efa_financegroup.Controls.Add(this.txt_QHincome);
-            this.efa_financegroup.Controls.Add(this.label1);
-            this.efa_financegroup.Controls.Add(this.label3);
-            this.efa_financegroup.Controls.Add(this.lblCQinfo);
-            this.efa_financegroup.Location = new System.Drawing.Point(598, 452);
-            this.efa_financegroup.Name = "efa_financegroup";
-            this.efa_financegroup.Size = new System.Drawing.Size(245, 92);
-            this.efa_financegroup.TabIndex = 18;
-            this.efa_financegroup.TabStop = false;
-            this.efa_financegroup.Text = "Financial Summary";
-            this.efa_financegroup.Visible = false;
-            // 
-            // txt_Mexpenses
-            // 
-            this.txt_Mexpenses.Enabled = false;
-            this.txt_Mexpenses.Location = new System.Drawing.Point(302, 25);
-            this.txt_Mexpenses.Name = "txt_Mexpenses";
-            this.txt_Mexpenses.Size = new System.Drawing.Size(73, 20);
-            this.txt_Mexpenses.TabIndex = 7;
-            // 
-            // txt_Mincome
-            // 
-            this.txt_Mincome.Enabled = false;
-            this.txt_Mincome.Location = new System.Drawing.Point(115, 51);
-            this.txt_Mincome.Name = "txt_Mincome";
-            this.txt_Mincome.Size = new System.Drawing.Size(73, 20);
-            this.txt_Mincome.TabIndex = 6;
-            // 
-            // txt_QHincome
-            // 
-            this.txt_QHincome.Enabled = false;
-            this.txt_QHincome.Location = new System.Drawing.Point(115, 26);
-            this.txt_QHincome.Name = "txt_QHincome";
-            this.txt_QHincome.Size = new System.Drawing.Size(73, 20);
-            this.txt_QHincome.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(9, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Monthly Income";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(199, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Monthly expenses";
-            // 
-            // lblCQinfo
-            // 
-            this.lblCQinfo.AutoSize = true;
-            this.lblCQinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCQinfo.ForeColor = System.Drawing.Color.Teal;
-            this.lblCQinfo.Location = new System.Drawing.Point(9, 26);
-            this.lblCQinfo.Name = "lblCQinfo";
-            this.lblCQinfo.Size = new System.Drawing.Size(100, 15);
-            this.lblCQinfo.TabIndex = 0;
-            this.lblCQinfo.Text = "Quarterly Income";
             // 
             // txt_other
             // 
@@ -697,8 +614,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).EndInit();
             this.grpcauseshardship.ResumeLayout(false);
             this.grpcauseshardship.PerformLayout();
-            this.efa_financegroup.ResumeLayout(false);
-            this.efa_financegroup.PerformLayout();
             this.efa_proofGroup.ResumeLayout(false);
             this.efa_proofGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
@@ -712,13 +627,6 @@
         private System.Windows.Forms.Panel requestPanel;
         private System.Windows.Forms.Label lblComment;
         private System.Windows.Forms.GroupBox grpcauseshardship;
-        private System.Windows.Forms.GroupBox efa_financegroup;
-        private System.Windows.Forms.TextBox txt_Mexpenses;
-        private System.Windows.Forms.TextBox txt_Mincome;
-        private System.Windows.Forms.TextBox txt_QHincome;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblCQinfo;
         private System.Windows.Forms.TextBox txt_other;
         private System.Windows.Forms.TextBox efa_comment;
         private System.Windows.Forms.GroupBox efa_proofGroup;

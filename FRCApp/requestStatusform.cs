@@ -60,20 +60,6 @@ namespace FRCApp
             efa_clientName.Text = clients[0].FirstName;
             DataSet1TableAdapters.IncomeInfoTableAdapter incomeAdapter = new DataSet1TableAdapters.IncomeInfoTableAdapter();
             var incomeinfo = incomeAdapter.GetIncomeInfo(clients[0].HouseholdID);
-            if (incomeinfo != null && incomeinfo.Count > 0)
-            {
-                txt_QHincome.Text = incomeinfo[0].QuarterlyIncome.ToString();
-                txt_Mincome.Text = incomeinfo[0].MonthlyIncome.ToString();
-            }
-            else
-            {
-                txt_QHincome.Text = "0";
-                txt_Mincome.Text = "0";
-            }
-            
-            var expensesAdapter = new DataSet1TableAdapters.MonthlyExpensesTableAdapter();
-            var monthlyExpenses = expensesAdapter.getExpenseInfoByHouseholdID(clients[0].HouseholdID);
-            txt_Mexpenses.Text = monthlyExpenses == null ? "0" : monthlyExpenses.ToString();
 
             var hardshipsAdapter = new DataSet1TableAdapters.HardshipTypesTableAdapter();
             var hardships = hardshipsAdapter.GetData();
