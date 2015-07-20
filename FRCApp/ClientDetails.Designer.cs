@@ -599,7 +599,7 @@
             // 
             // amount
             // 
-            this.amount.Text = "amount";
+            this.amount.Text = "Amount";
             // 
             // deniedAssistance
             // 
