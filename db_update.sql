@@ -26,4 +26,20 @@ ORDER BY dis.DateRequested DESC
 END
 GO
 
+ALTER proc clientLookUp(@searchTerm nvarchar(100)) as begin 
+SELECT * FROM (
+select * from Clients where FirstName like '%' + @searchTerm + '%' or LastName like '%' + @searchTerm + '%'
+
+
+UNION
+
+SELECT c.*
+FROM Clients c
+	JOIN HouseholdMembers hm
+		ON c.HouseholdID = hm.HouseholdID
+WHERE hm.FirstName LIKE '%' + @searchTerm + '%' OR hm.LastName LIKE '%' + @searchTerm + '%') q
+ORDER BY q.LastName ASC, q.FirstName ASC
+end
+GO
+
 
