@@ -613,9 +613,9 @@
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(15, 174);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 12);
+            this.label1.Size = new System.Drawing.Size(118, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "EFA Requests History";
+            this.label1.Text = "EFA Request History";
             // 
             // panel1
             // 
