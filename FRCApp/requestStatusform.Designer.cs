@@ -43,8 +43,6 @@
             this.Qincome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Mincome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.datagridRequests = new System.Windows.Forms.DataGridView();
-            this.Request = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_completedDate = new System.Windows.Forms.DateTimePicker();
             this.lbl_completedDate = new System.Windows.Forms.Label();
             this.btn_handleRequest = new System.Windows.Forms.Button();
@@ -78,6 +76,8 @@
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
+            this.Request = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.requestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).BeginInit();
             this.grpcauseshardship.SuspendLayout();
@@ -241,20 +241,6 @@
             this.datagridRequests.Size = new System.Drawing.Size(270, 157);
             this.datagridRequests.TabIndex = 25;
             this.datagridRequests.Visible = false;
-            // 
-            // Request
-            // 
-            this.Request.HeaderText = "request";
-            this.Request.Name = "Request";
-            this.Request.ReadOnly = true;
-            this.Request.Width = 175;
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "amount";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            this.amount.Width = 60;
             // 
             // date_completedDate
             // 
@@ -598,6 +584,20 @@
             // 
             this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
             // 
+            // Request
+            // 
+            this.Request.HeaderText = "Request";
+            this.Request.Name = "Request";
+            this.Request.ReadOnly = true;
+            this.Request.Width = 175;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            this.amount.Width = 60;
+            // 
             // requestStatusform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -659,8 +659,6 @@
         private System.Windows.Forms.DateTimePicker date_completedDate;
         private System.Windows.Forms.Label lbl_completedDate;
         private System.Windows.Forms.DataGridView datagridRequests;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Request;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView lstFinances;
         private System.Windows.Forms.ColumnHeader date;
@@ -673,5 +671,7 @@
         private System.Windows.Forms.Label lblDenial;
         private System.Windows.Forms.TextBox txtApproval;
         private System.Windows.Forms.Label lblApproval;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Request;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
     }
 }
