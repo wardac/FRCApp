@@ -53,5 +53,16 @@ CREATE PROC DeleteUserByUserName(@UserName NVARCHAR(100)) AS BEGIN
 END
 GO
 
-
+CREATE PROC dbo.AddOrUpdateUser (@UserName NVARCHAR(100), @FirstName NVARCHAR(100), @LastName NVARCHAR(100), @Password NVARCHAR(100), @AccessLevel NVARCHAR(20)) AS BEGIN
+	IF EXISTS (SELECT 1 FROM Users WHERE UserName = @UserName) BEGIN
+		UPDATE Users
+		SET FirstName = @FirstName, LastName = @LastName, Password = @Password, AccessLevel = @AccessLevel
+		WHERE UserName = @UserName
+	END
+	ELSE BEGIN
+		INSERT INTO Users
+		SELECT @UserName, @FirstName, @LastName, @Password, @AccessLevel
+	END
+END
+GO
 
