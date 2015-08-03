@@ -50,7 +50,7 @@ namespace FRCApp
 
         private void users_Click(object sender, EventArgs e)
         {
-            UsersPage usrpage = new UsersPage();
+            UsersPage usrpage = new UsersPage(userName);
             usrpage.Show();
         }
 

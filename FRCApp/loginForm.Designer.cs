@@ -48,7 +48,7 @@
             this.login_submit.Name = "login_submit";
             this.login_submit.Size = new System.Drawing.Size(75, 23);
             this.login_submit.TabIndex = 2;
-            this.login_submit.Text = "submit";
+            this.login_submit.Text = "Submit";
             this.login_submit.UseVisualStyleBackColor = false;
             this.login_submit.Click += new System.EventHandler(this.login_submit_Click);
             // 

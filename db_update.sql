@@ -48,5 +48,10 @@ AS BEGIN
 END
 GO
 
+CREATE PROC DeleteUserByUserName(@UserName NVARCHAR(100)) AS BEGIN
+	DELETE FROM Users WHERE UserName = @UserName
+END
+GO
+
 
 

@@ -24,7 +24,7 @@
     <Shape ID="DesignTable:IncomeInfo" ZOrder="4" X="-173" Y="397" Height="94" Width="217" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="83" SplitterPosition="24" />
     <Shape ID="DesignTable:MonthlyExpenses" ZOrder="20" X="358" Y="286" Height="132" Width="300" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="254" SplitterPosition="24" />
     <Shape ID="DesignTable:IncomeSourceTypes" ZOrder="26" X="34" Y="586" Height="75" Width="260" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="64" SplitterPosition="24" />
-    <Shape ID="DesignTable:Users" ZOrder="25" X="3255" Y="224" Height="248" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:Users" ZOrder="25" X="3255" Y="224" Height="267" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:EFARequestsDisplay" ZOrder="17" X="349" Y="164" Height="113" Width="300" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="24" OldDataTableHeight="140" SplitterPosition="24" />
     <Shape ID="DesignTable:EFAApprovalReasons" ZOrder="5" X="161" Y="226" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:EFADenialReasons" ZOrder="9" X="-187" Y="275" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />

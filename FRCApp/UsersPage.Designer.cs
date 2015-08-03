@@ -35,6 +35,7 @@
             this.AccessLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.newUser = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listusers
@@ -49,6 +50,7 @@
             this.AccessLevel});
             this.listusers.FullRowSelect = true;
             this.listusers.Location = new System.Drawing.Point(41, 25);
+            this.listusers.MultiSelect = false;
             this.listusers.Name = "listusers";
             this.listusers.Size = new System.Drawing.Size(542, 216);
             this.listusers.TabIndex = 0;
@@ -57,12 +59,12 @@
             // 
             // UserName
             // 
-            this.UserName.Text = "Username";
+            this.UserName.Text = "User Name";
             this.UserName.Width = 131;
             // 
             // firstName
             // 
-            this.firstName.Text = "First name";
+            this.firstName.Text = "First Name";
             this.firstName.Width = 146;
             // 
             // lastname
@@ -80,7 +82,7 @@
             this.newUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.newUser.BackColor = System.Drawing.Color.Teal;
             this.newUser.ForeColor = System.Drawing.Color.White;
-            this.newUser.Location = new System.Drawing.Point(58, 263);
+            this.newUser.Location = new System.Drawing.Point(41, 263);
             this.newUser.Name = "newUser";
             this.newUser.Size = new System.Drawing.Size(129, 23);
             this.newUser.TabIndex = 1;
@@ -93,13 +95,26 @@
             this.back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.back.BackColor = System.Drawing.Color.Teal;
             this.back.ForeColor = System.Drawing.Color.White;
-            this.back.Location = new System.Drawing.Point(403, 263);
+            this.back.Location = new System.Drawing.Point(454, 263);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(129, 23);
             this.back.TabIndex = 2;
             this.back.Text = "Back";
             this.back.UseVisualStyleBackColor = false;
             this.back.Click += new System.EventHandler(this.back_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_delete.BackColor = System.Drawing.Color.Teal;
+            this.btn_delete.ForeColor = System.Drawing.Color.White;
+            this.btn_delete.Location = new System.Drawing.Point(176, 263);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(129, 23);
+            this.btn_delete.TabIndex = 1;
+            this.btn_delete.Text = "Delete User";
+            this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // UsersPage
             // 
@@ -108,6 +123,7 @@
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(613, 298);
             this.Controls.Add(this.back);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.newUser);
             this.Controls.Add(this.listusers);
             this.Name = "UsersPage";
@@ -127,5 +143,6 @@
         private System.Windows.Forms.ColumnHeader AccessLevel;
         private System.Windows.Forms.Button newUser;
         private System.Windows.Forms.Button back;
+        private System.Windows.Forms.Button btn_delete;
     }
 }

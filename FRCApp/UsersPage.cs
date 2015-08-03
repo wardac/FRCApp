@@ -12,10 +12,13 @@ namespace FRCApp
 {
     public partial class UsersPage : Form
     {
-        public UsersPage()
+        private String userName;
+
+        public UsersPage(String userName)
         {
             InitializeComponent();
             fillListView();
+            this.userName = userName;
         }
 
         /**
@@ -32,6 +35,7 @@ namespace FRCApp
                 item.SubItems.Add(row["FirstName"].ToString());
                 item.SubItems.Add(row["LastName"].ToString());
                 item.SubItems.Add(row["AccessLevel"].ToString());
+                item.Tag = row["UserName"].ToString();
                 listusers.Items.Add(item);
                 if (item.Index % 2 == 0)
                 { item.BackColor = Color.Gainsboro; }
@@ -57,6 +61,26 @@ namespace FRCApp
         private void back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e) {
+            String toDelete = "";
+            if (listusers.SelectedItems.Count > 0) {
+                toDelete = (String) listusers.SelectedItems[0].Tag;
+            }
+            if (toDelete != "") {
+                if (toDelete.Equals(userName, StringComparison.InvariantCultureIgnoreCase)) {
+                    MessageBox.Show("You can't delete yourself!");
+                    return;
+                }
+                DialogResult messageBox = MessageBox.Show("Are you sure you want to delete the selected user?", "", MessageBoxButtons.YesNo);
+                if (messageBox == DialogResult.No) {
+                    return;
+                }
+                var adapter = new DataSet1TableAdapters.UsersTableAdapter();
+                adapter.DeleteUserByUserName(toDelete);
+                fillListView();
+            }
         }
     }
 }
