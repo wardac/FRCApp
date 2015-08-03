@@ -57,8 +57,12 @@ namespace FRCApp
             }
             //Add the data to the users database with the default password frc123
             DataSet1TableAdapters.UsersTableAdapter adapter = new DataSet1TableAdapters.UsersTableAdapter();
+            var users = adapter.GetUsersByUserName(UserNameTextBox.Text);
+            if (users.Count > 0) {
+                MessageBox.Show("A user with that name already exists");
+                return;
+            }
             adapter.AddUser(UserNameTextBox.Text, FirstnameTextbox.Text, LastNameTextBox.Text, passwordTextBox.Text, AccessLevelComboBox.GetItemText(AccessLevelComboBox.SelectedItem));
-            
             this.Close();
         }
 

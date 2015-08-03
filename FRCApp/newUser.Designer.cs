@@ -49,9 +49,9 @@
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(62, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 16);
+            this.label1.Size = new System.Drawing.Size(83, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "first name";
+            this.label1.Text = "First Name";
             // 
             // label2
             // 
@@ -120,7 +120,7 @@
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(79, 23);
             this.save.TabIndex = 5;
-            this.save.Text = "save";
+            this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = false;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
@@ -134,7 +134,7 @@
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 6;
-            this.cancel.Text = "cancel";
+            this.cancel.Text = "Cancel";
             this.cancel.UseVisualStyleBackColor = false;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
@@ -155,9 +155,9 @@
             this.label4.ForeColor = System.Drawing.Color.Teal;
             this.label4.Location = new System.Drawing.Point(62, 91);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 16);
+            this.label4.Size = new System.Drawing.Size(82, 16);
             this.label4.TabIndex = 9;
-            this.label4.Text = "last name";
+            this.label4.Text = "Last Name";
             // 
             // passwordTextBox
             // 
@@ -201,7 +201,7 @@
             this.Controls.Add(this.label1);
             this.Name = "newUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "newUser";
+            this.Text = "New User";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -42,4 +42,11 @@ ORDER BY q.LastName ASC, q.FirstName ASC
 end
 GO
 
+CREATE PROC dbo.GetUserByUserName(@UserName NVARCHAR(100))
+AS BEGIN
+	SELECT * FROM Users WHERE UserName = @UserName
+END
+GO
+
+
 

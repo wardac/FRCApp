@@ -84,7 +84,7 @@
             this.newUser.Name = "newUser";
             this.newUser.Size = new System.Drawing.Size(129, 23);
             this.newUser.TabIndex = 1;
-            this.newUser.Text = "create new User";
+            this.newUser.Text = "Create User";
             this.newUser.UseVisualStyleBackColor = false;
             this.newUser.Click += new System.EventHandler(this.newUser_Click);
             // 
