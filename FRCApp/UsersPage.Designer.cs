@@ -36,6 +36,7 @@
             this.newUser = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listusers
@@ -95,7 +96,7 @@
             this.back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.back.BackColor = System.Drawing.Color.Teal;
             this.back.ForeColor = System.Drawing.Color.White;
-            this.back.Location = new System.Drawing.Point(454, 263);
+            this.back.Location = new System.Drawing.Point(452, 263);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(129, 23);
             this.back.TabIndex = 2;
@@ -108,13 +109,26 @@
             this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_delete.BackColor = System.Drawing.Color.Teal;
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(176, 263);
+            this.btn_delete.Location = new System.Drawing.Point(178, 263);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(129, 23);
             this.btn_delete.TabIndex = 1;
             this.btn_delete.Text = "Delete User";
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_edit.BackColor = System.Drawing.Color.Teal;
+            this.btn_edit.ForeColor = System.Drawing.Color.White;
+            this.btn_edit.Location = new System.Drawing.Point(315, 263);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(129, 23);
+            this.btn_edit.TabIndex = 1;
+            this.btn_edit.Text = "Edit User";
+            this.btn_edit.UseVisualStyleBackColor = false;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // UsersPage
             // 
@@ -123,6 +137,7 @@
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(613, 298);
             this.Controls.Add(this.back);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.newUser);
             this.Controls.Add(this.listusers);
@@ -144,5 +159,6 @@
         private System.Windows.Forms.Button newUser;
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_edit;
     }
 }

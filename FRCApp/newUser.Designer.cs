@@ -202,6 +202,7 @@
             this.Name = "newUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New User";
+            this.Load += new System.EventHandler(this.newUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

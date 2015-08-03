@@ -82,5 +82,21 @@ namespace FRCApp
                 fillListView();
             }
         }
+
+        private void btn_edit_Click(object sender, EventArgs e) {
+            String toEdit = "";
+            if (listusers.SelectedItems.Count > 0) {
+                toEdit = (String)listusers.SelectedItems[0].Tag;
+            }
+            if (toEdit != "") {
+                if (toEdit.Equals(userName, StringComparison.InvariantCultureIgnoreCase)) {
+                    MessageBox.Show("You can't edit yourself!");
+                    return;
+                } 
+                
+                newUser usr = new newUser(toEdit);
+                usr.Show();
+            }
+        }
     }
 }

@@ -12,9 +12,13 @@ namespace FRCApp
 {
     public partial class newUser : Form
     {
-        public newUser()
+        private String userName;
+        private bool editing;
+        public newUser(String userName = null)
         {
             InitializeComponent();
+            editing = userName != null;
+            this.userName = userName;
         }
 
         /**
@@ -55,14 +59,16 @@ namespace FRCApp
                 MessageBox.Show(message);
                 return;
             }
-            //Add the data to the users database with the default password frc123
             DataSet1TableAdapters.UsersTableAdapter adapter = new DataSet1TableAdapters.UsersTableAdapter();
-            var users = adapter.GetUsersByUserName(UserNameTextBox.Text);
-            if (users.Count > 0) {
-                MessageBox.Show("A user with that name already exists");
-                return;
+            
+            if (!editing) {
+                var users = adapter.GetUsersByUserName(UserNameTextBox.Text);
+                if (users.Count > 0) {
+                    MessageBox.Show("A user with that name already exists");
+                    return;
+                }
             }
-            adapter.AddUser(UserNameTextBox.Text, FirstnameTextbox.Text, LastNameTextBox.Text, passwordTextBox.Text, AccessLevelComboBox.GetItemText(AccessLevelComboBox.SelectedItem));
+            adapter.AddOrUpdateUser(UserNameTextBox.Text, FirstnameTextbox.Text, LastNameTextBox.Text, passwordTextBox.Text, AccessLevelComboBox.GetItemText(AccessLevelComboBox.SelectedItem));
             this.Close();
         }
 
@@ -74,6 +80,19 @@ namespace FRCApp
                 this.Close();
             }
             this.Dispose();
+        }
+
+        private void newUser_Load(object sender, EventArgs e) {
+            if (editing) {
+                var adapter = new DataSet1TableAdapters.UsersTableAdapter();
+                var user = adapter.GetUsersByUserName(userName)[0];
+                FirstnameTextbox.Text = user.FirstName;
+                LastNameTextBox.Text = user.LastName;
+                UserNameTextBox.Text = user.UserName;
+                UserNameTextBox.Enabled = false;
+                passwordTextBox.Text = user.Password;
+                AccessLevelComboBox.SelectedItem = user.AccessLevel;
+            }
         }
     }
 }
