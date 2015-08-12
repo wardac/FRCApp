@@ -93,6 +93,8 @@
             this.lblcasenote = new System.Windows.Forms.Label();
             this.logged_in_label = new System.Windows.Forms.Label();
             this.username_label = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_aptno = new System.Windows.Forms.TextBox();
             this.Contactpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -112,6 +114,7 @@
             this.Contactpanel.Controls.Add(this.editClientButton);
             this.Contactpanel.Controls.Add(this.ClientdateContact);
             this.Contactpanel.Controls.Add(this.lblLastContact);
+            this.Contactpanel.Controls.Add(this.txt_aptno);
             this.Contactpanel.Controls.Add(this.ClientDetailsAddressTextBox);
             this.Contactpanel.Controls.Add(this.ClientDetailsNameTextBox);
             this.Contactpanel.Controls.Add(this.ClientDetailsEmailTextBox);
@@ -126,6 +129,7 @@
             this.Contactpanel.Controls.Add(this.lblzip);
             this.Contactpanel.Controls.Add(this.lblState);
             this.Contactpanel.Controls.Add(this.lblcity);
+            this.Contactpanel.Controls.Add(this.label7);
             this.Contactpanel.Controls.Add(this.lblAddress);
             this.Contactpanel.Controls.Add(this.lblname);
             this.Contactpanel.Location = new System.Drawing.Point(21, 43);
@@ -183,7 +187,7 @@
             // 
             // ClientdateContact
             // 
-            this.ClientdateContact.Location = new System.Drawing.Point(265, 34);
+            this.ClientdateContact.Location = new System.Drawing.Point(265, 29);
             this.ClientdateContact.Name = "ClientdateContact";
             this.ClientdateContact.Size = new System.Drawing.Size(149, 20);
             this.ClientdateContact.TabIndex = 17;
@@ -203,7 +207,7 @@
             // 
             this.ClientDetailsAddressTextBox.BackColor = System.Drawing.Color.White;
             this.ClientDetailsAddressTextBox.Enabled = false;
-            this.ClientDetailsAddressTextBox.Location = new System.Drawing.Point(55, 34);
+            this.ClientDetailsAddressTextBox.Location = new System.Drawing.Point(55, 29);
             this.ClientDetailsAddressTextBox.Multiline = true;
             this.ClientDetailsAddressTextBox.Name = "ClientDetailsAddressTextBox";
             this.ClientDetailsAddressTextBox.Size = new System.Drawing.Size(203, 20);
@@ -341,7 +345,7 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ForeColor = System.Drawing.Color.Teal;
-            this.lblAddress.Location = new System.Drawing.Point(4, 38);
+            this.lblAddress.Location = new System.Drawing.Point(4, 33);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(51, 12);
             this.lblAddress.TabIndex = 1;
@@ -782,6 +786,27 @@
             this.username_label.TabIndex = 6;
             this.username_label.Text = "label7";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Teal;
+            this.label7.Location = new System.Drawing.Point(3, 52);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 12);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Apt #";
+            // 
+            // txt_aptno
+            // 
+            this.txt_aptno.BackColor = System.Drawing.Color.White;
+            this.txt_aptno.Enabled = false;
+            this.txt_aptno.Location = new System.Drawing.Point(55, 52);
+            this.txt_aptno.Multiline = true;
+            this.txt_aptno.Name = "txt_aptno";
+            this.txt_aptno.Size = new System.Drawing.Size(79, 20);
+            this.txt_aptno.TabIndex = 15;
+            // 
             // ClientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -883,5 +908,7 @@
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.Label logged_in_label;
         private System.Windows.Forms.Label username_label;
+        private System.Windows.Forms.TextBox txt_aptno;
+        private System.Windows.Forms.Label label7;
     }
 }
