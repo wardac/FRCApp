@@ -43,15 +43,14 @@
             this.Qincome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Mincome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.datagridRequests = new System.Windows.Forms.DataGridView();
+            this.Request = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_completedDate = new System.Windows.Forms.DateTimePicker();
             this.lbl_completedDate = new System.Windows.Forms.Label();
             this.btn_handleRequest = new System.Windows.Forms.Button();
             this.lst_reqTypes = new System.Windows.Forms.ListBox();
             this.checklist_requestType = new System.Windows.Forms.CheckedListBox();
             this.lblComment = new System.Windows.Forms.Label();
-            this.grpcauseshardship = new System.Windows.Forms.GroupBox();
-            this.txt_hardshipDesc = new System.Windows.Forms.TextBox();
-            this.cmb_hardship = new System.Windows.Forms.ComboBox();
             this.txt_other = new System.Windows.Forms.TextBox();
             this.efa_comment = new System.Windows.Forms.TextBox();
             this.efa_proofGroup = new System.Windows.Forms.GroupBox();
@@ -76,11 +75,8 @@
             this.dataSet1 = new FRCApp.DataSet1();
             this.eFARequestTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eFARequestTypesTableAdapter = new FRCApp.DataSet1TableAdapters.EFARequestTypesTableAdapter();
-            this.Request = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.requestPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).BeginInit();
-            this.grpcauseshardship.SuspendLayout();
             this.efa_proofGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eFARequestTypesBindingSource)).BeginInit();
@@ -105,7 +101,6 @@
             this.requestPanel.Controls.Add(this.lst_reqTypes);
             this.requestPanel.Controls.Add(this.checklist_requestType);
             this.requestPanel.Controls.Add(this.lblComment);
-            this.requestPanel.Controls.Add(this.grpcauseshardship);
             this.requestPanel.Controls.Add(this.txt_other);
             this.requestPanel.Controls.Add(this.efa_comment);
             this.requestPanel.Controls.Add(this.efa_proofGroup);
@@ -124,7 +119,7 @@
             // txtDenial
             // 
             this.txtDenial.Enabled = false;
-            this.txtDenial.Location = new System.Drawing.Point(449, 377);
+            this.txtDenial.Location = new System.Drawing.Point(446, 377);
             this.txtDenial.Multiline = true;
             this.txtDenial.Name = "txtDenial";
             this.txtDenial.Size = new System.Drawing.Size(386, 37);
@@ -135,7 +130,7 @@
             // 
             this.lblDenial.AutoSize = true;
             this.lblDenial.ForeColor = System.Drawing.Color.Teal;
-            this.lblDenial.Location = new System.Drawing.Point(449, 358);
+            this.lblDenial.Location = new System.Drawing.Point(443, 361);
             this.lblDenial.Name = "lblDenial";
             this.lblDenial.Size = new System.Drawing.Size(77, 13);
             this.lblDenial.TabIndex = 31;
@@ -145,7 +140,7 @@
             // txtApproval
             // 
             this.txtApproval.Enabled = false;
-            this.txtApproval.Location = new System.Drawing.Point(446, 295);
+            this.txtApproval.Location = new System.Drawing.Point(446, 303);
             this.txtApproval.Multiline = true;
             this.txtApproval.Name = "txtApproval";
             this.txtApproval.Size = new System.Drawing.Size(386, 37);
@@ -156,7 +151,7 @@
             // 
             this.lblApproval.AutoSize = true;
             this.lblApproval.ForeColor = System.Drawing.Color.Teal;
-            this.lblApproval.Location = new System.Drawing.Point(446, 276);
+            this.lblApproval.Location = new System.Drawing.Point(443, 287);
             this.lblApproval.Name = "lblApproval";
             this.lblApproval.Size = new System.Drawing.Size(93, 13);
             this.lblApproval.TabIndex = 29;
@@ -242,10 +237,24 @@
             this.datagridRequests.TabIndex = 25;
             this.datagridRequests.Visible = false;
             // 
+            // Request
+            // 
+            this.Request.HeaderText = "Request";
+            this.Request.Name = "Request";
+            this.Request.ReadOnly = true;
+            this.Request.Width = 175;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            this.amount.Width = 60;
+            // 
             // date_completedDate
             // 
             this.date_completedDate.Enabled = false;
-            this.date_completedDate.Location = new System.Drawing.Point(200, 251);
+            this.date_completedDate.Location = new System.Drawing.Point(203, 251);
             this.date_completedDate.Name = "date_completedDate";
             this.date_completedDate.Size = new System.Drawing.Size(200, 20);
             this.date_completedDate.TabIndex = 9;
@@ -300,50 +309,11 @@
             this.lblComment.AutoSize = true;
             this.lblComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComment.ForeColor = System.Drawing.Color.Teal;
-            this.lblComment.Location = new System.Drawing.Point(450, 153);
+            this.lblComment.Location = new System.Drawing.Point(443, 19);
             this.lblComment.Name = "lblComment";
-            this.lblComment.Size = new System.Drawing.Size(161, 15);
+            this.lblComment.Size = new System.Drawing.Size(69, 15);
             this.lblComment.TabIndex = 20;
-            this.lblComment.Text = "Hardship Details / Comment";
-            // 
-            // grpcauseshardship
-            // 
-            this.grpcauseshardship.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpcauseshardship.Controls.Add(this.txt_hardshipDesc);
-            this.grpcauseshardship.Controls.Add(this.cmb_hardship);
-            this.grpcauseshardship.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpcauseshardship.ForeColor = System.Drawing.Color.Teal;
-            this.grpcauseshardship.Location = new System.Drawing.Point(446, 32);
-            this.grpcauseshardship.Name = "grpcauseshardship";
-            this.grpcauseshardship.Size = new System.Drawing.Size(397, 115);
-            this.grpcauseshardship.TabIndex = 19;
-            this.grpcauseshardship.TabStop = false;
-            this.grpcauseshardship.Text = "Cause of Hardship";
-            // 
-            // txt_hardshipDesc
-            // 
-            this.txt_hardshipDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_hardshipDesc.BackColor = System.Drawing.SystemColors.Menu;
-            this.txt_hardshipDesc.Enabled = false;
-            this.txt_hardshipDesc.Location = new System.Drawing.Point(7, 48);
-            this.txt_hardshipDesc.Multiline = true;
-            this.txt_hardshipDesc.Name = "txt_hardshipDesc";
-            this.txt_hardshipDesc.ReadOnly = true;
-            this.txt_hardshipDesc.Size = new System.Drawing.Size(377, 61);
-            this.txt_hardshipDesc.TabIndex = 1;
-            // 
-            // cmb_hardship
-            // 
-            this.cmb_hardship.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_hardship.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_hardship.FormattingEnabled = true;
-            this.cmb_hardship.Location = new System.Drawing.Point(7, 20);
-            this.cmb_hardship.Name = "cmb_hardship";
-            this.cmb_hardship.Size = new System.Drawing.Size(377, 23);
-            this.cmb_hardship.TabIndex = 0;
+            this.lblComment.Text = "Description";
             // 
             // txt_other
             // 
@@ -359,10 +329,10 @@
             // 
             this.efa_comment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.efa_comment.Location = new System.Drawing.Point(446, 174);
+            this.efa_comment.Location = new System.Drawing.Point(446, 37);
             this.efa_comment.Multiline = true;
             this.efa_comment.Name = "efa_comment";
-            this.efa_comment.Size = new System.Drawing.Size(386, 71);
+            this.efa_comment.Size = new System.Drawing.Size(386, 229);
             this.efa_comment.TabIndex = 15;
             // 
             // efa_proofGroup
@@ -491,7 +461,7 @@
             // 
             // date_requestDate
             // 
-            this.date_requestDate.Location = new System.Drawing.Point(200, 227);
+            this.date_requestDate.Location = new System.Drawing.Point(203, 227);
             this.date_requestDate.Name = "date_requestDate";
             this.date_requestDate.Size = new System.Drawing.Size(200, 20);
             this.date_requestDate.TabIndex = 9;
@@ -523,7 +493,7 @@
             this.efa_clientName.Enabled = false;
             this.efa_clientName.Location = new System.Drawing.Point(161, 19);
             this.efa_clientName.Name = "efa_clientName";
-            this.efa_clientName.Size = new System.Drawing.Size(259, 20);
+            this.efa_clientName.Size = new System.Drawing.Size(270, 20);
             this.efa_clientName.TabIndex = 3;
             // 
             // lblname
@@ -584,20 +554,6 @@
             // 
             this.eFARequestTypesTableAdapter.ClearBeforeFill = true;
             // 
-            // Request
-            // 
-            this.Request.HeaderText = "Request";
-            this.Request.Name = "Request";
-            this.Request.ReadOnly = true;
-            this.Request.Width = 175;
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Amount";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            this.amount.Width = 60;
-            // 
             // requestStatusform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -612,8 +568,6 @@
             this.requestPanel.ResumeLayout(false);
             this.requestPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridRequests)).EndInit();
-            this.grpcauseshardship.ResumeLayout(false);
-            this.grpcauseshardship.PerformLayout();
             this.efa_proofGroup.ResumeLayout(false);
             this.efa_proofGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
@@ -626,7 +580,6 @@
 
         private System.Windows.Forms.Panel requestPanel;
         private System.Windows.Forms.Label lblComment;
-        private System.Windows.Forms.GroupBox grpcauseshardship;
         private System.Windows.Forms.TextBox txt_other;
         private System.Windows.Forms.TextBox efa_comment;
         private System.Windows.Forms.GroupBox efa_proofGroup;
@@ -652,8 +605,6 @@
         private DataSet1TableAdapters.EFARequestTypesTableAdapter eFARequestTypesTableAdapter;
         private System.Windows.Forms.CheckedListBox checklist_requestType;
         private System.Windows.Forms.ListBox lst_reqTypes;
-        private System.Windows.Forms.TextBox txt_hardshipDesc;
-        private System.Windows.Forms.ComboBox cmb_hardship;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btn_handleRequest;
         private System.Windows.Forms.DateTimePicker date_completedDate;

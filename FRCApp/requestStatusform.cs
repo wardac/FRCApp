@@ -63,15 +63,7 @@ namespace FRCApp
 
             var hardshipsAdapter = new DataSet1TableAdapters.HardshipTypesTableAdapter();
             var hardships = hardshipsAdapter.GetData();
-            cmb_hardship.DataSource = hardships;
-            cmb_hardship.DisplayMember = "Name";
-            cmb_hardship.ValueMember = "HardshipTypeID";
 
-            cmb_hardship.SelectedIndexChanged += new System.EventHandler((object o, System.EventArgs e2) =>
-            {
-                var hardship = hardshipsAdapter.GetHardshipsByID((int)cmb_hardship.SelectedValue)[0];
-                txt_hardshipDesc.Text = hardship.Description;
-            });
             //adding financial summary
             DataSet1TableAdapters.MonthlyExpensesSummaryTableAdapter monthExpensesAdapter = new DataSet1TableAdapters.MonthlyExpensesSummaryTableAdapter();
             var monthRequests = monthExpensesAdapter.getMonthlyExpensesByHouseholdID(clients[0].HouseholdID);
@@ -112,8 +104,6 @@ namespace FRCApp
                     {
                         checklist_requestType.Items.Add(reqType.Type);
                     }
-                    var hardship = hardshipsAdapter.GetHardshipsByID((int)cmb_hardship.SelectedValue)[0];
-                    txt_hardshipDesc.Text = hardship.Description;
                     btn_handleRequest.Visible = false;
                 }
                 else
@@ -154,8 +144,6 @@ namespace FRCApp
 
                     var hardship = hardshipsAdapter.GetHardshipsByID(request.HardshipTypeID)[0];
 
-                    cmb_hardship.Text = hardship.Name;
-                    txt_hardshipDesc.Text = hardship.Description;
                     efa_comment.Text = request.HardshipDetail;
                     date_requestDate.Value = request.DateRequested;
 
@@ -170,7 +158,6 @@ namespace FRCApp
                         date_completedDate.Visible = true;
                         btn_handleRequest.Visible = false;
                         update_efa.Visible = false;
-                        cmb_hardship.Enabled = false;
                         efa_comment.Enabled = false;
                         boxes.ToList().ForEach((box) => box.Enabled = false);
                         pickers.ToList().ForEach((picker) => picker.Enabled = false);
@@ -192,7 +179,7 @@ namespace FRCApp
             }
 
             var requestAdapter = new DataSet1TableAdapters.EFARequestsTableAdapter();
-            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID.ToString(), dates[0], dates[1], dates[2], dates[3], dates[4], (int)cmb_hardship.SelectedValue, efa_comment.Text, date_requestDate.Value, 3, null, null, null);
+            requestAdapter.AddOrUpdateEFARequest(RequestID, ClientID.ToString(), dates[0], dates[1], dates[2], dates[3], dates[4], 7, efa_comment.Text, date_requestDate.Value, 3, null, null, null);
 
             if (NewRequest)
             {
