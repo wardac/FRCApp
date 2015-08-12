@@ -42,7 +42,7 @@
             this.incomeAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.incomeFrequency = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Archived = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ArchivedDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.archiveButton = new System.Windows.Forms.Button();
             this.doneButton = new System.Windows.Forms.Button();
             this.cmb_householdMember = new System.Windows.Forms.ComboBox();
@@ -151,7 +151,7 @@
             this.incomeAmount,
             this.incomeFrequency,
             this.Date,
-            this.Archived});
+            this.ArchivedDate});
             this.FinancelistView.FullRowSelect = true;
             this.FinancelistView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.FinancelistView.Location = new System.Drawing.Point(414, 51);
@@ -164,17 +164,17 @@
             // name
             // 
             this.name.Text = "Name";
-            this.name.Width = 130;
+            this.name.Width = 87;
             // 
             // incomeSource
             // 
             this.incomeSource.Text = "Source of Income";
-            this.incomeSource.Width = 128;
+            this.incomeSource.Width = 96;
             // 
             // incomeAmount
             // 
             this.incomeAmount.Text = "Amount of Income";
-            this.incomeAmount.Width = 98;
+            this.incomeAmount.Width = 99;
             // 
             // incomeFrequency
             // 
@@ -184,11 +184,12 @@
             // Date
             // 
             this.Date.Text = "Date";
-            this.Date.Width = 66;
+            this.Date.Width = 87;
             // 
-            // Archived
+            // ArchivedDate
             // 
-            this.Archived.Text = "Archived";
+            this.ArchivedDate.Text = "Archived Date";
+            this.ArchivedDate.Width = 111;
             // 
             // archiveButton
             // 
@@ -358,6 +359,6 @@
         private System.Windows.Forms.RadioButton radioUnarchived;
         private System.Windows.Forms.RadioButton radioArchived;
         private System.Windows.Forms.RadioButton radioAll;
-        private System.Windows.Forms.ColumnHeader Archived;
+        private System.Windows.Forms.ColumnHeader ArchivedDate;
     }
 }

@@ -14,12 +14,10 @@ namespace FRCApp
     public partial class FinanceForm : Form
     {
         private String householdID;
-        private List<IncomeSource> incomeSourcesList;
 
         public FinanceForm(String householdID)
         {
             this.householdID = householdID;
-            incomeSourcesList = new List<IncomeSource>();
             InitializeComponent();
         }
 
@@ -63,9 +61,8 @@ namespace FRCApp
             }
 
             // Add entry to the database
-            var source = new IncomeSource((int)cmb_householdMember.SelectedValue, cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem), amountOfIncomeTextBox.Text, (int)cmb_incomeFreqs.SelectedValue, cmb_householdMember.GetItemText(cmb_householdMember.SelectedItem), cmb_incomeFreqs.GetItemText(cmb_incomeFreqs.SelectedItem), datePickerDateadded.Value, true);
             var incomeSourcesAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
-            incomeSourcesAdapter.AddIncomeSource(source.householdMemberID, source.incomeSource, Decimal.Parse(source.amount), source.frequencyID, source.dateAdded, source.isActive);
+            incomeSourcesAdapter.AddIncomeSource((int)cmb_householdMember.SelectedValue, cmb_incomeSourceType.GetItemText(cmb_incomeSourceType.SelectedItem), Decimal.Parse(amountOfIncomeTextBox.Text), (int)cmb_incomeFreqs.SelectedValue, datePickerDateadded.Value, true);
             fillListViewFromDatabase();
 
             //clear the fields
@@ -78,31 +75,14 @@ namespace FRCApp
         //removes the selected items from the FinanceListView
         private void archiveButton_Click(object sender, EventArgs e)
         {
-            var householdMembersAdapter = new DataSet1TableAdapters.HouseholdMembersTableAdapter();
-            var householdMembers = householdMembersAdapter.GetHouseholdMembersByHouseholdID(new Guid(householdID));
             DataSet1TableAdapters.IncomeSourcesTableAdapter incomeSourceAdapter = new DataSet1TableAdapters.IncomeSourcesTableAdapter();
-            var frequencyRow = new DataSet1TableAdapters.IncomeFrequenciesTableAdapter().GetData().Rows;
 
-            foreach (DataRow householdMember in householdMembers.Rows)
-            {
-                foreach (ListViewItem item in FinancelistView.SelectedItems)
-                {
-                    foreach (DataRow freq in frequencyRow)
-                    {
-                        if (freq["Frequency"].ToString() == item.SubItems[3].Text)
-                        {
-                            incomeSourceAdapter.AddOrUpdateIncomeSources(
-                                (int)item.Tag,//IncomeSourceID
-                                Int32.Parse(householdMember["HouseholdMemberID"].ToString()),//householdMemberID
-                                item.SubItems[1].Text,//IncomeSource
-                                Decimal.Parse(item.SubItems[2].Text),//Amount
-                                Int32.Parse(freq["IncomeFrequencyID"].ToString()),//FrequencyID
-                                DateTime.Parse(item.SubItems[4].Text),//DateAdded
-                                radioArchived.Checked,//IsActive
-                                DateTime.Now//DateArchived
-                                );
-                        }
-                    }
+            foreach (ListViewItem item in FinancelistView.SelectedItems) {
+                if (archiveButton.Text == "Archive") {
+                    incomeSourceAdapter.ArchiveIncomeSourceByID((int)item.Tag);
+                }
+                else if (archiveButton.Text == "Unarchive") {
+                    incomeSourceAdapter.UnarchiveIncomeSourceByID((int)item.Tag);
                 }
             }
             fillListViewFromDatabase();
@@ -154,8 +134,9 @@ namespace FRCApp
             String frequency = incomeAdapter.GetFrequencyByID(Int32.Parse(row["FrequencyID"].ToString())).ToString();
             item.SubItems.Add(frequency);
             item.Tag = row["IncomeSourceID"];
-            item.SubItems.Add(row["DateAdded"].ToString());
-            item.SubItems.Add((!((bool)row["IsActive"])).ToString());
+            item.SubItems.Add(row["DateAdded"].ToString().Split(' ')[0]);
+            item.SubItems.Add(row["DateArchived"] == null ? "" : row["DateArchived"].ToString().Split(' ')[0]);
+            //item.SubItems.Add((!((bool)row["IsActive"])).ToString());
             //alternating row colors
             if (item.Index % 2 == 0)
             { item.BackColor = Color.Gainsboro; }
@@ -195,37 +176,6 @@ namespace FRCApp
             fillListViewFromDatabase();
         }
 
-        private class IncomeSource
-        {
-
-            public int householdMemberID;
-            public int frequencyID;
-            public String incomeSource;
-            public String amount;
-            public String name;
-            public String frequency;
-            public DateTime dateAdded;
-            public bool isActive;
-
-
-            public IncomeSource(int householdMemberID, String incomeSource, String amount, int frequencyID, String name, String frequency, DateTime dateAdded, bool isActive)
-            {
-                this.householdMemberID = householdMemberID;
-                this.frequencyID = frequencyID;
-                this.incomeSource = incomeSource;
-                this.amount = amount;
-                this.name = name;
-                this.frequency = frequency;
-                this.dateAdded = dateAdded;
-                this.isActive = isActive;
-            }
-
-            public override String ToString()
-            {
-                return householdMemberID + " " + frequencyID + " " + incomeSource + " " + amount + " " + name + " " + frequency + " " + dateAdded + " " + isActive;
-            }
-        }
-
         private void archiveCheckbox_CheckedChanged(object sender, EventArgs e)
         {
             fillListViewFromDatabase();
@@ -252,7 +202,12 @@ namespace FRCApp
 
         private void radioAll_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioAll.Checked) {
+                archiveButton.Visible = false;
+            }
+            else {
+                archiveButton.Visible = true;
+            }
             fillListViewFromDatabase();
         }
     }
