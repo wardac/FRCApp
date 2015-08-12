@@ -202,7 +202,7 @@
             // First
             // 
             this.First.Text = "First";
-            this.First.Width = 103;
+            this.First.Width = 77;
             // 
             // Last
             // 
@@ -232,7 +232,8 @@
             // 
             // Archived
             // 
-            this.Archived.Text = "Archived";
+            this.Archived.Text = "Date Archived";
+            this.Archived.Width = 84;
             // 
             // HouseHoldFormHealthCoverageRadioButton
             // 

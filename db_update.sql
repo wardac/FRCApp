@@ -29,10 +29,7 @@ GO
 ALTER proc clientLookUp(@searchTerm nvarchar(100)) as begin 
 SELECT * FROM (
 select * from Clients where FirstName like '%' + @searchTerm + '%' or LastName like '%' + @searchTerm + '%'
-
-
 UNION
-
 SELECT c.*
 FROM Clients c
 	JOIN HouseholdMembers hm
@@ -65,4 +62,25 @@ CREATE PROC dbo.AddOrUpdateUser (@UserName NVARCHAR(100), @FirstName NVARCHAR(10
 	END
 END
 GO
+
+CREATE PROC dbo.ArchiveIncomeSourceByID(@IncomeSourceID INT) AS BEGIN
+	UPDATE IncomeSources SET DateArchived = GETDATE(), IsActive = 0 WHERE IncomeSourceID = @IncomeSourceID
+END
+GO
+
+CREATE PROC dbo.UnarchiveIncomeSourceByID(@IncomeSourceID INT) AS BEGIN
+	UPDATE IncomeSources SET DateArchived = NULL, IsActive = 1 WHERE IncomeSourceID = @IncomeSourceID
+END
+GO
+
+CREATE PROC dbo.ArchiveHouseholdMemberByID(@HouseholdMemberID INT) AS BEGIN
+  UPDATE HouseholdMembers SET DateArchived = GETDATE(), IsActive = 0 WHERE HouseholdMemberID = @HouseholdMemberID
+END
+GO
+
+CREATE PROC dbo.UnarchiveHouseholdMemberByID(@HouseholdMemberID INT) AS BEGIN
+	UPDATE HouseholdMembers SET DateArchived = NULL, IsActive = 1 WHERE HouseholdMemberID = @HouseholdMemberID
+END
+GO
+
 
