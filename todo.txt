@@ -1,5 +1,4 @@
 * 3. Is there a way to track which user adds or changes an entry?  Probably more trouble than its worth)
-** 5. In the client info dashboard, apartment number does not show up. One would have to click on edit client in order to view this. Is it possible to merge or show Apt # with street address?
 * 6. The financial summary not populating correct income information
 ** 8. Being prompted for hardship/approval justification twice. Can we reduce this to one time?
 * 9. After handling an active case and saving it as approved or not approved, it is entered into the case history.  Is it possible to delete entries or modify them?
