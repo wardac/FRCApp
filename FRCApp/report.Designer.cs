@@ -79,6 +79,7 @@
             this.DtpickerYear = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.Button();
+            this.btn_export = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -311,7 +312,7 @@
             this.Pnov,
             this.Pdec,
             this.Pytd});
-            this.lstPrimaryIncome.Location = new System.Drawing.Point(77, 472);
+            this.lstPrimaryIncome.Location = new System.Drawing.Point(77, 464);
             this.lstPrimaryIncome.Name = "lstPrimaryIncome";
             this.lstPrimaryIncome.Size = new System.Drawing.Size(801, 135);
             this.lstPrimaryIncome.TabIndex = 4;
@@ -391,7 +392,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 445);
+            this.label3.Location = new System.Drawing.Point(30, 437);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 16);
             this.label3.TabIndex = 5;
@@ -431,11 +432,22 @@
             this.Search.UseVisualStyleBackColor = true;
             this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
+            // btn_export
+            // 
+            this.btn_export.Location = new System.Drawing.Point(812, 604);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.Size = new System.Drawing.Size(91, 23);
+            this.btn_export.TabIndex = 9;
+            this.btn_export.Text = "Export To CSV";
+            this.btn_export.UseVisualStyleBackColor = true;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            // 
             // report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 630);
+            this.Controls.Add(this.btn_export);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DtpickerYear);
@@ -506,5 +518,6 @@
         private System.Windows.Forms.DateTimePicker DtpickerYear;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.Button btn_export;
     }
 }
